@@ -1,0 +1,24 @@
+using UnityEngine;
+
+[CreateAssetMenu(fileName = "PlayerStats", menuName = "Scriptable Objects/PlayerStats")]
+public class PlayerStats : ScriptableObject
+{
+    [Header("Grounded")]
+    public float groundedSpeed;
+    public float groundedAcceleration;
+    public float groundedDeceleration;
+    [Header("Air")]
+    public float airSpeed;
+    public float airAcceleration;
+    public float airDeceleration;
+     [Header("Jump")]
+    public float jumpVelocity;
+    public float jumpGravity;
+    public float peakGravity;
+    public float fallGravity;
+    public float cutoffGravity;
+    public float fallVelocityCap;
+    public Vector2 peakTresholds;
+    public float coyoteTime;
+    public float jumpBufferTime;
+}
