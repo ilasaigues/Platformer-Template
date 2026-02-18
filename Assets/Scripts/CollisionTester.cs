@@ -5,6 +5,8 @@ public class CollisionTester : MonoBehaviour
 {
 
     public Vector2 movementDirection;
+
+    public LayerMask GroundLayerMask;
     CollisionController _collisionController;
     void Awake()
     {
@@ -13,12 +15,13 @@ public class CollisionTester : MonoBehaviour
 
     void Update()
     {
-        var horizontalCollisons = _collisionController.GetHorizontalCollisions(movementDirection, movementDirection.magnitude, 1 << 8);
+        var horizontalCollisons = _collisionController.GetHorizontalCollisions(movementDirection, Mathf.Abs(movementDirection.x), GroundLayerMask);
         foreach (var collisionOrigin in horizontalCollisons)
         {
             Debug.DrawRay(collisionOrigin, Vector2.right * movementDirection.x);
         }
-        var verticalCollisions = _collisionController.GetVerticalCollisions(movementDirection, movementDirection.magnitude, 1 << 8);
+
+        var verticalCollisions = _collisionController.GetVerticalCollisions(movementDirection, Mathf.Abs(movementDirection.y), GroundLayerMask);
         foreach (var collisionOrigin in verticalCollisions)
         {
             Debug.DrawRay(collisionOrigin, Vector2.up * movementDirection.y);

@@ -25,21 +25,9 @@ public class CollisionController : MonoBehaviour
         _colliderController = gameObject.GetOrAddComponent<ColliderController>();
     }
 
-    public bool CheckCollision(Vector2 from, Vector2 direction, float distance, LayerMask layerMask = default)
+    public bool CheckCollision(Vector2 from, Vector2 direction, float distance, LayerMask layerMask)
     {
-        List<RaycastHit2D> collisions;
-        if (layerMask != default)
-        {
-            Debug.Log("Layer Mask");
-            collisions = new(Physics2D.RaycastAll(from, direction, distance, (int)layerMask));
-        }
-        else
-        {
-            Debug.Log("No Mask");
-            collisions = new(Physics2D.RaycastAll(from, direction, distance));
-        }
-
-        return collisions.Count >= 0;
+        return Physics2D.Raycast(from, direction.normalized, distance, layerMask).collider != null;
     }
 
     public bool CheckGround(float distance, LayerMask groundLayerMask)
@@ -48,30 +36,28 @@ public class CollisionController : MonoBehaviour
                 CheckCollision(BottomLeft, Vector2.down, distance, groundLayerMask);
     }
 
-    public List<Vector2> GetDirectedCollision(Vector2[] froms, Vector2 direction, float distance, LayerMask layerMask = default)
+    public List<Vector2> GetDirectedCollision(Vector2[] froms, Vector2 direction, float distance, LayerMask layerMask)
     {
         List<Vector2> collidingOriginPoints = new();
 
         foreach (var from in froms)
         {
-            Debug.Log("Checking collison from " + from);
             if (CheckCollision(from, direction, distance, layerMask))
             {
-                Debug.Log("Found collison from " + from);
                 collidingOriginPoints.Add(from);
             }
         }
         return collidingOriginPoints;
     }
 
-    public List<Vector2> GetVerticalCollisions(Vector2 direction, float distance, LayerMask layerMask = default)
+    public List<Vector2> GetVerticalCollisions(Vector2 direction, float distance, LayerMask layerMask)
     {
         Vector2[] origins = direction.y > 0 ? new Vector2[] { TopLeft, TopRight } : new Vector2[] { BottomLeft, BottomRight };
 
         return GetDirectedCollision(origins, Vector2.up * direction.y, distance, layerMask);
     }
 
-    public List<Vector2> GetHorizontalCollisions(Vector2 direction, float distance, LayerMask layerMask = default)
+    public List<Vector2> GetHorizontalCollisions(Vector2 direction, float distance, LayerMask layerMask)
     {
         Vector2[] origins = direction.x > 0 ? new Vector2[] { TopRight, BottomRight } : new Vector2[] { TopLeft, BottomLeft };
 
