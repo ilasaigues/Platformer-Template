@@ -17,6 +17,7 @@ public class MovementController : MonoBehaviour
     void FixedUpdate()
     {
         _rb.MovePosition(_rb.position + Velocity * Time.fixedDeltaTime);
+        Debug.Log(Velocity.y);
     }
 
     public void AddVelocity(Vector2 added)
