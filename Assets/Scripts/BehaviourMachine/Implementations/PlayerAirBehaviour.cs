@@ -14,4 +14,17 @@ public abstract class PlayerAirBehaviour : BasePlayerBehaviour
 
         return null;
     }
+
+    public override void FixedUpdate(float delta)
+    {
+        var gravity = CurrentGravity();
+
+        PlayerController.MovementController.AddVelocity(delta * gravity * Vector2.up);
+        if (PlayerController.MovementController.Velocity.y < PlayerController.PlayerStats.fallVelocityCap) // max air velocity correction
+        {
+            PlayerController.MovementController.AddVelocity((PlayerController.PlayerStats.fallVelocityCap - PlayerController.MovementController.Velocity.y) * Vector2.down);
+        }
+    }
+
+    public abstract float CurrentGravity();
 }

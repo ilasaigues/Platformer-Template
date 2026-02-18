@@ -21,9 +21,15 @@ MonoBehaviour:
   jumpVelocity: 0
   jumpGravity: 0
   peakGravity: 0
-  fallGravity: 0
+  fallGravity: -4
   cutoffGravity: 0
-  fallVelocityCap: 0
+  fallVelocityCap: -10
   peakTresholds: {x: 0, y: 0}
   coyoteTime: 0
   jumpBufferTime: 0
+  speedBonus: 0
+  jumpBonus: 0
+  extraJumps: 0
+  gravityMult: 0
+  ceilingCorrection: 0
+  ledgeCorrection: 0

@@ -11,7 +11,7 @@ public class MovementController : MonoBehaviour
     {
         _rb = gameObject.GetOrAddComponent<Rigidbody2D>();
         _rb.bodyType = RigidbodyType2D.Kinematic;
-        _rb.constraints = RigidbodyConstraints2D.FreezeRotation | RigidbodyConstraints2D.FreezePosition;
+        _rb.constraints = RigidbodyConstraints2D.FreezeRotation;
     }
 
     void FixedUpdate()

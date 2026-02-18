@@ -9,11 +9,12 @@ public class BehaviourMachine : MonoBehaviour
 
     BaseBehaviour _currentBehaviour;
 
-    void Start()
+    public void AddBehaviour(BaseBehaviour newBehaviour)
     {
-        // Create instance of all states
-
-        // Set initial state (falling?)
+        if (!_allBehaviours.ContainsKey(newBehaviour.GetType()))
+        {
+            _allBehaviours.Add(newBehaviour.GetType(), newBehaviour);
+        }
     }
 
     void Update()
@@ -40,7 +41,8 @@ public class BehaviourMachine : MonoBehaviour
     {
         if (_allBehaviours.TryGetValue(behaviourType, out var nextBehaviour))
         {
-            _currentBehaviour.Exit();
+            Debug.Log("Entering state: " + behaviourType.ToString());
+            _currentBehaviour?.Exit();
             _currentBehaviour = nextBehaviour;
             _currentBehaviour.Enter();
             CheckBehaviourChange();

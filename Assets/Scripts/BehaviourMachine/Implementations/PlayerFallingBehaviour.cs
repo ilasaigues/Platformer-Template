@@ -5,23 +5,27 @@ public class PlayerFallingBehaviour : PlayerAirBehaviour
     {
     }
 
+    public override float CurrentGravity()
+    {
+        return PlayerController.PlayerStats.fallGravity;
+    }
+
     public override void Enter()
     {
-        throw new System.NotImplementedException();
     }
 
     public override void Exit()
     {
-        throw new System.NotImplementedException();
     }
 
     public override void FixedUpdate(float delta)
     {
-        throw new System.NotImplementedException();
+        base.FixedUpdate(delta);
+
     }
 
     public override void Update(float delta)
     {
-        throw new System.NotImplementedException();
+        //throw new System.NotImplementedException();
     }
 }
