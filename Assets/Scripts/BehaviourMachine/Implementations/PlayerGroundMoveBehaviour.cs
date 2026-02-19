@@ -1,3 +1,4 @@
+using Unity.Mathematics;
 using UnityEngine;
 
 public class PlayerGroundMoveBehaviour : PlayerGroundedBehaviour
@@ -10,43 +11,44 @@ public class PlayerGroundMoveBehaviour : PlayerGroundedBehaviour
 
     public override void Exit()
     {
-        _lastHorizontalInput = 0;
+
     }
 
     public override void FixedUpdate(float delta)
     {
-        if (_lastHorizontalInput != 0) // input is being pressed
+        var inputSign = PlayerController.LastDirectionInput.x == 0 ? 0 : Mathf.Sign(PlayerController.LastDirectionInput.x);
+        var targetHorizontalVelocity = inputSign * PlayerController.PlayerStats.groundedSpeed;
+        var currentVelocity = PlayerController.MovementController.Velocity.x;
+        if (targetHorizontalVelocity != 0) // target velocity is NOT zero
         {
-            var maxDeltaV = PlayerController.MovementController.Velocity.x - PlayerController.PlayerStats.groundedSpeed;
-            var inputDeltaV = _lastHorizontalInput * delta * PlayerController.PlayerStats.groundedAcceleration;
+            var inputAcceleration = delta * Mathf.Sign(targetHorizontalVelocity) * PlayerController.PlayerStats.groundedAcceleration;
+            if (currentVelocity + inputAcceleration > targetHorizontalVelocity)
+            {
+                inputAcceleration = targetHorizontalVelocity - currentVelocity;
+            }
 
-            PlayerController.MovementController.AddVelocity(Mathf.Min(maxDeltaV, inputDeltaV) * Vector2.right);
+            PlayerController.MovementController.AddVelocity(inputAcceleration * Vector2.right);
         }
-        else // input is not being pressed
+        else // target velocity is zero
         {
-            var currentVelocity = PlayerController.MovementController.Velocity.x;
-            float deceleration = PlayerController.PlayerStats.groundedDeceleration;
-            if (currentVelocity > 0) // negative velocity
+            float deceleration = PlayerController.PlayerStats.groundedDeceleration * delta;
+            if (currentVelocity > 0) // negative deceleration
             {
-                if (currentVelocity - deceleration < 0) // overshoot, lower deceleration
-                {
-                    deceleration = -currentVelocity;
-                }
+                deceleration *= -1;
             }
-            else if (currentVelocity < 0) // positive velocity
+            if (Mathf.Abs(deceleration) > Mathf.Abs(currentVelocity)) // overshoot, lower deceleration
             {
-                if (currentVelocity + deceleration > 0) // overshoot, lower deceleration
-                {
-                    deceleration = -currentVelocity;
-                }
+                deceleration = -currentVelocity;
             }
+
             PlayerController.MovementController.AddVelocity(deceleration * Vector2.right);
         }
+        // todo: CHOPPY MOVEMENT TO THE LEFT, ALSO, DECELERATION SHOULD APPLY IF TARGET VELOCITY IS OPPOSITE OF CURRENT
     }
 
     public override BehaviourChangeRequest VerifyBehaviour()
     {
-        if (PlayerController.MovementController.Velocity.x == 0)
+        if (PlayerController.MovementController.Velocity.x == 0 && PlayerController.LastDirectionInput.x == 0)
         {
             return BehaviourChangeRequest.New<PlayerIdleBehaviour>();
         }
