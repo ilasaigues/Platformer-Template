@@ -22,7 +22,7 @@ public abstract class PlayerAirBehaviour : BasePlayerBehaviour
         PlayerController.MovementController.AddVelocity(delta * gravity * Vector2.up);
         if (PlayerController.MovementController.Velocity.y < PlayerController.PlayerStats.fallVelocityCap) // max air velocity correction
         {
-            PlayerController.MovementController.AddVelocity((PlayerController.PlayerStats.fallVelocityCap - PlayerController.MovementController.Velocity.y) * Vector2.down);
+            PlayerController.MovementController.AddVelocity((PlayerController.PlayerStats.fallVelocityCap - PlayerController.MovementController.Velocity.y) * Vector2.up);
         }
     }
 

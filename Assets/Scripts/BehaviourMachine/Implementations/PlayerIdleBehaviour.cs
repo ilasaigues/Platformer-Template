@@ -9,6 +9,7 @@ public class PlayerIdleBehaviour : PlayerGroundedBehaviour
 
     public override void Enter()
     {
+        base.Enter();
         PlayerController.MovementController.SetVelocity(
             new Vector2(PlayerController.MovementController.Velocity.x, 0));
     }

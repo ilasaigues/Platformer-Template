@@ -36,7 +36,7 @@ public class MovementController : MonoBehaviour
 
     public void ForcePosition(Vector2 newPosition)
     {
-        _rb.MovePosition(newPosition);
+        transform.position = newPosition;
     }
 
 }

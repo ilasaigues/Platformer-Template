@@ -23,7 +23,7 @@ MonoBehaviour:
   peakGravity: 0
   fallGravity: -4
   cutoffGravity: 0
-  fallVelocityCap: -10
+  fallVelocityCap: -8
   peakTresholds: {x: 0, y: 0}
   coyoteTime: 0
   jumpBufferTime: 0

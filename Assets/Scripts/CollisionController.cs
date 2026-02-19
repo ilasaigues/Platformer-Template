@@ -25,15 +25,15 @@ public class CollisionController : MonoBehaviour
         _colliderController = gameObject.GetOrAddComponent<ColliderController>();
     }
 
-    public bool CheckCollision(Vector2 from, Vector2 direction, float distance, LayerMask layerMask)
+    public RaycastHit2D CheckCollision(Vector2 from, Vector2 direction, float distance, LayerMask layerMask)
     {
-        return Physics2D.Raycast(from, direction.normalized, distance, layerMask).collider != null;
+        return Physics2D.Raycast(from, direction.normalized, distance, layerMask);
     }
 
     public bool CheckGround(float distance, LayerMask groundLayerMask)
     {
-        return CheckCollision(BottomRight, Vector2.down, distance, groundLayerMask) ||
-                CheckCollision(BottomLeft, Vector2.down, distance, groundLayerMask);
+        return CheckCollision(BottomRight, Vector2.down, distance, groundLayerMask).collider != null ||
+                CheckCollision(BottomLeft, Vector2.down, distance, groundLayerMask).collider != null;
     }
 
     public List<Vector2> GetDirectedCollision(Vector2[] froms, Vector2 direction, float distance, LayerMask layerMask)
@@ -42,7 +42,7 @@ public class CollisionController : MonoBehaviour
 
         foreach (var from in froms)
         {
-            if (CheckCollision(from, direction, distance, layerMask))
+            if (CheckCollision(from, direction, distance, layerMask).collider != null)
             {
                 collidingOriginPoints.Add(from);
             }
