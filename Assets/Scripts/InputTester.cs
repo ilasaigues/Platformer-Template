@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class InputTester:MonoBehaviour
+public class InputTester : MonoBehaviour
 {
     public InputHandler inputHandler;
     CollisionTester _collisionTester;
@@ -12,7 +12,7 @@ public class InputTester:MonoBehaviour
         _sprite = GetComponent<SpriteRenderer>();
         inputHandler.MoveEvent += handleMove;
         inputHandler.JumpPressed += handleJumpPress;
-        inputHandler.JumpRealeased += handleJumpRealease;
+        inputHandler.JumpReleased += handleJumpRealease;
     }
 
 
@@ -20,7 +20,7 @@ public class InputTester:MonoBehaviour
     {
         _sprite.color = Color.red;
     }
-    
+
     void handleJumpRealease()
     {
         _sprite.color = Color.green;

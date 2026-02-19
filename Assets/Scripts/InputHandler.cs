@@ -4,13 +4,13 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 
 [CreateAssetMenu(fileName = "Input Handler", menuName = "Scriptable Objects/InputHandler")]
-public class InputHandler:ScriptableObject, GameInputs.IPlayerActions
+public class InputHandler : ScriptableObject, GameInputs.IPlayerActions
 {
     private GameInputs _gameInput;
 
     void OnEnable()
     {
-        if(_gameInput == null) _gameInput = new GameInputs();
+        if (_gameInput == null) _gameInput = new GameInputs();
 
         _gameInput.Player.SetCallbacks(this);
         _gameInput.Player.Enable();
@@ -21,13 +21,13 @@ public class InputHandler:ScriptableObject, GameInputs.IPlayerActions
     }
 
     public event Action JumpPressed;
-    public event Action JumpRealeased;
+    public event Action JumpReleased;
     public event Action<Vector2> MoveEvent;
 
     public void OnJump(InputAction.CallbackContext context)
     {
-        if(context.phase == InputActionPhase.Performed) JumpPressed?.Invoke();
-        else if(context.phase == InputActionPhase.Canceled) JumpRealeased.Invoke();
+        if (context.phase == InputActionPhase.Performed) JumpPressed?.Invoke();
+        else if (context.phase == InputActionPhase.Canceled) JumpReleased.Invoke();
     }
 
     public void OnMove(InputAction.CallbackContext context)
