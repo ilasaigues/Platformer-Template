@@ -24,14 +24,14 @@ public class PlayerIdleBehaviour : PlayerGroundedBehaviour
         //throw new System.NotImplementedException();
     }
 
-    public override void Update(float delta)
-    {
-        //throw new System.NotImplementedException();
-    }
 
     public override BehaviourChangeRequest VerifyBehaviour()
     {
-        //throw new System.NotImplementedException();
+        if (PlayerController.MovementController.Velocity.x != 0)
+        {
+            return BehaviourChangeRequest.New<PlayerGroundMoveBehaviour>();
+        }
         return null;
     }
+
 }

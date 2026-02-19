@@ -3,6 +3,10 @@ using UnityEngine;
 public class BehaviourChangeRequest
 {
     public Type NewBehaviourType;
+    public static BehaviourChangeRequest New<T>() where T : BaseBehaviour
+    {
+        return new BehaviourChangeRequest() { NewBehaviourType = typeof(T) };
+    }
 }
 
 public abstract class BaseBehaviour

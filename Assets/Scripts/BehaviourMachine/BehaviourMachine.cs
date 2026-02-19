@@ -8,6 +8,8 @@ public class BehaviourMachine : MonoBehaviour
     Dictionary<Type, BaseBehaviour> _allBehaviours = new();
 
     BaseBehaviour _currentBehaviour;
+    public string GetBehaviourName => _currentBehaviour.GetType().Name;
+
 
     public void AddBehaviour(BaseBehaviour newBehaviour)
     {
