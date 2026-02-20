@@ -17,7 +17,15 @@ public abstract class PlayerGroundedBehaviour : BasePlayerBehaviour
 
     public override BehaviourChangeRequest VerifyBehaviour()
     {
-        // do a ground check, if no ground, go to falling
+
+        if (PlayerController.CollisionController.GetClosestCollisonSurfaceDistance(
+           Vector2.down,
+           PlayerController.ColliderController.ColliderBounds,
+           .1f,
+           LayerReference.TerrainLayer) is null)
+        {
+            return BehaviourChangeRequest.New<PlayerFallingBehaviour>();
+        }
 
         return null;
     }
@@ -27,11 +35,10 @@ public abstract class PlayerGroundedBehaviour : BasePlayerBehaviour
         if (PlayerController.CollisionController.GetClosestCollisonSurfaceDistance(
             Vector2.down,
             PlayerController.ColliderController.ColliderBounds,
-            10,
+            .1f,
             LayerReference.TerrainLayer) is float offset)
         {
             PlayerController.MovementController.ForceOffset(offset * Vector2.down);
-
         }
 
     }

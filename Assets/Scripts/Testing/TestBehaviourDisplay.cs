@@ -19,6 +19,6 @@ public class TestBehaviourDisplay : MonoBehaviour
     }
     void Update()
     {
-        _label.text = _behaviourMachine.GetBehaviourName;
+        _label.text = _behaviourMachine?.GetBehaviourName;
     }
 }

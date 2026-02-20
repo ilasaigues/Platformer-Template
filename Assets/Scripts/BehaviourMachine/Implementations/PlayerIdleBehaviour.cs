@@ -27,8 +27,10 @@ public class PlayerIdleBehaviour : PlayerGroundedBehaviour
 
     public override BehaviourChangeRequest VerifyBehaviour()
     {
+        var baseValue = base.VerifyBehaviour();
+        if (baseValue != null) return baseValue;
         if (PlayerController.MovementController.Velocity.x != 0 || PlayerController.LastDirectionInput.x != 0)
-        {        
+        {
             return BehaviourChangeRequest.New<PlayerGroundMoveBehaviour>();
         }
 

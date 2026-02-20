@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2880bf251852e44b8552c6fcd8a5191, type: 3}
   m_Name: PlayerStats
   m_EditorClassIdentifier: Assembly-CSharp::PlayerStats
-  groundedSpeed: 10
+  groundedSpeed: 5
   groundedAccelerationTime: 0.2
   groundedDecelerationTime: 0.1
   airSpeed: 0

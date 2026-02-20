@@ -1,3 +1,4 @@
+using System.Linq;
 using UnityEngine;
 
 [RequireComponent(typeof(CollisionController))]
@@ -15,22 +16,34 @@ public class CollisionTester : MonoBehaviour
 
     void Update()
     {
-        var horizontalCollisons = _collisionController.GetHorizontalCollisions(movementDirection, Mathf.Abs(movementDirection.x), GroundLayerMask);
-        foreach (var collisionOrigin in horizontalCollisons)
+        var boxBounds = GetComponent<Collider2D>().bounds;
+
+
+
+        var horizontalHits = Physics2D.BoxCastAll(boxBounds.center, boxBounds.size, 0, Vector2.right, movementDirection.x, GroundLayerMask);
+        //.Where(hit => hit.fraction != 0);
+
+        Debug.DrawLine(boxBounds.min, boxBounds.max);
+
+        foreach (var hit in horizontalHits)
         {
-            Debug.DrawRay(collisionOrigin, Vector2.right * movementDirection.x);
+            Debug.DrawLine(hit.point, boxBounds.center, Color.blue);
         }
 
-        var verticalCollisions = _collisionController.GetVerticalCollisions(movementDirection, Mathf.Abs(movementDirection.y), GroundLayerMask);
-        foreach (var collisionOrigin in verticalCollisions)
+        var verticalHits = Physics2D.BoxCastAll(boxBounds.center, boxBounds.size, 0, Vector2.up, movementDirection.y, GroundLayerMask);
+        //.Where(hit => hit.fraction != 0);
+        foreach (var hit in verticalHits)
         {
-            Debug.DrawRay(collisionOrigin, Vector2.up * movementDirection.y);
+            //Debug.DrawLine(hit.point, boxBounds.center, Color.green);
         }
     }
 
     void OnDrawGizmos()
     {
         Gizmos.color = Color.red;
+        var boxBounds = GetComponent<Collider2D>().bounds;
+        Gizmos.DrawWireCube((Vector2)boxBounds.center + (Vector2.right * movementDirection.x), boxBounds.size);
+        Gizmos.DrawWireCube((Vector2)boxBounds.center + (Vector2.up * movementDirection.y), boxBounds.size);
         Gizmos.DrawRay(transform.position, movementDirection);
     }
 }

@@ -37,11 +37,29 @@ public class PlayerGroundMoveBehaviour : PlayerGroundedBehaviour
 
         float difference = maxSpeed * targetDirection - PlayerController.MovementController.Velocity.x;
         acceleration = Mathf.Clamp(acceleration, 0, Mathf.Abs(difference)) * Mathf.Sign(difference);
-        PlayerController.MovementController.AddVelocity(Vector2.right * acceleration);
+
+
+
+        if (PlayerController.CollisionController.GetClosestCollisonSurfaceDistance(
+            (currentVelocity + acceleration).Sign0() * Vector2.right,
+            PlayerController.ColliderController.ColliderBounds,
+            currentVelocity + acceleration,
+            LayerReference.TerrainLayer
+            ) is float offset)
+        {
+            PlayerController.MovementController.ForceOffset(offset * (currentVelocity + acceleration).Sign0() * Vector2.right);
+
+        }
+        else
+        {
+            PlayerController.MovementController.AddVelocity(Vector2.right * acceleration);
+        }
     }
 
     public override BehaviourChangeRequest VerifyBehaviour()
     {
+        var baseValue = base.VerifyBehaviour();
+        if (baseValue != null) return baseValue;
         if (PlayerController.MovementController.Velocity.x == 0 && PlayerController.LastDirectionInput.x == 0)
         {
             return BehaviourChangeRequest.New<PlayerIdleBehaviour>();
