@@ -6,7 +6,7 @@ public class PlayerGroundMoveBehaviour : PlayerGroundedBehaviour
 {
 
 
-    
+
     public PlayerGroundMoveBehaviour(PlayerController player) : base(player)
     {
     }
@@ -18,11 +18,22 @@ public class PlayerGroundMoveBehaviour : PlayerGroundedBehaviour
 
     public override void FixedUpdate(float delta)
     {
-        
+        float currentVelocity = PlayerController.MovementController.Velocity.x;
         float targetDirection = PlayerController.LastDirectionInput.x == 0 ? 0 : Mathf.Sign(PlayerController.LastDirectionInput.x);
-        float targetSpeed = PlayerController.PlayerStats.groundedSpeed;
-        float acceleration = targetSpeed/(targetDirection == 0 ? PlayerController.PlayerStats.groundedDecelerationTime : PlayerController.PlayerStats.groundedAccelerationTime) * delta;
-        float difference = targetSpeed * targetDirection - PlayerController.MovementController.Velocity.x;
+        float maxSpeed = PlayerController.PlayerStats.groundedSpeed;
+
+
+        float acceleration;
+        if (targetDirection == 0 || currentVelocity.Sign0() * targetDirection.Sign0() == -1)
+        {
+            acceleration = maxSpeed / PlayerController.PlayerStats.groundedDecelerationTime * delta;
+        }
+        else
+        {
+            acceleration = maxSpeed / PlayerController.PlayerStats.groundedAccelerationTime * delta;
+        }
+
+        float difference = maxSpeed * targetDirection - PlayerController.MovementController.Velocity.x;
         acceleration = Mathf.Clamp(acceleration, 0, Mathf.Abs(difference)) * Mathf.Sign(difference);
         PlayerController.MovementController.AddVelocity(Vector2.right * acceleration);
     }
