@@ -1,10 +1,12 @@
 using Unity.Mathematics;
+using UnityEditor;
 using UnityEngine;
 
 public class PlayerGroundMoveBehaviour : PlayerGroundedBehaviour
 {
 
 
+    
     public PlayerGroundMoveBehaviour(PlayerController player) : base(player)
     {
     }
@@ -16,34 +18,13 @@ public class PlayerGroundMoveBehaviour : PlayerGroundedBehaviour
 
     public override void FixedUpdate(float delta)
     {
-        var inputSign = PlayerController.LastDirectionInput.x == 0 ? 0 : Mathf.Sign(PlayerController.LastDirectionInput.x);
-        var targetHorizontalVelocity = inputSign * PlayerController.PlayerStats.groundedSpeed;
-        var currentVelocity = PlayerController.MovementController.Velocity.x;
-        if (targetHorizontalVelocity != 0) // target velocity is NOT zero
-        {
-            var inputAcceleration = delta * Mathf.Sign(targetHorizontalVelocity) * PlayerController.PlayerStats.groundedAcceleration;
-            if (currentVelocity + inputAcceleration > targetHorizontalVelocity)
-            {
-                inputAcceleration = targetHorizontalVelocity - currentVelocity;
-            }
-
-            PlayerController.MovementController.AddVelocity(inputAcceleration * Vector2.right);
-        }
-        else // target velocity is zero
-        {
-            float deceleration = PlayerController.PlayerStats.groundedDeceleration * delta;
-            if (currentVelocity > 0) // negative deceleration
-            {
-                deceleration *= -1;
-            }
-            if (Mathf.Abs(deceleration) > Mathf.Abs(currentVelocity)) // overshoot, lower deceleration
-            {
-                deceleration = -currentVelocity;
-            }
-
-            PlayerController.MovementController.AddVelocity(deceleration * Vector2.right);
-        }
-        // todo: CHOPPY MOVEMENT TO THE LEFT, ALSO, DECELERATION SHOULD APPLY IF TARGET VELOCITY IS OPPOSITE OF CURRENT
+        
+        float targetDirection = PlayerController.LastDirectionInput.x == 0 ? 0 : Mathf.Sign(PlayerController.LastDirectionInput.x);
+        float targetSpeed = PlayerController.PlayerStats.groundedSpeed;
+        float acceleration = targetSpeed/(targetDirection == 0 ? PlayerController.PlayerStats.groundedDecelerationTime : PlayerController.PlayerStats.groundedAccelerationTime) * delta;
+        float difference = targetSpeed * targetDirection - PlayerController.MovementController.Velocity.x;
+        acceleration = Mathf.Clamp(acceleration, 0, Mathf.Abs(difference)) * Mathf.Sign(difference);
+        PlayerController.MovementController.AddVelocity(Vector2.right * acceleration);
     }
 
     public override BehaviourChangeRequest VerifyBehaviour()

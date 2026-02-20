@@ -28,11 +28,9 @@ public class PlayerIdleBehaviour : PlayerGroundedBehaviour
     public override BehaviourChangeRequest VerifyBehaviour()
     {
         if (PlayerController.MovementController.Velocity.x != 0 || PlayerController.LastDirectionInput.x != 0)
-        {
-            Debug.Log("EXIT TO GROUND MOVE");
+        {        
             return BehaviourChangeRequest.New<PlayerGroundMoveBehaviour>();
         }
-        Debug.Log("STAY ON IDLE");
 
         return null;
     }

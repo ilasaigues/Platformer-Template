@@ -5,12 +5,12 @@ public class PlayerStats : ScriptableObject
 {
     [Header("Grounded")]
     public float groundedSpeed;
-    public float groundedAcceleration;
-    public float groundedDeceleration;
+    public float groundedAccelerationTime;
+    public float groundedDecelerationTime;
     [Header("Air")]
     public float airSpeed;
-    public float airAcceleration;
-    public float airDeceleration;
+    public float airAccelerationTime;
+    public float airDecelerationTime;
     [Header("Jump")]
     public float jumpVelocity;
     public float jumpGravity;
