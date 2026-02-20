@@ -64,4 +64,37 @@ public class CollisionController : MonoBehaviour
         return GetDirectedCollision(origins, Vector2.right * direction.x, distance, layerMask);
     }
 
+    public float? GetClosestCollisonSurfaceDistance(Vector2 direction, Bounds colliderBounds, float checkDistance, LayerMask layerMask)
+    {
+        List<Vector2> OriginPoints; // if direction is horizontal, points are top and bottom; if vertical, left and right
+        float correction;
+        if (Mathf.Abs(direction.x) > Mathf.Abs(direction.y)) // horizontal
+        {
+            correction = colliderBounds.extents.x;
+            OriginPoints = new List<Vector2>()
+            {
+                (Vector2)colliderBounds.center + Vector2.up*colliderBounds.extents.y,
+                (Vector2)colliderBounds.center - Vector2.up*colliderBounds.extents.y,
+            };
+        }
+        else // vertical
+        {
+            correction = colliderBounds.extents.y;
+            OriginPoints = new List<Vector2>()
+            {
+                (Vector2)colliderBounds.center + Vector2.right*colliderBounds.extents.x,
+                (Vector2)colliderBounds.center - Vector2.right*colliderBounds.extents.x,
+            };
+        }
+
+        var validHits = OriginPoints.Select(origin => Physics2D.Raycast(origin, direction, checkDistance, layerMask))
+                                    .Where(hit => hit.collider != null);
+        float? result = null;
+        foreach (var hit in validHits)
+        {
+            result = result == null ? hit.distance : Mathf.Min(result.Value, hit.distance);
+        }
+        return result - correction;
+    }
+
 }

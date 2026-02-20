@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: PlayerStats
   m_EditorClassIdentifier: Assembly-CSharp::PlayerStats
   groundedSpeed: 10
-  groundedAccelerationTime: 10
-  groundedDecelerationTime: 5
+  groundedAccelerationTime: 0.2
+  groundedDecelerationTime: 0.1
   airSpeed: 0
   airAccelerationTime: 0
   airDecelerationTime: 0

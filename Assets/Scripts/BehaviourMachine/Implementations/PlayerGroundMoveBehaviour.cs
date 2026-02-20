@@ -23,6 +23,8 @@ public class PlayerGroundMoveBehaviour : PlayerGroundedBehaviour
         float maxSpeed = PlayerController.PlayerStats.groundedSpeed;
 
 
+        // Check for wall collisions to prevent further movement using GetClosestCollisonSurfaceDistance
+
         float acceleration;
         if (targetDirection == 0 || currentVelocity.Sign0() * targetDirection.Sign0() == -1)
         {
