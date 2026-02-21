@@ -1,4 +1,7 @@
+using System;
 using System.Linq;
+using Unity.Mathematics;
+using UnityEditor.IMGUI.Controls;
 using UnityEngine;
 
 [RequireComponent(typeof(CollisionController))]
@@ -9,6 +12,9 @@ public class CollisionTester : MonoBehaviour
 
     public LayerMask GroundLayerMask;
     CollisionController _collisionController;
+    public float castDistance;
+
+    bool correctionNeeded;
     void Awake()
     {
         _collisionController = GetComponent<CollisionController>();
@@ -16,34 +22,31 @@ public class CollisionTester : MonoBehaviour
 
     void Update()
     {
+        correctionNeeded = false;
         var boxBounds = GetComponent<Collider2D>().bounds;
-
-
-
-        var horizontalHits = Physics2D.BoxCastAll(boxBounds.center, boxBounds.size, 0, Vector2.right, movementDirection.x, GroundLayerMask);
-        //.Where(hit => hit.fraction != 0);
-
-        Debug.DrawLine(boxBounds.min, boxBounds.max);
-
-        foreach (var hit in horizontalHits)
+        castDistance = Mathf.Clamp(castDistance,0,boxBounds.extents.x);
+        Vector2 size = new Vector2(castDistance,boxBounds.size.y);
+        var hits = Physics2D.BoxCastAll(boxBounds.center,size,0,Vector2.right,boxBounds.extents.x,GroundLayerMask);
+        if(hits.Count() != 0)
         {
-            Debug.DrawLine(hit.point, boxBounds.center, Color.blue);
-        }
-
-        var verticalHits = Physics2D.BoxCastAll(boxBounds.center, boxBounds.size, 0, Vector2.up, movementDirection.y, GroundLayerMask);
-        //.Where(hit => hit.fraction != 0);
-        foreach (var hit in verticalHits)
-        {
-            //Debug.DrawLine(hit.point, boxBounds.center, Color.green);
-        }
+            foreach(RaycastHit2D hit in hits)
+            {
+                float treshold = 1-(castDistance/boxBounds.size.x);
+                float correction = (treshold-hit.fraction)/2;
+                if(hit.fraction < treshold)
+                {
+                    correctionNeeded = true;
+                }
+            }      
+        }  
     }
 
     void OnDrawGizmos()
     {
-        Gizmos.color = Color.red;
-        var boxBounds = GetComponent<Collider2D>().bounds;
-        Gizmos.DrawWireCube((Vector2)boxBounds.center + (Vector2.right * movementDirection.x), boxBounds.size);
-        Gizmos.DrawWireCube((Vector2)boxBounds.center + (Vector2.up * movementDirection.y), boxBounds.size);
-        Gizmos.DrawRay(transform.position, movementDirection);
+        var boxBounds = GetComponent<Collider2D>().bounds;     
+        Vector2 origin = (Vector2)boxBounds.center + Vector2.right * boxBounds.size.x/2;
+        Vector2 size = new Vector2(castDistance,boxBounds.size.y);
+        Gizmos.color = correctionNeeded ? Color.red : Color.green;
+        Gizmos.DrawWireCube(origin,size);
     }
 }
