@@ -11,11 +11,15 @@ public class CollideAndSlide : MonoBehaviour
     private Vector2 currentDirection;
     private Collider2D _collider;
     private Vector2 currentVelocity;
+    public float gravity;
+    public float jumpvelocity;
     
 
     void Awake()
     {
         InputHandler.MoveEvent += GetInput;
+        InputHandler.JumpPressed += Jump;
+        InputHandler.JumpReleased += CutJump;
         _rb = GetComponent<Rigidbody2D>();
         _collider = GetComponent<Collider2D>();
     }
@@ -26,14 +30,29 @@ public class CollideAndSlide : MonoBehaviour
     }
     void HandleMovement(float delta)
     {
-        Vector2 velocity = currentDirection.normalized * movementSpeed * delta;
-        velocity = CollideAndSlideVel(velocity,transform.position,0);
-        _rb.position += velocity;
+        currentVelocity.x = currentDirection.normalized.x * movementSpeed;
+        currentVelocity.y -= CurrentGravity() * delta;
+        Vector2 frameVelocity;
+        frameVelocity.x = CollideAndSlideVel(Vector2.right* currentVelocity.x * delta,transform.position,0).x;
+        frameVelocity.y = CollideAndSlideVel(Vector2.up* currentVelocity.y * delta,transform.position,0).y;
+        _rb.position += frameVelocity;
+        currentVelocity = frameVelocity/delta;
+        Debug.Log(currentVelocity.y);
     }
 
     void GetInput(Vector2 value)
     {
         currentDirection = value;
+    }
+
+    void Jump()
+    {
+        currentVelocity.y = jumpvelocity;
+    }
+
+    void CutJump()
+    {
+        
     }
 
     Vector2 CollideAndSlideVel(Vector2 vel, Vector2 pos, int depth)
@@ -57,5 +76,13 @@ public class CollideAndSlide : MonoBehaviour
         }
     
         return vel;
+    }
+
+    public float CurrentGravity()
+    {
+        if(currentVelocity.y > 2) return gravity;
+        if(currentVelocity.y < 2) return gravity * 1.5f;
+        return gravity * 0.5f;
+        
     }
 }
