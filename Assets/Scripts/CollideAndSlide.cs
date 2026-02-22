@@ -1,3 +1,4 @@
+using System.Data.Common;
 using UnityEngine;
 
 public class CollideAndSlide : MonoBehaviour
@@ -37,7 +38,6 @@ public class CollideAndSlide : MonoBehaviour
         frameVelocity.y = CollideAndSlideVel(Vector2.up* currentVelocity.y * delta,transform.position,0).y;
         _rb.position += frameVelocity;
         currentVelocity = frameVelocity/delta;
-        Debug.Log(currentVelocity.y);
     }
 
     void GetInput(Vector2 value)
