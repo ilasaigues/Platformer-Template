@@ -18,6 +18,7 @@ public class PlayerGroundMoveBehaviour : PlayerGroundedBehaviour
 
     public override void FixedUpdate(float delta)
     {
+        base.FixedUpdate(delta);
         float currentVelocity = PlayerController.MovementController.Velocity.x;
         float targetDirection = PlayerController.LastDirectionInput.x == 0 ? 0 : Mathf.Sign(PlayerController.LastDirectionInput.x);
         float maxSpeed = PlayerController.PlayerStats.groundedSpeed;
@@ -35,26 +36,21 @@ public class PlayerGroundMoveBehaviour : PlayerGroundedBehaviour
             acceleration = maxSpeed / PlayerController.PlayerStats.groundedAccelerationTime * delta;
         }
 
-        float difference = maxSpeed * targetDirection - PlayerController.MovementController.Velocity.x;
+        float difference = maxSpeed * targetDirection - currentVelocity;
         acceleration = Mathf.Clamp(acceleration, 0, Mathf.Abs(difference)) * Mathf.Sign(difference);
 
+        // REDO
 
+        PlayerController.MovementController.AddVelocity(acceleration * Vector2.right);
 
-        if (PlayerController.CollisionController.GetClosestCollisonSurfaceDistance(
-            (currentVelocity + acceleration).Sign0() * Vector2.right,
-            PlayerController.ColliderController.ColliderBounds,
-            currentVelocity + acceleration,
-            LayerReference.TerrainLayer
-            ) is float offset)
-        {
-            PlayerController.MovementController.ForceOffset(offset * (currentVelocity + acceleration).Sign0() * Vector2.right);
+        var adjustedVelocity = PlayerController.CollisionController.CollideAndSlideVel(
+            PlayerController.transform.position,
+            delta * PlayerController.MovementController.Velocity.x * Vector2.right,
+            LayerReference.TerrainLayer);
+        PlayerController.MovementController.SetVelocity(adjustedVelocity.x / delta, null);
 
-        }
-        else
-        {
-            PlayerController.MovementController.AddVelocity(Vector2.right * acceleration);
-        }
     }
+
 
     public override BehaviourChangeRequest VerifyBehaviour()
     {

@@ -11,36 +11,36 @@ public abstract class PlayerGroundedBehaviour : BasePlayerBehaviour
     {
     }
 
+
     public override void Update(float delta)
     {
+    }
+    public override void FixedUpdate(float delta)
+    {
+        var gravity = PlayerController.PlayerStats.fallGravity;
+        PlayerController.MovementController.AddVelocity(gravity * delta * Vector2.up);
+
+        var adjustedVelocity = PlayerController.CollisionController.CollideAndSlideVel(
+            PlayerController.transform.position,
+            delta * PlayerController.MovementController.Velocity.y * Vector2.up,
+            LayerReference.TerrainLayer);
+        PlayerController.MovementController.SetVelocity(null, adjustedVelocity.y / delta);
     }
 
     public override BehaviourChangeRequest VerifyBehaviour()
     {
-
-        if (PlayerController.CollisionController.GetClosestCollisonSurfaceDistance(
-           Vector2.down,
-           PlayerController.ColliderController.ColliderBounds,
-           .1f,
-           LayerReference.TerrainLayer) is null)
+        if (!PlayerController.CollisionController.CheckCollision(
+            PlayerController.transform.position,
+            Vector2.down * 0.1f,
+            LayerReference.TerrainLayer))
         {
-            return BehaviourChangeRequest.New<PlayerFallingBehaviour>();
+            return new BehaviourChangeRequest() { NewBehaviourType = typeof(PlayerFallingBehaviour) };
         }
-
         return null;
     }
 
     public override void Enter()
     {
-        if (PlayerController.CollisionController.GetClosestCollisonSurfaceDistance(
-            Vector2.down,
-            PlayerController.ColliderController.ColliderBounds,
-            .1f,
-            LayerReference.TerrainLayer) is float offset)
-        {
-            PlayerController.MovementController.ForceOffset(offset * Vector2.down);
-        }
-
     }
 
 }

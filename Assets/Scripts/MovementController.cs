@@ -5,6 +5,7 @@ using UnityEngine;
 public class MovementController : MonoBehaviour
 {
     public Vector2 Velocity { get; private set; }
+
     private Rigidbody2D _rb;
 
     void Awake()
@@ -26,7 +27,14 @@ public class MovementController : MonoBehaviour
 
     public void SetVelocity(Vector2 newVelocity)
     {
-        Velocity = newVelocity;
+        SetVelocity(newVelocity.x, newVelocity.y);
+    }
+
+    public void SetVelocity(float? x, float? y)
+    {
+        x ??= Velocity.x;
+        y ??= Velocity.y;
+        Velocity = new(x.Value, y.Value);
     }
 
     public void ForceOffset(Vector2 offset)

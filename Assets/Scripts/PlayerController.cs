@@ -1,13 +1,11 @@
 using UnityEngine;
 [RequireComponent(typeof(CollisionController))]
-[RequireComponent(typeof(ColliderController))]
 [RequireComponent(typeof(MovementController))]
 [RequireComponent(typeof(BehaviourMachine))]
 public class PlayerController : MonoBehaviour
 {
     public PlayerStats PlayerStats;
     public CollisionController CollisionController;
-    public ColliderController ColliderController;
     public MovementController MovementController;
 
     public InputHandler InputHandler;
@@ -20,7 +18,6 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         CollisionController = gameObject.GetOrAddComponent<CollisionController>();
-        ColliderController = gameObject.GetOrAddComponent<ColliderController>();
         MovementController = gameObject.GetOrAddComponent<MovementController>();
         BehaviourMachine = gameObject.GetOrAddComponent<BehaviourMachine>();
         BehaviourMachine.AddBehaviour(new PlayerFallingBehaviour(this));

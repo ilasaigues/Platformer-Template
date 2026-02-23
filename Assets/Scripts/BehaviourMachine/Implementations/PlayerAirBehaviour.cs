@@ -6,8 +6,12 @@ public abstract class PlayerAirBehaviour : BasePlayerBehaviour
     public override BehaviourChangeRequest VerifyBehaviour()
     {
         var verticalVelocity = PlayerController.MovementController.Velocity.y;
+        // REDO
         if (verticalVelocity <= 0 &&  // going down and touching the ground
-         PlayerController.CollisionController.GetVerticalCollisions(Vector2.down, verticalVelocity * Time.fixedDeltaTime, 1 << 8).Count > 0)
+         PlayerController.CollisionController.CheckCollision(
+            PlayerController.transform.position,
+            PlayerController.MovementController.Velocity * Time.fixedDeltaTime,
+            LayerReference.TerrainLayer))
         {
             return new BehaviourChangeRequest() { NewBehaviourType = typeof(PlayerIdleBehaviour) };
         }
@@ -18,12 +22,14 @@ public abstract class PlayerAirBehaviour : BasePlayerBehaviour
     public override void FixedUpdate(float delta)
     {
         var gravity = CurrentGravity();
+        PlayerController.MovementController.AddVelocity(gravity * delta * Vector2.up);
 
-        PlayerController.MovementController.AddVelocity(delta * gravity * Vector2.up);
-        if (PlayerController.MovementController.Velocity.y < PlayerController.PlayerStats.fallVelocityCap) // max air velocity correction
-        {
-            PlayerController.MovementController.AddVelocity((PlayerController.PlayerStats.fallVelocityCap - PlayerController.MovementController.Velocity.y) * Vector2.up);
-        }
+
+        var adjustedVelocity = PlayerController.CollisionController.CollideAndSlideVel(
+            PlayerController.transform.position,
+            delta * PlayerController.MovementController.Velocity.y * Vector2.up,
+            LayerReference.TerrainLayer);
+        PlayerController.MovementController.SetVelocity(null, adjustedVelocity.y / delta);
     }
 
     public abstract float CurrentGravity();

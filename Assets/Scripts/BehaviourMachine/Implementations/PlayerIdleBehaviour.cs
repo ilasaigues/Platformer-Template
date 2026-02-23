@@ -10,8 +10,6 @@ public class PlayerIdleBehaviour : PlayerGroundedBehaviour
     public override void Enter()
     {
         base.Enter();
-        PlayerController.MovementController.SetVelocity(
-            new Vector2(PlayerController.MovementController.Velocity.x, 0));
     }
 
     public override void Exit()
@@ -19,8 +17,14 @@ public class PlayerIdleBehaviour : PlayerGroundedBehaviour
         //throw new System.NotImplementedException();
     }
 
+    public override void Update(float delta)
+    {
+
+    }
+
     public override void FixedUpdate(float delta)
     {
+        base.FixedUpdate(delta);
         //throw new System.NotImplementedException();
     }
 
