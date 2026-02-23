@@ -39,16 +39,28 @@ public class BehaviourMachine : MonoBehaviour
         }
     }
 
+    private int _watchdog = 0;
+
     public void ChangeBehaviour(Type behaviourType)
     {
         if (_allBehaviours.TryGetValue(behaviourType, out var nextBehaviour))
         {
+            if (_watchdog == 99)
+            {
+                Debug.Log("A");
+            }
+            if (_watchdog > 100)
+            {
+                throw new Exception($"WATCHDOG EXCEEDED: FROM {_currentBehaviour?.GetType()} TO {behaviourType}");
+            }
+            _watchdog++;
             Debug.Log("Entering state: " + behaviourType.ToString());
             _currentBehaviour?.Exit();
             _currentBehaviour = nextBehaviour;
             _currentBehaviour.Enter();
             CheckBehaviourChange();
         }
+        _watchdog = 0;
     }
 
 }

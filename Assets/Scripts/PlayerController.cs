@@ -23,6 +23,7 @@ public class PlayerController : MonoBehaviour
         BehaviourMachine.AddBehaviour(new PlayerFallingBehaviour(this));
         BehaviourMachine.AddBehaviour(new PlayerIdleBehaviour(this));
         BehaviourMachine.AddBehaviour(new PlayerGroundMoveBehaviour(this));
+        BehaviourMachine.AddBehaviour(new PlayerJumpingBehaviour(this));
         BehaviourMachine.ChangeBehaviour(typeof(PlayerFallingBehaviour));
     }
 

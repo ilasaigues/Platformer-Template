@@ -8,6 +8,8 @@ public class InputHandler : ScriptableObject, GameInputs.IPlayerActions
 {
     private GameInputs _gameInput;
 
+    public bool IsJumpPressed;
+
     void OnEnable()
     {
         if (_gameInput == null) _gameInput = new GameInputs();
@@ -20,14 +22,22 @@ public class InputHandler : ScriptableObject, GameInputs.IPlayerActions
         _gameInput.Player.Disable();
     }
 
-    public event Action JumpPressed;
-    public event Action JumpReleased;
-    public event Action<Vector2> MoveEvent;
+    public event Action JumpPressed = delegate { };
+    public event Action JumpReleased = delegate { };
+    public event Action<Vector2> MoveEvent = delegate { };
 
     public void OnJump(InputAction.CallbackContext context)
     {
-        if (context.phase == InputActionPhase.Performed) JumpPressed?.Invoke();
-        else if (context.phase == InputActionPhase.Canceled) JumpReleased.Invoke();
+        if (context.phase == InputActionPhase.Performed)
+        {
+            JumpPressed.Invoke();
+            IsJumpPressed = true;
+        }
+        else if (context.phase == InputActionPhase.Canceled)
+        {
+            JumpReleased.Invoke();
+            IsJumpPressed = false;
+        }
     }
 
     public void OnMove(InputAction.CallbackContext context)

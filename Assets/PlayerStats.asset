@@ -18,13 +18,13 @@ MonoBehaviour:
   airSpeed: 0
   airAccelerationTime: 0
   airDecelerationTime: 0
-  jumpVelocity: 0
-  jumpGravity: 0
+  jumpVelocity: 50
+  jumpGravity: -30
   peakGravity: 0
-  fallGravity: -4
+  fallGravity: -60
   cutoffGravity: 0
   fallVelocityCap: -8
-  peakTresholds: {x: 0, y: 0}
+  peakTresholds: {x: 0.5, y: -0.5}
   coyoteTime: 0
   jumpBufferTime: 0
   speedBonus: 0

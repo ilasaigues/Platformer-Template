@@ -7,6 +7,7 @@ public abstract class PlayerAirBehaviour : BasePlayerBehaviour
     {
         var verticalVelocity = PlayerController.MovementController.Velocity.y;
         // REDO
+        Debug.DrawRay(PlayerController.transform.position, PlayerController.MovementController.Velocity * Time.fixedDeltaTime, Color.red);
         if (verticalVelocity <= 0 &&  // going down and touching the ground
          PlayerController.CollisionController.CheckCollision(
             PlayerController.transform.position,

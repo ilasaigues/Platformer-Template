@@ -11,7 +11,6 @@ public abstract class PlayerGroundedBehaviour : BasePlayerBehaviour
     {
     }
 
-
     public override void Update(float delta)
     {
     }
@@ -29,12 +28,17 @@ public abstract class PlayerGroundedBehaviour : BasePlayerBehaviour
 
     public override BehaviourChangeRequest VerifyBehaviour()
     {
+        if (PlayerController.InputHandler.IsJumpPressed)
+        {
+            return BehaviourChangeRequest.New<PlayerJumpingBehaviour>();
+        }
+        Debug.DrawRay(PlayerController.transform.position, Vector2.down);
         if (!PlayerController.CollisionController.CheckCollision(
             PlayerController.transform.position,
-            Vector2.down * 0.1f,
+            Vector2.down,
             LayerReference.TerrainLayer))
         {
-            return new BehaviourChangeRequest() { NewBehaviourType = typeof(PlayerFallingBehaviour) };
+            return BehaviourChangeRequest.New<PlayerFallingBehaviour>();
         }
         return null;
     }
