@@ -31,5 +31,6 @@ MonoBehaviour:
   jumpBonus: 0
   extraJumps: 0
   gravityMult: 0
-  ceilingCorrection: 0
-  ledgeCorrection: 0
+  ceilingCorrection: 0.25
+  ledgeCorrectionUp: 0.25
+  ledgeCorrectionDown: 0.25

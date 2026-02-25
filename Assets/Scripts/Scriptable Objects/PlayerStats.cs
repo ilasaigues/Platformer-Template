@@ -28,6 +28,7 @@ public class PlayerStats : ScriptableObject
     public float gravityMult;
     [Header("Adjustments")]
     public float ceilingCorrection;
-    public float ledgeCorrection;
+    public float ledgeCorrectionUp;
+    public float ledgeCorrectionDown;
 
 }
