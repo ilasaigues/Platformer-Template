@@ -1,3 +1,5 @@
+using System;
+
 public class PlayerFallingBehaviour : PlayerAirBehaviour
 
 {
@@ -26,6 +28,19 @@ public class PlayerFallingBehaviour : PlayerAirBehaviour
 
     public override void Update(float delta)
     {
-        //throw new System.NotImplementedException();
+    }
+
+    public override BehaviourChangeRequest VerifyBehaviour()
+    {
+        var baseValue = base.VerifyBehaviour();
+        if (baseValue != null) return baseValue;
+        if (PlayerController.InputHandler.JumpButton.JustPressed &&
+           (DateTime.Now - PlayerController.MovementController.TimeLeftGround).TotalSeconds <=
+           PlayerController.PlayerStats.coyoteTime &&
+           PlayerController.TryJump())
+        {
+            return BehaviourChangeRequest.New<PlayerJumpingBehaviour>();
+        }
+        return null;
     }
 }

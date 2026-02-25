@@ -25,7 +25,7 @@ MonoBehaviour:
   cutoffGravity: -80
   fallVelocityCap: -8
   peakTresholds: {x: 0.5, y: -0.5}
-  coyoteTime: 0
+  coyoteTime: 0.1
   jumpBufferTime: 0.25
   speedBonus: 0
   jumpBonus: 0

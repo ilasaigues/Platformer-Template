@@ -18,12 +18,6 @@ public abstract class PlayerGroundedBehaviour : BasePlayerBehaviour
     {
         var gravity = PlayerController.PlayerStats.fallGravity;
         PlayerController.MovementController.AddVelocity(gravity * delta * Vector2.up);
-
-        /*var adjustedVelocity = PlayerController.CollisionController.CollideAndSlideVel(
-            PlayerController.transform.position,
-            delta * PlayerController.MovementController.Velocity.y * Vector2.up,
-            LayerReference.TerrainLayer);
-        PlayerController.MovementController.SetVelocity(null, adjustedVelocity.y / delta);*/
     }
 
     public override BehaviourChangeRequest VerifyBehaviour()

@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
@@ -8,6 +9,8 @@ public class MovementController : MonoBehaviour
     public Vector2 Velocity { get; private set; }
 
     public bool Grounded = false;
+
+    public DateTime TimeLeftGround;
 
     private Rigidbody2D _rb;
     private CollisionController _collisonController;
@@ -36,6 +39,7 @@ public class MovementController : MonoBehaviour
         {
             if (correctedVelocity.y != 0)
             {
+                TimeLeftGround = DateTime.Now;
                 Grounded = false;
             }
         }
