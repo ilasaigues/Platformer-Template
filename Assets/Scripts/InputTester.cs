@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class InputTester : MonoBehaviour
 {
-    public InputHandler inputHandler;
+    /*public InputHandler inputHandler;
     CollisionTester _collisionTester;
     SpriteRenderer _sprite;
 
@@ -30,5 +30,5 @@ public class InputTester : MonoBehaviour
     {
         _collisionTester.movementDirection = direction;
     }
-
+*/
 }

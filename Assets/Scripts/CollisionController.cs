@@ -33,8 +33,8 @@ public class CollisionController : MonoBehaviour
             Vector2 leftover = vel - snapToSurface;
             if (snapToSurface.magnitude <= SkinWidth) snapToSurface = Vector2.zero;
             float mag = leftover.magnitude;
-            leftover = Vector3.ProjectOnPlane(leftover, hit.normal).normalized;
-            leftover *= mag;
+            leftover = Vector3.ProjectOnPlane(leftover, hit.normal);//.normalized;
+            //leftover *= mag;
             return snapToSurface + CollideAndSlideVel(position + snapToSurface, leftover, collisionLayer, recursionDepth + 1);
         }
 
@@ -43,7 +43,7 @@ public class CollisionController : MonoBehaviour
 
     public bool CheckCollision(Vector2 position, Vector2 vel, LayerMask collisionLayer)
     {
-        return Physics2D.BoxCast(position, _collider.bounds.size, 0, vel.normalized, vel.magnitude, collisionLayer).collider != null;
+        return Physics2D.BoxCast(position, _collider.bounds.size, 0, vel.normalized, vel.magnitude, collisionLayer);
     }
 
 }

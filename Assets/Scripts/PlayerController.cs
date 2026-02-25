@@ -12,8 +12,26 @@ public class PlayerController : MonoBehaviour
 
     public BehaviourMachine BehaviourMachine;
 
-    public Vector2 LastDirectionInput;
+    public Vector2 LastDirectionInput => InputHandler.MoveAxis.LastValue;
 
+    public int MaxJumps => 1 + PlayerStats.extraJumps;
+
+    public int RemainingJumps = 1;
+
+    public bool TryJump()
+    {
+        if (RemainingJumps > 0)
+        {
+            RemainingJumps--;
+            return true;
+        }
+        return false;
+    }
+
+    public void ResetJumps()
+    {
+        RemainingJumps = MaxJumps;
+    }
 
     void Start()
     {
@@ -25,18 +43,6 @@ public class PlayerController : MonoBehaviour
         BehaviourMachine.AddBehaviour(new PlayerGroundMoveBehaviour(this));
         BehaviourMachine.AddBehaviour(new PlayerJumpingBehaviour(this));
         BehaviourMachine.ChangeBehaviour(typeof(PlayerFallingBehaviour));
-    }
-
-    void OnEnable()
-    {
-        InputHandler.MoveEvent += MoveEvent;
-    }
-    public void OnDisable()
-    {
-        InputHandler.MoveEvent -= MoveEvent;
-    }
-    private void MoveEvent(Vector2 vector)
-    {
-        LastDirectionInput = vector;
+        ResetJumps();
     }
 }

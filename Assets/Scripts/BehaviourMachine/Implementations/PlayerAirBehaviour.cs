@@ -8,12 +8,10 @@ public abstract class PlayerAirBehaviour : BasePlayerBehaviour
         var verticalVelocity = PlayerController.MovementController.Velocity.y;
         // REDO
         Debug.DrawRay(PlayerController.transform.position, PlayerController.MovementController.Velocity * Time.fixedDeltaTime, Color.red);
-        if (verticalVelocity <= 0 &&  // going down and touching the ground
-         PlayerController.CollisionController.CheckCollision(
-            PlayerController.transform.position,
-            PlayerController.MovementController.Velocity * Time.fixedDeltaTime,
-            LayerReference.TerrainLayer))
+        if (verticalVelocity <= 0 &&
+            PlayerController.MovementController.Grounded)
         {
+            Debug.Log($"Vel: {verticalVelocity} | Grounded : {PlayerController.MovementController.Grounded}");
             return new BehaviourChangeRequest() { NewBehaviourType = typeof(PlayerIdleBehaviour) };
         }
 
@@ -25,12 +23,24 @@ public abstract class PlayerAirBehaviour : BasePlayerBehaviour
         var gravity = CurrentGravity();
         PlayerController.MovementController.AddVelocity(gravity * delta * Vector2.up);
 
+        float currentVelocity = PlayerController.MovementController.Velocity.x;
+        float targetDirection = PlayerController.LastDirectionInput.x.Sign0();
+        float maxSpeed = PlayerController.PlayerStats.airSpeed;
 
-        var adjustedVelocity = PlayerController.CollisionController.CollideAndSlideVel(
-            PlayerController.transform.position,
-            delta * PlayerController.MovementController.Velocity.y * Vector2.up,
-            LayerReference.TerrainLayer);
-        PlayerController.MovementController.SetVelocity(null, adjustedVelocity.y / delta);
+        float acceleration;
+        if (targetDirection == 0 || currentVelocity.Sign0() * targetDirection.Sign0() == -1)
+        {
+            acceleration = maxSpeed / PlayerController.PlayerStats.airDecelerationTime * delta;
+        }
+        else
+        {
+            acceleration = maxSpeed / PlayerController.PlayerStats.airAccelerationTime * delta;
+        }
+
+        float difference = maxSpeed * targetDirection - currentVelocity;
+        acceleration = Mathf.Clamp(acceleration, 0, Mathf.Abs(difference)) * Mathf.Sign(difference);
+
+        PlayerController.MovementController.AddVelocity(acceleration * Vector2.right);
     }
 
     public abstract float CurrentGravity();

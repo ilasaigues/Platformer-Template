@@ -20,11 +20,8 @@ public class PlayerGroundMoveBehaviour : PlayerGroundedBehaviour
     {
         base.FixedUpdate(delta);
         float currentVelocity = PlayerController.MovementController.Velocity.x;
-        float targetDirection = PlayerController.LastDirectionInput.x == 0 ? 0 : Mathf.Sign(PlayerController.LastDirectionInput.x);
+        float targetDirection = PlayerController.LastDirectionInput.x.Sign0();
         float maxSpeed = PlayerController.PlayerStats.groundedSpeed;
-
-
-        // Check for wall collisions to prevent further movement using GetClosestCollisonSurfaceDistance
 
         float acceleration;
         if (targetDirection == 0 || currentVelocity.Sign0() * targetDirection.Sign0() == -1)
@@ -39,15 +36,13 @@ public class PlayerGroundMoveBehaviour : PlayerGroundedBehaviour
         float difference = maxSpeed * targetDirection - currentVelocity;
         acceleration = Mathf.Clamp(acceleration, 0, Mathf.Abs(difference)) * Mathf.Sign(difference);
 
-        // REDO
-
         PlayerController.MovementController.AddVelocity(acceleration * Vector2.right);
 
-        var adjustedVelocity = PlayerController.CollisionController.CollideAndSlideVel(
+        /*var adjustedVelocity = PlayerController.CollisionController.CollideAndSlideVel(
             PlayerController.transform.position,
             delta * PlayerController.MovementController.Velocity.x * Vector2.right,
             LayerReference.TerrainLayer);
-        PlayerController.MovementController.SetVelocity(adjustedVelocity.x / delta, null);
+        PlayerController.MovementController.SetVelocity(adjustedVelocity.x / delta, null);*/
 
     }
 

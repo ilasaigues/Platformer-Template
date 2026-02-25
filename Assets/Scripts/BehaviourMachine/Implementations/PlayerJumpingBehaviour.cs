@@ -1,7 +1,10 @@
+using System;
 using UnityEngine;
 public class PlayerJumpingBehaviour : PlayerAirBehaviour
 
 {
+    private bool _jumpHeld = false;
+    private bool IsInPeak => PlayerController.MovementController.Velocity.y < PlayerController.PlayerStats.peakTresholds.x;
     public PlayerJumpingBehaviour(PlayerController playerController) : base(playerController)
     {
     }
@@ -10,9 +13,11 @@ public class PlayerJumpingBehaviour : PlayerAirBehaviour
     {
         var newBehaviuourRequest = base.VerifyBehaviour();
         if (newBehaviuourRequest != null) return newBehaviuourRequest;
-        if (PlayerController.MovementController.Velocity.y < PlayerController.PlayerStats.peakTresholds.x)
+
+        if (PlayerController.MovementController.Velocity.y < PlayerController.PlayerStats.peakTresholds.y ||
+            (IsInPeak && !_jumpHeld))
         {
-            //TODO: Send to peak, not falling!
+
             return BehaviourChangeRequest.New<PlayerFallingBehaviour>();
         }
         return null;
@@ -20,16 +25,30 @@ public class PlayerJumpingBehaviour : PlayerAirBehaviour
 
     public override float CurrentGravity()
     {
-        return PlayerController.PlayerStats.jumpGravity;
+        if (IsInPeak)
+        {
+            return PlayerController.PlayerStats.peakGravity;
+        }
+
+        return _jumpHeld ? PlayerController.PlayerStats.jumpGravity : PlayerController.PlayerStats.cutoffGravity;
     }
 
     public override void Enter()
     {
+        _jumpHeld = true;
         PlayerController.MovementController.SetVelocity(null, PlayerController.PlayerStats.jumpVelocity);
+        PlayerController.InputHandler.JumpButton.OnRelease += JumpReleased;
+    }
+
+    private void JumpReleased()
+    {
+        _jumpHeld = false;
     }
 
     public override void Exit()
     {
+        _jumpHeld = false;
+        PlayerController.InputHandler.JumpButton.OnRelease -= JumpReleased;
     }
 
     public override void FixedUpdate(float delta)

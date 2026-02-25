@@ -19,24 +19,24 @@ public abstract class PlayerGroundedBehaviour : BasePlayerBehaviour
         var gravity = PlayerController.PlayerStats.fallGravity;
         PlayerController.MovementController.AddVelocity(gravity * delta * Vector2.up);
 
-        var adjustedVelocity = PlayerController.CollisionController.CollideAndSlideVel(
+        /*var adjustedVelocity = PlayerController.CollisionController.CollideAndSlideVel(
             PlayerController.transform.position,
             delta * PlayerController.MovementController.Velocity.y * Vector2.up,
             LayerReference.TerrainLayer);
-        PlayerController.MovementController.SetVelocity(null, adjustedVelocity.y / delta);
+        PlayerController.MovementController.SetVelocity(null, adjustedVelocity.y / delta);*/
     }
 
     public override BehaviourChangeRequest VerifyBehaviour()
     {
-        if (PlayerController.InputHandler.IsJumpPressed)
+        if ((PlayerController.InputHandler.JumpButton.JustPressed ||
+            PlayerController.InputHandler.JumpButton.TimeSinceLastPressed.TotalSeconds <=
+            PlayerController.PlayerStats.jumpBufferTime) &&
+            PlayerController.TryJump())
         {
             return BehaviourChangeRequest.New<PlayerJumpingBehaviour>();
         }
         Debug.DrawRay(PlayerController.transform.position, Vector2.down);
-        if (!PlayerController.CollisionController.CheckCollision(
-            PlayerController.transform.position,
-            Vector2.down,
-            LayerReference.TerrainLayer))
+        if (!PlayerController.MovementController.Grounded)
         {
             return BehaviourChangeRequest.New<PlayerFallingBehaviour>();
         }
@@ -45,6 +45,7 @@ public abstract class PlayerGroundedBehaviour : BasePlayerBehaviour
 
     public override void Enter()
     {
+        PlayerController.ResetJumps();
     }
 
 }
