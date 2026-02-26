@@ -14,6 +14,13 @@ public class PlayerJumpingBehaviour : PlayerAirBehaviour
         var newBehaviuourRequest = base.VerifyBehaviour();
         if (newBehaviuourRequest != null) return newBehaviuourRequest;
 
+
+        if (!_jumpHeld && PlayerController.InputHandler.JumpButton.JustPressed &&
+            PlayerController.TryJump())
+        {
+            return BehaviourChangeRequest.New<PlayerJumpingBehaviour>();
+        }
+
         if (PlayerController.MovementController.Velocity.y < PlayerController.PlayerStats.peakTresholds.y ||
             (IsInPeak && !_jumpHeld))
         {
@@ -35,7 +42,7 @@ public class PlayerJumpingBehaviour : PlayerAirBehaviour
 
     public override void Enter()
     {
-        _jumpHeld = true;
+        _jumpHeld = PlayerController.InputHandler.JumpButton.Pressed;
         PlayerController.MovementController.SetVelocity(null, PlayerController.PlayerStats.jumpVelocity);
         PlayerController.InputHandler.JumpButton.OnRelease += JumpReleased;
     }

@@ -34,12 +34,17 @@ public class PlayerFallingBehaviour : PlayerAirBehaviour
     {
         var baseValue = base.VerifyBehaviour();
         if (baseValue != null) return baseValue;
-        if (PlayerController.InputHandler.JumpButton.JustPressed &&
-           (DateTime.Now - PlayerController.MovementController.TimeLeftGround).TotalSeconds <=
-           PlayerController.PlayerStats.coyoteTime &&
-           PlayerController.TryJump())
+
+        bool jumpRequested = PlayerController.InputHandler.JumpButton.JustPressed;
+        if (jumpRequested)
         {
-            return BehaviourChangeRequest.New<PlayerJumpingBehaviour>();
+            bool canDoubleJump = PlayerController.MaxJumps > 1 && PlayerController.RemainingJumps < PlayerController.MaxJumps; // I have an extra jump
+            bool isInCoyoteTime = (DateTime.Now - PlayerController.MovementController.TimeLeftGround).TotalSeconds <=
+               PlayerController.PlayerStats.coyoteTime;
+            if ((isInCoyoteTime && PlayerController.TryJump()) || (canDoubleJump && PlayerController.TryJump()))
+            {
+                return BehaviourChangeRequest.New<PlayerJumpingBehaviour>();
+            }
         }
         return null;
     }

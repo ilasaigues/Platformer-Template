@@ -20,6 +20,7 @@ public class PlayerController : MonoBehaviour
 
     public bool TryJump()
     {
+        Debug.Log("Trying jump | Jumps left: " + RemainingJumps);
         if (RemainingJumps > 0)
         {
             RemainingJumps--;

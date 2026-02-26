@@ -7,12 +7,13 @@ public abstract class PlayerAirBehaviour : BasePlayerBehaviour
     {
         var verticalVelocity = PlayerController.MovementController.Velocity.y;
         // REDO
+
+
         Debug.DrawRay(PlayerController.transform.position, PlayerController.MovementController.Velocity * Time.fixedDeltaTime, Color.red);
         if (verticalVelocity <= 0 &&
             PlayerController.MovementController.Grounded)
         {
-            Debug.Log($"Vel: {verticalVelocity} | Grounded : {PlayerController.MovementController.Grounded}");
-            return new BehaviourChangeRequest() { NewBehaviourType = typeof(PlayerIdleBehaviour) };
+            return BehaviourChangeRequest.New<PlayerIdleBehaviour>();
         }
 
         return null;

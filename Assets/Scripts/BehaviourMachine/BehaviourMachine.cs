@@ -32,8 +32,7 @@ public class BehaviourMachine : MonoBehaviour
 
     private void CheckBehaviourChange()
     {
-        if (_currentBehaviour.VerifyBehaviour() is BehaviourChangeRequest changeRequest &&
-            _currentBehaviour.GetType() != changeRequest.NewBehaviourType)
+        if (_currentBehaviour.VerifyBehaviour() is BehaviourChangeRequest changeRequest)
         {
             ChangeBehaviour(changeRequest.NewBehaviourType);
         }

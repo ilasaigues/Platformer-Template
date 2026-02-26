@@ -27,6 +27,13 @@ public class MovementController : MonoBehaviour
 
     void FixedUpdate()
     {
+        if (Velocity.y < _playerController.PlayerStats.fallVelocityCap)
+        {
+            SetVelocity(null, _playerController.PlayerStats.fallVelocityCap);
+        }
+
+        Vector2 originalVertical = Time.fixedDeltaTime * Velocity.y * Vector2.up;
+
         Vector2 originalHorizontal = Time.fixedDeltaTime * Velocity.x * Vector2.right;
         var correctedHorizontal = _collisonController.CollideAndSlideVel(transform.position, originalHorizontal, LayerReference.TerrainLayer);
         if (correctedHorizontal.magnitude < Mathf.Abs(originalHorizontal.x)) // if collided and shrunk vector
@@ -47,7 +54,6 @@ public class MovementController : MonoBehaviour
             }
         }
 
-        Vector2 originalVertical = Time.fixedDeltaTime * Velocity.y * Vector2.up;
 
         var correctedVertical = _collisonController.CollideAndSlideVel(transform.position + (Vector3)correctedHorizontal, originalVertical, LayerReference.TerrainLayer);
 
