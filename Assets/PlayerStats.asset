@@ -23,13 +23,13 @@ MonoBehaviour:
   peakGravity: -10
   fallGravity: -50
   cutoffGravity: -80
-  fallVelocityCap: -8
+  fallVelocityCap: -18
   peakTresholds: {x: 0.5, y: -0.5}
   coyoteTime: 0.1
   jumpBufferTime: 0.25
   speedBonus: 0
   jumpBonus: 0
-  extraJumps: 0
+  extraJumps: 1
   gravityMult: 0
   ceilingCorrection: 0.25
   ledgeCorrectionUp: 0.25
