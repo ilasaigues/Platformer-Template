@@ -690,6 +690,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerController
   PlayerStats: {fileID: 11400000, guid: b9753e42c5c505642a5a2f1f7d7aa3c9, type: 2}
+  AbilityStats: {fileID: 11400000, guid: 30ce2b2d25088d64896145fbcd04adc2, type: 2}
   CollisionController: {fileID: 0}
   MovementController: {fileID: 0}
   InputHandler: {fileID: 592379735}

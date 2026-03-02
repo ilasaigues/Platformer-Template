@@ -22,6 +22,11 @@ public abstract class PlayerGroundedBehaviour : BasePlayerBehaviour
 
     public override BehaviourChangeRequest VerifyBehaviour()
     {
+        if (base.VerifyBehaviour() is BehaviourChangeRequest baseBehaviour)
+        {
+            return baseBehaviour;
+        }
+
         if ((PlayerController.InputHandler.JumpButton.JustPressed ||
             PlayerController.InputHandler.JumpButton.TimeSinceLastPressed.TotalSeconds <=
             PlayerController.PlayerStats.jumpBufferTime) &&
@@ -39,7 +44,7 @@ public abstract class PlayerGroundedBehaviour : BasePlayerBehaviour
 
     public override void Enter()
     {
-        PlayerController.ResetJumps();
+        PlayerController.ResetOnGrounded();
     }
 
 }

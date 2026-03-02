@@ -9,6 +9,7 @@ public class MovementController : MonoBehaviour
     public Vector2 Velocity { get; private set; }
 
     public bool Grounded = false;
+    public int LastHorizontalDirection;
 
     public DateTime TimeLeftGround;
 
@@ -98,6 +99,11 @@ public class MovementController : MonoBehaviour
         // YELLOW AND GREEN SPEEEEEED LINE
         Debug.DrawRay((Vector2)transform.position, correctedVelocity / 2, Color.green, 1);
         Debug.DrawRay((Vector2)transform.position + correctedVelocity / 2, correctedVelocity / 2, Color.yellow, 1);
+
+        if (correctedVelocity.x != 0)
+        {
+            LastHorizontalDirection = correctedVelocity.x.Sign0();
+        }
 
         transform.position = transform.position + (Vector3)correctedVelocity;
     }

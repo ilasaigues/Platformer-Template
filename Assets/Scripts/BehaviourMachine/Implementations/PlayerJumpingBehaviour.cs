@@ -45,6 +45,7 @@ public class PlayerJumpingBehaviour : PlayerAirBehaviour
         _jumpHeld = PlayerController.InputHandler.JumpButton.Pressed;
         PlayerController.MovementController.SetVelocity(null, PlayerController.PlayerStats.jumpVelocity);
         PlayerController.InputHandler.JumpButton.OnRelease += JumpReleased;
+        PlayerController.RemainingJumps--;
     }
 
     private void JumpReleased()

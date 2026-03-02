@@ -9,6 +9,7 @@ public class BehaviourMachine : MonoBehaviour
 
     BaseBehaviour _currentBehaviour;
     public string GetBehaviourName => _currentBehaviour?.GetType().Name;
+    public Type GetBehaviourType => _currentBehaviour?.GetType();
 
 
     public void AddBehaviour(BaseBehaviour newBehaviour)
@@ -36,6 +37,15 @@ public class BehaviourMachine : MonoBehaviour
         {
             ChangeBehaviour(changeRequest.NewBehaviourType);
         }
+    }
+
+    public T GetBehaviour<T>() where T : BaseBehaviour
+    {
+        if (_allBehaviours.TryGetValue(typeof(T), out BaseBehaviour behaviour))
+        {
+            return behaviour as T;
+        }
+        return null;
     }
 
     private int _watchdog = 0;

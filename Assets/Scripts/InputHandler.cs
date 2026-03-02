@@ -1,19 +1,35 @@
 using System;
+using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 
 public class InputHandler : MonoBehaviour, GameInputs.IPlayerActions
 {
     private GameInputs _gameInput;
 
     public InputButtonWrapper JumpButton;
+    public InputButtonWrapper RockButton;
+    public InputButtonWrapper DashButton;
+
+    List<InputButtonWrapper> _buttons = new();
     public InputAxisWrapper MoveAxis;
 
     void Start()
     {
         MoveAxis = new InputAxisWrapper();
-        JumpButton = new InputButtonWrapper();
+        JumpButton = GetNewButton();
+        RockButton = GetNewButton();
+        DashButton = GetNewButton();
+    }
+
+
+    InputButtonWrapper GetNewButton()
+    {
+        var wrapper = new InputButtonWrapper();
+        _buttons.Add(wrapper);
+        return wrapper;
     }
 
     void OnEnable()
@@ -42,12 +58,21 @@ public class InputHandler : MonoBehaviour, GameInputs.IPlayerActions
 
     void Update()
     {
-        JumpButton.Update();
+        _buttons.ForEach(button => button.Update());
     }
 
     void LateUpdate()
     {
-        JumpButton.LateUpdate();
+        _buttons.ForEach(button => button.LateUpdate());
     }
 
+    public void OnRock(InputAction.CallbackContext context)
+    {
+        RockButton.OnInputEvent(context);
+    }
+
+    public void OnDash(InputAction.CallbackContext context)
+    {
+        DashButton.OnInputEvent(context);
+    }
 }

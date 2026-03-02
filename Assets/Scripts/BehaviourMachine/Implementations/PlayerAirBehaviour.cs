@@ -5,6 +5,11 @@ public abstract class PlayerAirBehaviour : BasePlayerBehaviour
     public PlayerAirBehaviour(PlayerController playerController) : base(playerController) { }
     public override BehaviourChangeRequest VerifyBehaviour()
     {
+        if (base.VerifyBehaviour() is BehaviourChangeRequest baseBehaviour)
+        {
+            return baseBehaviour;
+        }
+
         var verticalVelocity = PlayerController.MovementController.Velocity.y;
         // REDO
 

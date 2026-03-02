@@ -1,7 +1,6 @@
 using System;
 
 public class PlayerFallingBehaviour : PlayerAirBehaviour
-
 {
     public PlayerFallingBehaviour(PlayerController playerController) : base(playerController)
     {
@@ -34,6 +33,9 @@ public class PlayerFallingBehaviour : PlayerAirBehaviour
     {
         var baseValue = base.VerifyBehaviour();
         if (baseValue != null) return baseValue;
+
+
+
 
         bool jumpRequested = PlayerController.InputHandler.JumpButton.JustPressed;
         if (jumpRequested)
