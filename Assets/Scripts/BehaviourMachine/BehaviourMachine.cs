@@ -54,10 +54,6 @@ public class BehaviourMachine : MonoBehaviour
     {
         if (_allBehaviours.TryGetValue(behaviourType, out var nextBehaviour))
         {
-            if (_watchdog == 99)
-            {
-                Debug.Log("A");
-            }
             if (_watchdog > 100)
             {
                 throw new Exception($"WATCHDOG EXCEEDED: FROM {_currentBehaviour?.GetType()} TO {behaviourType}");

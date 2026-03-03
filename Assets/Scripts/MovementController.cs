@@ -71,8 +71,8 @@ public class MovementController : MonoBehaviour
             useLayerMask = true,
             layerMask = LayerReference.OneWayPlatformLayer,
             useNormalAngle = true,
-            maxNormalAngle = 89,
-            minNormalAngle = 160,
+            maxNormalAngle = 91,
+            minNormalAngle = 89,
         };
 
         var oneWayCorrection = _collisonController.CollideAndSlideVel((Vector2)_footColliderBounds.center + correctedHorizontal, _footColliderBounds, originalVertical, oneWayFilter);
@@ -94,7 +94,7 @@ public class MovementController : MonoBehaviour
             OnOneWayPlatform = false;
         }
 
-        if (!isOneWayCorrection && originalVertical.y > 0 && correctedVertical.magnitude < Mathf.Abs(originalVertical.y)) // if collided and shrunk vector
+        if (!isOneWayCorrection && !Grounded && originalVertical.y > 0 && correctedVertical.magnitude < Mathf.Abs(originalVertical.y)) // if collided and shrunk vector
         {
             var correction = GetCorrection(
                 transform.position,
@@ -115,15 +115,16 @@ public class MovementController : MonoBehaviour
         var correctedVelocity = correctedHorizontal + correctedVertical;
         if (Grounded)
         {
-            if (correctedVelocity.y != 0)
+            if (!Mathf.Approximately(correctedVelocity.y, 0))
             {
+                Debug.Log("Current Vertical: " + correctedVelocity.y);
                 TimeLeftGround = DateTime.Now;
                 Grounded = false;
             }
         }
         else
         {
-            if (Velocity.y < 0 && correctedVelocity.y == 0)
+            if (Velocity.y < 0 && Mathf.Approximately(correctedVelocity.y, 0))
             {
                 Grounded = true;
             }
@@ -131,8 +132,8 @@ public class MovementController : MonoBehaviour
         Velocity = correctedVelocity / Time.fixedDeltaTime;
 
         // YELLOW AND GREEN SPEEEEEED LINE
-        //        Debug.DrawRay((Vector2)transform.position, correctedVelocity / 2, Color.green, 1);
-        //      Debug.DrawRay((Vector2)transform.position + correctedVelocity / 2, correctedVelocity / 2, Color.yellow, 1);
+        Debug.DrawRay((Vector2)transform.position, correctedVelocity / 2, Color.green, 1);
+        Debug.DrawRay((Vector2)transform.position + correctedVelocity / 2, correctedVelocity / 2, Color.yellow, 1);
 
         if (correctedVelocity.x != 0)
         {

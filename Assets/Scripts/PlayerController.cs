@@ -72,7 +72,7 @@ public class PlayerController : MonoBehaviour
 
     public bool TryJump()
     {
-        Debug.Log("Trying jump | Jumps left: " + RemainingJumps);
+        //Debug.Log("Trying jump | Jumps left: " + RemainingJumps);
         return RemainingJumps > 0;
     }
 

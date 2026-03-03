@@ -9,7 +9,7 @@ public class CollisionController : MonoBehaviour
 
 
     private const int MaxCollideBounces = 5;
-    private const float SkinWidth = 0.015f;
+    public float SkinWidth = 0.015f;
 
     public Collider2D MainCollider;
     public Collider2D FootCollider;
@@ -27,16 +27,35 @@ public class CollisionController : MonoBehaviour
 
     public Vector2 CollideAndSlideVel(Vector2 position, Bounds bounds, Vector2 vel, ContactFilter2D filter, int recursionDepth = 0)
     {
-        bounds.Expand(-2 * SkinWidth);
+        // shrink once, don't shrink Z
+        if (recursionDepth == 0)
+        {
+            bounds.Expand(-2 * SkinWidth * Vector2.one);
+        }
+
         if (recursionDepth >= MaxCollideBounces) return Vector2.zero;
+        if (vel.magnitude < 1e-6) return Vector2.zero;
         float dist = vel.magnitude + SkinWidth;
 
         RaycastHit2D[] hits = new RaycastHit2D[5];
         int hitCount = Physics2D.BoxCast(position, bounds.size, 0, vel.normalized, filter, hits, dist);
 
-        if (hitCount > 0)
+        for (int i = 0; i < hits.Length; i++)
         {
-            var closestHit = hits.Where(h => h).OrderBy(h => h.distance).First();
+            var hit = hits[i];
+            if (hit)
+            {
+                if (hit.distance * hit.fraction == 0)
+                {
+                    Debug.DrawLine(position, hit.point, Color.red, .1f);
+                }
+            }
+        }
+
+
+        if (hits.Any(hit => hit))
+        {
+            var closestHit = hits.First(hit => hit);
             Vector2 snapToSurface = vel.normalized * (closestHit.distance - SkinWidth);
             Vector2 leftover = vel - snapToSurface;
             if (snapToSurface.magnitude <= SkinWidth) snapToSurface = Vector2.zero;

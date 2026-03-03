@@ -15,7 +15,6 @@ public class TestBehaviourDisplay : MonoBehaviour
     {
         _ui = GetComponent<UIDocument>();
         _label = _ui.rootVisualElement.Q<Label>("CurrentStateLabel");
-
     }
     void Update()
     {
