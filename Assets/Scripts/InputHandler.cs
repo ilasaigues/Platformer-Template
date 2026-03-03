@@ -16,7 +16,7 @@ public class InputHandler : MonoBehaviour, GameInputs.IPlayerActions
     List<InputButtonWrapper> _buttons = new();
     public InputAxisWrapper MoveAxis;
 
-    void Start()
+    void Awake()
     {
         MoveAxis = new InputAxisWrapper();
         JumpButton = GetNewButton();

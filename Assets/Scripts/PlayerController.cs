@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 [RequireComponent(typeof(CollisionController))]
 [RequireComponent(typeof(MovementController))]
@@ -20,6 +21,54 @@ public class PlayerController : MonoBehaviour
     public int RemainingJumps = 1;
     public int RemainingDashes = 1;
     public SpriteRenderer SpriteRenderer;
+
+    void Start()
+    {
+        SpriteRenderer = gameObject.GetOrAddComponent<SpriteRenderer>();
+        CollisionController = gameObject.GetOrAddComponent<CollisionController>();
+        MovementController = gameObject.GetOrAddComponent<MovementController>();
+        BehaviourMachine = gameObject.GetOrAddComponent<BehaviourMachine>();
+        BehaviourMachine.AddBehaviour(new PlayerFallingBehaviour(this));
+        BehaviourMachine.AddBehaviour(new PlayerIdleBehaviour(this));
+        BehaviourMachine.AddBehaviour(new PlayerGroundMoveBehaviour(this));
+        BehaviourMachine.AddBehaviour(new PlayerJumpingBehaviour(this));
+        BehaviourMachine.AddBehaviour(new PlayerRockBehaviour(this)
+        {
+            Enabled = true
+        });
+        BehaviourMachine.AddBehaviour(new PlayerDashBehaviour(this)
+        {
+            Enabled = true
+        });
+        BehaviourMachine.ChangeBehaviour(typeof(PlayerFallingBehaviour));
+        ResetJumps();
+    }
+
+    void OnEnable()
+    {
+        InputHandler.JumpButton.OnPress += OnJumpPressed;
+    }
+
+
+    void OnDisable()
+    {
+        InputHandler.JumpButton.OnPress -= OnJumpPressed;
+    }
+
+    private void OnJumpPressed()
+    {
+        if (MovementController.Grounded &&
+            MovementController.OnOneWayPlatform &&
+            InputHandler.MoveAxis.LastValue.y < 0 &&
+            Mathf.Abs(InputHandler.MoveAxis.LastValue.y) >= Mathf.Abs(InputHandler.MoveAxis.LastValue.x))
+        {
+            InputHandler.JumpButton.Pressed = false;
+            InputHandler.JumpButton.JustPressed = false;
+            InputHandler.JumpButton.TimeLastPressed = DateTime.Now - TimeSpan.FromSeconds(PlayerStats.jumpBufferTime * 2);
+            MovementController.IgnoreOneWay = true;
+        }
+    }
+
 
     public bool TryJump()
     {
@@ -58,25 +107,5 @@ public class PlayerController : MonoBehaviour
         return null;
     }
 
-    void Start()
-    {
-        SpriteRenderer = gameObject.GetOrAddComponent<SpriteRenderer>();
-        CollisionController = gameObject.GetOrAddComponent<CollisionController>();
-        MovementController = gameObject.GetOrAddComponent<MovementController>();
-        BehaviourMachine = gameObject.GetOrAddComponent<BehaviourMachine>();
-        BehaviourMachine.AddBehaviour(new PlayerFallingBehaviour(this));
-        BehaviourMachine.AddBehaviour(new PlayerIdleBehaviour(this));
-        BehaviourMachine.AddBehaviour(new PlayerGroundMoveBehaviour(this));
-        BehaviourMachine.AddBehaviour(new PlayerJumpingBehaviour(this));
-        BehaviourMachine.AddBehaviour(new PlayerRockBehaviour(this)
-        {
-            Enabled = true
-        });
-        BehaviourMachine.AddBehaviour(new PlayerDashBehaviour(this)
-        {
-            Enabled = true
-        });
-        BehaviourMachine.ChangeBehaviour(typeof(PlayerFallingBehaviour));
-        ResetJumps();
-    }
+
 }

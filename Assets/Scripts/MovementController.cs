@@ -9,13 +9,19 @@ public class MovementController : MonoBehaviour
     public Vector2 Velocity { get; private set; }
 
     public bool Grounded = false;
+    public bool OnOneWayPlatform = false;
     public int LastHorizontalDirection;
 
     public DateTime TimeLeftGround;
 
+    public bool IgnoreOneWay = false;
+
     private Rigidbody2D _rb;
     private CollisionController _collisonController;
     private PlayerController _playerController;
+
+    private Bounds _mainColliderBounds => _collisonController.MainCollider.bounds;
+    private Bounds _footColliderBounds => _collisonController.FootCollider.bounds;
 
     void Awake()
     {
@@ -36,7 +42,7 @@ public class MovementController : MonoBehaviour
         Vector2 originalVertical = Time.fixedDeltaTime * Velocity.y * Vector2.up;
 
         Vector2 originalHorizontal = Time.fixedDeltaTime * Velocity.x * Vector2.right;
-        var correctedHorizontal = _collisonController.CollideAndSlideVel(transform.position, originalHorizontal, LayerReference.TerrainLayer);
+        var correctedHorizontal = _collisonController.CollideAndSlideVel(transform.position, _mainColliderBounds, originalHorizontal, LayerReference.TerrainLayer);
         if (correctedHorizontal.magnitude < Mathf.Abs(originalHorizontal.x)) // if collided and shrunk vector
         {
             var correction = GetCorrection(
@@ -56,10 +62,39 @@ public class MovementController : MonoBehaviour
         }
 
 
-        var correctedVertical = _collisonController.CollideAndSlideVel(transform.position + (Vector3)correctedHorizontal, originalVertical, LayerReference.TerrainLayer);
+        var correctedVertical = _collisonController.CollideAndSlideVel(transform.position + (Vector3)correctedHorizontal, _mainColliderBounds, originalVertical, LayerReference.TerrainLayer);
 
 
-        if (originalVertical.y > 0 && correctedVertical.magnitude < Mathf.Abs(originalVertical.y)) // if collided and shrunk vector
+
+        var oneWayFilter = new ContactFilter2D()
+        {
+            useLayerMask = true,
+            layerMask = LayerReference.OneWayPlatformLayer,
+            useNormalAngle = true,
+            maxNormalAngle = 89,
+            minNormalAngle = 160,
+        };
+
+        var oneWayCorrection = _collisonController.CollideAndSlideVel((Vector2)_footColliderBounds.center + correctedHorizontal, _footColliderBounds, originalVertical, oneWayFilter);
+
+        bool isOneWayCorrection = false;
+        if (oneWayCorrection != originalVertical) // collided against one-way platform
+        {
+            if (!IgnoreOneWay)
+            {
+                isOneWayCorrection = true;
+                OnOneWayPlatform = true;
+                if (correctedVertical.y > 0) oneWayCorrection += Vector2.up * _footColliderBounds.size.y;
+                correctedVertical = oneWayCorrection;
+            }
+        }
+        else
+        {
+            IgnoreOneWay = false;
+            OnOneWayPlatform = false;
+        }
+
+        if (!isOneWayCorrection && originalVertical.y > 0 && correctedVertical.magnitude < Mathf.Abs(originalVertical.y)) // if collided and shrunk vector
         {
             var correction = GetCorrection(
                 transform.position,
@@ -76,7 +111,6 @@ public class MovementController : MonoBehaviour
                 correctedVertical = originalVertical;
             }
         }
-
 
         var correctedVelocity = correctedHorizontal + correctedVertical;
         if (Grounded)
@@ -97,14 +131,13 @@ public class MovementController : MonoBehaviour
         Velocity = correctedVelocity / Time.fixedDeltaTime;
 
         // YELLOW AND GREEN SPEEEEEED LINE
-        Debug.DrawRay((Vector2)transform.position, correctedVelocity / 2, Color.green, 1);
-        Debug.DrawRay((Vector2)transform.position + correctedVelocity / 2, correctedVelocity / 2, Color.yellow, 1);
+        //        Debug.DrawRay((Vector2)transform.position, correctedVelocity / 2, Color.green, 1);
+        //      Debug.DrawRay((Vector2)transform.position + correctedVelocity / 2, correctedVelocity / 2, Color.yellow, 1);
 
         if (correctedVelocity.x != 0)
         {
             LastHorizontalDirection = correctedVelocity.x.Sign0();
         }
-
         transform.position = transform.position + (Vector3)correctedVelocity;
     }
 
@@ -113,8 +146,8 @@ public class MovementController : MonoBehaviour
         Vector2 positionA = position + offsetA;
         Vector2 positionB = position + offsetB;
 
-        var collisionA = _collisonController.CollideAndSlideVel(positionA, originalDirection, layerMask);
-        var collisionB = _collisonController.CollideAndSlideVel(positionB, originalDirection, layerMask);
+        var collisionA = _collisonController.CollideAndSlideVel(positionA, _mainColliderBounds, originalDirection, layerMask);
+        var collisionB = _collisonController.CollideAndSlideVel(positionB, _mainColliderBounds, originalDirection, layerMask);
         if (collisionA.magnitude > correctedDirection.magnitude)
         {
             return offsetA;
@@ -145,6 +178,7 @@ public class MovementController : MonoBehaviour
 
     public void ForceOffset(Vector2 offset)
     {
+        Debug.DrawRay(transform.position, offset, Color.purple, 1);
         ForcePosition((Vector2)transform.position + offset);
     }
 
