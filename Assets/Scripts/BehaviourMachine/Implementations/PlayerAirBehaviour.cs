@@ -14,7 +14,7 @@ public abstract class PlayerAirBehaviour : BasePlayerBehaviour
         // REDO
 
 
-        Debug.DrawRay(PlayerController.transform.position, PlayerController.MovementController.Velocity * Time.fixedDeltaTime, Color.red);
+
         if (verticalVelocity <= 0 &&
             PlayerController.MovementController.Grounded)
         {

@@ -48,16 +48,24 @@ public class CollisionController : MonoBehaviour
             {
                 if (hit.distance * hit.fraction == 0) // hit is result of overlapping origin of boxcast and collider
                 {
-                    var hitVector = hit.point - position;
 
+                    Debug.DrawLine(position, (position + hit.point) / 2, Color.green);
+                    Debug.DrawLine((position + hit.point) / 2, hit.point, Color.cyan);
+                    var hitVector = hit.point - position; // the lenth of this is half of how much the bound peeks out of the collider
+
+                    Debug.Log($"<color=red>{hitVector.y} , {bounds.size.y / 2}</color>");
+
+
+                    float correctionDistance = 0;
                     if (Mathf.Abs(vel.y) > Mathf.Abs(vel.x)) // moving vertically
                     {
-                        overlapCorrection += 2 * -hitVector.y.Sign0() * (Mathf.Abs(hitVector.y) - bounds.size.y / 2) * Vector2.up;
+                        correctionDistance = bounds.size.y - 2 * Mathf.Abs(hitVector.y);
                     }
                     else // moving horizontally
                     {
-                        overlapCorrection += 2 * -hitVector.x.Sign0() * (Mathf.Abs(hitVector.x) - bounds.size.x / 2) * Vector2.right;
+                        correctionDistance = bounds.size.x - 2 * Mathf.Abs(hitVector.x);
                     }
+                    overlapCorrection = -hitVector.normalized * correctionDistance;
                     Debug.DrawLine(position, hit.point, Color.red, .1f);
                 }
             }

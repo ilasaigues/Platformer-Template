@@ -34,7 +34,6 @@ public abstract class PlayerGroundedBehaviour : BasePlayerBehaviour
         {
             return BehaviourChangeRequest.New<PlayerJumpingBehaviour>();
         }
-        Debug.DrawRay(PlayerController.transform.position, Vector2.down);
         if (!PlayerController.MovementController.Grounded)
         {
             return BehaviourChangeRequest.New<PlayerFallingBehaviour>();
