@@ -1,4 +1,6 @@
 using System;
+using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
@@ -23,6 +25,15 @@ public class MovementController : MonoBehaviour
     private Bounds _mainColliderBounds => _collisonController.MainCollider.bounds;
     private Bounds _footColliderBounds => _collisonController.FootCollider.bounds;
 
+    private ContactFilter2D OneWayFilter = new()
+    {
+        useLayerMask = true,
+        layerMask = LayerReference.OneWayPlatformLayer,
+        useNormalAngle = true,
+        maxNormalAngle = 91,
+        minNormalAngle = 89,
+    };
+
     void Awake()
     {
         _rb = gameObject.GetOrAddComponent<Rigidbody2D>();
@@ -38,23 +49,18 @@ public class MovementController : MonoBehaviour
         {
             SetVelocity(null, _playerController.PlayerStats.fallVelocityCap);
         }
-
         Vector2 originalVertical = Time.fixedDeltaTime * Velocity.y * Vector2.up;
         Vector2 originalHorizontal = Time.fixedDeltaTime * Velocity.x * Vector2.right;
 
+
         bool ledgeCorrected = false;
 
+        // Horizontal correction
         var correctedHorizontal = _collisonController.CollideAndSlideVel(transform.position, _mainColliderBounds, originalHorizontal, LayerReference.TerrainLayer);
+
         if (correctedHorizontal.magnitude < Mathf.Abs(originalHorizontal.x)) // if collided and shrunk vector
         {
-            var ledgeCorrection = GetCorrection(
-                transform.position,
-                originalHorizontal,
-                correctedHorizontal,
-                Vector2.up * _playerController.PlayerStats.ledgeCorrectionUp,
-                Vector2.down * _playerController.PlayerStats.ledgeCorrectionDown,
-                LayerReference.TerrainLayer
-            );
+            var ledgeCorrection = GetCorrection(transform.position, originalHorizontal, correctedHorizontal, Vector2.up * _playerController.PlayerStats.ledgeCorrectionUp, Vector2.down * _playerController.PlayerStats.ledgeCorrectionDown, LayerReference.TerrainLayer);
 
             if (ledgeCorrection != Vector2.zero)
             {
@@ -65,29 +71,36 @@ public class MovementController : MonoBehaviour
         }
 
 
+        // Vertical correction
         var correctedVertical = _collisonController.CollideAndSlideVel(transform.position + (Vector3)correctedHorizontal, _mainColliderBounds, originalVertical, LayerReference.TerrainLayer);
 
-
-
-        var oneWayFilter = new ContactFilter2D()
+        if (!ledgeCorrected && !Grounded && originalVertical.y > 0 && correctedVertical.magnitude < Mathf.Abs(originalVertical.y)) // if collided and shrunk vector
         {
-            useLayerMask = true,
-            layerMask = LayerReference.OneWayPlatformLayer,
-            useNormalAngle = true,
-            maxNormalAngle = 91,
-            minNormalAngle = 89,
-        };
+            var ceilingCorrection = GetCorrection(transform.position + (Vector3)correctedHorizontal, originalVertical, correctedVertical, Vector2.left * _playerController.PlayerStats.ceilingCorrection, Vector2.right * _playerController.PlayerStats.ceilingCorrection, LayerReference.TerrainLayer);
 
-        var oneWayCorrection = _collisonController.CollideAndSlideVel((Vector2)_footColliderBounds.center + correctedHorizontal, _footColliderBounds, originalVertical, oneWayFilter);
+            if (ceilingCorrection != Vector2.zero && (ceilingCorrection.x.Sign0() * originalHorizontal.x.Sign0()) >= 0)
+            {
+                ForceOffset(ceilingCorrection);
+                ledgeCorrected = true;
+                correctedVertical = originalVertical;
+            }
+        }
 
-        bool isOneWayCorrection = false;
+
+        // One Way Correction
+        var hitList = new List<RaycastHit2D>();
+        var oneWayCorrection = _collisonController.CollideAndSlideVel((Vector2)_footColliderBounds.center + correctedHorizontal, _footColliderBounds, originalVertical, OneWayFilter, hitList);
+
         if (oneWayCorrection != originalVertical) // collided against one-way platform
         {
             if (!IgnoreOneWay)
             {
-                isOneWayCorrection = true;
                 OnOneWayPlatform = true;
-                if (correctedVertical.y > 0) oneWayCorrection += Vector2.up * _footColliderBounds.size.y;
+                //if (correctedVertical.y > 0) oneWayCorrection += Vector2.up * _footColliderBounds.size.y;
+                if (hitList.Any(hit => hit.distance * hit.fraction == 0))
+                {
+                    oneWayCorrection += Vector2.up * _footColliderBounds.size.y;
+                }
                 correctedVertical = oneWayCorrection;
             }
         }
@@ -97,30 +110,13 @@ public class MovementController : MonoBehaviour
             OnOneWayPlatform = false;
         }
 
-        if (!ledgeCorrected && !isOneWayCorrection && !Grounded && originalVertical.y > 0 && correctedVertical.magnitude < Mathf.Abs(originalVertical.y)) // if collided and shrunk vector
-        {
-            var ceilingCorrection = GetCorrection(
-                transform.position,
-                originalVertical,
-                correctedVertical,
-                Vector2.left * _playerController.PlayerStats.ceilingCorrection,
-                Vector2.right * _playerController.PlayerStats.ceilingCorrection,
-                LayerReference.TerrainLayer
-            );
 
-            if (ceilingCorrection != Vector2.zero && ceilingCorrection.x.Sign0() == originalVertical.x.Sign0())
-            {
-                ForceOffset(ceilingCorrection);
-                correctedVertical = originalVertical;
-            }
-        }
 
         var correctedVelocity = correctedHorizontal + correctedVertical;
         if (Grounded)
         {
             if (!Mathf.Approximately(correctedVelocity.y, 0))
             {
-                Debug.Log("Current Vertical: " + correctedVelocity.y);
                 TimeLeftGround = DateTime.Now;
                 Grounded = false;
             }
@@ -132,16 +128,19 @@ public class MovementController : MonoBehaviour
                 Grounded = true;
             }
         }
-        Velocity = correctedVelocity / Time.fixedDeltaTime;
 
-        // YELLOW AND GREEN SPEEEEEED LINE
-        Debug.DrawRay((Vector2)transform.position, correctedVelocity / 2, Color.green, 1);
-        Debug.DrawRay((Vector2)transform.position + correctedVelocity / 2, correctedVelocity / 2, Color.yellow, 1);
 
         if (correctedVelocity.x != 0)
         {
             LastHorizontalDirection = correctedVelocity.x.Sign0();
         }
+
+        Velocity = correctedVelocity / Time.fixedDeltaTime;
+
+        Debug.DrawRay((Vector2)transform.position, correctedVelocity / 2, Color.green, 1);
+        Debug.DrawRay((Vector2)transform.position + correctedVelocity / 2, correctedVelocity / 2, Color.yellow, 1);
+
+        // Apply movement
         transform.position = transform.position + (Vector3)correctedVelocity;
     }
 
