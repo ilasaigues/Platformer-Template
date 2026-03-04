@@ -40,12 +40,14 @@ public class MovementController : MonoBehaviour
         }
 
         Vector2 originalVertical = Time.fixedDeltaTime * Velocity.y * Vector2.up;
-
         Vector2 originalHorizontal = Time.fixedDeltaTime * Velocity.x * Vector2.right;
+
+        bool ledgeCorrected = false;
+
         var correctedHorizontal = _collisonController.CollideAndSlideVel(transform.position, _mainColliderBounds, originalHorizontal, LayerReference.TerrainLayer);
         if (correctedHorizontal.magnitude < Mathf.Abs(originalHorizontal.x)) // if collided and shrunk vector
         {
-            var correction = GetCorrection(
+            var ledgeCorrection = GetCorrection(
                 transform.position,
                 originalHorizontal,
                 correctedHorizontal,
@@ -54,9 +56,10 @@ public class MovementController : MonoBehaviour
                 LayerReference.TerrainLayer
             );
 
-            if (correction != Vector2.zero)
+            if (ledgeCorrection != Vector2.zero)
             {
-                ForceOffset(correction);
+                ForceOffset(ledgeCorrection);
+                ledgeCorrected = true;
                 correctedHorizontal = originalHorizontal;
             }
         }
@@ -94,9 +97,9 @@ public class MovementController : MonoBehaviour
             OnOneWayPlatform = false;
         }
 
-        if (!isOneWayCorrection && !Grounded && originalVertical.y > 0 && correctedVertical.magnitude < Mathf.Abs(originalVertical.y)) // if collided and shrunk vector
+        if (!ledgeCorrected && !isOneWayCorrection && !Grounded && originalVertical.y > 0 && correctedVertical.magnitude < Mathf.Abs(originalVertical.y)) // if collided and shrunk vector
         {
-            var correction = GetCorrection(
+            var ceilingCorrection = GetCorrection(
                 transform.position,
                 originalVertical,
                 correctedVertical,
@@ -105,9 +108,9 @@ public class MovementController : MonoBehaviour
                 LayerReference.TerrainLayer
             );
 
-            if (correction != Vector2.zero)
+            if (ceilingCorrection != Vector2.zero && ceilingCorrection.x.Sign0() == originalVertical.x.Sign0())
             {
-                ForceOffset(correction);
+                ForceOffset(ceilingCorrection);
                 correctedVertical = originalVertical;
             }
         }
