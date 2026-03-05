@@ -96,10 +96,17 @@ public class MovementController : MonoBehaviour
             if (!IgnoreOneWay)
             {
                 OnOneWayPlatform = true;
-                //if (correctedVertical.y > 0) oneWayCorrection += Vector2.up * _footColliderBounds.size.y;
+
                 if (hitList.Any(hit => hit.distance * hit.fraction == 0))
                 {
-                    ForceOffset(Vector2.up * _footColliderBounds.size.y);
+                    if (correctedVertical.y < 0)
+                    {
+                        ForceOffset(Vector2.up * _footColliderBounds.size.y);
+                    }
+                    else if (correctedVertical.y > 0)
+                    {
+                        oneWayCorrection += Vector2.up * _footColliderBounds.size.y;
+                    }
                 }
                 correctedVertical = oneWayCorrection;
             }
