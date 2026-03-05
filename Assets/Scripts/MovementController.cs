@@ -99,7 +99,7 @@ public class MovementController : MonoBehaviour
                 //if (correctedVertical.y > 0) oneWayCorrection += Vector2.up * _footColliderBounds.size.y;
                 if (hitList.Any(hit => hit.distance * hit.fraction == 0))
                 {
-                    oneWayCorrection += Vector2.up * _footColliderBounds.size.y;
+                    ForceOffset(Vector2.up * _footColliderBounds.size.y);
                 }
                 correctedVertical = oneWayCorrection;
             }
