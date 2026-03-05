@@ -49,16 +49,24 @@ public class BehaviourMachine : MonoBehaviour
     }
 
     private int _watchdog = 0;
+    private Queue<string> _lastBehaviours = new();
 
     public void ChangeBehaviour(Type behaviourType)
     {
-        if (_allBehaviours.TryGetValue(behaviourType, out var nextBehaviour))
+
+        if (_currentBehaviour?.GetType() != behaviourType && _allBehaviours.TryGetValue(behaviourType, out var nextBehaviour))
         {
             if (_watchdog > 100)
             {
-                throw new Exception($"WATCHDOG EXCEEDED: FROM {_currentBehaviour?.GetType()} TO {behaviourType}");
+                throw new Exception($"WATCHDOG EXCEEDED: {string.Join(" > ", _lastBehaviours)}");
             }
             _watchdog++;
+
+            _lastBehaviours.Enqueue(behaviourType.ToString());
+            if (_lastBehaviours.Count > 5)
+            {
+                _lastBehaviours.Dequeue();
+            }
             Debug.Log("Entering state: " + behaviourType.ToString());
             _currentBehaviour?.Exit();
             _currentBehaviour = nextBehaviour;

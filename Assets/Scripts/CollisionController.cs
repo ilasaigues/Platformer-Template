@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -11,8 +10,30 @@ public class CollisionController : MonoBehaviour
     private const int MaxCollideBounces = 5;
     public float SkinWidth = 0.015f;
 
-    public Collider2D MainCollider;
-    public Collider2D FootCollider;
+    public BoxCollider2D MainCollider;
+    public BoxCollider2D FootCollider;
+
+    private const float FootColliderHeight = 0.125f;
+
+    void Start()
+    {
+        ResizeFloorCollider();
+    }
+
+    public void ResizeMainCollider(Vector2 size, Vector2 offset)
+    {
+        MainCollider.offset = offset;
+        MainCollider.size = size;
+        ResizeFloorCollider();
+    }
+
+
+
+    private void ResizeFloorCollider()
+    {
+        FootCollider.offset = Vector2.up * (MainCollider.offset.y + (-MainCollider.size.y + FootColliderHeight) * 0.5f);
+        FootCollider.size = new Vector2(MainCollider.size.x, FootColliderHeight);
+    }
 
 
     public Vector2 CollideAndSlideVel(Vector2 position, Bounds bounds, Vector2 vel, LayerMask collisionLayer)
@@ -34,7 +55,6 @@ public class CollisionController : MonoBehaviour
         }
 
         if (recursionDepth >= MaxCollideBounces) return Vector2.zero;
-        if (vel.magnitude < 1e-6) return Vector2.zero;
         float dist = vel.magnitude + SkinWidth;
 
         RaycastHit2D[] hits = new RaycastHit2D[5];
@@ -42,6 +62,7 @@ public class CollisionController : MonoBehaviour
 
         if (hits.Any(hit => hit))
         {
+            if (vel.magnitude < 1e-6) return Vector2.zero;
             outHits?.AddRange(hits.Where(hit => hit));
             var closestHit = hits.First(hit => hit);
             Vector2 snapToSurface = vel.normalized * (closestHit.distance - SkinWidth);

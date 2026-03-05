@@ -1,5 +1,3 @@
-using UnityEngine;
-
 public abstract class BasePlayerBehaviour : BaseBehaviour
 {
     protected PlayerController PlayerController { get; set; }

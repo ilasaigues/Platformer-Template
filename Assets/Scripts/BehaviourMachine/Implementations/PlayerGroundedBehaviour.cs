@@ -1,8 +1,4 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 public abstract class PlayerGroundedBehaviour : BasePlayerBehaviour
 {
@@ -27,10 +23,9 @@ public abstract class PlayerGroundedBehaviour : BasePlayerBehaviour
             return baseBehaviour;
         }
 
-        if ((PlayerController.InputHandler.JumpButton.JustPressed ||
+        if (PlayerController.InputHandler.JumpButton.JustPressed ||
             PlayerController.InputHandler.JumpButton.TimeSinceLastPressed.TotalSeconds <=
-            PlayerController.PlayerStats.jumpBufferTime) &&
-            PlayerController.TryJump())
+            PlayerController.PlayerStats.jumpBufferTime)
         {
             return BehaviourChangeRequest.New<PlayerJumpingBehaviour>();
         }

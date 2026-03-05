@@ -21,11 +21,7 @@ public class PlayerStats : ScriptableObject
     public Vector2 peakTresholds;
     public float coyoteTime;
     public float jumpBufferTime;
-    [Header("Bonuses")]
-    public float speedBonus;
-    public float jumpBonus;
-    public int extraJumps;
-    public float gravityMult;
+
     [Header("Adjustments")]
     public float ceilingCorrection;
     public float ledgeCorrectionUp;

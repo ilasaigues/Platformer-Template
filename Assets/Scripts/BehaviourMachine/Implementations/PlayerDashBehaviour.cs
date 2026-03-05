@@ -3,28 +3,26 @@ using System;
 using UnityEngine;
 
 
-public class PlayerDashBehaviour : BasePlayerAbilityBehaviour
+public class PlayerDashBehaviour : BasePlayerBehaviour, IPlayerAbilityBehaviour
 {
 
     float _elapsedTime;
 
     int _direction;
 
-    public override bool OnCooldown => _timeLastUsed + TimeSpan.FromSeconds(PlayerController.AbilityStats.DashCooldown) > DateTime.Now;
+    public bool OnCooldown => TimeLastUsed + TimeSpan.FromSeconds(PlayerController.AbilityStats.DashCooldown) > DateTime.Now;
 
     public PlayerDashBehaviour(PlayerController player) : base(player)
     {
     }
 
-    public override Type[] TransitionableBehaviourTypes => new Type[]
-    {
-        typeof(PlayerGroundedBehaviour),
-        typeof(PlayerAirBehaviour),
-    };
+
+    public bool Enabled { get; set; }
+    public DateTime TimeLastUsed { get; set; }
 
     public override void Enter()
     {
-        base.Enter();
+        TimeLastUsed = DateTime.Now;
         PlayerController.SpriteRenderer.color = Color.orange;
         PlayerController.RemainingDashes--;
 

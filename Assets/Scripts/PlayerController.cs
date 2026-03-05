@@ -16,10 +16,10 @@ public class PlayerController : MonoBehaviour
 
     public Vector2 LastDirectionInput => InputHandler.MoveAxis.LastValue;
 
-    public int MaxJumps => 1 + PlayerStats.extraJumps;
-
-    public int RemainingJumps = 1;
     public int RemainingDashes = 1;
+
+    public int Jumps = 0;
+
     public SpriteRenderer SpriteRenderer;
 
     void Start()
@@ -40,8 +40,12 @@ public class PlayerController : MonoBehaviour
         {
             Enabled = true
         });
+        BehaviourMachine.AddBehaviour(new PlayerDoubleJumpBehaviour(this)
+        {
+            Enabled = true
+        });
         BehaviourMachine.ChangeBehaviour(typeof(PlayerFallingBehaviour));
-        ResetJumps();
+        ResetOnGrounded();
     }
 
     void OnEnable()
@@ -69,13 +73,6 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-
-    public bool TryJump()
-    {
-        //Debug.Log("Trying jump | Jumps left: " + RemainingJumps);
-        return RemainingJumps > 0;
-    }
-
     public bool TryDash()
     {
         return RemainingDashes > 0;
@@ -89,7 +86,7 @@ public class PlayerController : MonoBehaviour
 
     private void ResetJumps()
     {
-        RemainingJumps = MaxJumps;
+        Jumps = 0;
     }
 
     private void ResetDashes()
@@ -97,10 +94,10 @@ public class PlayerController : MonoBehaviour
         RemainingDashes = 1;
     }
 
-    public BehaviourChangeRequest TryUseAbility<T>(BasePlayerBehaviour currentBehaviour) where T : BasePlayerAbilityBehaviour
+    public BehaviourChangeRequest TryUseAbility<T>(BasePlayerBehaviour currentBehaviour) where T : BaseBehaviour, IPlayerAbilityBehaviour
     {
         var ability = BehaviourMachine.GetBehaviour<T>();
-        if (ability != null && ability.Enabled && !ability.OnCooldown && ability.CanTransitionFromBehaviour(currentBehaviour))
+        if (ability != null && ability.Enabled && !ability.OnCooldown)
         {
             return BehaviourChangeRequest.New<T>();
         }

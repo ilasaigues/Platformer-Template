@@ -1,5 +1,3 @@
-using UnityEngine;
-
 public static class MathfExtensions
 {
     public static int Sign0(this float value)

@@ -1,27 +1,10 @@
 
 using System;
-using System.Linq;
 
-public abstract class BasePlayerAbilityBehaviour : BasePlayerBehaviour
+public interface IPlayerAbilityBehaviour
 {
+    public bool Enabled { get; set; }
+    public bool OnCooldown { get; }
+    public DateTime TimeLastUsed { get; set; }
 
-    public bool Enabled;
-    public abstract bool OnCooldown { get; }
-    public abstract Type[] TransitionableBehaviourTypes { get; }
-    protected DateTime _timeLastUsed = default;
-
-    public bool CanTransitionFromBehaviour(BasePlayerBehaviour behaviour)
-    {
-        return TransitionableBehaviourTypes.Any(t => t.IsAssignableFrom(behaviour.GetType()));
-    }
-
-
-    public override void Enter()
-    {
-        _timeLastUsed = DateTime.Now;
-    }
-
-    protected BasePlayerAbilityBehaviour(PlayerController player) : base(player)
-    {
-    }
 }

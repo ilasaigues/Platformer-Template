@@ -1,5 +1,3 @@
-using UnityEngine;
-
 public class PlayerIdleBehaviour : PlayerGroundedBehaviour
 {
     public PlayerIdleBehaviour(PlayerController player) : base(player)

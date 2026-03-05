@@ -1,10 +1,20 @@
+using System;
 using UnityEngine;
-public class PlayerJumpingBehaviour : PlayerAirBehaviour
+
+public class PlayerDoubleJumpBehaviour : PlayerAirBehaviour, IPlayerAbilityBehaviour
 
 {
     private bool _jumpHeld = false;
     private bool IsInPeak => PlayerController.MovementController.Velocity.y < PlayerController.PlayerStats.peakTresholds.x;
-    public PlayerJumpingBehaviour(PlayerController playerController) : base(playerController)
+
+    public bool Enabled { get; set; }
+
+    public bool OnCooldown => false;
+
+    public DateTime TimeLastUsed { get; set; }
+
+    private bool IsInWindup = false;
+    public PlayerDoubleJumpBehaviour(PlayerController playerController) : base(playerController)
     {
     }
 
@@ -13,23 +23,21 @@ public class PlayerJumpingBehaviour : PlayerAirBehaviour
         var newBehaviuourRequest = base.VerifyBehaviour();
         if (newBehaviuourRequest != null) return newBehaviuourRequest;
 
-
-        if (!_jumpHeld && PlayerController.InputHandler.JumpButton.JustPressed && PlayerController.Jumps < 2)
+        if (!IsInWindup && (PlayerController.MovementController.Velocity.y < PlayerController.PlayerStats.peakTresholds.y ||
+            (IsInPeak && !_jumpHeld)))
         {
-            return BehaviourChangeRequest.New<PlayerDoubleJumpBehaviour>();
-        }
-
-        if (PlayerController.MovementController.Velocity.y < PlayerController.PlayerStats.peakTresholds.y ||
-            (IsInPeak && !_jumpHeld))
-        {
-
             return BehaviourChangeRequest.New<PlayerFallingBehaviour>();
         }
+
         return null;
     }
 
     public override float CurrentGravity()
     {
+        if (IsInWindup)
+        {
+            return 0;
+        }
         if (IsInPeak)
         {
             return PlayerController.PlayerStats.peakGravity;
@@ -40,10 +48,12 @@ public class PlayerJumpingBehaviour : PlayerAirBehaviour
 
     public override void Enter()
     {
+        TimeLastUsed = DateTime.Now;
         _jumpHeld = PlayerController.InputHandler.JumpButton.Pressed;
-        PlayerController.MovementController.SetVelocity(null, PlayerController.PlayerStats.jumpVelocity);
+        IsInWindup = true;
+        PlayerController.MovementController.SetVelocity(null, PlayerController.AbilityStats.DoubleJumpHoverVelocity);
         PlayerController.InputHandler.JumpButton.OnRelease += JumpReleased;
-        PlayerController.Jumps = Mathf.Max(PlayerController.Jumps, 1);
+        PlayerController.Jumps = Mathf.Max(PlayerController.Jumps, 2);
     }
 
     private void JumpReleased()
@@ -60,6 +70,14 @@ public class PlayerJumpingBehaviour : PlayerAirBehaviour
     public override void FixedUpdate(float delta)
     {
         base.FixedUpdate(delta);
+        if (IsInWindup)
+        {
+            if (DateTime.Now >= TimeLastUsed + TimeSpan.FromSeconds(PlayerController.AbilityStats.DoubleJumpWindupTime))
+            {
+                IsInWindup = false;
+                PlayerController.MovementController.SetVelocity(null, PlayerController.AbilityStats.DoubleJumpVelocity);
+            }
+        }
     }
 
     public override void Update(float delta)

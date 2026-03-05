@@ -1,11 +1,14 @@
 using System;
 using UnityEngine;
 
-public class PlayerRockBehaviour : BasePlayerAbilityBehaviour
+public class PlayerRockBehaviour : BasePlayerBehaviour, IPlayerAbilityBehaviour
 {
 
 
-    public override bool OnCooldown => false;
+    public bool Enabled { get; set; }
+    public bool OnCooldown => false;
+
+    public DateTime TimeLastUsed { get; set; }
 
     bool _released;
 
@@ -14,17 +17,11 @@ public class PlayerRockBehaviour : BasePlayerAbilityBehaviour
 
     }
 
-    public override Type[] TransitionableBehaviourTypes => new Type[]
-    {
-        typeof(PlayerGroundedBehaviour),
-        typeof(PlayerAirBehaviour),
-    };
-
 
     public override void Enter()
     {
-        base.Enter();
         _released = false;
+        TimeLastUsed = DateTime.Now;
         PlayerController.SpriteRenderer.color = Color.grey;
         PlayerController.InputHandler.RockButton.OnRelease += OnRockButtonRelease;
     }
