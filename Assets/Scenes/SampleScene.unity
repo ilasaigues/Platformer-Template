@@ -280,6 +280,7 @@ GameObject:
   - component: {fileID: 519420029}
   - component: {fileID: 519420030}
   - component: {fileID: 519420033}
+  - component: {fileID: 519420034}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -383,7 +384,7 @@ Camera:
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
   m_TargetEye: 0
-  m_HDR: 1
+  m_HDR: 0
   m_AllowMSAA: 0
   m_AllowDynamicResolution: 0
   m_ForceIntoRT: 0
@@ -437,6 +438,30 @@ MonoBehaviour:
       m_PostInfinity: 2
       m_RotationOrder: 4
   CustomBlends: {fileID: 0}
+--- !u!114 &519420034
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519420028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c88f5cead0c0b2a4eb05b5900433f8d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.RenderPipelines.Universal.2D.Runtime::UnityEngine.Rendering.Universal.PixelPerfectCamera
+  m_ComponentVersion: 1
+  m_AssetsPPU: 16
+  m_RefResolutionX: 320
+  m_RefResolutionY: 180
+  m_CropFrame: 0
+  m_GridSnapping: 0
+  m_FilterMode: 0
+  m_UpscaleRT: 0
+  m_PixelSnapping: 0
+  m_CropFrameX: 0
+  m_CropFrameY: 0
+  m_StretchFill: 0
 --- !u!1 &592379734
 GameObject:
   m_ObjectHideFlags: 0
@@ -577,6 +602,7 @@ GameObject:
   - component: {fileID: 742409360}
   - component: {fileID: 742409359}
   - component: {fileID: 742409363}
+  - component: {fileID: 742409364}
   m_Layer: 0
   m_Name: CinemachineCamera
   m_TagString: Untagged
@@ -693,6 +719,18 @@ MonoBehaviour:
     MaxWindowSize: 0
     Padding: 0
   m_LegacyMaxWindowSize: -2
+--- !u!114 &742409364
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 742409358}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a8a05de0ac134f4f9d01bef6b9da077, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.Cinemachine::Unity.Cinemachine.CinemachinePixelPerfect
 --- !u!1 &754085515
 GameObject:
   m_ObjectHideFlags: 0
@@ -899,12 +937,20 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: -8850949664869804235, guid: 2a6652ec5fdfdab47b8a959efa1b7009, type: 3}
+      propertyPath: m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8850949664869804235, guid: 2a6652ec5fdfdab47b8a959efa1b7009, type: 3}
       propertyPath: m_ChunkCullingBounds.x
       value: 0.25
       objectReference: {fileID: 0}
     - target: {fileID: -8850949664869804235, guid: 2a6652ec5fdfdab47b8a959efa1b7009, type: 3}
       propertyPath: m_ChunkCullingBounds.y
       value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: -8850949664869804235, guid: 2a6652ec5fdfdab47b8a959efa1b7009, type: 3}
+      propertyPath: m_DetectChunkCullingBounds
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -7799817296409387036, guid: 2a6652ec5fdfdab47b8a959efa1b7009, type: 3}
       propertyPath: m_ColliderPaths.Array.size
@@ -1196,11 +1242,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -6732781388467724837, guid: 2a6652ec5fdfdab47b8a959efa1b7009, type: 3}
       propertyPath: m_CompositePaths.m_Paths.Array.data[0].Array.data[15].y
-      value: 12
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: -6732781388467724837, guid: 2a6652ec5fdfdab47b8a959efa1b7009, type: 3}
       propertyPath: m_CompositePaths.m_Paths.Array.data[0].Array.data[16].y
-      value: 11.99997
+      value: 15.999971
       objectReference: {fileID: 0}
     - target: {fileID: -6732781388467724837, guid: 2a6652ec5fdfdab47b8a959efa1b7009, type: 3}
       propertyPath: m_CompositePaths.m_Paths.Array.data[0].Array.data[17].x
@@ -1452,11 +1498,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -6732781388467724837, guid: 2a6652ec5fdfdab47b8a959efa1b7009, type: 3}
       propertyPath: m_ColliderPaths.Array.data[0].m_ColliderPaths.Array.data[0].Array.data[14].Y
-      value: 120000000
+      value: 160000000
       objectReference: {fileID: 0}
     - target: {fileID: -6732781388467724837, guid: 2a6652ec5fdfdab47b8a959efa1b7009, type: 3}
       propertyPath: m_ColliderPaths.Array.data[0].m_ColliderPaths.Array.data[0].Array.data[15].Y
-      value: 120000000
+      value: 160000000
       objectReference: {fileID: 0}
     - target: {fileID: -6732781388467724837, guid: 2a6652ec5fdfdab47b8a959efa1b7009, type: 3}
       propertyPath: m_ColliderPaths.Array.data[0].m_ColliderPaths.Array.data[0].Array.data[17].X
@@ -1470,6 +1516,22 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -3705295366776851532, guid: 2a6652ec5fdfdab47b8a959efa1b7009, type: 3}
+      propertyPath: m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -3705295366776851532, guid: 2a6652ec5fdfdab47b8a959efa1b7009, type: 3}
+      propertyPath: m_ChunkCullingBounds.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -3705295366776851532, guid: 2a6652ec5fdfdab47b8a959efa1b7009, type: 3}
+      propertyPath: m_ChunkCullingBounds.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -3705295366776851532, guid: 2a6652ec5fdfdab47b8a959efa1b7009, type: 3}
+      propertyPath: m_DetectChunkCullingBounds
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: -1923005765544197526, guid: 2a6652ec5fdfdab47b8a959efa1b7009, type: 3}
       propertyPath: m_ColliderPaths.Array.size
       value: 1
@@ -1479,12 +1541,20 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 999481538}
     - target: {fileID: -1647228307164154096, guid: 2a6652ec5fdfdab47b8a959efa1b7009, type: 3}
+      propertyPath: m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -1647228307164154096, guid: 2a6652ec5fdfdab47b8a959efa1b7009, type: 3}
       propertyPath: m_ChunkCullingBounds.x
       value: 0.25
       objectReference: {fileID: 0}
     - target: {fileID: -1647228307164154096, guid: 2a6652ec5fdfdab47b8a959efa1b7009, type: 3}
       propertyPath: m_ChunkCullingBounds.y
       value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: -1647228307164154096, guid: 2a6652ec5fdfdab47b8a959efa1b7009, type: 3}
+      propertyPath: m_DetectChunkCullingBounds
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -1370958733764684319, guid: 2a6652ec5fdfdab47b8a959efa1b7009, type: 3}
       propertyPath: m_Name
@@ -1507,12 +1577,20 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1193926265}
     - target: {fileID: 1152998666634770488, guid: 2a6652ec5fdfdab47b8a959efa1b7009, type: 3}
+      propertyPath: m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1152998666634770488, guid: 2a6652ec5fdfdab47b8a959efa1b7009, type: 3}
       propertyPath: m_ChunkCullingBounds.x
       value: 0.25
       objectReference: {fileID: 0}
     - target: {fileID: 1152998666634770488, guid: 2a6652ec5fdfdab47b8a959efa1b7009, type: 3}
       propertyPath: m_ChunkCullingBounds.y
       value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 1152998666634770488, guid: 2a6652ec5fdfdab47b8a959efa1b7009, type: 3}
+      propertyPath: m_DetectChunkCullingBounds
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1617279960052224889, guid: 2a6652ec5fdfdab47b8a959efa1b7009, type: 3}
       propertyPath: m_IsActive
@@ -2714,6 +2792,10 @@ PrefabInstance:
       propertyPath: m_CompositeOperation
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4952815547609621330, guid: 2a6652ec5fdfdab47b8a959efa1b7009, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5389541142699726336, guid: 2a6652ec5fdfdab47b8a959efa1b7009, type: 3}
       propertyPath: m_ColliderPaths.Array.size
       value: 1
@@ -2722,6 +2804,38 @@ PrefabInstance:
       propertyPath: m_ColliderPaths.Array.data[0].m_Collider
       value: 
       objectReference: {fileID: 1370157195}
+    - target: {fileID: 5766553117811813774, guid: 2a6652ec5fdfdab47b8a959efa1b7009, type: 3}
+      propertyPath: m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5766553117811813774, guid: 2a6652ec5fdfdab47b8a959efa1b7009, type: 3}
+      propertyPath: m_ChunkCullingBounds.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5766553117811813774, guid: 2a6652ec5fdfdab47b8a959efa1b7009, type: 3}
+      propertyPath: m_ChunkCullingBounds.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5766553117811813774, guid: 2a6652ec5fdfdab47b8a959efa1b7009, type: 3}
+      propertyPath: m_DetectChunkCullingBounds
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6963657411025259833, guid: 2a6652ec5fdfdab47b8a959efa1b7009, type: 3}
+      propertyPath: m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6963657411025259833, guid: 2a6652ec5fdfdab47b8a959efa1b7009, type: 3}
+      propertyPath: m_ChunkCullingBounds.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6963657411025259833, guid: 2a6652ec5fdfdab47b8a959efa1b7009, type: 3}
+      propertyPath: m_ChunkCullingBounds.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6963657411025259833, guid: 2a6652ec5fdfdab47b8a959efa1b7009, type: 3}
+      propertyPath: m_DetectChunkCullingBounds
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7430089282779581001, guid: 2a6652ec5fdfdab47b8a959efa1b7009, type: 3}
       propertyPath: m_ColliderPaths.Array.size
       value: 1
