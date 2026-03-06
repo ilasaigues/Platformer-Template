@@ -1,0 +1,40 @@
+{
+  "Rects": [
+    {
+      "x": 80,
+      "y": 48,
+      "w": 16,
+      "h": 16
+    }
+  ],
+  "Def": {
+    "__cHei": 4,
+    "__cWid": 14,
+    "cachedPixelData": {
+      "opaqueTiles": "01100011011111111110011111111111111111111111111011111000",
+      "averageColors": "f254f243f243f254f354f354f254f254f354f243f243f223f233f233f234f223f223f234f344f243f243f233f233f233f233f223f223f223f234f223f223f234f344f234f234f233f233f223f223f223f223f233f234f234f234f234f345f344f233f243f233f233f223000000000000"
+    },
+    "customData": [
+
+    ],
+    "embedAtlas": null,
+    "enumTags": [
+
+    ],
+    "identifier": "Grass",
+    "padding": 0,
+    "pxHei": 64,
+    "pxWid": 224,
+    "relPath": "tileset_template.png",
+    "savedSelections": [
+
+    ],
+    "spacing": 0,
+    "tags": [
+      "Grass"
+    ],
+    "tagsSourceEnumUid": null,
+    "tileGridSize": 16,
+    "uid": 2
+  }
+}
