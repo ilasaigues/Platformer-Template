@@ -1,0 +1,40 @@
+{
+  "Rects": [
+    {
+      "x": 0,
+      "y": 0,
+      "w": 24,
+      "h": 24
+    }
+  ],
+  "Def": {
+    "__cHei": 1,
+    "__cWid": 16,
+    "cachedPixelData": {
+      "opaqueTiles": "0000000000000000",
+      "averageColors": "7234823472348234723482348234923462347234823492347234823492349234"
+    },
+    "customData": [
+
+    ],
+    "embedAtlas": null,
+    "enumTags": [
+
+    ],
+    "identifier": "Background_tiles",
+    "padding": 0,
+    "pxHei": 24,
+    "pxWid": 384,
+    "relPath": "background_tiles.png",
+    "savedSelections": [
+
+    ],
+    "spacing": 0,
+    "tags": [
+
+    ],
+    "tagsSourceEnumUid": null,
+    "tileGridSize": 24,
+    "uid": 62
+  }
+}
