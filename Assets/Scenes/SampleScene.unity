@@ -1221,6 +1221,10 @@ PrefabInstance:
       propertyPath: m_CompositeOperation
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -958616691345006652, guid: 2a6652ec5fdfdab47b8a959efa1b7009, type: 3}
+      propertyPath: m_CompositeOperation
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 380715508727654450, guid: 2a6652ec5fdfdab47b8a959efa1b7009, type: 3}
       propertyPath: m_ColliderPaths.Array.size
       value: 1
@@ -1271,11 +1275,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3340689482556238829, guid: 2a6652ec5fdfdab47b8a959efa1b7009, type: 3}
       propertyPath: m_ColliderPaths.Array.size
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3340689482556238829, guid: 2a6652ec5fdfdab47b8a959efa1b7009, type: 3}
       propertyPath: m_CompositePaths.m_Paths.Array.size
-      value: 8
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3340689482556238829, guid: 2a6652ec5fdfdab47b8a959efa1b7009, type: 3}
       propertyPath: m_ColliderPaths.Array.data[0].m_Collider
@@ -2413,6 +2417,10 @@ PrefabInstance:
       propertyPath: m_ColliderPaths.Array.data[0].m_ColliderPaths.Array.data[3].Array.data[15].Y
       value: 60000000
       objectReference: {fileID: 0}
+    - target: {fileID: 4508143290599260409, guid: 2a6652ec5fdfdab47b8a959efa1b7009, type: 3}
+      propertyPath: m_CompositeOperation
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5389541142699726336, guid: 2a6652ec5fdfdab47b8a959efa1b7009, type: 3}
       propertyPath: m_ColliderPaths.Array.size
       value: 1
@@ -2439,11 +2447,11 @@ PrefabInstance:
       objectReference: {fileID: 1438750603}
     - target: {fileID: 7738568035357589843, guid: 2a6652ec5fdfdab47b8a959efa1b7009, type: 3}
       propertyPath: m_ColliderPaths.Array.size
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7738568035357589843, guid: 2a6652ec5fdfdab47b8a959efa1b7009, type: 3}
       propertyPath: m_CompositePaths.m_Paths.Array.size
-      value: 4
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7738568035357589843, guid: 2a6652ec5fdfdab47b8a959efa1b7009, type: 3}
       propertyPath: m_ColliderPaths.Array.data[0].m_Collider
@@ -2909,6 +2917,7 @@ GameObject:
   - component: {fileID: 1417996121}
   - component: {fileID: 1417996120}
   - component: {fileID: 1417996125}
+  - component: {fileID: 1417996126}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -3045,7 +3054,7 @@ Transform:
   m_GameObject: {fileID: 1417996111}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -8.133, y: 4.606, z: 0}
+  m_LocalPosition: {x: -8.02, y: 5.27, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3067,6 +3076,7 @@ MonoBehaviour:
   AbilityStats: {fileID: 11400000, guid: 30ce2b2d25088d64896145fbcd04adc2, type: 2}
   CollisionController: {fileID: 0}
   MovementController: {fileID: 0}
+  PlayerAnimator: {fileID: 0}
   InputHandler: {fileID: 592379735}
   BehaviourMachine: {fileID: 0}
   RemainingDashes: 1
@@ -3195,6 +3205,19 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1417996126
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1417996111}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9af399f093868e044a05502103a87c18, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerAnimator
+  AnimationList: {fileID: 11400000, guid: ab538dd3fd1f0fb4984ab4a8577c851b, type: 2}
 --- !u!19719996 &1438750603 stripped
 TilemapCollider2D:
   m_CorrespondingSourceObject: {fileID: 8383522161716894888, guid: 2a6652ec5fdfdab47b8a959efa1b7009, type: 3}

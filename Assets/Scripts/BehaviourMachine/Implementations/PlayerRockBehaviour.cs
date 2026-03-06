@@ -22,13 +22,12 @@ public class PlayerRockBehaviour : BasePlayerBehaviour, IPlayerAbilityBehaviour
     {
         _released = false;
         TimeLastUsed = DateTime.Now;
-        PlayerController.SpriteRenderer.color = Color.grey;
         PlayerController.InputHandler.RockButton.OnRelease += OnRockButtonRelease;
+        PlayAnim(PlayerController.PlayerAnimator.AnimationList.ShieldEnter);
     }
 
     public override void Exit()
     {
-        PlayerController.SpriteRenderer.color = Color.teal;
         PlayerController.InputHandler.RockButton.OnRelease -= OnRockButtonRelease;
     }
 

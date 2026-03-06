@@ -30,11 +30,11 @@ public abstract class PlayerAirBehaviour : BasePlayerBehaviour
         PlayerController.MovementController.AddVelocity(gravity * delta * Vector2.up);
 
         float currentVelocity = PlayerController.MovementController.Velocity.x;
-        float targetDirection = PlayerController.LastDirectionInput.x.Sign0();
+        int targetDirection = PlayerController.LastDirectionInput.x.Sign0();
         float maxSpeed = PlayerController.PlayerStats.airSpeed;
 
         float acceleration;
-        if (targetDirection == 0 || currentVelocity.Sign0() * targetDirection.Sign0() == -1)
+        if (targetDirection == 0 || currentVelocity.Sign0() * targetDirection == -1)
         {
             acceleration = maxSpeed / PlayerController.PlayerStats.airDecelerationTime * delta;
         }
@@ -46,6 +46,7 @@ public abstract class PlayerAirBehaviour : BasePlayerBehaviour
         float difference = maxSpeed * targetDirection - currentVelocity;
         acceleration = Mathf.Clamp(acceleration, 0, Mathf.Abs(difference)) * Mathf.Sign(difference);
 
+        PlayerController.SetSpriteDirection(targetDirection);
         PlayerController.MovementController.AddVelocity(acceleration * Vector2.right);
     }
 

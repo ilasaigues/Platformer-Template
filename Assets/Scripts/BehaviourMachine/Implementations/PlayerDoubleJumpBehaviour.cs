@@ -54,6 +54,8 @@ public class PlayerDoubleJumpBehaviour : PlayerAirBehaviour, IPlayerAbilityBehav
         PlayerController.MovementController.SetVelocity(null, PlayerController.AbilityStats.DoubleJumpHoverVelocity);
         PlayerController.InputHandler.JumpButton.OnRelease += JumpReleased;
         PlayerController.Jumps = Mathf.Max(PlayerController.Jumps, 2);
+        PlayAnim(PlayerController.PlayerAnimator.AnimationList.DoubleJump);
+
     }
 
     private void JumpReleased()

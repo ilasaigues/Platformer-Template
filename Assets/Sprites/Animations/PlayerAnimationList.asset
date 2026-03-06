@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f2918dd77e76a5408e39cbabb6fef04, type: 3}
+  m_Name: PlayerAnimationList
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerAnimationList
+  Idle: {fileID: 7400000, guid: f74e0365b6bb4a34cb0285974e19c051, type: 2}
+  Run: {fileID: 7400000, guid: 8e992abdef4f0134e878a0c9aee14612, type: 2}
+  Jump: {fileID: 7400000, guid: f96a2d1d26f5d944482137a92aa06c08, type: 2}
+  Falling: {fileID: 7400000, guid: f96a2d1d26f5d944482137a92aa06c08, type: 2}
+  DoubleJump: {fileID: 7400000, guid: f96a2d1d26f5d944482137a92aa06c08, type: 2}
+  ShieldEnter: {fileID: 7400000, guid: 655dac5e560916d4b9ecaf11da2cb81c, type: 2}
+  Shield: {fileID: 7400000, guid: 3be7db4f08edbfc4280421a622b70e29, type: 2}
+  ShieldExit: {fileID: 0}
+  DashEnter: {fileID: 7400000, guid: 13e62d4c161079f41900932ab2538522, type: 2}
+  Dash: {fileID: 7400000, guid: 111a28cb42799054ea6b00e3fce0044a, type: 2}
+  DashExit: {fileID: 7400000, guid: c5475c9f6124b9248a6a945554d8f25d, type: 2}

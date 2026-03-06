@@ -22,6 +22,8 @@ ScriptedImporter:
   _intGridValues:
   - _key: Grass_1
     _asset: {fileID: 11400000, guid: 61f80c469f0ae6b41849498d1fd899ac, type: 2}
+  - _key: Background_1
+    _asset: {instanceID: 0}
   _entities: []
   _enumGenerate: 0
   _enumPath: 
@@ -30,3 +32,5 @@ ScriptedImporter:
   _layerCustomSortingOrders:
   - _ldtkLayerName: Grass
     _ldtkLayerOrder: 0
+  - _ldtkLayerName: Background
+    _ldtkLayerOrder: -1

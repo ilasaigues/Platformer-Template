@@ -12,6 +12,8 @@ public class PlayerDashBehaviour : BasePlayerBehaviour, IPlayerAbilityBehaviour
 
     public bool OnCooldown => TimeLastUsed + TimeSpan.FromSeconds(PlayerController.AbilityStats.DashCooldown) > DateTime.Now;
 
+    bool _windingUp = false;
+
     public PlayerDashBehaviour(PlayerController player) : base(player)
     {
     }
@@ -22,18 +24,16 @@ public class PlayerDashBehaviour : BasePlayerBehaviour, IPlayerAbilityBehaviour
 
     public override void Enter()
     {
+        PlayAnim(PlayerController.PlayerAnimator.AnimationList.DashEnter);
         TimeLastUsed = DateTime.Now;
-        PlayerController.SpriteRenderer.color = Color.orange;
         PlayerController.RemainingDashes--;
 
+        _windingUp = true;
         _elapsedTime = 0;
         _direction = 0;
     }
 
-    public override void Exit()
-    {
-        PlayerController.SpriteRenderer.color = Color.teal;
-    }
+
 
     public override BehaviourChangeRequest VerifyBehaviour()
     {
@@ -59,9 +59,15 @@ public class PlayerDashBehaviour : BasePlayerBehaviour, IPlayerAbilityBehaviour
         }
         else if (_elapsedTime <= PlayerController.AbilityStats.DashWindupTime + PlayerController.AbilityStats.DashMovementTime) // dash
         {
+            if (_windingUp)
+            {
+                PlayAnim(PlayerController.PlayerAnimator.AnimationList.Dash);
+                _windingUp = false;
+            }
             if (_direction == 0)
             {
                 _direction = PlayerController.LastDirectionInput.x.Sign0();
+                PlayerController.SetSpriteDirection(_direction);
                 if (_direction == 0)
                 {
                     _direction = PlayerController.MovementController.LastHorizontalDirection;
@@ -82,5 +88,10 @@ public class PlayerDashBehaviour : BasePlayerBehaviour, IPlayerAbilityBehaviour
 
     public override void Update(float delta)
     {
+    }
+
+    public override void Exit()
+    {
+
     }
 }

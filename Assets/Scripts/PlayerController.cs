@@ -3,13 +3,14 @@ using UnityEngine;
 [RequireComponent(typeof(CollisionController))]
 [RequireComponent(typeof(MovementController))]
 [RequireComponent(typeof(BehaviourMachine))]
+[RequireComponent(typeof(PlayerAnimator))]
 public class PlayerController : MonoBehaviour
 {
     public PlayerStats PlayerStats;
     public AbilityStats AbilityStats;
     public CollisionController CollisionController;
     public MovementController MovementController;
-
+    public PlayerAnimator PlayerAnimator;
     public InputHandler InputHandler;
 
     public BehaviourMachine BehaviourMachine;
@@ -27,6 +28,7 @@ public class PlayerController : MonoBehaviour
         SpriteRenderer = gameObject.GetOrAddComponent<SpriteRenderer>();
         CollisionController = gameObject.GetOrAddComponent<CollisionController>();
         MovementController = gameObject.GetOrAddComponent<MovementController>();
+        PlayerAnimator = gameObject.GetOrAddComponent<PlayerAnimator>();
         BehaviourMachine = gameObject.GetOrAddComponent<BehaviourMachine>();
         BehaviourMachine.AddBehaviour(new PlayerFallingBehaviour(this));
         BehaviourMachine.AddBehaviour(new PlayerIdleBehaviour(this));
@@ -53,7 +55,6 @@ public class PlayerController : MonoBehaviour
         InputHandler.JumpButton.OnPress += OnJumpPressed;
     }
 
-
     void OnDisable()
     {
         InputHandler.JumpButton.OnPress -= OnJumpPressed;
@@ -70,6 +71,18 @@ public class PlayerController : MonoBehaviour
             InputHandler.JumpButton.JustPressed = false;
             InputHandler.JumpButton.TimeLastPressed = DateTime.Now - TimeSpan.FromSeconds(PlayerStats.jumpBufferTime * 2);
             MovementController.IgnoreOneWay = true;
+        }
+    }
+
+    public void SetSpriteDirection(int direction)
+    {
+        if (direction == 1)
+        {
+            SpriteRenderer.flipX = false;
+        }
+        else if (direction == -1)
+        {
+            SpriteRenderer.flipX = true;
         }
     }
 

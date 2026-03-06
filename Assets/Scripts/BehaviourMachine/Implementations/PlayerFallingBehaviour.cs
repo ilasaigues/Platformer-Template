@@ -13,6 +13,8 @@ public class PlayerFallingBehaviour : PlayerAirBehaviour
 
     public override void Enter()
     {
+        PlayAnim(PlayerController.PlayerAnimator.AnimationList.Falling);
+
     }
 
     public override void Exit()

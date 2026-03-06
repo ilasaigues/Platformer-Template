@@ -8,21 +8,27 @@ public class PlayerGroundMoveBehaviour : PlayerGroundedBehaviour
     public PlayerGroundMoveBehaviour(PlayerController player) : base(player)
     {
     }
+    public override void Enter()
+    {
+        base.Enter();
+        PlayAnim(PlayerController.PlayerAnimator.AnimationList.Run);
+    }
 
     public override void Exit()
     {
 
     }
 
+
     public override void FixedUpdate(float delta)
     {
         base.FixedUpdate(delta);
         float currentVelocity = PlayerController.MovementController.Velocity.x;
-        float targetDirection = PlayerController.LastDirectionInput.x.Sign0();
+        int targetDirection = PlayerController.LastDirectionInput.x.Sign0();
         float maxSpeed = PlayerController.PlayerStats.groundedSpeed;
 
         float acceleration;
-        if (targetDirection == 0 || currentVelocity.Sign0() * targetDirection.Sign0() == -1)
+        if (targetDirection == 0 || currentVelocity.Sign0() * targetDirection == -1)
         {
             acceleration = maxSpeed / PlayerController.PlayerStats.groundedDecelerationTime * delta;
         }
@@ -33,6 +39,8 @@ public class PlayerGroundMoveBehaviour : PlayerGroundedBehaviour
 
         float difference = maxSpeed * targetDirection - currentVelocity;
         acceleration = Mathf.Clamp(acceleration, 0, Mathf.Abs(difference)) * Mathf.Sign(difference);
+
+        PlayerController.SetSpriteDirection(targetDirection);
 
         PlayerController.MovementController.AddVelocity(acceleration * Vector2.right);
 

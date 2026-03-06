@@ -1,3 +1,5 @@
+using UnityEngine;
+
 public abstract class BasePlayerBehaviour : BaseBehaviour
 {
     protected PlayerController PlayerController { get; set; }
@@ -17,5 +19,10 @@ public abstract class BasePlayerBehaviour : BaseBehaviour
             return PlayerController.TryUseAbility<PlayerDashBehaviour>(this);
         }
         return null;
+    }
+
+    public void PlayAnim(AnimationClip animClip)
+    {
+        PlayerController.PlayerAnimator.Play(animClip);
     }
 }

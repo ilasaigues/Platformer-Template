@@ -8,6 +8,7 @@ public class PlayerIdleBehaviour : PlayerGroundedBehaviour
     public override void Enter()
     {
         base.Enter();
+        PlayAnim(PlayerController.PlayerAnimator.AnimationList.Idle);
     }
 
     public override void Exit()
