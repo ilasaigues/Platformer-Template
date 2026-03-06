@@ -27,6 +27,6 @@ MonoBehaviour:
   peakTresholds: {x: 0.5, y: -0.5}
   coyoteTime: 0.1
   jumpBufferTime: 0.15
-  ceilingCorrection: 0.25
-  ledgeCorrectionUp: 0.25
-  ledgeCorrectionDown: 0.25
+  ceilingCorrection: 0.125
+  ledgeCorrectionUp: 0.125
+  ledgeCorrectionDown: 0.125

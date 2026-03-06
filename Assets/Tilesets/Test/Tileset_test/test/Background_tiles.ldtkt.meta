@@ -11,6 +11,246 @@ ScriptedImporter:
   _reimportOnDependencyChange: 1
   _pixelsPerUnit: 16
   _overrideTexture: {instanceID: 0}
-  _sprites: []
+  _sprites:
+  - name: Background_tiles_0
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 24
+      height: 24
+    spriteID: ac075da5dd4950244a370d2e2398c5d7
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Background_tiles_1
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 24
+      y: 0
+      width: 24
+      height: 24
+    spriteID: 50a3d45c28dd0b243815d3d8d51d7bbe
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Background_tiles_2
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 48
+      y: 0
+      width: 24
+      height: 24
+    spriteID: 7f388483950134949a7bfd83447e680b
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Background_tiles_3
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 72
+      y: 0
+      width: 24
+      height: 24
+    spriteID: 02a188c18a5925c4e9bcaef18c964d9c
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Background_tiles_4
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 96
+      y: 0
+      width: 24
+      height: 24
+    spriteID: 58d6aa6e99afca044b4f5e02e6c8c3f5
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Background_tiles_5
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 120
+      y: 0
+      width: 24
+      height: 24
+    spriteID: b94c70506fc318442b79fdd7e54bee6e
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Background_tiles_6
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 144
+      y: 0
+      width: 24
+      height: 24
+    spriteID: c34996c915f1c0748aa6b9971c708c34
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Background_tiles_7
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 168
+      y: 0
+      width: 24
+      height: 24
+    spriteID: 501a50dd9cacdd34f8c1a6a0c6b390f5
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Background_tiles_8
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 192
+      y: 0
+      width: 24
+      height: 24
+    spriteID: 09e36cf5eeda1c544b3660e7f2bcab0a
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Background_tiles_9
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 216
+      y: 0
+      width: 24
+      height: 24
+    spriteID: e2bba2d8eacab1d4197eed88e7fad7f2
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Background_tiles_10
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 240
+      y: 0
+      width: 24
+      height: 24
+    spriteID: 7601f32e1ed54e744bfe17c05eb22a63
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Background_tiles_11
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 264
+      y: 0
+      width: 24
+      height: 24
+    spriteID: 2ba5a4e0fcb769b49af886d9df1931cf
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Background_tiles_12
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 288
+      y: 0
+      width: 24
+      height: 24
+    spriteID: dff679b20f875de4292c7629cdcfa8ce
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Background_tiles_13
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 312
+      y: 0
+      width: 24
+      height: 24
+    spriteID: d6dd0dbe512c4a348ae45858aee88bbb
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Background_tiles_14
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 336
+      y: 0
+      width: 24
+      height: 24
+    spriteID: 222f6618a9a2b83438395e8cc5f5a3eb
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Background_tiles_15
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 360
+      y: 0
+      width: 24
+      height: 24
+    spriteID: c428a93553d9eb54b90bd63643db6201
+    spriteOutline: []
+    tessellationDetail: 0
   _secondaryTextures: []
   _artifacts: {instanceID: 0}
