@@ -15,7 +15,7 @@ MonoBehaviour:
   groundedSpeed: 8
   groundedAccelerationTime: 0.125
   groundedDecelerationTime: 0.075
-  airSpeed: 10
+  airSpeed: 8
   airAccelerationTime: 0.2
   airDecelerationTime: 0.1
   jumpVelocity: 14
