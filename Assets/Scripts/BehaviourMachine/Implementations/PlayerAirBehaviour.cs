@@ -11,13 +11,12 @@ public abstract class PlayerAirBehaviour : BasePlayerBehaviour
         }
 
         var verticalVelocity = PlayerController.MovementController.Velocity.y;
-        // REDO
-
-
 
         if (verticalVelocity <= 0 &&
             PlayerController.MovementController.Grounded)
         {
+            PlayAnim(PlayerController.PlayerAnimator.AnimationList.Land);
+
             if (Mathf.Approximately(PlayerController.LastDirectionInput.x, 0))
             {
                 return BehaviourChangeRequest.New<PlayerIdleBehaviour>();

@@ -5,6 +5,7 @@ public class AbilityStats : ScriptableObject
 {
     [Header("Rock")]
     public float RockGravity;
+    public float MinRockTime;
     public float RockBreakSpeed;
     [Header("Dash")]
     public float DashWindupTime;

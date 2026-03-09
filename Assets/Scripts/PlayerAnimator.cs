@@ -7,10 +7,10 @@ public class PlayerAnimator : MonoBehaviour
 {
     public PlayerAnimationList AnimationList;
 
-    private AnimationClip _currentAnimation;
 
     private Animator _animator;
 
+    private bool _startedPlayingThisframe;
 
     private Queue<AnimationClip> _animationQueue = new();
 
@@ -21,20 +21,21 @@ public class PlayerAnimator : MonoBehaviour
     }
 
 
-    public void PlayAnimationClip(AnimationClip animClip, bool clearQueue = true)
+    public bool PlayAnimationClip(AnimationClip animClip, bool clearQueue = true)
     {
-        if (animClip == null) return;
+        if (animClip == null || (!clearQueue && _startedPlayingThisframe)) return false;
         Debug.Log("<color=blue>Play " + animClip.name);
         if (clearQueue) _animationQueue.Clear();
-        _currentAnimation = animClip;
         _animator.Play(animClip.name);
-
+        _startedPlayingThisframe = true;
+        return true;
     }
 
     public void EnqueueAnimationClip(AnimationClip clip)
     {
+        Debug.Log("<color=white>Try Enqueue " + clip.name);
 
-        if (_animationQueue.Count == 0 && CanOverrideCurrentAnim())
+        if (!_startedPlayingThisframe && _animationQueue.Count == 0 && CanOverrideCurrentAnim())
         {
             PlayAnimationClip(clip, false);
         }
@@ -48,17 +49,21 @@ public class PlayerAnimator : MonoBehaviour
     private bool CanOverrideCurrentAnim()
     {
         var currentAnimatorState = _animator.GetCurrentAnimatorStateInfo(0);
-        
-        return _currentAnimation.isLooping || currentAnimatorState.normalizedTime >= 1;
+        var currentAnimation = _animator.GetCurrentAnimatorClipInfo(0)[0].clip;
+        return currentAnimation.isLooping || currentAnimatorState.normalizedTime >= 1;
     }
 
     void Update()
     {
-        //Debug.Log("<color=red> Anim Queue: " + _animationQueue.Count);
         if (_animationQueue.Count > 0 && CanOverrideCurrentAnim())
         {
-            PlayAnimationClip(_animationQueue.Dequeue(), false);
+            if (PlayAnimationClip(_animationQueue.Peek(), false))
+            {
+                _animationQueue.Dequeue();
+            }
         }
+
+        _startedPlayingThisframe = false;
     }
 
 }

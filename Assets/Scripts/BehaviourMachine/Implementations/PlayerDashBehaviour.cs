@@ -32,8 +32,6 @@ public class PlayerDashBehaviour : BasePlayerBehaviour, IPlayerAbilityBehaviour
         _direction = 0;
     }
 
-
-
     public override BehaviourChangeRequest VerifyBehaviour()
     {
         if (base.VerifyBehaviour() is BehaviourChangeRequest baseBehaviour)
@@ -98,6 +96,8 @@ public class PlayerDashBehaviour : BasePlayerBehaviour, IPlayerAbilityBehaviour
 
     public override void Exit()
     {
-        PlayAnim(PlayerController.PlayerAnimator.AnimationList.DashExit);
+        EnqueueAnim(PlayerController.PlayerAnimator.AnimationList.DashExit);
+        var flipX = PlayerController.MovementController.LastHorizontalDirection == -1;
+        VFXSpawner.Instance.PlayFX(VFXSpawner.Instance.VFXList.DashFeathers, PlayerController.transform.position, flipX);
     }
 }

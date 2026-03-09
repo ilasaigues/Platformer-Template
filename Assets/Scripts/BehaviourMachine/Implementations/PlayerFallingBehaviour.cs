@@ -13,7 +13,7 @@ public class PlayerFallingBehaviour : PlayerAirBehaviour
 
     public override void Enter()
     {
-        EnqueueAnim(PlayerController.PlayerAnimator.AnimationList.Falling);
+        EnqueueAnim(PlayerController.PlayerAnimator.AnimationList.Peak);
     }
 
     public override void Exit()

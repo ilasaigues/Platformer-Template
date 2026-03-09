@@ -68,9 +68,16 @@ public class PlayerRockBehaviour : BasePlayerBehaviour, IPlayerAbilityBehaviour
             return baseBehaviour;
         }
 
-        if (_released)
+        if (_released && (DateTime.Now - TimeLastUsed).TotalSeconds >= PlayerController.AbilityStats.MinRockTime)
         {
-            return BehaviourChangeRequest.New<PlayerFallingBehaviour>();
+            if (PlayerController.MovementController.Grounded)
+            {
+                return BehaviourChangeRequest.New<PlayerIdleBehaviour>();
+            }
+            else
+            {
+                return BehaviourChangeRequest.New<PlayerFallingBehaviour>();
+            }
         }
         return null;
     }

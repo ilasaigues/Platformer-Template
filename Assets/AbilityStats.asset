@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: AbilityStats
   m_EditorClassIdentifier: Assembly-CSharp::AbilityStats
   RockGravity: -50
+  MinRockTime: 0.25
   RockBreakSpeed: 10
   DashWindupTime: 0.05
   DashMovementTime: 0.16

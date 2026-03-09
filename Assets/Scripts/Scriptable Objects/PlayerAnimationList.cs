@@ -1,7 +1,7 @@
 
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "Scriptables/PlayerAnimationList", fileName = "new PlayerAnimationList")]
+[CreateAssetMenu(menuName = "Scriptable Objects/PlayerAnimationList", fileName = "new PlayerAnimationList")]
 public class PlayerAnimationList : ScriptableObject
 {
     public AnimationClip Idle;
@@ -13,7 +13,6 @@ public class PlayerAnimationList : ScriptableObject
     public AnimationClip Land;
     public AnimationClip ShieldEnter;
     public AnimationClip Shield;
-    public AnimationClip ShieldExit;
     public AnimationClip DashEnter;
     public AnimationClip Dash;
     public AnimationClip DashExit;
