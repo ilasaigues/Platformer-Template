@@ -13,7 +13,6 @@ public class PlayerDashBehaviour : BasePlayerBehaviour, IPlayerAbilityBehaviour
     public bool OnCooldown => TimeLastUsed + TimeSpan.FromSeconds(PlayerController.AbilityStats.DashCooldown) > DateTime.Now;
 
     bool _windingUp = false;
-
     public PlayerDashBehaviour(PlayerController player) : base(player)
     {
     }
@@ -44,7 +43,14 @@ public class PlayerDashBehaviour : BasePlayerBehaviour, IPlayerAbilityBehaviour
 
         if (_elapsedTime > PlayerController.AbilityStats.TotalDashTime)
         {
-            return BehaviourChangeRequest.New<PlayerFallingBehaviour>();
+            if (PlayerController.MovementController.Grounded)
+            {
+                return BehaviourChangeRequest.New<PlayerIdleBehaviour>();
+            }
+            else
+            {
+                return BehaviourChangeRequest.New<PlayerFallingBehaviour>();
+            }
         }
         return null;
     }
@@ -92,6 +98,6 @@ public class PlayerDashBehaviour : BasePlayerBehaviour, IPlayerAbilityBehaviour
 
     public override void Exit()
     {
-
+        PlayAnim(PlayerController.PlayerAnimator.AnimationList.DashExit);
     }
 }

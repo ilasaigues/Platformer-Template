@@ -7,11 +7,12 @@ public class PlayerGroundMoveBehaviour : PlayerGroundedBehaviour
 
     public PlayerGroundMoveBehaviour(PlayerController player) : base(player)
     {
+
     }
     public override void Enter()
     {
         base.Enter();
-        PlayAnim(PlayerController.PlayerAnimator.AnimationList.Run);
+        EnqueueAnim(PlayerController.PlayerAnimator.AnimationList.Run);
     }
 
     public override void Exit()

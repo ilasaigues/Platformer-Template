@@ -18,7 +18,14 @@ public abstract class PlayerAirBehaviour : BasePlayerBehaviour
         if (verticalVelocity <= 0 &&
             PlayerController.MovementController.Grounded)
         {
-            return BehaviourChangeRequest.New<PlayerIdleBehaviour>();
+            if (Mathf.Approximately(PlayerController.LastDirectionInput.x, 0))
+            {
+                return BehaviourChangeRequest.New<PlayerIdleBehaviour>();
+            }
+            else
+            {
+                return BehaviourChangeRequest.New<PlayerGroundMoveBehaviour>();
+            }
         }
 
         return null;

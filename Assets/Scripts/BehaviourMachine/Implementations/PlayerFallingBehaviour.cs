@@ -13,8 +13,7 @@ public class PlayerFallingBehaviour : PlayerAirBehaviour
 
     public override void Enter()
     {
-        PlayAnim(PlayerController.PlayerAnimator.AnimationList.Falling);
-
+        EnqueueAnim(PlayerController.PlayerAnimator.AnimationList.Falling);
     }
 
     public override void Exit()
@@ -35,8 +34,6 @@ public class PlayerFallingBehaviour : PlayerAirBehaviour
     {
         var baseValue = base.VerifyBehaviour();
         if (baseValue != null) return baseValue;
-
-
 
 
         bool jumpRequested = PlayerController.InputHandler.JumpButton.JustPressed;

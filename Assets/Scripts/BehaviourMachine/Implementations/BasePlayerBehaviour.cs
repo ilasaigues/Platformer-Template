@@ -23,6 +23,11 @@ public abstract class BasePlayerBehaviour : BaseBehaviour
 
     public void PlayAnim(AnimationClip animClip)
     {
-        PlayerController.PlayerAnimator.Play(animClip);
+        PlayerController.PlayerAnimator.PlayAnimationClip(animClip);
+    }
+
+    public void EnqueueAnim(AnimationClip animClip)
+    {
+        PlayerController.PlayerAnimator.EnqueueAnimationClip(animClip);
     }
 }
