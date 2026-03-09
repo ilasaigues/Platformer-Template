@@ -7,6 +7,8 @@ public class PlayerAnimator : MonoBehaviour
 {
     public PlayerAnimationList AnimationList;
 
+    private AnimationClip _currentAnimation;
+
     private Animator _animator;
 
 
@@ -24,7 +26,9 @@ public class PlayerAnimator : MonoBehaviour
         if (animClip == null) return;
         Debug.Log("<color=blue>Play " + animClip.name);
         if (clearQueue) _animationQueue.Clear();
+        _currentAnimation = animClip;
         _animator.Play(animClip.name);
+
     }
 
     public void EnqueueAnimationClip(AnimationClip clip)
@@ -44,13 +48,13 @@ public class PlayerAnimator : MonoBehaviour
     private bool CanOverrideCurrentAnim()
     {
         var currentAnimatorState = _animator.GetCurrentAnimatorStateInfo(0);
-        var currentAnimatorClip = _animator.GetCurrentAnimatorClipInfo(0)[0].clip;
-        return currentAnimatorClip.isLooping || currentAnimatorState.normalizedTime >= 1;
+        
+        return _currentAnimation.isLooping || currentAnimatorState.normalizedTime >= 1;
     }
 
     void Update()
     {
-        Debug.Log("<color=red> Anim Queue: " + _animationQueue.Count);
+        //Debug.Log("<color=red> Anim Queue: " + _animationQueue.Count);
         if (_animationQueue.Count > 0 && CanOverrideCurrentAnim())
         {
             PlayAnimationClip(_animationQueue.Dequeue(), false);

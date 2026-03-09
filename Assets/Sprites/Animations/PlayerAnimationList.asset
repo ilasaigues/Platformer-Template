@@ -15,8 +15,10 @@ MonoBehaviour:
   Idle: {fileID: 7400000, guid: f74e0365b6bb4a34cb0285974e19c051, type: 2}
   Run: {fileID: 7400000, guid: 8e992abdef4f0134e878a0c9aee14612, type: 2}
   Jump: {fileID: 7400000, guid: f96a2d1d26f5d944482137a92aa06c08, type: 2}
-  Falling: {fileID: 7400000, guid: f96a2d1d26f5d944482137a92aa06c08, type: 2}
-  DoubleJump: {fileID: 7400000, guid: f96a2d1d26f5d944482137a92aa06c08, type: 2}
+  Peak: {fileID: 7400000, guid: 460f3d2e08aeeb045b49c7b50d26df46, type: 2}
+  Falling: {fileID: 7400000, guid: c816d2fd7334cbb4fac0be67e48ea0a7, type: 2}
+  DoubleJump: {fileID: 7400000, guid: ecd5de290cde04e449da3f6b409b9e3e, type: 2}
+  Land: {fileID: 7400000, guid: 8cb7d946e975e204e8785bcbcf7b4352, type: 2}
   ShieldEnter: {fileID: 7400000, guid: 655dac5e560916d4b9ecaf11da2cb81c, type: 2}
   Shield: {fileID: 7400000, guid: 3be7db4f08edbfc4280421a622b70e29, type: 2}
   ShieldExit: {fileID: 0}
