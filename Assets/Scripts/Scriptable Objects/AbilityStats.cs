@@ -18,6 +18,7 @@ public class AbilityStats : ScriptableObject
     public float DashVelocity => DashDistance / DashMovementTime;
     [Header("Double Jump")]
     public float DoubleJumpVelocity;
+    public float DoubleJumpMinTime;
     public float DoubleJumpWindupTime;
     public float DoubleJumpHoverVelocity;
 

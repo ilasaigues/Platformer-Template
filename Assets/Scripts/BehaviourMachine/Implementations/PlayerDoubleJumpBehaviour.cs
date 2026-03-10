@@ -43,7 +43,8 @@ public class PlayerDoubleJumpBehaviour : PlayerAirBehaviour, IPlayerAbilityBehav
             return PlayerController.PlayerStats.peakGravity;
         }
 
-        return _jumpHeld ? PlayerController.PlayerStats.jumpGravity : PlayerController.PlayerStats.cutoffGravity;
+        return !_jumpHeld && (DateTime.Now - TimeLastUsed) >= TimeSpan.FromSeconds(PlayerController.AbilityStats.DoubleJumpMinTime)
+         ? PlayerController.PlayerStats.cutoffGravity : PlayerController.PlayerStats.jumpGravity;
     }
 
     public override void Enter()
