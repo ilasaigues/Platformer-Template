@@ -24,7 +24,7 @@ public abstract class PlayerGroundedBehaviour : BasePlayerBehaviour
         }
 
         if (PlayerController.InputHandler.JumpButton.JustPressed ||
-            PlayerController.InputHandler.JumpButton.TimeSinceLastPressed.TotalSeconds <=
+            PlayerController.InputHandler.JumpButton.TimeSinceLastPressed <=
             PlayerController.PlayerStats.jumpBufferTime)
         {
             return BehaviourChangeRequest.New<PlayerJumpingBehaviour>();

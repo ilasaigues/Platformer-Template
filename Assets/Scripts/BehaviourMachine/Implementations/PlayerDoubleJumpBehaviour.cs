@@ -11,7 +11,7 @@ public class PlayerDoubleJumpBehaviour : PlayerAirBehaviour, IPlayerAbilityBehav
 
     public bool OnCooldown => false;
 
-    public DateTime TimeLastUsed { get; set; }
+    public float TimeLastUsed { get; set; }
 
     private bool IsInWindup = false;
     public PlayerDoubleJumpBehaviour(PlayerController playerController) : base(playerController)
@@ -43,13 +43,14 @@ public class PlayerDoubleJumpBehaviour : PlayerAirBehaviour, IPlayerAbilityBehav
             return PlayerController.PlayerStats.peakGravity;
         }
 
-        return !_jumpHeld && (DateTime.Now - TimeLastUsed) >= TimeSpan.FromSeconds(PlayerController.AbilityStats.DoubleJumpMinTime)
-         ? PlayerController.PlayerStats.cutoffGravity : PlayerController.PlayerStats.jumpGravity;
+        return !_jumpHeld && Time.time - TimeLastUsed >=
+            PlayerController.AbilityStats.DoubleJumpMinTime + PlayerController.AbilityStats.DoubleJumpWindupTime
+            ? PlayerController.PlayerStats.cutoffGravity : PlayerController.PlayerStats.jumpGravity;
     }
 
     public override void Enter()
     {
-        TimeLastUsed = DateTime.Now;
+        TimeLastUsed = Time.time;
         _jumpHeld = PlayerController.InputHandler.JumpButton.Pressed;
         IsInWindup = true;
         PlayerController.MovementController.SetVelocity(null, PlayerController.AbilityStats.DoubleJumpHoverVelocity);
@@ -75,10 +76,12 @@ public class PlayerDoubleJumpBehaviour : PlayerAirBehaviour, IPlayerAbilityBehav
         base.FixedUpdate(delta);
         if (IsInWindup)
         {
-            if (DateTime.Now >= TimeLastUsed + TimeSpan.FromSeconds(PlayerController.AbilityStats.DoubleJumpWindupTime))
+            if (Time.time >= TimeLastUsed + PlayerController.AbilityStats.DoubleJumpWindupTime)
             {
                 IsInWindup = false;
                 PlayerController.MovementController.SetVelocity(null, PlayerController.AbilityStats.DoubleJumpVelocity);
+                var flipX = PlayerController.MovementController.LastHorizontalDirection == -1;
+                VFXSpawner.Instance.PlayFX(VFXSpawner.Instance.VFXList.AirBurst, PlayerController.transform.position + Vector3.down / 2, flipX);
             }
         }
     }

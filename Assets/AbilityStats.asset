@@ -21,6 +21,6 @@ MonoBehaviour:
   DashDistance: 4
   DashCooldown: 0.75
   DoubleJumpVelocity: 12
-  DoubleJumpMinTime: 0.083333336
-  DoubleJumpWindupTime: 0.12
+  DoubleJumpMinTime: 0.15
+  DoubleJumpWindupTime: 0.16666667
   DoubleJumpHoverVelocity: -5

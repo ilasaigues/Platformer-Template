@@ -8,7 +8,7 @@ public class PlayerRockBehaviour : BasePlayerBehaviour, IPlayerAbilityBehaviour
     public bool Enabled { get; set; }
     public bool OnCooldown => false;
 
-    public DateTime TimeLastUsed { get; set; }
+    public float TimeLastUsed { get; set; }
 
     bool _released;
 
@@ -21,7 +21,7 @@ public class PlayerRockBehaviour : BasePlayerBehaviour, IPlayerAbilityBehaviour
     public override void Enter()
     {
         _released = false;
-        TimeLastUsed = DateTime.Now;
+        TimeLastUsed = Time.time;
         PlayerController.InputHandler.RockButton.OnRelease += OnRockButtonRelease;
         PlayAnim(PlayerController.PlayerAnimator.AnimationList.ShieldEnter);
     }
@@ -29,6 +29,8 @@ public class PlayerRockBehaviour : BasePlayerBehaviour, IPlayerAbilityBehaviour
     public override void Exit()
     {
         PlayerController.InputHandler.RockButton.OnRelease -= OnRockButtonRelease;
+        var flipX = PlayerController.MovementController.LastHorizontalDirection == -1;
+        VFXSpawner.Instance.PlayFX(VFXSpawner.Instance.VFXList.ShieldEnd, PlayerController.transform.position, flipX);
     }
 
     private void OnRockButtonRelease()
@@ -68,7 +70,7 @@ public class PlayerRockBehaviour : BasePlayerBehaviour, IPlayerAbilityBehaviour
             return baseBehaviour;
         }
 
-        if (_released && (DateTime.Now - TimeLastUsed).TotalSeconds >= PlayerController.AbilityStats.MinRockTime)
+        if (_released && Time.time - TimeLastUsed >= PlayerController.AbilityStats.MinRockTime)
         {
             if (PlayerController.MovementController.Grounded)
             {

@@ -1,5 +1,5 @@
 using System;
-
+using UnityEngine;
 public class PlayerFallingBehaviour : PlayerAirBehaviour
 {
     public PlayerFallingBehaviour(PlayerController playerController) : base(playerController)
@@ -39,7 +39,7 @@ public class PlayerFallingBehaviour : PlayerAirBehaviour
         bool jumpRequested = PlayerController.InputHandler.JumpButton.JustPressed;
         if (jumpRequested)
         {
-            bool isInCoyoteTime = (DateTime.Now - PlayerController.MovementController.TimeLeftGround).TotalSeconds <=
+            bool isInCoyoteTime = Time.time - PlayerController.MovementController.TimeLeftGround <=
                PlayerController.PlayerStats.coyoteTime;
             if (isInCoyoteTime && PlayerController.Jumps < 1)
             {

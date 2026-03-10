@@ -6,8 +6,8 @@ public class InputButtonWrapper
 {
     public bool Pressed;
     public bool JustPressed;
-    public DateTime TimeLastPressed;
-    public TimeSpan TimeSinceLastPressed => DateTime.Now - TimeLastPressed;
+    public float TimeLastPressed;
+    public float TimeSinceLastPressed => Time.time - TimeLastPressed;
 
     public event Action OnPress = delegate { };
     public event Action OnRelease = delegate { };
@@ -21,7 +21,7 @@ public class InputButtonWrapper
                 break;
             case InputActionPhase.Started:
                 JustPressed = true;
-                TimeLastPressed = DateTime.Now;
+                TimeLastPressed = Time.time;
                 OnPress();
                 break;
             case InputActionPhase.Performed:

@@ -10,7 +10,7 @@ public class PlayerDashBehaviour : BasePlayerBehaviour, IPlayerAbilityBehaviour
 
     int _direction;
 
-    public bool OnCooldown => TimeLastUsed + TimeSpan.FromSeconds(PlayerController.AbilityStats.DashCooldown) > DateTime.Now;
+    public bool OnCooldown => TimeLastUsed + PlayerController.AbilityStats.DashCooldown > Time.time;
 
     bool _windingUp = false;
     public PlayerDashBehaviour(PlayerController player) : base(player)
@@ -19,12 +19,12 @@ public class PlayerDashBehaviour : BasePlayerBehaviour, IPlayerAbilityBehaviour
 
 
     public bool Enabled { get; set; }
-    public DateTime TimeLastUsed { get; set; }
+    public float TimeLastUsed { get; set; }
 
     public override void Enter()
     {
         PlayAnim(PlayerController.PlayerAnimator.AnimationList.DashEnter);
-        TimeLastUsed = DateTime.Now;
+        TimeLastUsed = Time.time;
         PlayerController.RemainingDashes--;
 
         _windingUp = true;

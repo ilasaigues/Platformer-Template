@@ -14,7 +14,7 @@ public class MovementController : MonoBehaviour
     public bool OnOneWayPlatform = false;
     public int LastHorizontalDirection;
 
-    public DateTime TimeLeftGround;
+    public float TimeLeftGround;
 
     public bool IgnoreOneWay = false;
 
@@ -124,7 +124,7 @@ public class MovementController : MonoBehaviour
         {
             if (!Mathf.Approximately(correctedVelocity.y, 0))
             {
-                TimeLeftGround = DateTime.Now;
+                TimeLeftGround = Time.time;
                 Grounded = false;
             }
         }

@@ -69,7 +69,7 @@ public class PlayerController : MonoBehaviour
         {
             InputHandler.JumpButton.Pressed = false;
             InputHandler.JumpButton.JustPressed = false;
-            InputHandler.JumpButton.TimeLastPressed = DateTime.Now - TimeSpan.FromSeconds(PlayerStats.jumpBufferTime * 2);
+            InputHandler.JumpButton.TimeLastPressed = Time.time - PlayerStats.jumpBufferTime * 2;
             MovementController.IgnoreOneWay = true;
         }
     }
