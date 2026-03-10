@@ -13,6 +13,8 @@ public class PlayerController : MonoBehaviour
     public PlayerAnimator PlayerAnimator;
     public InputHandler InputHandler;
 
+    public SpriteTrail ExternalSpriteTrail;
+
     public BehaviourMachine BehaviourMachine;
 
     public Vector2 LastDirectionInput => InputHandler.MoveAxis.LastValue;
@@ -58,6 +60,11 @@ public class PlayerController : MonoBehaviour
     void OnDisable()
     {
         InputHandler.JumpButton.OnPress -= OnJumpPressed;
+    }
+
+    public void StartTrail()
+    {
+        ExternalSpriteTrail?.StartTrail(transform.position, transform);
     }
 
     private void OnJumpPressed()

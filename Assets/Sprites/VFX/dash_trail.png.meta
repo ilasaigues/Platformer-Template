@@ -48,7 +48,7 @@ TextureImporter:
   compressionQuality: 50
   spriteMode: 2
   spriteExtrude: 1
-  spriteMeshType: 1
+  spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 16
@@ -116,12 +116,12 @@ TextureImporter:
       name: dash_trail_0
       rect:
         serializedVersion: 2
-        x: 5
+        x: 0
         y: 48
-        width: 16
+        width: 48
         height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 4
+      pivot: {x: 0, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -138,12 +138,12 @@ TextureImporter:
       name: dash_trail_3
       rect:
         serializedVersion: 2
-        x: 2
-        y: 32
-        width: 16
+        x: 0
+        y: 0
+        width: 48
         height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 4
+      pivot: {x: 0, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -157,45 +157,45 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: dash_trail_6
+      name: dash_trail_1
       rect:
         serializedVersion: 2
         x: 0
-        y: 16
-        width: 16
+        y: 32
+        width: 48
         height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 4
+      pivot: {x: 0, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 74491a6063b76cf4db32790eda8ff2a3
-      internalID: -1096875959
+      spriteID: 58a5b6cbaafaf404d85d4e8cffc15e56
+      internalID: 398121895
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: dash_trail_9
+      name: dash_trail_2
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
-        width: 16
+        y: 16
+        width: 48
         height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 4
+      pivot: {x: 0, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9d5fa21cdc6a2d04ba0bc6c0935593e2
-      internalID: -1445592162
+      spriteID: d77385c1bcf629f46b318f97f9d7218e
+      internalID: -719075724
       vertices: []
       indices: 
       edges: []
@@ -214,20 +214,12 @@ TextureImporter:
     spriteCustomMetadata:
       entries:
       - key: SpriteEditor.SliceSettings
-        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":16.0,"y":16.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":48.0,"y":16.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
       dash_trail_0: -4246222122064137551
       dash_trail_1: 398121895
-      dash_trail_10: -143931589
-      dash_trail_11: 159060384
       dash_trail_2: -719075724
       dash_trail_3: 829072012
-      dash_trail_4: 1757982603
-      dash_trail_5: -1774944382
-      dash_trail_6: -1096875959
-      dash_trail_7: 1867183285
-      dash_trail_8: 277959780
-      dash_trail_9: -1445592162
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

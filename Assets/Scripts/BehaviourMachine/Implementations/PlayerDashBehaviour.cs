@@ -66,6 +66,7 @@ public class PlayerDashBehaviour : BasePlayerBehaviour, IPlayerAbilityBehaviour
             if (_windingUp)
             {
                 PlayAnim(PlayerController.PlayerAnimator.AnimationList.Dash);
+                PlayerController.StartTrail();
                 _windingUp = false;
             }
             if (_direction == 0)
