@@ -1,43 +1,36 @@
 
+using System;
+using System.Collections;
 using System.Threading.Tasks;
 using UnityEngine;
+using UnityEngine.Events;
 
 [RequireComponent(typeof(SpriteRenderer))]
-[RequireComponent(typeof(Animation))]
+[RequireComponent(typeof(Animator))]
 public class VFXObject : MonoBehaviour
 {
-    public static VFXObject NewInstance(string name)
-    {
-        var go = new GameObject(name);
-        go.AddComponent<SpriteRenderer>();
-        go.AddComponent<Animation>();
-        return go.AddComponent<VFXObject>();
-    }
-
     private SpriteRenderer _spriteRenderer;
-    private Animation _animation;
+    private Animator _animator;
+
+    public UnityEvent<VFXObject> OnAnimationEnd;
 
     void Awake()
     {
         _spriteRenderer = GetComponent<SpriteRenderer>();
         _spriteRenderer.sortingOrder = 1;
-        _animation = GetComponent<Animation>();
+        _animator = GetComponent<Animator>();
     }
 
     public void SetDataAndPlay(AnimationClip animClip, Vector2 position, bool flipX)
     {
         transform.position = position;
         _spriteRenderer.flipX = flipX;
-        _animation.clip = animClip;
-        _animation.AddClip(animClip, animClip.name);
-        _animation.Play(animClip.name);
-
-        //DisableAfterDelay(_animation.clip.length);
+        _animator.Play(animClip.name);
     }
 
-    async void DisableAfterDelay(float time)
+    public void EndAnimation()
     {
-        await Task.Delay((int)(time * 1000));
-        gameObject.SetActive(false);
+        OnAnimationEnd.Invoke(this);
     }
+
 }
