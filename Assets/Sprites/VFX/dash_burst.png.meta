@@ -1,73 +1,25 @@
 fileFormatVersion: 2
-guid: 4e85959afe565a54484aa25dc2b39cb6
+guid: 7f43e62a576d9b343b1056de7e4b1890
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 1614818205413878724
-    second: air_burst 1_0
+      213: 3406349267822436742
+    second: dash_burst_0
   - first:
-      213: 4617008891336382048
-    second: air_burst 1_1
+      213: -4500980645618164053
+    second: dash_burst_1
   - first:
-      213: 8075013730698499850
-    second: air_burst 1_2
+      213: -8710128944743509083
+    second: dash_burst_2
   - first:
-      213: 4818101153358833776
-    second: air_burst 1_3
+      213: -4359998584612223038
+    second: dash_burst_3
   - first:
-      213: -5940678639032935638
-    second: air_burst 1_4
+      213: -2470153889168938084
+    second: dash_burst_4
   - first:
-      213: 7654703573605506276
-    second: air_burst 1_5
-  - first:
-      213: 2817407537688614743
-    second: air_burst 1_6
-  - first:
-      213: 977868853335547354
-    second: air_burst 1_7
-  - first:
-      213: -2517148792921964435
-    second: air_burst 1_8
-  - first:
-      213: 513460583742124804
-    second: air_burst 1_9
-  - first:
-      213: 835295608356430257
-    second: air_burst 1_10
-  - first:
-      213: -2488593820702666319
-    second: air_burst 1_11
-  - first:
-      213: -8391668789174069158
-    second: air_burst 1_12
-  - first:
-      213: -5986572589238524195
-    second: air_burst 1_13
-  - first:
-      213: -1697731676719417280
-    second: air_burst 1_14
-  - first:
-      213: -5682437429806309481
-    second: air_burst 1_15
-  - first:
-      213: 8529967599594546571
-    second: air_burst 1_16
-  - first:
-      213: 2571468731018551445
-    second: air_burst 1_17
-  - first:
-      213: -1782472339968487093
-    second: air_burst 1_18
-  - first:
-      213: -7347877592489174247
-    second: air_burst 1_19
-  - first:
-      213: 928181503144018334
-    second: air_burst 1_20
-  - first:
-      213: 285841436707100704
-    second: air_burst 1_21
+      213: -7669272233197650051
+    second: dash_burst_5
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -110,7 +62,7 @@ TextureImporter:
   lightmap: 0
   compressionQuality: 50
   spriteMode: 2
-  spriteExtrude: 0
+  spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
@@ -176,144 +128,12 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: air_burst_0
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 192
-        width: 96
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ae8c53be67ba5a14e902567a915dc497
-      internalID: 1850957643
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: air_burst_1
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 160
-        width: 96
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c8111e7a1e5804944948fcc07227859f
-      internalID: 49934030
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: air_burst_2
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 128
-        width: 96
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 67241e956bf917c4baa8a9de1802336d
-      internalID: 265124902
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: air_burst_3
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 96
-        width: 96
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 59998439fde42554c9a78e12913dafdc
-      internalID: -1578073349
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: air_burst_4
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 64
-        width: 96
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: bae8010ab91e765468b82da9a731004b
-      internalID: 1786890816
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: air_burst_5
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 32
-        width: 96
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5a40c0bb7aa20cf428219602f69ee92c
-      internalID: -447762189
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: air_burst_6
+      name: dash_burst_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 96
+        width: 32
         height: 32
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -321,10 +141,98 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 0a49cadc89d88d0498a07af3bd183c0f
-      internalID: 558192070
+      spriteID: 681e7798c98c54f20800000000000000
+      internalID: 3406349267822436742
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dash_burst_1
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bae550533fd4981c0800000000000000
+      internalID: -4500980645618164053
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dash_burst_2
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5a317bc7fd76f1780800000000000000
+      internalID: -8710128944743509083
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dash_burst_3
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2c78bf6336c2e73c0800000000000000
+      internalID: -4359998584612223038
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dash_burst_4
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c9b298f002048bdd0800000000000000
+      internalID: -2470153889168938084
       vertices: []
       indices: 
       edges: []
@@ -333,7 +241,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5b6a5f27488cbe2499bf1a6af8e499d4
+    spriteID: fffb5aa679e33704e90e6d26676b4ad6
     internalID: 0
     vertices: []
     indices: 
@@ -343,15 +251,13 @@ TextureImporter:
     spriteCustomMetadata:
       entries:
       - key: SpriteEditor.SliceSettings
-        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":7.0},"gridSpriteSize":{"x":128.0,"y":32.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":5.0,"y":1.0},"gridSpriteSize":{"x":32.0,"y":32.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      air_burst_0: 1850957643
-      air_burst_1: 49934030
-      air_burst_2: 265124902
-      air_burst_3: -1578073349
-      air_burst_4: 1786890816
-      air_burst_5: -447762189
-      air_burst_6: 558192070
+      dash_burst_0: 3406349267822436742
+      dash_burst_1: -4500980645618164053
+      dash_burst_2: -8710128944743509083
+      dash_burst_3: -4359998584612223038
+      dash_burst_4: -2470153889168938084
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

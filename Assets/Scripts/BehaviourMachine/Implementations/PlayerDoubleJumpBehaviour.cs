@@ -81,7 +81,7 @@ public class PlayerDoubleJumpBehaviour : PlayerAirBehaviour, IPlayerAbilityBehav
                 IsInWindup = false;
                 PlayerController.MovementController.SetVelocity(null, PlayerController.AbilityStats.DoubleJumpVelocity);
                 var flipX = PlayerController.MovementController.LastHorizontalDirection == -1;
-                VFXSpawner.Instance.PlayFX(VFXSpawner.Instance.VFXList.AirBurst, PlayerController.transform.position + Vector3.down / 2, flipX);
+                VFXSpawner.Instance.PlayFX(VFXSpawner.Instance.VFXList.AirBurst, PlayerController.transform.position, flipX);
             }
         }
     }

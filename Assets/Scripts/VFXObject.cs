@@ -24,6 +24,7 @@ public class VFXObject : MonoBehaviour
     public void SetDataAndPlay(AnimationClip animClip, Vector2 position, bool flipX)
     {
         transform.position = position;
+        _spriteRenderer.sortingOrder = -2;
         _spriteRenderer.flipX = flipX;
         _animator.Play(animClip.name);
     }
