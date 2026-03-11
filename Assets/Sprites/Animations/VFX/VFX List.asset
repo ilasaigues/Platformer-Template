@@ -15,3 +15,4 @@ MonoBehaviour:
   DashFeathers: {fileID: 7400000, guid: 25a3cb81ebd276548b13cf9f1a6acc18, type: 2}
   ShieldEnd: {fileID: 7400000, guid: 40e82e6035a4cd247b38ec2438a87b23, type: 2}
   AirBurst: {fileID: 7400000, guid: 77bb13b4d19b4394fbba69cfe7866324, type: 2}
+  DashBurst: {fileID: 7400000, guid: ea990e8dfa568a943be95d399d48e2ec, type: 2}
