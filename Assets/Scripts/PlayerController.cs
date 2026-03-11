@@ -18,12 +18,15 @@ public class PlayerController : MonoBehaviour
     public BehaviourMachine BehaviourMachine;
 
     public Vector2 LastDirectionInput => InputHandler.MoveAxis.LastValue;
+    public Vector2 LastHorizontalDirection { get; private set; }
 
     public int RemainingDashes = 1;
 
     public int Jumps = 0;
 
     public SpriteRenderer SpriteRenderer;
+
+    public int FacingDirection => SpriteRenderer.flipX ? -1 : 1;
 
     void Start()
     {
@@ -50,14 +53,11 @@ public class PlayerController : MonoBehaviour
         });
         BehaviourMachine.ChangeBehaviour(typeof(PlayerFallingBehaviour));
         ResetOnGrounded();
-    }
-
-    void OnEnable()
-    {
         InputHandler.JumpButton.OnPress += OnJumpPressed;
     }
 
-    void OnDisable()
+
+    void OnDestroy()
     {
         InputHandler.JumpButton.OnPress -= OnJumpPressed;
     }

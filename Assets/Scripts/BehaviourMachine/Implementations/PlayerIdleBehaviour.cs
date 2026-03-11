@@ -1,3 +1,5 @@
+using UnityEngine;
+
 public class PlayerIdleBehaviour : PlayerGroundedBehaviour
 {
     public PlayerIdleBehaviour(PlayerController player) : base(player)
@@ -24,7 +26,19 @@ public class PlayerIdleBehaviour : PlayerGroundedBehaviour
     public override void FixedUpdate(float delta)
     {
         base.FixedUpdate(delta);
-        //throw new System.NotImplementedException();
+
+        float currentVelocity = PlayerController.MovementController.Velocity.x;
+        int targetDirection = PlayerController.LastDirectionInput.x.Sign0();
+        float maxSpeed = PlayerController.PlayerStats.groundedSpeed;
+
+        float acceleration = maxSpeed / PlayerController.PlayerStats.groundedDecelerationTime * delta;
+
+        float difference = maxSpeed * targetDirection - currentVelocity;
+        acceleration = Mathf.Clamp(acceleration, 0, Mathf.Abs(difference)) * Mathf.Sign(difference);
+
+        PlayerController.SetSpriteDirection(targetDirection);
+
+        PlayerController.MovementController.AddVelocity(acceleration * Vector2.right);
     }
 
 
@@ -32,7 +46,7 @@ public class PlayerIdleBehaviour : PlayerGroundedBehaviour
     {
         var baseValue = base.VerifyBehaviour();
         if (baseValue != null) return baseValue;
-        if (PlayerController.MovementController.Velocity.x != 0 || PlayerController.LastDirectionInput.x != 0)
+        if (PlayerController.LastDirectionInput.x != 0)
         {
             return BehaviourChangeRequest.New<PlayerGroundMoveBehaviour>();
         }

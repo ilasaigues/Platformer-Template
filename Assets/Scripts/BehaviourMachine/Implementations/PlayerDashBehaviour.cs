@@ -29,7 +29,9 @@ public class PlayerDashBehaviour : BasePlayerBehaviour, IPlayerAbilityBehaviour
 
         _windingUp = true;
         _elapsedTime = 0;
-        _direction = 0;
+
+        _direction = PlayerController.FacingDirection;
+
     }
 
     public override BehaviourChangeRequest VerifyBehaviour()

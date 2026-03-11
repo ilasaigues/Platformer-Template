@@ -21,7 +21,7 @@ public abstract class BasePlayerBehaviour : BaseBehaviour
         return null;
     }
 
-    public void PlayAnim(AnimationClip animClip, bool clearQueue = false)
+    public void PlayAnim(AnimationClip animClip, bool clearQueue = true)
     {
         PlayerController.PlayerAnimator.PlayAnimationClip(animClip, clearQueue);
     }
