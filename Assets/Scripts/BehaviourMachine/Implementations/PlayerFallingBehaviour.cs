@@ -47,7 +47,8 @@ public class PlayerFallingBehaviour : PlayerAirBehaviour
             }
             else if (PlayerController.Jumps < 2)
             {
-                return BehaviourChangeRequest.New<PlayerDoubleJumpBehaviour>();
+
+                return PlayerController.TryUseAbility<PlayerDoubleJumpBehaviour>(); ;
             }
         }
         return null;

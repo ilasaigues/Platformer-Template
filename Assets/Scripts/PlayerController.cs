@@ -28,6 +28,10 @@ public class PlayerController : MonoBehaviour
 
     public int FacingDirection => SpriteRenderer.flipX ? -1 : 1;
 
+
+    public PlayerAbilityQueue PlayerAbilityQueue = new();
+
+
     void Start()
     {
         SpriteRenderer = gameObject.GetOrAddComponent<SpriteRenderer>();
@@ -41,19 +45,24 @@ public class PlayerController : MonoBehaviour
         BehaviourMachine.AddBehaviour(new PlayerJumpingBehaviour(this));
         BehaviourMachine.AddBehaviour(new PlayerRockBehaviour(this)
         {
-            Enabled = true
+            //Enabled = true
         });
         BehaviourMachine.AddBehaviour(new PlayerDashBehaviour(this)
         {
-            Enabled = true
+            //Enabled = true
         });
         BehaviourMachine.AddBehaviour(new PlayerDoubleJumpBehaviour(this)
         {
-            Enabled = true
+            //Enabled = true
         });
         BehaviourMachine.ChangeBehaviour(typeof(PlayerFallingBehaviour));
         ResetOnGrounded();
         InputHandler.JumpButton.OnPress += OnJumpPressed;
+    }
+
+    public void GainAbility<T>() where T : BasePlayerBehaviour, IPlayerAbilityBehaviour
+    {
+        PlayerAbilityQueue.AddAbility(BehaviourMachine.GetBehaviour<T>());
     }
 
 
@@ -114,7 +123,7 @@ public class PlayerController : MonoBehaviour
         RemainingDashes = 1;
     }
 
-    public BehaviourChangeRequest TryUseAbility<T>(BasePlayerBehaviour currentBehaviour) where T : BaseBehaviour, IPlayerAbilityBehaviour
+    public BehaviourChangeRequest TryUseAbility<T>() where T : BaseBehaviour, IPlayerAbilityBehaviour
     {
         var ability = BehaviourMachine.GetBehaviour<T>();
         if (ability != null && ability.Enabled && !ability.OnCooldown)

@@ -12,11 +12,11 @@ public abstract class BasePlayerBehaviour : BaseBehaviour
     {
         if (PlayerController.InputHandler.RockButton.JustPressed)
         {
-            return PlayerController.TryUseAbility<PlayerRockBehaviour>(this);
+            return PlayerController.TryUseAbility<PlayerRockBehaviour>();
         }
         if (PlayerController.InputHandler.DashButton.JustPressed && PlayerController.TryDash())
         {
-            return PlayerController.TryUseAbility<PlayerDashBehaviour>(this);
+            return PlayerController.TryUseAbility<PlayerDashBehaviour>();
         }
         return null;
     }

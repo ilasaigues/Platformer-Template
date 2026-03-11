@@ -16,7 +16,7 @@ public class PlayerJumpingBehaviour : PlayerAirBehaviour
 
         if (!_jumpHeld && PlayerController.InputHandler.JumpButton.JustPressed && PlayerController.Jumps < 2)
         {
-            return BehaviourChangeRequest.New<PlayerDoubleJumpBehaviour>();
+            return PlayerController.TryUseAbility<PlayerDoubleJumpBehaviour>(); ;
         }
 
         if (PlayerController.MovementController.Velocity.y < PlayerController.PlayerStats.peakTresholds.y ||
