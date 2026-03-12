@@ -45,15 +45,15 @@ public class PlayerController : MonoBehaviour
         BehaviourMachine.AddBehaviour(new PlayerJumpingBehaviour(this));
         BehaviourMachine.AddBehaviour(new PlayerRockBehaviour(this)
         {
-            //Enabled = true
+            Enabled = true
         });
         BehaviourMachine.AddBehaviour(new PlayerDashBehaviour(this)
         {
-            //Enabled = true
+            Enabled = true
         });
         BehaviourMachine.AddBehaviour(new PlayerDoubleJumpBehaviour(this)
         {
-            //Enabled = true
+            Enabled = true
         });
         BehaviourMachine.ChangeBehaviour(typeof(PlayerFallingBehaviour));
         ResetOnGrounded();

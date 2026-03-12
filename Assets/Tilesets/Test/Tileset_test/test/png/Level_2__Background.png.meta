@@ -1,0 +1,2340 @@
+fileFormatVersion: 2
+guid: db3033e04c766674d870265b4b7535ea
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -98255846282774441
+    second: Level_2__Background_0
+  - first:
+      213: -4778745811200649174
+    second: Level_2__Background_1
+  - first:
+      213: -6937326364700442019
+    second: Level_2__Background_2
+  - first:
+      213: 5117626895973722559
+    second: Level_2__Background_3
+  - first:
+      213: -4131283060730454172
+    second: Level_2__Background_4
+  - first:
+      213: -2602834618305770069
+    second: Level_2__Background_5
+  - first:
+      213: 4753539638294210173
+    second: Level_2__Background_6
+  - first:
+      213: 5307032345128058105
+    second: Level_2__Background_7
+  - first:
+      213: 6917498953713816195
+    second: Level_2__Background_8
+  - first:
+      213: 7586990427557230835
+    second: Level_2__Background_9
+  - first:
+      213: 8791831685337108012
+    second: Level_2__Background_10
+  - first:
+      213: -8247175864358460623
+    second: Level_2__Background_11
+  - first:
+      213: -3672821112001090061
+    second: Level_2__Background_12
+  - first:
+      213: 7971132324182913637
+    second: Level_2__Background_13
+  - first:
+      213: -8962925684853521262
+    second: Level_2__Background_14
+  - first:
+      213: -7258749576895570365
+    second: Level_2__Background_15
+  - first:
+      213: -2001867003305741307
+    second: Level_2__Background_16
+  - first:
+      213: -6356245853484278262
+    second: Level_2__Background_17
+  - first:
+      213: -5221128865613330579
+    second: Level_2__Background_18
+  - first:
+      213: 7952327378677908929
+    second: Level_2__Background_19
+  - first:
+      213: 3173789540255845533
+    second: Level_2__Background_20
+  - first:
+      213: 2575351800372798884
+    second: Level_2__Background_21
+  - first:
+      213: -3577139421621323271
+    second: Level_2__Background_22
+  - first:
+      213: 2284332530741895977
+    second: Level_2__Background_23
+  - first:
+      213: 6566491576683837249
+    second: Level_2__Background_24
+  - first:
+      213: -4214860162868664145
+    second: Level_2__Background_25
+  - first:
+      213: -4027195035567933663
+    second: Level_2__Background_26
+  - first:
+      213: -4313019761052051645
+    second: Level_2__Background_27
+  - first:
+      213: 2772732397192912732
+    second: Level_2__Background_28
+  - first:
+      213: -3685261134222848338
+    second: Level_2__Background_29
+  - first:
+      213: -3941036140742615551
+    second: Level_2__Background_30
+  - first:
+      213: 7148161884797870323
+    second: Level_2__Background_31
+  - first:
+      213: -2315297815347445984
+    second: Level_2__Background_32
+  - first:
+      213: -8815674385460534889
+    second: Level_2__Background_33
+  - first:
+      213: -4848395998307591060
+    second: Level_2__Background_34
+  - first:
+      213: 1194979773172169988
+    second: Level_2__Background_35
+  - first:
+      213: 1867985311916179864
+    second: Level_2__Background_36
+  - first:
+      213: -1003354199155222010
+    second: Level_2__Background_37
+  - first:
+      213: 2825610293014265893
+    second: Level_2__Background_38
+  - first:
+      213: 7341630773083908844
+    second: Level_2__Background_39
+  - first:
+      213: -6094132690616012725
+    second: Level_2__Background_40
+  - first:
+      213: 6751551658689027359
+    second: Level_2__Background_41
+  - first:
+      213: 3951409211749406953
+    second: Level_2__Background_42
+  - first:
+      213: 4144003910492460602
+    second: Level_2__Background_43
+  - first:
+      213: -3967603003168536675
+    second: Level_2__Background_44
+  - first:
+      213: 153568240169431678
+    second: Level_2__Background_45
+  - first:
+      213: 5014937140998142178
+    second: Level_2__Background_46
+  - first:
+      213: -8888673228341622851
+    second: Level_2__Background_47
+  - first:
+      213: 4534075784582123516
+    second: Level_2__Background_48
+  - first:
+      213: 3726416549426249022
+    second: Level_2__Background_49
+  - first:
+      213: 7437392866232549767
+    second: Level_2__Background_50
+  - first:
+      213: -8830930734025994178
+    second: Level_2__Background_51
+  - first:
+      213: 4781095094161931405
+    second: Level_2__Background_52
+  - first:
+      213: 3734623923841604655
+    second: Level_2__Background_53
+  - first:
+      213: -4928223049832452479
+    second: Level_2__Background_54
+  - first:
+      213: -4760994579824259158
+    second: Level_2__Background_55
+  - first:
+      213: 3014550115372935335
+    second: Level_2__Background_56
+  - first:
+      213: -2202569830205395218
+    second: Level_2__Background_57
+  - first:
+      213: 8940280028727093301
+    second: Level_2__Background_58
+  - first:
+      213: -2890358692851674223
+    second: Level_2__Background_59
+  - first:
+      213: -2646813738829323791
+    second: Level_2__Background_60
+  - first:
+      213: -89531557278041966
+    second: Level_2__Background_61
+  - first:
+      213: 8839140355377482407
+    second: Level_2__Background_62
+  - first:
+      213: 4151707823792922186
+    second: Level_2__Background_63
+  - first:
+      213: -4779546696806323254
+    second: Level_2__Background_64
+  - first:
+      213: -3909869232766923958
+    second: Level_2__Background_65
+  - first:
+      213: -4573631601505359699
+    second: Level_2__Background_66
+  - first:
+      213: 294681877277666328
+    second: Level_2__Background_67
+  - first:
+      213: 6306524614119513606
+    second: Level_2__Background_68
+  - first:
+      213: -8294986599046600150
+    second: Level_2__Background_69
+  - first:
+      213: 8641158779435341755
+    second: Level_2__Background_70
+  - first:
+      213: -7337667392337715916
+    second: Level_2__Background_71
+  - first:
+      213: -6325904094240250267
+    second: Level_2__Background_72
+  - first:
+      213: 2109622032064522608
+    second: Level_2__Background_73
+  - first:
+      213: 5064294885893548971
+    second: Level_2__Background_74
+  - first:
+      213: 3523433292145008179
+    second: Level_2__Background_75
+  - first:
+      213: 2638435170924765774
+    second: Level_2__Background_76
+  - first:
+      213: -2688044398427574789
+    second: Level_2__Background_77
+  - first:
+      213: 1819412612725012106
+    second: Level_2__Background_78
+  - first:
+      213: 4339604177990523877
+    second: Level_2__Background_79
+  - first:
+      213: -2317838212636814086
+    second: Level_2__Background_80
+  - first:
+      213: 1782208599281024191
+    second: Level_2__Background_81
+  - first:
+      213: 5716798817085709526
+    second: Level_2__Background_82
+  - first:
+      213: 2304862722948902120
+    second: Level_2__Background_83
+  - first:
+      213: 2495751475550835933
+    second: Level_2__Background_84
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Level_2__Background_0
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 318
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 758b53114dce2aef0800000000000000
+      internalID: -98255846282774441
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level_2__Background_1
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 304
+        width: 16
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a28df7be00c7eadb0800000000000000
+      internalID: -4778745811200649174
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level_2__Background_2
+      rect:
+        serializedVersion: 2
+        x: 62
+        y: 321
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d5204154d6aa9bf90800000000000000
+      internalID: -6937326364700442019
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level_2__Background_3
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 315
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fb9af7b2c86750740800000000000000
+      internalID: 5117626895973722559
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level_2__Background_4
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 318
+        width: 12
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 46f929ad1fbbaa6c0800000000000000
+      internalID: -4131283060730454172
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level_2__Background_5
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 298
+        width: 21
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bad8bce74bfd0ebd0800000000000000
+      internalID: -2602834618305770069
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level_2__Background_6
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 304
+        width: 11
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d76e34e9d17f7f140800000000000000
+      internalID: 4753539638294210173
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level_2__Background_7
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 309
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9fcbddecccd56a940800000000000000
+      internalID: 5307032345128058105
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level_2__Background_8
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 304
+        width: 14
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3829f3ed5a4efff50800000000000000
+      internalID: 6917498953713816195
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level_2__Background_9
+      rect:
+        serializedVersion: 2
+        x: 88
+        y: 309
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3f876d4a8976a4960800000000000000
+      internalID: 7586990427557230835
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level_2__Background_10
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 294
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c2eca81365cd20a70800000000000000
+      internalID: 8791831685337108012
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level_2__Background_11
+      rect:
+        serializedVersion: 2
+        x: 77
+        y: 282
+        width: 13
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1332dbc2f352c8d80800000000000000
+      internalID: -8247175864358460623
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level_2__Background_12
+      rect:
+        serializedVersion: 2
+        x: 89
+        y: 291
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3fdae9778a4870dc0800000000000000
+      internalID: -3672821112001090061
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level_2__Background_13
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 270
+        width: 32
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5627e80bd962f9e60800000000000000
+      internalID: 7971132324182913637
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level_2__Background_14
+      rect:
+        serializedVersion: 2
+        x: 241
+        y: 274
+        width: 21
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 294c416c39a4d9380800000000000000
+      internalID: -8962925684853521262
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level_2__Background_15
+      rect:
+        serializedVersion: 2
+        x: 254
+        y: 297
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 34e5f93e7bdb34b90800000000000000
+      internalID: -7258749576895570365
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level_2__Background_16
+      rect:
+        serializedVersion: 2
+        x: 257
+        y: 291
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 504b26c1190f734e0800000000000000
+      internalID: -2001867003305741307
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level_2__Background_17
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 294
+        width: 12
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a0e1506b2141ac7a0800000000000000
+      internalID: -6356245853484278262
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level_2__Background_18
+      rect:
+        serializedVersion: 2
+        x: 269
+        y: 282
+        width: 14
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d67449e95f2da87b0800000000000000
+      internalID: -5221128865613330579
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level_2__Background_19
+      rect:
+        serializedVersion: 2
+        x: 281
+        y: 291
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1c5c5bf1e975c5e60800000000000000
+      internalID: 7952327378677908929
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level_2__Background_20
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 280
+        width: 11
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d9cccca75c09b0c20800000000000000
+      internalID: 3173789540255845533
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level_2__Background_21
+      rect:
+        serializedVersion: 2
+        x: 88
+        y: 285
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4a522e051dc7db320800000000000000
+      internalID: 2575351800372798884
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level_2__Background_22
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 280
+        width: 10
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9f9f63606a27b5ec0800000000000000
+      internalID: -3577139421621323271
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level_2__Background_23
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 280
+        width: 10
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9236db3755493bf10800000000000000
+      internalID: 2284332530741895977
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level_2__Background_24
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 285
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 147b5d85c4dd02b50800000000000000
+      internalID: 6566491576683837249
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level_2__Background_25
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 280
+        width: 15
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fa8a44e530fc185c0800000000000000
+      internalID: -4214860162868664145
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level_2__Background_26
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 285
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 127b1cfb3778c18c0800000000000000
+      internalID: -4027195035567933663
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level_2__Background_27
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 270
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3479041f0631524c0800000000000000
+      internalID: -4313019761052051645
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level_2__Background_28
+      rect:
+        serializedVersion: 2
+        x: 173
+        y: 258
+        width: 13
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c5f96e7bc69ba7620800000000000000
+      internalID: 2772732397192912732
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level_2__Background_29
+      rect:
+        serializedVersion: 2
+        x: 185
+        y: 267
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eae081616825bdcc0800000000000000
+      internalID: -3685261134222848338
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level_2__Background_30
+      rect:
+        serializedVersion: 2
+        x: 197
+        y: 256
+        width: 16
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 10e5f00b280ae49c0800000000000000
+      internalID: -3941036140742615551
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level_2__Background_31
+      rect:
+        serializedVersion: 2
+        x: 206
+        y: 273
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3f02d549c5f533360800000000000000
+      internalID: 7148161884797870323
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level_2__Background_32
+      rect:
+        serializedVersion: 2
+        x: 209
+        y: 267
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 02f3af667e86edfd0800000000000000
+      internalID: -2315297815347445984
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level_2__Background_33
+      rect:
+        serializedVersion: 2
+        x: 212
+        y: 270
+        width: 12
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7916d179ade68a580800000000000000
+      internalID: -8815674385460534889
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level_2__Background_34
+      rect:
+        serializedVersion: 2
+        x: 217
+        y: 250
+        width: 21
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c6c5376078907bcb0800000000000000
+      internalID: -4848395998307591060
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level_2__Background_35
+      rect:
+        serializedVersion: 2
+        x: 233
+        y: 267
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 40d34bdb5cb659010800000000000000
+      internalID: 1194979773172169988
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level_2__Background_36
+      rect:
+        serializedVersion: 2
+        x: 236
+        y: 270
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 89149628eba6ce910800000000000000
+      internalID: 1867985311916179864
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level_2__Background_37
+      rect:
+        serializedVersion: 2
+        x: 245
+        y: 258
+        width: 13
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 60ad47ffbae5312f0800000000000000
+      internalID: -1003354199155222010
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level_2__Background_38
+      rect:
+        serializedVersion: 2
+        x: 257
+        y: 267
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5208dcc3795963720800000000000000
+      internalID: 2825610293014265893
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level_2__Background_39
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 256
+        width: 11
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cea2ebd5a46b2e560800000000000000
+      internalID: 7341630773083908844
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level_2__Background_40
+      rect:
+        serializedVersion: 2
+        x: 184
+        y: 261
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b40bcb12b9a4d6ba0800000000000000
+      internalID: -6094132690616012725
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level_2__Background_41
+      rect:
+        serializedVersion: 2
+        x: 188
+        y: 256
+        width: 15
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f1ddbda567452bd50800000000000000
+      internalID: 6751551658689027359
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level_2__Background_42
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 261
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9e8978c1eb936d630800000000000000
+      internalID: 3951409211749406953
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level_2__Background_43
+      rect:
+        serializedVersion: 2
+        x: 212
+        y: 256
+        width: 14
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a369bb8c995728930800000000000000
+      internalID: 4144003910492460602
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level_2__Background_44
+      rect:
+        serializedVersion: 2
+        x: 232
+        y: 261
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d97cd52071e30f8c0800000000000000
+      internalID: -3967603003168536675
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level_2__Background_45
+      rect:
+        serializedVersion: 2
+        x: 236
+        y: 256
+        width: 15
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e72b4143085912200800000000000000
+      internalID: 153568240169431678
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level_2__Background_46
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 261
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2e87b1c62c2a89540800000000000000
+      internalID: 5014937140998142178
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level_2__Background_47
+      rect:
+        serializedVersion: 2
+        x: 216
+        y: 246
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: db74c240bc615a480800000000000000
+      internalID: -8888673228341622851
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level_2__Background_48
+      rect:
+        serializedVersion: 2
+        x: 216
+        y: 232
+        width: 11
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cffc7bc47e54cee30800000000000000
+      internalID: 4534075784582123516
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level_2__Background_49
+      rect:
+        serializedVersion: 2
+        x: 221
+        y: 234
+        width: 13
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e3d30b9bb14e6b330800000000000000
+      internalID: 3726416549426249022
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level_2__Background_50
+      rect:
+        serializedVersion: 2
+        x: 233
+        y: 243
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 781c0d6286de63760800000000000000
+      internalID: 7437392866232549767
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level_2__Background_51
+      rect:
+        serializedVersion: 2
+        x: 232
+        y: 237
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e301d42294b327580800000000000000
+      internalID: -8830930734025994178
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level_2__Background_52
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 198
+        width: 32
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d8c72e428acd95240800000000000000
+      internalID: 4781095094161931405
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level_2__Background_53
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 222
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f2c114efbac04d330800000000000000
+      internalID: 3734623923841604655
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level_2__Background_54
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 208
+        width: 16
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 18e28dc3f3f6b9bb0800000000000000
+      internalID: -4928223049832452479
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level_2__Background_55
+      rect:
+        serializedVersion: 2
+        x: 110
+        y: 225
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aafc30c87ac8dedb0800000000000000
+      internalID: -4760994579824259158
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level_2__Background_56
+      rect:
+        serializedVersion: 2
+        x: 113
+        y: 219
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7a8aa60bb55d5d920800000000000000
+      internalID: 3014550115372935335
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level_2__Background_57
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 222
+        width: 12
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eee6d9db866ee61e0800000000000000
+      internalID: -2202569830205395218
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level_2__Background_58
+      rect:
+        serializedVersion: 2
+        x: 125
+        y: 210
+        width: 14
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5382cc88151421c70800000000000000
+      internalID: 8940280028727093301
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level_2__Background_59
+      rect:
+        serializedVersion: 2
+        x: 137
+        y: 219
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1931d17251263e7d0800000000000000
+      internalID: -2890358692851674223
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level_2__Background_60
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 222
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1f1647e8de0a44bd0800000000000000
+      internalID: -2646813738829323791
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level_2__Background_61
+      rect:
+        serializedVersion: 2
+        x: 245
+        y: 208
+        width: 16
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2983144e58be1cef0800000000000000
+      internalID: -89531557278041966
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level_2__Background_62
+      rect:
+        serializedVersion: 2
+        x: 254
+        y: 225
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7aa481a425feaaa70800000000000000
+      internalID: 8839140355377482407
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level_2__Background_63
+      rect:
+        serializedVersion: 2
+        x: 257
+        y: 219
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a4e1360e444dd9930800000000000000
+      internalID: 4151707823792922186
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level_2__Background_64
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 222
+        width: 12
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: acba7753a93abadb0800000000000000
+      internalID: -4779546696806323254
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level_2__Background_65
+      rect:
+        serializedVersion: 2
+        x: 269
+        y: 210
+        width: 14
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a4bc2bee5aa5db9c0800000000000000
+      internalID: -3909869232766923958
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level_2__Background_66
+      rect:
+        serializedVersion: 2
+        x: 281
+        y: 219
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: da8a5c26a423780c0800000000000000
+      internalID: -4573631601505359699
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level_2__Background_67
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 208
+        width: 10
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 81c61e82b9be61400800000000000000
+      internalID: 294681877277666328
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level_2__Background_68
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 208
+        width: 11
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 60ed9df19b6458750800000000000000
+      internalID: 6306524614119513606
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level_2__Background_69
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 213
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a2aa33b03a942ec80800000000000000
+      internalID: -8294986599046600150
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level_2__Background_70
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 208
+        width: 15
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bb7ddf780209be770800000000000000
+      internalID: 8641158779435341755
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level_2__Background_71
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 213
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 43d5ebf126e5b2a90800000000000000
+      internalID: -7337667392337715916
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level_2__Background_72
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 208
+        width: 11
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 566ee9b0ebfd538a0800000000000000
+      internalID: -6325904094240250267
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level_2__Background_73
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 213
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0792b879f02e64d10800000000000000
+      internalID: 2109622032064522608
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level_2__Background_74
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 208
+        width: 15
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bab238fed5df74640800000000000000
+      internalID: 5064294885893548971
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level_2__Background_75
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 213
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 33e961849efb5e030800000000000000
+      internalID: 3523433292145008179
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level_2__Background_76
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 198
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e422ed51fca9d9420800000000000000
+      internalID: 2638435170924765774
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level_2__Background_77
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 184
+        width: 11
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bfdee3b8cd522bad0800000000000000
+      internalID: -2688044398427574789
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level_2__Background_78
+      rect:
+        serializedVersion: 2
+        x: 29
+        y: 186
+        width: 13
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a86f651b12adf3910800000000000000
+      internalID: 1819412612725012106
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level_2__Background_79
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 195
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5eb1de6f10f593c30800000000000000
+      internalID: 4339604177990523877
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level_2__Background_80
+      rect:
+        serializedVersion: 2
+        x: 44
+        y: 184
+        width: 15
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: af4d4f01d6265dfd0800000000000000
+      internalID: -2317838212636814086
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level_2__Background_81
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 186
+        width: 14
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fbcbacb474dabb810800000000000000
+      internalID: 1782208599281024191
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level_2__Background_82
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 195
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6dc54c83c36265f40800000000000000
+      internalID: 5716798817085709526
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level_2__Background_83
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 189
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8eca8615f648cff10800000000000000
+      internalID: 2304862722948902120
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level_2__Background_84
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 189
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dd45dd37eb0b2a220800000000000000
+      internalID: 2495751475550835933
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Level_2__Background_0: -98255846282774441
+      Level_2__Background_1: -4778745811200649174
+      Level_2__Background_10: 8791831685337108012
+      Level_2__Background_11: -8247175864358460623
+      Level_2__Background_12: -3672821112001090061
+      Level_2__Background_13: 7971132324182913637
+      Level_2__Background_14: -8962925684853521262
+      Level_2__Background_15: -7258749576895570365
+      Level_2__Background_16: -2001867003305741307
+      Level_2__Background_17: -6356245853484278262
+      Level_2__Background_18: -5221128865613330579
+      Level_2__Background_19: 7952327378677908929
+      Level_2__Background_2: -6937326364700442019
+      Level_2__Background_20: 3173789540255845533
+      Level_2__Background_21: 2575351800372798884
+      Level_2__Background_22: -3577139421621323271
+      Level_2__Background_23: 2284332530741895977
+      Level_2__Background_24: 6566491576683837249
+      Level_2__Background_25: -4214860162868664145
+      Level_2__Background_26: -4027195035567933663
+      Level_2__Background_27: -4313019761052051645
+      Level_2__Background_28: 2772732397192912732
+      Level_2__Background_29: -3685261134222848338
+      Level_2__Background_3: 5117626895973722559
+      Level_2__Background_30: -3941036140742615551
+      Level_2__Background_31: 7148161884797870323
+      Level_2__Background_32: -2315297815347445984
+      Level_2__Background_33: -8815674385460534889
+      Level_2__Background_34: -4848395998307591060
+      Level_2__Background_35: 1194979773172169988
+      Level_2__Background_36: 1867985311916179864
+      Level_2__Background_37: -1003354199155222010
+      Level_2__Background_38: 2825610293014265893
+      Level_2__Background_39: 7341630773083908844
+      Level_2__Background_4: -4131283060730454172
+      Level_2__Background_40: -6094132690616012725
+      Level_2__Background_41: 6751551658689027359
+      Level_2__Background_42: 3951409211749406953
+      Level_2__Background_43: 4144003910492460602
+      Level_2__Background_44: -3967603003168536675
+      Level_2__Background_45: 153568240169431678
+      Level_2__Background_46: 5014937140998142178
+      Level_2__Background_47: -8888673228341622851
+      Level_2__Background_48: 4534075784582123516
+      Level_2__Background_49: 3726416549426249022
+      Level_2__Background_5: -2602834618305770069
+      Level_2__Background_50: 7437392866232549767
+      Level_2__Background_51: -8830930734025994178
+      Level_2__Background_52: 4781095094161931405
+      Level_2__Background_53: 3734623923841604655
+      Level_2__Background_54: -4928223049832452479
+      Level_2__Background_55: -4760994579824259158
+      Level_2__Background_56: 3014550115372935335
+      Level_2__Background_57: -2202569830205395218
+      Level_2__Background_58: 8940280028727093301
+      Level_2__Background_59: -2890358692851674223
+      Level_2__Background_6: 4753539638294210173
+      Level_2__Background_60: -2646813738829323791
+      Level_2__Background_61: -89531557278041966
+      Level_2__Background_62: 8839140355377482407
+      Level_2__Background_63: 4151707823792922186
+      Level_2__Background_64: -4779546696806323254
+      Level_2__Background_65: -3909869232766923958
+      Level_2__Background_66: -4573631601505359699
+      Level_2__Background_67: 294681877277666328
+      Level_2__Background_68: 6306524614119513606
+      Level_2__Background_69: -8294986599046600150
+      Level_2__Background_7: 5307032345128058105
+      Level_2__Background_70: 8641158779435341755
+      Level_2__Background_71: -7337667392337715916
+      Level_2__Background_72: -6325904094240250267
+      Level_2__Background_73: 2109622032064522608
+      Level_2__Background_74: 5064294885893548971
+      Level_2__Background_75: 3523433292145008179
+      Level_2__Background_76: 2638435170924765774
+      Level_2__Background_77: -2688044398427574789
+      Level_2__Background_78: 1819412612725012106
+      Level_2__Background_79: 4339604177990523877
+      Level_2__Background_8: 6917498953713816195
+      Level_2__Background_80: -2317838212636814086
+      Level_2__Background_81: 1782208599281024191
+      Level_2__Background_82: 5716798817085709526
+      Level_2__Background_83: 2304862722948902120
+      Level_2__Background_84: 2495751475550835933
+      Level_2__Background_9: 7586990427557230835
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

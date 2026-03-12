@@ -3,16 +3,16 @@
     {
       "x": 0,
       "y": 0,
-      "w": 24,
-      "h": 24
+      "w": 16,
+      "h": 16
     }
   ],
   "Def": {
-    "__cHei": 1,
-    "__cWid": 16,
+    "__cHei": 4,
+    "__cWid": 4,
     "cachedPixelData": {
       "opaqueTiles": "0000000000000000",
-      "averageColors": "7234823472348234723482348234923462347234823492347234823492349234"
+      "averageColors": "862386239623762386239623962386238623862396239623a623a623a6238623"
     },
     "customData": [
 
@@ -21,20 +21,20 @@
     "enumTags": [
 
     ],
-    "identifier": "Background_tiles",
+    "identifier": "Spikes",
     "padding": 0,
-    "pxHei": 24,
-    "pxWid": 384,
-    "relPath": "background_tiles.png",
+    "pxHei": 64,
+    "pxWid": 64,
+    "relPath": "Hazards/generic_hazard_tileset.png",
     "savedSelections": [
 
     ],
     "spacing": 0,
     "tags": [
-      "Background"
+      "Hazard"
     ],
     "tagsSourceEnumUid": null,
-    "tileGridSize": 24,
-    "uid": 62
+    "tileGridSize": 16,
+    "uid": 84
   }
 }
