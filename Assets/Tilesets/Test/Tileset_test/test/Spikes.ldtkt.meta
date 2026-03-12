@@ -27,10 +27,10 @@ ScriptedImporter:
     spriteID: 12e5fe8d8c55f5c4d980fe291d31e651
     spriteOutline:
     - shape:
-      - {x: 3, y: 3}
-      - {x: -3, y: 3}
-      - {x: -3, y: -3}
-      - {x: 3, y: -3}
+      - {x: 2, y: 2}
+      - {x: -2, y: 2}
+      - {x: -2, y: -2}
+      - {x: 2, y: -2}
     tessellationDetail: 0
   - name: Spikes_1
     originalName: 
@@ -47,10 +47,10 @@ ScriptedImporter:
     spriteID: 9b653a701510f114e80a0c4d53772148
     spriteOutline:
     - shape:
-      - {x: 8, y: 3}
-      - {x: -3, y: 3}
-      - {x: -3, y: -3}
-      - {x: 8, y: -3}
+      - {x: 8, y: 2}
+      - {x: -2, y: 2}
+      - {x: -2, y: -2}
+      - {x: 8, y: -2}
     tessellationDetail: 0
   - name: Spikes_2
     originalName: 
@@ -67,10 +67,10 @@ ScriptedImporter:
     spriteID: 83b7506d26e1c1b4690b093824acbe46
     spriteOutline:
     - shape:
-      - {x: 8, y: 3}
-      - {x: -8, y: 3}
-      - {x: -8, y: -3}
-      - {x: 8, y: -3}
+      - {x: 8, y: 2}
+      - {x: -8, y: 2}
+      - {x: -8, y: -2}
+      - {x: 8, y: -2}
     tessellationDetail: 0
   - name: Spikes_3
     originalName: 
@@ -87,10 +87,10 @@ ScriptedImporter:
     spriteID: 7b7862ab2a4765349852dca320daf535
     spriteOutline:
     - shape:
-      - {x: 3, y: 3}
-      - {x: -8, y: 3}
-      - {x: -8, y: -3}
-      - {x: 3, y: -3}
+      - {x: 2, y: 2}
+      - {x: -8, y: 2}
+      - {x: -8, y: -2}
+      - {x: 2, y: -2}
     tessellationDetail: 0
   - name: Spikes_4
     originalName: 
@@ -107,12 +107,12 @@ ScriptedImporter:
     spriteID: 6cec526853bd8ac4398cfa30185d6e9f
     spriteOutline:
     - shape:
-      - {x: 3, y: -3}
-      - {x: 8, y: -3}
-      - {x: 8, y: 3}
-      - {x: -3, y: 3}
-      - {x: -3, y: -8}
-      - {x: 3, y: -8}
+      - {x: 2, y: -2}
+      - {x: 8, y: -2}
+      - {x: 8, y: 2}
+      - {x: -2, y: 2}
+      - {x: -2, y: -8}
+      - {x: 2, y: -8}
     tessellationDetail: 0
   - name: Spikes_5
     originalName: 
@@ -129,12 +129,12 @@ ScriptedImporter:
     spriteID: 3b81e7946dc82ef45be4f92126ea0318
     spriteOutline:
     - shape:
-      - {x: 3, y: 3}
-      - {x: -8, y: 3}
-      - {x: -8, y: -3}
-      - {x: -3, y: -3}
-      - {x: -3, y: -8}
-      - {x: 3, y: -8}
+      - {x: 2, y: 2}
+      - {x: -8, y: 2}
+      - {x: -8, y: -2}
+      - {x: -2, y: -2}
+      - {x: -2, y: -8}
+      - {x: 2, y: -8}
     tessellationDetail: 0
   - name: Spikes_6
     originalName: 
@@ -151,14 +151,14 @@ ScriptedImporter:
     spriteID: c687076b4a36b1244b48eed3cf472194
     spriteOutline:
     - shape:
-      - {x: 3, y: -3}
-      - {x: 8, y: -3}
-      - {x: 8, y: 3}
-      - {x: -8, y: 3}
-      - {x: -8, y: -3}
-      - {x: -3, y: -3}
-      - {x: -3, y: -8}
-      - {x: 3, y: -8}
+      - {x: 2, y: -2}
+      - {x: 8, y: -2}
+      - {x: 8, y: 2}
+      - {x: -8, y: 2}
+      - {x: -8, y: -2}
+      - {x: -2, y: -2}
+      - {x: -2, y: -8}
+      - {x: 2, y: -8}
     tessellationDetail: 0
   - name: Spikes_7
     originalName: 
@@ -175,10 +175,10 @@ ScriptedImporter:
     spriteID: 57abb7953b540e048a9d1acefd25436f
     spriteOutline:
     - shape:
-      - {x: 3, y: 3}
-      - {x: -3, y: 3}
-      - {x: -3, y: -8}
-      - {x: 3, y: -8}
+      - {x: 2, y: 2}
+      - {x: -2, y: 2}
+      - {x: -2, y: -8}
+      - {x: 2, y: -8}
     tessellationDetail: 0
   - name: Spikes_8
     originalName: 
@@ -195,12 +195,12 @@ ScriptedImporter:
     spriteID: a890882677a9fc3419d37f13d474d188
     spriteOutline:
     - shape:
-      - {x: 8, y: 3}
-      - {x: 3, y: 3}
-      - {x: 3, y: 8}
-      - {x: -3, y: 8}
-      - {x: -3, y: -3}
-      - {x: 8, y: -3}
+      - {x: 8, y: 2}
+      - {x: 2, y: 2}
+      - {x: 2, y: 8}
+      - {x: -2, y: 8}
+      - {x: -2, y: -2}
+      - {x: 8, y: -2}
     tessellationDetail: 0
   - name: Spikes_9
     originalName: 
@@ -217,12 +217,12 @@ ScriptedImporter:
     spriteID: 1286707e6c85d844599be6d00f892381
     spriteOutline:
     - shape:
-      - {x: 3, y: 8}
-      - {x: -3, y: 8}
-      - {x: -3, y: 3}
-      - {x: -8, y: 3}
-      - {x: -8, y: -3}
-      - {x: 3, y: -3}
+      - {x: 2, y: 8}
+      - {x: -2, y: 8}
+      - {x: -2, y: 2}
+      - {x: -8, y: 2}
+      - {x: -8, y: -2}
+      - {x: 2, y: -2}
     tessellationDetail: 0
   - name: Spikes_10
     originalName: 
@@ -239,14 +239,14 @@ ScriptedImporter:
     spriteID: 7cd70703fdb5581439df65bf285e30c3
     spriteOutline:
     - shape:
-      - {x: 8, y: 3}
-      - {x: 3, y: 3}
-      - {x: 3, y: 8}
-      - {x: -3, y: 8}
-      - {x: -3, y: 3}
-      - {x: -8, y: 3}
-      - {x: -8, y: -3}
-      - {x: 8, y: -3}
+      - {x: 8, y: 2}
+      - {x: 2, y: 2}
+      - {x: 2, y: 8}
+      - {x: -2, y: 8}
+      - {x: -2, y: 2}
+      - {x: -8, y: 2}
+      - {x: -8, y: -2}
+      - {x: 8, y: -2}
     tessellationDetail: 0
   - name: Spikes_11
     originalName: 
@@ -263,10 +263,10 @@ ScriptedImporter:
     spriteID: b20337a0c6cc50f40b6cc4e36579fdf7
     spriteOutline:
     - shape:
-      - {x: 3, y: 8}
-      - {x: -3, y: 8}
-      - {x: -3, y: -8}
-      - {x: 3, y: -8}
+      - {x: 2, y: 8}
+      - {x: -2, y: 8}
+      - {x: -2, y: -8}
+      - {x: 2, y: -8}
     tessellationDetail: 0
   - name: Spikes_12
     originalName: 
@@ -283,18 +283,18 @@ ScriptedImporter:
     spriteID: 1ab5d5305a0c18049a8e058e91dae01d
     spriteOutline:
     - shape:
-      - {x: 3, y: -3}
-      - {x: 8, y: -3}
-      - {x: 8, y: 3}
-      - {x: 3, y: 3}
-      - {x: 3, y: 8}
-      - {x: -3, y: 8}
-      - {x: -3, y: 3}
-      - {x: -8, y: 3}
-      - {x: -8, y: -3}
-      - {x: -3, y: -3}
-      - {x: -3, y: -8}
-      - {x: 3, y: -8}
+      - {x: 2, y: -2}
+      - {x: 8, y: -2}
+      - {x: 8, y: 2}
+      - {x: 2, y: 2}
+      - {x: 2, y: 8}
+      - {x: -2, y: 8}
+      - {x: -2, y: 2}
+      - {x: -8, y: 2}
+      - {x: -8, y: -2}
+      - {x: -2, y: -2}
+      - {x: -2, y: -8}
+      - {x: 2, y: -8}
     tessellationDetail: 0
   - name: Spikes_13
     originalName: 
@@ -311,14 +311,14 @@ ScriptedImporter:
     spriteID: c6acccb3e3cb3534fad5ae5f4972ef93
     spriteOutline:
     - shape:
-      - {x: 3, y: -3}
-      - {x: 8, y: -3}
-      - {x: 8, y: 3}
-      - {x: 3, y: 3}
-      - {x: 3, y: 8}
-      - {x: -3, y: 8}
-      - {x: -3, y: -8}
-      - {x: 3, y: -8}
+      - {x: 2, y: -2}
+      - {x: 8, y: -2}
+      - {x: 8, y: 2}
+      - {x: 2, y: 2}
+      - {x: 2, y: 8}
+      - {x: -2, y: 8}
+      - {x: -2, y: -8}
+      - {x: 2, y: -8}
     tessellationDetail: 0
   - name: Spikes_14
     originalName: 
@@ -335,14 +335,14 @@ ScriptedImporter:
     spriteID: cabe426916a2181438cba0980a8448b0
     spriteOutline:
     - shape:
-      - {x: 3, y: 8}
-      - {x: -3, y: 8}
-      - {x: -3, y: 3}
-      - {x: -8, y: 3}
-      - {x: -8, y: -3}
-      - {x: -3, y: -3}
-      - {x: -3, y: -8}
-      - {x: 3, y: -8}
+      - {x: 2, y: 8}
+      - {x: -2, y: 8}
+      - {x: -2, y: 2}
+      - {x: -8, y: 2}
+      - {x: -8, y: -2}
+      - {x: -2, y: -2}
+      - {x: -2, y: -8}
+      - {x: 2, y: -8}
     tessellationDetail: 0
   - name: Spikes_15
     originalName: 
@@ -359,10 +359,10 @@ ScriptedImporter:
     spriteID: d5015d8ebf5b5f24395a759405858cb4
     spriteOutline:
     - shape:
-      - {x: 3, y: 8}
-      - {x: -3, y: 8}
-      - {x: -3, y: -3}
-      - {x: 3, y: -3}
+      - {x: 2, y: 8}
+      - {x: -2, y: 8}
+      - {x: -2, y: -2}
+      - {x: 2, y: -2}
     tessellationDetail: 0
   _secondaryTextures: []
   _artifacts: {fileID: -2988177865379244337, guid: e2ead0bf2baeed849b95273a3de9ef27, type: 3}
