@@ -1,4 +1,5 @@
-using System;
+using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 [RequireComponent(typeof(CollisionController))]
 [RequireComponent(typeof(MovementController))]
@@ -17,6 +18,8 @@ public class PlayerController : MonoBehaviour
 
     public BehaviourMachine BehaviourMachine;
 
+    public ParticleSystem DashParticles;
+
     public Vector2 LastDirectionInput => InputHandler.MoveAxis.LastValue;
     public Vector2 LastHorizontalDirection { get; private set; }
 
@@ -31,6 +34,10 @@ public class PlayerController : MonoBehaviour
 
     public PlayerAbilityQueue PlayerAbilityQueue = new();
 
+
+    RespawnTrigger _currentRespawnTrigger;
+
+    public int RemainingLives { get; private set; }
 
     void Start()
     {
@@ -133,5 +140,90 @@ public class PlayerController : MonoBehaviour
         return null;
     }
 
+    public void SetRespawn(RespawnTrigger respawn)
+    {
+        _currentRespawnTrigger = respawn;
+    }
+
+    public void ToggleDashParticles(bool enabled)
+    {
+        if (enabled)
+        {
+            DashParticles.Play();
+        }
+        else
+        {
+            DashParticles.Stop();
+        }
+    }
+
+    void FixedUpdate()
+    {
+        CheckHazards();
+    }
+
+    void CheckHazards()
+    {
+        List<RaycastHit2D> hits = new();
+        ContactFilter2D filter = new()
+        {
+            layerMask = LayerReference.HazardLayer,
+            useLayerMask = true,
+        };
+
+
+        Physics2D.BoxCast(
+            transform.position,
+            CollisionController.MainCollider.size,
+            0,
+            MovementController.Velocity.normalized,
+            filter,
+            hits,
+            MovementController.Velocity.magnitude * Time.fixedDeltaTime);
+
+        if (hits.Any(hit => hit))
+        {
+            foreach (var hit in hits.Where(hit => hit))
+            {
+                if (hit.collider.GetComponent<BaseHazard>() is BaseHazard hazard)
+                {
+                    switch (hazard.Type)
+                    {
+                        case BaseHazard.HazardType.Doom:
+                            Die();
+                            break;
+                        case BaseHazard.HazardType.DoubleJump:
+                            Die();
+                            break;
+                        case BaseHazard.HazardType.Shield:
+                            Die();
+                            break;
+                        case BaseHazard.HazardType.Dash:
+                            Die();
+                            break;
+                    }
+                }
+            }
+        }
+    }
+
+    public void Die()
+    {
+        if (_currentRespawnTrigger != null)
+        {
+            MovementController.ForcePosition(_currentRespawnTrigger.RespawnPosition);
+        }
+        else
+        {
+            Debug.LogError("NO RESPAWN SET LMAO");
+        }
+    }
+
+    public void ShowVFXOnPlayer(VFXSpawnData spawnData)
+    {
+        var offset = spawnData.Offset;
+        offset.x *= FacingDirection;
+        VFXSpawner.Instance.PlayFX(spawnData.VFXClip, transform.position + offset, SpriteRenderer.flipX);
+    }
 
 }

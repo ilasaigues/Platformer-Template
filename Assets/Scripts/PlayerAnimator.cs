@@ -24,7 +24,7 @@ public class PlayerAnimator : MonoBehaviour
     public bool PlayAnimationClip(AnimationClip animClip, bool clearQueue = true)
     {
         if (animClip == null || (!clearQueue && _startedPlayingThisframe)) return false;
-        Debug.Log("<color=blue>Play " + animClip.name);
+        //Debug.Log("<color=blue>Play " + animClip.name);
         if (clearQueue) _animationQueue.Clear();
         _animator.Play(animClip.name);
         _startedPlayingThisframe = true;
@@ -33,7 +33,7 @@ public class PlayerAnimator : MonoBehaviour
 
     public void EnqueueAnimationClip(AnimationClip clip)
     {
-        Debug.Log("<color=white>Try Enqueue " + clip.name);
+        //Debug.Log("<color=white>Try Enqueue " + clip.name);
 
         if (!_startedPlayingThisframe && _animationQueue.Count == 0 && CanOverrideCurrentAnim())
         {
@@ -41,7 +41,7 @@ public class PlayerAnimator : MonoBehaviour
         }
         else
         {
-            Debug.Log("<color=cyan>Enqueue " + clip.name);
+            //Debug.Log("<color=cyan>Enqueue " + clip.name);
             _animationQueue.Enqueue(clip);
         }
     }

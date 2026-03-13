@@ -1,7 +1,9 @@
+using System;
 using UnityEngine;
 
 public class VFXSpawner : MonoBehaviour
 {
+
     public static VFXSpawner Instance
     {
         get
@@ -41,6 +43,7 @@ public class VFXSpawner : MonoBehaviour
             released =>
             {
                 released.OnAnimationEnd.RemoveListener(OnVFXAnimationEnd);
+                released.GetComponent<SpriteRenderer>().sprite = null;
                 released.gameObject.SetActive(false);
             }
         );

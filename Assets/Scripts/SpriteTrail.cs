@@ -10,15 +10,11 @@ public class SpriteTrail : MonoBehaviour
 
     private Transform _targetTransform;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        _spriteRenderer = GetComponent<SpriteRenderer>();
-        _animator = GetComponent<Animator>();
-    }
 
     public void StartTrail(Vector2 position, Transform targetTransform)
     {
+        _spriteRenderer ??= GetComponent<SpriteRenderer>();
+        _animator ??= GetComponent<Animator>();
         gameObject.SetActive(true);
         transform.position = position;
         _animator.Play("external_trail");
@@ -33,6 +29,7 @@ public class SpriteTrail : MonoBehaviour
 
     void Update()
     {
+        if (_targetTransform == null) return;
         float horizontalDistance = (_targetTransform.position - transform.position).x;
         _spriteRenderer.flipX = false;
         transform.localScale = Vector3.one;

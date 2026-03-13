@@ -27,4 +27,8 @@ public class PlayerStats : ScriptableObject
     public float ledgeCorrectionUp;
     public float ledgeCorrectionDown;
 
+    [Header("Collider Sizes")]
+    public Vector2 DefaultColliderSize;
+    public Vector2 DashColliderSize;
+
 }

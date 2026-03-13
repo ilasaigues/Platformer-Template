@@ -36,14 +36,14 @@ public class CollisionController : MonoBehaviour
     }
 
 
-    public Vector2 CollideAndSlideVel(Vector2 position, Bounds bounds, Vector2 vel, LayerMask collisionLayer)
+    public Vector2 CollideAndSlideVel(Vector2 position, Bounds bounds, Vector2 vel, LayerMask collisionLayer, List<RaycastHit2D> outHits = null)
     {
         var filter = new ContactFilter2D()
         {
             layerMask = collisionLayer,
             useLayerMask = true,
         };
-        return CollideAndSlideVel(position, bounds, vel, filter);
+        return CollideAndSlideVel(position, bounds, vel, filter, outHits);
     }
 
     public Vector2 CollideAndSlideVel(Vector2 position, Bounds bounds, Vector2 vel, ContactFilter2D filter, List<RaycastHit2D> outHits = null, int recursionDepth = 0)

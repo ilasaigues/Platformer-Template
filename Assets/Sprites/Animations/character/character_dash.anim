@@ -81,4 +81,11 @@ AnimationClip:
   m_EulerEditorCurves: []
   m_HasGenericRootTransform: 0
   m_HasMotionFloatCurves: 0
-  m_Events: []
+  m_Events:
+  - time: 0
+    functionName: ShowVFXOnPlayer
+    data: 
+    objectReferenceParameter: {fileID: 11400000, guid: 5c04297daf65311478230b70ea01b3df, type: 2}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0

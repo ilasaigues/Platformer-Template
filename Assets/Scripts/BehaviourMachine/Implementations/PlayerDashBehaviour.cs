@@ -1,5 +1,6 @@
 
 using System;
+using UnityEditor;
 using UnityEngine;
 
 
@@ -24,6 +25,7 @@ public class PlayerDashBehaviour : BasePlayerBehaviour, IPlayerAbilityBehaviour
     public override void Enter()
     {
         PlayAnim(PlayerController.PlayerAnimator.AnimationList.DashEnter);
+        PlayerController.ToggleDashParticles(true);
         TimeLastUsed = Time.time;
         PlayerController.RemainingDashes--;
 
@@ -31,7 +33,7 @@ public class PlayerDashBehaviour : BasePlayerBehaviour, IPlayerAbilityBehaviour
         _elapsedTime = 0;
 
         _direction = PlayerController.FacingDirection;
-
+        PlayerController.CollisionController.ResizeMainCollider(PlayerController.PlayerStats.DashColliderSize, Vector2.zero);
     }
 
     public override BehaviourChangeRequest VerifyBehaviour()
@@ -71,7 +73,7 @@ public class PlayerDashBehaviour : BasePlayerBehaviour, IPlayerAbilityBehaviour
                 PlayerController.StartTrail();
                 _windingUp = false;
                 var flipX = PlayerController.MovementController.LastHorizontalDirection == -1;
-                VFXSpawner.Instance.PlayFX(VFXSpawner.Instance.VFXList.DashBurst, PlayerController.transform.position, flipX);
+                //VFXSpawner.Instance.PlayFX(VFXSpawner.Instance.VFXList.DashBurst, PlayerController.transform.position, flipX);
             }
             if (_direction == 0)
             {
@@ -102,7 +104,7 @@ public class PlayerDashBehaviour : BasePlayerBehaviour, IPlayerAbilityBehaviour
     public override void Exit()
     {
         EnqueueAnim(PlayerController.PlayerAnimator.AnimationList.DashExit);
-        var flipX = PlayerController.MovementController.LastHorizontalDirection == -1;
-        VFXSpawner.Instance.PlayFX(VFXSpawner.Instance.VFXList.DashFeathers, PlayerController.transform.position, flipX);
+        PlayerController.CollisionController.ResizeMainCollider(PlayerController.PlayerStats.DefaultColliderSize, Vector2.zero);
+        PlayerController.ToggleDashParticles(false);
     }
 }

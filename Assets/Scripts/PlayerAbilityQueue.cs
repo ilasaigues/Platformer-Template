@@ -10,7 +10,7 @@ public class PlayerAbilityQueue
     public void AddAbility(IPlayerAbilityBehaviour ability)
     {
         if (_abilityQueue.Contains(ability)) return;
-        Debug.Log("Adding ability to queue: " + ability.GetType());
+        //Debug.Log("Adding ability to queue: " + ability.GetType());
         _abilityQueue.Enqueue(ability);
         ability.Enabled = true;
         while (_abilityQueue.Count > MaxAbilityStack)

@@ -30,3 +30,5 @@ MonoBehaviour:
   ceilingCorrection: 0.125
   ledgeCorrectionUp: 0.125
   ledgeCorrectionDown: 0.125
+  DefaultColliderSize: {x: 0.5, y: 1}
+  DashColliderSize: {x: 0.5, y: 0.5}

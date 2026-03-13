@@ -9961,7 +9961,9 @@ MonoBehaviour:
   MovementController: {fileID: 0}
   PlayerAnimator: {fileID: 0}
   InputHandler: {fileID: 0}
+  ExternalSpriteTrail: {fileID: 0}
   BehaviourMachine: {fileID: 0}
+  DashParticles: {fileID: 7696103805541302765}
   RemainingDashes: 1
   Jumps: 0
   SpriteRenderer: {fileID: 0}
