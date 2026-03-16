@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
+using Unity.Cinemachine;
 using UnityEngine;
 [RequireComponent(typeof(CollisionController))]
 [RequireComponent(typeof(MovementController))]
@@ -33,11 +34,11 @@ public class PlayerController : MonoBehaviour
 
     public int FacingDirection => SpriteRenderer.flipX ? -1 : 1;
 
-
+    public CinemachinePositionComposer CameraComposer;
     public PlayerAbilityQueue PlayerAbilityQueue = new();
 
 
-    RespawnTrigger _currentRespawnTrigger;
+    public RespawnTrigger CurrentRespawnTrigger { get; private set; }
 
     public int RemainingLives { get; private set; }
 
@@ -148,7 +149,7 @@ public class PlayerController : MonoBehaviour
 
     public void SetRespawn(RespawnTrigger respawn)
     {
-        _currentRespawnTrigger = respawn;
+        CurrentRespawnTrigger = respawn;
     }
 
     public void ToggleDashParticles(bool enabled)
@@ -220,10 +221,11 @@ public class PlayerController : MonoBehaviour
 
     public void Respawn()
     {
-        IsDead = false;
-        if (_currentRespawnTrigger != null)
+        if (CurrentRespawnTrigger != null)
         {
-            var startPos = _currentRespawnTrigger.RespawnPosition;
+            IsDead = false;
+
+            var startPos = CurrentRespawnTrigger.RespawnPosition;
             var groundOffset = PlayerStats.DefaultColliderSize.y / 2;
             var hit = Physics2D.Raycast(startPos, Vector2.down, 10, LayerReference.TerrainLayer);
             if (hit)

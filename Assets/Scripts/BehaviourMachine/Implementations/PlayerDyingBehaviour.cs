@@ -8,6 +8,7 @@ public class PlayerDyingBehaviour : BasePlayerBehaviour
 
     private bool _isDying;
 
+    private bool _startedMovementTransition;
 
     public PlayerDyingBehaviour(PlayerController player) : base(player)
     {
@@ -16,6 +17,7 @@ public class PlayerDyingBehaviour : BasePlayerBehaviour
     public override void Enter()
     {
         _isDying = true;
+        _startedMovementTransition = false;
         _timeRemaining = PlayerController.PlayerStats.TotalDeathTime;
         PlayAnim(PlayerController.PlayerAnimator.AnimationList.Death);
         PlayerController.MovementController.SetVelocity(Vector2.zero);
@@ -23,7 +25,6 @@ public class PlayerDyingBehaviour : BasePlayerBehaviour
 
     public override void Exit()
     {
-
     }
 
     public override void FixedUpdate(float delta)
@@ -34,6 +35,19 @@ public class PlayerDyingBehaviour : BasePlayerBehaviour
     public override void Update(float delta)
     {
         // change to respawn position (and stick to ground) and animation after death duration
+
+
+        if (!_startedMovementTransition)
+        {
+            _startedMovementTransition = true;
+            LeanTween.move(
+                PlayerController.gameObject,
+                PlayerController.CurrentRespawnTrigger.RespawnPosition,
+                PlayerController.PlayerStats.DeathDuration * .5f)
+                .setEaseOutQuad().setDelay(PlayerController.PlayerStats.DeathDuration * .75f);
+        }
+
+
         if (_isDying && _timeRemaining <= PlayerController.PlayerStats.ReviveDuration)
         {
             _isDying = false;
