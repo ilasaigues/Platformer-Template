@@ -10,6 +10,11 @@ public abstract class BasePlayerBehaviour : BaseBehaviour
 
     public override BehaviourChangeRequest VerifyBehaviour()
     {
+        if (PlayerController.IsDead)
+        {
+            return BehaviourChangeRequest.New<PlayerDyingBehaviour>();
+        }
+
         if (PlayerController.InputHandler.RockButton.JustPressed)
         {
             return PlayerController.TryUseAbility<PlayerRockBehaviour>();

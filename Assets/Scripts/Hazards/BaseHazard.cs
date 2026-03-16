@@ -13,8 +13,4 @@ public class BaseHazard : MonoBehaviour
 
     public HazardType Type;
 
-    void OnPlayerCollide(PlayerController player)
-    {
-
-    }
 }

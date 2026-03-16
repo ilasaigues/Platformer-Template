@@ -27,6 +27,8 @@ public class PlayerController : MonoBehaviour
 
     public int Jumps = 0;
 
+    public bool IsDead;
+
     public SpriteRenderer SpriteRenderer;
 
     public int FacingDirection => SpriteRenderer.flipX ? -1 : 1;
@@ -50,18 +52,22 @@ public class PlayerController : MonoBehaviour
         BehaviourMachine.AddBehaviour(new PlayerIdleBehaviour(this));
         BehaviourMachine.AddBehaviour(new PlayerGroundMoveBehaviour(this));
         BehaviourMachine.AddBehaviour(new PlayerJumpingBehaviour(this));
+        BehaviourMachine.AddBehaviour(new PlayerDyingBehaviour(this));
         BehaviourMachine.AddBehaviour(new PlayerRockBehaviour(this)
         {
-            Enabled = true
+            //Enabled = true
         });
         BehaviourMachine.AddBehaviour(new PlayerDashBehaviour(this)
         {
-            Enabled = true
+            //Enabled = true
         });
         BehaviourMachine.AddBehaviour(new PlayerDoubleJumpBehaviour(this)
         {
-            Enabled = true
+            //Enabled = true
         });
+        PlayerAbilityQueue.MaxAbilityStack = 1;
+
+
         BehaviourMachine.ChangeBehaviour(typeof(PlayerFallingBehaviour));
         ResetOnGrounded();
         InputHandler.JumpButton.OnPress += OnJumpPressed;
@@ -187,19 +193,19 @@ public class PlayerController : MonoBehaviour
             {
                 if (hit.collider.GetComponent<BaseHazard>() is BaseHazard hazard)
                 {
+                    MarkAsDead();
                     switch (hazard.Type)
                     {
                         case BaseHazard.HazardType.Doom:
-                            Die();
                             break;
                         case BaseHazard.HazardType.DoubleJump:
-                            Die();
+                            GainAbility<PlayerDoubleJumpBehaviour>();
                             break;
                         case BaseHazard.HazardType.Shield:
-                            Die();
+                            GainAbility<PlayerRockBehaviour>();
                             break;
                         case BaseHazard.HazardType.Dash:
-                            Die();
+                            GainAbility<PlayerDashBehaviour>();
                             break;
                     }
                 }
@@ -207,11 +213,23 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    public void Die()
+    public void MarkAsDead()
     {
+        IsDead = true;
+    }
+
+    public void Respawn()
+    {
+        IsDead = false;
         if (_currentRespawnTrigger != null)
         {
-            MovementController.ForcePosition(_currentRespawnTrigger.RespawnPosition);
+            var startPos = _currentRespawnTrigger.RespawnPosition;
+            var groundOffset = PlayerStats.DefaultColliderSize.y / 2;
+            var hit = Physics2D.Raycast(startPos, Vector2.down, 10, LayerReference.TerrainLayer);
+            if (hit)
+            {
+                MovementController.ForcePosition(hit.point + Vector2.up * groundOffset);
+            }
         }
         else
         {

@@ -31,4 +31,9 @@ public class PlayerStats : ScriptableObject
     public Vector2 DefaultColliderSize;
     public Vector2 DashColliderSize;
 
+    [Header("Death")]
+    public float DeathDuration;
+    public float ReviveDuration;
+    public float TotalDeathTime => DeathDuration + ReviveDuration;
+
 }

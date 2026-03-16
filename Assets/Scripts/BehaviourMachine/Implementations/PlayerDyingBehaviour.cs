@@ -1,0 +1,61 @@
+using System.Threading;
+using UnityEngine;
+
+public class PlayerDyingBehaviour : BasePlayerBehaviour
+{
+
+    private float _timeRemaining;
+
+    private bool _isDying;
+
+
+    public PlayerDyingBehaviour(PlayerController player) : base(player)
+    {
+    }
+
+    public override void Enter()
+    {
+        _isDying = true;
+        _timeRemaining = PlayerController.PlayerStats.TotalDeathTime;
+        PlayAnim(PlayerController.PlayerAnimator.AnimationList.Death);
+        PlayerController.MovementController.SetVelocity(Vector2.zero);
+    }
+
+    public override void Exit()
+    {
+
+    }
+
+    public override void FixedUpdate(float delta)
+    {
+        // no op
+    }
+
+    public override void Update(float delta)
+    {
+        // change to respawn position (and stick to ground) and animation after death duration
+        if (_isDying && _timeRemaining <= PlayerController.PlayerStats.ReviveDuration)
+        {
+            _isDying = false;
+            PlayerController.Respawn();
+            PlayAnim(PlayerController.PlayerAnimator.AnimationList.Revive);
+        }
+
+        _timeRemaining -= delta;
+    }
+
+    public override BehaviourChangeRequest VerifyBehaviour()
+    {
+        if (base.VerifyBehaviour() is BehaviourChangeRequest baseRequest)
+        {
+            return baseRequest;
+        }
+
+        if (_timeRemaining <= 0)
+        {
+            return BehaviourChangeRequest.New<PlayerJumpingBehaviour>();
+        }
+
+        return null;
+    }
+}

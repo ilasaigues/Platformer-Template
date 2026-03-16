@@ -67,7 +67,7 @@ public class BehaviourMachine : MonoBehaviour
             {
                 _lastBehaviours.Dequeue();
             }
-            //Debug.Log("Entering state: " + behaviourType.ToString());
+            Debug.Log("Entering state: " + behaviourType.ToString());
             _currentBehaviour?.Exit();
             _currentBehaviour = nextBehaviour;
             _currentBehaviour.Enter();

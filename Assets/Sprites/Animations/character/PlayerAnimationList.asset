@@ -21,7 +21,8 @@ MonoBehaviour:
   Land: {fileID: 7400000, guid: 8cb7d946e975e204e8785bcbcf7b4352, type: 2}
   ShieldEnter: {fileID: 7400000, guid: 655dac5e560916d4b9ecaf11da2cb81c, type: 2}
   Shield: {fileID: 7400000, guid: 3be7db4f08edbfc4280421a622b70e29, type: 2}
-  ShieldExit: {fileID: 0}
   DashEnter: {fileID: 7400000, guid: 13e62d4c161079f41900932ab2538522, type: 2}
   Dash: {fileID: 7400000, guid: 111a28cb42799054ea6b00e3fce0044a, type: 2}
   DashExit: {fileID: 7400000, guid: c5475c9f6124b9248a6a945554d8f25d, type: 2}
+  Death: {fileID: 7400000, guid: 5471044685358f84e844b6652d9cbf39, type: 2}
+  Revive: {fileID: 7400000, guid: 0cd3a2cc31914344fbb7165a32c9479e, type: 2}
