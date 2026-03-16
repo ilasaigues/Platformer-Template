@@ -33,4 +33,4 @@ MonoBehaviour:
   DefaultColliderSize: {x: 0.5, y: 1}
   DashColliderSize: {x: 0.5, y: 0.5}
   DeathDuration: 0.75
-  ReviveDuration: 0.5
+  ReviveDuration: 0.41666666
