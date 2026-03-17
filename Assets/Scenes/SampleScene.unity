@@ -129,6 +129,7 @@ GameObject:
   m_Component:
   - component: {fileID: 34181473}
   - component: {fileID: 34181474}
+  - component: {fileID: 34181475}
   m_Layer: 0
   m_Name: target_1
   m_TagString: Untagged
@@ -210,6 +211,18 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!114 &34181475
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 34181472}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8d1f554ea90fdb40bfcf88edef22d6c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HideOnStart
 --- !u!19719996 &36241860 stripped
 TilemapCollider2D:
   m_CorrespondingSourceObject: {fileID: 906532242663690695, guid: 2a6652ec5fdfdab47b8a959efa1b7009, type: 3}
@@ -437,6 +450,7 @@ GameObject:
   - component: {fileID: 518008411}
   - component: {fileID: 518008410}
   - component: {fileID: 518008409}
+  - component: {fileID: 518008414}
   m_Layer: 0
   m_Name: trigger_2
   m_TagString: Untagged
@@ -604,6 +618,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 230265220}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &518008414
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 518008408}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8d1f554ea90fdb40bfcf88edef22d6c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HideOnStart
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -988,6 +1014,7 @@ GameObject:
   m_Component:
   - component: {fileID: 643178206}
   - component: {fileID: 643178205}
+  - component: {fileID: 643178207}
   m_Layer: 0
   m_Name: target_2
   m_TagString: Untagged
@@ -1069,6 +1096,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 230265220}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &643178207
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 643178204}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8d1f554ea90fdb40bfcf88edef22d6c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HideOnStart
 --- !u!1 &655922522
 GameObject:
   m_ObjectHideFlags: 0
@@ -1617,6 +1656,7 @@ GameObject:
   - component: {fileID: 1161114068}
   - component: {fileID: 1161114067}
   - component: {fileID: 1161114066}
+  - component: {fileID: 1161114071}
   m_Layer: 0
   m_Name: trigger_0
   m_TagString: Untagged
@@ -1784,6 +1824,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 212159306}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1161114071
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1161114065}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8d1f554ea90fdb40bfcf88edef22d6c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HideOnStart
 --- !u!1 &1169955649
 GameObject:
   m_ObjectHideFlags: 0
@@ -1797,6 +1849,7 @@ GameObject:
   - component: {fileID: 1169955653}
   - component: {fileID: 1169955652}
   - component: {fileID: 1169955651}
+  - component: {fileID: 1169955655}
   m_Layer: 0
   m_Name: RespawnTrigger (3)
   m_TagString: Untagged
@@ -1964,6 +2017,18 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!114 &1169955655
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1169955649}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8d1f554ea90fdb40bfcf88edef22d6c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HideOnStart
 --- !u!1001 &1193926264
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4909,6 +4974,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1344274021}
   - component: {fileID: 1344274022}
+  - component: {fileID: 1344274023}
   m_Layer: 0
   m_Name: target_0
   m_TagString: Untagged
@@ -4990,6 +5056,18 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!114 &1344274023
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1344274020}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8d1f554ea90fdb40bfcf88edef22d6c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HideOnStart
 --- !u!19719996 &1370157195 stripped
 TilemapCollider2D:
   m_CorrespondingSourceObject: {fileID: -4629060412265949276, guid: 2a6652ec5fdfdab47b8a959efa1b7009, type: 3}
