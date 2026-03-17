@@ -14,6 +14,9 @@ public class MovementController : MonoBehaviour
     public bool OnOneWayPlatform = false;
     public int LastHorizontalDirection;
 
+    public bool CanBeSqueezed = true;
+
+
     public float TimeLeftGround;
 
     public bool IgnoreOneWay = false;
@@ -22,7 +25,7 @@ public class MovementController : MonoBehaviour
     private CollisionController _collisonController;
     private PlayerController _playerController;
 
-    private Bounds _mainColliderBounds => _collisonController.MainCollider.bounds;
+    public Bounds MainColliderBounds => _collisonController.MainCollider.bounds;
     private Bounds _footColliderBounds => _collisonController.FootCollider.bounds;
 
     private ContactFilter2D OneWayFilter = new()
@@ -36,6 +39,7 @@ public class MovementController : MonoBehaviour
 
     void Awake()
     {
+        CanBeSqueezed = true;
         _rb = gameObject.GetOrAddComponent<Rigidbody2D>();
         _collisonController = gameObject.GetOrAddComponent<CollisionController>();
         _rb.bodyType = RigidbodyType2D.Kinematic;
@@ -56,11 +60,11 @@ public class MovementController : MonoBehaviour
         bool ledgeCorrected = false;
 
         // Horizontal correction
-        var correctedHorizontal = _collisonController.CollideAndSlideVel(transform.position, _mainColliderBounds, originalHorizontal, LayerReference.TerrainLayer);
+        var correctedHorizontal = _collisonController.CollideAndSlideVel(transform.position, MainColliderBounds, originalHorizontal, LayerReference.TerrainAndBoulder);
 
         if (correctedHorizontal.magnitude < Mathf.Abs(originalHorizontal.x)) // if collided and shrunk vector
         {
-            var ledgeCorrection = GetCorrection(transform.position, originalHorizontal, correctedHorizontal, Vector2.up * _playerController.PlayerStats.ledgeCorrectionUp, Vector2.down * _playerController.PlayerStats.ledgeCorrectionDown, LayerReference.TerrainLayer);
+            var ledgeCorrection = GetCorrection(transform.position, originalHorizontal, correctedHorizontal, Vector2.up * _playerController.PlayerStats.ledgeCorrectionUp, Vector2.down * _playerController.PlayerStats.ledgeCorrectionDown, LayerReference.TerrainAndBoulder);
 
             if (ledgeCorrection != Vector2.zero)
             {
@@ -72,11 +76,11 @@ public class MovementController : MonoBehaviour
 
 
         // Vertical correction
-        var correctedVertical = _collisonController.CollideAndSlideVel(transform.position + (Vector3)correctedHorizontal, _mainColliderBounds, originalVertical, LayerReference.TerrainLayer);
+        var correctedVertical = _collisonController.CollideAndSlideVel(transform.position + (Vector3)correctedHorizontal, MainColliderBounds, originalVertical, LayerReference.TerrainAndBoulder);
 
         if (!ledgeCorrected && !Grounded && originalVertical.y > 0 && correctedVertical.magnitude < Mathf.Abs(originalVertical.y)) // if collided and shrunk vector
         {
-            var ceilingCorrection = GetCorrection(transform.position + (Vector3)correctedHorizontal, originalVertical, correctedVertical, Vector2.left * _playerController.PlayerStats.ceilingCorrection, Vector2.right * _playerController.PlayerStats.ceilingCorrection, LayerReference.TerrainLayer);
+            var ceilingCorrection = GetCorrection(transform.position + (Vector3)correctedHorizontal, originalVertical, correctedVertical, Vector2.left * _playerController.PlayerStats.ceilingCorrection, Vector2.right * _playerController.PlayerStats.ceilingCorrection, LayerReference.TerrainAndBoulder);
 
             if (ceilingCorrection != Vector2.zero && (ceilingCorrection.x.Sign0() * originalHorizontal.x.Sign0()) >= 0)
             {
@@ -156,8 +160,8 @@ public class MovementController : MonoBehaviour
         Vector2 positionA = position + offsetA;
         Vector2 positionB = position + offsetB;
 
-        var collisionA = _collisonController.CollideAndSlideVel(positionA, _mainColliderBounds, originalDirection, layerMask);
-        var collisionB = _collisonController.CollideAndSlideVel(positionB, _mainColliderBounds, originalDirection, layerMask);
+        var collisionA = _collisonController.CollideAndSlideVel(positionA, MainColliderBounds, originalDirection, layerMask);
+        var collisionB = _collisonController.CollideAndSlideVel(positionB, MainColliderBounds, originalDirection, layerMask);
         if (collisionA.magnitude > correctedDirection.magnitude)
         {
             return offsetA;

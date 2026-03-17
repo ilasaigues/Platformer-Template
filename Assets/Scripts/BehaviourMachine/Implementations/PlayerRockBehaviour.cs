@@ -23,6 +23,7 @@ public class PlayerRockBehaviour : BasePlayerBehaviour, IPlayerAbilityBehaviour
         _released = false;
         TimeLastUsed = Time.time;
         PlayerController.InputHandler.RockButton.OnRelease += OnRockButtonRelease;
+        PlayerController.MovementController.CanBeSqueezed = false;
         PlayAnim(PlayerController.PlayerAnimator.AnimationList.ShieldEnter);
     }
 
@@ -30,6 +31,7 @@ public class PlayerRockBehaviour : BasePlayerBehaviour, IPlayerAbilityBehaviour
     {
         PlayerController.InputHandler.RockButton.OnRelease -= OnRockButtonRelease;
         var flipX = PlayerController.MovementController.LastHorizontalDirection == -1;
+        PlayerController.MovementController.CanBeSqueezed = true;
         VFXSpawner.Instance.PlayFX(VFXSpawner.Instance.VFXList.ShieldEnd, PlayerController.transform.position, flipX);
     }
 

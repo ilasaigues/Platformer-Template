@@ -224,12 +224,13 @@ public class PlayerController : MonoBehaviour
         if (CurrentRespawnTrigger != null)
         {
             IsDead = false;
-
             var startPos = CurrentRespawnTrigger.RespawnPosition;
+            Debug.DrawRay(startPos, Vector2.down * 10, Color.red, 1);
             var groundOffset = PlayerStats.DefaultColliderSize.y / 2;
             var hit = Physics2D.Raycast(startPos, Vector2.down, 10, LayerReference.TerrainLayer);
             if (hit)
             {
+                LeanTween.cancelAll();
                 MovementController.ForcePosition(hit.point + Vector2.up * groundOffset);
             }
         }

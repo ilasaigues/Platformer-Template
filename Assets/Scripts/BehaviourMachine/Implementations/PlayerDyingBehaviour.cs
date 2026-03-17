@@ -19,12 +19,14 @@ public class PlayerDyingBehaviour : BasePlayerBehaviour
         _isDying = true;
         _startedMovementTransition = false;
         _timeRemaining = PlayerController.PlayerStats.TotalDeathTime;
+        PlayerController.CollisionController.MainCollider.enabled = false;
         PlayAnim(PlayerController.PlayerAnimator.AnimationList.Death);
         PlayerController.MovementController.SetVelocity(Vector2.zero);
     }
 
     public override void Exit()
     {
+        PlayerController.CollisionController.MainCollider.enabled = true;
     }
 
     public override void FixedUpdate(float delta)
