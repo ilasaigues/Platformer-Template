@@ -56,7 +56,7 @@ public class PlayerController : MonoBehaviour
         BehaviourMachine.AddBehaviour(new PlayerDyingBehaviour(this));
         BehaviourMachine.AddBehaviour(new PlayerRockBehaviour(this)
         {
-            //Enabled = true
+            Enabled = true
         });
         BehaviourMachine.AddBehaviour(new PlayerDashBehaviour(this)
         {

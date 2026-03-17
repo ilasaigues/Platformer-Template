@@ -10,6 +10,8 @@ public class MovementController : MonoBehaviour
 {
     public Vector2 Velocity { get; private set; }
 
+    public Vector2 ExternalVelocity;
+
     public bool Grounded = false;
     public bool OnOneWayPlatform = false;
     public int LastHorizontalDirection;
@@ -152,7 +154,7 @@ public class MovementController : MonoBehaviour
         Debug.DrawRay((Vector2)transform.position + correctedVelocity / 2, correctedVelocity / 2, Color.yellow, 1);
 
         // Apply movement
-        transform.position = transform.position + (Vector3)correctedVelocity;
+        transform.position = transform.position + (Vector3)correctedVelocity + (Vector3)ExternalVelocity * Time.fixedDeltaTime;
     }
 
     Vector2 GetCorrection(Vector2 position, Vector2 originalDirection, Vector2 correctedDirection, Vector2 offsetA, Vector2 offsetB, LayerMask layerMask)
