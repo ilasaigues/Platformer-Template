@@ -73,7 +73,7 @@ public class PlayerDashBehaviour : BasePlayerBehaviour, IPlayerAbilityBehaviour
                 PlayerController.StartTrail();
                 _windingUp = false;
                 var flipX = PlayerController.MovementController.LastHorizontalDirection == -1;
-                //VFXSpawner.Instance.PlayFX(VFXSpawner.Instance.VFXList.DashBurst, PlayerController.transform.position, flipX);
+                VFXSpawner.Instance.PlayFX(VFXSpawner.Instance.VFXList.DashBurst, PlayerController.transform.position, flipX);
             }
             if (_direction == 0)
             {

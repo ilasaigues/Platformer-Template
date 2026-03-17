@@ -16,3 +16,4 @@ MonoBehaviour:
   ShieldEnd: {fileID: 7400000, guid: 40e82e6035a4cd247b38ec2438a87b23, type: 2}
   AirBurst: {fileID: 7400000, guid: 77bb13b4d19b4394fbba69cfe7866324, type: 2}
   DashBurst: {fileID: 7400000, guid: ea990e8dfa568a943be95d399d48e2ec, type: 2}
+  Respawn_Particles: {fileID: 7400000, guid: e455a727d8b63544e837db77428da00a, type: 2}
