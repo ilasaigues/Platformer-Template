@@ -60,11 +60,11 @@ public class PlayerController : MonoBehaviour
         });
         BehaviourMachine.AddBehaviour(new PlayerDashBehaviour(this)
         {
-            //Enabled = true
+            Enabled = true
         });
         BehaviourMachine.AddBehaviour(new PlayerDoubleJumpBehaviour(this)
         {
-            //Enabled = true
+            Enabled = true
         });
         PlayerAbilityQueue.MaxAbilityStack = 1;
 
@@ -87,7 +87,7 @@ public class PlayerController : MonoBehaviour
 
     public void StartTrail()
     {
-        ExternalSpriteTrail?.StartTrail(transform.position, transform);
+        ExternalSpriteTrail?.StartTrail(transform.position - Vector3.right * FacingDirection, transform);
     }
 
     private void OnJumpPressed()

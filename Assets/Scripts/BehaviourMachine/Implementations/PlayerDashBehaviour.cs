@@ -24,6 +24,7 @@ public class PlayerDashBehaviour : BasePlayerBehaviour, IPlayerAbilityBehaviour
 
     public override void Enter()
     {
+        //EditorApplication.isPaused=true;
         PlayAnim(PlayerController.PlayerAnimator.AnimationList.DashEnter);
         PlayerController.ToggleDashParticles(true);
         TimeLastUsed = Time.time;
@@ -69,11 +70,10 @@ public class PlayerDashBehaviour : BasePlayerBehaviour, IPlayerAbilityBehaviour
         {
             if (_windingUp)
             {
-                PlayAnim(PlayerController.PlayerAnimator.AnimationList.Dash);
+                EnqueueAnim(PlayerController.PlayerAnimator.AnimationList.Dash);
                 PlayerController.StartTrail();
                 _windingUp = false;
                 var flipX = PlayerController.MovementController.LastHorizontalDirection == -1;
-                VFXSpawner.Instance.PlayFX(VFXSpawner.Instance.VFXList.DashBurst, PlayerController.transform.position, flipX);
             }
             if (_direction == 0)
             {

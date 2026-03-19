@@ -35,7 +35,7 @@ public class ObjectMovementComponent : MonoBehaviour
     private ContactFilter2D TerrainAndBoulderFilter = new()
     {
         useLayerMask = true,
-        layerMask = LayerReference.TerrainAndBoulder,
+        layerMask = LayerReference.TerrainLayer,
     };
     void Start()
     {

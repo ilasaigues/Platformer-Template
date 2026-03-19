@@ -1343,8 +1343,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c1cc7c1a0bb81df4d974fe26e52a8899
-      internalID: -723914205
+      spriteID: 850595fbe3de3b64eabaa6a3f233d7b9
+      internalID: -722133873
       vertices: []
       indices: 
       edges: []
@@ -1365,8 +1365,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8b5ecb4ff99112d4a85dc61d0b3a0088
-      internalID: -797184019
+      spriteID: 7990aece90b36504094f614367b550cf
+      internalID: -1192815020
       vertices: []
       indices: 
       edges: []
@@ -1387,8 +1387,30 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 79774857100725a4a8bd8f0448314238
-      internalID: -1457743348
+      spriteID: f04d40ea1eea3164892ccdbcf304d105
+      internalID: -1731030779
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: character_sheet_54
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 43ad3e23742d79148a6b02135227f03c
+      internalID: -1913018
       vertices: []
       indices: 
       edges: []
@@ -1456,9 +1478,10 @@ TextureImporter:
       character_sheet_49: -437974214
       character_sheet_5: -444675118798003180
       character_sheet_50: -1459276311
-      character_sheet_51: -723914205
-      character_sheet_52: -797184019
-      character_sheet_53: -1457743348
+      character_sheet_51: -722133873
+      character_sheet_52: -1192815020
+      character_sheet_53: -1731030779
+      character_sheet_54: -1913018
       character_sheet_6: 3877699762945410923
       character_sheet_7: -8623627959748672946
       character_sheet_8: -3594076763582321322

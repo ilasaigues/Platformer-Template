@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: dash_burst_spawn_data
   m_EditorClassIdentifier: Assembly-CSharp::VFXSpawnData
   VFXClip: {fileID: 7400000, guid: ea990e8dfa568a943be95d399d48e2ec, type: 2}
-  Offset: {x: -2, y: 0, z: 0}
+  Offset: {x: -1, y: 0, z: 0}

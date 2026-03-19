@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: dash_feathers_spawn_data
   m_EditorClassIdentifier: Assembly-CSharp::VFXSpawnData
   VFXClip: {fileID: 7400000, guid: 25a3cb81ebd276548b13cf9f1a6acc18, type: 2}
-  Offset: {x: 0, y: 0, z: 0}
+  Offset: {x: -0.25, y: 0.125, z: 0}

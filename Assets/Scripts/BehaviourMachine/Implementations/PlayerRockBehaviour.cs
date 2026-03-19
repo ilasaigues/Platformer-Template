@@ -32,7 +32,7 @@ public class PlayerRockBehaviour : BasePlayerBehaviour, IPlayerAbilityBehaviour
         PlayerController.InputHandler.RockButton.OnRelease -= OnRockButtonRelease;
         var flipX = PlayerController.MovementController.LastHorizontalDirection == -1;
         PlayerController.MovementController.CanBeSqueezed = true;
-        VFXSpawner.Instance.PlayFX(VFXSpawner.Instance.VFXList.ShieldEnd, PlayerController.transform.position, flipX);
+        VFXSpawner.Instance.PlayFX(VFXSpawner.Instance.VFXList.ShieldEnd, PlayerController.transform.position + Vector3.up  * 4/16f, false);
     }
 
     private void OnRockButtonRelease()
