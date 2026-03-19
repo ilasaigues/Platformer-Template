@@ -1,23 +1,20 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Unity.VisualScripting;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
 [RequireComponent(typeof(CollisionController))]
 [RequireComponent(typeof(PlayerController))]
-public class MovementController : MonoBehaviour
+public class MovementController : MonoBehaviour, IPhysics2DObject
 {
     public Vector2 Velocity { get; private set; }
 
-    public Vector2 ExternalVelocity;
 
     public bool Grounded = false;
     public bool OnOneWayPlatform = false;
     public int LastHorizontalDirection;
-
-    public bool CanBeSqueezed = true;
-
 
     public float TimeLeftGround;
 
@@ -30,6 +27,8 @@ public class MovementController : MonoBehaviour
     public Bounds MainColliderBounds => _collisonController.MainCollider.bounds;
     private Bounds _footColliderBounds => _collisonController.FootCollider.bounds;
 
+    public int Priority => int.MaxValue;
+
     private ContactFilter2D OneWayFilter = new()
     {
         useLayerMask = true,
@@ -41,7 +40,6 @@ public class MovementController : MonoBehaviour
 
     void Awake()
     {
-        CanBeSqueezed = true;
         _rb = gameObject.GetOrAddComponent<Rigidbody2D>();
         _collisonController = gameObject.GetOrAddComponent<CollisionController>();
         _rb.bodyType = RigidbodyType2D.Kinematic;
@@ -49,12 +47,19 @@ public class MovementController : MonoBehaviour
         _playerController = gameObject.GetOrAddComponent<PlayerController>();
     }
 
-    void FixedUpdate()
+    void Start()
     {
+        Physics2DController.Instance.Subscribe(this);
+    }
+
+    public void SimulatePhisics2D()
+    {
+        FixOverlap();
         if (Velocity.y < _playerController.PlayerStats.fallVelocityCap)
         {
             SetVelocity(null, _playerController.PlayerStats.fallVelocityCap);
         }
+
         Vector2 originalVertical = Time.fixedDeltaTime * Velocity.y * Vector2.up;
         Vector2 originalHorizontal = Time.fixedDeltaTime * Velocity.x * Vector2.right;
 
@@ -63,6 +68,8 @@ public class MovementController : MonoBehaviour
 
         // Horizontal correction
         var correctedHorizontal = _collisonController.CollideAndSlideVel(transform.position, MainColliderBounds, originalHorizontal, LayerReference.TerrainAndBoulder);
+
+        correctedHorizontal = _playerController.PlatformAttacher.CorrectVelocity(correctedHorizontal, false);
 
         if (correctedHorizontal.magnitude < Mathf.Abs(originalHorizontal.x)) // if collided and shrunk vector
         {
@@ -79,6 +86,8 @@ public class MovementController : MonoBehaviour
 
         // Vertical correction
         var correctedVertical = _collisonController.CollideAndSlideVel(transform.position + (Vector3)correctedHorizontal, MainColliderBounds, originalVertical, LayerReference.TerrainAndBoulder);
+
+        correctedVertical = _playerController.PlatformAttacher.CorrectVelocity(correctedVertical, true);
 
         if (!ledgeCorrected && !Grounded && originalVertical.y > 0 && correctedVertical.magnitude < Mathf.Abs(originalVertical.y)) // if collided and shrunk vector
         {
@@ -154,7 +163,31 @@ public class MovementController : MonoBehaviour
         Debug.DrawRay((Vector2)transform.position + correctedVelocity / 2, correctedVelocity / 2, Color.yellow, 1);
 
         // Apply movement
-        transform.position = transform.position + (Vector3)correctedVelocity + (Vector3)ExternalVelocity * Time.fixedDeltaTime;
+        transform.position = transform.position + (Vector3)correctedVelocity;
+    }
+
+    void FixOverlap()
+    {
+        var playerBounds = _playerController.CollisionController.MainCollider.bounds;
+
+        playerBounds.Expand(-2 * _playerController.CollisionController.SkinWidth * Vector2.one);
+        var terrainAndBoulderFilter = new ContactFilter2D
+        {
+            useLayerMask = true,
+            layerMask = LayerReference.TerrainAndBoulder,
+        };
+        List<Collider2D> colliders = new();
+        Physics2D.OverlapBox(playerBounds.center, playerBounds.size, 0, terrainAndBoulderFilter, colliders);
+
+        foreach (var otherCollider in colliders)
+        {
+            var overlapDistanceData = Physics2D.Distance(_playerController.CollisionController.MainCollider, otherCollider);
+            if (overlapDistanceData.isValid)
+            {
+                ForceOffset(overlapDistanceData.normal * overlapDistanceData.distance);
+            }
+        }
+
     }
 
     Vector2 GetCorrection(Vector2 position, Vector2 originalDirection, Vector2 correctedDirection, Vector2 offsetA, Vector2 offsetB, LayerMask layerMask)

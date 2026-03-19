@@ -12,7 +12,6 @@ public class BoulderHazard : MonoBehaviour
     void Start()
     {
         _movementComponent = GetComponent<ObjectMovementComponent>();
-        _movementComponent.OnPlayerSqueezed += PlayerSqueezed;
         _movementComponent.OnObstacleHit += ObstacleHit;
     }
 
@@ -20,12 +19,6 @@ public class BoulderHazard : MonoBehaviour
     {
         _currentVelocityIndex = (_currentVelocityIndex + 1) % Velocities.Length;
         _movementComponent.SetVelocity(Velocities[_currentVelocityIndex]);
-    }
-
-    private void PlayerSqueezed(PlayerController controller)
-    {
-        controller.MarkAsDead();
-        controller.GainAbility<PlayerRockBehaviour>();
     }
 
     // Update is called once per frame

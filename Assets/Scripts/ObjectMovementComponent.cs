@@ -6,24 +6,23 @@ using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
 [RequireComponent(typeof(BoxCollider2D))]
-public class ObjectMovementComponent : MonoBehaviour
+public class ObjectMovementComponent : MonoBehaviour, IPhysics2DObject
 {
     public Vector2 Velocity { get; private set; }
+
+    public int Priority => 0;
+
     private const int MaxCollideBounces = 5;
     public float SkinWidth = 0.015f;
     private Rigidbody2D _rb;
     private BoxCollider2D _collider;
 
-    private PlayerController _childPlayer;
-
-    public event Action<PlayerController> OnPlayerSqueezed = delegate { };
     public event Action OnObstacleHit = delegate { };
-    public event Action OnTerrainHit = delegate { };
 
-    private ContactFilter2D PlayerFilter = new()
+    private ContactFilter2D PlayerAndTerrainFilter = new()
     {
         useLayerMask = true,
-        layerMask = LayerReference.PlayerLayer,
+        layerMask = LayerReference.PlayerLayer | LayerReference.TerrainLayer,
     };
 
     private ContactFilter2D TerrainFilter = new()
@@ -32,17 +31,13 @@ public class ObjectMovementComponent : MonoBehaviour
         layerMask = LayerReference.TerrainLayer,
     };
 
-    private ContactFilter2D TerrainAndBoulderFilter = new()
-    {
-        useLayerMask = true,
-        layerMask = LayerReference.TerrainAndBoulder,
-    };
     void Start()
     {
         _rb = GetComponent<Rigidbody2D>();
         _rb.bodyType = RigidbodyType2D.Kinematic;
         _rb.constraints = RigidbodyConstraints2D.FreezeRotation;
         _collider = GetComponent<BoxCollider2D>();
+        Physics2DController.Instance.Subscribe(this);
     }
 
     public Vector2 CollideAndSlideVel(Vector2 position, Bounds bounds, Vector2 vel, ContactFilter2D filter, List<RaycastHit2D> outHits = null, int recursionDepth = 0)
@@ -77,64 +72,27 @@ public class ObjectMovementComponent : MonoBehaviour
         return vel;
     }
 
-    public void SetPlayerChild(PlayerController child)
+    public void SimulatePhisics2D()
     {
-        _childPlayer = child;
-    }
-
-    public void UnsetPlayerChild()
-    {
-        if (_childPlayer != null)
-        {
-            _childPlayer.MovementController.ExternalVelocity = Vector2.zero;
-            _childPlayer = null;
-        }
-    }
-
-    void FixedUpdate()
-    {
-
         // check for collisions by velocity
-        var correctedVelocity = CollideAndSlideVel(_collider.bounds.center, _collider.bounds, Velocity * Time.fixedDeltaTime, TerrainFilter);
+        List<RaycastHit2D> hits = new();
+
+        var correctedVelocity = CollideAndSlideVel(_collider.bounds.center, _collider.bounds, Velocity * Time.fixedDeltaTime, PlayerAndTerrainFilter, hits);
+
+        var player = hits.Where(c => c).Select(c => c.collider.GetComponent<PlayerController>()).FirstOrDefault();
+
+        if (player) // if we collide with player
+        {
+            player.PlatformAttacher.AttachComponent(this);
+            if (!(player.PlatformAttacher.IsBeingSqueezed(Velocity * Time.fixedDeltaTime) && player.PlatformAttacher.UnSqueezable))
+            {
+                correctedVelocity = CollideAndSlideVel(_collider.bounds.center, _collider.bounds, Velocity * Time.fixedDeltaTime, TerrainFilter, hits);
+            }
+        }
 
         if (correctedVelocity.magnitude + 1e-6 < Velocity.magnitude * Time.fixedDeltaTime)
         {
             OnObstacleHit();
-        }
-
-
-        List<RaycastHit2D> collisionsWithPlayer = new();
-
-        var playerCorrectedVelocity = CollideAndSlideVel(_collider.bounds.center, _collider.bounds, Velocity * Time.fixedDeltaTime, PlayerFilter, collisionsWithPlayer);
-        CollideAndSlideVel(_collider.bounds.center, _collider.bounds, Vector2.up * Time.fixedDeltaTime, PlayerFilter, collisionsWithPlayer);
-        if (collisionsWithPlayer.Any(c => c))
-        {
-            _childPlayer = collisionsWithPlayer.First(c => c).collider.GetComponent<PlayerController>();
-            _childPlayer.MovementController.ExternalVelocity = correctedVelocity / Time.fixedDeltaTime;
-        }
-        else if (_childPlayer != null)
-        {
-            UnsetPlayerChild();
-        }
-
-        if (_childPlayer)
-        {
-            var playerCollisions = new List<RaycastHit2D>();
-            var playerColliderBounds = _childPlayer.CollisionController.MainCollider.bounds;
-            CollideAndSlideVel(playerColliderBounds.center, playerColliderBounds, Velocity * Time.fixedDeltaTime, TerrainAndBoulderFilter, playerCollisions);
-            if (playerCollisions.Any(c => c))
-            {
-                if (_childPlayer.MovementController.CanBeSqueezed)
-                {
-                    OnPlayerSqueezed(_childPlayer);
-                }
-                else
-                {
-                    OnObstacleHit();
-                }
-                UnsetPlayerChild();
-                return;
-            }
         }
 
         transform.position = transform.position + (Vector3)correctedVelocity;

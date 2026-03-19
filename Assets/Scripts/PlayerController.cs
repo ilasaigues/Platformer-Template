@@ -21,6 +21,8 @@ public class PlayerController : MonoBehaviour
 
     public ParticleSystem DashParticles;
 
+    public PlayerPlatformAttacher PlatformAttacher;
+
     public Vector2 LastDirectionInput => InputHandler.MoveAxis.LastValue;
     public Vector2 LastHorizontalDirection { get; private set; }
 
@@ -48,6 +50,8 @@ public class PlayerController : MonoBehaviour
         CollisionController = gameObject.GetOrAddComponent<CollisionController>();
         MovementController = gameObject.GetOrAddComponent<MovementController>();
         PlayerAnimator = gameObject.GetOrAddComponent<PlayerAnimator>();
+        PlatformAttacher = gameObject.GetOrAddComponent<PlayerPlatformAttacher>();
+        PlatformAttacher.OnPlayerSqueezed += PlayerSqueezed;
         BehaviourMachine = gameObject.GetOrAddComponent<BehaviourMachine>();
         BehaviourMachine.AddBehaviour(new PlayerFallingBehaviour(this));
         BehaviourMachine.AddBehaviour(new PlayerIdleBehaviour(this));
@@ -72,6 +76,13 @@ public class PlayerController : MonoBehaviour
         BehaviourMachine.ChangeBehaviour(typeof(PlayerFallingBehaviour));
         ResetOnGrounded();
         InputHandler.JumpButton.OnPress += OnJumpPressed;
+    }
+
+
+    private void PlayerSqueezed()
+    {
+        MarkAsDead();
+        GainAbility<PlayerRockBehaviour>();
     }
 
     public void GainAbility<T>() where T : BasePlayerBehaviour, IPlayerAbilityBehaviour
@@ -216,6 +227,7 @@ public class PlayerController : MonoBehaviour
 
     public void MarkAsDead()
     {
+        PlatformAttacher.DetachComponent();
         IsDead = true;
     }
 
