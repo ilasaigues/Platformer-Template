@@ -24,6 +24,7 @@ public class PlayerDashBehaviour : BasePlayerBehaviour, IPlayerAbilityBehaviour
 
     public override void Enter()
     {
+        if(PlayerController.AbilityStats.DashPause)EditorApplication.isPaused=true;
         PlayAnim(PlayerController.PlayerAnimator.AnimationList.DashEnter);
         PlayerController.ToggleDashParticles(true);
         TimeLastUsed = Time.time;
@@ -106,5 +107,6 @@ public class PlayerDashBehaviour : BasePlayerBehaviour, IPlayerAbilityBehaviour
         EnqueueAnim(PlayerController.PlayerAnimator.AnimationList.DashExit);
         PlayerController.CollisionController.ResizeMainCollider(PlayerController.PlayerStats.DefaultColliderSize, Vector2.zero);
         PlayerController.ToggleDashParticles(false);
+        PlayerController.MovementController.SetVelocity(PlayerController.MovementController.Velocity.x * PlayerController.AbilityStats.DashEndMultiplier, null);
     }
 }

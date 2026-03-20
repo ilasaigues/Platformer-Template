@@ -12,6 +12,10 @@ public class AbilityStats : ScriptableObject
     public float DashMovementTime;
     public float DashWinddownTime;
 
+    public float DashEndMultiplier;
+
+    public bool DashPause;
+
     public float DashDistance;
     public float DashCooldown;
     public float TotalDashTime => DashWinddownTime + DashMovementTime + DashWinddownTime;

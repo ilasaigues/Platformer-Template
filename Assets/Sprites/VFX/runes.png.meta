@@ -1,25 +1,10 @@
 fileFormatVersion: 2
-guid: 35b5b1c2405125447afec1d5fc719b21
+guid: a8632fc5bee7af246a753ed15b334df0
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -5313683618159161143
-    second: dash_end_feathers_0
-  - first:
-      213: -6449982124679874778
-    second: dash_end_feathers_1
-  - first:
-      213: 6963038043413468895
-    second: dash_end_feathers_2
-  - first:
-      213: -1735635746903948090
-    second: dash_end_feathers_3
-  - first:
-      213: -3791495478559951559
-    second: dash_end_feathers_4
-  - first:
-      213: 1030527113832956280
-    second: dash_end_feathers_5
+      213: 2807548766200926727
+    second: runes_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -128,79 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: dash_end_feathers_0
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 96
-        width: 48
-        height: 48
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 9c09fc207e00246b0800000000000000
-      internalID: -5313683618159161143
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: dash_end_feathers_1
-      rect:
-        serializedVersion: 2
-        x: 48
-        y: 96
-        width: 48
-        height: 48
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 62736da5e6f0d76a0800000000000000
-      internalID: -6449982124679874778
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: dash_end_feathers_2
-      rect:
-        serializedVersion: 2
-        x: 96
-        y: 96
-        width: 48
-        height: 48
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: fd6d03f653ea1a060800000000000000
-      internalID: 6963038043413468895
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: dash_end_feathers_3
+      name: runes_0
       rect:
         serializedVersion: 2
         x: 0
         y: 48
-        width: 48
-        height: 48
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -209,20 +128,64 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 6c40256eb78c9e7e0800000000000000
-      internalID: -1735635746903948090
+      spriteID: 7021ef25aba66f620800000000000000
+      internalID: 2807548766200926727
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: dash_end_feathers_4
+      name: runes_1
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 48
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ce29dfbce76bd642b4fa96523352503
+      internalID: -538742928
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: runes_2
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 48
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 68eafc3ce68b3ec4f880283414a5c306
+      internalID: 259767129
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: runes_3
       rect:
         serializedVersion: 2
         x: 48
         y: 48
-        width: 48
-        height: 48
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -231,20 +194,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d94aeb9c842a2224cb0ebf3f8035a3b8
-      internalID: -1847536699
+      spriteID: 4bc662f368664244db313ede29a2056d
+      internalID: -204656882
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: dash_end_feathers_5
+      name: runes_4
       rect:
         serializedVersion: 2
-        x: 96
-        y: 48
-        width: 48
-        height: 48
+        x: 0
+        y: 32
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -253,20 +216,174 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ea8ae695946a93d43a002e6ba7efca1b
-      internalID: -1427075830
+      spriteID: 0c5a25d79bc7c594a8cfda042883b881
+      internalID: 1420324964
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: dash_end_feathers_6
+      name: runes_5
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 115801aa056502245a06203cc2e1c659
+      internalID: 485999870
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: runes_6
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 696adbdac3f131a4595de1c626997467
+      internalID: 2040202168
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: runes_7
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0744bc6525a5790498dfcca098fd9ff7
+      internalID: -1789368200
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: runes_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 23cf20c54169d5941a8276d1cea172b8
+      internalID: -217665040
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: runes_9
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6541bea186312d74e8b5f5200a607d35
+      internalID: 1439730273
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: runes_10
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3d0b304982d3f864b8fb06443f911217
+      internalID: 1735416675
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: runes_11
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5a056d3f40eb9e54b8c3245f994241a6
+      internalID: 1246321744
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: runes_12
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 48
-        height: 48
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -275,20 +392,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fcc026ff599b8264cbd5965bd248774b
-      internalID: 662529431
+      spriteID: fd08ec85928ce1f46b0f33264d45a85f
+      internalID: -1454240611
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: dash_end_feathers_7
+      name: runes_13
       rect:
         serializedVersion: 2
-        x: 48
+        x: 16
         y: 0
-        width: 48
-        height: 48
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -297,20 +414,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a638ed9aaf260e14a8079608f5301758
-      internalID: 344456917
+      spriteID: 761813685da0d47459036f05b45fedd2
+      internalID: 1591896722
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: dash_end_feathers_8
+      name: runes_14
       rect:
         serializedVersion: 2
-        x: 96
+        x: 32
         y: 0
-        width: 48
-        height: 48
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -319,8 +436,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8e4ee599f59fc3744b61a39a3264d086
-      internalID: 1152100016
+      spriteID: 0e4cfd20511a4614e9b3bddb7aa11805
+      internalID: -1445824573
       vertices: []
       indices: 
       edges: []
@@ -329,7 +446,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 864309b0cb47342458f88705b9405f82
+    spriteID: 4987321ea9fbd8240a46857b086c82f8
     internalID: 0
     vertices: []
     indices: 
@@ -339,17 +456,23 @@ TextureImporter:
     spriteCustomMetadata:
       entries:
       - key: SpriteEditor.SliceSettings
-        value: '{"sliceOnImport":false,"gridCellCount":{"x":3.0,"y":3.0},"gridSpriteSize":{"x":48.0,"y":48.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":16.0,"y":16.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      dash_end_feathers_0: -5313683618159161143
-      dash_end_feathers_1: -6449982124679874778
-      dash_end_feathers_2: 6963038043413468895
-      dash_end_feathers_3: -1735635746903948090
-      dash_end_feathers_4: -1847536699
-      dash_end_feathers_5: -1427075830
-      dash_end_feathers_6: 662529431
-      dash_end_feathers_7: 344456917
-      dash_end_feathers_8: 1152100016
+      runes_0: 2807548766200926727
+      runes_1: -538742928
+      runes_10: 1735416675
+      runes_11: 1246321744
+      runes_12: -1454240611
+      runes_13: 1591896722
+      runes_14: -1445824573
+      runes_2: 259767129
+      runes_3: -204656882
+      runes_4: 1420324964
+      runes_5: 485999870
+      runes_6: 2040202168
+      runes_7: -1789368200
+      runes_8: -217665040
+      runes_9: 1439730273
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

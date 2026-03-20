@@ -9926,9 +9926,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb9098436c69ae2409274b7e622033ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MovementController
+  ExternalVelocity: {x: 0, y: 0}
   Grounded: 0
   OnOneWayPlatform: 0
   LastHorizontalDirection: 0
+  CanBeSqueezed: 1
   TimeLeftGround: 0
   IgnoreOneWay: 0
 --- !u!114 &2748285566990291661
@@ -9968,6 +9970,7 @@ MonoBehaviour:
   Jumps: 0
   IsDead: 0
   SpriteRenderer: {fileID: 0}
+  CameraComposer: {fileID: 0}
 --- !u!95 &8524267514828517466
 Animator:
   serializedVersion: 7

@@ -15,10 +15,12 @@ MonoBehaviour:
   RockGravity: -50
   MinRockTime: 0.25
   RockBreakSpeed: 10
-  DashWindupTime: 0.05
-  DashMovementTime: 0.16
+  DashWindupTime: 0.033333335
+  DashMovementTime: 0.25
   DashWinddownTime: 0
-  DashDistance: 4.3
+  DashEndMultiplier: 0.75
+  DashPause: 0
+  DashDistance: 8
   DashCooldown: 0.75
   DoubleJumpVelocity: 14
   DoubleJumpMinTime: 0.15
