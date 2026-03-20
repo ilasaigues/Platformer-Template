@@ -7,7 +7,7 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody2D))]
 [RequireComponent(typeof(CollisionController))]
 [RequireComponent(typeof(PlayerController))]
-public class MovementController : MonoBehaviour, IPhysics2DObject
+public class MovementController : MonoBehaviour
 {
     public Vector2 Velocity { get; private set; }
 
@@ -42,19 +42,13 @@ public class MovementController : MonoBehaviour, IPhysics2DObject
     {
         _rb = gameObject.GetOrAddComponent<Rigidbody2D>();
         _collisonController = gameObject.GetOrAddComponent<CollisionController>();
-        _rb.bodyType = RigidbodyType2D.Kinematic;
+        //_rb.bodyType = RigidbodyType2D.Kinematic;
         _rb.constraints = RigidbodyConstraints2D.FreezeRotation;
         _playerController = gameObject.GetOrAddComponent<PlayerController>();
     }
 
-    void Start()
+    void FixedUpdate()
     {
-        Physics2DController.Instance.Subscribe(this);
-    }
-
-    public void SimulatePhisics2D()
-    {
-        FixOverlap();
         if (Velocity.y < _playerController.PlayerStats.fallVelocityCap)
         {
             SetVelocity(null, _playerController.PlayerStats.fallVelocityCap);
@@ -163,32 +157,10 @@ public class MovementController : MonoBehaviour, IPhysics2DObject
         Debug.DrawRay((Vector2)transform.position + correctedVelocity / 2, correctedVelocity / 2, Color.yellow, 1);
 
         // Apply movement
-        transform.position = transform.position + (Vector3)correctedVelocity;
+        _rb.linearVelocity = Velocity;
+        //transform.position = transform.position + (Vector3)correctedVelocity;
     }
 
-    void FixOverlap()
-    {
-        var playerBounds = _playerController.CollisionController.MainCollider.bounds;
-
-        playerBounds.Expand(-2 * _playerController.CollisionController.SkinWidth * Vector2.one);
-        var terrainAndBoulderFilter = new ContactFilter2D
-        {
-            useLayerMask = true,
-            layerMask = LayerReference.TerrainAndBoulder,
-        };
-        List<Collider2D> colliders = new();
-        Physics2D.OverlapBox(playerBounds.center, playerBounds.size, 0, terrainAndBoulderFilter, colliders);
-
-        foreach (var otherCollider in colliders)
-        {
-            var overlapDistanceData = Physics2D.Distance(_playerController.CollisionController.MainCollider, otherCollider);
-            if (overlapDistanceData.isValid)
-            {
-                ForceOffset(overlapDistanceData.normal * overlapDistanceData.distance);
-            }
-        }
-
-    }
 
     Vector2 GetCorrection(Vector2 position, Vector2 originalDirection, Vector2 correctedDirection, Vector2 offsetA, Vector2 offsetB, LayerMask layerMask)
     {

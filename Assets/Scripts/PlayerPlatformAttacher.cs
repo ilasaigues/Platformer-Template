@@ -120,7 +120,18 @@ public class PlayerPlatformAttacher : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        Debug.Log(collision.collider.name);
+        if (collision.collider.GetComponent<ObjectMovementComponent>() is ObjectMovementComponent platform)
+        {
+            AttachComponent(platform);
+        }
+    }
+
+    void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.collider.GetComponent<ObjectMovementComponent>() is ObjectMovementComponent platform)
+        {
+            DetachComponent();
+        }
     }
 
 }

@@ -6,7 +6,7 @@ using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
 [RequireComponent(typeof(BoxCollider2D))]
-public class ObjectMovementComponent : MonoBehaviour, IPhysics2DObject
+public class ObjectMovementComponent : MonoBehaviour
 {
     public Vector2 Velocity { get; private set; }
 
@@ -34,10 +34,9 @@ public class ObjectMovementComponent : MonoBehaviour, IPhysics2DObject
     void Start()
     {
         _rb = GetComponent<Rigidbody2D>();
-        _rb.bodyType = RigidbodyType2D.Kinematic;
+        //_rb.bodyType = RigidbodyType2D.Kinematic;
         _rb.constraints = RigidbodyConstraints2D.FreezeRotation;
         _collider = GetComponent<BoxCollider2D>();
-        Physics2DController.Instance.Subscribe(this);
     }
 
     public Vector2 CollideAndSlideVel(Vector2 position, Bounds bounds, Vector2 vel, ContactFilter2D filter, List<RaycastHit2D> outHits = null, int recursionDepth = 0)
@@ -72,7 +71,7 @@ public class ObjectMovementComponent : MonoBehaviour, IPhysics2DObject
         return vel;
     }
 
-    public void SimulatePhisics2D()
+    void FixedUpdate()
     {
         // check for collisions by velocity
         List<RaycastHit2D> hits = new();
@@ -83,7 +82,6 @@ public class ObjectMovementComponent : MonoBehaviour, IPhysics2DObject
 
         if (player) // if we collide with player
         {
-            player.PlatformAttacher.AttachComponent(this);
             if (!(player.PlatformAttacher.IsBeingSqueezed(Velocity * Time.fixedDeltaTime) && player.PlatformAttacher.UnSqueezable))
             {
                 correctedVelocity = CollideAndSlideVel(_collider.bounds.center, _collider.bounds, Velocity * Time.fixedDeltaTime, TerrainFilter, hits);
@@ -93,15 +91,13 @@ public class ObjectMovementComponent : MonoBehaviour, IPhysics2DObject
         if (correctedVelocity.magnitude + 1e-6 < Velocity.magnitude * Time.fixedDeltaTime)
         {
             OnObstacleHit();
+            _rb.linearVelocity = Vector2.zero;
+            return;
         }
 
-        transform.position = transform.position + (Vector3)correctedVelocity;
-    }
+        Velocity = correctedVelocity / Time.fixedDeltaTime;
 
-
-    public void AddVelocity(Vector2 added)
-    {
-        Velocity += added;
+        _rb.linearVelocity = Velocity; //transform.position = transform.position + (Vector3)correctedVelocity;
     }
 
     public void SetVelocity(Vector2 newVelocity)
@@ -116,15 +112,5 @@ public class ObjectMovementComponent : MonoBehaviour, IPhysics2DObject
         Velocity = new(x.Value, y.Value);
     }
 
-    public void ForceOffset(Vector2 offset)
-    {
-        Debug.DrawRay(transform.position, offset, Color.purple, 1);
-        ForcePosition((Vector2)transform.position + offset);
-    }
-
-    public void ForcePosition(Vector2 newPosition)
-    {
-        transform.position = newPosition;
-    }
 
 }
