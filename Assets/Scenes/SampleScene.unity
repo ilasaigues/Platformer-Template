@@ -6769,6 +6769,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7696103805541302765, guid: 6545e83e3e44ebb4185007dbd0e0ab56, type: 3}
+      propertyPath: lengthInSec
+      value: 0.33333334
+      objectReference: {fileID: 0}
+    - target: {fileID: 7696103805541302765, guid: 6545e83e3e44ebb4185007dbd0e0ab56, type: 3}
       propertyPath: playOnAwake
       value: 0
       objectReference: {fileID: 0}
@@ -6786,7 +6790,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7696103805541302765, guid: 6545e83e3e44ebb4185007dbd0e0ab56, type: 3}
       propertyPath: ShapeModule.type
-      value: 18
+      value: 17
       objectReference: {fileID: 0}
     - target: {fileID: 7696103805541302765, guid: 6545e83e3e44ebb4185007dbd0e0ab56, type: 3}
       propertyPath: UVModule.enabled
@@ -6802,11 +6806,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7696103805541302765, guid: 6545e83e3e44ebb4185007dbd0e0ab56, type: 3}
       propertyPath: ShapeModule.m_Scale.x
-      value: 0.66
+      value: 1.29
       objectReference: {fileID: 0}
     - target: {fileID: 7696103805541302765, guid: 6545e83e3e44ebb4185007dbd0e0ab56, type: 3}
       propertyPath: ShapeModule.m_Scale.y
-      value: 0.46
+      value: 0.82
       objectReference: {fileID: 0}
     - target: {fileID: 7696103805541302765, guid: 6545e83e3e44ebb4185007dbd0e0ab56, type: 3}
       propertyPath: UVModule.animationType
@@ -6838,7 +6842,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7696103805541302765, guid: 6545e83e3e44ebb4185007dbd0e0ab56, type: 3}
       propertyPath: InitialModule.startLifetime.scalar
-      value: 0.5
+      value: 0.25
       objectReference: {fileID: 0}
     - target: {fileID: 7696103805541302765, guid: 6545e83e3e44ebb4185007dbd0e0ab56, type: 3}
       propertyPath: UVModule.sprites.Array.data[0].sprite
