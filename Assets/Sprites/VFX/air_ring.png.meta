@@ -1,25 +1,34 @@
 fileFormatVersion: 2
-guid: 7f43e62a576d9b343b1056de7e4b1890
+guid: 79ece5fe47edf5c48bf00b27245f64de
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 3406349267822436742
-    second: dash_burst_0
+      213: -4428399574146439187
+    second: air_ring_0
   - first:
-      213: -4500980645618164053
-    second: dash_burst_1
+      213: -3209379583265580800
+    second: air_ring_1
   - first:
-      213: -8710128944743509083
-    second: dash_burst_2
+      213: -4200725787157287707
+    second: air_ring_2
   - first:
-      213: -4359998584612223038
-    second: dash_burst_3
+      213: 7451196749008789394
+    second: air_ring_3
   - first:
-      213: -2470153889168938084
-    second: dash_burst_4
+      213: 1003766839857972397
+    second: air_ring_4
   - first:
-      213: -7669272233197650051
-    second: dash_burst_5
+      213: -5585381671671732452
+    second: air_ring_5
+  - first:
+      213: -6730051179063087414
+    second: air_ring_6
+  - first:
+      213: 6469068494342802287
+    second: air_ring_7
+  - first:
+      213: -3677252022902247451
+    second: air_ring_8
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -128,13 +137,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: dash_burst_0
+      name: air_ring_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 128
-        width: 64
-        height: 64
+        y: 192
+        width: 96
+        height: 96
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -143,20 +152,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 681e7798c98c54f20800000000000000
-      internalID: 3406349267822436742
+      spriteID: de7a28bcc0a2b82c0800000000000000
+      internalID: -4428399574146439187
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: dash_burst_1
+      name: air_ring_1
       rect:
         serializedVersion: 2
-        x: 64
-        y: 128
-        width: 64
-        height: 64
+        x: 96
+        y: 192
+        width: 96
+        height: 96
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -165,20 +174,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: bae550533fd4981c0800000000000000
-      internalID: -4500980645618164053
+      spriteID: 0095016e54ef573d0800000000000000
+      internalID: -3209379583265580800
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: dash_burst_2
+      name: air_ring_2
       rect:
         serializedVersion: 2
-        x: 128
-        y: 128
-        width: 64
-        height: 64
+        x: 192
+        y: 192
+        width: 96
+        height: 96
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -187,20 +196,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 5a317bc7fd76f1780800000000000000
-      internalID: -8710128944743509083
+      spriteID: 5ecaaa9272604b5c0800000000000000
+      internalID: -4200725787157287707
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: dash_burst_3
+      name: air_ring_3
       rect:
         serializedVersion: 2
         x: 0
-        y: 64
-        width: 64
-        height: 64
+        y: 96
+        width: 96
+        height: 96
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -209,20 +218,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 2c78bf6336c2e73c0800000000000000
-      internalID: -4359998584612223038
+      spriteID: 29fd63017f7f76760800000000000000
+      internalID: 7451196749008789394
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: dash_burst_4
+      name: air_ring_4
       rect:
         serializedVersion: 2
-        x: 64
-        y: 64
-        width: 64
-        height: 64
+        x: 96
+        y: 96
+        width: 96
+        height: 96
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -231,52 +240,74 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: c9b298f002048bdd0800000000000000
-      internalID: -2470153889168938084
+      spriteID: da40d076f981eed00800000000000000
+      internalID: 1003766839857972397
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: dash_burst_5
+      name: air_ring_5
       rect:
         serializedVersion: 2
-        x: 128
-        y: 64
-        width: 64
-        height: 64
+        x: 192
+        y: 96
+        width: 96
+        height: 96
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 926fad79ba904c14b8fb23075e1743e3
-      internalID: -996869460
+      spriteID: c17670556fcbc72b0800000000000000
+      internalID: -5585381671671732452
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: dash_burst_6
+      name: air_ring_6
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 64
-        height: 64
+        width: 96
+        height: 96
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 2d23823dc6027004185355c0dd96d14e
-      internalID: 477924638
+      spriteID: aceeeb72c1e0a92a0800000000000000
+      internalID: -6730051179063087414
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: air_ring_7
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 0
+        width: 96
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f6b49f0658fb6c950800000000000000
+      internalID: 6469068494342802287
       vertices: []
       indices: 
       edges: []
@@ -285,7 +316,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: fffb5aa679e33704e90e6d26676b4ad6
+    spriteID: a181028f7fe3e8f43878906d787e37f2
     internalID: 0
     vertices: []
     indices: 
@@ -295,15 +326,16 @@ TextureImporter:
     spriteCustomMetadata:
       entries:
       - key: SpriteEditor.SliceSettings
-        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":96.0,"y":96.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      dash_burst_0: 3406349267822436742
-      dash_burst_1: -4500980645618164053
-      dash_burst_2: -8710128944743509083
-      dash_burst_3: -4359998584612223038
-      dash_burst_4: -2470153889168938084
-      dash_burst_5: -996869460
-      dash_burst_6: 477924638
+      air_ring_0: -4428399574146439187
+      air_ring_1: -3209379583265580800
+      air_ring_2: -4200725787157287707
+      air_ring_3: 7451196749008789394
+      air_ring_4: 1003766839857972397
+      air_ring_5: -5585381671671732452
+      air_ring_6: -6730051179063087414
+      air_ring_7: 6469068494342802287
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

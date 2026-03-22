@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1c49a3e5166cb2145808fb3277edc5dd, type: 3}
-  m_Name: dash_burst_spawn_data
+  m_Name: air_ring
   m_EditorClassIdentifier: Assembly-CSharp::VFXSpawnData
-  VFXClip: {fileID: 7400000, guid: ea990e8dfa568a943be95d399d48e2ec, type: 2}
-  Offset: {x: -1.5, y: 0, z: 0}
-  Order: -2
+  VFXClip: {fileID: 7400000, guid: ecf7dd22dd386784dba235b667580e4d, type: 2}
+  Offset: {x: 0, y: 0, z: 0}
+  Order: -1

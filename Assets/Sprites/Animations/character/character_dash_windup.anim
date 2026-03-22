@@ -22,12 +22,14 @@ AnimationClip:
     curve:
     - time: 0
       value: {fileID: 1929029879, guid: b9172806833800b4abc24027f46e1656, type: 3}
+    - time: 0.020833334
+      value: {fileID: 1929029879, guid: b9172806833800b4abc24027f46e1656, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
     script: {fileID: 0}
     flags: 2
-  m_SampleRate: 24
+  m_SampleRate: 48
   m_WrapMode: 0
   m_Bounds:
     m_Center: {x: 0, y: 0, z: 0}
@@ -44,6 +46,7 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     pptrCurveMapping:
+    - {fileID: 1929029879, guid: b9172806833800b4abc24027f46e1656, type: 3}
     - {fileID: 1929029879, guid: b9172806833800b4abc24027f46e1656, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
@@ -69,4 +72,18 @@ AnimationClip:
   m_EulerEditorCurves: []
   m_HasGenericRootTransform: 0
   m_HasMotionFloatCurves: 0
-  m_Events: []
+  m_Events:
+  - time: 0.020833334
+    functionName: ShowVFXOnPlayer
+    data: 
+    objectReferenceParameter: {fileID: 11400000, guid: 5c04297daf65311478230b70ea01b3df, type: 2}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 0.020833334
+    functionName: ShowVFXOnPlayer
+    data: 
+    objectReferenceParameter: {fileID: 11400000, guid: c6be257c2be2ded4489cde55cbf7f3da, type: 2}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
