@@ -10,7 +10,6 @@ public class MovementController : MonoBehaviour
 {
     public Vector2 Velocity { get; private set; }
 
-    public Vector2 ExternalVelocity;
 
     public bool Grounded = false;
     public bool OnOneWayPlatform = false;
@@ -29,6 +28,8 @@ public class MovementController : MonoBehaviour
 
     public Bounds MainColliderBounds => _collisonController.MainCollider.bounds;
     private Bounds _footColliderBounds => _collisonController.FootCollider.bounds;
+
+    public ObjectMovementComponent ParentObject { get; private set; }
 
     private ContactFilter2D OneWayFilter = new()
     {
@@ -51,18 +52,24 @@ public class MovementController : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (Velocity.y < _playerController.PlayerStats.fallVelocityCap)
+        CheckAndFixOverlap();
+
+        Vector2 parentVelocity = GetParentVelocity();
+        var combinedBaseVelocity = Velocity + parentVelocity;
+
+        if (combinedBaseVelocity.y < _playerController.PlayerStats.fallVelocityCap)
         {
             SetVelocity(null, _playerController.PlayerStats.fallVelocityCap);
         }
-        Vector2 originalVertical = Time.fixedDeltaTime * Velocity.y * Vector2.up;
-        Vector2 originalHorizontal = Time.fixedDeltaTime * Velocity.x * Vector2.right;
+        Vector2 originalVertical = Time.fixedDeltaTime * combinedBaseVelocity * Vector2.up;
+        Vector2 originalHorizontal = Time.fixedDeltaTime * combinedBaseVelocity * Vector2.right;
 
 
         bool ledgeCorrected = false;
 
         // Horizontal correction
-        var correctedHorizontal = _collisonController.CollideAndSlideVel(transform.position, MainColliderBounds, originalHorizontal, LayerReference.TerrainAndBoulder);
+        var horizontalHits = new List<RaycastHit2D>();
+        var correctedHorizontal = _collisonController.CollideAndSlideVel(transform.position, MainColliderBounds, originalHorizontal, LayerReference.TerrainAndBoulder, horizontalHits);
 
         if (correctedHorizontal.magnitude < Mathf.Abs(originalHorizontal.x)) // if collided and shrunk vector
         {
@@ -78,7 +85,8 @@ public class MovementController : MonoBehaviour
 
 
         // Vertical correction
-        var correctedVertical = _collisonController.CollideAndSlideVel(transform.position + (Vector3)correctedHorizontal, MainColliderBounds, originalVertical, LayerReference.TerrainAndBoulder);
+        var verticalHits = new List<RaycastHit2D>();
+        var correctedVertical = _collisonController.CollideAndSlideVel(transform.position + (Vector3)correctedHorizontal, MainColliderBounds, originalVertical, LayerReference.TerrainAndBoulder, verticalHits);
 
         if (!ledgeCorrected && !Grounded && originalVertical.y > 0 && correctedVertical.magnitude < Mathf.Abs(originalVertical.y)) // if collided and shrunk vector
         {
@@ -89,6 +97,17 @@ public class MovementController : MonoBehaviour
                 ForceOffset(ceilingCorrection);
                 ledgeCorrected = true;
                 correctedVertical = originalVertical;
+            }
+        }
+
+        foreach (var hit in verticalHits.Concat(horizontalHits))
+        {
+            if (hit && hit.collider.GetComponent<ObjectMovementComponent>() is ObjectMovementComponent movementComponent)
+            {
+                if (hit.normal == Vector2.up)
+                {
+                    SetParentObject(movementComponent);
+                }
             }
         }
 
@@ -136,7 +155,7 @@ public class MovementController : MonoBehaviour
         }
         else
         {
-            if (Velocity.y < 0 && Mathf.Approximately(correctedVelocity.y, 0))
+            if (combinedBaseVelocity.y < 0 && Mathf.Approximately(correctedVelocity.y, 0))
             {
                 Grounded = true;
             }
@@ -148,13 +167,58 @@ public class MovementController : MonoBehaviour
             LastHorizontalDirection = correctedVelocity.x.Sign0();
         }
 
-        Velocity = correctedVelocity / Time.fixedDeltaTime;
+        Velocity = correctedVelocity / Time.fixedDeltaTime - parentVelocity;
 
         Debug.DrawRay((Vector2)transform.position, correctedVelocity / 2, Color.green, 1);
         Debug.DrawRay((Vector2)transform.position + correctedVelocity / 2, correctedVelocity / 2, Color.yellow, 1);
 
         // Apply movement
-        transform.position = transform.position + (Vector3)correctedVelocity + (Vector3)ExternalVelocity * Time.fixedDeltaTime;
+        transform.localPosition = transform.localPosition + (Vector3)correctedVelocity;
+    }
+
+    public void SetParentObject(ObjectMovementComponent parent)
+    {
+        ParentObject = parent;
+        //transform.SetParent(ParentObject?.transform);
+    }
+
+    private Vector2 GetParentVelocity()
+    {
+        if (ParentObject == null) return Vector2.zero;
+
+        // if player hits parent or parent hits player, parent remains
+        var hits = new List<RaycastHit2D>();
+
+        var playerCollider = _playerController.CollisionController.MainCollider;
+        var playerBounds = playerCollider.bounds;
+        var parentCollider = ParentObject.GetComponent<BoxCollider2D>();
+        var parentBounds = parentCollider.bounds;
+
+        _playerController.CollisionController.CollideAndSlideVel(playerBounds.center, playerBounds, Velocity * Time.fixedDeltaTime, LayerReference.BoulderLayer, hits);
+        ParentObject.CollideAndSlideVel(parentBounds.center, parentBounds, ParentObject.Velocity * Time.fixedDeltaTime,
+        new ContactFilter2D() { useLayerMask = true, layerMask = LayerReference.PlayerLayer }, hits);
+
+        if (!hits.Any(h => h))
+        {
+            SetParentObject(null);
+            return Vector2.zero;
+        }
+
+        return ParentObject.Velocity;
+    }
+
+    void CheckAndFixOverlap()
+    {
+        var mainCollider = _playerController.CollisionController.MainCollider;
+        Bounds detect = mainCollider.bounds;
+        detect.Expand(-2 * _playerController.CollisionController.SkinWidth * Vector2.one);
+        RaycastHit2D hit = Physics2D.BoxCast(transform.position, detect.size, 0, Vector2.zero, 0, LayerReference.TerrainAndBoulder);
+        if (hit)
+        {
+            ColliderDistance2D overlapdistance = Physics2D.Distance(mainCollider, hit.collider);
+            Vector2 Correction = overlapdistance.pointB - overlapdistance.pointA;
+            transform.position += (Vector3)Correction;
+        }
     }
 
     Vector2 GetCorrection(Vector2 position, Vector2 originalDirection, Vector2 correctedDirection, Vector2 offsetA, Vector2 offsetB, LayerMask layerMask)

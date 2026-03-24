@@ -14,7 +14,7 @@ public class ObjectMovementComponent : MonoBehaviour
     private Rigidbody2D _rb;
     private BoxCollider2D _collider;
 
-    private PlayerController _childPlayer;
+    //private PlayerController _childPlayer;
 
     public event Action<PlayerController> OnPlayerSqueezed = delegate { };
     public event Action OnObstacleHit = delegate { };
@@ -79,16 +79,16 @@ public class ObjectMovementComponent : MonoBehaviour
 
     public void SetPlayerChild(PlayerController child)
     {
-        _childPlayer = child;
+        //_childPlayer = child;
     }
 
     public void UnsetPlayerChild()
     {
-        if (_childPlayer != null)
-        {
-            _childPlayer.MovementController.ExternalVelocity = Vector2.zero;
-            _childPlayer = null;
-        }
+        /* if (_childPlayer != null)
+         {
+             _childPlayer.MovementController.ExternalVelocity = Vector2.zero;
+             _childPlayer = null;
+         }*/
     }
 
     void FixedUpdate()
@@ -109,15 +109,11 @@ public class ObjectMovementComponent : MonoBehaviour
         CollideAndSlideVel(_collider.bounds.center, _collider.bounds, Vector2.up * Time.fixedDeltaTime, PlayerFilter, collisionsWithPlayer);
         if (collisionsWithPlayer.Any(c => c))
         {
-            _childPlayer = collisionsWithPlayer.First(c => c).collider.GetComponent<PlayerController>();
-            _childPlayer.MovementController.ExternalVelocity = correctedVelocity / Time.fixedDeltaTime;
-        }
-        else if (_childPlayer != null)
-        {
-            UnsetPlayerChild();
+            collisionsWithPlayer.First(c => c).collider.GetComponent<MovementController>().SetParentObject(this);
         }
 
-        if (_childPlayer)
+
+        /*if (_childPlayer)
         {
             var playerCollisions = new List<RaycastHit2D>();
             var playerColliderBounds = _childPlayer.CollisionController.MainCollider.bounds;
@@ -135,7 +131,7 @@ public class ObjectMovementComponent : MonoBehaviour
                 UnsetPlayerChild();
                 return;
             }
-        }
+        }*/
 
         transform.position = transform.position + (Vector3)correctedVelocity;
     }
