@@ -6,7 +6,7 @@ public class InputButtonWrapper
 {
     public bool Pressed;
     public bool JustPressed;
-    public float TimeLastPressed;
+    public float TimeLastPressed = float.NegativeInfinity;
     public float TimeSinceLastPressed => Time.time - TimeLastPressed;
 
     public event Action OnPress = delegate { };
