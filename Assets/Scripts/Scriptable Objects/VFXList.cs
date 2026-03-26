@@ -10,4 +10,8 @@ public class VFXList : ScriptableObject
     public AnimationClip DashBurst;
     public AnimationClip Respawn_Particles;
     public AnimationClip AirRing;
+    public AnimationClip JumpParticles_H;
+    public AnimationClip JumpParticles_V;
+    public AnimationClip LandParticles;
+    public AnimationClip RunParticles;
 }

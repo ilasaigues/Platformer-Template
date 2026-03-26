@@ -4,4 +4,8 @@ public static class MathfExtensions
     {
         return value == 0 ? 0 : (value > 0 ? 1 : -1);
     }
+    public static float ToPixels(this int value)
+    {
+        return value/16f;
+    }
 }

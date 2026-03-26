@@ -17,3 +17,8 @@ MonoBehaviour:
   AirBurst: {fileID: 7400000, guid: 77bb13b4d19b4394fbba69cfe7866324, type: 2}
   DashBurst: {fileID: 7400000, guid: ea990e8dfa568a943be95d399d48e2ec, type: 2}
   Respawn_Particles: {fileID: 7400000, guid: e455a727d8b63544e837db77428da00a, type: 2}
+  AirRing: {fileID: 7400000, guid: ecf7dd22dd386784dba235b667580e4d, type: 2}
+  JumpParticles_H: {fileID: 7400000, guid: 8ede4c27cab5db046b891e37ca4f17e8, type: 2}
+  JumpParticles_V: {fileID: 7400000, guid: c91e83ecada12c0479af6fa35d6367df, type: 2}
+  LandParticles: {fileID: 7400000, guid: 7f671bce52c6bb447a3755eb19eccb72, type: 2}
+  RunParticles: {fileID: 7400000, guid: 68f93dd39e29e7a4d901487c56c92bc4, type: 2}
