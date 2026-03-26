@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using UnityEditor;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
@@ -206,12 +207,15 @@ public class MovementController : MonoBehaviour
         {
             return Vector2.zero;
         }
+         
         if (aHits.Count == 0 && collisionA.magnitude > correctedDirection.magnitude)
         {
+            DebugExtensions.DrawBox(bHits[0].point, 0.2f,Color.green);
             return offsetA;
         }
         else if (bHits.Count == 0 && collisionB.magnitude > correctedDirection.magnitude)
-        {
+        {   
+            DebugExtensions.DrawBox(aHits[0].point, 0.2f,Color.red);     
             return offsetB;
         }
         return Vector2.zero;
