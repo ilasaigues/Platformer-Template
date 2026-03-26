@@ -8,6 +8,10 @@ public class BoulderHazard : MonoBehaviour
     private int _currentVelocityIndex = 0;
     ObjectMovementComponent _movementComponent;
 
+    public float StopTime = 1;
+
+    private float _stopTimer = 0;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -19,7 +23,8 @@ public class BoulderHazard : MonoBehaviour
     private void ObstacleHit()
     {
         _currentVelocityIndex = (_currentVelocityIndex + 1) % Velocities.Length;
-        _movementComponent.SetVelocity(Velocities[_currentVelocityIndex]);
+        _movementComponent.SetVelocity(Vector2.zero);
+        _stopTimer = StopTime;
     }
 
     private void PlayerSqueezed(PlayerController controller)
@@ -31,6 +36,14 @@ public class BoulderHazard : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        _movementComponent.SetVelocity(Velocities[_currentVelocityIndex]);
+        if (_stopTimer > 0)
+        {
+            _movementComponent.SetVelocity(Vector2.zero);
+            _stopTimer -= Time.fixedDeltaTime;
+        }
+        else
+        {
+            _movementComponent.SetVelocity(Velocities[_currentVelocityIndex]);
+        }
     }
 }

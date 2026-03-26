@@ -15,14 +15,12 @@ public static class BoxCaster2D
         var hits = new List<RaycastHit2D>();
         var signedAngle = Vector2.SignedAngle(Vector2.right, -vel.normalized);
         var filter = layer.ToContactFilter2D();
-        if (vel.magnitude != 0)
-        {
-            filter.useNormalAngle = true;
-            filter.minNormalAngle = (signedAngle - angleArc) % 360;
-            filter.maxNormalAngle = (signedAngle + angleArc) % 360;
-        }
         Physics2D.BoxCast(position, bounds.size, 0, vel.normalized, filter, hits, dist);
         bounds.Expand(2 * SkinWidth * Vector2.one);
+        if (vel.magnitude != 0)
+        {
+            hits = hits.Where(hit => Vector2.Angle(hit.normal, vel.normalized) >= 180 - angleArc).ToList();
+        }
 
         return hits;
     }

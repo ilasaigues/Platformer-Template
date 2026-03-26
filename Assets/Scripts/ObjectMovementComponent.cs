@@ -29,8 +29,11 @@ public class ObjectMovementComponent : MonoBehaviour
 
     void FixedUpdate()
     {
+        if (Velocity == Vector2.zero) return;
+
         // check for collisions by velocity
         var mainBounds = _collider.bounds;
+
         var correctedVelocity = BoxCaster2D.CollideAndSlideVel(mainBounds.center, mainBounds, Velocity * Time.fixedDeltaTime, LayerReference.TerrainLayer);
 
         if (correctedVelocity.magnitude + 1e-6 < Velocity.magnitude * Time.fixedDeltaTime)
@@ -39,7 +42,8 @@ public class ObjectMovementComponent : MonoBehaviour
         }
 
         List<RaycastHit2D> collisionsWithPlayer = BoxCaster2D.GetHits(mainBounds.center, mainBounds, Time.fixedDeltaTime * Velocity, LayerReference.PlayerLayer);
-        collisionsWithPlayer.AddRange(BoxCaster2D.GetHits(mainBounds.center, mainBounds, Vector2.up * Time.fixedDeltaTime, LayerReference.PlayerLayer));
+
+        collisionsWithPlayer.AddRange(BoxCaster2D.GetHits(mainBounds.center, mainBounds, Vector2.up * Time.fixedDeltaTime, LayerReference.PlayerLayer, 1));
 
         if (collisionsWithPlayer.Any(c => c))
         {
@@ -47,8 +51,10 @@ public class ObjectMovementComponent : MonoBehaviour
             var playerController = playerHit.collider.GetComponent<PlayerController>();
             playerController.MovementController.ExternalVelocity = Velocity;
 
+            var directionToPlayer = playerController.transform.position - transform.position;
+            var movingAgainstPlayer = Vector2.Dot(directionToPlayer.normalized, Velocity.normalized) > 0;
 
-            if (IsSqueezingPlayer(playerController.CollisionController.MainCollider.bounds))
+            if (movingAgainstPlayer && IsSqueezingPlayer(playerController.CollisionController.MainCollider.bounds))
             {
                 if (playerController.MovementController.CanBeSqueezed)
                 {
@@ -58,24 +64,25 @@ public class ObjectMovementComponent : MonoBehaviour
                 {
                     correctedVelocity = BoxCaster2D.CollideAndSlideVel(mainBounds.center, mainBounds, Velocity * Time.fixedDeltaTime, LayerReference.TerrainAndPlayer);
                     OnObstacleHit();
+                    correctedVelocity = Vector2.zero;
+                    playerController.MovementController.ExternalVelocity = Vector2.zero;
                 }
             }
         }
-
-
 
         transform.position = transform.position + (Vector3)correctedVelocity;
     }
 
     public bool IsSqueezingPlayer(Bounds playerBounds)
     {
-        var forwardHits = BoxCaster2D.GetHits(playerBounds.center, playerBounds, Velocity * Time.fixedDeltaTime, LayerReference.TerrainAndBoulder)
-        .ToList();
-        var backHits = BoxCaster2D.GetHits(playerBounds.center, playerBounds, -Velocity * Time.fixedDeltaTime, LayerReference.TerrainAndBoulder)
-        .ToList();
+        var castVector = Velocity * Time.fixedDeltaTime;
+
+        var forwardHits = BoxCaster2D.GetHits(playerBounds.center, playerBounds, castVector, LayerReference.TerrainAndBoulder, 1);
+        var backHits = BoxCaster2D.GetHits(playerBounds.center, playerBounds, -castVector, LayerReference.TerrainAndBoulder, 1);
 
         backHits = backHits.Where(bh => !forwardHits.Any(fh => fh.collider == bh.collider)).ToList();
-        return forwardHits.Any(h => h) && backHits.Any(h => h);
+
+        return backHits.Any(hit => hit) && forwardHits.Any(hit => hit);
     }
     public void AddVelocity(Vector2 added)
     {

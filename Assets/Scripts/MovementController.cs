@@ -45,7 +45,7 @@ public class MovementController : MonoBehaviour
 
     void FixedUpdate()
     {
-        //CheckAndFixOverlap();
+        CheckAndFixOverlap();
 
         ForceOffset(ExternalVelocity * Time.fixedDeltaTime);
         ExternalVelocity = Vector2.zero;
@@ -187,7 +187,7 @@ public class MovementController : MonoBehaviour
     void CheckAndFixOverlap()
     {
         var mainBounds = _playerController.CollisionController.MainCollider.bounds;
-        List<RaycastHit2D> hits = BoxCaster2D.GetHits(mainBounds.center, mainBounds, Vector2.zero, LayerReference.TerrainAndBoulder);
+        List<RaycastHit2D> hits = BoxCaster2D.GetHits(mainBounds.center, mainBounds, Vector2.zero, LayerReference.TerrainLayer);
         if (hits.Any(h => h))
         {
             ColliderDistance2D overlapdistance = Physics2D.Distance(_playerController.CollisionController.MainCollider, hits.First().collider);
