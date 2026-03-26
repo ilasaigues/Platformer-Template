@@ -12,8 +12,8 @@ public abstract class PlayerGroundedBehaviour : BasePlayerBehaviour
     }
     public override void FixedUpdate(float delta)
     {
-        var gravity = PlayerController.PlayerStats.fallGravity;
-        PlayerController.MovementController.AddVelocity(gravity * delta * Vector2.up);
+        /*var gravity = PlayerController.PlayerStats.fallGravity;
+        PlayerController.MovementController.AddVelocity(gravity * delta * Vector2.up);*/
     }
 
     public override BehaviourChangeRequest VerifyBehaviour()
