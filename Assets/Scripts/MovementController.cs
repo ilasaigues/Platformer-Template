@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
 
@@ -68,7 +69,7 @@ public class MovementController : MonoBehaviour
         var horizontalHits = new List<RaycastHit2D>();
         var correctedHorizontal = BoxCaster2D.CollideAndSlideVel(mainBounds.center, mainBounds, originalHorizontal, LayerReference.TerrainAndBoulder, horizontalHits);
 
-        if (correctedHorizontal.magnitude < Mathf.Abs(originalHorizontal.x)) // if collided and shrunk vector
+        if (!Grounded && correctedHorizontal.magnitude < Mathf.Abs(originalHorizontal.x)) // if collided and shrunk vector
         {
             var ledgeCorrection = GetCorrection(transform.position, mainBounds, originalHorizontal, correctedHorizontal, Vector2.up * _playerController.PlayerStats.ledgeCorrectionUp, Vector2.down * _playerController.PlayerStats.ledgeCorrectionDown, LayerReference.TerrainAndBoulder);
 
@@ -85,7 +86,7 @@ public class MovementController : MonoBehaviour
         var verticalHits = new List<RaycastHit2D>();
         var correctedVertical = BoxCaster2D.CollideAndSlideVel(mainBounds.center + (Vector3)correctedHorizontal, mainBounds, originalVertical, LayerReference.TerrainAndBoulder, verticalHits);
 
-        if (!ledgeCorrected && !Grounded && originalVertical.y > 0 && correctedVertical.magnitude < Mathf.Abs(originalVertical.y)) // if collided and shrunk vector
+        if (!Grounded && !ledgeCorrected && !Grounded && originalVertical.y > 0 && correctedVertical.magnitude < Mathf.Abs(originalVertical.y)) // if collided and shrunk vector
         {
             var ceilingCorrection = GetCorrection(transform.position + (Vector3)correctedHorizontal, mainBounds, originalVertical, correctedVertical, Vector2.left * _playerController.PlayerStats.ceilingCorrection, Vector2.right * _playerController.PlayerStats.ceilingCorrection, LayerReference.TerrainAndBoulder);
 
@@ -207,15 +208,15 @@ public class MovementController : MonoBehaviour
         {
             return Vector2.zero;
         }
-         
+
         if (aHits.Count == 0 && collisionA.magnitude > correctedDirection.magnitude)
         {
-            DebugExtensions.DrawBox(bHits[0].point, 0.2f,Color.green);
+            DebugExtensions.DrawBox(bHits[0].point, 0.2f, Color.green);
             return offsetA;
         }
         else if (bHits.Count == 0 && collisionB.magnitude > correctedDirection.magnitude)
-        {   
-            DebugExtensions.DrawBox(aHits[0].point, 0.2f,Color.red);     
+        {
+            DebugExtensions.DrawBox(aHits[0].point, 0.2f, Color.red);
             return offsetB;
         }
         return Vector2.zero;

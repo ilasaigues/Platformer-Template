@@ -64,13 +64,25 @@ public class ObjectMovementComponent : MonoBehaviour
                 {
                     correctedVelocity = BoxCaster2D.CollideAndSlideVel(mainBounds.center, mainBounds, Velocity * Time.fixedDeltaTime, LayerReference.TerrainAndPlayer);
                     OnObstacleHit();
-                    correctedVelocity = Vector2.zero;
                     playerController.MovementController.ExternalVelocity = Vector2.zero;
                 }
             }
         }
 
         transform.position = transform.position + (Vector3)correctedVelocity;
+        FixPlayerOverlap();
+    }
+
+    public void FixPlayerOverlap()
+    {
+        var mainBounds = _collider.bounds;
+        List<RaycastHit2D> hits = BoxCaster2D.GetHits(mainBounds.center, mainBounds, Vector2.zero, LayerReference.PlayerLayer);
+        if (hits.Any(h => h))
+        {
+            ColliderDistance2D overlapdistance = Physics2D.Distance(_collider, hits.First().collider);
+            Vector2 Correction = -overlapdistance.normal * overlapdistance.distance;
+            hits.First().collider.GetComponent<MovementController>().ForceOffset(Correction);
+        }
     }
 
     public bool IsSqueezingPlayer(Bounds playerBounds)

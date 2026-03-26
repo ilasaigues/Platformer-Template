@@ -5007,7 +5007,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!61 &1280573026
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5142,8 +5142,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BoulderHazard
   Velocities:
-  - {x: 0, y: 0}
-  - {x: 0, y: 0}
+  - {x: 10, y: 0}
+  - {x: -10, y: 0}
   StopTime: 1
 --- !u!114 &1280573030
 MonoBehaviour:

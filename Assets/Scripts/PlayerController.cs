@@ -60,11 +60,11 @@ public class PlayerController : MonoBehaviour
         });
         BehaviourMachine.AddBehaviour(new PlayerDashBehaviour(this)
         {
-            //Enabled = true
+            Enabled = true
         });
         BehaviourMachine.AddBehaviour(new PlayerDoubleJumpBehaviour(this)
         {
-            //Enabled = true
+            Enabled = true
         });
         PlayerAbilityQueue.MaxAbilityStack = 1;
 
