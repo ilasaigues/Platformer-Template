@@ -49,13 +49,13 @@ public class VFXSpawner : MonoBehaviour
         );
     }
 
-    public void PlayFX(AnimationClip animClip, Vector2 position, bool flipX = false)
+    public void PlayFX(AnimationClip animClip, Vector2 position, int order, bool flipX = false)
     {
         // get an fx object from pool
         var vfxObject = VFXPool.GetElement();
 
         // populate with variables, set position and play
-        vfxObject.SetDataAndPlay(animClip, position, flipX);
+        vfxObject.SetDataAndPlay(animClip, position,order, flipX);
     }
 
     private void OnVFXAnimationEnd(VFXObject released)

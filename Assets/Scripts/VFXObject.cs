@@ -21,10 +21,10 @@ public class VFXObject : MonoBehaviour
         _animator = GetComponent<Animator>();
     }
 
-    public void SetDataAndPlay(AnimationClip animClip, Vector2 position, bool flipX)
+    public void SetDataAndPlay(AnimationClip animClip, Vector2 position, int order, bool flipX)
     {
         transform.position = position;
-        _spriteRenderer.sortingOrder = -2;
+        _spriteRenderer.sortingOrder = order;
         _spriteRenderer.flipX = flipX;
         _animator.Play(animClip.name);
     }

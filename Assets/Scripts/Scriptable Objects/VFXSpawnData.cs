@@ -5,4 +5,5 @@ public class VFXSpawnData : ScriptableObject
 {
     public AnimationClip VFXClip;
     public Vector3 Offset;
+    public int Order;
 }

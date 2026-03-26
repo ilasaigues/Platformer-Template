@@ -24,8 +24,8 @@ public class PlayerDashBehaviour : BasePlayerBehaviour, IPlayerAbilityBehaviour
 
     public override void Enter()
     {
+        if(PlayerController.AbilityStats.DashPause)EditorApplication.isPaused=true;
         PlayAnim(PlayerController.PlayerAnimator.AnimationList.DashEnter);
-        PlayerController.ToggleDashParticles(true);
         TimeLastUsed = Time.time;
         PlayerController.RemainingDashes--;
 
@@ -73,7 +73,7 @@ public class PlayerDashBehaviour : BasePlayerBehaviour, IPlayerAbilityBehaviour
                 PlayerController.StartTrail();
                 _windingUp = false;
                 var flipX = PlayerController.MovementController.LastHorizontalDirection == -1;
-                VFXSpawner.Instance.PlayFX(VFXSpawner.Instance.VFXList.DashBurst, PlayerController.transform.position, flipX);
+                //VFXSpawner.Instance.PlayFX(VFXSpawner.Instance.VFXList.DashBurst, PlayerController.transform.position, flipX);
             }
             if (_direction == 0)
             {
@@ -105,6 +105,7 @@ public class PlayerDashBehaviour : BasePlayerBehaviour, IPlayerAbilityBehaviour
     {
         EnqueueAnim(PlayerController.PlayerAnimator.AnimationList.DashExit);
         PlayerController.CollisionController.ResizeMainCollider(PlayerController.PlayerStats.DefaultColliderSize, Vector2.zero);
-        PlayerController.ToggleDashParticles(false);
+        PlayerController.ToggleDashParticles(0);
+        PlayerController.MovementController.SetVelocity(PlayerController.MovementController.Velocity.x * PlayerController.AbilityStats.DashEndMultiplier, null);
     }
 }

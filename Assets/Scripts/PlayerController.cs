@@ -87,7 +87,7 @@ public class PlayerController : MonoBehaviour
 
     public void StartTrail()
     {
-        ExternalSpriteTrail?.StartTrail(transform.position, transform);
+        ExternalSpriteTrail?.StartTrail(transform.position - Vector3.right * FacingDirection, transform);
     }
 
     private void OnJumpPressed()
@@ -152,8 +152,9 @@ public class PlayerController : MonoBehaviour
         CurrentRespawnTrigger = respawn;
     }
 
-    public void ToggleDashParticles(bool enabled)
+    public void ToggleDashParticles(int value)
     {
+        bool enabled = value != 0;
         if (enabled)
         {
             DashParticles.Play();
@@ -244,7 +245,7 @@ public class PlayerController : MonoBehaviour
     {
         var offset = spawnData.Offset;
         offset.x *= FacingDirection;
-        VFXSpawner.Instance.PlayFX(spawnData.VFXClip, transform.position + offset, SpriteRenderer.flipX);
+        VFXSpawner.Instance.PlayFX(spawnData.VFXClip, transform.position + offset, spawnData.Order, SpriteRenderer.flipX);
     }
 
 }
