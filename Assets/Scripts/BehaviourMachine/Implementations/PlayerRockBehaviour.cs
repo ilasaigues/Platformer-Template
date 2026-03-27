@@ -1,4 +1,6 @@
 using System;
+using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class PlayerRockBehaviour : BasePlayerBehaviour, IPlayerAbilityBehaviour
@@ -25,6 +27,7 @@ public class PlayerRockBehaviour : BasePlayerBehaviour, IPlayerAbilityBehaviour
         PlayerController.InputHandler.RockButton.OnRelease += OnRockButtonRelease;
         PlayerController.MovementController.CanBeSqueezed = false;
         PlayAnim(PlayerController.PlayerAnimator.AnimationList.ShieldEnter);
+        PlayerController.MovementController.VerticalTerminalVelocity = PlayerController.AbilityStats.RockTerminalVelocity;
     }
 
     public override void Exit()
@@ -32,7 +35,17 @@ public class PlayerRockBehaviour : BasePlayerBehaviour, IPlayerAbilityBehaviour
         PlayerController.InputHandler.RockButton.OnRelease -= OnRockButtonRelease;
         var flipX = PlayerController.MovementController.LastHorizontalDirection == -1;
         PlayerController.MovementController.CanBeSqueezed = true;
-        VFXSpawner.Instance.PlayFX(VFXSpawner.Instance.VFXList.ShieldEnd, PlayerController.transform.position + Vector3.up  * 4/16f, -2,false);
+        if (PlayerController.MovementController.Grounded)
+        {
+            PlayerController.MovementController.SetVelocity(Vector2.zero);
+        }
+        else
+        {
+            PlayerController.MovementController.SetVelocity(PlayerController.MovementController.Velocity.x * 0.5f, 1);
+        }
+        VFXSpawner.Instance.PlayFX(VFXSpawner.Instance.VFXList.ShieldEnd, PlayerController.transform.position + Vector3.up * 4 / 16f, -2, false);
+        PlayerController.MovementController.VerticalTerminalVelocity = PlayerController.PlayerStats.fallVelocityCap;
+
     }
 
     private void OnRockButtonRelease()
@@ -44,6 +57,31 @@ public class PlayerRockBehaviour : BasePlayerBehaviour, IPlayerAbilityBehaviour
     {
         var gravity = PlayerController.AbilityStats.RockGravity;
         PlayerController.MovementController.AddVelocity(gravity * delta * Vector2.up);
+
+        var playerVelocity = PlayerController.MovementController.Velocity;
+
+        var horizontalThreshold = Mathf.Abs(playerVelocity.x) >= PlayerController.AbilityStats.RockBreakSpeeds.x;
+        var verticalThreshold = Mathf.Abs(playerVelocity.y) >= PlayerController.AbilityStats.RockBreakSpeeds.y;
+
+        var playerCollider = PlayerController.CollisionController.MainCollider;
+
+        var hits = new List<RaycastHit2D>();
+        if (horizontalThreshold)
+        {
+            hits.AddRange(BoxCaster2D.GetHits(playerCollider.bounds.center, playerCollider.bounds, playerVelocity.x * Time.fixedDeltaTime * Vector2.right, LayerReference.TerrainLayer, 1));
+        }
+
+        if (verticalThreshold)
+        {
+            hits.AddRange(BoxCaster2D.GetHits(playerCollider.bounds.center, playerCollider.bounds, playerVelocity.y * Time.fixedDeltaTime * Vector2.up, LayerReference.TerrainLayer, 1));
+        }
+        if (verticalThreshold || horizontalThreshold)
+        {
+            foreach (var breakable in hits.Select(hit => hit.collider.GetComponent<BreakableTerrainBehaviour>()).Where(btb => btb != null))
+            {
+                breakable.Break();
+            }
+        }
 
         if (PlayerController.MovementController.Grounded)
         {

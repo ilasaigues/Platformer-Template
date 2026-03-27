@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::AbilityStats
   RockGravity: -50
   MinRockTime: 0.25
-  RockBreakSpeed: 10
+  RockBreakSpeeds: {x: 23, y: 30}
+  RockTerminalVelocity: -30
   DashWindupTime: 0.033333335
   DashMovementTime: 0.25
   DashWinddownTime: 0

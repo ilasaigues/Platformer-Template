@@ -34,6 +34,8 @@ public class MovementController : MonoBehaviour
 
     public ObjectMovementComponent ParentObject { get; private set; }
 
+    public float VerticalTerminalVelocity;
+
 
     void Awake()
     {
@@ -43,6 +45,7 @@ public class MovementController : MonoBehaviour
         _rb.bodyType = RigidbodyType2D.Kinematic;
         _rb.constraints = RigidbodyConstraints2D.FreezeRotation;
         _playerController = gameObject.GetOrAddComponent<PlayerController>();
+        VerticalTerminalVelocity = _playerController.PlayerStats.fallVelocityCap;
     }
 
     void FixedUpdate()
@@ -52,9 +55,9 @@ public class MovementController : MonoBehaviour
         ForceOffset(ExternalVelocity * Time.fixedDeltaTime);
         ExternalVelocity = Vector2.zero;
 
-        if (Velocity.y < _playerController.PlayerStats.fallVelocityCap)
+        if (Velocity.y < VerticalTerminalVelocity)
         {
-            SetVelocity(null, _playerController.PlayerStats.fallVelocityCap);
+            SetVelocity(null, VerticalTerminalVelocity);
         }
 
         Vector2 originalVertical = Time.fixedDeltaTime * Velocity * Vector2.up;
@@ -241,7 +244,6 @@ public class MovementController : MonoBehaviour
 
     public void ForceOffset(Vector2 offset)
     {
-        Debug.Log("Forcing offset: " + offset);
         Debug.DrawRay(transform.position, offset, Color.purple, 1);
         ForcePosition((Vector2)transform.position + offset);
     }
@@ -251,6 +253,6 @@ public class MovementController : MonoBehaviour
         transform.position = newPosition;
     }
 
-    
+
 
 }

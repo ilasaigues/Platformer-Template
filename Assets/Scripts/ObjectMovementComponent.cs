@@ -54,7 +54,9 @@ public class ObjectMovementComponent : MonoBehaviour
             var directionToPlayer = playerController.transform.position - transform.position;
             var movingAgainstPlayer = Vector2.Dot(directionToPlayer.normalized, Velocity.normalized) > 0;
 
-            if (movingAgainstPlayer && IsSqueezingPlayer(playerController.CollisionController.MainCollider.bounds))
+            List<BreakableTerrainBehaviour> breakables = new();
+
+            if (movingAgainstPlayer && IsSqueezingPlayer(playerController.CollisionController.MainCollider.bounds, breakables))
             {
                 if (playerController.MovementController.CanBeSqueezed)
                 {
@@ -62,9 +64,16 @@ public class ObjectMovementComponent : MonoBehaviour
                 }
                 else
                 {
-                    correctedVelocity = BoxCaster2D.CollideAndSlideVel(mainBounds.center, mainBounds, Velocity * Time.fixedDeltaTime, LayerReference.TerrainAndPlayer);
-                    OnObstacleHit();
-                    playerController.MovementController.ExternalVelocity = Vector2.zero;
+                    if (breakables.Count > 0)
+                    {
+                        breakables.ForEach(b => b.Break());
+                    }
+                    else
+                    {
+                        correctedVelocity = BoxCaster2D.CollideAndSlideVel(mainBounds.center, mainBounds, Velocity * Time.fixedDeltaTime, LayerReference.TerrainAndPlayer);
+                        OnObstacleHit();
+                        playerController.MovementController.ExternalVelocity = Vector2.zero;
+                    }
                 }
             }
         }
@@ -85,7 +94,7 @@ public class ObjectMovementComponent : MonoBehaviour
         }
     }
 
-    public bool IsSqueezingPlayer(Bounds playerBounds)
+    public bool IsSqueezingPlayer(Bounds playerBounds, List<BreakableTerrainBehaviour> breakables)
     {
         var castVector = Velocity * Time.fixedDeltaTime;
 
@@ -93,6 +102,8 @@ public class ObjectMovementComponent : MonoBehaviour
         var backHits = BoxCaster2D.GetHits(playerBounds.center, playerBounds, -castVector, LayerReference.TerrainAndBoulder, 1);
 
         backHits = backHits.Where(bh => !forwardHits.Any(fh => fh.collider == bh.collider)).ToList();
+
+        breakables.AddRange(forwardHits.Concat(backHits).Select(hit => hit.collider.GetComponent<BreakableTerrainBehaviour>()).Where(btb => btb != null));
 
         return backHits.Any(hit => hit) && forwardHits.Any(hit => hit);
     }
