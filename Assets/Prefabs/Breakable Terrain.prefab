@@ -48,9 +48,9 @@ ParticleSystem:
   ringBufferMode: 0
   ringBufferLoopRange: {x: 0, y: 1}
   emitterVelocityMode: 1
-  looping: 1
+  looping: 0
   prewarm: 0
-  playOnAwake: 1
+  playOnAwake: 0
   useUnscaledTime: 0
   autoRandomSeed: 1
   startDelay:
@@ -5054,3 +5054,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6a0915788955e041beab41a7d790cdc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+  BreakParticles: {fileID: 1127639667225530014}

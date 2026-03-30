@@ -8633,6 +8633,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2305554982960220301, guid: 7640eced8a4cd4645925c1bd62459114, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4968985753700225028, guid: 7640eced8a4cd4645925c1bd62459114, type: 3}
       propertyPath: m_Name
       value: Breakable Terrain

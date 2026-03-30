@@ -26,4 +26,4 @@ MonoBehaviour:
   DoubleJumpVelocity: 14
   DoubleJumpMinTime: 0.15
   DoubleJumpWindupTime: 0.16666667
-  DoubleJumpHoverVelocity: -5
+  DoubleJumpHoverVelocity: -3
