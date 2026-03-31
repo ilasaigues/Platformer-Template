@@ -1,0 +1,40 @@
+{
+  "Rects": [
+    {
+      "x": 0,
+      "y": 0,
+      "w": 48,
+      "h": 48
+    }
+  ],
+  "Def": {
+    "__cHei": 1,
+    "__cWid": 1,
+    "cachedPixelData": {
+      "opaqueTiles": "0",
+      "averageColors": "e743"
+    },
+    "customData": [
+
+    ],
+    "embedAtlas": null,
+    "enumTags": [
+
+    ],
+    "identifier": "ShieldHazard",
+    "padding": 0,
+    "pxHei": 48,
+    "pxWid": 48,
+    "relPath": "../../../Sprites/Hazards/boulder.png",
+    "savedSelections": [
+
+    ],
+    "spacing": 0,
+    "tags": [
+      "Hazard"
+    ],
+    "tagsSourceEnumUid": null,
+    "tileGridSize": 48,
+    "uid": 271
+  }
+}

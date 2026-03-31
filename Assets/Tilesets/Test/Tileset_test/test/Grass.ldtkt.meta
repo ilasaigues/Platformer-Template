@@ -25,12 +25,7 @@ ScriptedImporter:
       width: 16
       height: 16
     spriteID: 8e5118c42ed800a49bbffa5863ebcd63
-    spriteOutline:
-    - shape:
-      - {x: 8, y: 8}
-      - {x: -8, y: 8}
-      - {x: -8, y: -8}
-      - {x: 8, y: -8}
+    spriteOutline: []
     tessellationDetail: 0
   - name: Grass_1
     originalName: 
@@ -45,12 +40,7 @@ ScriptedImporter:
       width: 16
       height: 16
     spriteID: 1bdb03fed57e71c4fa9544ffaf62ff1f
-    spriteOutline:
-    - shape:
-      - {x: 8, y: 8}
-      - {x: -8, y: 8}
-      - {x: -8, y: -8}
-      - {x: 8, y: -8}
+    spriteOutline: []
     tessellationDetail: 0
   - name: Grass_2
     originalName: 
@@ -65,12 +55,7 @@ ScriptedImporter:
       width: 16
       height: 16
     spriteID: 1680b27b2752af64aa13f318a8e6a33c
-    spriteOutline:
-    - shape:
-      - {x: 8, y: 8}
-      - {x: -8, y: 8}
-      - {x: -8, y: -8}
-      - {x: 8, y: -8}
+    spriteOutline: []
     tessellationDetail: 0
   - name: Grass_3
     originalName: 
@@ -85,12 +70,7 @@ ScriptedImporter:
       width: 16
       height: 16
     spriteID: 3b8a0790f650a2f42ad902b9201f8bf3
-    spriteOutline:
-    - shape:
-      - {x: 8, y: 8}
-      - {x: -8, y: 8}
-      - {x: -8, y: -8}
-      - {x: 8, y: -8}
+    spriteOutline: []
     tessellationDetail: 0
   - name: Grass_4
     originalName: 
@@ -105,12 +85,7 @@ ScriptedImporter:
       width: 16
       height: 16
     spriteID: 6aaa220cf634ed741b46beb7cab9ab59
-    spriteOutline:
-    - shape:
-      - {x: 8, y: 8}
-      - {x: -8, y: 8}
-      - {x: -8, y: -8}
-      - {x: 8, y: -8}
+    spriteOutline: []
     tessellationDetail: 0
   - name: Grass_5
     originalName: 
@@ -125,12 +100,7 @@ ScriptedImporter:
       width: 16
       height: 16
     spriteID: f12070d10910b8644896355adb11aa5b
-    spriteOutline:
-    - shape:
-      - {x: 8, y: 8}
-      - {x: -8, y: 8}
-      - {x: -8, y: -8}
-      - {x: 8, y: -8}
+    spriteOutline: []
     tessellationDetail: 0
   - name: Grass_6
     originalName: 
@@ -145,12 +115,7 @@ ScriptedImporter:
       width: 16
       height: 16
     spriteID: 6b1d9b70cdf1e50459bdfdf238935578
-    spriteOutline:
-    - shape:
-      - {x: 8, y: 8}
-      - {x: -8, y: 8}
-      - {x: -8, y: -8}
-      - {x: 8, y: -8}
+    spriteOutline: []
     tessellationDetail: 0
   - name: Grass_7
     originalName: 
@@ -165,12 +130,7 @@ ScriptedImporter:
       width: 16
       height: 16
     spriteID: 4654ab29db843e346b9535ddb722daad
-    spriteOutline:
-    - shape:
-      - {x: 8, y: 8}
-      - {x: -8, y: 8}
-      - {x: -8, y: -8}
-      - {x: 8, y: -8}
+    spriteOutline: []
     tessellationDetail: 0
   - name: Grass_8
     originalName: 
@@ -185,12 +145,7 @@ ScriptedImporter:
       width: 16
       height: 16
     spriteID: 374bb45ac7c554e49a4e982058a1ad62
-    spriteOutline:
-    - shape:
-      - {x: 8, y: 8}
-      - {x: -8, y: 8}
-      - {x: -8, y: -8}
-      - {x: 8, y: -8}
+    spriteOutline: []
     tessellationDetail: 0
   - name: Grass_9
     originalName: 
@@ -205,12 +160,7 @@ ScriptedImporter:
       width: 16
       height: 16
     spriteID: e35c75d35b9bb8d4fad7b4a0ec85a485
-    spriteOutline:
-    - shape:
-      - {x: 8, y: 8}
-      - {x: -8, y: 8}
-      - {x: -8, y: -8}
-      - {x: 8, y: -8}
+    spriteOutline: []
     tessellationDetail: 0
   - name: Grass_10
     originalName: 
@@ -225,12 +175,7 @@ ScriptedImporter:
       width: 16
       height: 16
     spriteID: 3e0bdc47bd771fc4dafa44bdab52c618
-    spriteOutline:
-    - shape:
-      - {x: 8, y: 8}
-      - {x: -8, y: 8}
-      - {x: -8, y: -8}
-      - {x: 8, y: -8}
+    spriteOutline: []
     tessellationDetail: 0
   - name: Grass_11
     originalName: 
@@ -245,12 +190,7 @@ ScriptedImporter:
       width: 16
       height: 16
     spriteID: 876e854717745474cae0b39413745aba
-    spriteOutline:
-    - shape:
-      - {x: 8, y: 8}
-      - {x: -8, y: 8}
-      - {x: -8, y: -8}
-      - {x: 8, y: -8}
+    spriteOutline: []
     tessellationDetail: 0
   - name: Grass_12
     originalName: 
@@ -265,12 +205,7 @@ ScriptedImporter:
       width: 16
       height: 16
     spriteID: 73bfc4c9a08d15c4198cab1a9284936c
-    spriteOutline:
-    - shape:
-      - {x: 8, y: 8}
-      - {x: -8, y: 8}
-      - {x: -8, y: -8}
-      - {x: 8, y: -8}
+    spriteOutline: []
     tessellationDetail: 0
   - name: Grass_13
     originalName: 
@@ -285,12 +220,7 @@ ScriptedImporter:
       width: 16
       height: 16
     spriteID: b783b32dfb4cb5a4780bbb98a99d3073
-    spriteOutline:
-    - shape:
-      - {x: 8, y: 8}
-      - {x: -8, y: 8}
-      - {x: -8, y: -8}
-      - {x: 8, y: -8}
+    spriteOutline: []
     tessellationDetail: 0
   - name: Grass_14
     originalName: 
@@ -305,12 +235,7 @@ ScriptedImporter:
       width: 16
       height: 16
     spriteID: 450e0715428ed3242b763133fe982ea9
-    spriteOutline:
-    - shape:
-      - {x: 8, y: 8}
-      - {x: -8, y: 8}
-      - {x: -8, y: -8}
-      - {x: 8, y: -8}
+    spriteOutline: []
     tessellationDetail: 0
   - name: Grass_15
     originalName: 
@@ -325,12 +250,7 @@ ScriptedImporter:
       width: 16
       height: 16
     spriteID: 21ca77c5ae5907b46b9d0eda791081c3
-    spriteOutline:
-    - shape:
-      - {x: 8, y: 8}
-      - {x: -8, y: 8}
-      - {x: -8, y: -8}
-      - {x: 8, y: -8}
+    spriteOutline: []
     tessellationDetail: 0
   - name: Grass_16
     originalName: 
@@ -345,12 +265,7 @@ ScriptedImporter:
       width: 16
       height: 16
     spriteID: 991574998a885a6498cc84f1dff94f5a
-    spriteOutline:
-    - shape:
-      - {x: 8, y: 8}
-      - {x: -8, y: 8}
-      - {x: -8, y: -8}
-      - {x: 8, y: -8}
+    spriteOutline: []
     tessellationDetail: 0
   - name: Grass_17
     originalName: 
@@ -365,12 +280,7 @@ ScriptedImporter:
       width: 16
       height: 16
     spriteID: 0d2299614292a06438b16595a7e17829
-    spriteOutline:
-    - shape:
-      - {x: 8, y: 8}
-      - {x: -8, y: 8}
-      - {x: -8, y: -8}
-      - {x: 8, y: -8}
+    spriteOutline: []
     tessellationDetail: 0
   - name: Grass_18
     originalName: 
@@ -385,12 +295,7 @@ ScriptedImporter:
       width: 16
       height: 16
     spriteID: 874cb5109e5b20a4fb2cfd2dc6dd7129
-    spriteOutline:
-    - shape:
-      - {x: 8, y: 8}
-      - {x: -8, y: 8}
-      - {x: -8, y: -8}
-      - {x: 8, y: -8}
+    spriteOutline: []
     tessellationDetail: 0
   - name: Grass_19
     originalName: 
@@ -405,12 +310,7 @@ ScriptedImporter:
       width: 16
       height: 16
     spriteID: 2087a958c2dfb3c4e82923f7f08d47e3
-    spriteOutline:
-    - shape:
-      - {x: 8, y: 8}
-      - {x: -8, y: 8}
-      - {x: -8, y: -8}
-      - {x: 8, y: -8}
+    spriteOutline: []
     tessellationDetail: 0
   - name: Grass_20
     originalName: 
@@ -425,12 +325,7 @@ ScriptedImporter:
       width: 16
       height: 16
     spriteID: fa932c61b7581bf44a18dcafb8d39817
-    spriteOutline:
-    - shape:
-      - {x: 8, y: 8}
-      - {x: -8, y: 8}
-      - {x: -8, y: -8}
-      - {x: 8, y: -8}
+    spriteOutline: []
     tessellationDetail: 0
   - name: Grass_21
     originalName: 
@@ -445,12 +340,7 @@ ScriptedImporter:
       width: 16
       height: 16
     spriteID: 8ff243c1de22df046b9d80d0d76df062
-    spriteOutline:
-    - shape:
-      - {x: 8, y: 8}
-      - {x: -8, y: 8}
-      - {x: -8, y: -8}
-      - {x: 8, y: -8}
+    spriteOutline: []
     tessellationDetail: 0
   - name: Grass_22
     originalName: 
@@ -465,12 +355,7 @@ ScriptedImporter:
       width: 16
       height: 16
     spriteID: 0d31c5eaf506fbb4d99310ea4fd671dc
-    spriteOutline:
-    - shape:
-      - {x: 8, y: 8}
-      - {x: -8, y: 8}
-      - {x: -8, y: -8}
-      - {x: 8, y: -8}
+    spriteOutline: []
     tessellationDetail: 0
   - name: Grass_23
     originalName: 
@@ -485,12 +370,7 @@ ScriptedImporter:
       width: 16
       height: 16
     spriteID: 541b3e7f6ef5e3f46a0c408a3940d6f6
-    spriteOutline:
-    - shape:
-      - {x: 8, y: 8}
-      - {x: -8, y: 8}
-      - {x: -8, y: -8}
-      - {x: 8, y: -8}
+    spriteOutline: []
     tessellationDetail: 0
   - name: Grass_24
     originalName: 
@@ -505,12 +385,7 @@ ScriptedImporter:
       width: 16
       height: 16
     spriteID: 69be10ead3875bc46a5f60f1d6030cab
-    spriteOutline:
-    - shape:
-      - {x: 8, y: 8}
-      - {x: -8, y: 8}
-      - {x: -8, y: -8}
-      - {x: 8, y: -8}
+    spriteOutline: []
     tessellationDetail: 0
   - name: Grass_25
     originalName: 
@@ -525,12 +400,7 @@ ScriptedImporter:
       width: 16
       height: 16
     spriteID: 91493e5dcc9853044866b99f81b8aab1
-    spriteOutline:
-    - shape:
-      - {x: 8, y: 8}
-      - {x: -8, y: 8}
-      - {x: -8, y: -8}
-      - {x: 8, y: -8}
+    spriteOutline: []
     tessellationDetail: 0
   - name: Grass_26
     originalName: 
@@ -545,12 +415,7 @@ ScriptedImporter:
       width: 16
       height: 16
     spriteID: 2a7d42db656478341a325175af2ec0b4
-    spriteOutline:
-    - shape:
-      - {x: 8, y: 8}
-      - {x: -8, y: 8}
-      - {x: -8, y: -8}
-      - {x: 8, y: -8}
+    spriteOutline: []
     tessellationDetail: 0
   - name: Grass_27
     originalName: 
@@ -565,12 +430,7 @@ ScriptedImporter:
       width: 16
       height: 16
     spriteID: 2031d72e94c6d3a43be636066e92b322
-    spriteOutline:
-    - shape:
-      - {x: 8, y: 8}
-      - {x: -8, y: 8}
-      - {x: -8, y: -8}
-      - {x: 8, y: -8}
+    spriteOutline: []
     tessellationDetail: 0
   - name: Grass_28
     originalName: 
@@ -585,12 +445,7 @@ ScriptedImporter:
       width: 16
       height: 16
     spriteID: 49d5112e3457c2644af54ae3c50f2279
-    spriteOutline:
-    - shape:
-      - {x: 8, y: 8}
-      - {x: -8, y: 8}
-      - {x: -8, y: -8}
-      - {x: 8, y: -8}
+    spriteOutline: []
     tessellationDetail: 0
   - name: Grass_29
     originalName: 
@@ -605,12 +460,7 @@ ScriptedImporter:
       width: 16
       height: 16
     spriteID: 3a95b9d1f2ae8d8439efc9009a710d24
-    spriteOutline:
-    - shape:
-      - {x: 8, y: 8}
-      - {x: -8, y: 8}
-      - {x: -8, y: -8}
-      - {x: 8, y: -8}
+    spriteOutline: []
     tessellationDetail: 0
   - name: Grass_30
     originalName: 
@@ -625,12 +475,7 @@ ScriptedImporter:
       width: 16
       height: 16
     spriteID: 07cecdaa964c0424bac3b17015b9d1e9
-    spriteOutline:
-    - shape:
-      - {x: 8, y: 8}
-      - {x: -8, y: 8}
-      - {x: -8, y: -8}
-      - {x: 8, y: -8}
+    spriteOutline: []
     tessellationDetail: 0
   - name: Grass_31
     originalName: 
@@ -645,12 +490,7 @@ ScriptedImporter:
       width: 16
       height: 16
     spriteID: 1cfad5bc634032344b7ce225a0155b10
-    spriteOutline:
-    - shape:
-      - {x: 8, y: 8}
-      - {x: -8, y: 8}
-      - {x: -8, y: -8}
-      - {x: 8, y: -8}
+    spriteOutline: []
     tessellationDetail: 0
   - name: Grass_32
     originalName: 
@@ -665,12 +505,7 @@ ScriptedImporter:
       width: 16
       height: 16
     spriteID: 3eaa345741e05a54d81b9ef0773c0654
-    spriteOutline:
-    - shape:
-      - {x: 8, y: 8}
-      - {x: -8, y: 8}
-      - {x: -8, y: -8}
-      - {x: 8, y: -8}
+    spriteOutline: []
     tessellationDetail: 0
   - name: Grass_33
     originalName: 
@@ -685,12 +520,7 @@ ScriptedImporter:
       width: 16
       height: 16
     spriteID: e7164806cfa2c3d4eb88bbb74caf352c
-    spriteOutline:
-    - shape:
-      - {x: 8, y: 8}
-      - {x: -8, y: 8}
-      - {x: -8, y: -8}
-      - {x: 8, y: -8}
+    spriteOutline: []
     tessellationDetail: 0
   - name: Grass_34
     originalName: 
@@ -705,12 +535,7 @@ ScriptedImporter:
       width: 16
       height: 16
     spriteID: b632ac733f2e5e341a5c9c1041bb5ebd
-    spriteOutline:
-    - shape:
-      - {x: 8, y: 8}
-      - {x: -8, y: 8}
-      - {x: -8, y: -8}
-      - {x: 8, y: -8}
+    spriteOutline: []
     tessellationDetail: 0
   - name: Grass_35
     originalName: 
@@ -725,12 +550,7 @@ ScriptedImporter:
       width: 16
       height: 16
     spriteID: a5b219df06050c1498b66ea7ef7f2de3
-    spriteOutline:
-    - shape:
-      - {x: 8, y: 8}
-      - {x: -8, y: 8}
-      - {x: -8, y: -8}
-      - {x: 8, y: -8}
+    spriteOutline: []
     tessellationDetail: 0
   - name: Grass_36
     originalName: 
@@ -745,12 +565,7 @@ ScriptedImporter:
       width: 16
       height: 16
     spriteID: e097eeca4ad9a614b876adf43e73003f
-    spriteOutline:
-    - shape:
-      - {x: 8, y: 8}
-      - {x: -8, y: 8}
-      - {x: -8, y: -8}
-      - {x: 8, y: -8}
+    spriteOutline: []
     tessellationDetail: 0
   - name: Grass_37
     originalName: 
@@ -765,12 +580,7 @@ ScriptedImporter:
       width: 16
       height: 16
     spriteID: 8f991af6fb34cf248864a4bb43bf8e62
-    spriteOutline:
-    - shape:
-      - {x: 8, y: 8}
-      - {x: -8, y: 8}
-      - {x: -8, y: -8}
-      - {x: 8, y: -8}
+    spriteOutline: []
     tessellationDetail: 0
   - name: Grass_38
     originalName: 
@@ -785,12 +595,7 @@ ScriptedImporter:
       width: 16
       height: 16
     spriteID: 27473176df457884a8b6dac131e5a38a
-    spriteOutline:
-    - shape:
-      - {x: 8, y: 8}
-      - {x: -8, y: 8}
-      - {x: -8, y: -8}
-      - {x: 8, y: -8}
+    spriteOutline: []
     tessellationDetail: 0
   - name: Grass_39
     originalName: 
@@ -805,12 +610,7 @@ ScriptedImporter:
       width: 16
       height: 16
     spriteID: a2475e11e34db964c90fdf4cc460b6ee
-    spriteOutline:
-    - shape:
-      - {x: 8, y: 8}
-      - {x: -8, y: 8}
-      - {x: -8, y: -8}
-      - {x: 8, y: -8}
+    spriteOutline: []
     tessellationDetail: 0
   - name: Grass_40
     originalName: 
@@ -825,12 +625,7 @@ ScriptedImporter:
       width: 16
       height: 16
     spriteID: 0b0bc3d01eebe8545be80885916d3fa2
-    spriteOutline:
-    - shape:
-      - {x: 8, y: 8}
-      - {x: -8, y: 8}
-      - {x: -8, y: -8}
-      - {x: 8, y: -8}
+    spriteOutline: []
     tessellationDetail: 0
   - name: Grass_41
     originalName: 
@@ -845,12 +640,7 @@ ScriptedImporter:
       width: 16
       height: 16
     spriteID: 58a7ab36081db19419a73a93618e477f
-    spriteOutline:
-    - shape:
-      - {x: 8, y: 8}
-      - {x: -8, y: 8}
-      - {x: -8, y: -8}
-      - {x: 8, y: -8}
+    spriteOutline: []
     tessellationDetail: 0
   - name: Grass_42
     originalName: 
@@ -865,12 +655,7 @@ ScriptedImporter:
       width: 16
       height: 16
     spriteID: a04a59149de8c044f8866202f702c2d0
-    spriteOutline:
-    - shape:
-      - {x: 8, y: 8}
-      - {x: -8, y: 8}
-      - {x: -8, y: -8}
-      - {x: 8, y: -8}
+    spriteOutline: []
     tessellationDetail: 0
   - name: Grass_43
     originalName: 
@@ -885,12 +670,7 @@ ScriptedImporter:
       width: 16
       height: 16
     spriteID: a80f73c47296a6b4dbd31a482686401b
-    spriteOutline:
-    - shape:
-      - {x: 8, y: 8}
-      - {x: -8, y: 8}
-      - {x: -8, y: -8}
-      - {x: 8, y: -8}
+    spriteOutline: []
     tessellationDetail: 0
   - name: Grass_44
     originalName: 
@@ -905,12 +685,7 @@ ScriptedImporter:
       width: 16
       height: 16
     spriteID: 65e1ec6816c77554a9454f4027e2c2ac
-    spriteOutline:
-    - shape:
-      - {x: 8, y: 8}
-      - {x: -8, y: 8}
-      - {x: -8, y: -8}
-      - {x: 8, y: -8}
+    spriteOutline: []
     tessellationDetail: 0
   - name: Grass_45
     originalName: 
@@ -925,12 +700,7 @@ ScriptedImporter:
       width: 16
       height: 16
     spriteID: 042147f6da5ddfd42a82cf6504ebd295
-    spriteOutline:
-    - shape:
-      - {x: 8, y: 8}
-      - {x: -8, y: 8}
-      - {x: -8, y: -8}
-      - {x: 8, y: -8}
+    spriteOutline: []
     tessellationDetail: 0
   - name: Grass_46
     originalName: 
@@ -945,12 +715,7 @@ ScriptedImporter:
       width: 16
       height: 16
     spriteID: 432fb53509d0603408e9f8e7d5818b18
-    spriteOutline:
-    - shape:
-      - {x: 8, y: 8}
-      - {x: -8, y: 8}
-      - {x: -8, y: -8}
-      - {x: 8, y: -8}
+    spriteOutline: []
     tessellationDetail: 0
   - name: Grass_47
     originalName: 
@@ -965,12 +730,7 @@ ScriptedImporter:
       width: 16
       height: 16
     spriteID: e243ea3578fc6644ab21e53118f44736
-    spriteOutline:
-    - shape:
-      - {x: 8, y: 8}
-      - {x: -8, y: 8}
-      - {x: -8, y: -8}
-      - {x: 8, y: -8}
+    spriteOutline: []
     tessellationDetail: 0
   - name: Grass_48
     originalName: 
@@ -985,12 +745,7 @@ ScriptedImporter:
       width: 16
       height: 16
     spriteID: 4955207ea3b0db34485edec8440d342d
-    spriteOutline:
-    - shape:
-      - {x: 8, y: 8}
-      - {x: -8, y: 8}
-      - {x: -8, y: -8}
-      - {x: 8, y: -8}
+    spriteOutline: []
     tessellationDetail: 0
   - name: Grass_49
     originalName: 
@@ -1005,12 +760,7 @@ ScriptedImporter:
       width: 16
       height: 16
     spriteID: 1b1b60ea101297846b81f3753e71accc
-    spriteOutline:
-    - shape:
-      - {x: 8, y: 8}
-      - {x: -8, y: 8}
-      - {x: -8, y: -8}
-      - {x: 8, y: -8}
+    spriteOutline: []
     tessellationDetail: 0
   - name: Grass_50
     originalName: 
@@ -1025,12 +775,7 @@ ScriptedImporter:
       width: 16
       height: 16
     spriteID: ecea883488ba0274db38a5b514a42411
-    spriteOutline:
-    - shape:
-      - {x: 8, y: 8}
-      - {x: -8, y: 8}
-      - {x: -8, y: -8}
-      - {x: 8, y: -8}
+    spriteOutline: []
     tessellationDetail: 0
   - name: Grass_51
     originalName: 
@@ -1045,12 +790,7 @@ ScriptedImporter:
       width: 16
       height: 16
     spriteID: f5613f933436bcc4eaf45d98b09fcd35
-    spriteOutline:
-    - shape:
-      - {x: 8, y: 8}
-      - {x: -8, y: 8}
-      - {x: -8, y: -8}
-      - {x: 8, y: -8}
+    spriteOutline: []
     tessellationDetail: 0
   - name: Grass_52
     originalName: 

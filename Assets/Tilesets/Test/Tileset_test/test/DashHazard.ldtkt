@@ -1,0 +1,40 @@
+{
+  "Rects": [
+    {
+      "x": 0,
+      "y": 32,
+      "w": 32,
+      "h": 16
+    }
+  ],
+  "Def": {
+    "__cHei": 4,
+    "__cWid": 2,
+    "cachedPixelData": {
+      "opaqueTiles": "00000000",
+      "averageColors": "4923493389338933792379331a331a33"
+    },
+    "customData": [
+
+    ],
+    "embedAtlas": null,
+    "enumTags": [
+
+    ],
+    "identifier": "DashHazard",
+    "padding": 0,
+    "pxHei": 64,
+    "pxWid": 32,
+    "relPath": "../../../Sprites/Hazards/dash_spikes.png",
+    "savedSelections": [
+
+    ],
+    "spacing": 0,
+    "tags": [
+      "Hazard"
+    ],
+    "tagsSourceEnumUid": null,
+    "tileGridSize": 16,
+    "uid": 273
+  }
+}

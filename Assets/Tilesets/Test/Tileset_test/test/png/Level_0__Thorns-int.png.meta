@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: a1babc6a7a0207e4890ce00f9720320b
+guid: f3a9e7fea86e35f4f9c56e673e1802fd
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -2185073035363584971
-    second: Level_2__Background-int_0
+      213: 5103604572287877970
+    second: Level_0__Thorns-int_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Level_2__Background-int_0
+      name: Level_0__Thorns-int_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 7
-        width: 13
-        height: 8
+        y: 0
+        width: 39
+        height: 39
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 5347edeb6af0da1e0800000000000000
-      internalID: -2185073035363584971
+      spriteID: 25347458155a3d640800000000000000
+      internalID: 5103604572287877970
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Level_2__Background-int_0: -2185073035363584971
+      Level_0__Thorns-int_0: 5103604572287877970
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
