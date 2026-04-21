@@ -11,7 +11,7 @@ public class PlayerDashBehaviour : BasePlayerBehaviour, IPlayerAbilityBehaviour
 
     int _direction;
 
-    public bool OnCooldown => TimeLastUsed + PlayerController.AbilityStats.DashCooldown > Time.time;
+    public bool OnCooldown => TimeLastUsed + PlayerController.AbilityStats.DashCooldown > PlayerController.TimeContext.Time;
 
     bool _windingUp = false;
     public PlayerDashBehaviour(PlayerController player) : base(player)
@@ -24,9 +24,9 @@ public class PlayerDashBehaviour : BasePlayerBehaviour, IPlayerAbilityBehaviour
 
     public override void Enter()
     {
-        if(PlayerController.AbilityStats.DashPause)EditorApplication.isPaused=true;
+        if (PlayerController.AbilityStats.DashPause) EditorApplication.isPaused = true;
         PlayAnim(PlayerController.PlayerAnimator.AnimationList.DashEnter);
-        TimeLastUsed = Time.time;
+        TimeLastUsed = PlayerController.TimeContext.Time;
         PlayerController.RemainingDashes--;
 
         _windingUp = true;

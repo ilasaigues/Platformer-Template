@@ -39,7 +39,7 @@ public class PlayerFallingBehaviour : PlayerAirBehaviour
         bool jumpRequested = PlayerController.InputHandler.JumpButton.JustPressed;
         if (jumpRequested)
         {
-            bool isInCoyoteTime = Time.time - PlayerController.MovementController.TimeLeftGround <=
+            bool isInCoyoteTime = PlayerController.TimeContext.Time - PlayerController.MovementController.TimeLeftGround <=
                PlayerController.PlayerStats.coyoteTime;
             if (isInCoyoteTime && PlayerController.Jumps < 1)
             {

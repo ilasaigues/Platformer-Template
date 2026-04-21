@@ -3,12 +3,13 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
-
+[RequireComponent(typeof(TimeContext))]
 [RequireComponent(typeof(Rigidbody2D))]
 [RequireComponent(typeof(BoxCollider2D))]
 public class ObjectMovementComponent : MonoBehaviour
 {
     public Vector2 Velocity { get; private set; }
+    private TimeContext _timeContext;
 
     private Rigidbody2D _rb;
     private BoxCollider2D _collider;
@@ -21,6 +22,7 @@ public class ObjectMovementComponent : MonoBehaviour
 
     void Start()
     {
+        _timeContext = GetComponent<TimeContext>();
         _rb = GetComponent<Rigidbody2D>();
         _rb.bodyType = RigidbodyType2D.Kinematic;
         _rb.constraints = RigidbodyConstraints2D.FreezeRotation;
@@ -29,21 +31,21 @@ public class ObjectMovementComponent : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (Velocity == Vector2.zero) return;
+        if (Velocity == Vector2.zero || _timeContext.ContextTimescale.Value == 0) return;
 
         // check for collisions by velocity
         var mainBounds = _collider.bounds;
 
-        var correctedVelocity = BoxCaster2D.CollideAndSlideVel(mainBounds.center, mainBounds, Velocity * Time.fixedDeltaTime, LayerReference.TerrainLayer);
+        var correctedVelocity = BoxCaster2D.CollideAndSlideVel(mainBounds.center, mainBounds, Velocity * _timeContext.FixedDeltaTime, LayerReference.TerrainLayer);
 
-        if (correctedVelocity.magnitude + 1e-6 < Velocity.magnitude * Time.fixedDeltaTime)
+        if (correctedVelocity.magnitude + 1e-6 < Velocity.magnitude * _timeContext.FixedDeltaTime)
         {
             OnObstacleHit();
         }
 
-        List<RaycastHit2D> collisionsWithPlayer = BoxCaster2D.GetHits(mainBounds.center, mainBounds, Time.fixedDeltaTime * Velocity, LayerReference.PlayerLayer);
+        List<RaycastHit2D> collisionsWithPlayer = BoxCaster2D.GetHits(mainBounds.center, mainBounds, _timeContext.FixedDeltaTime * Velocity, LayerReference.PlayerLayer);
 
-        collisionsWithPlayer.AddRange(BoxCaster2D.GetHits(mainBounds.center, mainBounds, Vector2.up * Time.fixedDeltaTime, LayerReference.PlayerLayer, 1));
+        collisionsWithPlayer.AddRange(BoxCaster2D.GetHits(mainBounds.center, mainBounds, Vector2.up * _timeContext.FixedDeltaTime, LayerReference.PlayerLayer, 1));
 
         if (collisionsWithPlayer.Any(c => c))
         {
@@ -70,7 +72,7 @@ public class ObjectMovementComponent : MonoBehaviour
                     }
                     else
                     {
-                        correctedVelocity = BoxCaster2D.CollideAndSlideVel(mainBounds.center, mainBounds, Velocity * Time.fixedDeltaTime, LayerReference.TerrainAndPlayer);
+                        correctedVelocity = BoxCaster2D.CollideAndSlideVel(mainBounds.center, mainBounds, Velocity * _timeContext.FixedDeltaTime, LayerReference.TerrainAndPlayer);
                         OnObstacleHit();
                         playerController.MovementController.ExternalVelocity = Vector2.zero;
                     }
@@ -96,7 +98,7 @@ public class ObjectMovementComponent : MonoBehaviour
 
     public bool IsSqueezingPlayer(Bounds playerBounds, List<BreakableTerrainBehaviour> breakables)
     {
-        var castVector = Velocity * Time.fixedDeltaTime;
+        var castVector = Velocity * _timeContext.FixedDeltaTime;
 
         var forwardHits = BoxCaster2D.GetHits(playerBounds.center, playerBounds, castVector, LayerReference.TerrainAndBoulder, 1);
         var backHits = BoxCaster2D.GetHits(playerBounds.center, playerBounds, -castVector, LayerReference.TerrainAndBoulder, 1);

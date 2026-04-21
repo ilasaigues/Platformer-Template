@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Unity.Cinemachine;
 using UnityEngine;
+[RequireComponent(typeof(TimeContext))]
 [RequireComponent(typeof(CollisionController))]
 [RequireComponent(typeof(MovementController))]
 [RequireComponent(typeof(BehaviourMachine))]
@@ -13,13 +14,14 @@ public class PlayerController : MonoBehaviour
     public CollisionController CollisionController;
     public MovementController MovementController;
     public PlayerAnimator PlayerAnimator;
-    public InputHandler InputHandler;
+    public GameInputHandler InputHandler;
 
     public SpriteTrail ExternalSpriteTrail;
 
     public BehaviourMachine BehaviourMachine;
 
     public ParticleSystem DashParticles;
+    public TimeContext TimeContext;
 
     public Vector2 LastDirectionInput => InputHandler.MoveAxis.LastValue;
     public Vector2 LastHorizontalDirection { get; private set; }
@@ -44,6 +46,7 @@ public class PlayerController : MonoBehaviour
 
     void Start()
     {
+        TimeContext = GetComponent<TimeContext>();
         SpriteRenderer = gameObject.GetOrAddComponent<SpriteRenderer>();
         CollisionController = gameObject.GetOrAddComponent<CollisionController>();
         MovementController = gameObject.GetOrAddComponent<MovementController>();
@@ -99,7 +102,7 @@ public class PlayerController : MonoBehaviour
         {
             InputHandler.JumpButton.Pressed = false;
             InputHandler.JumpButton.JustPressed = false;
-            InputHandler.JumpButton.TimeLastPressed = Time.time - PlayerStats.jumpBufferTime * 2;
+            InputHandler.JumpButton.TimeLastPressed = TimeContext.Time - PlayerStats.jumpBufferTime * 2;
             MovementController.IgnoreOneWay = true;
         }
     }
@@ -187,7 +190,7 @@ public class PlayerController : MonoBehaviour
             MovementController.Velocity.normalized,
             filter,
             hits,
-            MovementController.Velocity.magnitude * Time.fixedDeltaTime);
+            MovementController.Velocity.magnitude * TimeContext.FixedDeltaTime);
 
         if (hits.Any(hit => hit))
         {

@@ -23,7 +23,7 @@ public class PlayerRockBehaviour : BasePlayerBehaviour, IPlayerAbilityBehaviour
     public override void Enter()
     {
         _released = false;
-        TimeLastUsed = Time.time;
+        TimeLastUsed = PlayerController.TimeContext.Time;
         PlayerController.InputHandler.RockButton.OnRelease += OnRockButtonRelease;
         PlayerController.MovementController.CanBeSqueezed = false;
         PlayAnim(PlayerController.PlayerAnimator.AnimationList.ShieldEnter);
@@ -68,12 +68,12 @@ public class PlayerRockBehaviour : BasePlayerBehaviour, IPlayerAbilityBehaviour
         var hits = new List<RaycastHit2D>();
         if (horizontalThreshold)
         {
-            hits.AddRange(BoxCaster2D.GetHits(playerCollider.bounds.center, playerCollider.bounds, playerVelocity.x * Time.fixedDeltaTime * Vector2.right, LayerReference.TerrainLayer, 1));
+            hits.AddRange(BoxCaster2D.GetHits(playerCollider.bounds.center, playerCollider.bounds, playerVelocity.x * PlayerController.TimeContext.FixedDeltaTime * Vector2.right, LayerReference.TerrainLayer, 1));
         }
 
         if (verticalThreshold)
         {
-            hits.AddRange(BoxCaster2D.GetHits(playerCollider.bounds.center, playerCollider.bounds, playerVelocity.y * Time.fixedDeltaTime * Vector2.up, LayerReference.TerrainLayer, 1));
+            hits.AddRange(BoxCaster2D.GetHits(playerCollider.bounds.center, playerCollider.bounds, playerVelocity.y * PlayerController.TimeContext.FixedDeltaTime * Vector2.up, LayerReference.TerrainLayer, 1));
         }
         if (verticalThreshold || horizontalThreshold)
         {
@@ -110,7 +110,7 @@ public class PlayerRockBehaviour : BasePlayerBehaviour, IPlayerAbilityBehaviour
             return baseBehaviour;
         }
 
-        if (_released && Time.time - TimeLastUsed >= PlayerController.AbilityStats.MinRockTime)
+        if (_released && PlayerController.TimeContext.Time - TimeLastUsed >= PlayerController.AbilityStats.MinRockTime)
         {
             if (PlayerController.MovementController.Grounded)
             {

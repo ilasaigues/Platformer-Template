@@ -4,7 +4,7 @@ using System.Linq;
 using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
-
+[RequireComponent(typeof(TimeContext))]
 [RequireComponent(typeof(Rigidbody2D))]
 [RequireComponent(typeof(CollisionController))]
 [RequireComponent(typeof(PlayerController))]
@@ -25,6 +25,7 @@ public class MovementController : MonoBehaviour
 
     public bool IgnoreOneWay = false;
 
+    private TimeContext _timeContext;
     private Rigidbody2D _rb;
     private CollisionController _collisonController;
     private PlayerController _playerController;
@@ -40,6 +41,7 @@ public class MovementController : MonoBehaviour
     void Awake()
     {
         CanBeSqueezed = true;
+        _timeContext = GetComponent<TimeContext>();
         _rb = gameObject.GetOrAddComponent<Rigidbody2D>();
         _collisonController = gameObject.GetOrAddComponent<CollisionController>();
         _rb.bodyType = RigidbodyType2D.Kinematic;
@@ -51,8 +53,9 @@ public class MovementController : MonoBehaviour
     void FixedUpdate()
     {
         CheckAndFixOverlap();
+        if (_timeContext.ContextTimescale.Value == 0) return;
 
-        ForceOffset(ExternalVelocity * Time.fixedDeltaTime);
+        ForceOffset(ExternalVelocity * _timeContext.FixedDeltaTime);
         ExternalVelocity = Vector2.zero;
 
         if (Velocity.y < VerticalTerminalVelocity)
@@ -60,8 +63,8 @@ public class MovementController : MonoBehaviour
             SetVelocity(null, VerticalTerminalVelocity);
         }
 
-        Vector2 originalVertical = Time.fixedDeltaTime * Velocity * Vector2.up;
-        Vector2 originalHorizontal = Time.fixedDeltaTime * Velocity * Vector2.right;
+        Vector2 originalVertical = _timeContext.FixedDeltaTime * Velocity * Vector2.up;
+        Vector2 originalHorizontal = _timeContext.FixedDeltaTime * Velocity * Vector2.right;
 
 
         bool ledgeCorrected = false;
@@ -149,7 +152,7 @@ public class MovementController : MonoBehaviour
         var correctedVelocity = correctedHorizontal + correctedVertical;
 
 
-        var groundHits = BoxCaster2D.GetHits(mainBounds.center + (Vector3)correctedVelocity, mainBounds, Vector2.down * Time.fixedDeltaTime, LayerReference.TerrainAndBoulder);
+        var groundHits = BoxCaster2D.GetHits(mainBounds.center + (Vector3)correctedVelocity, mainBounds, Vector2.down * _timeContext.FixedDeltaTime, LayerReference.TerrainAndBoulder);
         groundHits = groundHits.Where(h => Vector2.Angle(h.normal, Vector2.up) == 0).ToList();
         var hitGround = groundHits.Any(h => h);
         // todo: check if platform hit
@@ -157,7 +160,7 @@ public class MovementController : MonoBehaviour
         {
             if (!hitGround)
             {
-                TimeLeftGround = Time.time;
+                TimeLeftGround = _timeContext.Time;
                 Grounded = false;
                 //SetParentObject(null);
             }
@@ -179,7 +182,7 @@ public class MovementController : MonoBehaviour
 
         //CheckParenting();
 
-        Velocity = correctedVelocity / Time.fixedDeltaTime;
+        Velocity = correctedVelocity / _timeContext.FixedDeltaTime;
 
         Debug.DrawRay((Vector2)transform.position, correctedVelocity / 2, Color.green, 1);
         Debug.DrawRay((Vector2)transform.position + correctedVelocity / 2, correctedVelocity / 2, Color.yellow, 1);

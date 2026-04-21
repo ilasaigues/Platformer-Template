@@ -1,12 +1,13 @@
 using System;
 using UnityEngine;
-
+[RequireComponent(typeof(TimeContext))]
 [RequireComponent(typeof(ObjectMovementComponent))]
 public class BoulderHazard : MonoBehaviour
 {
     public Vector2[] Velocities;
     private int _currentVelocityIndex = 0;
     ObjectMovementComponent _movementComponent;
+    private TimeContext _timeContext;
 
     public float StopTime = 1;
 
@@ -15,6 +16,7 @@ public class BoulderHazard : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        _timeContext = GetComponent<TimeContext>();
         _movementComponent = GetComponent<ObjectMovementComponent>();
         _movementComponent.OnPlayerSqueezed += PlayerSqueezed;
         _movementComponent.OnObstacleHit += ObstacleHit;
@@ -39,7 +41,7 @@ public class BoulderHazard : MonoBehaviour
         if (_stopTimer > 0)
         {
             _movementComponent.SetVelocity(Vector2.zero);
-            _stopTimer -= Time.fixedDeltaTime;
+            _stopTimer -= _timeContext.FixedDeltaTime;
         }
         else
         {

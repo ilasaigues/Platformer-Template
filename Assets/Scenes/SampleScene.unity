@@ -835,6 +835,7 @@ GameObject:
   m_Component:
   - component: {fileID: 592379736}
   - component: {fileID: 592379735}
+  - component: {fileID: 592379737}
   m_Layer: 0
   m_Name: InputHandler
   m_TagString: Untagged
@@ -869,6 +870,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &592379737
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 592379734}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6b141189df92174bbed8abdb90dac3d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TimeContext
+  ContextTimescale: {fileID: 11400000, guid: 6494853fed99e334aa868356109ae52a, type: 2}
+  Time: 0
 --- !u!1 &597910202 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -335103918304592529, guid: 2a6652ec5fdfdab47b8a959efa1b7009, type: 3}
@@ -6677,6 +6692,7 @@ GameObject:
   - component: {fileID: 1280573031}
   - component: {fileID: 1280573030}
   - component: {fileID: 1280573029}
+  - component: {fileID: 1280573032}
   m_Layer: 11
   m_Name: boulder
   m_TagString: Untagged
@@ -6860,6 +6876,20 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &1280573032
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1280573025}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6b141189df92174bbed8abdb90dac3d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TimeContext
+  ContextTimescale: {fileID: 11400000, guid: 6494853fed99e334aa868356109ae52a, type: 2}
+  Time: 0
 --- !u!1 &1329715768
 GameObject:
   m_ObjectHideFlags: 0
@@ -7132,6 +7162,7 @@ GameObject:
   - component: {fileID: 1405793472}
   - component: {fileID: 1405793475}
   - component: {fileID: 1405793474}
+  - component: {fileID: 1405793476}
   m_Layer: 0
   m_Name: PlayerExternalTrail
   m_TagString: Untagged
@@ -7247,6 +7278,20 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1405793476
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1405793471}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6b141189df92174bbed8abdb90dac3d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TimeContext
+  ContextTimescale: {fileID: 11400000, guid: 6494853fed99e334aa868356109ae52a, type: 2}
+  Time: 0
 --- !u!4 &1417996119 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7545999932288629984, guid: 6545e83e3e44ebb4185007dbd0e0ab56, type: 3}
@@ -7281,6 +7326,7 @@ GameObject:
   - component: {fileID: 1448180808}
   - component: {fileID: 1448180812}
   - component: {fileID: 1448180811}
+  - component: {fileID: 1448180813}
   m_Layer: 10
   m_Name: Timed Spikes
   m_TagString: Untagged
@@ -7446,6 +7492,20 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 13, y: 0.25}
   m_EdgeRadius: 0
+--- !u!114 &1448180813
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1448180807}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6b141189df92174bbed8abdb90dac3d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TimeContext
+  ContextTimescale: {fileID: 11400000, guid: 6494853fed99e334aa868356109ae52a, type: 2}
+  Time: 0
 --- !u!1 &1536907936
 GameObject:
   m_ObjectHideFlags: 0
@@ -8015,6 +8075,7 @@ GameObject:
   - component: {fileID: 1721036618}
   - component: {fileID: 1721036617}
   - component: {fileID: 1721036616}
+  - component: {fileID: 1721036621}
   m_Layer: 10
   m_Name: Timed Spikes (1)
   m_TagString: Untagged
@@ -8180,6 +8241,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 180, y: 0, z: 0}
+--- !u!114 &1721036621
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1721036615}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6b141189df92174bbed8abdb90dac3d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TimeContext
+  ContextTimescale: {fileID: 11400000, guid: 6494853fed99e334aa868356109ae52a, type: 2}
+  Time: 0
 --- !u!1 &1722248157
 GameObject:
   m_ObjectHideFlags: 0
@@ -8993,10 +9068,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2305554982960220301, guid: 7640eced8a4cd4645925c1bd62459114, type: 3}
-      propertyPath: m_SortingOrder
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 4968985753700225028, guid: 7640eced8a4cd4645925c1bd62459114, type: 3}
       propertyPath: m_Name
       value: Breakable Terrain

@@ -7,13 +7,23 @@ public class InputButtonWrapper
     public bool Pressed;
     public bool JustPressed;
     public float TimeLastPressed = float.NegativeInfinity;
-    public float TimeSinceLastPressed => Time.time - TimeLastPressed;
+    private TimeContext _timeContext;
+
+    public float TimeSinceLastPressed => _timeContext.Time - TimeLastPressed;
+
+
 
     public event Action OnPress = delegate { };
     public event Action OnRelease = delegate { };
-    public void OnInputEvent(InputAction.CallbackContext context)
+
+    public InputButtonWrapper(TimeContext timeContext)
     {
-        switch (context.phase)
+        _timeContext = timeContext;
+    }
+
+    public void OnInputEvent(InputActionPhase phase)
+    {
+        switch (phase)
         {
             case InputActionPhase.Disabled:
                 break;
@@ -21,7 +31,7 @@ public class InputButtonWrapper
                 break;
             case InputActionPhase.Started:
                 JustPressed = true;
-                TimeLastPressed = Time.time;
+                TimeLastPressed = _timeContext.Time;
                 OnPress();
                 break;
             case InputActionPhase.Performed:
@@ -47,9 +57,9 @@ public class InputAxisWrapper
 {
     public Vector2 LastValue;
     public event Action<Vector2> OnValueChanged = delegate { };
-    public void OnInputEvent(InputAction.CallbackContext context)
+    public void OnInputEvent(Vector2 axisValue)
     {
-        LastValue = context.ReadValue<Vector2>();
+        LastValue = axisValue;
         OnValueChanged(LastValue);
     }
 }

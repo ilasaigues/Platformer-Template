@@ -43,14 +43,14 @@ public class PlayerDoubleJumpBehaviour : PlayerAirBehaviour, IPlayerAbilityBehav
             return PlayerController.PlayerStats.peakGravity;
         }
 
-        return !_jumpHeld && Time.time - TimeLastUsed >=
+        return !_jumpHeld && PlayerController.TimeContext.Time - TimeLastUsed >=
             PlayerController.AbilityStats.DoubleJumpMinTime + PlayerController.AbilityStats.DoubleJumpWindupTime
             ? PlayerController.PlayerStats.cutoffGravity : PlayerController.PlayerStats.jumpGravity;
     }
 
     public override void Enter()
     {
-        TimeLastUsed = Time.time;
+        TimeLastUsed = PlayerController.TimeContext.Time;
         _jumpHeld = PlayerController.InputHandler.JumpButton.Pressed;
         IsInWindup = true;
         PlayerController.MovementController.SetVelocity(null, PlayerController.AbilityStats.DoubleJumpHoverVelocity);
@@ -76,7 +76,7 @@ public class PlayerDoubleJumpBehaviour : PlayerAirBehaviour, IPlayerAbilityBehav
         base.FixedUpdate(delta);
         if (IsInWindup)
         {
-            if (Time.time >= TimeLastUsed + PlayerController.AbilityStats.DoubleJumpWindupTime)
+            if (PlayerController.TimeContext.Time >= TimeLastUsed + PlayerController.AbilityStats.DoubleJumpWindupTime)
             {
                 IsInWindup = false;
                 PlayerController.MovementController.SetVelocity(null, PlayerController.AbilityStats.DoubleJumpVelocity);

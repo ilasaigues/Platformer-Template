@@ -1,16 +1,24 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+[RequireComponent(typeof(TimeContext))]
 
 public class BehaviourMachine : MonoBehaviour
 {
 
     Dictionary<Type, BaseBehaviour> _allBehaviours = new();
+    private TimeContext _timeContext;
 
     BaseBehaviour _currentBehaviour;
     public string GetBehaviourName => _currentBehaviour?.GetType().Name;
     public Type GetBehaviourType => _currentBehaviour?.GetType();
 
+
+    void Start()
+    {
+        _timeContext = GetComponent<TimeContext>();
+
+    }
 
     public void AddBehaviour(BaseBehaviour newBehaviour)
     {
@@ -23,12 +31,12 @@ public class BehaviourMachine : MonoBehaviour
     void Update()
     {
         CheckBehaviourChange();
-        _currentBehaviour.Update(Time.deltaTime);
+        _currentBehaviour.Update(_timeContext.DeltaTime);
     }
 
     void FixedUpdate()
     {
-        _currentBehaviour.FixedUpdate(Time.fixedDeltaTime);
+        _currentBehaviour.FixedUpdate(_timeContext.FixedDeltaTime);
     }
 
     private void CheckBehaviourChange()
