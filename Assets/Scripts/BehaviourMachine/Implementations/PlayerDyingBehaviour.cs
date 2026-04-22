@@ -47,7 +47,8 @@ public class PlayerDyingBehaviour : BasePlayerBehaviour
                 PlayerController.gameObject,
                 PlayerController.CurrentRespawnTrigger.RespawnPosition,
                 PlayerController.PlayerStats.DeathDuration * .5f)
-                .setEaseOutQuad().setDelay(PlayerController.PlayerStats.DeathDuration * .75f);
+                .setEaseOutQuad().setDelay(PlayerController.PlayerStats.DeathDuration * .75f)
+                .setTimeContext(PlayerController.TimeContext);
         }
 
 
