@@ -39,6 +39,7 @@ public class PlayerController : MonoBehaviour
     public CinemachinePositionComposer CameraComposer;
     public PlayerAbilityQueue PlayerAbilityQueue = new();
 
+    public RespawnTrigger HardRespawnTrigger { get; private set; }
 
     public RespawnTrigger CurrentRespawnTrigger { get; private set; }
 
@@ -150,9 +151,17 @@ public class PlayerController : MonoBehaviour
         return null;
     }
 
-    public void SetRespawn(RespawnTrigger respawn)
+    public void SetRespawn(RespawnTrigger respawn, RespawnType respawnType)
     {
-        CurrentRespawnTrigger = respawn;
+        switch (respawnType)
+        {
+            case RespawnType.Soft:
+                CurrentRespawnTrigger = respawn;
+                return;
+            case RespawnType.Hard:
+                HardRespawnTrigger = respawn;
+                return;
+        }
     }
 
     public void ToggleDashParticles(int value)

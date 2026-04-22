@@ -3,7 +3,7 @@ using UnityEngine;
 
 [RequireComponent(typeof(BoxCollider2D))]
 [RequireComponent(typeof(Rigidbody2D))]
-public class RespawnTrigger : MonoBehaviour,ILDtkImportedFields
+public class RespawnTrigger : MonoBehaviour, ILDtkImportedFields
 {
     [SerializeField]
     private Transform _respawnTransform;
@@ -16,7 +16,7 @@ public class RespawnTrigger : MonoBehaviour,ILDtkImportedFields
     {
         if (collision.GetComponent<PlayerController>() is PlayerController controller)
         {
-            controller.SetRespawn(this);
+            controller.SetRespawn(this, respawnType);
         }
     }
 
@@ -24,18 +24,18 @@ public class RespawnTrigger : MonoBehaviour,ILDtkImportedFields
     {
         if (_respawnTransform != null)
         {
-            Gizmos.color = respawnType == RespawnType.Soft? Color.green : Color.red;
+            Gizmos.color = respawnType == RespawnType.Soft ? Color.green : Color.red;
             Gizmos.DrawLine(transform.position, _respawnTransform.position);
         }
     }
 
     public void OnLDtkImportFields(LDtkFields fields)
     {
-        transform.localScale=Vector3.one;
+        transform.localScale = Vector3.one;
         respawnType = fields.GetEnum<RespawnType>("type");
         BoxCollider2D collider = GetComponent<BoxCollider2D>();
         collider.size = GetComponent<LDtkComponentEntity>().Size;
-        collider.offset = new Vector2(collider.size.x, -collider.size.y)/2; 
+        collider.offset = new Vector2(collider.size.x, -collider.size.y) / 2;
         _respawnTransform = transform.GetChild(0);
     }
 }
