@@ -22,7 +22,8 @@ public class PlayerDyingBehaviour : BasePlayerBehaviour
         PlayerController.CollisionController.MainCollider.enabled = false;
         PlayAnim(PlayerController.PlayerAnimator.AnimationList.Death);
         PlayerController.MovementController.SetVelocity(Vector2.zero);
-        VFXSpawner.Instance.PlayFX(VFXSpawner.Instance.VFXList.Respawn_Particles, PlayerController.CurrentRespawnTrigger.RespawnPosition, 1,false);
+        Vector2 particlePosition = PlayerController.CurrentRespawnTrigger.RespawnPosition + Vector3.up * 8.ToPixels();
+        VFXSpawner.Instance.PlayFX(VFXSpawner.Instance.VFXList.Respawn_Particles,particlePosition , 1,false);
     }
 
     public override void Exit()

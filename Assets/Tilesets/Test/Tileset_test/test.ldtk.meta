@@ -20,29 +20,37 @@ ScriptedImporter:
   _useParallax: 1
   _scaleEntities: 1
   _intGridValues:
-  - _key: Terrain_1
-    _asset: {instanceID: 0}
   - _key: Thorns_1
     _asset: {instanceID: 0}
+  - _key: Terrain_1
+    _asset: {fileID: 11400000, guid: 61f80c469f0ae6b41849498d1fd899ac, type: 2}
   _entities:
-  - _key: Soft_Respawn
-    _asset: {instanceID: 0}
-  - _key: Hard_Respawn
-    _asset: {instanceID: 0}
   - _key: Boulder
-    _asset: {instanceID: 0}
+    _asset: {fileID: 8881450139756665115, guid: 8efe9a562bfde0a44a02d9fb3a99afc8, type: 3}
   - _key: Trap
-    _asset: {instanceID: 0}
+    _asset: {fileID: 2814438238396818025, guid: ef29f3c27b5f2ea40882a8043eac7460, type: 3}
   - _key: BreakableTerrain
+    _asset: {fileID: 4968985753700225028, guid: 7640eced8a4cd4645925c1bd62459114, type: 3}
+  - _key: Soft_respawn
+    _asset: {fileID: 6236945957978861526, guid: 26e42e0a4159d7f419df3e8571f42a78, type: 3}
+  - _key: Hard_respawn
+    _asset: {fileID: 6236945957978861526, guid: 26e42e0a4159d7f419df3e8571f42a78, type: 3}
+  - _key: Player
     _asset: {instanceID: 0}
-  _enumGenerate: 0
+  _enumGenerate: 1
   _enumPath: 
   _enumNamespace: 
   _useLayerCustomSortingOrders: 0
   _layerCustomSortingOrders:
-  - _ldtkLayerName: Entities
-    _ldtkLayerOrder: 0
-  - _ldtkLayerName: Terrain
+  - _ldtkLayerName: Hazards
+    _ldtkLayerOrder: -3
+  - _ldtkLayerName: Interactables
     _ldtkLayerOrder: -1
   - _ldtkLayerName: Thorns
     _ldtkLayerOrder: -2
+  - _ldtkLayerName: Terrain
+    _ldtkLayerOrder: -1
+  - _ldtkLayerName: Spawns
+    _ldtkLayerOrder: -2
+  - _ldtkLayerName: Other
+    _ldtkLayerOrder: 0

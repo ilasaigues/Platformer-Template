@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: de3f2c1f71bb51b43a5a0896623955d9
+guid: a4eba4de04b980d46a0a4b61b2e0b10b
 TextureImporter:
   internalIDToNameTable:
   - first:
@@ -116,10 +116,10 @@ TextureImporter:
       name: Level_0__Thorns_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 624
-        height: 624
+        x: 320
+        y: 272
+        width: 208
+        height: 63
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}

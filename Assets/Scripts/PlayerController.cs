@@ -56,15 +56,15 @@ public class PlayerController : MonoBehaviour
         BehaviourMachine.AddBehaviour(new PlayerDyingBehaviour(this));
         BehaviourMachine.AddBehaviour(new PlayerRockBehaviour(this)
         {
-            Enabled = true
+            //Enabled = true
         });
         BehaviourMachine.AddBehaviour(new PlayerDashBehaviour(this)
         {
-            Enabled = true
+            //Enabled = true
         });
         BehaviourMachine.AddBehaviour(new PlayerDoubleJumpBehaviour(this)
         {
-            Enabled = true
+            //Enabled = true
         });
         PlayerAbilityQueue.MaxAbilityStack = 1;
 

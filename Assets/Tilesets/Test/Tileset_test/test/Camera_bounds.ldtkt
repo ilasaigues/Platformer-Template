@@ -2,10 +2,10 @@
   "Rects": null,
   "Def": {
     "__cHei": 1,
-    "__cWid": 2,
+    "__cWid": 1,
     "cachedPixelData": {
-      "opaqueTiles": "00",
-      "averageColors": "6cdbab88"
+      "opaqueTiles": "0",
+      "averageColors": "7fa0"
     },
     "customData": [
 
@@ -14,11 +14,11 @@
     "enumTags": [
 
     ],
-    "identifier": "Respawn",
+    "identifier": "Camera_bounds",
     "padding": 0,
     "pxHei": 16,
-    "pxWid": 32,
-    "relPath": "Icons/Respawn.png",
+    "pxWid": 16,
+    "relPath": "../../../Sprites/camera_bounds.png",
     "savedSelections": [
 
     ],
@@ -28,6 +28,6 @@
     ],
     "tagsSourceEnumUid": null,
     "tileGridSize": 16,
-    "uid": 268
+    "uid": 302
   }
 }
