@@ -1,5 +1,6 @@
 using UnityEngine;
 
+[RequireComponent(typeof(TimeContext))]
 [RequireComponent(typeof(SpriteRenderer))]
 [RequireComponent(typeof(Animator))]
 public class SpriteTrail : MonoBehaviour
@@ -9,14 +10,14 @@ public class SpriteTrail : MonoBehaviour
     private Animator _animator;
 
     private Transform _targetTransform;
-
+    private Vector2 _worldPosition;
 
     public void StartTrail(Vector2 position, Transform targetTransform)
     {
         _spriteRenderer ??= GetComponent<SpriteRenderer>();
         _animator ??= GetComponent<Animator>();
         gameObject.SetActive(true);
-        transform.position = position;
+        _worldPosition = transform.position = position;
         _animator.Play("external_trail");
         _targetTransform = targetTransform;
     }
@@ -30,6 +31,7 @@ public class SpriteTrail : MonoBehaviour
     void Update()
     {
         if (_targetTransform == null) return;
+        transform.position = _worldPosition;
         float horizontalDistance = (_targetTransform.position - transform.position).x;
         _spriteRenderer.flipX = false;
         transform.localScale = Vector3.one;

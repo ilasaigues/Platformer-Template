@@ -23,7 +23,7 @@ public class TimeContext : MonoBehaviour
     };
 
 
-    public Dictionary<Type, List<TimeContextModule>> StoredModules = new();
+    public Dictionary<Component, List<TimeContextModule>> StoredModules = new();
 
     void Start()
     {
@@ -55,11 +55,11 @@ public class TimeContext : MonoBehaviour
             foreach (var component in components)
             {
                 if (component == null) continue;
-                if (!StoredModules.ContainsKey(managableType))
+                if (!StoredModules.ContainsKey(component))
                 {
-                    StoredModules.Add(managableType, new());
+                    StoredModules.Add(component, new());
                 }
-                StoredModules[managableType].Add(ModuleFactoryMap[managableType](component, this));
+                StoredModules[component].Add(ModuleFactoryMap[managableType](component, this));
             }
         }
     }

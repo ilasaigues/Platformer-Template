@@ -1,0 +1,40 @@
+{
+  "Rects": [
+    {
+      "x": 0,
+      "y": 0,
+      "w": 16,
+      "h": 16
+    }
+  ],
+  "Def": {
+    "__cHei": 1,
+    "__cWid": 1,
+    "cachedPixelData": {
+      "opaqueTiles": "1",
+      "averageColors": "fccc"
+    },
+    "customData": [
+
+    ],
+    "embedAtlas": null,
+    "enumTags": [
+
+    ],
+    "identifier": "Breakable",
+    "padding": 0,
+    "pxHei": 16,
+    "pxWid": 16,
+    "relPath": "Icons/breakable.png",
+    "savedSelections": [
+
+    ],
+    "spacing": 0,
+    "tags": [
+      "Terrain"
+    ],
+    "tagsSourceEnumUid": null,
+    "tileGridSize": 16,
+    "uid": 275
+  }
+}
