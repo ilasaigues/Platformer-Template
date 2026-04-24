@@ -14,6 +14,13 @@ public class LdtkLayerAssigner : LDtkPostprocessor
                 child.layer = (int)Mathf.Log(LayerReference.HazardLayer, 2);
                 child.AddComponent<BaseHazard>().Type = BaseHazard.HazardType.DoubleJump;
             }
+            
+            if (layer.name.Contains("Doom"))
+            {
+                GameObject child = layer.transform.GetChild(0).gameObject;
+                child.layer = (int)Mathf.Log(LayerReference.HazardLayer, 2);
+                child.AddComponent<BaseHazard>().Type = BaseHazard.HazardType.Doom;
+            }
         }
     }
 }

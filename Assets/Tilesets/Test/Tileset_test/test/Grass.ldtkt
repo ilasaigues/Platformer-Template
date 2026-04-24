@@ -5,14 +5,20 @@
       "y": 48,
       "w": 16,
       "h": 16
+    },
+    {
+      "x": 208,
+      "y": 48,
+      "w": 16,
+      "h": 16
     }
   ],
   "Def": {
     "__cHei": 4,
-    "__cWid": 14,
+    "__cWid": 15,
     "cachedPixelData": {
-      "opaqueTiles": "11111111111111111111111111111111111111111111111111111111",
-      "averageColors": "f354f243f253f354f354f354f354f354f354f243f253f223f233f233f234f233f233f233f234f354f354f234f234f234f234f233f233f233f234f223f223f234f234f234f234f234f234f233f233f233f233f233f234f234f234f234f234f354f234f253f234f234f223f223f223f223"
+      "opaqueTiles": "111111111111111111111111111111111111111111111111111111100001",
+      "averageColors": "f354f243f253f354f354f354f354f354f354f243f253f223f233f233f223f234f233f233f233f234f354f354f234f234f234f234f233f233f233f223f234f223f223f234f234f234f234f234f234f233f233f233f233f233f223f234f234f234f234f234f354f234f253f234f2342483248324832483f223"
     },
     "customData": [
 
@@ -24,7 +30,7 @@
     "identifier": "Grass",
     "padding": 0,
     "pxHei": 64,
-    "pxWid": 224,
+    "pxWid": 240,
     "relPath": "tileset_template.png",
     "savedSelections": [
 

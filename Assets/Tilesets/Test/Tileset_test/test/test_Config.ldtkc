@@ -18,10 +18,24 @@
             }
         },
         {
+            "_key": "Doom_1",
+            "_asset": {
+                "instanceID": 0
+            }
+        },
+        {
             "_key": "Terrain_1",
             "_asset": {
                 "fileID": 11400000,
                 "guid": "61f80c469f0ae6b41849498d1fd899ac",
+                "type": 2
+            }
+        },
+        {
+            "_key": "Terrain_2",
+            "_asset": {
+                "fileID": 11400000,
+                "guid": "5377d35309705a649941e7c9beac70f8",
                 "type": 2
             }
         }
@@ -69,6 +83,20 @@
         },
         {
             "_key": "Player",
+            "_asset": {
+                "fileID": 7969246784009727573,
+                "guid": "6545e83e3e44ebb4185007dbd0e0ab56",
+                "type": 3
+            }
+        },
+        {
+            "_key": "Key",
+            "_asset": {
+                "instanceID": 0
+            }
+        },
+        {
+            "_key": "Lock",
             "_asset": {
                 "instanceID": 0
             }

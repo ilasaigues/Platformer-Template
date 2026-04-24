@@ -1,0 +1,368 @@
+fileFormatVersion: 2
+guid: d88865891999e144dad00a6c3e9330a9
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: f3268c876daf4890b6af6cd462063137, type: 3}
+  _reimportOnDependencyChange: 1
+  _pixelsPerUnit: 16
+  _overrideTexture: {instanceID: 0}
+  _sprites:
+  - name: Doom_0
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 48
+      width: 16
+      height: 16
+    spriteID: 12c7dc873c424744ca8a3a81aeceadcc
+    spriteOutline:
+    - shape:
+      - {x: 2, y: 2}
+      - {x: -2, y: 2}
+      - {x: -2, y: -2}
+      - {x: 2, y: -2}
+    tessellationDetail: 0
+  - name: Doom_1
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 16
+      y: 48
+      width: 16
+      height: 16
+    spriteID: 0e96993a2bf827f45a0c0e078db22f78
+    spriteOutline:
+    - shape:
+      - {x: 8, y: 2}
+      - {x: -2, y: 2}
+      - {x: -2, y: -2}
+      - {x: 8, y: -2}
+    tessellationDetail: 0
+  - name: Doom_2
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 32
+      y: 48
+      width: 16
+      height: 16
+    spriteID: 2a9ac9d62ced84e4c95229132553159f
+    spriteOutline:
+    - shape:
+      - {x: 8, y: 2}
+      - {x: -8, y: 2}
+      - {x: -8, y: -2}
+      - {x: 8, y: -2}
+    tessellationDetail: 0
+  - name: Doom_3
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 48
+      y: 48
+      width: 16
+      height: 16
+    spriteID: 56eda075cc032d649a640c78e453b575
+    spriteOutline:
+    - shape:
+      - {x: 2, y: 2}
+      - {x: -8, y: 2}
+      - {x: -8, y: -2}
+      - {x: 2, y: -2}
+    tessellationDetail: 0
+  - name: Doom_4
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 32
+      width: 16
+      height: 16
+    spriteID: 72f6bea73e5f9af4c9a4bd420587303b
+    spriteOutline:
+    - shape:
+      - {x: 2, y: -2}
+      - {x: 8, y: -2}
+      - {x: 8, y: 2}
+      - {x: -2, y: 2}
+      - {x: -2, y: -8}
+      - {x: 2, y: -8}
+    tessellationDetail: 0
+  - name: Doom_5
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 16
+      y: 32
+      width: 16
+      height: 16
+    spriteID: db660ac185feaff468dad2f9e0997f23
+    spriteOutline:
+    - shape:
+      - {x: 2, y: 2}
+      - {x: -8, y: 2}
+      - {x: -8, y: -2}
+      - {x: -2, y: -2}
+      - {x: -2, y: -8}
+      - {x: 2, y: -8}
+    tessellationDetail: 0
+  - name: Doom_6
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 32
+      y: 32
+      width: 16
+      height: 16
+    spriteID: bb05277aa95dbc44ca1cc67ee760781d
+    spriteOutline:
+    - shape:
+      - {x: 2, y: -2}
+      - {x: 8, y: -2}
+      - {x: 8, y: 2}
+      - {x: -8, y: 2}
+      - {x: -8, y: -2}
+      - {x: -2, y: -2}
+      - {x: -2, y: -8}
+      - {x: 2, y: -8}
+    tessellationDetail: 0
+  - name: Doom_7
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 48
+      y: 32
+      width: 16
+      height: 16
+    spriteID: 621d34fa4cd388444a97a2b960a971e5
+    spriteOutline:
+    - shape:
+      - {x: 2, y: 2}
+      - {x: -2, y: 2}
+      - {x: -2, y: -8}
+      - {x: 2, y: -8}
+    tessellationDetail: 0
+  - name: Doom_8
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 16
+      width: 16
+      height: 16
+    spriteID: f4ef16f25886736429eda963829fc728
+    spriteOutline:
+    - shape:
+      - {x: 8, y: 2}
+      - {x: 2, y: 2}
+      - {x: 2, y: 8}
+      - {x: -2, y: 8}
+      - {x: -2, y: -2}
+      - {x: 8, y: -2}
+    tessellationDetail: 0
+  - name: Doom_9
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 16
+      y: 16
+      width: 16
+      height: 16
+    spriteID: 9bb51070805880b43ad7e49e68f1119e
+    spriteOutline:
+    - shape:
+      - {x: 2, y: 8}
+      - {x: -2, y: 8}
+      - {x: -2, y: 2}
+      - {x: -8, y: 2}
+      - {x: -8, y: -2}
+      - {x: 2, y: -2}
+    tessellationDetail: 0
+  - name: Doom_10
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 32
+      y: 16
+      width: 16
+      height: 16
+    spriteID: 11d7cb7bffd3ef4478e23ae15a337706
+    spriteOutline:
+    - shape:
+      - {x: 8, y: 2}
+      - {x: 2, y: 2}
+      - {x: 2, y: 8}
+      - {x: -2, y: 8}
+      - {x: -2, y: 2}
+      - {x: -8, y: 2}
+      - {x: -8, y: -2}
+      - {x: 8, y: -2}
+    tessellationDetail: 0
+  - name: Doom_11
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 48
+      y: 16
+      width: 16
+      height: 16
+    spriteID: c1af7d335168b7f4182396e2d701cad9
+    spriteOutline:
+    - shape:
+      - {x: 2, y: 8}
+      - {x: -2, y: 8}
+      - {x: -2, y: -8}
+      - {x: 2, y: -8}
+    tessellationDetail: 0
+  - name: Doom_12
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 16
+      height: 16
+    spriteID: 094a6641ef6ebbd419b76c661c22d1d8
+    spriteOutline:
+    - shape:
+      - {x: 2, y: -2}
+      - {x: 8, y: -2}
+      - {x: 8, y: 2}
+      - {x: 2, y: 2}
+      - {x: 2, y: 8}
+      - {x: -2, y: 8}
+      - {x: -2, y: 2}
+      - {x: -8, y: 2}
+      - {x: -8, y: -2}
+      - {x: -2, y: -2}
+      - {x: -2, y: -8}
+      - {x: 2, y: -8}
+    tessellationDetail: 0
+  - name: Doom_13
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 16
+      y: 0
+      width: 16
+      height: 16
+    spriteID: 9219c88a91ab6dd40b74ee651bc12755
+    spriteOutline:
+    - shape:
+      - {x: 2, y: -2}
+      - {x: 8, y: -2}
+      - {x: 8, y: 2}
+      - {x: 2, y: 2}
+      - {x: 2, y: 8}
+      - {x: -2, y: 8}
+      - {x: -2, y: -8}
+      - {x: 2, y: -8}
+    tessellationDetail: 0
+  - name: Doom_14
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 32
+      y: 0
+      width: 16
+      height: 16
+    spriteID: d036b69e29e7efd498d67f424bdb7076
+    spriteOutline:
+    - shape:
+      - {x: 2, y: 8}
+      - {x: -2, y: 8}
+      - {x: -2, y: 2}
+      - {x: -8, y: 2}
+      - {x: -8, y: -2}
+      - {x: -2, y: -2}
+      - {x: -2, y: -8}
+      - {x: 2, y: -8}
+    tessellationDetail: 0
+  - name: Doom_15
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 48
+      y: 0
+      width: 16
+      height: 16
+    spriteID: f8cffc62904e22044b2488cd7524e5a3
+    spriteOutline:
+    - shape:
+      - {x: 2, y: 8}
+      - {x: -2, y: 8}
+      - {x: -2, y: -2}
+      - {x: 2, y: -2}
+    tessellationDetail: 0
+  _secondaryTextures: []
+  _artifacts: {fileID: -2988177865379244337, guid: d88865891999e144dad00a6c3e9330a9, type: 3}

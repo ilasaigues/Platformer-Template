@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: e2ead0bf2baeed849b95273a3de9ef27
+guid: 7ddb012a8b593ff429206fc64fa10ad4
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -12,7 +12,7 @@ ScriptedImporter:
   _pixelsPerUnit: 16
   _overrideTexture: {instanceID: 0}
   _sprites:
-  - name: Spikes_0
+  - name: Thorns_0
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -24,7 +24,7 @@ ScriptedImporter:
       y: 48
       width: 16
       height: 16
-    spriteID: 12e5fe8d8c55f5c4d980fe291d31e651
+    spriteID: 5042a05b6aa36ab4398380e6c7c814d9
     spriteOutline:
     - shape:
       - {x: 2, y: 2}
@@ -32,7 +32,7 @@ ScriptedImporter:
       - {x: -2, y: -2}
       - {x: 2, y: -2}
     tessellationDetail: 0
-  - name: Spikes_1
+  - name: Thorns_1
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -44,7 +44,7 @@ ScriptedImporter:
       y: 48
       width: 16
       height: 16
-    spriteID: 9b653a701510f114e80a0c4d53772148
+    spriteID: 6f778ee6f27445e4ba8ed85f462f8a98
     spriteOutline:
     - shape:
       - {x: 8, y: 2}
@@ -52,7 +52,7 @@ ScriptedImporter:
       - {x: -2, y: -2}
       - {x: 8, y: -2}
     tessellationDetail: 0
-  - name: Spikes_2
+  - name: Thorns_2
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -64,7 +64,7 @@ ScriptedImporter:
       y: 48
       width: 16
       height: 16
-    spriteID: 83b7506d26e1c1b4690b093824acbe46
+    spriteID: 89c4d0e58d037c242953d89341548cc7
     spriteOutline:
     - shape:
       - {x: 8, y: 2}
@@ -72,7 +72,7 @@ ScriptedImporter:
       - {x: -8, y: -2}
       - {x: 8, y: -2}
     tessellationDetail: 0
-  - name: Spikes_3
+  - name: Thorns_3
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -84,7 +84,7 @@ ScriptedImporter:
       y: 48
       width: 16
       height: 16
-    spriteID: 7b7862ab2a4765349852dca320daf535
+    spriteID: c974f9a8fceaa714ba11d9aee99fcc2d
     spriteOutline:
     - shape:
       - {x: 2, y: 2}
@@ -92,7 +92,7 @@ ScriptedImporter:
       - {x: -8, y: -2}
       - {x: 2, y: -2}
     tessellationDetail: 0
-  - name: Spikes_4
+  - name: Thorns_4
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -104,7 +104,7 @@ ScriptedImporter:
       y: 32
       width: 16
       height: 16
-    spriteID: 6cec526853bd8ac4398cfa30185d6e9f
+    spriteID: b075590a45db4244bbb71dff814308da
     spriteOutline:
     - shape:
       - {x: 2, y: -2}
@@ -114,7 +114,7 @@ ScriptedImporter:
       - {x: -2, y: -8}
       - {x: 2, y: -8}
     tessellationDetail: 0
-  - name: Spikes_5
+  - name: Thorns_5
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -126,7 +126,7 @@ ScriptedImporter:
       y: 32
       width: 16
       height: 16
-    spriteID: 3b81e7946dc82ef45be4f92126ea0318
+    spriteID: 2c6b22a35b9ad0545b5909afde364379
     spriteOutline:
     - shape:
       - {x: 2, y: 2}
@@ -136,7 +136,7 @@ ScriptedImporter:
       - {x: -2, y: -8}
       - {x: 2, y: -8}
     tessellationDetail: 0
-  - name: Spikes_6
+  - name: Thorns_6
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -148,7 +148,7 @@ ScriptedImporter:
       y: 32
       width: 16
       height: 16
-    spriteID: c687076b4a36b1244b48eed3cf472194
+    spriteID: 63667c1c08f546049a1dd9c41fc9eb3b
     spriteOutline:
     - shape:
       - {x: 2, y: -2}
@@ -160,7 +160,7 @@ ScriptedImporter:
       - {x: -2, y: -8}
       - {x: 2, y: -8}
     tessellationDetail: 0
-  - name: Spikes_7
+  - name: Thorns_7
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -172,7 +172,7 @@ ScriptedImporter:
       y: 32
       width: 16
       height: 16
-    spriteID: 57abb7953b540e048a9d1acefd25436f
+    spriteID: fb0e4d5a70a6ee24ca5ae8a5819ab5d6
     spriteOutline:
     - shape:
       - {x: 2, y: 2}
@@ -180,7 +180,7 @@ ScriptedImporter:
       - {x: -2, y: -8}
       - {x: 2, y: -8}
     tessellationDetail: 0
-  - name: Spikes_8
+  - name: Thorns_8
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -192,7 +192,7 @@ ScriptedImporter:
       y: 16
       width: 16
       height: 16
-    spriteID: a890882677a9fc3419d37f13d474d188
+    spriteID: 18940531273c84047ba43f90b42e6a6e
     spriteOutline:
     - shape:
       - {x: 8, y: 2}
@@ -202,7 +202,7 @@ ScriptedImporter:
       - {x: -2, y: -2}
       - {x: 8, y: -2}
     tessellationDetail: 0
-  - name: Spikes_9
+  - name: Thorns_9
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -214,7 +214,7 @@ ScriptedImporter:
       y: 16
       width: 16
       height: 16
-    spriteID: 1286707e6c85d844599be6d00f892381
+    spriteID: b7c6b1e79d86c114b8c31c5299c25a24
     spriteOutline:
     - shape:
       - {x: 2, y: 8}
@@ -224,7 +224,7 @@ ScriptedImporter:
       - {x: -8, y: -2}
       - {x: 2, y: -2}
     tessellationDetail: 0
-  - name: Spikes_10
+  - name: Thorns_10
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -236,7 +236,7 @@ ScriptedImporter:
       y: 16
       width: 16
       height: 16
-    spriteID: 7cd70703fdb5581439df65bf285e30c3
+    spriteID: c9a9389dae56f4a4fa444690086cf2a2
     spriteOutline:
     - shape:
       - {x: 8, y: 2}
@@ -248,7 +248,7 @@ ScriptedImporter:
       - {x: -8, y: -2}
       - {x: 8, y: -2}
     tessellationDetail: 0
-  - name: Spikes_11
+  - name: Thorns_11
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -260,7 +260,7 @@ ScriptedImporter:
       y: 16
       width: 16
       height: 16
-    spriteID: b20337a0c6cc50f40b6cc4e36579fdf7
+    spriteID: 06a90370b81400d43a568eed7f2e0008
     spriteOutline:
     - shape:
       - {x: 2, y: 8}
@@ -268,7 +268,7 @@ ScriptedImporter:
       - {x: -2, y: -8}
       - {x: 2, y: -8}
     tessellationDetail: 0
-  - name: Spikes_12
+  - name: Thorns_12
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -280,7 +280,7 @@ ScriptedImporter:
       y: 0
       width: 16
       height: 16
-    spriteID: 1ab5d5305a0c18049a8e058e91dae01d
+    spriteID: 598378b974cc4af4ab6cb3bb6f538342
     spriteOutline:
     - shape:
       - {x: 2, y: -2}
@@ -296,7 +296,7 @@ ScriptedImporter:
       - {x: -2, y: -8}
       - {x: 2, y: -8}
     tessellationDetail: 0
-  - name: Spikes_13
+  - name: Thorns_13
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -308,7 +308,7 @@ ScriptedImporter:
       y: 0
       width: 16
       height: 16
-    spriteID: c6acccb3e3cb3534fad5ae5f4972ef93
+    spriteID: d2c3cd68f286270479ee528419f55918
     spriteOutline:
     - shape:
       - {x: 2, y: -2}
@@ -320,7 +320,7 @@ ScriptedImporter:
       - {x: -2, y: -8}
       - {x: 2, y: -8}
     tessellationDetail: 0
-  - name: Spikes_14
+  - name: Thorns_14
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -332,7 +332,7 @@ ScriptedImporter:
       y: 0
       width: 16
       height: 16
-    spriteID: cabe426916a2181438cba0980a8448b0
+    spriteID: 3a35d17727762864094844a91d31aca3
     spriteOutline:
     - shape:
       - {x: 2, y: 8}
@@ -344,7 +344,7 @@ ScriptedImporter:
       - {x: -2, y: -8}
       - {x: 2, y: -8}
     tessellationDetail: 0
-  - name: Spikes_15
+  - name: Thorns_15
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -356,7 +356,7 @@ ScriptedImporter:
       y: 0
       width: 16
       height: 16
-    spriteID: d5015d8ebf5b5f24395a759405858cb4
+    spriteID: 44baf611e1e3a6b4384c37653ed2ee23
     spriteOutline:
     - shape:
       - {x: 2, y: 8}
@@ -365,4 +365,4 @@ ScriptedImporter:
       - {x: 2, y: -2}
     tessellationDetail: 0
   _secondaryTextures: []
-  _artifacts: {fileID: -2988177865379244337, guid: e2ead0bf2baeed849b95273a3de9ef27, type: 3}
+  _artifacts: {fileID: -2988177865379244337, guid: 7ddb012a8b593ff429206fc64fa10ad4, type: 3}
