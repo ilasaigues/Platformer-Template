@@ -43,7 +43,7 @@ public class PlayerRockBehaviour : BasePlayerBehaviour, IPlayerAbilityBehaviour
         {
             PlayerController.MovementController.SetVelocity(PlayerController.MovementController.Velocity.x * 0.5f, 1);
         }
-        VFXSpawner.Instance.PlayFX(VFXSpawner.Instance.VFXList.ShieldEnd, PlayerController.transform.position + Vector3.up * 4 / 16f, -2, false);
+        PlayerController.VFXSpawner.PlayFX(PlayerController.VFXSpawner.VFXList.ShieldEnd, PlayerController.transform.position + Vector3.up * 4 / 16f, -2, false);
         PlayerController.MovementController.VerticalTerminalVelocity = PlayerController.PlayerStats.fallVelocityCap;
 
     }

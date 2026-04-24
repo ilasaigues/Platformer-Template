@@ -1,6 +1,7 @@
 //namespace DentedPixel{
 using System;
 using UnityEngine;
+using Zenject;
 
 /**
 * Internal Representation of a Tween<br>

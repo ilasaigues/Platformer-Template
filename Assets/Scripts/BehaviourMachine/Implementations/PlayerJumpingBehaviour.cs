@@ -46,19 +46,19 @@ public class PlayerJumpingBehaviour : PlayerAirBehaviour
         PlayerController.Jumps = Mathf.Max(PlayerController.Jumps, 1);
         PlayAnim(PlayerController.PlayerAnimator.AnimationList.Jump, true);
         var flipX = PlayerController.MovementController.LastHorizontalDirection == -1;
-        
-        if(PlayerController.MovementController.Velocity.x != 0)
+
+        if (PlayerController.MovementController.Velocity.x != 0)
         {
             Vector2 spawnPosition = PlayerController.transform.position + new Vector3(
-            -4.ToPixels()*PlayerController.MovementController.LastHorizontalDirection,8.ToPixels(),0);
-            VFXSpawner.Instance.PlayFX(VFXSpawner.Instance.VFXList.JumpParticles_H,spawnPosition,0,flipX);
+            -4.ToPixels() * PlayerController.MovementController.LastHorizontalDirection, 8.ToPixels(), 0);
+            PlayerController.VFXSpawner.PlayFX(PlayerController.VFXSpawner.VFXList.JumpParticles_H, spawnPosition, 0, flipX);
         }
         else
         {
-            Vector2 spawnPosition = PlayerController.transform.position + new Vector3(0,8.ToPixels(),0);
-            VFXSpawner.Instance.PlayFX(VFXSpawner.Instance.VFXList.JumpParticles_V,spawnPosition,0,flipX);
+            Vector2 spawnPosition = PlayerController.transform.position + new Vector3(0, 8.ToPixels(), 0);
+            PlayerController.VFXSpawner.PlayFX(PlayerController.VFXSpawner.VFXList.JumpParticles_V, spawnPosition, 0, flipX);
         }
-        
+
     }
 
     private void JumpReleased()

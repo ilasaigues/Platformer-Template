@@ -1,11 +1,9 @@
 using UnityEngine;
 
-[RequireComponent(typeof(TimeContext))]
 [RequireComponent(typeof(SpriteRenderer))]
 [RequireComponent(typeof(Animator))]
 public class SpriteTrail : MonoBehaviour
 {
-
     private SpriteRenderer _spriteRenderer;
     private Animator _animator;
 

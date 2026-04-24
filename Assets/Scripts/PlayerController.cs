@@ -2,26 +2,38 @@ using System.Collections.Generic;
 using System.Linq;
 using Unity.Cinemachine;
 using UnityEngine;
-[RequireComponent(typeof(TimeContext))]
+using Zenject;
 [RequireComponent(typeof(CollisionController))]
 [RequireComponent(typeof(MovementController))]
 [RequireComponent(typeof(BehaviourMachine))]
 [RequireComponent(typeof(PlayerAnimator))]
 public class PlayerController : MonoBehaviour
 {
+    #region Injected
+    [Inject]
+    [HideInInspector]
+    public GameInputHandler InputHandler;
+    [Inject]
+    [HideInInspector]
+    public TimeContext TimeContext;
+    [Inject]
+    [HideInInspector]
+    public VFXSpawner VFXSpawner;
+
+    #endregion
+
+
     public PlayerStats PlayerStats;
     public AbilityStats AbilityStats;
     public CollisionController CollisionController;
     public MovementController MovementController;
     public PlayerAnimator PlayerAnimator;
-    public GameInputHandler InputHandler;
 
     public SpriteTrail ExternalSpriteTrail;
 
     public BehaviourMachine BehaviourMachine;
 
     public ParticleSystem DashParticles;
-    public TimeContext TimeContext;
 
     public Vector2 LastDirectionInput => InputHandler.MoveAxis.LastValue;
     public Vector2 LastHorizontalDirection { get; private set; }
@@ -47,7 +59,7 @@ public class PlayerController : MonoBehaviour
 
     void Start()
     {
-        TimeContext = GetComponent<TimeContext>();
+        TimeContext.CreateContextModules(gameObject);
         SpriteRenderer = gameObject.GetOrAddComponent<SpriteRenderer>();
         CollisionController = gameObject.GetOrAddComponent<CollisionController>();
         MovementController = gameObject.GetOrAddComponent<MovementController>();
@@ -257,7 +269,7 @@ public class PlayerController : MonoBehaviour
     {
         var offset = spawnData.Offset;
         offset.x *= FacingDirection;
-        VFXSpawner.Instance.PlayFX(spawnData.VFXClip, transform.position + offset, spawnData.Order, SpriteRenderer.flipX);
+        VFXSpawner.PlayFX(spawnData.VFXClip, transform.position + offset, spawnData.Order, SpriteRenderer.flipX);
     }
 
 }

@@ -3,12 +3,13 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
-[RequireComponent(typeof(TimeContext))]
+using Zenject;
 [RequireComponent(typeof(Rigidbody2D))]
 [RequireComponent(typeof(BoxCollider2D))]
 public class ObjectMovementComponent : MonoBehaviour
 {
     public Vector2 Velocity { get; private set; }
+    [Inject]
     private TimeContext _timeContext;
 
     private Rigidbody2D _rb;
@@ -22,11 +23,11 @@ public class ObjectMovementComponent : MonoBehaviour
 
     void Start()
     {
-        _timeContext = GetComponent<TimeContext>();
         _rb = GetComponent<Rigidbody2D>();
         _rb.bodyType = RigidbodyType2D.Kinematic;
         _rb.constraints = RigidbodyConstraints2D.FreezeRotation;
         _collider = GetComponent<BoxCollider2D>();
+        _timeContext.CreateContextModules(gameObject);
     }
 
     void FixedUpdate()

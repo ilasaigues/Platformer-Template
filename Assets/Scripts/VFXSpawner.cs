@@ -1,25 +1,13 @@
 using System;
 using UnityEngine;
+using Zenject;
 
 public class VFXSpawner : MonoBehaviour
 {
 
-    public static VFXSpawner Instance
-    {
-        get
-        {
-            if (_instance == null)
-            {
-                _instance = FindAnyObjectByType<VFXSpawner>();
-                DontDestroyOnLoad(_instance);
-            }
-            return _instance;
-        }
-    }
-    private static VFXSpawner _instance;
-
     public VFXList VFXList;
-
+    [Inject]
+    VFXObject.Factory VFXFactory;
     public VFXObject VFXObjectPrefab;
 
     // Create pool
@@ -32,7 +20,7 @@ public class VFXSpawner : MonoBehaviour
         VFXPool = new(
             () =>
             {
-                return Instantiate(VFXObjectPrefab);
+                return VFXFactory.Create();
             },
             preparing =>
             {
@@ -55,14 +43,12 @@ public class VFXSpawner : MonoBehaviour
         var vfxObject = VFXPool.GetElement();
 
         // populate with variables, set position and play
-        vfxObject.SetDataAndPlay(animClip, position,order, flipX);
+        vfxObject.SetDataAndPlay(animClip, position, order, flipX);
     }
 
     private void OnVFXAnimationEnd(VFXObject released)
     {
         VFXPool.Release(released);
     }
-
-
 
 }

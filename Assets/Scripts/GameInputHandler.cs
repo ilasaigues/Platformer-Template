@@ -4,7 +4,7 @@ using System.Linq;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
-[RequireComponent(typeof(TimeContext))]
+using Zenject;
 public class GameInputHandler : MonoBehaviour, GameInputs.IPlayerActions
 {
     // don't listen to input events while paused
@@ -17,6 +17,7 @@ public class GameInputHandler : MonoBehaviour, GameInputs.IPlayerActions
 
     List<InputButtonWrapper> _buttons = new();
     public InputAxisWrapper MoveAxis;
+    [Inject]
     TimeContext _timeContext;
 
     private Dictionary<Action<InputActionPhase>, InputActionPhase> _pauseQueue = new();
@@ -24,11 +25,15 @@ public class GameInputHandler : MonoBehaviour, GameInputs.IPlayerActions
 
     void Awake()
     {
-        _timeContext = GetComponent<TimeContext>();
         MoveAxis = new InputAxisWrapper();
         JumpButton = GetNewButton();
         RockButton = GetNewButton();
         DashButton = GetNewButton();
+    }
+
+    void Start()
+    {
+        _timeContext.CreateContextModules(gameObject);
     }
 
 

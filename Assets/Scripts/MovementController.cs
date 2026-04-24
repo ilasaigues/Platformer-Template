@@ -4,7 +4,7 @@ using System.Linq;
 using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
-[RequireComponent(typeof(TimeContext))]
+using Zenject;
 [RequireComponent(typeof(Rigidbody2D))]
 [RequireComponent(typeof(CollisionController))]
 [RequireComponent(typeof(PlayerController))]
@@ -25,6 +25,7 @@ public class MovementController : MonoBehaviour
 
     public bool IgnoreOneWay = false;
 
+    [Inject]
     private TimeContext _timeContext;
     private Rigidbody2D _rb;
     private CollisionController _collisonController;
@@ -41,13 +42,17 @@ public class MovementController : MonoBehaviour
     void Awake()
     {
         CanBeSqueezed = true;
-        _timeContext = GetComponent<TimeContext>();
         _rb = gameObject.GetOrAddComponent<Rigidbody2D>();
         _collisonController = gameObject.GetOrAddComponent<CollisionController>();
         _rb.bodyType = RigidbodyType2D.Kinematic;
         _rb.constraints = RigidbodyConstraints2D.FreezeRotation;
         _playerController = gameObject.GetOrAddComponent<PlayerController>();
         VerticalTerminalVelocity = _playerController.PlayerStats.fallVelocityCap;
+    }
+
+    void Start()
+    {
+        _timeContext.CreateContextModules(gameObject);
     }
 
     void FixedUpdate()

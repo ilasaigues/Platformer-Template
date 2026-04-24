@@ -25,11 +25,6 @@ public class TimeContext : MonoBehaviour
 
     public Dictionary<Component, List<TimeContextModule>> StoredModules = new();
 
-    void Start()
-    {
-        CreateContextModules();
-    }
-
     void OnDestroy()
     {
         foreach (var moduleList in StoredModules.Values)
@@ -46,12 +41,11 @@ public class TimeContext : MonoBehaviour
         Time += DeltaTime;
     }
 
-    // automatic assignment of wrapper classes to child components that require time handling
-    public void CreateContextModules()
+    public void CreateContextModules(GameObject targetObject)
     {
         foreach (var managableType in ModuleFactoryMap.Keys)
         {
-            var components = GetComponentsInChildren(managableType, true);
+            var components = targetObject.GetComponentsInChildren(managableType, true);
             foreach (var component in components)
             {
                 if (component == null) continue;

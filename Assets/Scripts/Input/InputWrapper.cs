@@ -11,8 +11,6 @@ public class InputButtonWrapper
 
     public float TimeSinceLastPressed => _timeContext.Time - TimeLastPressed;
 
-
-
     public event Action OnPress = delegate { };
     public event Action OnRelease = delegate { };
 

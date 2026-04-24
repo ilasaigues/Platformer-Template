@@ -1,7 +1,7 @@
 using UnityEngine;
 using LDtkUnity;
+using Zenject;
 
-[RequireComponent(typeof(TimeContext))]
 [RequireComponent(typeof(Animator))]
 public class AutoSpikesHazard : BaseHazard, ILDtkImportedFields
 {
@@ -14,6 +14,7 @@ public class AutoSpikesHazard : BaseHazard, ILDtkImportedFields
 
     private float _innerTimer;
     private Animator _animator;
+    [Inject]
     private TimeContext _timeContext;
 
     private float _timer => _innerTimer - TimeOffset;
@@ -21,7 +22,7 @@ public class AutoSpikesHazard : BaseHazard, ILDtkImportedFields
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        _timeContext = GetComponent<TimeContext>();
+        _timeContext.CreateContextModules(gameObject);
         _animator = GetComponent<Animator>();
     }
 

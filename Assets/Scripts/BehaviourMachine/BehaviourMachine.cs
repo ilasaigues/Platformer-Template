@@ -1,22 +1,22 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
-[RequireComponent(typeof(TimeContext))]
+using Zenject;
 
 public class BehaviourMachine : MonoBehaviour
 {
 
     Dictionary<Type, BaseBehaviour> _allBehaviours = new();
+    [Inject]
     private TimeContext _timeContext;
 
     BaseBehaviour _currentBehaviour;
     public string GetBehaviourName => _currentBehaviour?.GetType().Name;
     public Type GetBehaviourType => _currentBehaviour?.GetType();
 
-
     void Start()
     {
-        _timeContext = GetComponent<TimeContext>();
+        _timeContext.CreateContextModules(gameObject);
 
     }
 
