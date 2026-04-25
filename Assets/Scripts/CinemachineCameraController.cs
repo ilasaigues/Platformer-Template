@@ -21,6 +21,7 @@ public class CinemachineCameraController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        _targetMovementController ??= FindFirstObjectByType<PlayerController>().MovementController;
         var deadzoneRect = _posComposer.Composition.DeadZoneRect;
         if (_targetMovementController.Grounded)
         {

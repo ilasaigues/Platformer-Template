@@ -33,6 +33,8 @@ public abstract class BaseScriptableValue<T> : ScriptableObject, IEditorResettab
     [TextArea(minLines: 3, maxLines: 5)]
     public string EditorDescription;
 
+    public bool ChangedInPlaymode => !_editorSavedValue.Equals(_value);
+
     private T _editorSavedValue;
     public void OnEnterPlaymode()
     {

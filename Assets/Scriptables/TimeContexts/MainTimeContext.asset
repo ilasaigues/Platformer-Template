@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: MainTimeContext
   m_EditorClassIdentifier: Assembly-CSharp::FloatValue
   _value: 1
-  EditorDescription: 
+  EditorDescription: ' '
