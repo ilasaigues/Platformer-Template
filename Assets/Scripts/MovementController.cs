@@ -123,16 +123,25 @@ public class MovementController : MonoBehaviour
 
         // One Way Correction
         var footBounds = _collisonController.FootCollider.bounds;
-        var hitList = new List<RaycastHit2D>();
-        var oneWayCorrection = BoxCaster2D.CollideAndSlideVel(footBounds.center + (Vector3)correctedHorizontal, footBounds, originalVertical, LayerReference.OneWayPlatformLayer, hitList);
-        if (originalVertical.y == 0) // edge case for foot check
+        if (IgnoreOneWay)
         {
-            hitList = BoxCaster2D.GetHits(footBounds.center + (Vector3)correctedHorizontal, footBounds, Vector2.down * _footColliderBounds.size.y, LayerReference.OneWayPlatformLayer);
+            OnOneWayPlatform = false;
+            if (BoxCaster2D.GetHits(footBounds.center + (Vector3)correctedHorizontal, footBounds, Vector2.down * _footColliderBounds.size.y, LayerReference.OneWayPlatformLayer).Count == 0)
+            {
+                IgnoreOneWay = false;
+            }
         }
-        var hitPlatformFromAbove = hitList.Count != 0 && hitList.Any(hit => hit.normal.y > 0.5f);
-        if (hitPlatformFromAbove)
+        else
         {
-            if (!IgnoreOneWay)
+            var hitList = new List<RaycastHit2D>();
+            var verticalVector = originalVertical;
+            if (originalVertical.y == 0) // edge case for foot check
+            {
+                verticalVector = Vector2.down * _footColliderBounds.size.y;
+            }
+            var oneWayCorrection = BoxCaster2D.CollideAndSlideVel(footBounds.center + (Vector3)correctedHorizontal, footBounds, verticalVector, LayerReference.OneWayPlatformLayer, hitList);
+            var hitPlatform = hitList.Count != 0 && hitList.Any(hit => hit.normal.y > 0.5f);
+            if (hitPlatform)
             {
                 OnOneWayPlatform = true;
                 if (hitList.Any(hit => hit.distance * hit.fraction == 0))
@@ -148,13 +157,11 @@ public class MovementController : MonoBehaviour
                 }
                 correctedVertical = oneWayCorrection;
             }
+            else
+            {
+                OnOneWayPlatform = false;
+            }
         }
-        else
-        {
-            IgnoreOneWay = false;
-            OnOneWayPlatform = false;
-        }
-
 
 
         var correctedVelocity = correctedHorizontal + correctedVertical;
