@@ -22,7 +22,7 @@ public class PlayerDyingBehaviour : BasePlayerBehaviour
         PlayerController.CollisionController.MainCollider.enabled = false;
         PlayAnim(PlayerController.PlayerAnimator.AnimationList.Death);
         PlayerController.MovementController.SetVelocity(Vector2.zero);
-        Vector2 particlePosition = PlayerController.CurrentRespawnTrigger.RespawnPosition + Vector3.up * 8.ToPixels();
+        Vector2 particlePosition = PlayerController.GameManager.CurrentRespawnTrigger.RespawnPosition + Vector3.up * 8.ToPixels();
         PlayerController.VFXSpawner.PlayFX(PlayerController.VFXSpawner.VFXList.Respawn_Particles, particlePosition, 1, false);
     }
 
@@ -46,7 +46,7 @@ public class PlayerDyingBehaviour : BasePlayerBehaviour
             _startedMovementTransition = true;
             LeanTween.move(
                 PlayerController.gameObject,
-                PlayerController.CurrentRespawnTrigger.RespawnPosition,
+                PlayerController.GameManager.CurrentRespawnTrigger.RespawnPosition,
                 PlayerController.PlayerStats.DeathDuration * .5f)
                 .setEaseOutQuad().setDelay(PlayerController.PlayerStats.DeathDuration * .75f)
                 .setTimeContext(PlayerController.TimeContext);

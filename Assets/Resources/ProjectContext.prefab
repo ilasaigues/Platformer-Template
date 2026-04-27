@@ -46,6 +46,54 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::TimeContext
   ContextTimescale: {fileID: 11400000, guid: 6494853fed99e334aa868356109ae52a, type: 2}
   Time: 0
+--- !u!1 &4459354225445899056
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2469710135976987115}
+  - component: {fileID: 5310261503067767387}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2469710135976987115
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4459354225445899056}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3179376777927561256}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5310261503067767387
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4459354225445899056}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 523a1777e963f5b49a3cc35628d60ddf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GameManager
+  RemainingLives: 0
+  HardRespawnTrigger: {fileID: 0}
+  CurrentRespawnTrigger: {fileID: 0}
+  PlayerController: {fileID: 0}
 --- !u!1 &8825328148880640813
 GameObject:
   m_ObjectHideFlags: 0
@@ -80,6 +128,7 @@ Transform:
   - {fileID: 8419707068407787414}
   - {fileID: 2195697373362869916}
   - {fileID: 1143351098667167084}
+  - {fileID: 2469710135976987115}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &3160197232609550550
@@ -128,6 +177,7 @@ MonoBehaviour:
   TimeContext: {fileID: 761980781647471411}
   VFXSpawner: {fileID: 5219864693844699019}
   GameInputHandler: {fileID: 8666409216905936004}
+  GameManager: {fileID: 5310261503067767387}
 --- !u!1001 &1136329263076141245
 PrefabInstance:
   m_ObjectHideFlags: 0

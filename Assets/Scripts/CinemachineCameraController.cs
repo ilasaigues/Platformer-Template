@@ -1,5 +1,6 @@
 using Unity.Cinemachine;
 using UnityEngine;
+using Zenject;
 
 [RequireComponent(typeof(CinemachinePositionComposer))]
 public class CinemachineCameraController : MonoBehaviour
@@ -11,17 +12,20 @@ public class CinemachineCameraController : MonoBehaviour
 
     public Vector2 DeadzoneSize;
 
+    [Inject]
+    GameManager _gameManager;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         _posComposer = GetComponent<CinemachinePositionComposer>();
+        _targetMovementController ??= _gameManager.PlayerController.MovementController;
+        GetComponent<CinemachineCamera>().Target.TrackingTarget = _targetMovementController.transform;
     }
 
     // Update is called once per frame
     void Update()
     {
-        _targetMovementController ??= FindFirstObjectByType<PlayerController>().MovementController;
         var deadzoneRect = _posComposer.Composition.DeadZoneRect;
         if (_targetMovementController.Grounded)
         {

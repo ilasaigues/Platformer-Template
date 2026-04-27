@@ -20,6 +20,16 @@ public class PlayerController : MonoBehaviour
     [HideInInspector]
     public VFXSpawner VFXSpawner;
 
+    public GameManager GameManager;
+
+    [Inject]
+    public void Constructor(GameManager gameManager)
+    {
+        GameManager = gameManager;
+        GameManager.PlayerController = this;
+    }
+
+
     #endregion
 
 
@@ -51,9 +61,7 @@ public class PlayerController : MonoBehaviour
     public CinemachinePositionComposer CameraComposer;
     public PlayerAbilityQueue PlayerAbilityQueue = new();
 
-    public RespawnTrigger HardRespawnTrigger { get; private set; }
 
-    public RespawnTrigger CurrentRespawnTrigger { get; private set; }
 
     public int RemainingLives { get; private set; }
 
@@ -165,14 +173,17 @@ public class PlayerController : MonoBehaviour
 
     public void SetRespawn(RespawnTrigger respawn, RespawnType respawnType)
     {
-        switch (respawnType)
+        if (GameManager != null)
         {
-            case RespawnType.Soft:
-                CurrentRespawnTrigger = respawn;
-                return;
-            case RespawnType.Hard:
-                HardRespawnTrigger = respawn;
-                return;
+            switch (respawnType)
+            {
+                case RespawnType.Soft:
+                    GameManager.CurrentRespawnTrigger = respawn;
+                    return;
+                case RespawnType.Hard:
+                    GameManager.HardRespawnTrigger = respawn;
+                    return;
+            }
         }
     }
 
@@ -246,10 +257,10 @@ public class PlayerController : MonoBehaviour
 
     public void Respawn()
     {
-        if (CurrentRespawnTrigger != null)
+        if (GameManager?.CurrentRespawnTrigger != null)
         {
             IsDead = false;
-            var startPos = CurrentRespawnTrigger.RespawnPosition;
+            var startPos = GameManager.CurrentRespawnTrigger.RespawnPosition;
             Debug.DrawRay(startPos, Vector2.down * 10, Color.red, 1);
             var groundOffset = PlayerStats.DefaultColliderSize.y / 2;
             var hit = Physics2D.Raycast(startPos, Vector2.down, 10, LayerReference.TerrainLayer);
