@@ -121,24 +121,27 @@ public class MovementController : MonoBehaviour
             }
         }*/
 
-
         // One Way Correction
         var footBounds = _collisonController.FootCollider.bounds;
         var hitList = new List<RaycastHit2D>();
         var oneWayCorrection = BoxCaster2D.CollideAndSlideVel(footBounds.center + (Vector3)correctedHorizontal, footBounds, originalVertical, LayerReference.OneWayPlatformLayer, hitList);
-        if (oneWayCorrection != originalVertical) // collided against one-way platform
+        if (originalVertical.y == 0) // edge case for foot check
+        {
+            hitList = BoxCaster2D.GetHits(footBounds.center + (Vector3)correctedHorizontal, footBounds, Vector2.down * _footColliderBounds.size.y, LayerReference.OneWayPlatformLayer);
+        }
+        var hitPlatformFromAbove = hitList.Count != 0 && hitList.Any(hit => hit.normal.y > 0.5f);
+        if (hitPlatformFromAbove)
         {
             if (!IgnoreOneWay)
             {
                 OnOneWayPlatform = true;
-
                 if (hitList.Any(hit => hit.distance * hit.fraction == 0))
                 {
-                    if (correctedVertical.y < 0)
+                    if (correctedVertical.y < 0) // going down, force offset up
                     {
                         ForceOffset(Vector2.up * _footColliderBounds.size.y);
                     }
-                    else if (correctedVertical.y > 0)
+                    else if (correctedVertical.y > 0) // going up, add a little bit of vertical movement
                     {
                         oneWayCorrection += Vector2.up * _footColliderBounds.size.y;
                     }
@@ -159,7 +162,7 @@ public class MovementController : MonoBehaviour
 
         var groundHits = BoxCaster2D.GetHits(mainBounds.center + (Vector3)correctedVelocity, mainBounds, Vector2.down * _timeContext.FixedDeltaTime, LayerReference.TerrainAndBoulder);
         groundHits = groundHits.Where(h => Vector2.Angle(h.normal, Vector2.up) == 0).ToList();
-        var hitGround = groundHits.Any(h => h);
+        var hitGround = groundHits.Any(h => h) || OnOneWayPlatform;
         // todo: check if platform hit
         if (Grounded)
         {
@@ -167,7 +170,6 @@ public class MovementController : MonoBehaviour
             {
                 TimeLeftGround = _timeContext.Time;
                 Grounded = false;
-                //SetParentObject(null);
             }
         }
         else
@@ -175,7 +177,6 @@ public class MovementController : MonoBehaviour
             if (hitGround)
             {
                 Grounded = true;
-                //SetParentObject(groundHits.Select(h => h.collider.GetComponent<ObjectMovementComponent>()).First());
             }
         }
 
@@ -184,8 +185,6 @@ public class MovementController : MonoBehaviour
         {
             LastHorizontalDirection = correctedVelocity.x.Sign0();
         }
-
-        //CheckParenting();
 
         Velocity = correctedVelocity / _timeContext.FixedDeltaTime;
 
