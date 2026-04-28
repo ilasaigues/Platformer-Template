@@ -182,6 +182,7 @@ public class PlayerController : MonoBehaviour
                     return;
                 case RespawnType.Hard:
                     GameManager.HardRespawnTrigger = respawn;
+                    GameManager.CurrentRespawnTrigger ??= respawn;
                     return;
             }
         }

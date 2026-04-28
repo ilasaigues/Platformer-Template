@@ -89,6 +89,7 @@ public class MovementController : MonoBehaviour
                 ForceOffset(ledgeCorrection);
                 ledgeCorrected = true;
                 correctedHorizontal = originalHorizontal;
+                horizontalHits.ForEach(hit => Debug.DrawRay(hit.point, hit.normal, Color.blue, 1));
             }
         }
 
@@ -106,10 +107,12 @@ public class MovementController : MonoBehaviour
                 ForceOffset(ceilingCorrection);
                 ledgeCorrected = true;
                 correctedVertical = originalVertical;
+                verticalHits.ForEach(hit => Debug.DrawRay(hit.point, hit.normal, Color.red, 1));
             }
         }
-        horizontalHits.ForEach(hit => Debug.DrawRay(hit.point, hit.normal, Color.blue, 1));
-        verticalHits.ForEach(hit => Debug.DrawRay(hit.point, hit.normal, Color.red, 1));
+        //horizontalHits.ForEach(hit => Debug.DrawRay(hit.point, hit.normal, Color.blue, 1));
+        //verticalHits.ForEach(hit => Debug.DrawRay(hit.point, hit.normal, Color.red, 1));
+
         /*foreach (var hit in verticalHits.Concat(horizontalHits))
         {
             if (hit && hit.collider.GetComponent<ObjectMovementComponent>() is ObjectMovementComponent movingPlatform)
@@ -203,7 +206,7 @@ public class MovementController : MonoBehaviour
         transform.localPosition = transform.localPosition + (Vector3)correctedVelocity;
     }
 
-    void CheckAndFixOverlap()
+    public void CheckAndFixOverlap()
     {
         var mainBounds = _playerController.CollisionController.MainCollider.bounds;
         List<RaycastHit2D> hits = BoxCaster2D.GetHits(mainBounds.center, mainBounds, Vector2.zero, LayerReference.TerrainLayer);
@@ -218,22 +221,45 @@ public class MovementController : MonoBehaviour
     Vector2 GetCorrection(Vector2 pos, Bounds bounds, Vector2 originalDirection, Vector2 correctedDirection, Vector2 offsetA, Vector2 offsetB, LayerMask layerMask)
     {
         List<RaycastHit2D> aHits = new();
+        bool ignoreA = false;
+        bool ignoreB = false;
         var collisionA = BoxCaster2D.CollideAndSlideVel(pos + offsetA, bounds, originalDirection, layerMask, aHits);
+        if (BoxCaster2D.CollideAndSlideVel(pos, bounds, offsetA, layerMask).magnitude != offsetA.magnitude)
+        {
+            ignoreA = true;
+        }
+
         List<RaycastHit2D> bHits = new();
         var collisionB = BoxCaster2D.CollideAndSlideVel(pos + offsetB, bounds, originalDirection, layerMask, bHits);
-        if (collisionA == collisionB)
+        if (BoxCaster2D.CollideAndSlideVel(pos, bounds, offsetB, layerMask).magnitude != offsetB.magnitude)
+        {
+            ignoreB = true;
+        }
+
+        bool ignoreBoth = ignoreA && ignoreB;
+        bool noCollisions = aHits.Count + bHits.Count == 0;
+
+        var dotA = Vector2.Dot(originalDirection.normalized, collisionA.normalized);
+        var dotB = Vector2.Dot(originalDirection.normalized, collisionB.normalized);
+
+        if (noCollisions || ignoreBoth || collisionA == collisionB || dotA * dotB == 0)
         {
             return Vector2.zero;
         }
 
-        if (aHits.Count == 0 && collisionA.magnitude > correctedDirection.magnitude)
+
+
+        if (!ignoreA && aHits.Count == 0 && collisionA.magnitude >= correctedDirection.magnitude)
         {
             DebugExtensions.DrawBox(bHits[0].point, 0.2f, Color.green);
+            Debug.DrawRay(bHits[0].point, offsetA, Color.green);
             return offsetA;
         }
-        else if (bHits.Count == 0 && collisionB.magnitude > correctedDirection.magnitude)
+        else if (!ignoreB && bHits.Count == 0 && collisionB.magnitude >= correctedDirection.magnitude)
         {
             DebugExtensions.DrawBox(aHits[0].point, 0.2f, Color.red);
+            Debug.DrawRay(aHits[0].point, offsetB, Color.red);
+
             return offsetB;
         }
         return Vector2.zero;

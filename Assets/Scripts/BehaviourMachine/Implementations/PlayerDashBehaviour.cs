@@ -34,6 +34,7 @@ public class PlayerDashBehaviour : BasePlayerBehaviour, IPlayerAbilityBehaviour
 
         _direction = PlayerController.FacingDirection;
         PlayerController.CollisionController.ResizeMainCollider(PlayerController.PlayerStats.DashColliderSize, Vector2.zero);
+        PlayerController.MovementController.CheckAndFixOverlap();
     }
 
     public override BehaviourChangeRequest VerifyBehaviour()
@@ -103,6 +104,7 @@ public class PlayerDashBehaviour : BasePlayerBehaviour, IPlayerAbilityBehaviour
     {
         EnqueueAnim(PlayerController.PlayerAnimator.AnimationList.DashExit);
         PlayerController.CollisionController.ResizeMainCollider(PlayerController.PlayerStats.DefaultColliderSize, Vector2.zero);
+        PlayerController.MovementController.CheckAndFixOverlap();
         PlayerController.ToggleDashParticles(0);
         PlayerController.MovementController.SetVelocity(PlayerController.MovementController.Velocity.x * PlayerController.AbilityStats.DashEndMultiplier, null);
     }
