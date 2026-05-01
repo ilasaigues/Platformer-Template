@@ -20,13 +20,13 @@ public class PlayerController : MonoBehaviour
     [HideInInspector]
     public VFXSpawner VFXSpawner;
 
-    public GameManager GameManager;
+    public GameManager GameDataManager;
 
     [Inject]
     public void Constructor(GameManager gameManager)
     {
-        GameManager = gameManager;
-        GameManager.PlayerController = this;
+        GameDataManager = gameManager;
+        GameDataManager.PlayerController = this;
     }
 
 
@@ -173,16 +173,16 @@ public class PlayerController : MonoBehaviour
 
     public void SetRespawn(RespawnTrigger respawn, RespawnType respawnType)
     {
-        if (GameManager != null)
+        if (GameDataManager != null)
         {
             switch (respawnType)
             {
                 case RespawnType.Soft:
-                    GameManager.CurrentRespawnTrigger = respawn;
+                    GameDataManager.CurrentRespawnTrigger = respawn;
                     return;
                 case RespawnType.Hard:
-                    GameManager.HardRespawnTrigger = respawn;
-                    GameManager.CurrentRespawnTrigger ??= respawn;
+                    GameDataManager.HardRespawnTrigger = respawn;
+                    GameDataManager.CurrentRespawnTrigger ??= respawn;
                     return;
             }
         }
@@ -258,10 +258,11 @@ public class PlayerController : MonoBehaviour
 
     public void Respawn()
     {
-        if (GameManager?.CurrentRespawnTrigger != null)
+        var respawn = GameDataManager.DieAndGetRespawn();
+        if (respawn != null)
         {
             IsDead = false;
-            var startPos = GameManager.CurrentRespawnTrigger.RespawnPosition;
+            var startPos = respawn.RespawnPosition;
             Debug.DrawRay(startPos, Vector2.down * 10, Color.red, 1);
             var groundOffset = PlayerStats.DefaultColliderSize.y / 2;
             var hit = Physics2D.Raycast(startPos, Vector2.down, 10, LayerReference.TerrainLayer);
@@ -273,7 +274,7 @@ public class PlayerController : MonoBehaviour
         }
         else
         {
-            Debug.LogError("NO RESPAWN SET LMAO");
+            Debug.LogError("NO RESPAWN SET");
         }
     }
 
