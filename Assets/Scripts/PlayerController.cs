@@ -20,13 +20,13 @@ public class PlayerController : MonoBehaviour
     [HideInInspector]
     public VFXSpawner VFXSpawner;
 
-    public GameManager GameDataManager;
+    public GameManager GameManager;
 
     [Inject]
     public void Constructor(GameManager gameManager)
     {
-        GameDataManager = gameManager;
-        GameDataManager.PlayerController = this;
+        GameManager = gameManager;
+        GameManager.PlayerController = this;
     }
 
 
@@ -59,7 +59,6 @@ public class PlayerController : MonoBehaviour
     public int FacingDirection => SpriteRenderer.flipX ? -1 : 1;
 
     public CinemachinePositionComposer CameraComposer;
-    public PlayerAbilityQueue PlayerAbilityQueue = new();
 
 
 
@@ -90,7 +89,6 @@ public class PlayerController : MonoBehaviour
         {
             //Enabled = true
         });
-        PlayerAbilityQueue.MaxAbilityStack = 1;
 
 
         BehaviourMachine.ChangeBehaviour(typeof(PlayerFallingBehaviour));
@@ -100,7 +98,7 @@ public class PlayerController : MonoBehaviour
 
     public void GainAbility<T>() where T : BasePlayerBehaviour, IPlayerAbilityBehaviour
     {
-        PlayerAbilityQueue.AddAbility(BehaviourMachine.GetBehaviour<T>());
+        GameManager.GainAbility(BehaviourMachine.GetBehaviour<T>());
     }
 
 
@@ -173,16 +171,16 @@ public class PlayerController : MonoBehaviour
 
     public void SetRespawn(RespawnTrigger respawn, RespawnType respawnType)
     {
-        if (GameDataManager != null)
+        if (GameManager != null)
         {
             switch (respawnType)
             {
                 case RespawnType.Soft:
-                    GameDataManager.CurrentRespawnTrigger = respawn;
+                    GameManager.CurrentRespawnTrigger = respawn;
                     return;
                 case RespawnType.Hard:
-                    GameDataManager.HardRespawnTrigger = respawn;
-                    GameDataManager.CurrentRespawnTrigger ??= respawn;
+                    GameManager.HardRespawnTrigger = respawn;
+                    GameManager.CurrentRespawnTrigger ??= respawn;
                     return;
             }
         }
@@ -258,7 +256,7 @@ public class PlayerController : MonoBehaviour
 
     public void Respawn()
     {
-        var respawn = GameDataManager.DieAndGetRespawn();
+        var respawn = GameManager.DieAndGetRespawn();
         if (respawn != null)
         {
             IsDead = false;

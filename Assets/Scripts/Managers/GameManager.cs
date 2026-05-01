@@ -9,6 +9,9 @@ public class GameManager : MonoBehaviour
     public RespawnTrigger CurrentRespawnTrigger;
     public PlayerController PlayerController;
 
+    public PlayerAbilityQueue PlayerAbilityQueue = new();
+
+
     public RespawnTrigger DieAndGetRespawn()
     {
         if (RemainingLives > 0)
@@ -33,9 +36,17 @@ public class GameManager : MonoBehaviour
             return HardRespawnTrigger;
         }
     }
+    public void GainAbility(IPlayerAbilityBehaviour ability)
+    {
+        PlayerAbilityQueue.AddAbility(ability);
+    }
+
 
     void Start()
     {
         RemainingLives = TotalLives;
+        PlayerAbilityQueue.MaxAbilityStack = 1;
     }
+
+
 }
