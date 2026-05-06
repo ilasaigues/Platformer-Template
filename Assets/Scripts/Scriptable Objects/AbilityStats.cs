@@ -1,6 +1,6 @@
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "AbilityStats", menuName = "Scriptable Objects/AbilityStats")]
+[CreateAssetMenu(fileName = "AbilityStats", menuName = "Scriptable Objects/Player/AbilityStats")]
 public class AbilityStats : ScriptableObject
 {
     [Header("Rock")]
@@ -26,5 +26,9 @@ public class AbilityStats : ScriptableObject
     public float DoubleJumpMinTime;
     public float DoubleJumpWindupTime;
     public float DoubleJumpHoverVelocity;
+    [Header("UI Animations")]
+    public AnimationClip ShieldUIAnimation;
+    public AnimationClip DashUIAnimation;
+    public AnimationClip DoubleJumpUIAnimation;
 
 }

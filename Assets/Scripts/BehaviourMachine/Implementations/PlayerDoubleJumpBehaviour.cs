@@ -4,6 +4,8 @@ using UnityEngine;
 public class PlayerDoubleJumpBehaviour : PlayerAirBehaviour, IPlayerAbilityBehaviour
 
 {
+    public AnimationClip UIAnimation => PlayerController.AbilityStats.DoubleJumpUIAnimation;
+
     private bool _jumpHeld = false;
     private bool IsInPeak => PlayerController.MovementController.Velocity.y < PlayerController.PlayerStats.peakTresholds.x;
 

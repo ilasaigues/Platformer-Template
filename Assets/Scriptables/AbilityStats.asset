@@ -27,3 +27,6 @@ MonoBehaviour:
   DoubleJumpMinTime: 0.15
   DoubleJumpWindupTime: 0.16666667
   DoubleJumpHoverVelocity: -3
+  ShieldUIAnimation: {fileID: 7400000, guid: f423bba5257ba394194639af72f91fd1, type: 2}
+  DashUIAnimation: {fileID: 7400000, guid: f140fbfc165aac646840bd9229f43758, type: 2}
+  DoubleJumpUIAnimation: {fileID: 7400000, guid: ef4ba692f2ed0b347a36bf72a46b24b0, type: 2}

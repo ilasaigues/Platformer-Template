@@ -1,7 +1,7 @@
 
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "Scriptable Objects/PlayerAnimationList", fileName = "new PlayerAnimationList")]
+[CreateAssetMenu(menuName = "Scriptable Objects/Player/PlayerAnimationList", fileName = "new PlayerAnimationList")]
 public class PlayerAnimationList : ScriptableObject
 {
     public AnimationClip Idle;

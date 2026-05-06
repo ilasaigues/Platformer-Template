@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "Scriptables/GameObject List")]
+[CreateAssetMenu(menuName = "Scriptable Objects/GameObject List")]
 public class GameObjectScriptableList : ScriptableObject, IEditorResettable
 {
     [SerializeField]

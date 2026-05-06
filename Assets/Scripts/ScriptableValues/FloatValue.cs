@@ -1,6 +1,6 @@
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "Scriptables/Values/Float")]
+[CreateAssetMenu(menuName = "Scriptable Objects/Values/Float")]
 public class FloatValue : BaseScriptableValue<float>
 {
 

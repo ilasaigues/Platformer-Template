@@ -4,23 +4,23 @@ using UnityEngine;
 
 public class PlayerAbilityQueue
 {
-    private Queue<IPlayerAbilityBehaviour> _abilityQueue = new();
+    public Queue<IPlayerAbilityBehaviour> AbilityQueue = new();
 
-    public int MaxAbilityStack = 2;
+    public int MaxAbilityStack = 1;
 
     public event Action<IPlayerAbilityBehaviour> OnPlayerAbilityEnqueued = delegate { };
     public event Action<IPlayerAbilityBehaviour> OnPlayerAbilityDequeued = delegate { };
 
     public void AddAbility(IPlayerAbilityBehaviour ability)
     {
-        if (_abilityQueue.Contains(ability)) return;
+        if (AbilityQueue.Contains(ability)) return;
         //Debug.Log("Adding ability to queue: " + ability.GetType());
-        _abilityQueue.Enqueue(ability);
+        AbilityQueue.Enqueue(ability);
         ability.Enabled = true;
         OnPlayerAbilityEnqueued(ability);
-        while (_abilityQueue.Count > MaxAbilityStack)
+        while (AbilityQueue.Count > MaxAbilityStack)
         {
-            var dequeue = _abilityQueue.Dequeue();
+            var dequeue = AbilityQueue.Dequeue();
             dequeue.Enabled = false;
             OnPlayerAbilityDequeued(dequeue);
         }

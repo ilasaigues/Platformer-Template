@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class PlayerRockBehaviour : BasePlayerBehaviour, IPlayerAbilityBehaviour
 {
+    public AnimationClip UIAnimation => PlayerController.AbilityStats.ShieldUIAnimation;
 
 
     public bool Enabled { get; set; }

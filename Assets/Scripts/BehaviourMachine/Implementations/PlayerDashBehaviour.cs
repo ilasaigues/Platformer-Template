@@ -7,6 +7,7 @@ using UnityEngine;
 public class PlayerDashBehaviour : BasePlayerBehaviour, IPlayerAbilityBehaviour
 {
 
+    public AnimationClip UIAnimation => PlayerController.AbilityStats.DashUIAnimation;
     float _elapsedTime;
 
     int _direction;
