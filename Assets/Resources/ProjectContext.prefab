@@ -128,7 +128,6 @@ MonoBehaviour:
   TimeContext: {fileID: 761980781647471411}
   VFXSpawner: {fileID: 5219864693844699019}
   GameInputHandler: {fileID: 8666409216905936004}
-  GameManager: {fileID: 0}
 --- !u!1001 &1136329263076141245
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -11,7 +11,19 @@ public class TimeContext : MonoBehaviour
     public float DeltaTime => (ContextTimescale ? ContextTimescale.Value : 1) * UnityEngine.Time.deltaTime;
     public float FixedDeltaTime => (ContextTimescale ? ContextTimescale.Value : 1) * UnityEngine.Time.fixedDeltaTime;
 
-    public bool Paused => ContextTimescale ? ContextTimescale.Value == 0 : false;
+    public bool Paused
+    {
+        get
+        {
+            return _paused || (ContextTimescale ? ContextTimescale.Value == 0 : false);
+        }
+        set
+        {
+            _paused = value;
+        }
+    }
+    private bool _paused;
+
 
     [HideInInspector]
     public float Time;

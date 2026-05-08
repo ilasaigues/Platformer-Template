@@ -1,3 +1,4 @@
+using System.Linq;
 using LDtkUnity;
 using UnityEngine;
 
@@ -8,9 +9,28 @@ public class RespawnTrigger : MonoBehaviour, ILDtkImportedFields
     [SerializeField]
     private Transform _respawnTransform;
 
+    [SerializeField]
+    private ParticleSystem _hardRespawnParticles;
+
+
     public RespawnType respawnType;
 
     public Vector3 RespawnPosition => _respawnTransform ? _respawnTransform.position : Vector3.zero;
+
+    void Start()
+    {
+        if (respawnType == RespawnType.Hard)
+        {
+            var boxSize = GetComponent<BoxCollider2D>().size;
+            _hardRespawnParticles.transform.localPosition = new Vector2(boxSize.x, -boxSize.y) / 2;
+            var shapeModule = _hardRespawnParticles.shape;
+            shapeModule.scale = boxSize * 0.9f;
+        }
+        else
+        {
+            Destroy(_hardRespawnParticles.gameObject);
+        }
+    }
 
     void OnTriggerEnter2D(Collider2D collision)
     {
@@ -36,6 +56,6 @@ public class RespawnTrigger : MonoBehaviour, ILDtkImportedFields
         BoxCollider2D collider = GetComponent<BoxCollider2D>();
         collider.size = GetComponent<LDtkComponentEntity>().Size;
         collider.offset = new Vector2(collider.size.x, -collider.size.y) / 2;
-        _respawnTransform = transform.GetChild(0);
+        _respawnTransform = transform.GetComponentsInChildren<Transform>().First(t => t.gameObject.name == "point_0");
     }
 }

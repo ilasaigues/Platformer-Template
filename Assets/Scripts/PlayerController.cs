@@ -181,6 +181,7 @@ public class PlayerController : MonoBehaviour
                 case RespawnType.Hard:
                     GameManager.HardRespawnTrigger = respawn;
                     GameManager.CurrentRespawnTrigger ??= respawn;
+                    GameManager.PlayerAbilityQueue.Clear();
                     return;
             }
         }
@@ -261,6 +262,7 @@ public class PlayerController : MonoBehaviour
         {
             IsDead = false;
             var startPos = respawn.RespawnPosition;
+            Debug.Log(respawn.RespawnPosition);
             Debug.DrawRay(startPos, Vector2.down * 10, Color.red, 1);
             var groundOffset = PlayerStats.DefaultColliderSize.y / 2;
             var hit = Physics2D.Raycast(startPos, Vector2.down, 10, LayerReference.TerrainLayer);

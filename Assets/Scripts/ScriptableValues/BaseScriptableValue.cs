@@ -17,10 +17,6 @@ public abstract class BaseScriptableValue<T> : ScriptableObject, IEditorResettab
         }
     }
 
-#if UNITY_EDITOR
-    [ContextMenuItem("Apply Change", "ApplyValueChange")]
-    [ContextMenuItem("Force Refresh", "ForceRefresh")]
-#endif
     [SerializeField]
     private T _value;
 
@@ -29,33 +25,26 @@ public abstract class BaseScriptableValue<T> : ScriptableObject, IEditorResettab
 
 
 #if UNITY_EDITOR
-    // Editor Specific utilities
-    [TextArea(minLines: 3, maxLines: 5)]
     public string EditorDescription;
 
     public bool ChangedInPlaymode => !_editorSavedValue.Equals(_value);
 
     private T _editorSavedValue;
-    public void OnEnterPlaymode()
+    public virtual void OnEnterPlaymode()
     {
         _editorSavedValue = _value;
     }
 
-    public void OnExitPlaymode()
+    public virtual void OnExitPlaymode()
     {
         OnValueChanged = delegate { };
         OnValueChangedWithHistory = delegate { };
         _value = _editorSavedValue;
     }
 
-    public void ApplyValueChange()
+    public void ApplyPlayModeValueChange()
     {
         _editorSavedValue = _value;
-    }
-
-    public void ForceRefresh()
-    {
-        Value = _value;
     }
 
 #endif

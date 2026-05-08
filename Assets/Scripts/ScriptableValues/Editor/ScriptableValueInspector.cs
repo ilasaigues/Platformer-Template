@@ -18,7 +18,7 @@ public abstract class BaseScriptableValueInspector<T> : Editor
 
         overrideButton.clicked += () =>
         {
-            ((BaseScriptableValue<T>)serializedObject.targetObject).ApplyValueChange();
+            ((BaseScriptableValue<T>)serializedObject.targetObject).ApplyPlayModeValueChange();
             overrideButton.SetEnabled(false);
         };
 

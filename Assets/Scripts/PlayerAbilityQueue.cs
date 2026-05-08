@@ -11,6 +11,17 @@ public class PlayerAbilityQueue
     public event Action<IPlayerAbilityBehaviour> OnPlayerAbilityEnqueued = delegate { };
     public event Action<IPlayerAbilityBehaviour> OnPlayerAbilityDequeued = delegate { };
 
+    public void Clear()
+    {
+        while (AbilityQueue.Count > 0)
+        {
+            var dequeue = AbilityQueue.Dequeue();
+            dequeue.Enabled = false;
+            OnPlayerAbilityDequeued(dequeue);
+        }
+    }
+
+
     public void AddAbility(IPlayerAbilityBehaviour ability)
     {
         if (AbilityQueue.Contains(ability)) return;
