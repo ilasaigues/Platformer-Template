@@ -22,9 +22,16 @@ public class PlayerDyingBehaviour : BasePlayerBehaviour
         PlayerController.CollisionController.MainCollider.enabled = false;
         PlayAnim(PlayerController.PlayerAnimator.AnimationList.Death);
         PlayerController.MovementController.SetVelocity(Vector2.zero);
-        var respawn = PlayerController.GameManager.GetRespawn();
-        Vector2 particlePosition = respawn.RespawnPosition + Vector3.up * 8.ToPixels();
-        PlayerController.VFXSpawner.PlayFX(PlayerController.VFXSpawner.VFXList.Respawn_Particles, particlePosition, 1, false);
+        if (PlayerController.GameManager.RemainingLives > 0)
+        {
+            var respawn = PlayerController.GameManager.GetRespawn();
+            Vector2 particlePosition = respawn.RespawnPosition + Vector3.up * 8.ToPixels();
+            PlayerController.VFXSpawner.PlayFX(PlayerController.VFXSpawner.VFXList.Respawn_Particles, particlePosition, 1, false);
+        }
+        else
+        {
+
+        }
     }
 
     public override void Exit()
@@ -40,9 +47,10 @@ public class PlayerDyingBehaviour : BasePlayerBehaviour
     public override void Update(float delta)
     {
         // change to respawn position (and stick to ground) and animation after death duration
+        var lastLife = PlayerController.GameManager.RemainingLives == 0;
 
 
-        if (!_startedMovementTransition)
+        if (!lastLife && !_startedMovementTransition)
         {
             _startedMovementTransition = true;
             LeanTween.move(
@@ -58,7 +66,10 @@ public class PlayerDyingBehaviour : BasePlayerBehaviour
         {
             _isDying = false;
             PlayerController.Respawn();
-            PlayAnim(PlayerController.PlayerAnimator.AnimationList.Revive);
+            if (!lastLife)
+            {
+                PlayAnim(PlayerController.PlayerAnimator.AnimationList.Revive);
+            }
         }
 
         _timeRemaining -= delta;

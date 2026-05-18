@@ -21,7 +21,6 @@ public class GameManager : MonoBehaviour
         }
         else
         {
-            RemainingLives = TotalLives;
             return HardRespawnTrigger;
         }
     }

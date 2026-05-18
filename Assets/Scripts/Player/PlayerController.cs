@@ -20,6 +20,9 @@ public class PlayerController : MonoBehaviour
     [HideInInspector]
     public VFXSpawner VFXSpawner;
 
+    [Inject]
+    private SceneTransitionManager _sceneTransitionManager;
+
     public GameManager GameManager;
 
     [Inject]
@@ -255,21 +258,29 @@ public class PlayerController : MonoBehaviour
         IsDead = true;
     }
 
-    public void Respawn()
+    public async void Respawn()
     {
         var respawn = GameManager.DieAndGetRespawn();
         if (respawn != null)
         {
-            IsDead = false;
-            var startPos = respawn.RespawnPosition;
-            Debug.Log(respawn.RespawnPosition);
-            Debug.DrawRay(startPos, Vector2.down * 10, Color.red, 1);
-            var groundOffset = PlayerStats.DefaultColliderSize.y / 2;
-            var hit = Physics2D.Raycast(startPos, Vector2.down, 10, LayerReference.TerrainLayer);
-            if (hit)
+            if (respawn.respawnType == RespawnType.Hard) // reload scene
             {
-                LeanTween.cancelAll();
-                MovementController.ForcePosition(hit.point + Vector2.up * groundOffset);
+                await _sceneTransitionManager.TransitionToScene(0, UnityEngine.SceneManagement.LoadSceneMode.Single);
+            }
+            else
+            {
+
+                IsDead = false;
+                var startPos = respawn.RespawnPosition;
+                Debug.Log(respawn.RespawnPosition);
+                Debug.DrawRay(startPos, Vector2.down * 10, Color.red, 1);
+                var groundOffset = PlayerStats.DefaultColliderSize.y / 2;
+                var hit = Physics2D.Raycast(startPos, Vector2.down, 10, LayerReference.TerrainLayer);
+                if (hit)
+                {
+                    LeanTween.cancelAll();
+                    MovementController.ForcePosition(hit.point + Vector2.up * groundOffset);
+                }
             }
         }
         else
