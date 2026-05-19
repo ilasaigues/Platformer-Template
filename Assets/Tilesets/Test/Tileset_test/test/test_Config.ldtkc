@@ -12,6 +12,22 @@
     "ScaleEntities": true,
     "IntGridValues": [
         {
+            "_key": "Terrain_8x8_1",
+            "_asset": {
+                "fileID": 11400000,
+                "guid": "11d72f96735c40d42ba25e4a2a316d0f",
+                "type": 2
+            }
+        },
+        {
+            "_key": "Terrain_8x8_2",
+            "_asset": {
+                "fileID": 11400000,
+                "guid": "96c5b968946313c4bb05cb8d58834337",
+                "type": 2
+            }
+        },
+        {
             "_key": "Thorns_1",
             "_asset": {
                 "instanceID": 0
