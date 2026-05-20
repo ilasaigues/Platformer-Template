@@ -1,0 +1,46 @@
+{
+  "Rects": [
+    {
+      "x": 32,
+      "y": 8,
+      "w": 8,
+      "h": 8
+    },
+    {
+      "x": 104,
+      "y": 32,
+      "w": 8,
+      "h": 8
+    }
+  ],
+  "Def": {
+    "__cHei": 5,
+    "__cWid": 14,
+    "cachedPixelData": {
+      "opaqueTiles": "1111111111111111111111111111111111111111111111111111011111111111110000",
+      "averageColors": "f277f277f277f277f277f277f277f277f244f244f255f255f334f334f334f223f334f266f266f345f345f345f233f245f234f244f334f334f345f344f345f255f345f345f345f344f345f277f244f244f334f334f244f244f277f277f345f345f344f344f355f3454633f344f344f344f233f233f355f355f277f277f277f277f266f2773633863386333633"
+    },
+    "customData": [
+
+    ],
+    "embedAtlas": null,
+    "enumTags": [
+
+    ],
+    "identifier": "Grass_8x8",
+    "padding": 0,
+    "pxHei": 40,
+    "pxWid": 112,
+    "relPath": "tileset_template_8x8.png",
+    "savedSelections": [
+
+    ],
+    "spacing": 0,
+    "tags": [
+
+    ],
+    "tagsSourceEnumUid": null,
+    "tileGridSize": 8,
+    "uid": 369
+  }
+}
