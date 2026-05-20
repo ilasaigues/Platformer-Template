@@ -137,12 +137,14 @@ Assets/Scripts/
   TimeContext.cs
   TimeContextModule.cs
  UI/
+  Menu Navigation/SimpleMenu.cs
   PowerupContainer.cs
   PowerupDisplay.cs
  Utils/
   LayerReference.cs
   ParticleSystemFramerate.cs
   Pooler.cs
+  SceneReference.cs
  VFX/
   SpriteTrail.cs
   VFXObject.cs

@@ -16,7 +16,6 @@ public class SceneTransitionDither : SceneTransition
     public override async Task EnterAsync(Canvas target)
     {
         animator.Play(DitherInHash, 0);
-        Debug.Log(animator.GetCurrentAnimatorStateInfo(0).length);
         await Task.Delay((int)(animator.GetCurrentAnimatorStateInfo(0).length * 1000));
     }
 

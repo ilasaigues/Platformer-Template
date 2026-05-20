@@ -265,7 +265,7 @@ public class PlayerController : MonoBehaviour
         {
             if (respawn.respawnType == RespawnType.Hard) // reload scene
             {
-                await _sceneTransitionManager.TransitionToScene(0, UnityEngine.SceneManagement.LoadSceneMode.Single);
+                //await _sceneTransitionManager.TransitionToScene(0, UnityEngine.SceneManagement.LoadSceneMode.Single);
             }
             else
             {

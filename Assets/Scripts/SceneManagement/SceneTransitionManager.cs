@@ -14,11 +14,11 @@ public class SceneTransitionManager : MonoBehaviour
     }
 
 
-    public async Task TransitionToScene(int sceneIndex, LoadSceneMode loadSceneMode, SceneTransition transition = null)
+    public async Task TransitionToScene(string sceneName, LoadSceneMode loadSceneMode, SceneTransition transition = null)
     {
         if (transition == null) transition = StandardTransition;
         var transitionInstance = Instantiate(transition, SceneTransitionCanvas.transform);
-        var loadTask = SceneManager.LoadSceneAsync(sceneIndex, loadSceneMode);
+        var loadTask = SceneManager.LoadSceneAsync(sceneName, loadSceneMode);
         loadTask.allowSceneActivation = false;
         //enable the transition canvas
         SceneTransitionCanvas.enabled = true;

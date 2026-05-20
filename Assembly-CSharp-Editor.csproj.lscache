@@ -58,6 +58,7 @@ Assets/
  Scripts/Scriptable Objects/ScriptableValues/Editor/
   FloatValueInspector.cs
   ScriptableValueInspector.cs
+ Scripts/Utils/Editor/SceneImportSettings.cs
 Temp/obj/Assembly-CSharp-Editor/.NETStandard,Version=v2.1.AssemblyAttributes.cs
 
 [metadataReferences]
