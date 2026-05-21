@@ -1,11 +1,24 @@
 {
-  "Rects": null,
+  "Rects": [
+    {
+      "x": 32,
+      "y": 8,
+      "w": 8,
+      "h": 8
+    },
+    {
+      "x": 104,
+      "y": 32,
+      "w": 8,
+      "h": 8
+    }
+  ],
   "Def": {
-    "__cHei": 4,
-    "__cWid": 15,
+    "__cHei": 5,
+    "__cWid": 14,
     "cachedPixelData": {
-      "opaqueTiles": "111111111111111111111111111111111111111111111111111111100001",
-      "averageColors": "f354f243f253f354f354f354f354f354f354f243f253f223f233f233f223f234f233f233f233f234f354f354f234f234f234f234f233f233f233f223f234f223f223f234f234f234f234f234f234f233f233f233f233f233f223f234f234f234f234f234f354f234f253f234f2342483248324832483f223"
+      "opaqueTiles": "1111111111111111111111111111111111111111111111111111011111111111110000",
+      "averageColors": "f277f277f277f277f277f277f277f277f244f244f255f255f334f334f334f223f334f266f266f345f345f345f233f245f234f244f334f334f345f344f345f255f345f345f345f344f345f277f244f244f334f334f244f244f277f277f345f345f344f344f355f3454633f344f344f344f233f233f355f355f277f277f277f277f266f2773633863386333633"
     },
     "customData": [
 
@@ -16,18 +29,18 @@
     ],
     "identifier": "Grass",
     "padding": 0,
-    "pxHei": 64,
-    "pxWid": 240,
-    "relPath": "tileset_template.png",
+    "pxHei": 40,
+    "pxWid": 112,
+    "relPath": "tileset_template_8x8.png",
     "savedSelections": [
 
     ],
     "spacing": 0,
     "tags": [
-      "Terrain"
+
     ],
     "tagsSourceEnumUid": null,
-    "tileGridSize": 16,
-    "uid": 2
+    "tileGridSize": 8,
+    "uid": 369
   }
 }
