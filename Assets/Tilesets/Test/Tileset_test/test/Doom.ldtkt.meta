@@ -27,10 +27,10 @@ ScriptedImporter:
     spriteID: 12c7dc873c424744ca8a3a81aeceadcc
     spriteOutline:
     - shape:
-      - {x: 2, y: 2}
-      - {x: -2, y: 2}
-      - {x: -2, y: -2}
-      - {x: 2, y: -2}
+      - {x: 1, y: 1}
+      - {x: -1, y: 1}
+      - {x: -1, y: -1}
+      - {x: 1, y: -1}
     tessellationDetail: 0
   - name: Doom_1
     originalName: 
@@ -47,10 +47,10 @@ ScriptedImporter:
     spriteID: 0e96993a2bf827f45a0c0e078db22f78
     spriteOutline:
     - shape:
-      - {x: 8, y: 2}
-      - {x: -2, y: 2}
-      - {x: -2, y: -2}
-      - {x: 8, y: -2}
+      - {x: 1, y: 1}
+      - {x: -1, y: 1}
+      - {x: -1, y: -1}
+      - {x: 1, y: -1}
     tessellationDetail: 0
   - name: Doom_2
     originalName: 
@@ -67,10 +67,10 @@ ScriptedImporter:
     spriteID: 2a9ac9d62ced84e4c95229132553159f
     spriteOutline:
     - shape:
-      - {x: 8, y: 2}
-      - {x: -8, y: 2}
-      - {x: -8, y: -2}
-      - {x: 8, y: -2}
+      - {x: 1, y: 1}
+      - {x: -1, y: 1}
+      - {x: -1, y: -1}
+      - {x: 1, y: -1}
     tessellationDetail: 0
   - name: Doom_3
     originalName: 
@@ -87,10 +87,10 @@ ScriptedImporter:
     spriteID: 56eda075cc032d649a640c78e453b575
     spriteOutline:
     - shape:
-      - {x: 2, y: 2}
-      - {x: -8, y: 2}
-      - {x: -8, y: -2}
-      - {x: 2, y: -2}
+      - {x: 1, y: 1}
+      - {x: -1, y: 1}
+      - {x: -1, y: -1}
+      - {x: 1, y: -1}
     tessellationDetail: 0
   - name: Doom_4
     originalName: 
@@ -107,12 +107,10 @@ ScriptedImporter:
     spriteID: 72f6bea73e5f9af4c9a4bd420587303b
     spriteOutline:
     - shape:
-      - {x: 2, y: -2}
-      - {x: 8, y: -2}
-      - {x: 8, y: 2}
-      - {x: -2, y: 2}
-      - {x: -2, y: -8}
-      - {x: 2, y: -8}
+      - {x: 1, y: 1}
+      - {x: -1, y: 1}
+      - {x: -1, y: -1}
+      - {x: 1, y: -1}
     tessellationDetail: 0
   - name: Doom_5
     originalName: 
@@ -129,12 +127,10 @@ ScriptedImporter:
     spriteID: db660ac185feaff468dad2f9e0997f23
     spriteOutline:
     - shape:
-      - {x: 2, y: 2}
-      - {x: -8, y: 2}
-      - {x: -8, y: -2}
-      - {x: -2, y: -2}
-      - {x: -2, y: -8}
-      - {x: 2, y: -8}
+      - {x: 1, y: 1}
+      - {x: -1, y: 1}
+      - {x: -1, y: -1}
+      - {x: 1, y: -1}
     tessellationDetail: 0
   - name: Doom_6
     originalName: 
@@ -151,14 +147,10 @@ ScriptedImporter:
     spriteID: bb05277aa95dbc44ca1cc67ee760781d
     spriteOutline:
     - shape:
-      - {x: 2, y: -2}
-      - {x: 8, y: -2}
-      - {x: 8, y: 2}
-      - {x: -8, y: 2}
-      - {x: -8, y: -2}
-      - {x: -2, y: -2}
-      - {x: -2, y: -8}
-      - {x: 2, y: -8}
+      - {x: 1, y: 1}
+      - {x: -1, y: 1}
+      - {x: -1, y: -1}
+      - {x: 1, y: -1}
     tessellationDetail: 0
   - name: Doom_7
     originalName: 
@@ -175,10 +167,10 @@ ScriptedImporter:
     spriteID: 621d34fa4cd388444a97a2b960a971e5
     spriteOutline:
     - shape:
-      - {x: 2, y: 2}
-      - {x: -2, y: 2}
-      - {x: -2, y: -8}
-      - {x: 2, y: -8}
+      - {x: 1, y: 1}
+      - {x: -1, y: 1}
+      - {x: -1, y: -1}
+      - {x: 1, y: -1}
     tessellationDetail: 0
   - name: Doom_8
     originalName: 
@@ -195,12 +187,10 @@ ScriptedImporter:
     spriteID: f4ef16f25886736429eda963829fc728
     spriteOutline:
     - shape:
-      - {x: 8, y: 2}
-      - {x: 2, y: 2}
-      - {x: 2, y: 8}
-      - {x: -2, y: 8}
-      - {x: -2, y: -2}
-      - {x: 8, y: -2}
+      - {x: 1, y: 1}
+      - {x: -1, y: 1}
+      - {x: -1, y: -1}
+      - {x: 1, y: -1}
     tessellationDetail: 0
   - name: Doom_9
     originalName: 
@@ -217,12 +207,10 @@ ScriptedImporter:
     spriteID: 9bb51070805880b43ad7e49e68f1119e
     spriteOutline:
     - shape:
-      - {x: 2, y: 8}
-      - {x: -2, y: 8}
-      - {x: -2, y: 2}
-      - {x: -8, y: 2}
-      - {x: -8, y: -2}
-      - {x: 2, y: -2}
+      - {x: 1, y: 1}
+      - {x: -1, y: 1}
+      - {x: -1, y: -1}
+      - {x: 1, y: -1}
     tessellationDetail: 0
   - name: Doom_10
     originalName: 
@@ -239,14 +227,10 @@ ScriptedImporter:
     spriteID: 11d7cb7bffd3ef4478e23ae15a337706
     spriteOutline:
     - shape:
-      - {x: 8, y: 2}
-      - {x: 2, y: 2}
-      - {x: 2, y: 8}
-      - {x: -2, y: 8}
-      - {x: -2, y: 2}
-      - {x: -8, y: 2}
-      - {x: -8, y: -2}
-      - {x: 8, y: -2}
+      - {x: 1, y: 1}
+      - {x: -1, y: 1}
+      - {x: -1, y: -1}
+      - {x: 1, y: -1}
     tessellationDetail: 0
   - name: Doom_11
     originalName: 
@@ -263,10 +247,10 @@ ScriptedImporter:
     spriteID: c1af7d335168b7f4182396e2d701cad9
     spriteOutline:
     - shape:
-      - {x: 2, y: 8}
-      - {x: -2, y: 8}
-      - {x: -2, y: -8}
-      - {x: 2, y: -8}
+      - {x: 1, y: 1}
+      - {x: -1, y: 1}
+      - {x: -1, y: -1}
+      - {x: 1, y: -1}
     tessellationDetail: 0
   - name: Doom_12
     originalName: 
@@ -283,18 +267,10 @@ ScriptedImporter:
     spriteID: 094a6641ef6ebbd419b76c661c22d1d8
     spriteOutline:
     - shape:
-      - {x: 2, y: -2}
-      - {x: 8, y: -2}
-      - {x: 8, y: 2}
-      - {x: 2, y: 2}
-      - {x: 2, y: 8}
-      - {x: -2, y: 8}
-      - {x: -2, y: 2}
-      - {x: -8, y: 2}
-      - {x: -8, y: -2}
-      - {x: -2, y: -2}
-      - {x: -2, y: -8}
-      - {x: 2, y: -8}
+      - {x: 1, y: 1}
+      - {x: -1, y: 1}
+      - {x: -1, y: -1}
+      - {x: 1, y: -1}
     tessellationDetail: 0
   - name: Doom_13
     originalName: 
@@ -309,16 +285,7 @@ ScriptedImporter:
       width: 8
       height: 8
     spriteID: 9219c88a91ab6dd40b74ee651bc12755
-    spriteOutline:
-    - shape:
-      - {x: 2, y: -2}
-      - {x: 8, y: -2}
-      - {x: 8, y: 2}
-      - {x: 2, y: 2}
-      - {x: 2, y: 8}
-      - {x: -2, y: 8}
-      - {x: -2, y: -8}
-      - {x: 2, y: -8}
+    spriteOutline: []
     tessellationDetail: 0
   - name: Doom_14
     originalName: 
@@ -335,14 +302,10 @@ ScriptedImporter:
     spriteID: d036b69e29e7efd498d67f424bdb7076
     spriteOutline:
     - shape:
-      - {x: 2, y: 8}
-      - {x: -2, y: 8}
-      - {x: -2, y: 2}
-      - {x: -8, y: 2}
-      - {x: -8, y: -2}
-      - {x: -2, y: -2}
-      - {x: -2, y: -8}
-      - {x: 2, y: -8}
+      - {x: 1, y: 1}
+      - {x: -1, y: 1}
+      - {x: -1, y: -1}
+      - {x: 1, y: -1}
     tessellationDetail: 0
   - name: Doom_15
     originalName: 
@@ -359,10 +322,10 @@ ScriptedImporter:
     spriteID: f8cffc62904e22044b2488cd7524e5a3
     spriteOutline:
     - shape:
-      - {x: 2, y: 8}
-      - {x: -2, y: 8}
-      - {x: -2, y: -2}
-      - {x: 2, y: -2}
+      - {x: 1, y: 1}
+      - {x: -1, y: 1}
+      - {x: -1, y: -1}
+      - {x: 1, y: -1}
     tessellationDetail: 0
   - name: Doom_16
     originalName: 
@@ -377,7 +340,12 @@ ScriptedImporter:
       width: 8
       height: 8
     spriteID: 4da084d5cb3dcab478b595e1f1b838e2
-    spriteOutline: []
+    spriteOutline:
+    - shape:
+      - {x: 1, y: 1}
+      - {x: -1, y: 1}
+      - {x: -1, y: -1}
+      - {x: 1, y: -1}
     tessellationDetail: 0
   - name: Doom_17
     originalName: 
@@ -392,7 +360,12 @@ ScriptedImporter:
       width: 8
       height: 8
     spriteID: b1734df03f4eca1478ed29ed858a878b
-    spriteOutline: []
+    spriteOutline:
+    - shape:
+      - {x: 1, y: 1}
+      - {x: -1, y: 1}
+      - {x: -1, y: -1}
+      - {x: 1, y: -1}
     tessellationDetail: 0
   - name: Doom_18
     originalName: 
@@ -407,7 +380,12 @@ ScriptedImporter:
       width: 8
       height: 8
     spriteID: b6e3e50c33296374586c4b471872cb82
-    spriteOutline: []
+    spriteOutline:
+    - shape:
+      - {x: 1, y: 1}
+      - {x: -1, y: 1}
+      - {x: -1, y: -1}
+      - {x: 1, y: -1}
     tessellationDetail: 0
   - name: Doom_19
     originalName: 
@@ -422,7 +400,12 @@ ScriptedImporter:
       width: 8
       height: 8
     spriteID: 1ba5bea5ac1c1424d99cb0c7c3a28dd6
-    spriteOutline: []
+    spriteOutline:
+    - shape:
+      - {x: 1, y: 1}
+      - {x: -1, y: 1}
+      - {x: -1, y: -1}
+      - {x: 1, y: -1}
     tessellationDetail: 0
   - name: Doom_20
     originalName: 
@@ -437,7 +420,12 @@ ScriptedImporter:
       width: 8
       height: 8
     spriteID: 8e2a4ea476a71744b97e5cc17484d27b
-    spriteOutline: []
+    spriteOutline:
+    - shape:
+      - {x: 1, y: 1}
+      - {x: -1, y: 1}
+      - {x: -1, y: -1}
+      - {x: 1, y: -1}
     tessellationDetail: 0
   - name: Doom_21
     originalName: 
@@ -452,7 +440,12 @@ ScriptedImporter:
       width: 8
       height: 8
     spriteID: 04dee85c15fdba646a0fec3a928b34f9
-    spriteOutline: []
+    spriteOutline:
+    - shape:
+      - {x: 1, y: 1}
+      - {x: -1, y: 1}
+      - {x: -1, y: -1}
+      - {x: 1, y: -1}
     tessellationDetail: 0
   - name: Doom_22
     originalName: 
@@ -467,7 +460,12 @@ ScriptedImporter:
       width: 8
       height: 8
     spriteID: a2b5e53b4313c8040a9832587aae1ede
-    spriteOutline: []
+    spriteOutline:
+    - shape:
+      - {x: 1, y: 1}
+      - {x: -1, y: 1}
+      - {x: -1, y: -1}
+      - {x: 1, y: -1}
     tessellationDetail: 0
   - name: Doom_23
     originalName: 
@@ -482,7 +480,12 @@ ScriptedImporter:
       width: 8
       height: 8
     spriteID: 1a65b2e03576d604aae32fd863a53699
-    spriteOutline: []
+    spriteOutline:
+    - shape:
+      - {x: 1, y: 1}
+      - {x: -1, y: 1}
+      - {x: -1, y: -1}
+      - {x: 1, y: -1}
     tessellationDetail: 0
   - name: Doom_24
     originalName: 
@@ -497,7 +500,12 @@ ScriptedImporter:
       width: 8
       height: 8
     spriteID: 8f11ae4dce1638040921167bfea855d3
-    spriteOutline: []
+    spriteOutline:
+    - shape:
+      - {x: 1, y: 1}
+      - {x: -1, y: 1}
+      - {x: -1, y: -1}
+      - {x: 1, y: -1}
     tessellationDetail: 0
   - name: Doom_25
     originalName: 
@@ -512,7 +520,12 @@ ScriptedImporter:
       width: 8
       height: 8
     spriteID: 74421422898051644930166c6a662a7d
-    spriteOutline: []
+    spriteOutline:
+    - shape:
+      - {x: 1, y: 1}
+      - {x: -1, y: 1}
+      - {x: -1, y: -1}
+      - {x: 1, y: -1}
     tessellationDetail: 0
   - name: Doom_26
     originalName: 
@@ -527,7 +540,12 @@ ScriptedImporter:
       width: 8
       height: 8
     spriteID: 3bd576eae69cbea459948fb0ee524765
-    spriteOutline: []
+    spriteOutline:
+    - shape:
+      - {x: 1, y: 1}
+      - {x: -1, y: 1}
+      - {x: -1, y: -1}
+      - {x: 1, y: -1}
     tessellationDetail: 0
   - name: Doom_27
     originalName: 
@@ -542,7 +560,12 @@ ScriptedImporter:
       width: 8
       height: 8
     spriteID: 37d4847705160b34ba74f59f1f03f34e
-    spriteOutline: []
+    spriteOutline:
+    - shape:
+      - {x: 1, y: 1}
+      - {x: -1, y: 1}
+      - {x: -1, y: -1}
+      - {x: 1, y: -1}
     tessellationDetail: 0
   - name: Doom_28
     originalName: 
@@ -557,7 +580,12 @@ ScriptedImporter:
       width: 8
       height: 8
     spriteID: 8087f25770651e84f86426807af79baa
-    spriteOutline: []
+    spriteOutline:
+    - shape:
+      - {x: 1, y: 1}
+      - {x: -1, y: 1}
+      - {x: -1, y: -1}
+      - {x: 1, y: -1}
     tessellationDetail: 0
   - name: Doom_29
     originalName: 
@@ -572,7 +600,12 @@ ScriptedImporter:
       width: 8
       height: 8
     spriteID: 182741ac508b6e74bba6185a62e86c30
-    spriteOutline: []
+    spriteOutline:
+    - shape:
+      - {x: 1, y: 1}
+      - {x: -1, y: 1}
+      - {x: -1, y: -1}
+      - {x: 1, y: -1}
     tessellationDetail: 0
   - name: Doom_30
     originalName: 
@@ -587,7 +620,12 @@ ScriptedImporter:
       width: 8
       height: 8
     spriteID: 25cc4163e171aec439c0bee8e57156c5
-    spriteOutline: []
+    spriteOutline:
+    - shape:
+      - {x: 1, y: 1}
+      - {x: -1, y: 1}
+      - {x: -1, y: -1}
+      - {x: 1, y: -1}
     tessellationDetail: 0
   - name: Doom_31
     originalName: 
@@ -602,7 +640,12 @@ ScriptedImporter:
       width: 8
       height: 8
     spriteID: 5c0ecada80cffa04bb037f8391c4c466
-    spriteOutline: []
+    spriteOutline:
+    - shape:
+      - {x: 1, y: 1}
+      - {x: -1, y: 1}
+      - {x: -1, y: -1}
+      - {x: 1, y: -1}
     tessellationDetail: 0
   - name: Doom_32
     originalName: 
@@ -617,7 +660,12 @@ ScriptedImporter:
       width: 8
       height: 8
     spriteID: b11b980801f0c0141a571cb610c6d4bf
-    spriteOutline: []
+    spriteOutline:
+    - shape:
+      - {x: 1, y: 1}
+      - {x: -1, y: 1}
+      - {x: -1, y: -1}
+      - {x: 1, y: -1}
     tessellationDetail: 0
   - name: Doom_33
     originalName: 
@@ -632,7 +680,12 @@ ScriptedImporter:
       width: 8
       height: 8
     spriteID: 5702c487a91cf4049a97f6ed52b111d7
-    spriteOutline: []
+    spriteOutline:
+    - shape:
+      - {x: 1, y: 1}
+      - {x: -1, y: 1}
+      - {x: -1, y: -1}
+      - {x: 1, y: -1}
     tessellationDetail: 0
   - name: Doom_34
     originalName: 
@@ -647,7 +700,12 @@ ScriptedImporter:
       width: 8
       height: 8
     spriteID: 81af15e9377de4b4cb4c390341bcfa66
-    spriteOutline: []
+    spriteOutline:
+    - shape:
+      - {x: 1, y: 1}
+      - {x: -1, y: 1}
+      - {x: -1, y: -1}
+      - {x: 1, y: -1}
     tessellationDetail: 0
   - name: Doom_35
     originalName: 
@@ -662,7 +720,12 @@ ScriptedImporter:
       width: 8
       height: 8
     spriteID: 11722b8f2d553b647a7470d13f8f3e15
-    spriteOutline: []
+    spriteOutline:
+    - shape:
+      - {x: 1, y: 1}
+      - {x: -1, y: 1}
+      - {x: -1, y: -1}
+      - {x: 1, y: -1}
     tessellationDetail: 0
   - name: Doom_36
     originalName: 
@@ -677,7 +740,12 @@ ScriptedImporter:
       width: 8
       height: 8
     spriteID: b7e7328562cecde488a0b83e5d633e32
-    spriteOutline: []
+    spriteOutline:
+    - shape:
+      - {x: 1, y: 1}
+      - {x: -1, y: 1}
+      - {x: -1, y: -1}
+      - {x: 1, y: -1}
     tessellationDetail: 0
   - name: Doom_37
     originalName: 
@@ -692,7 +760,12 @@ ScriptedImporter:
       width: 8
       height: 8
     spriteID: b6aac3ddce326af43b53aac95f65584c
-    spriteOutline: []
+    spriteOutline:
+    - shape:
+      - {x: 1, y: 1}
+      - {x: -1, y: 1}
+      - {x: -1, y: -1}
+      - {x: 1, y: -1}
     tessellationDetail: 0
   - name: Doom_38
     originalName: 
@@ -707,7 +780,12 @@ ScriptedImporter:
       width: 8
       height: 8
     spriteID: 559edf8812d837f4b8099488603706e9
-    spriteOutline: []
+    spriteOutline:
+    - shape:
+      - {x: 1, y: 1}
+      - {x: -1, y: 1}
+      - {x: -1, y: -1}
+      - {x: 1, y: -1}
     tessellationDetail: 0
   - name: Doom_39
     originalName: 
@@ -722,7 +800,12 @@ ScriptedImporter:
       width: 8
       height: 8
     spriteID: 70be1bd35948dc241b1275d02bc2ddd8
-    spriteOutline: []
+    spriteOutline:
+    - shape:
+      - {x: 1, y: 1}
+      - {x: -1, y: 1}
+      - {x: -1, y: -1}
+      - {x: 1, y: -1}
     tessellationDetail: 0
   - name: Doom_40
     originalName: 
@@ -737,7 +820,12 @@ ScriptedImporter:
       width: 8
       height: 8
     spriteID: 676c7d0ee0b0c9b488740346f59efbfd
-    spriteOutline: []
+    spriteOutline:
+    - shape:
+      - {x: 1, y: 1}
+      - {x: -1, y: 1}
+      - {x: -1, y: -1}
+      - {x: 1, y: -1}
     tessellationDetail: 0
   - name: Doom_41
     originalName: 
@@ -752,7 +840,12 @@ ScriptedImporter:
       width: 8
       height: 8
     spriteID: 92eed035f9a6642429e1f42f971ad337
-    spriteOutline: []
+    spriteOutline:
+    - shape:
+      - {x: 1, y: 1}
+      - {x: -1, y: 1}
+      - {x: -1, y: -1}
+      - {x: 1, y: -1}
     tessellationDetail: 0
   - name: Doom_42
     originalName: 
@@ -767,7 +860,12 @@ ScriptedImporter:
       width: 8
       height: 8
     spriteID: 189c2fa894c18fc49b9014f42136fd89
-    spriteOutline: []
+    spriteOutline:
+    - shape:
+      - {x: 1, y: 1}
+      - {x: -1, y: 1}
+      - {x: -1, y: -1}
+      - {x: 1, y: -1}
     tessellationDetail: 0
   - name: Doom_43
     originalName: 
@@ -782,7 +880,12 @@ ScriptedImporter:
       width: 8
       height: 8
     spriteID: a7df2fd0c2d3afb41ba1920f0599e7e8
-    spriteOutline: []
+    spriteOutline:
+    - shape:
+      - {x: 1, y: 1}
+      - {x: -1, y: 1}
+      - {x: -1, y: -1}
+      - {x: 1, y: -1}
     tessellationDetail: 0
   - name: Doom_44
     originalName: 
@@ -797,7 +900,12 @@ ScriptedImporter:
       width: 8
       height: 8
     spriteID: a5225aa056666d942bb24f041e67f9d2
-    spriteOutline: []
+    spriteOutline:
+    - shape:
+      - {x: 1, y: 1}
+      - {x: -1, y: 1}
+      - {x: -1, y: -1}
+      - {x: 1, y: -1}
     tessellationDetail: 0
   - name: Doom_45
     originalName: 
@@ -812,7 +920,12 @@ ScriptedImporter:
       width: 8
       height: 8
     spriteID: 4341ba9c8c3fbcf4c8c67f883257168f
-    spriteOutline: []
+    spriteOutline:
+    - shape:
+      - {x: 1, y: 1}
+      - {x: -1, y: 1}
+      - {x: -1, y: -1}
+      - {x: 1, y: -1}
     tessellationDetail: 0
   - name: Doom_46
     originalName: 
@@ -827,7 +940,12 @@ ScriptedImporter:
       width: 8
       height: 8
     spriteID: 7fdf80cf16b55fc458c13d548e25d559
-    spriteOutline: []
+    spriteOutline:
+    - shape:
+      - {x: 1, y: 1}
+      - {x: -1, y: 1}
+      - {x: -1, y: -1}
+      - {x: 1, y: -1}
     tessellationDetail: 0
   - name: Doom_47
     originalName: 
@@ -842,7 +960,12 @@ ScriptedImporter:
       width: 8
       height: 8
     spriteID: 4a446913e98e5c0449cd536289620144
-    spriteOutline: []
+    spriteOutline:
+    - shape:
+      - {x: 1, y: 1}
+      - {x: -1, y: 1}
+      - {x: -1, y: -1}
+      - {x: 1, y: -1}
     tessellationDetail: 0
   - name: Doom_48
     originalName: 
@@ -857,7 +980,12 @@ ScriptedImporter:
       width: 8
       height: 8
     spriteID: 466014ea86682634b9dadec332a9c8f6
-    spriteOutline: []
+    spriteOutline:
+    - shape:
+      - {x: 1, y: 1}
+      - {x: -1, y: 1}
+      - {x: -1, y: -1}
+      - {x: 1, y: -1}
     tessellationDetail: 0
   - name: Doom_49
     originalName: 
@@ -872,7 +1000,12 @@ ScriptedImporter:
       width: 8
       height: 8
     spriteID: 16857b3f1c1e9c747b2ff5e366afb4d0
-    spriteOutline: []
+    spriteOutline:
+    - shape:
+      - {x: 1, y: 1}
+      - {x: -1, y: 1}
+      - {x: -1, y: -1}
+      - {x: 1, y: -1}
     tessellationDetail: 0
   - name: Doom_50
     originalName: 
@@ -887,7 +1020,12 @@ ScriptedImporter:
       width: 8
       height: 8
     spriteID: 908304a66fe55204db2104bfbe55424a
-    spriteOutline: []
+    spriteOutline:
+    - shape:
+      - {x: 1, y: 1}
+      - {x: -1, y: 1}
+      - {x: -1, y: -1}
+      - {x: 1, y: -1}
     tessellationDetail: 0
   - name: Doom_51
     originalName: 
@@ -902,7 +1040,12 @@ ScriptedImporter:
       width: 8
       height: 8
     spriteID: 4badfa936cf57064d92e59e2539d670f
-    spriteOutline: []
+    spriteOutline:
+    - shape:
+      - {x: 1, y: 1}
+      - {x: -1, y: 1}
+      - {x: -1, y: -1}
+      - {x: 1, y: -1}
     tessellationDetail: 0
   - name: Doom_52
     originalName: 
@@ -917,7 +1060,12 @@ ScriptedImporter:
       width: 8
       height: 8
     spriteID: ebbb8d8044df12440a1c381a04dc9499
-    spriteOutline: []
+    spriteOutline:
+    - shape:
+      - {x: 1, y: 1}
+      - {x: -1, y: 1}
+      - {x: -1, y: -1}
+      - {x: 1, y: -1}
     tessellationDetail: 0
   - name: Doom_53
     originalName: 
@@ -932,7 +1080,12 @@ ScriptedImporter:
       width: 8
       height: 8
     spriteID: d7198c1106e2f50408bc854c68ac8ac8
-    spriteOutline: []
+    spriteOutline:
+    - shape:
+      - {x: 1, y: 1}
+      - {x: -1, y: 1}
+      - {x: -1, y: -1}
+      - {x: 1, y: -1}
     tessellationDetail: 0
   - name: Doom_54
     originalName: 
@@ -947,7 +1100,12 @@ ScriptedImporter:
       width: 8
       height: 8
     spriteID: c165abc21665bf241ade95b69bf39097
-    spriteOutline: []
+    spriteOutline:
+    - shape:
+      - {x: 1, y: 1}
+      - {x: -1, y: 1}
+      - {x: -1, y: -1}
+      - {x: 1, y: -1}
     tessellationDetail: 0
   - name: Doom_55
     originalName: 
@@ -962,7 +1120,12 @@ ScriptedImporter:
       width: 8
       height: 8
     spriteID: 89f00fe0bfd0be04fab342cc9f99e11c
-    spriteOutline: []
+    spriteOutline:
+    - shape:
+      - {x: 1, y: 1}
+      - {x: -1, y: 1}
+      - {x: -1, y: -1}
+      - {x: 1, y: -1}
     tessellationDetail: 0
   - name: Doom_56
     originalName: 
@@ -977,7 +1140,12 @@ ScriptedImporter:
       width: 8
       height: 8
     spriteID: 81a34d2a8210497478719ffd9c8ed0fc
-    spriteOutline: []
+    spriteOutline:
+    - shape:
+      - {x: 1, y: 1}
+      - {x: -1, y: 1}
+      - {x: -1, y: -1}
+      - {x: 1, y: -1}
     tessellationDetail: 0
   - name: Doom_57
     originalName: 
@@ -992,7 +1160,12 @@ ScriptedImporter:
       width: 8
       height: 8
     spriteID: f98219b745ca08b4ebf4e364547b6cc6
-    spriteOutline: []
+    spriteOutline:
+    - shape:
+      - {x: 1, y: 1}
+      - {x: -1, y: 1}
+      - {x: -1, y: -1}
+      - {x: 1, y: -1}
     tessellationDetail: 0
   - name: Doom_58
     originalName: 
@@ -1007,7 +1180,12 @@ ScriptedImporter:
       width: 8
       height: 8
     spriteID: 277486f2382fe9043b0b93db7111672d
-    spriteOutline: []
+    spriteOutline:
+    - shape:
+      - {x: 1, y: 1}
+      - {x: -1, y: 1}
+      - {x: -1, y: -1}
+      - {x: 1, y: -1}
     tessellationDetail: 0
   - name: Doom_59
     originalName: 
@@ -1022,7 +1200,12 @@ ScriptedImporter:
       width: 8
       height: 8
     spriteID: 8e506f1ce5cdb474faaf2b443197454e
-    spriteOutline: []
+    spriteOutline:
+    - shape:
+      - {x: 1, y: 1}
+      - {x: -1, y: 1}
+      - {x: -1, y: -1}
+      - {x: 1, y: -1}
     tessellationDetail: 0
   - name: Doom_60
     originalName: 
@@ -1037,7 +1220,12 @@ ScriptedImporter:
       width: 8
       height: 8
     spriteID: 82b5ec391bacf9049af13539a18482f6
-    spriteOutline: []
+    spriteOutline:
+    - shape:
+      - {x: 1, y: 1}
+      - {x: -1, y: 1}
+      - {x: -1, y: -1}
+      - {x: 1, y: -1}
     tessellationDetail: 0
   - name: Doom_61
     originalName: 
@@ -1052,7 +1240,12 @@ ScriptedImporter:
       width: 8
       height: 8
     spriteID: f6c8b555c34dc5e468bc57373ed8aeba
-    spriteOutline: []
+    spriteOutline:
+    - shape:
+      - {x: 1, y: 1}
+      - {x: -1, y: 1}
+      - {x: -1, y: -1}
+      - {x: 1, y: -1}
     tessellationDetail: 0
   - name: Doom_62
     originalName: 
@@ -1067,7 +1260,12 @@ ScriptedImporter:
       width: 8
       height: 8
     spriteID: 04863d3b224425541bcabb214b411516
-    spriteOutline: []
+    spriteOutline:
+    - shape:
+      - {x: 1, y: 1}
+      - {x: -1, y: 1}
+      - {x: -1, y: -1}
+      - {x: 1, y: -1}
     tessellationDetail: 0
   - name: Doom_63
     originalName: 
@@ -1082,7 +1280,12 @@ ScriptedImporter:
       width: 8
       height: 8
     spriteID: 8604097b9958d1c4992587db4fb5a943
-    spriteOutline: []
+    spriteOutline:
+    - shape:
+      - {x: 1, y: 1}
+      - {x: -1, y: 1}
+      - {x: -1, y: -1}
+      - {x: 1, y: -1}
     tessellationDetail: 0
   - name: Doom_64
     originalName: 
@@ -1097,7 +1300,12 @@ ScriptedImporter:
       width: 8
       height: 8
     spriteID: c8e55967e65b0ae4e9a3fbca957d6c3c
-    spriteOutline: []
+    spriteOutline:
+    - shape:
+      - {x: 1, y: 1}
+      - {x: -1, y: 1}
+      - {x: -1, y: -1}
+      - {x: 1, y: -1}
     tessellationDetail: 0
   - name: Doom_65
     originalName: 
@@ -1112,7 +1320,12 @@ ScriptedImporter:
       width: 8
       height: 8
     spriteID: 98389a8e62596ca4498e46f09130c104
-    spriteOutline: []
+    spriteOutline:
+    - shape:
+      - {x: 1, y: 1}
+      - {x: -1, y: 1}
+      - {x: -1, y: -1}
+      - {x: 1, y: -1}
     tessellationDetail: 0
   - name: Doom_66
     originalName: 
@@ -1127,7 +1340,12 @@ ScriptedImporter:
       width: 8
       height: 8
     spriteID: 5e564a2cdf6468c4cacd22dd2f57a112
-    spriteOutline: []
+    spriteOutline:
+    - shape:
+      - {x: 1, y: 1}
+      - {x: -1, y: 1}
+      - {x: -1, y: -1}
+      - {x: 1, y: -1}
     tessellationDetail: 0
   - name: Doom_67
     originalName: 
@@ -1142,7 +1360,12 @@ ScriptedImporter:
       width: 8
       height: 8
     spriteID: 10b98f407a2a7594e8c6e3681494e011
-    spriteOutline: []
+    spriteOutline:
+    - shape:
+      - {x: 1, y: 1}
+      - {x: -1, y: 1}
+      - {x: -1, y: -1}
+      - {x: 1, y: -1}
     tessellationDetail: 0
   - name: Doom_68
     originalName: 
@@ -1157,7 +1380,12 @@ ScriptedImporter:
       width: 8
       height: 8
     spriteID: 221dd788ea305414fb879da9ee539a07
-    spriteOutline: []
+    spriteOutline:
+    - shape:
+      - {x: 1, y: 1}
+      - {x: -1, y: 1}
+      - {x: -1, y: -1}
+      - {x: 1, y: -1}
     tessellationDetail: 0
   - name: Doom_69
     originalName: 
@@ -1172,7 +1400,12 @@ ScriptedImporter:
       width: 8
       height: 8
     spriteID: 262e244cdec91734598afde1700168ce
-    spriteOutline: []
+    spriteOutline:
+    - shape:
+      - {x: 1, y: 1}
+      - {x: -1, y: 1}
+      - {x: -1, y: -1}
+      - {x: 1, y: -1}
     tessellationDetail: 0
   - name: Doom_70
     originalName: 
@@ -1187,7 +1420,12 @@ ScriptedImporter:
       width: 8
       height: 8
     spriteID: 13dbd8b1df749bb4ba0c432c232b154b
-    spriteOutline: []
+    spriteOutline:
+    - shape:
+      - {x: 1, y: 1}
+      - {x: -1, y: 1}
+      - {x: -1, y: -1}
+      - {x: 1, y: -1}
     tessellationDetail: 0
   - name: Doom_71
     originalName: 
@@ -1202,7 +1440,12 @@ ScriptedImporter:
       width: 8
       height: 8
     spriteID: 8ee077ada6cd764428f0e9b9fa7f3b84
-    spriteOutline: []
+    spriteOutline:
+    - shape:
+      - {x: 1, y: 1}
+      - {x: -1, y: 1}
+      - {x: -1, y: -1}
+      - {x: 1, y: -1}
     tessellationDetail: 0
   - name: Doom_72
     originalName: 
@@ -1217,7 +1460,12 @@ ScriptedImporter:
       width: 8
       height: 8
     spriteID: 277670a5016b17b44a2ad093e72f2166
-    spriteOutline: []
+    spriteOutline:
+    - shape:
+      - {x: 1, y: 1}
+      - {x: -1, y: 1}
+      - {x: -1, y: -1}
+      - {x: 1, y: -1}
     tessellationDetail: 0
   - name: Doom_73
     originalName: 
@@ -1232,7 +1480,12 @@ ScriptedImporter:
       width: 8
       height: 8
     spriteID: dbe9432848e37be4b9a44075eee2f4f4
-    spriteOutline: []
+    spriteOutline:
+    - shape:
+      - {x: 1, y: 1}
+      - {x: -1, y: 1}
+      - {x: -1, y: -1}
+      - {x: 1, y: -1}
     tessellationDetail: 0
   - name: Doom_74
     originalName: 
@@ -1247,7 +1500,12 @@ ScriptedImporter:
       width: 8
       height: 8
     spriteID: 8ac0253abb8cd444a8ab167543c6f43f
-    spriteOutline: []
+    spriteOutline:
+    - shape:
+      - {x: 1, y: 1}
+      - {x: -1, y: 1}
+      - {x: -1, y: -1}
+      - {x: 1, y: -1}
     tessellationDetail: 0
   - name: Doom_75
     originalName: 
@@ -1262,7 +1520,12 @@ ScriptedImporter:
       width: 8
       height: 8
     spriteID: 1b7048f16f00c664386f17ae60553279
-    spriteOutline: []
+    spriteOutline:
+    - shape:
+      - {x: 1, y: 1}
+      - {x: -1, y: 1}
+      - {x: -1, y: -1}
+      - {x: 1, y: -1}
     tessellationDetail: 0
   - name: Doom_76
     originalName: 
@@ -1277,7 +1540,12 @@ ScriptedImporter:
       width: 8
       height: 8
     spriteID: e3120637fc36659439fdbf253a51301b
-    spriteOutline: []
+    spriteOutline:
+    - shape:
+      - {x: 1, y: 1}
+      - {x: -1, y: 1}
+      - {x: -1, y: -1}
+      - {x: 1, y: -1}
     tessellationDetail: 0
   - name: Doom_77
     originalName: 
@@ -1292,7 +1560,12 @@ ScriptedImporter:
       width: 8
       height: 8
     spriteID: fd11c712eb3b02f4bbf5a93027c1dc60
-    spriteOutline: []
+    spriteOutline:
+    - shape:
+      - {x: 1, y: 1}
+      - {x: -1, y: 1}
+      - {x: -1, y: -1}
+      - {x: 1, y: -1}
     tessellationDetail: 0
   - name: Doom_78
     originalName: 
@@ -1307,7 +1580,12 @@ ScriptedImporter:
       width: 8
       height: 8
     spriteID: 26f820c74592e6e4cbfc4473679b3796
-    spriteOutline: []
+    spriteOutline:
+    - shape:
+      - {x: 1, y: 1}
+      - {x: -1, y: 1}
+      - {x: -1, y: -1}
+      - {x: 1, y: -1}
     tessellationDetail: 0
   - name: Doom_79
     originalName: 
@@ -1322,7 +1600,12 @@ ScriptedImporter:
       width: 8
       height: 8
     spriteID: 8a011000b3bd93e46a43a30ac4632c25
-    spriteOutline: []
+    spriteOutline:
+    - shape:
+      - {x: 1, y: 1}
+      - {x: -1, y: 1}
+      - {x: -1, y: -1}
+      - {x: 1, y: -1}
     tessellationDetail: 0
   - name: Doom_80
     originalName: 
@@ -1337,7 +1620,12 @@ ScriptedImporter:
       width: 8
       height: 8
     spriteID: 78b90d3598b586b44a3952312d0e1fbb
-    spriteOutline: []
+    spriteOutline:
+    - shape:
+      - {x: 1, y: 1}
+      - {x: -1, y: 1}
+      - {x: -1, y: -1}
+      - {x: 1, y: -1}
     tessellationDetail: 0
   - name: Doom_81
     originalName: 
@@ -1352,7 +1640,12 @@ ScriptedImporter:
       width: 8
       height: 8
     spriteID: 962cf8aa81c62b24983c875674ff571a
-    spriteOutline: []
+    spriteOutline:
+    - shape:
+      - {x: 1, y: 1}
+      - {x: -1, y: 1}
+      - {x: -1, y: -1}
+      - {x: 1, y: -1}
     tessellationDetail: 0
   - name: Doom_82
     originalName: 
@@ -1367,7 +1660,12 @@ ScriptedImporter:
       width: 8
       height: 8
     spriteID: d3731f327b4432f40b4eb6d5f7c45484
-    spriteOutline: []
+    spriteOutline:
+    - shape:
+      - {x: 1, y: 1}
+      - {x: -1, y: 1}
+      - {x: -1, y: -1}
+      - {x: 1, y: -1}
     tessellationDetail: 0
   - name: Doom_83
     originalName: 
@@ -1382,7 +1680,12 @@ ScriptedImporter:
       width: 8
       height: 8
     spriteID: ad4b69165671b5a4682a30040d3e3b4a
-    spriteOutline: []
+    spriteOutline:
+    - shape:
+      - {x: 1, y: 1}
+      - {x: -1, y: 1}
+      - {x: -1, y: -1}
+      - {x: 1, y: -1}
     tessellationDetail: 0
   - name: Doom_84
     originalName: 
@@ -1397,7 +1700,12 @@ ScriptedImporter:
       width: 8
       height: 8
     spriteID: 107906862da03d44687e2846624245b9
-    spriteOutline: []
+    spriteOutline:
+    - shape:
+      - {x: 1, y: 1}
+      - {x: -1, y: 1}
+      - {x: -1, y: -1}
+      - {x: 1, y: -1}
     tessellationDetail: 0
   - name: Doom_85
     originalName: 
@@ -1412,7 +1720,12 @@ ScriptedImporter:
       width: 8
       height: 8
     spriteID: 1c1eaa0dea6b35f418678c202136195c
-    spriteOutline: []
+    spriteOutline:
+    - shape:
+      - {x: 1, y: 1}
+      - {x: -1, y: 1}
+      - {x: -1, y: -1}
+      - {x: 1, y: -1}
     tessellationDetail: 0
   - name: Doom_86
     originalName: 
@@ -1427,7 +1740,12 @@ ScriptedImporter:
       width: 8
       height: 8
     spriteID: 984abc4cc3712da48a3f2bdb3500bec4
-    spriteOutline: []
+    spriteOutline:
+    - shape:
+      - {x: 1, y: 1}
+      - {x: -1, y: 1}
+      - {x: -1, y: -1}
+      - {x: 1, y: -1}
     tessellationDetail: 0
   - name: Doom_87
     originalName: 
@@ -1442,7 +1760,12 @@ ScriptedImporter:
       width: 8
       height: 8
     spriteID: c0b418782c3d363409fb0b642760c351
-    spriteOutline: []
+    spriteOutline:
+    - shape:
+      - {x: 1, y: 1}
+      - {x: -1, y: 1}
+      - {x: -1, y: -1}
+      - {x: 1, y: -1}
     tessellationDetail: 0
   - name: Doom_88
     originalName: 
@@ -1457,7 +1780,12 @@ ScriptedImporter:
       width: 8
       height: 8
     spriteID: 876379674f0950046b8b3748c07e11fe
-    spriteOutline: []
+    spriteOutline:
+    - shape:
+      - {x: 1, y: 1}
+      - {x: -1, y: 1}
+      - {x: -1, y: -1}
+      - {x: 1, y: -1}
     tessellationDetail: 0
   - name: Doom_89
     originalName: 
@@ -1472,7 +1800,12 @@ ScriptedImporter:
       width: 8
       height: 8
     spriteID: 3869db267e7001e45bfca0a61198424a
-    spriteOutline: []
+    spriteOutline:
+    - shape:
+      - {x: 1, y: 1}
+      - {x: -1, y: 1}
+      - {x: -1, y: -1}
+      - {x: 1, y: -1}
     tessellationDetail: 0
   - name: Doom_90
     originalName: 
@@ -1487,7 +1820,12 @@ ScriptedImporter:
       width: 8
       height: 8
     spriteID: fe691a5fa10b11d4d8aaa25a8638fb92
-    spriteOutline: []
+    spriteOutline:
+    - shape:
+      - {x: 1, y: 1}
+      - {x: -1, y: 1}
+      - {x: -1, y: -1}
+      - {x: 1, y: -1}
     tessellationDetail: 0
   - name: Doom_91
     originalName: 
@@ -1502,7 +1840,12 @@ ScriptedImporter:
       width: 8
       height: 8
     spriteID: 0536888bcd081bd479e5310bb50c849c
-    spriteOutline: []
+    spriteOutline:
+    - shape:
+      - {x: 1, y: 1}
+      - {x: -1, y: 1}
+      - {x: -1, y: -1}
+      - {x: 1, y: -1}
     tessellationDetail: 0
   - name: Doom_92
     originalName: 
@@ -1517,7 +1860,12 @@ ScriptedImporter:
       width: 8
       height: 8
     spriteID: 5e480a56d22b1f94f890bb3d89771eb9
-    spriteOutline: []
+    spriteOutline:
+    - shape:
+      - {x: 1, y: 1}
+      - {x: -1, y: 1}
+      - {x: -1, y: -1}
+      - {x: 1, y: -1}
     tessellationDetail: 0
   - name: Doom_93
     originalName: 
@@ -1532,7 +1880,12 @@ ScriptedImporter:
       width: 8
       height: 8
     spriteID: 28067b2fdcbe11b40a9323359307221f
-    spriteOutline: []
+    spriteOutline:
+    - shape:
+      - {x: 1, y: 1}
+      - {x: -1, y: 1}
+      - {x: -1, y: -1}
+      - {x: 1, y: -1}
     tessellationDetail: 0
   - name: Doom_94
     originalName: 
@@ -1547,7 +1900,12 @@ ScriptedImporter:
       width: 8
       height: 8
     spriteID: 62dad9f38b9690a489be4e4489c497a5
-    spriteOutline: []
+    spriteOutline:
+    - shape:
+      - {x: 1, y: 1}
+      - {x: -1, y: 1}
+      - {x: -1, y: -1}
+      - {x: 1, y: -1}
     tessellationDetail: 0
   - name: Doom_95
     originalName: 
@@ -1562,7 +1920,12 @@ ScriptedImporter:
       width: 8
       height: 8
     spriteID: d50df5c4184191144acc633b1305be82
-    spriteOutline: []
+    spriteOutline:
+    - shape:
+      - {x: 1, y: 1}
+      - {x: -1, y: 1}
+      - {x: -1, y: -1}
+      - {x: 1, y: -1}
     tessellationDetail: 0
   - name: Doom_96
     originalName: 
@@ -1577,7 +1940,12 @@ ScriptedImporter:
       width: 8
       height: 8
     spriteID: 007c5300f1fd609468438976ac821060
-    spriteOutline: []
+    spriteOutline:
+    - shape:
+      - {x: 1, y: 1}
+      - {x: -1, y: 1}
+      - {x: -1, y: -1}
+      - {x: 1, y: -1}
     tessellationDetail: 0
   - name: Doom_97
     originalName: 
@@ -1592,7 +1960,12 @@ ScriptedImporter:
       width: 8
       height: 8
     spriteID: f2e66f8a6c01b044c8efedae43fe1f13
-    spriteOutline: []
+    spriteOutline:
+    - shape:
+      - {x: 1, y: 1}
+      - {x: -1, y: 1}
+      - {x: -1, y: -1}
+      - {x: 1, y: -1}
     tessellationDetail: 0
   - name: Doom_98
     originalName: 
@@ -1607,7 +1980,12 @@ ScriptedImporter:
       width: 8
       height: 8
     spriteID: 4f5baf3e7db3f27419a3394142c8f51c
-    spriteOutline: []
+    spriteOutline:
+    - shape:
+      - {x: 1, y: 1}
+      - {x: -1, y: 1}
+      - {x: -1, y: -1}
+      - {x: 1, y: -1}
     tessellationDetail: 0
   - name: Doom_99
     originalName: 
@@ -1622,7 +2000,12 @@ ScriptedImporter:
       width: 8
       height: 8
     spriteID: 365f0b718d27df04fbbf5c19ae313f35
-    spriteOutline: []
+    spriteOutline:
+    - shape:
+      - {x: 1, y: 1}
+      - {x: -1, y: 1}
+      - {x: -1, y: -1}
+      - {x: 1, y: -1}
     tessellationDetail: 0
   - name: Doom_100
     originalName: 
@@ -1637,7 +2020,12 @@ ScriptedImporter:
       width: 8
       height: 8
     spriteID: b905ec587ef4c6c49b3ca7991b1a60fd
-    spriteOutline: []
+    spriteOutline:
+    - shape:
+      - {x: 1, y: 1}
+      - {x: -1, y: 1}
+      - {x: -1, y: -1}
+      - {x: 1, y: -1}
     tessellationDetail: 0
   - name: Doom_101
     originalName: 
@@ -1652,7 +2040,12 @@ ScriptedImporter:
       width: 8
       height: 8
     spriteID: 401db56a2d840b54b889b756774a1404
-    spriteOutline: []
+    spriteOutline:
+    - shape:
+      - {x: 1, y: 1}
+      - {x: -1, y: 1}
+      - {x: -1, y: -1}
+      - {x: 1, y: -1}
     tessellationDetail: 0
   - name: Doom_102
     originalName: 
@@ -1667,7 +2060,12 @@ ScriptedImporter:
       width: 8
       height: 8
     spriteID: ee3d12a37c32cb64c8701591d3cad791
-    spriteOutline: []
+    spriteOutline:
+    - shape:
+      - {x: 1, y: 1}
+      - {x: -1, y: 1}
+      - {x: -1, y: -1}
+      - {x: 1, y: -1}
     tessellationDetail: 0
   - name: Doom_103
     originalName: 
@@ -1682,7 +2080,12 @@ ScriptedImporter:
       width: 8
       height: 8
     spriteID: 41ad8d2acc9a35945935aa43ff8618d0
-    spriteOutline: []
+    spriteOutline:
+    - shape:
+      - {x: 1, y: 1}
+      - {x: -1, y: 1}
+      - {x: -1, y: -1}
+      - {x: 1, y: -1}
     tessellationDetail: 0
   - name: Doom_104
     originalName: 
@@ -1697,7 +2100,12 @@ ScriptedImporter:
       width: 8
       height: 8
     spriteID: 8957d1b4a8f887b4ea9bd5073bae8997
-    spriteOutline: []
+    spriteOutline:
+    - shape:
+      - {x: 1, y: 1}
+      - {x: -1, y: 1}
+      - {x: -1, y: -1}
+      - {x: 1, y: -1}
     tessellationDetail: 0
   - name: Doom_105
     originalName: 
@@ -1712,7 +2120,12 @@ ScriptedImporter:
       width: 8
       height: 8
     spriteID: 19f6426b1487fa849889ba01cb5e2781
-    spriteOutline: []
+    spriteOutline:
+    - shape:
+      - {x: 1, y: 1}
+      - {x: -1, y: 1}
+      - {x: -1, y: -1}
+      - {x: 1, y: -1}
     tessellationDetail: 0
   - name: Doom_106
     originalName: 
@@ -1727,7 +2140,12 @@ ScriptedImporter:
       width: 8
       height: 8
     spriteID: c740bc2b2f2734a4f834b23ea21eebda
-    spriteOutline: []
+    spriteOutline:
+    - shape:
+      - {x: 1, y: 1}
+      - {x: -1, y: 1}
+      - {x: -1, y: -1}
+      - {x: 1, y: -1}
     tessellationDetail: 0
   - name: Doom_107
     originalName: 
@@ -1742,7 +2160,12 @@ ScriptedImporter:
       width: 8
       height: 8
     spriteID: 14366f3e046da834b841e386e574e1f2
-    spriteOutline: []
+    spriteOutline:
+    - shape:
+      - {x: 1, y: 1}
+      - {x: -1, y: 1}
+      - {x: -1, y: -1}
+      - {x: 1, y: -1}
     tessellationDetail: 0
   - name: Doom_108
     originalName: 
@@ -1757,7 +2180,12 @@ ScriptedImporter:
       width: 8
       height: 8
     spriteID: 5254003104318904c880d99798502dd4
-    spriteOutline: []
+    spriteOutline:
+    - shape:
+      - {x: 1, y: 1}
+      - {x: -1, y: 1}
+      - {x: -1, y: -1}
+      - {x: 1, y: -1}
     tessellationDetail: 0
   - name: Doom_109
     originalName: 
@@ -1772,7 +2200,12 @@ ScriptedImporter:
       width: 8
       height: 8
     spriteID: 3e38ca870f722864dbcd5394e682bdb4
-    spriteOutline: []
+    spriteOutline:
+    - shape:
+      - {x: 1, y: 1}
+      - {x: -1, y: 1}
+      - {x: -1, y: -1}
+      - {x: 1, y: -1}
     tessellationDetail: 0
   - name: Doom_110
     originalName: 
@@ -1787,7 +2220,12 @@ ScriptedImporter:
       width: 8
       height: 8
     spriteID: c12fc4ccb62facb4f8b00147256575bb
-    spriteOutline: []
+    spriteOutline:
+    - shape:
+      - {x: 1, y: 1}
+      - {x: -1, y: 1}
+      - {x: -1, y: -1}
+      - {x: 1, y: -1}
     tessellationDetail: 0
   - name: Doom_111
     originalName: 
@@ -1802,7 +2240,12 @@ ScriptedImporter:
       width: 8
       height: 8
     spriteID: 17c563ba3d4f9ea4eaa93115ae16bcd3
-    spriteOutline: []
+    spriteOutline:
+    - shape:
+      - {x: 1, y: 1}
+      - {x: -1, y: 1}
+      - {x: -1, y: -1}
+      - {x: 1, y: -1}
     tessellationDetail: 0
   - name: Doom_112
     originalName: 
@@ -1817,7 +2260,12 @@ ScriptedImporter:
       width: 8
       height: 8
     spriteID: 7a3ea7897db78de42bfa7b17328ca10d
-    spriteOutline: []
+    spriteOutline:
+    - shape:
+      - {x: 1, y: 1}
+      - {x: -1, y: 1}
+      - {x: -1, y: -1}
+      - {x: 1, y: -1}
     tessellationDetail: 0
   - name: Doom_113
     originalName: 
@@ -1832,7 +2280,12 @@ ScriptedImporter:
       width: 8
       height: 8
     spriteID: c380cd4d5c4eb40448a4a58efe66d584
-    spriteOutline: []
+    spriteOutline:
+    - shape:
+      - {x: 1, y: 1}
+      - {x: -1, y: 1}
+      - {x: -1, y: -1}
+      - {x: 1, y: -1}
     tessellationDetail: 0
   - name: Doom_114
     originalName: 
@@ -1847,7 +2300,12 @@ ScriptedImporter:
       width: 8
       height: 8
     spriteID: 2d20da922888f5d428d84f906c27cf79
-    spriteOutline: []
+    spriteOutline:
+    - shape:
+      - {x: 1, y: 1}
+      - {x: -1, y: 1}
+      - {x: -1, y: -1}
+      - {x: 1, y: -1}
     tessellationDetail: 0
   - name: Doom_115
     originalName: 
@@ -1862,7 +2320,12 @@ ScriptedImporter:
       width: 8
       height: 8
     spriteID: 9319dc452bc9e204aa0dc2cbbadb4198
-    spriteOutline: []
+    spriteOutline:
+    - shape:
+      - {x: 1, y: 1}
+      - {x: -1, y: 1}
+      - {x: -1, y: -1}
+      - {x: 1, y: -1}
     tessellationDetail: 0
   - name: Doom_116
     originalName: 
@@ -1877,7 +2340,12 @@ ScriptedImporter:
       width: 8
       height: 8
     spriteID: 217126c8585d82b4aa8356be01ca401c
-    spriteOutline: []
+    spriteOutline:
+    - shape:
+      - {x: 1, y: 1}
+      - {x: -1, y: 1}
+      - {x: -1, y: -1}
+      - {x: 1, y: -1}
     tessellationDetail: 0
   - name: Doom_117
     originalName: 
@@ -1892,7 +2360,12 @@ ScriptedImporter:
       width: 8
       height: 8
     spriteID: 48116dd254854c24295e35ca13be77b5
-    spriteOutline: []
+    spriteOutline:
+    - shape:
+      - {x: 1, y: 1}
+      - {x: -1, y: 1}
+      - {x: -1, y: -1}
+      - {x: 1, y: -1}
     tessellationDetail: 0
   - name: Doom_118
     originalName: 
@@ -1907,7 +2380,12 @@ ScriptedImporter:
       width: 8
       height: 8
     spriteID: ee1f8765037eaf34995608b1f17d50aa
-    spriteOutline: []
+    spriteOutline:
+    - shape:
+      - {x: 1, y: 1}
+      - {x: -1, y: 1}
+      - {x: -1, y: -1}
+      - {x: 1, y: -1}
     tessellationDetail: 0
   - name: Doom_119
     originalName: 
@@ -1922,7 +2400,12 @@ ScriptedImporter:
       width: 8
       height: 8
     spriteID: 0f490681012fadc4bbed649055e0d019
-    spriteOutline: []
+    spriteOutline:
+    - shape:
+      - {x: 1, y: 1}
+      - {x: -1, y: 1}
+      - {x: -1, y: -1}
+      - {x: 1, y: -1}
     tessellationDetail: 0
   - name: Doom_120
     originalName: 
@@ -1937,7 +2420,12 @@ ScriptedImporter:
       width: 8
       height: 8
     spriteID: b98c3ae01db002a4f8f477eef770df6d
-    spriteOutline: []
+    spriteOutline:
+    - shape:
+      - {x: 1, y: 1}
+      - {x: -1, y: 1}
+      - {x: -1, y: -1}
+      - {x: 1, y: -1}
     tessellationDetail: 0
   - name: Doom_121
     originalName: 
@@ -1952,7 +2440,12 @@ ScriptedImporter:
       width: 8
       height: 8
     spriteID: b5dad0b3d54995941b2a982ce0491673
-    spriteOutline: []
+    spriteOutline:
+    - shape:
+      - {x: 1, y: 1}
+      - {x: -1, y: 1}
+      - {x: -1, y: -1}
+      - {x: 1, y: -1}
     tessellationDetail: 0
   - name: Doom_122
     originalName: 
@@ -1967,7 +2460,12 @@ ScriptedImporter:
       width: 8
       height: 8
     spriteID: fe306f69a1d6d4b4cb8737f4e1ee4895
-    spriteOutline: []
+    spriteOutline:
+    - shape:
+      - {x: 1, y: 1}
+      - {x: -1, y: 1}
+      - {x: -1, y: -1}
+      - {x: 1, y: -1}
     tessellationDetail: 0
   - name: Doom_123
     originalName: 
@@ -1982,7 +2480,12 @@ ScriptedImporter:
       width: 8
       height: 8
     spriteID: f347bed4c1864be4883be3712e563ed9
-    spriteOutline: []
+    spriteOutline:
+    - shape:
+      - {x: 1, y: 1}
+      - {x: -1, y: 1}
+      - {x: -1, y: -1}
+      - {x: 1, y: -1}
     tessellationDetail: 0
   - name: Doom_124
     originalName: 
@@ -1997,7 +2500,12 @@ ScriptedImporter:
       width: 8
       height: 8
     spriteID: 3a6088b047ef91f4097aafa88ad3d26e
-    spriteOutline: []
+    spriteOutline:
+    - shape:
+      - {x: 1, y: 1}
+      - {x: -1, y: 1}
+      - {x: -1, y: -1}
+      - {x: 1, y: -1}
     tessellationDetail: 0
   - name: Doom_125
     originalName: 
@@ -2012,7 +2520,12 @@ ScriptedImporter:
       width: 8
       height: 8
     spriteID: 8916e9b1fdead3a46b8a7b007310da8b
-    spriteOutline: []
+    spriteOutline:
+    - shape:
+      - {x: 1, y: 1}
+      - {x: -1, y: 1}
+      - {x: -1, y: -1}
+      - {x: 1, y: -1}
     tessellationDetail: 0
   - name: Doom_126
     originalName: 
@@ -2027,7 +2540,12 @@ ScriptedImporter:
       width: 8
       height: 8
     spriteID: 369646f65dfa8514ea407c1a5f4d00a3
-    spriteOutline: []
+    spriteOutline:
+    - shape:
+      - {x: 1, y: 1}
+      - {x: -1, y: 1}
+      - {x: -1, y: -1}
+      - {x: 1, y: -1}
     tessellationDetail: 0
   - name: Doom_127
     originalName: 
@@ -2042,7 +2560,12 @@ ScriptedImporter:
       width: 8
       height: 8
     spriteID: 6c13bbef4ee8a4441b8b5b515c4e098c
-    spriteOutline: []
+    spriteOutline:
+    - shape:
+      - {x: 1, y: 1}
+      - {x: -1, y: 1}
+      - {x: -1, y: -1}
+      - {x: 1, y: -1}
     tessellationDetail: 0
   - name: Doom_128
     originalName: 
@@ -2057,7 +2580,12 @@ ScriptedImporter:
       width: 8
       height: 8
     spriteID: a365ea56773182545ad11e7fa59dd3ae
-    spriteOutline: []
+    spriteOutline:
+    - shape:
+      - {x: 1, y: 1}
+      - {x: -1, y: 1}
+      - {x: -1, y: -1}
+      - {x: 1, y: -1}
     tessellationDetail: 0
   - name: Doom_129
     originalName: 
@@ -2072,7 +2600,12 @@ ScriptedImporter:
       width: 8
       height: 8
     spriteID: 556835f683fe26047b45a9440f117332
-    spriteOutline: []
+    spriteOutline:
+    - shape:
+      - {x: 1, y: 1}
+      - {x: -1, y: 1}
+      - {x: -1, y: -1}
+      - {x: 1, y: -1}
     tessellationDetail: 0
   - name: Doom_130
     originalName: 
@@ -2087,7 +2620,12 @@ ScriptedImporter:
       width: 8
       height: 8
     spriteID: 1549b8bd68803ff4f82e7ab072b7c50b
-    spriteOutline: []
+    spriteOutline:
+    - shape:
+      - {x: 1, y: 1}
+      - {x: -1, y: 1}
+      - {x: -1, y: -1}
+      - {x: 1, y: -1}
     tessellationDetail: 0
   - name: Doom_131
     originalName: 
@@ -2102,7 +2640,12 @@ ScriptedImporter:
       width: 8
       height: 8
     spriteID: 43fcc29b08eae0e4cb051ffa0d99746b
-    spriteOutline: []
+    spriteOutline:
+    - shape:
+      - {x: 1, y: 1}
+      - {x: -1, y: 1}
+      - {x: -1, y: -1}
+      - {x: 1, y: -1}
     tessellationDetail: 0
   - name: Doom_132
     originalName: 
@@ -2117,7 +2660,12 @@ ScriptedImporter:
       width: 8
       height: 8
     spriteID: ec377c7ab1b303f40bcd7058ef5390f3
-    spriteOutline: []
+    spriteOutline:
+    - shape:
+      - {x: 1, y: 1}
+      - {x: -1, y: 1}
+      - {x: -1, y: -1}
+      - {x: 1, y: -1}
     tessellationDetail: 0
   - name: Doom_133
     originalName: 
@@ -2132,7 +2680,12 @@ ScriptedImporter:
       width: 8
       height: 8
     spriteID: 0a1e94b7fed4c9f4baa122cfabb7b5e0
-    spriteOutline: []
+    spriteOutline:
+    - shape:
+      - {x: 1, y: 1}
+      - {x: -1, y: 1}
+      - {x: -1, y: -1}
+      - {x: 1, y: -1}
     tessellationDetail: 0
   - name: Doom_134
     originalName: 
@@ -2147,7 +2700,12 @@ ScriptedImporter:
       width: 8
       height: 8
     spriteID: d44094e8aea467f428110013d8879867
-    spriteOutline: []
+    spriteOutline:
+    - shape:
+      - {x: 1, y: 1}
+      - {x: -1, y: 1}
+      - {x: -1, y: -1}
+      - {x: 1, y: -1}
     tessellationDetail: 0
   - name: Doom_135
     originalName: 
@@ -2162,7 +2720,12 @@ ScriptedImporter:
       width: 8
       height: 8
     spriteID: 2c1864b22c4520f4ea133f3cf56076fe
-    spriteOutline: []
+    spriteOutline:
+    - shape:
+      - {x: 1, y: 1}
+      - {x: -1, y: 1}
+      - {x: -1, y: -1}
+      - {x: 1, y: -1}
     tessellationDetail: 0
   - name: Doom_136
     originalName: 
@@ -2177,7 +2740,12 @@ ScriptedImporter:
       width: 8
       height: 8
     spriteID: 651cdb5148b79024892cb6a4bedc8f78
-    spriteOutline: []
+    spriteOutline:
+    - shape:
+      - {x: 1, y: 1}
+      - {x: -1, y: 1}
+      - {x: -1, y: -1}
+      - {x: 1, y: -1}
     tessellationDetail: 0
   - name: Doom_137
     originalName: 
@@ -2192,7 +2760,12 @@ ScriptedImporter:
       width: 8
       height: 8
     spriteID: be7cbdc96f003be4790d995d1c5f155c
-    spriteOutline: []
+    spriteOutline:
+    - shape:
+      - {x: 1, y: 1}
+      - {x: -1, y: 1}
+      - {x: -1, y: -1}
+      - {x: 1, y: -1}
     tessellationDetail: 0
   - name: Doom_138
     originalName: 
@@ -2207,7 +2780,12 @@ ScriptedImporter:
       width: 8
       height: 8
     spriteID: 331a702234fa148448e445a5455c9e9c
-    spriteOutline: []
+    spriteOutline:
+    - shape:
+      - {x: 1, y: 1}
+      - {x: -1, y: 1}
+      - {x: -1, y: -1}
+      - {x: 1, y: -1}
     tessellationDetail: 0
   - name: Doom_139
     originalName: 
@@ -2222,7 +2800,12 @@ ScriptedImporter:
       width: 8
       height: 8
     spriteID: daba3eb5350dddf419f4f115e611c11d
-    spriteOutline: []
+    spriteOutline:
+    - shape:
+      - {x: 1, y: 1}
+      - {x: -1, y: 1}
+      - {x: -1, y: -1}
+      - {x: 1, y: -1}
     tessellationDetail: 0
   - name: Doom_140
     originalName: 
@@ -2237,7 +2820,12 @@ ScriptedImporter:
       width: 8
       height: 8
     spriteID: 48e47ec5ba3cc54468764d6e976fc196
-    spriteOutline: []
+    spriteOutline:
+    - shape:
+      - {x: 1, y: 1}
+      - {x: -1, y: 1}
+      - {x: -1, y: -1}
+      - {x: 1, y: -1}
     tessellationDetail: 0
   - name: Doom_141
     originalName: 
@@ -2252,7 +2840,12 @@ ScriptedImporter:
       width: 8
       height: 8
     spriteID: 9114bf1b3df3d5741b30d1612090416f
-    spriteOutline: []
+    spriteOutline:
+    - shape:
+      - {x: 1, y: 1}
+      - {x: -1, y: 1}
+      - {x: -1, y: -1}
+      - {x: 1, y: -1}
     tessellationDetail: 0
   - name: Doom_142
     originalName: 
@@ -2267,7 +2860,12 @@ ScriptedImporter:
       width: 8
       height: 8
     spriteID: 5628a6b9f5894734fbf8cbcb0a112407
-    spriteOutline: []
+    spriteOutline:
+    - shape:
+      - {x: 1, y: 1}
+      - {x: -1, y: 1}
+      - {x: -1, y: -1}
+      - {x: 1, y: -1}
     tessellationDetail: 0
   - name: Doom_143
     originalName: 
@@ -2282,7 +2880,12 @@ ScriptedImporter:
       width: 8
       height: 8
     spriteID: ef1cd837565c1044c90256c7407f7d2c
-    spriteOutline: []
+    spriteOutline:
+    - shape:
+      - {x: 1, y: 1}
+      - {x: -1, y: 1}
+      - {x: -1, y: -1}
+      - {x: 1, y: -1}
     tessellationDetail: 0
   - name: Doom_144
     originalName: 
@@ -2297,7 +2900,12 @@ ScriptedImporter:
       width: 8
       height: 8
     spriteID: 71192713eaee4bc4bbc1b13ff264e90a
-    spriteOutline: []
+    spriteOutline:
+    - shape:
+      - {x: 1, y: 1}
+      - {x: -1, y: 1}
+      - {x: -1, y: -1}
+      - {x: 1, y: -1}
     tessellationDetail: 0
   - name: Doom_145
     originalName: 
@@ -2312,7 +2920,12 @@ ScriptedImporter:
       width: 8
       height: 8
     spriteID: ca1ae4722bf63ce409c9c6ba4026a139
-    spriteOutline: []
+    spriteOutline:
+    - shape:
+      - {x: 1, y: 1}
+      - {x: -1, y: 1}
+      - {x: -1, y: -1}
+      - {x: 1, y: -1}
     tessellationDetail: 0
   - name: Doom_146
     originalName: 
@@ -2327,7 +2940,12 @@ ScriptedImporter:
       width: 8
       height: 8
     spriteID: a29a78f46676ac848985228dda7dcb3f
-    spriteOutline: []
+    spriteOutline:
+    - shape:
+      - {x: 1, y: 1}
+      - {x: -1, y: 1}
+      - {x: -1, y: -1}
+      - {x: 1, y: -1}
     tessellationDetail: 0
   - name: Doom_147
     originalName: 
@@ -2342,7 +2960,12 @@ ScriptedImporter:
       width: 8
       height: 8
     spriteID: 2dc244e8a97298b4f828bac8c0fd32e6
-    spriteOutline: []
+    spriteOutline:
+    - shape:
+      - {x: 1, y: 1}
+      - {x: -1, y: 1}
+      - {x: -1, y: -1}
+      - {x: 1, y: -1}
     tessellationDetail: 0
   - name: Doom_148
     originalName: 
@@ -2357,7 +2980,12 @@ ScriptedImporter:
       width: 8
       height: 8
     spriteID: 8695e437c84ff8547a8f24f69ad8d509
-    spriteOutline: []
+    spriteOutline:
+    - shape:
+      - {x: 1, y: 1}
+      - {x: -1, y: 1}
+      - {x: -1, y: -1}
+      - {x: 1, y: -1}
     tessellationDetail: 0
   - name: Doom_149
     originalName: 
@@ -2372,7 +3000,12 @@ ScriptedImporter:
       width: 8
       height: 8
     spriteID: a8d7f1396029d5c4392e8e57045e0565
-    spriteOutline: []
+    spriteOutline:
+    - shape:
+      - {x: 1, y: 1}
+      - {x: -1, y: 1}
+      - {x: -1, y: -1}
+      - {x: 1, y: -1}
     tessellationDetail: 0
   - name: Doom_150
     originalName: 
@@ -2387,7 +3020,12 @@ ScriptedImporter:
       width: 8
       height: 8
     spriteID: 19c0e0da223ed144d9bf9e7078169afc
-    spriteOutline: []
+    spriteOutline:
+    - shape:
+      - {x: 1, y: 1}
+      - {x: -1, y: 1}
+      - {x: -1, y: -1}
+      - {x: 1, y: -1}
     tessellationDetail: 0
   - name: Doom_151
     originalName: 
@@ -2402,7 +3040,12 @@ ScriptedImporter:
       width: 8
       height: 8
     spriteID: e69bb8c456f9c364eb6be65a7c66ca94
-    spriteOutline: []
+    spriteOutline:
+    - shape:
+      - {x: 1, y: 1}
+      - {x: -1, y: 1}
+      - {x: -1, y: -1}
+      - {x: 1, y: -1}
     tessellationDetail: 0
   - name: Doom_152
     originalName: 
@@ -2417,7 +3060,12 @@ ScriptedImporter:
       width: 8
       height: 8
     spriteID: 234696efae5ae124cbadd240dcfd43c9
-    spriteOutline: []
+    spriteOutline:
+    - shape:
+      - {x: 1, y: 1}
+      - {x: -1, y: 1}
+      - {x: -1, y: -1}
+      - {x: 1, y: -1}
     tessellationDetail: 0
   - name: Doom_153
     originalName: 
@@ -2432,7 +3080,12 @@ ScriptedImporter:
       width: 8
       height: 8
     spriteID: 807ade877dce87d4a90217fc8a2cd4f6
-    spriteOutline: []
+    spriteOutline:
+    - shape:
+      - {x: 1, y: 1}
+      - {x: -1, y: 1}
+      - {x: -1, y: -1}
+      - {x: 1, y: -1}
     tessellationDetail: 0
   - name: Doom_154
     originalName: 
@@ -2447,7 +3100,12 @@ ScriptedImporter:
       width: 8
       height: 8
     spriteID: abbd5d186454afb4a9942ba44cb2a783
-    spriteOutline: []
+    spriteOutline:
+    - shape:
+      - {x: 1, y: 1}
+      - {x: -1, y: 1}
+      - {x: -1, y: -1}
+      - {x: 1, y: -1}
     tessellationDetail: 0
   - name: Doom_155
     originalName: 
@@ -2462,7 +3120,12 @@ ScriptedImporter:
       width: 8
       height: 8
     spriteID: 352e9080d7b4a1e4bab24b7c9389200a
-    spriteOutline: []
+    spriteOutline:
+    - shape:
+      - {x: 1, y: 1}
+      - {x: -1, y: 1}
+      - {x: -1, y: -1}
+      - {x: 1, y: -1}
     tessellationDetail: 0
   - name: Doom_156
     originalName: 
@@ -2477,7 +3140,12 @@ ScriptedImporter:
       width: 8
       height: 8
     spriteID: a6b0cdcd3e9850c41b3d8dcfae2d64a3
-    spriteOutline: []
+    spriteOutline:
+    - shape:
+      - {x: 1, y: 1}
+      - {x: -1, y: 1}
+      - {x: -1, y: -1}
+      - {x: 1, y: -1}
     tessellationDetail: 0
   - name: Doom_157
     originalName: 
@@ -2492,7 +3160,12 @@ ScriptedImporter:
       width: 8
       height: 8
     spriteID: 982b9ccedcfe537428cef3ca86eb671a
-    spriteOutline: []
+    spriteOutline:
+    - shape:
+      - {x: 1, y: 1}
+      - {x: -1, y: 1}
+      - {x: -1, y: -1}
+      - {x: 1, y: -1}
     tessellationDetail: 0
   - name: Doom_158
     originalName: 
@@ -2507,7 +3180,12 @@ ScriptedImporter:
       width: 8
       height: 8
     spriteID: dc4fa8066f79e29429491eb9373fd01c
-    spriteOutline: []
+    spriteOutline:
+    - shape:
+      - {x: 1, y: 1}
+      - {x: -1, y: 1}
+      - {x: -1, y: -1}
+      - {x: 1, y: -1}
     tessellationDetail: 0
   - name: Doom_159
     originalName: 
@@ -2522,7 +3200,12 @@ ScriptedImporter:
       width: 8
       height: 8
     spriteID: 2eade65e41613fa46a0516463e4a059b
-    spriteOutline: []
+    spriteOutline:
+    - shape:
+      - {x: 1, y: 1}
+      - {x: -1, y: 1}
+      - {x: -1, y: -1}
+      - {x: 1, y: -1}
     tessellationDetail: 0
   - name: Doom_160
     originalName: 
@@ -2537,7 +3220,12 @@ ScriptedImporter:
       width: 8
       height: 8
     spriteID: bf1c95552f7d2eb4baebd8d4a327c04e
-    spriteOutline: []
+    spriteOutline:
+    - shape:
+      - {x: 1, y: 1}
+      - {x: -1, y: 1}
+      - {x: -1, y: -1}
+      - {x: 1, y: -1}
     tessellationDetail: 0
   - name: Doom_161
     originalName: 
@@ -2552,7 +3240,12 @@ ScriptedImporter:
       width: 8
       height: 8
     spriteID: c52306fb39baffa4f8ce1fb9c713c639
-    spriteOutline: []
+    spriteOutline:
+    - shape:
+      - {x: 1, y: 1}
+      - {x: -1, y: 1}
+      - {x: -1, y: -1}
+      - {x: 1, y: -1}
     tessellationDetail: 0
   - name: Doom_162
     originalName: 
@@ -2567,7 +3260,12 @@ ScriptedImporter:
       width: 8
       height: 8
     spriteID: d7bd7e454d97c3c49a7af2201f6028bc
-    spriteOutline: []
+    spriteOutline:
+    - shape:
+      - {x: 1, y: 1}
+      - {x: -1, y: 1}
+      - {x: -1, y: -1}
+      - {x: 1, y: -1}
     tessellationDetail: 0
   - name: Doom_163
     originalName: 
@@ -2582,7 +3280,12 @@ ScriptedImporter:
       width: 8
       height: 8
     spriteID: fc628fbfdbc843f469aa86e98d546a1b
-    spriteOutline: []
+    spriteOutline:
+    - shape:
+      - {x: 1, y: 1}
+      - {x: -1, y: 1}
+      - {x: -1, y: -1}
+      - {x: 1, y: -1}
     tessellationDetail: 0
   - name: Doom_164
     originalName: 
@@ -2597,7 +3300,12 @@ ScriptedImporter:
       width: 8
       height: 8
     spriteID: fe7e8e81027dcdc448d38d9bfe39886d
-    spriteOutline: []
+    spriteOutline:
+    - shape:
+      - {x: 1, y: 1}
+      - {x: -1, y: 1}
+      - {x: -1, y: -1}
+      - {x: 1, y: -1}
     tessellationDetail: 0
   - name: Doom_165
     originalName: 
@@ -2612,7 +3320,12 @@ ScriptedImporter:
       width: 8
       height: 8
     spriteID: 6ca4e3808b4737b4582784babaea50cc
-    spriteOutline: []
+    spriteOutline:
+    - shape:
+      - {x: 1, y: 1}
+      - {x: -1, y: 1}
+      - {x: -1, y: -1}
+      - {x: 1, y: -1}
     tessellationDetail: 0
   - name: Doom_166
     originalName: 
@@ -2627,7 +3340,12 @@ ScriptedImporter:
       width: 8
       height: 8
     spriteID: 51e8021f9c34cfd4ea8438d445f1579c
-    spriteOutline: []
+    spriteOutline:
+    - shape:
+      - {x: 1, y: 1}
+      - {x: -1, y: 1}
+      - {x: -1, y: -1}
+      - {x: 1, y: -1}
     tessellationDetail: 0
   - name: Doom_167
     originalName: 
@@ -2642,7 +3360,12 @@ ScriptedImporter:
       width: 8
       height: 8
     spriteID: 5bd2c058afa278f40bdf62e87f6bc8cd
-    spriteOutline: []
+    spriteOutline:
+    - shape:
+      - {x: 1, y: 1}
+      - {x: -1, y: 1}
+      - {x: -1, y: -1}
+      - {x: 1, y: -1}
     tessellationDetail: 0
   - name: Doom_168
     originalName: 
@@ -2657,7 +3380,12 @@ ScriptedImporter:
       width: 8
       height: 8
     spriteID: 9ef4d1efd499c484ab8274c3fa5557a5
-    spriteOutline: []
+    spriteOutline:
+    - shape:
+      - {x: 1, y: 1}
+      - {x: -1, y: 1}
+      - {x: -1, y: -1}
+      - {x: 1, y: -1}
     tessellationDetail: 0
   - name: Doom_169
     originalName: 
@@ -2672,7 +3400,12 @@ ScriptedImporter:
       width: 8
       height: 8
     spriteID: 7fdcd3d25b8e7134a88531d5bb1ad427
-    spriteOutline: []
+    spriteOutline:
+    - shape:
+      - {x: 1, y: 1}
+      - {x: -1, y: 1}
+      - {x: -1, y: -1}
+      - {x: 1, y: -1}
     tessellationDetail: 0
   - name: Doom_170
     originalName: 
@@ -2687,7 +3420,12 @@ ScriptedImporter:
       width: 8
       height: 8
     spriteID: c8eedf381b4eb3a4d860b62ea3cb7b25
-    spriteOutline: []
+    spriteOutline:
+    - shape:
+      - {x: 1, y: 1}
+      - {x: -1, y: 1}
+      - {x: -1, y: -1}
+      - {x: 1, y: -1}
     tessellationDetail: 0
   - name: Doom_171
     originalName: 
@@ -2702,7 +3440,12 @@ ScriptedImporter:
       width: 8
       height: 8
     spriteID: 6e70b2963a752cc469bc73438b51e3f8
-    spriteOutline: []
+    spriteOutline:
+    - shape:
+      - {x: 1, y: 1}
+      - {x: -1, y: 1}
+      - {x: -1, y: -1}
+      - {x: 1, y: -1}
     tessellationDetail: 0
   - name: Doom_172
     originalName: 
@@ -2717,7 +3460,12 @@ ScriptedImporter:
       width: 8
       height: 8
     spriteID: bd29a81c4775ed9439bdbfa6c9bc364b
-    spriteOutline: []
+    spriteOutline:
+    - shape:
+      - {x: 1, y: 1}
+      - {x: -1, y: 1}
+      - {x: -1, y: -1}
+      - {x: 1, y: -1}
     tessellationDetail: 0
   - name: Doom_173
     originalName: 
@@ -2732,7 +3480,12 @@ ScriptedImporter:
       width: 8
       height: 8
     spriteID: d3fe0d05edab7cc43aa473bfaedcfa18
-    spriteOutline: []
+    spriteOutline:
+    - shape:
+      - {x: 1, y: 1}
+      - {x: -1, y: 1}
+      - {x: -1, y: -1}
+      - {x: 1, y: -1}
     tessellationDetail: 0
   - name: Doom_174
     originalName: 
@@ -2747,7 +3500,12 @@ ScriptedImporter:
       width: 8
       height: 8
     spriteID: 55f0f713b15603a43b83375c34d3397c
-    spriteOutline: []
+    spriteOutline:
+    - shape:
+      - {x: 1, y: 1}
+      - {x: -1, y: 1}
+      - {x: -1, y: -1}
+      - {x: 1, y: -1}
     tessellationDetail: 0
   - name: Doom_175
     originalName: 
@@ -2762,7 +3520,12 @@ ScriptedImporter:
       width: 8
       height: 8
     spriteID: 054955ccfda8e3f4990a64f16dd74b6f
-    spriteOutline: []
+    spriteOutline:
+    - shape:
+      - {x: 1, y: 1}
+      - {x: -1, y: 1}
+      - {x: -1, y: -1}
+      - {x: 1, y: -1}
     tessellationDetail: 0
   - name: Doom_176
     originalName: 
@@ -2777,7 +3540,12 @@ ScriptedImporter:
       width: 8
       height: 8
     spriteID: 8852a5e57f603584fb9b9dcef5bec4a9
-    spriteOutline: []
+    spriteOutline:
+    - shape:
+      - {x: 1, y: 1}
+      - {x: -1, y: 1}
+      - {x: -1, y: -1}
+      - {x: 1, y: -1}
     tessellationDetail: 0
   - name: Doom_177
     originalName: 
@@ -2792,7 +3560,12 @@ ScriptedImporter:
       width: 8
       height: 8
     spriteID: 9511504e3d1ab1942988484bb4e77880
-    spriteOutline: []
+    spriteOutline:
+    - shape:
+      - {x: 1, y: 1}
+      - {x: -1, y: 1}
+      - {x: -1, y: -1}
+      - {x: 1, y: -1}
     tessellationDetail: 0
   - name: Doom_178
     originalName: 
@@ -2807,7 +3580,12 @@ ScriptedImporter:
       width: 8
       height: 8
     spriteID: fd48f6a3bf6fe0540b8522d57080d366
-    spriteOutline: []
+    spriteOutline:
+    - shape:
+      - {x: 1, y: 1}
+      - {x: -1, y: 1}
+      - {x: -1, y: -1}
+      - {x: 1, y: -1}
     tessellationDetail: 0
   - name: Doom_179
     originalName: 
@@ -2822,7 +3600,12 @@ ScriptedImporter:
       width: 8
       height: 8
     spriteID: 10b8d9663a5c154439710d868dc611d9
-    spriteOutline: []
+    spriteOutline:
+    - shape:
+      - {x: 1, y: 1}
+      - {x: -1, y: 1}
+      - {x: -1, y: -1}
+      - {x: 1, y: -1}
     tessellationDetail: 0
   - name: Doom_180
     originalName: 
@@ -2837,7 +3620,12 @@ ScriptedImporter:
       width: 8
       height: 8
     spriteID: 46a1e19263e3b2447aad15b2bc601cd4
-    spriteOutline: []
+    spriteOutline:
+    - shape:
+      - {x: 1, y: 1}
+      - {x: -1, y: 1}
+      - {x: -1, y: -1}
+      - {x: 1, y: -1}
     tessellationDetail: 0
   - name: Doom_181
     originalName: 
@@ -2852,7 +3640,12 @@ ScriptedImporter:
       width: 8
       height: 8
     spriteID: 8896d666dd7b390459ba2e8e35f1298a
-    spriteOutline: []
+    spriteOutline:
+    - shape:
+      - {x: 1, y: 1}
+      - {x: -1, y: 1}
+      - {x: -1, y: -1}
+      - {x: 1, y: -1}
     tessellationDetail: 0
   - name: Doom_182
     originalName: 
@@ -2867,7 +3660,12 @@ ScriptedImporter:
       width: 8
       height: 8
     spriteID: f5ebe139fc5541343801ba9986950090
-    spriteOutline: []
+    spriteOutline:
+    - shape:
+      - {x: 1, y: 1}
+      - {x: -1, y: 1}
+      - {x: -1, y: -1}
+      - {x: 1, y: -1}
     tessellationDetail: 0
   - name: Doom_183
     originalName: 
@@ -2882,7 +3680,12 @@ ScriptedImporter:
       width: 8
       height: 8
     spriteID: 3904f6732e158c849aa48aed64b15fa4
-    spriteOutline: []
+    spriteOutline:
+    - shape:
+      - {x: 1, y: 1}
+      - {x: -1, y: 1}
+      - {x: -1, y: -1}
+      - {x: 1, y: -1}
     tessellationDetail: 0
   - name: Doom_184
     originalName: 
@@ -2897,7 +3700,12 @@ ScriptedImporter:
       width: 8
       height: 8
     spriteID: abfaf159d5442ad44b5e0b833b2eecf8
-    spriteOutline: []
+    spriteOutline:
+    - shape:
+      - {x: 1, y: 1}
+      - {x: -1, y: 1}
+      - {x: -1, y: -1}
+      - {x: 1, y: -1}
     tessellationDetail: 0
   - name: Doom_185
     originalName: 
@@ -2912,7 +3720,12 @@ ScriptedImporter:
       width: 8
       height: 8
     spriteID: 611e480472a33d4468954c7c6084caac
-    spriteOutline: []
+    spriteOutline:
+    - shape:
+      - {x: 1, y: 1}
+      - {x: -1, y: 1}
+      - {x: -1, y: -1}
+      - {x: 1, y: -1}
     tessellationDetail: 0
   - name: Doom_186
     originalName: 
@@ -2927,7 +3740,12 @@ ScriptedImporter:
       width: 8
       height: 8
     spriteID: 5443cc20f77b7074295bff2244010ce6
-    spriteOutline: []
+    spriteOutline:
+    - shape:
+      - {x: 1, y: 1}
+      - {x: -1, y: 1}
+      - {x: -1, y: -1}
+      - {x: 1, y: -1}
     tessellationDetail: 0
   - name: Doom_187
     originalName: 
@@ -2942,7 +3760,12 @@ ScriptedImporter:
       width: 8
       height: 8
     spriteID: f70fc8c813d1cd54aa501a3e707f4d25
-    spriteOutline: []
+    spriteOutline:
+    - shape:
+      - {x: 1, y: 1}
+      - {x: -1, y: 1}
+      - {x: -1, y: -1}
+      - {x: 1, y: -1}
     tessellationDetail: 0
   - name: Doom_188
     originalName: 
@@ -2957,7 +3780,12 @@ ScriptedImporter:
       width: 8
       height: 8
     spriteID: d59574a3c26c7724d9bf5add0d3d87ef
-    spriteOutline: []
+    spriteOutline:
+    - shape:
+      - {x: 1, y: 1}
+      - {x: -1, y: 1}
+      - {x: -1, y: -1}
+      - {x: 1, y: -1}
     tessellationDetail: 0
   - name: Doom_189
     originalName: 
@@ -2972,7 +3800,12 @@ ScriptedImporter:
       width: 8
       height: 8
     spriteID: bc779a4625202bc4e93ddce0d73225f7
-    spriteOutline: []
+    spriteOutline:
+    - shape:
+      - {x: 1, y: 1}
+      - {x: -1, y: 1}
+      - {x: -1, y: -1}
+      - {x: 1, y: -1}
     tessellationDetail: 0
   - name: Doom_190
     originalName: 
@@ -2987,7 +3820,12 @@ ScriptedImporter:
       width: 8
       height: 8
     spriteID: 85817ec4ff0ad024a963374e18ebb579
-    spriteOutline: []
+    spriteOutline:
+    - shape:
+      - {x: 1, y: 1}
+      - {x: -1, y: 1}
+      - {x: -1, y: -1}
+      - {x: 1, y: -1}
     tessellationDetail: 0
   - name: Doom_191
     originalName: 
@@ -3002,7 +3840,12 @@ ScriptedImporter:
       width: 8
       height: 8
     spriteID: 6598691b8e217b24f94be1006dc7c223
-    spriteOutline: []
+    spriteOutline:
+    - shape:
+      - {x: 1, y: 1}
+      - {x: -1, y: 1}
+      - {x: -1, y: -1}
+      - {x: 1, y: -1}
     tessellationDetail: 0
   - name: Doom_192
     originalName: 
@@ -3017,7 +3860,12 @@ ScriptedImporter:
       width: 8
       height: 8
     spriteID: af46e71c280944d4492d47b221e7baa5
-    spriteOutline: []
+    spriteOutline:
+    - shape:
+      - {x: 1, y: 1}
+      - {x: -1, y: 1}
+      - {x: -1, y: -1}
+      - {x: 1, y: -1}
     tessellationDetail: 0
   - name: Doom_193
     originalName: 
@@ -3032,7 +3880,12 @@ ScriptedImporter:
       width: 8
       height: 8
     spriteID: 4d36b63cce8ecad4d9cc3605f90cffab
-    spriteOutline: []
+    spriteOutline:
+    - shape:
+      - {x: 1, y: 1}
+      - {x: -1, y: 1}
+      - {x: -1, y: -1}
+      - {x: 1, y: -1}
     tessellationDetail: 0
   - name: Doom_194
     originalName: 
@@ -3047,7 +3900,12 @@ ScriptedImporter:
       width: 8
       height: 8
     spriteID: 1a3f38e2ff67a9945a0e8d888866f762
-    spriteOutline: []
+    spriteOutline:
+    - shape:
+      - {x: 1, y: 1}
+      - {x: -1, y: 1}
+      - {x: -1, y: -1}
+      - {x: 1, y: -1}
     tessellationDetail: 0
   - name: Doom_195
     originalName: 
@@ -3062,7 +3920,12 @@ ScriptedImporter:
       width: 8
       height: 8
     spriteID: 5362f0f13b865f64c888ea4fef5418f1
-    spriteOutline: []
+    spriteOutline:
+    - shape:
+      - {x: 1, y: 1}
+      - {x: -1, y: 1}
+      - {x: -1, y: -1}
+      - {x: 1, y: -1}
     tessellationDetail: 0
   - name: Doom_196
     originalName: 
@@ -3077,7 +3940,12 @@ ScriptedImporter:
       width: 8
       height: 8
     spriteID: 5a0405bd931218f429b6e39900b6254c
-    spriteOutline: []
+    spriteOutline:
+    - shape:
+      - {x: 1, y: 1}
+      - {x: -1, y: 1}
+      - {x: -1, y: -1}
+      - {x: 1, y: -1}
     tessellationDetail: 0
   - name: Doom_197
     originalName: 
@@ -3092,7 +3960,12 @@ ScriptedImporter:
       width: 8
       height: 8
     spriteID: 28f4727e46318744581b91b110b698d9
-    spriteOutline: []
+    spriteOutline:
+    - shape:
+      - {x: 1, y: 1}
+      - {x: -1, y: 1}
+      - {x: -1, y: -1}
+      - {x: 1, y: -1}
     tessellationDetail: 0
   - name: Doom_198
     originalName: 
@@ -3107,7 +3980,12 @@ ScriptedImporter:
       width: 8
       height: 8
     spriteID: fae2ff1c1ee6ce7498290b0655f22137
-    spriteOutline: []
+    spriteOutline:
+    - shape:
+      - {x: 1, y: 1}
+      - {x: -1, y: 1}
+      - {x: -1, y: -1}
+      - {x: 1, y: -1}
     tessellationDetail: 0
   - name: Doom_199
     originalName: 
@@ -3122,7 +4000,12 @@ ScriptedImporter:
       width: 8
       height: 8
     spriteID: ce7f0f36a5b6c2847ab9263bcf63a7ea
-    spriteOutline: []
+    spriteOutline:
+    - shape:
+      - {x: 1, y: 1}
+      - {x: -1, y: 1}
+      - {x: -1, y: -1}
+      - {x: 1, y: -1}
     tessellationDetail: 0
   - name: Doom_200
     originalName: 
@@ -3137,7 +4020,12 @@ ScriptedImporter:
       width: 8
       height: 8
     spriteID: f0f88fded9a8af540a8a65c359d54320
-    spriteOutline: []
+    spriteOutline:
+    - shape:
+      - {x: 1, y: 1}
+      - {x: -1, y: 1}
+      - {x: -1, y: -1}
+      - {x: 1, y: -1}
     tessellationDetail: 0
   - name: Doom_201
     originalName: 
@@ -3152,7 +4040,12 @@ ScriptedImporter:
       width: 8
       height: 8
     spriteID: f533e0a8ac2a12144a95a2ef2419f545
-    spriteOutline: []
+    spriteOutline:
+    - shape:
+      - {x: 1, y: 1}
+      - {x: -1, y: 1}
+      - {x: -1, y: -1}
+      - {x: 1, y: -1}
     tessellationDetail: 0
   - name: Doom_202
     originalName: 
@@ -3167,7 +4060,12 @@ ScriptedImporter:
       width: 8
       height: 8
     spriteID: 5c50d01980c4c594783d0b7e071eb9bb
-    spriteOutline: []
+    spriteOutline:
+    - shape:
+      - {x: 1, y: 1}
+      - {x: -1, y: 1}
+      - {x: -1, y: -1}
+      - {x: 1, y: -1}
     tessellationDetail: 0
   - name: Doom_203
     originalName: 
@@ -3182,7 +4080,12 @@ ScriptedImporter:
       width: 8
       height: 8
     spriteID: 86fa8bb8a5756a14190ba5e3a9fbf5ec
-    spriteOutline: []
+    spriteOutline:
+    - shape:
+      - {x: 1, y: 1}
+      - {x: -1, y: 1}
+      - {x: -1, y: -1}
+      - {x: 1, y: -1}
     tessellationDetail: 0
   - name: Doom_204
     originalName: 
@@ -3197,7 +4100,12 @@ ScriptedImporter:
       width: 8
       height: 8
     spriteID: d37afa2a530b33f4c81c0427e385c7f8
-    spriteOutline: []
+    spriteOutline:
+    - shape:
+      - {x: 1, y: 1}
+      - {x: -1, y: 1}
+      - {x: -1, y: -1}
+      - {x: 1, y: -1}
     tessellationDetail: 0
   - name: Doom_205
     originalName: 
@@ -3212,7 +4120,12 @@ ScriptedImporter:
       width: 8
       height: 8
     spriteID: 712656f2f47321646a5a8f512b2bcfc4
-    spriteOutline: []
+    spriteOutline:
+    - shape:
+      - {x: 1, y: 1}
+      - {x: -1, y: 1}
+      - {x: -1, y: -1}
+      - {x: 1, y: -1}
     tessellationDetail: 0
   - name: Doom_206
     originalName: 
@@ -3227,7 +4140,12 @@ ScriptedImporter:
       width: 8
       height: 8
     spriteID: bececd8914fc1804b884a726eda7f140
-    spriteOutline: []
+    spriteOutline:
+    - shape:
+      - {x: 1, y: 1}
+      - {x: -1, y: 1}
+      - {x: -1, y: -1}
+      - {x: 1, y: -1}
     tessellationDetail: 0
   - name: Doom_207
     originalName: 
@@ -3242,7 +4160,12 @@ ScriptedImporter:
       width: 8
       height: 8
     spriteID: 25a6f8e2b04af94439c4424d957c6380
-    spriteOutline: []
+    spriteOutline:
+    - shape:
+      - {x: 1, y: 1}
+      - {x: -1, y: 1}
+      - {x: -1, y: -1}
+      - {x: 1, y: -1}
     tessellationDetail: 0
   - name: Doom_208
     originalName: 
@@ -3257,7 +4180,12 @@ ScriptedImporter:
       width: 8
       height: 8
     spriteID: 45baa7f4221e8064a937af6c861df3cc
-    spriteOutline: []
+    spriteOutline:
+    - shape:
+      - {x: 1, y: 1}
+      - {x: -1, y: 1}
+      - {x: -1, y: -1}
+      - {x: 1, y: -1}
     tessellationDetail: 0
   - name: Doom_209
     originalName: 
@@ -3272,7 +4200,12 @@ ScriptedImporter:
       width: 8
       height: 8
     spriteID: 8711169622bfefe41880cf5211c1f3b8
-    spriteOutline: []
+    spriteOutline:
+    - shape:
+      - {x: 1, y: 1}
+      - {x: -1, y: 1}
+      - {x: -1, y: -1}
+      - {x: 1, y: -1}
     tessellationDetail: 0
   - name: Doom_210
     originalName: 
@@ -3287,7 +4220,12 @@ ScriptedImporter:
       width: 8
       height: 8
     spriteID: 0258c90ce779c8444968a07f227c37e6
-    spriteOutline: []
+    spriteOutline:
+    - shape:
+      - {x: 1, y: 1}
+      - {x: -1, y: 1}
+      - {x: -1, y: -1}
+      - {x: 1, y: -1}
     tessellationDetail: 0
   - name: Doom_211
     originalName: 
@@ -3302,7 +4240,12 @@ ScriptedImporter:
       width: 8
       height: 8
     spriteID: 809a7c7bd13159c418001a7ea3fa8e15
-    spriteOutline: []
+    spriteOutline:
+    - shape:
+      - {x: 1, y: 1}
+      - {x: -1, y: 1}
+      - {x: -1, y: -1}
+      - {x: 1, y: -1}
     tessellationDetail: 0
   - name: Doom_212
     originalName: 
@@ -3317,7 +4260,12 @@ ScriptedImporter:
       width: 8
       height: 8
     spriteID: d64b7547ef2952c4fb666ba21457cf82
-    spriteOutline: []
+    spriteOutline:
+    - shape:
+      - {x: 1, y: 1}
+      - {x: -1, y: 1}
+      - {x: -1, y: -1}
+      - {x: 1, y: -1}
     tessellationDetail: 0
   - name: Doom_213
     originalName: 
@@ -3332,7 +4280,12 @@ ScriptedImporter:
       width: 8
       height: 8
     spriteID: c7f08c0387c94f64e846a2b1c2f258bd
-    spriteOutline: []
+    spriteOutline:
+    - shape:
+      - {x: 1, y: 1}
+      - {x: -1, y: 1}
+      - {x: -1, y: -1}
+      - {x: 1, y: -1}
     tessellationDetail: 0
   - name: Doom_214
     originalName: 
@@ -3347,7 +4300,12 @@ ScriptedImporter:
       width: 8
       height: 8
     spriteID: 13799a46568e52a4091a9a206adc29eb
-    spriteOutline: []
+    spriteOutline:
+    - shape:
+      - {x: 1, y: 1}
+      - {x: -1, y: 1}
+      - {x: -1, y: -1}
+      - {x: 1, y: -1}
     tessellationDetail: 0
   - name: Doom_215
     originalName: 
@@ -3362,7 +4320,12 @@ ScriptedImporter:
       width: 8
       height: 8
     spriteID: 40b107fb46345b54aaebff6ae865d2b4
-    spriteOutline: []
+    spriteOutline:
+    - shape:
+      - {x: 1, y: 1}
+      - {x: -1, y: 1}
+      - {x: -1, y: -1}
+      - {x: 1, y: -1}
     tessellationDetail: 0
   - name: Doom_216
     originalName: 
@@ -3377,7 +4340,12 @@ ScriptedImporter:
       width: 8
       height: 8
     spriteID: 4a48bb0a14afa90478de1be35a9e395e
-    spriteOutline: []
+    spriteOutline:
+    - shape:
+      - {x: 1, y: 1}
+      - {x: -1, y: 1}
+      - {x: -1, y: -1}
+      - {x: 1, y: -1}
     tessellationDetail: 0
   - name: Doom_217
     originalName: 
@@ -3392,7 +4360,12 @@ ScriptedImporter:
       width: 8
       height: 8
     spriteID: 5c8166bed6b289a4f88c3f5ea7da4cfc
-    spriteOutline: []
+    spriteOutline:
+    - shape:
+      - {x: 1, y: 1}
+      - {x: -1, y: 1}
+      - {x: -1, y: -1}
+      - {x: 1, y: -1}
     tessellationDetail: 0
   - name: Doom_218
     originalName: 
@@ -3407,7 +4380,12 @@ ScriptedImporter:
       width: 8
       height: 8
     spriteID: 5fe1046980bd0d245ab55276492c6edb
-    spriteOutline: []
+    spriteOutline:
+    - shape:
+      - {x: 1, y: 1}
+      - {x: -1, y: 1}
+      - {x: -1, y: -1}
+      - {x: 1, y: -1}
     tessellationDetail: 0
   - name: Doom_219
     originalName: 
@@ -3422,7 +4400,12 @@ ScriptedImporter:
       width: 8
       height: 8
     spriteID: f751fe6eeba2b30459ede81c8bbcb1d3
-    spriteOutline: []
+    spriteOutline:
+    - shape:
+      - {x: 1, y: 1}
+      - {x: -1, y: 1}
+      - {x: -1, y: -1}
+      - {x: 1, y: -1}
     tessellationDetail: 0
   - name: Doom_220
     originalName: 
@@ -3437,7 +4420,12 @@ ScriptedImporter:
       width: 8
       height: 8
     spriteID: f702a4f59fe644c4fa03ffa72efa8f3c
-    spriteOutline: []
+    spriteOutline:
+    - shape:
+      - {x: 1, y: 1}
+      - {x: -1, y: 1}
+      - {x: -1, y: -1}
+      - {x: 1, y: -1}
     tessellationDetail: 0
   - name: Doom_221
     originalName: 
@@ -3452,7 +4440,12 @@ ScriptedImporter:
       width: 8
       height: 8
     spriteID: e2592e37add891a4799ae50baeb267d3
-    spriteOutline: []
+    spriteOutline:
+    - shape:
+      - {x: 1, y: 1}
+      - {x: -1, y: 1}
+      - {x: -1, y: -1}
+      - {x: 1, y: -1}
     tessellationDetail: 0
   - name: Doom_222
     originalName: 
@@ -3467,7 +4460,12 @@ ScriptedImporter:
       width: 8
       height: 8
     spriteID: f13367c2c8130e540bf1b1ebee4ef660
-    spriteOutline: []
+    spriteOutline:
+    - shape:
+      - {x: 1, y: 1}
+      - {x: -1, y: 1}
+      - {x: -1, y: -1}
+      - {x: 1, y: -1}
     tessellationDetail: 0
   - name: Doom_223
     originalName: 
@@ -3482,7 +4480,12 @@ ScriptedImporter:
       width: 8
       height: 8
     spriteID: 27248021ca9a2404ea94c5c0411c8e8c
-    spriteOutline: []
+    spriteOutline:
+    - shape:
+      - {x: 1, y: 1}
+      - {x: -1, y: 1}
+      - {x: -1, y: -1}
+      - {x: 1, y: -1}
     tessellationDetail: 0
   - name: Doom_224
     originalName: 
@@ -3497,7 +4500,12 @@ ScriptedImporter:
       width: 8
       height: 8
     spriteID: bb684b24b9d647f4c809b86c49f11995
-    spriteOutline: []
+    spriteOutline:
+    - shape:
+      - {x: 1, y: 1}
+      - {x: -1, y: 1}
+      - {x: -1, y: -1}
+      - {x: 1, y: -1}
     tessellationDetail: 0
   - name: Doom_225
     originalName: 
@@ -3512,7 +4520,12 @@ ScriptedImporter:
       width: 8
       height: 8
     spriteID: 9e21c2d43494f4b41acf9bf929861141
-    spriteOutline: []
+    spriteOutline:
+    - shape:
+      - {x: 1, y: 1}
+      - {x: -1, y: 1}
+      - {x: -1, y: -1}
+      - {x: 1, y: -1}
     tessellationDetail: 0
   - name: Doom_226
     originalName: 
@@ -3527,7 +4540,12 @@ ScriptedImporter:
       width: 8
       height: 8
     spriteID: f31723b4fa4550a49b8d959a69841099
-    spriteOutline: []
+    spriteOutline:
+    - shape:
+      - {x: 1, y: 1}
+      - {x: -1, y: 1}
+      - {x: -1, y: -1}
+      - {x: 1, y: -1}
     tessellationDetail: 0
   - name: Doom_227
     originalName: 
@@ -3542,7 +4560,12 @@ ScriptedImporter:
       width: 8
       height: 8
     spriteID: bc34d2f6b8757f045885f553d8e340f0
-    spriteOutline: []
+    spriteOutline:
+    - shape:
+      - {x: 1, y: 1}
+      - {x: -1, y: 1}
+      - {x: -1, y: -1}
+      - {x: 1, y: -1}
     tessellationDetail: 0
   - name: Doom_228
     originalName: 
@@ -3557,7 +4580,12 @@ ScriptedImporter:
       width: 8
       height: 8
     spriteID: 72bd2b22fecd2dd46a1aed3e42abacca
-    spriteOutline: []
+    spriteOutline:
+    - shape:
+      - {x: 1, y: 1}
+      - {x: -1, y: 1}
+      - {x: -1, y: -1}
+      - {x: 1, y: -1}
     tessellationDetail: 0
   - name: Doom_229
     originalName: 
@@ -3572,7 +4600,12 @@ ScriptedImporter:
       width: 8
       height: 8
     spriteID: f73da2763c88dc2409fceab387f1ec0c
-    spriteOutline: []
+    spriteOutline:
+    - shape:
+      - {x: 1, y: 1}
+      - {x: -1, y: 1}
+      - {x: -1, y: -1}
+      - {x: 1, y: -1}
     tessellationDetail: 0
   - name: Doom_230
     originalName: 
@@ -3587,7 +4620,12 @@ ScriptedImporter:
       width: 8
       height: 8
     spriteID: f97f22b9c57c43d4396cde1ebd7e4227
-    spriteOutline: []
+    spriteOutline:
+    - shape:
+      - {x: 1, y: 1}
+      - {x: -1, y: 1}
+      - {x: -1, y: -1}
+      - {x: 1, y: -1}
     tessellationDetail: 0
   - name: Doom_231
     originalName: 
@@ -3602,7 +4640,12 @@ ScriptedImporter:
       width: 8
       height: 8
     spriteID: 0c97731f72538394f95ebfdf6d723ac7
-    spriteOutline: []
+    spriteOutline:
+    - shape:
+      - {x: 1, y: 1}
+      - {x: -1, y: 1}
+      - {x: -1, y: -1}
+      - {x: 1, y: -1}
     tessellationDetail: 0
   - name: Doom_232
     originalName: 
@@ -3617,7 +4660,12 @@ ScriptedImporter:
       width: 8
       height: 8
     spriteID: 0f13503f5749cf94899dd72fc1d0bb94
-    spriteOutline: []
+    spriteOutline:
+    - shape:
+      - {x: 1, y: 1}
+      - {x: -1, y: 1}
+      - {x: -1, y: -1}
+      - {x: 1, y: -1}
     tessellationDetail: 0
   - name: Doom_233
     originalName: 
@@ -3632,7 +4680,12 @@ ScriptedImporter:
       width: 8
       height: 8
     spriteID: 5728e9f1ebe651f4b9edf8d5ac5ee8d4
-    spriteOutline: []
+    spriteOutline:
+    - shape:
+      - {x: 1, y: 1}
+      - {x: -1, y: 1}
+      - {x: -1, y: -1}
+      - {x: 1, y: -1}
     tessellationDetail: 0
   - name: Doom_234
     originalName: 
@@ -3647,7 +4700,12 @@ ScriptedImporter:
       width: 8
       height: 8
     spriteID: 81886e83aaa55eb4ab02c0fcbbe0990b
-    spriteOutline: []
+    spriteOutline:
+    - shape:
+      - {x: 1, y: 1}
+      - {x: -1, y: 1}
+      - {x: -1, y: -1}
+      - {x: 1, y: -1}
     tessellationDetail: 0
   - name: Doom_235
     originalName: 
@@ -3662,7 +4720,12 @@ ScriptedImporter:
       width: 8
       height: 8
     spriteID: ddb1d39180ad16d4382c7ac5d8c44e90
-    spriteOutline: []
+    spriteOutline:
+    - shape:
+      - {x: 1, y: 1}
+      - {x: -1, y: 1}
+      - {x: -1, y: -1}
+      - {x: 1, y: -1}
     tessellationDetail: 0
   - name: Doom_236
     originalName: 
@@ -3677,7 +4740,12 @@ ScriptedImporter:
       width: 8
       height: 8
     spriteID: eafc7f73e66ffb0469ffa38907466062
-    spriteOutline: []
+    spriteOutline:
+    - shape:
+      - {x: 1, y: 1}
+      - {x: -1, y: 1}
+      - {x: -1, y: -1}
+      - {x: 1, y: -1}
     tessellationDetail: 0
   - name: Doom_237
     originalName: 
@@ -3692,7 +4760,12 @@ ScriptedImporter:
       width: 8
       height: 8
     spriteID: 3c0045bd4f7e2054b9b7145a90cb1bcb
-    spriteOutline: []
+    spriteOutline:
+    - shape:
+      - {x: 1, y: 1}
+      - {x: -1, y: 1}
+      - {x: -1, y: -1}
+      - {x: 1, y: -1}
     tessellationDetail: 0
   - name: Doom_238
     originalName: 
@@ -3707,7 +4780,12 @@ ScriptedImporter:
       width: 8
       height: 8
     spriteID: f79fea1325ccae3479cb64bbb07fc21d
-    spriteOutline: []
+    spriteOutline:
+    - shape:
+      - {x: 1, y: 1}
+      - {x: -1, y: 1}
+      - {x: -1, y: -1}
+      - {x: 1, y: -1}
     tessellationDetail: 0
   - name: Doom_239
     originalName: 
@@ -3722,7 +4800,12 @@ ScriptedImporter:
       width: 8
       height: 8
     spriteID: c9bbae9a1dc9aa146a5496c5238f8453
-    spriteOutline: []
+    spriteOutline:
+    - shape:
+      - {x: 1, y: 1}
+      - {x: -1, y: 1}
+      - {x: -1, y: -1}
+      - {x: 1, y: -1}
     tessellationDetail: 0
   - name: Doom_240
     originalName: 
@@ -3905,4 +4988,4 @@ ScriptedImporter:
     spriteOutline: []
     tessellationDetail: 0
   _secondaryTextures: []
-  _artifacts: {instanceID: 0}
+  _artifacts: {fileID: -2988177865379244337, guid: d88865891999e144dad00a6c3e9330a9, type: 3}
