@@ -8,252 +8,444 @@
     }
   ],
   "Def": {
-    "__cHei": 21,
+    "__cHei": 20,
     "__cWid": 12,
     "cachedPixelData": {
-      "opaqueTiles": "111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111",
-      "averageColors": "f234f233f234f234f234f234f234f234f233f233f233f233f233f223f233f134f234f233f234f234f233f233f233f233f234f233f234f233f234f233f234f234f234f234f233f234f223f223f234f234f234f244f234f234f234f234f233f234f223f223f234f234f233f233f234f234f234f234f223f223f234f233f234f134f234f134f234f234f233f233f233f233f233f223f233f144f134f233f234f234f233f233f233f233f234f233f234f233f234f233f234f234f234f234f233f134f223f223f234f234f134f244f234f234f234f234f233f134f223f223f234f234f233f233f234f234f134f134f223f223f234f233f234f134f234f134f233f233f223f223f223f223f233f223f233f234f134f233f233f233f223f223f223f223f234f233f234f223f234f233f233f233f234f234f223f134f223f223f234f234f134f234f233f233f234f234f223f134f223f223f234f234f233f233f234f234f134f134f223f223f234f233f234f134f234f134f234f234f233f233f233f233f233f223f233f144f134f233f234f234f233f233f233f233f234f233f234f233f234f233f234f234f234f234f233f134f223f223f234f234f134f244f234f234f234f234f233f134f223f223f234f234f233f233f234f234f134f134f223f223f334f334f334f334f334f334f334f334f334f334f334f223"
+      "opaqueTiles": "111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111",
+      "averageColors": "f234f233f234f134f234f134f234f234f233f233f233f233f233f223f233f244f134f223f234f234f233f233f233f233f234f233f234f234f234f223f234f234f234f234f233f223f223f223f134f134f134f223f234f234f234f234f233f223f223f223f134f134f223f223f223f223f223f223f223f223f234f233f234f234f234f234f234f234f223f223f233f233f233f223f233f144f234f223f234f234f223f223f233f233f234f233f234f233f234f223f234f234f234f234f223f223f223f223f234f234f234f223f234f234f234f234f223f223f223f223f234f234f223f223f223f223f223f223f223f223f234f233f234f134f234f134f234f234f233f233f233f233f233f223f233f144f134f223f234f234f233f233f233f233f234f233f234f234f234f223f234f234f234f234f233f223f223f223f234f234f134f223f234f234f234f234f233f223f223f223f234f234f223f223f223f223f223f223f223f223f234f233f234f134f234f134f234f234f233f233f234f234f233f223f233f144f134f223f234f234f233f233f234f234f234f233f234f234f234f223f234f234f234f234f233f223f223f223f134f134f134f223f234f234f234f234f233f223f223f223f134f134f223f223f223f223f223f223f223f223"
     },
     "customData": [
       {
-        "data": "animatedSprites 0,0,60,60,120,180,180\nanimationSpeed 12",
+        "data": "animatedSprites 0,60,120,180\nanimationSpeed 6",
         "tileId": 0
       },
       {
-        "data": "animatedSprites 1,1,61,61,121,181,181\nanimationSpeed 12",
+        "data": "animatedSprites 1,61,121,181\nanimationSpeed 6",
         "tileId": 1
       },
       {
-        "data": "animatedSprites 2,2,62,62,122,182,182\nanimationSpeed 12",
+        "data": "animatedSprites 2,62,122,182\nanimationSpeed 6",
         "tileId": 2
       },
       {
-        "data": "animatedSprites 3,3,63,63,123,183,183\nanimationSpeed 12",
+        "data": "animatedSprites 3,63,123,183\nanimationSpeed 6",
         "tileId": 3
       },
       {
-        "data": "animatedSprites 4,4,64,64,124,184,184\nanimationSpeed 12",
+        "data": "animatedSprites 4,64,124,184\nanimationSpeed 6",
         "tileId": 4
       },
       {
-        "data": "animatedSprites 5,5,65,65,125,185,185\nanimationSpeed 12",
+        "data": "animatedSprites 5,65,125,185\nanimationSpeed 6",
         "tileId": 5
       },
       {
-        "data": "animatedSprites 6,6,66,66,126,186,186\nanimationSpeed 12",
+        "data": "animatedSprites 6,66,126,186\nanimationSpeed 6",
         "tileId": 6
       },
       {
-        "data": "animatedSprites 7,7,67,67,127,187,187\nanimationSpeed 12",
+        "data": "animatedSprites 7,67,127,187\nanimationSpeed 6",
         "tileId": 7
       },
       {
-        "data": "animatedSprites 8,8,68,68,128,188,188\nanimationSpeed 12",
+        "data": "animatedSprites 8,68,128,188\nanimationSpeed 6",
         "tileId": 8
       },
       {
-        "data": "animatedSprites 9,9,69,69,129,189,189\nanimationSpeed 12",
+        "data": "animatedSprites 9,69,129,189\nanimationSpeed 6",
         "tileId": 9
       },
       {
-        "data": "animatedSprites 10,10,70,70,130,190,190\nanimationSpeed 12",
+        "data": "animatedSprites 10,70,130,190\nanimationSpeed 6",
         "tileId": 10
       },
       {
-        "data": "animatedSprites 11,11,71,71,131,191,191\nanimationSpeed 12",
+        "data": "animatedSprites 11,71,131,191\nanimationSpeed 6",
         "tileId": 11
       },
       {
-        "data": "animatedSprites 12,12,72,72,132,192,192\nanimationSpeed 12",
+        "data": "animatedSprites 12,72,132,192\nanimationSpeed 6",
         "tileId": 12
       },
       {
-        "data": "animatedSprites 13,13,73,73,133,193,193\nanimationSpeed 12",
+        "data": "animatedSprites 13,73,133,193\nanimationSpeed 6",
         "tileId": 13
       },
       {
-        "data": "animatedSprites 14,14,74,74,134,194,194\nanimationSpeed 12",
+        "data": "animatedSprites 14,74,134,194\nanimationSpeed 6",
         "tileId": 14
       },
       {
-        "data": "animatedSprites 15,15,75,75,135,195,195\nanimationSpeed 12",
+        "data": "animatedSprites 15,75,135,195\nanimationSpeed 6",
         "tileId": 15
       },
       {
-        "data": "animatedSprites 16,16,76,76,136,196,196\nanimationSpeed 12",
+        "data": "animatedSprites 16,76,136,196\nanimationSpeed 6",
         "tileId": 16
       },
       {
-        "data": "animatedSprites 17,17,77,77,137,197,197\nanimationSpeed 12",
-        "tileId": 17
-      },
-      {
-        "data": "animatedSprites 18,18,78,78,138,198,198\nanimationSpeed 12",
+        "data": "animatedSprites 18,78,138,198\nanimationSpeed 6",
         "tileId": 18
       },
       {
-        "data": "animatedSprites 19,19,79,79,139,199,199\nanimationSpeed 12",
+        "data": "animatedSprites 19,79,139,199\nanimationSpeed 6",
         "tileId": 19
       },
       {
-        "data": "animatedSprites 20,80,20,80,140,200,200\nanimationSpeed 12",
+        "data": "animatedSprites 20,80,140,200\nanimationSpeed 6",
         "tileId": 20
       },
       {
-        "data": "animatedSprites 21,21,81,81,141,201,201\nanimationSpeed 12",
+        "data": "animatedSprites 21,81,141,201\nanimationSpeed 6",
         "tileId": 21
       },
       {
-        "data": "animatedSprites 22,22,82,82,142,202,202\nanimationSpeed 12",
+        "data": "animatedSprites 22,82,142,202\nanimationSpeed 6",
         "tileId": 22
       },
       {
-        "data": "animatedSprites 23,23,83,83,143,203,203\nanimationSpeed 12",
+        "data": "animatedSprites 23,83,143,203\nanimationSpeed 6",
         "tileId": 23
       },
       {
-        "data": "animatedSprites 24,24,84,84,144,204,204\nanimationSpeed 12",
+        "data": "animatedSprites 24,84,144,204\nanimationSpeed 6",
         "tileId": 24
       },
       {
-        "data": "animatedSprites 25,25,85,85,145,205,205\nanimationSpeed 12",
+        "data": "animatedSprites 25,85,145,205\nanimationSpeed 6",
         "tileId": 25
       },
       {
-        "data": "animatedSprites 26,26,86,86,146,206,206\nanimationSpeed 12",
+        "data": "animatedSprites 26,86,146,206\nanimationSpeed 6",
         "tileId": 26
       },
       {
-        "data": "animatedSprites 27,27,87,87,147,207,207\nanimationSpeed 12",
+        "data": "animatedSprites 27,87,147,207\nanimationSpeed 6",
         "tileId": 27
       },
       {
-        "data": "animatedSprites 28,28,88,88,148,208,208\nanimationSpeed 12",
+        "data": "animatedSprites 28,88,148,208\nanimationSpeed 6",
         "tileId": 28
       },
       {
-        "data": "animatedSprites 29,29,89,89,149,209,209\nanimationSpeed 12",
-        "tileId": 29
-      },
-      {
-        "data": "animatedSprites 30,30,90,90,150,210,210\nanimationSpeed 12",
+        "data": "animatedSprites 30,90,150,210\nanimationSpeed 6",
         "tileId": 30
       },
       {
-        "data": "animatedSprites 31,31,91,91,151,211,211\nanimationSpeed 12",
+        "data": "animatedSprites 31,91,151,211\nanimationSpeed 6",
         "tileId": 31
       },
       {
-        "data": "animatedSprites 32,32,92,92,152,212,212\nanimationSpeed 12",
+        "data": "animatedSprites 32,92,152,212\nanimationSpeed 6",
         "tileId": 32
       },
       {
-        "data": "animatedSprites 33,33,93,93,153,213,213\nanimationSpeed 12",
+        "data": "animatedSprites 33,93,153,213\nanimationSpeed 6",
         "tileId": 33
       },
       {
-        "data": "animatedSprites 34,34,94,94,154,214,214\nanimationSpeed 12",
+        "data": "animatedSprites 34,94,154,214\nanimationSpeed 6",
         "tileId": 34
       },
       {
-        "data": "animatedSprites 35,35,95,95,155,215,215\nanimationSpeed 12",
+        "data": "animatedSprites 35,95,155,215\nanimationSpeed 6",
         "tileId": 35
       },
       {
-        "data": "animatedSprites 36,36,96,96,156,216,216\nanimationSpeed 12",
+        "data": "animatedSprites 36,96,156,216\nanimationSpeed 6",
         "tileId": 36
       },
       {
-        "data": "animatedSprites 37,37,97,97,157,217,217\nanimationSpeed 12",
+        "data": "animatedSprites 37,97,157,217\nanimationSpeed 6",
         "tileId": 37
       },
       {
-        "data": "animatedSprites 38,38,98,98,158,218,218\nanimationSpeed 12",
+        "data": "animatedSprites 38,98,158,218\nanimationSpeed 6",
         "tileId": 38
       },
       {
-        "data": "animatedSprites 39,39,99,99,159,219,219\nanimationSpeed 12",
+        "data": "animatedSprites 39,99,159,219\nanimationSpeed 6",
         "tileId": 39
       },
       {
-        "data": "animatedSprites 40,40,100,100,160,220,220\nanimationSpeed 12",
+        "data": "animatedSprites 40,100,160,220\nanimationSpeed 6",
         "tileId": 40
       },
       {
-        "data": "animatedSprites 41,41,101,101,161,221,221\nanimationSpeed 12",
-        "tileId": 41
-      },
-      {
-        "data": "animatedSprites 42,42,102,102,162,222,222\nanimationSpeed 12",
+        "data": "animatedSprites 42,102,162,222\nanimationSpeed 6",
         "tileId": 42
       },
       {
-        "data": "animatedSprites 43,43,103,103,163,223,223\nanimationSpeed 12",
+        "data": "animatedSprites 43,103,163,223\nanimationSpeed 6",
         "tileId": 43
       },
       {
-        "data": "animatedSprites 44,44,104,104,164,224,224\nanimationSpeed 12",
+        "data": "animatedSprites 44,104,164,224\nanimationSpeed 6",
         "tileId": 44
       },
       {
-        "data": "animatedSprites 45,45,105,105,165,225,225\nanimationSpeed 12",
+        "data": "animatedSprites 45,105,165,225\nanimationSpeed 6",
         "tileId": 45
       },
       {
-        "data": "animatedSprites 46,46,106,106,166,226,226\nanimationSpeed 12",
+        "data": "animatedSprites 46,106,166,226\nanimationSpeed 6",
         "tileId": 46
       },
       {
-        "data": "animatedSprites 47,47,107,107,167,227,227\nanimationSpeed 12",
-        "tileId": 47
-      },
-      {
-        "data": "animatedSprites 48,48,108,108,168,228,228\nanimationSpeed 12",
+        "data": "animatedSprites 48,108,168,228\nanimationSpeed 6",
         "tileId": 48
       },
       {
-        "data": "animatedSprites 49,49,109,109,169,229,229\nanimationSpeed 12",
+        "data": "animatedSprites 49,109,169,229\nanimationSpeed 6",
         "tileId": 49
       },
       {
-        "data": "animatedSprites 50,50,110,110,170,230,230\nanimationSpeed 12",
+        "data": "animatedSprites 50,110,170,230\nanimationSpeed 6",
         "tileId": 50
       },
       {
-        "data": "animatedSprites 51,51,111,111,171,231,231\nanimationSpeed 12",
+        "data": "animatedSprites 51,111,171,231\nanimationSpeed 6",
         "tileId": 51
       },
       {
-        "data": "animatedSprites 52,52,112,112,172,232,232\nanimationSpeed 12",
+        "data": "animatedSprites 52,112,172,232\nanimationSpeed 6",
         "tileId": 52
       },
       {
-        "data": "animatedSprites 53,53,113,113,173,233,233\nanimationSpeed 12",
-        "tileId": 53
-      },
-      {
-        "data": "animatedSprites 54,54,114,114,174,234,234\nanimationSpeed 12",
+        "data": "animatedSprites 54,114,174,234\nanimationSpeed 6",
         "tileId": 54
       },
       {
-        "data": "animatedSprites 55,55,115,115,175,235,235\nanimationSpeed 12",
+        "data": "animatedSprites 55,115,175,235\nanimationSpeed 6",
         "tileId": 55
       },
       {
-        "data": "animatedSprites 56,56,116,116,176,236,236\nanimationSpeed 12",
+        "data": "animatedSprites 56,116,176,236\nanimationSpeed 6",
         "tileId": 56
       },
       {
-        "data": "animatedSprites 57,57,117,117,177,237,237\nanimationSpeed 12",
+        "data": "animatedSprites 57,117,177,237\nanimationSpeed 6",
         "tileId": 57
       },
       {
-        "data": "animatedSprites 58,58,118,118,178,238,238\nanimationSpeed 12",
+        "data": "animatedSprites 58,118,178,238\nanimationSpeed 6",
         "tileId": 58
       },
       {
-        "data": "animatedSprites 59,59,119,119,179,239,239\nanimationSpeed 12",
-        "tileId": 59
+        "data": "animatedSprites 120,180,0,60\nanimationSpeed 6",
+        "tileId": 120
+      },
+      {
+        "data": "animatedSprites 121,181,1,61\nanimationSpeed 6",
+        "tileId": 121
+      },
+      {
+        "data": "animatedSprites 122,182,2,62\nanimationSpeed 6",
+        "tileId": 122
+      },
+      {
+        "data": "animatedSprites 123,183,3,63\nanimationSpeed 6",
+        "tileId": 123
+      },
+      {
+        "data": "animatedSprites 124,184,4,64\nanimationSpeed 6",
+        "tileId": 124
+      },
+      {
+        "data": "animatedSprites 125,185,5,65\nanimationSpeed 6",
+        "tileId": 125
+      },
+      {
+        "data": "animatedSprites 126,186,6,66\nanimationSpeed 6",
+        "tileId": 126
+      },
+      {
+        "data": "animatedSprites 127,187,7,67\nanimationSpeed 6",
+        "tileId": 127
+      },
+      {
+        "data": "animatedSprites 128,188,8,68\nanimationSpeed 6",
+        "tileId": 128
+      },
+      {
+        "data": "animatedSprites 129,189,9,69\nanimationSpeed 6",
+        "tileId": 129
+      },
+      {
+        "data": "animatedSprites 130,190,10,70\nanimationSpeed 6",
+        "tileId": 130
+      },
+      {
+        "data": "animatedSprites 131,191,11,71\nanimationSpeed 6",
+        "tileId": 131
+      },
+      {
+        "data": "animatedSprites 132,192,12,72\nanimationSpeed 6",
+        "tileId": 132
+      },
+      {
+        "data": "animatedSprites 133,193,13,73\nanimationSpeed 6",
+        "tileId": 133
+      },
+      {
+        "data": "animatedSprites 134,194,14,74\nanimationSpeed 6",
+        "tileId": 134
+      },
+      {
+        "data": "animatedSprites 135,195,15,75\nanimationSpeed 6",
+        "tileId": 135
+      },
+      {
+        "data": "animatedSprites 136,196,16,76\nanimationSpeed 6",
+        "tileId": 136
+      },
+      {
+        "data": "animatedSprites 138,198,18,78\nanimationSpeed 6",
+        "tileId": 138
+      },
+      {
+        "data": "animatedSprites 139,199,19,79\nanimationSpeed 6",
+        "tileId": 139
+      },
+      {
+        "data": "animatedSprites 140,200,20,80\nanimationSpeed 6",
+        "tileId": 140
+      },
+      {
+        "data": "animatedSprites 141,201,21,81\nanimationSpeed 6",
+        "tileId": 141
+      },
+      {
+        "data": "animatedSprites 142,202,22,82\nanimationSpeed 6",
+        "tileId": 142
+      },
+      {
+        "data": "animatedSprites 143,203,23,83\nanimationSpeed 6",
+        "tileId": 143
+      },
+      {
+        "data": "animatedSprites 144,204,24,84\nanimationSpeed 6",
+        "tileId": 144
+      },
+      {
+        "data": "animatedSprites 145,205,25,85\nanimationSpeed 6",
+        "tileId": 145
+      },
+      {
+        "data": "animatedSprites 146,206,26,86\nanimationSpeed 6",
+        "tileId": 146
+      },
+      {
+        "data": "animatedSprites 147,207,27,87\nanimationSpeed 6",
+        "tileId": 147
+      },
+      {
+        "data": "animatedSprites 148,208,28,88\nanimationSpeed 6",
+        "tileId": 148
+      },
+      {
+        "data": "animatedSprites 150,210,30,90\nanimationSpeed 6",
+        "tileId": 150
+      },
+      {
+        "data": "animatedSprites 151,211,31,91\nanimationSpeed 6",
+        "tileId": 151
+      },
+      {
+        "data": "animatedSprites 152,212,32,92\nanimationSpeed 6",
+        "tileId": 152
+      },
+      {
+        "data": "animatedSprites 153,213,33,93\nanimationSpeed 6",
+        "tileId": 153
+      },
+      {
+        "data": "animatedSprites 154,214,34,94\nanimationSpeed 6",
+        "tileId": 154
+      },
+      {
+        "data": "animatedSprites 155,215,35,95\nanimationSpeed 6",
+        "tileId": 155
+      },
+      {
+        "data": "animatedSprites 156,216,36,96\nanimationSpeed 6",
+        "tileId": 156
+      },
+      {
+        "data": "animatedSprites 157,217,37,97\nanimationSpeed 6",
+        "tileId": 157
+      },
+      {
+        "data": "animatedSprites 158,218,38,98\nanimationSpeed 6",
+        "tileId": 158
+      },
+      {
+        "data": "animatedSprites 159,219,39,99\nanimationSpeed 6",
+        "tileId": 159
+      },
+      {
+        "data": "animatedSprites 160,220,40,100\nanimationSpeed 6",
+        "tileId": 160
+      },
+      {
+        "data": "animatedSprites 162,222,42,102\nanimationSpeed 6",
+        "tileId": 162
+      },
+      {
+        "data": "animatedSprites 163,223,43,103\nanimationSpeed 6",
+        "tileId": 163
+      },
+      {
+        "data": "animatedSprites 164,224,44,104\nanimationSpeed 6",
+        "tileId": 164
+      },
+      {
+        "data": "animatedSprites 165,225,45,105\nanimationSpeed 6",
+        "tileId": 165
+      },
+      {
+        "data": "animatedSprites 166,226,46,106\nanimationSpeed 6",
+        "tileId": 166
+      },
+      {
+        "data": "animatedSprites 168,228,48,108\nanimationSpeed 6",
+        "tileId": 168
+      },
+      {
+        "data": "animatedSprites 169,229,49,109\nanimationSpeed 6",
+        "tileId": 169
+      },
+      {
+        "data": "animatedSprites 170,230,50,110\nanimationSpeed 6",
+        "tileId": 170
+      },
+      {
+        "data": "animatedSprites 171,231,51,111\nanimationSpeed 6",
+        "tileId": 171
+      },
+      {
+        "data": "animatedSprites 172,232,52,112\nanimationSpeed 6",
+        "tileId": 172
+      },
+      {
+        "data": "animatedSprites 174,234,54,114\nanimationSpeed 6",
+        "tileId": 174
+      },
+      {
+        "data": "animatedSprites 175,235,55,115\nanimationSpeed 6",
+        "tileId": 175
+      },
+      {
+        "data": "animatedSprites 176,236,56,116\nanimationSpeed 6",
+        "tileId": 176
+      },
+      {
+        "data": "animatedSprites 177,237,57,117\nanimationSpeed 6",
+        "tileId": 177
+      },
+      {
+        "data": "animatedSprites 178,238,58,118\nanimationSpeed 6",
+        "tileId": 178
       }
     ],
     "embedAtlas": null,
@@ -262,7 +454,7 @@
     ],
     "identifier": "Doom",
     "padding": 0,
-    "pxHei": 168,
+    "pxHei": 160,
     "pxWid": 96,
     "relPath": "../../../Sprites/Tiles/Hazards/tileset_doom.png",
     "savedSelections": [
