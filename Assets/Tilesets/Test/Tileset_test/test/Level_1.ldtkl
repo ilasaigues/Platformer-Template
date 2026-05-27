@@ -79,6 +79,48 @@
 			"entityInstances": []
 		},
 		{
+			"__identifier": "Other",
+			"__type": "Entities",
+			"__cWid": 31,
+			"__cHei": 16,
+			"__gridSize": 16,
+			"__opacity": 1,
+			"__pxTotalOffsetX": 0,
+			"__pxTotalOffsetY": 0,
+			"__tilesetDefUid": null,
+			"__tilesetRelPath": null,
+			"iid": "56aaff07-48b0-11f1-b123-75d4b4885b8f",
+			"levelId": 368,
+			"layerDefUid": 306,
+			"pxOffsetX": 0,
+			"pxOffsetY": 0,
+			"visible": true,
+			"optionalRules": [],
+			"intGridCsv": [],
+			"autoLayerTiles": [],
+			"seed": 6869181,
+			"overrideTilesetUid": null,
+			"gridTiles": [],
+			"entityInstances": [
+				{
+					"__identifier": "Camera_bound",
+					"__grid": [0,2],
+					"__pivot": [0,0],
+					"__tags": ["other"],
+					"__tile": { "tilesetUid": 725, "x": 0, "y": 0, "w": 8, "h": 8 },
+					"__smartColor": "#FFFFFF",
+					"iid": "b854ec50-48b0-11f1-bcae-7fba5a1c25bc",
+					"width": 416,
+					"height": 96,
+					"defUid": 724,
+					"px": [0,32],
+					"fieldInstances": [],
+					"__worldX": 848,
+					"__worldY": 32
+				}
+			]
+		},
+		{
 			"__identifier": "Thorns",
 			"__type": "IntGrid",
 			"__cWid": 31,
@@ -1950,31 +1992,6 @@
 					"__worldY": 48
 				}
 			]
-		},
-		{
-			"__identifier": "Other",
-			"__type": "Entities",
-			"__cWid": 31,
-			"__cHei": 16,
-			"__gridSize": 16,
-			"__opacity": 1,
-			"__pxTotalOffsetX": 0,
-			"__pxTotalOffsetY": 0,
-			"__tilesetDefUid": null,
-			"__tilesetRelPath": null,
-			"iid": "56aaff07-48b0-11f1-b123-75d4b4885b8f",
-			"levelId": 368,
-			"layerDefUid": 306,
-			"pxOffsetX": 0,
-			"pxOffsetY": 0,
-			"visible": true,
-			"optionalRules": [],
-			"intGridCsv": [],
-			"autoLayerTiles": [],
-			"seed": 6869181,
-			"overrideTilesetUid": null,
-			"gridTiles": [],
-			"entityInstances": []
 		}
 	],
 	"__neighbours": [{ "levelIid": "de213f20-fa90-11f0-b9bd-a3ddefd1c979", "dir": "w" }]

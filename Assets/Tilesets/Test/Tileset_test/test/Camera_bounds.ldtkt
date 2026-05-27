@@ -1,11 +1,18 @@
 {
-  "Rects": null,
+  "Rects": [
+    {
+      "x": 0,
+      "y": 0,
+      "w": 8,
+      "h": 8
+    }
+  ],
   "Def": {
     "__cHei": 1,
     "__cWid": 1,
     "cachedPixelData": {
       "opaqueTiles": "0",
-      "averageColors": "7fa0"
+      "averageColors": "bd94"
     },
     "customData": [
 
@@ -16,18 +23,18 @@
     ],
     "identifier": "Camera_bounds",
     "padding": 0,
-    "pxHei": 16,
-    "pxWid": 16,
-    "relPath": "../../../Sprites/camera_bounds.png",
+    "pxHei": 8,
+    "pxWid": 8,
+    "relPath": "Icons/camera_bounds.png",
     "savedSelections": [
 
     ],
     "spacing": 0,
     "tags": [
-      "Triggers"
+      "icons"
     ],
     "tagsSourceEnumUid": null,
-    "tileGridSize": 16,
-    "uid": 302
+    "tileGridSize": 8,
+    "uid": 725
   }
 }
