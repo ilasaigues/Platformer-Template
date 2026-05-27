@@ -260,12 +260,189 @@
 			"seed": 7877603,
 			"overrideTilesetUid": null,
 			"gridTiles": [],
+			"entityInstances": []
+		},
+		{
+			"__identifier": "Spawns",
+			"__type": "Entities",
+			"__cWid": 76,
+			"__cHei": 39,
+			"__gridSize": 16,
+			"__opacity": 1,
+			"__pxTotalOffsetX": 0,
+			"__pxTotalOffsetY": 0,
+			"__tilesetDefUid": null,
+			"__tilesetRelPath": null,
+			"iid": "916dfa90-21a0-11f1-9654-0fc2fab35acf",
+			"levelId": 0,
+			"layerDefUid": 304,
+			"pxOffsetX": 0,
+			"pxOffsetY": 0,
+			"visible": true,
+			"optionalRules": [],
+			"intGridCsv": [],
+			"autoLayerTiles": [],
+			"seed": 535294,
+			"overrideTilesetUid": null,
+			"gridTiles": [],
+			"entityInstances": [
+				{
+					"__identifier": "Soft_respawn",
+					"__grid": [35,17],
+					"__pivot": [0,0],
+					"__tags": ["spawn"],
+					"__tile": null,
+					"__smartColor": "#6EFF00",
+					"iid": "c71e5ea0-21a0-11f1-8211-9d9a9eacf6f1",
+					"width": 112,
+					"height": 112,
+					"defUid": 291,
+					"px": [560,272],
+					"fieldInstances": [
+						{ "__identifier": "point", "__type": "Point", "__value": { "cx": 34, "cy": 20 }, "__tile": null, "defUid": 296, "realEditorValues": [{
+							"id": "V_String",
+							"params": ["34,20"]
+						}] },
+						{ "__identifier": "type", "__type": "LocalEnum.RespawnType", "__value": "Soft", "__tile": null, "defUid": 299, "realEditorValues": [] }
+					],
+					"__worldX": 192,
+					"__worldY": 48
+				},
+				{
+					"__identifier": "Hard_respawn",
+					"__grid": [20,17],
+					"__pivot": [0,0],
+					"__tags": ["spawn"],
+					"__tile": null,
+					"__smartColor": "#FF0000",
+					"iid": "eb596cb0-21a0-11f1-8211-8bb52f888159",
+					"width": 48,
+					"height": 112,
+					"defUid": 292,
+					"px": [320,272],
+					"fieldInstances": [
+						{ "__identifier": "point", "__type": "Point", "__value": { "cx": 21, "cy": 23 }, "__tile": null, "defUid": 297, "realEditorValues": [{
+							"id": "V_String",
+							"params": ["21,23"]
+						}] },
+						{ "__identifier": "type", "__type": "LocalEnum.RespawnType", "__value": "Hard", "__tile": null, "defUid": 300, "realEditorValues": [] }
+					],
+					"__worldX": -48,
+					"__worldY": 48
+				},
+				{
+					"__identifier": "Soft_respawn",
+					"__grid": [47,17],
+					"__pivot": [0,0],
+					"__tags": ["spawn"],
+					"__tile": null,
+					"__smartColor": "#6EFF00",
+					"iid": "b893e070-21a0-11f1-8211-c3149fcfcaf9",
+					"width": 144,
+					"height": 112,
+					"defUid": 291,
+					"px": [752,272],
+					"fieldInstances": [
+						{ "__identifier": "point", "__type": "Point", "__value": { "cx": 46, "cy": 20 }, "__tile": null, "defUid": 296, "realEditorValues": [{
+							"id": "V_String",
+							"params": ["46,20"]
+						}] },
+						{ "__identifier": "type", "__type": "LocalEnum.RespawnType", "__value": "Soft", "__tile": null, "defUid": 299, "realEditorValues": [] }
+					],
+					"__worldX": 384,
+					"__worldY": 48
+				},
+				{
+					"__identifier": "Soft_respawn",
+					"__grid": [58,17],
+					"__pivot": [0,0],
+					"__tags": ["spawn"],
+					"__tile": null,
+					"__smartColor": "#6EFF00",
+					"iid": "bafc54f0-21a0-11f1-8211-0bbf06e4f1c0",
+					"width": 96,
+					"height": 112,
+					"defUid": 291,
+					"px": [928,272],
+					"fieldInstances": [
+						{ "__identifier": "point", "__type": "Point", "__value": { "cx": 56, "cy": 20 }, "__tile": null, "defUid": 296, "realEditorValues": [{
+							"id": "V_String",
+							"params": ["56,20"]
+						}] },
+						{ "__identifier": "type", "__type": "LocalEnum.RespawnType", "__value": "Soft", "__tile": null, "defUid": 299, "realEditorValues": [] }
+					],
+					"__worldX": 560,
+					"__worldY": 48
+				},
+				{
+					"__identifier": "Soft_respawn",
+					"__grid": [71,17],
+					"__pivot": [0,0],
+					"__tags": ["spawn"],
+					"__tile": null,
+					"__smartColor": "#6EFF00",
+					"iid": "3acf6510-48b0-11f1-b0eb-b7ac6fb7c2e1",
+					"width": 80,
+					"height": 64,
+					"defUid": 291,
+					"px": [1136,272],
+					"fieldInstances": [
+						{ "__identifier": "point", "__type": "Point", "__value": { "cx": 66, "cy": 20 }, "__tile": null, "defUid": 296, "realEditorValues": [{
+							"id": "V_String",
+							"params": ["66,20"]
+						}] },
+						{ "__identifier": "type", "__type": "LocalEnum.RespawnType", "__value": "Soft", "__tile": null, "defUid": 299, "realEditorValues": [] }
+					],
+					"__worldX": 768,
+					"__worldY": 48
+				},
+				{
+					"__identifier": "Player",
+					"__grid": [68,20],
+					"__pivot": [0.5,0.5],
+					"__tags": ["spawn"],
+					"__tile": null,
+					"__smartColor": "#0053FF",
+					"iid": "ddc81aa0-21a0-11f1-adb2-832d17c4f021",
+					"width": 16,
+					"height": 16,
+					"defUid": 301,
+					"px": [1096,328],
+					"fieldInstances": [],
+					"__worldX": 728,
+					"__worldY": 104
+				}
+			]
+		},
+		{
+			"__identifier": "Bounds",
+			"__type": "Entities",
+			"__cWid": 76,
+			"__cHei": 39,
+			"__gridSize": 16,
+			"__opacity": 1,
+			"__pxTotalOffsetX": 0,
+			"__pxTotalOffsetY": 0,
+			"__tilesetDefUid": null,
+			"__tilesetRelPath": null,
+			"iid": "f7a1db50-48b0-11f1-bcae-2feb8ff810d9",
+			"levelId": 0,
+			"layerDefUid": 729,
+			"pxOffsetX": 0,
+			"pxOffsetY": 0,
+			"visible": true,
+			"optionalRules": [],
+			"intGridCsv": [],
+			"autoLayerTiles": [],
+			"seed": 8887878,
+			"overrideTilesetUid": null,
+			"gridTiles": [],
 			"entityInstances": [
 				{
 					"__identifier": "Camera_bound",
 					"__grid": [9,10],
 					"__pivot": [0,0],
-					"__tags": ["other"],
+					"__tags": ["bounds"],
 					"__tile": { "tilesetUid": 725, "x": 0, "y": 0, "w": 8, "h": 8 },
 					"__smartColor": "#FFFFFF",
 					"iid": "80b26920-48b0-11f1-bcae-f973b40f8d82",
@@ -10737,158 +10914,6 @@
 			"overrideTilesetUid": null,
 			"gridTiles": [],
 			"entityInstances": []
-		},
-		{
-			"__identifier": "Spawns",
-			"__type": "Entities",
-			"__cWid": 76,
-			"__cHei": 39,
-			"__gridSize": 16,
-			"__opacity": 1,
-			"__pxTotalOffsetX": 0,
-			"__pxTotalOffsetY": 0,
-			"__tilesetDefUid": null,
-			"__tilesetRelPath": null,
-			"iid": "916dfa90-21a0-11f1-9654-0fc2fab35acf",
-			"levelId": 0,
-			"layerDefUid": 304,
-			"pxOffsetX": 0,
-			"pxOffsetY": 0,
-			"visible": true,
-			"optionalRules": [],
-			"intGridCsv": [],
-			"autoLayerTiles": [],
-			"seed": 535294,
-			"overrideTilesetUid": null,
-			"gridTiles": [],
-			"entityInstances": [
-				{
-					"__identifier": "Player",
-					"__grid": [21,23],
-					"__pivot": [0.5,0.5],
-					"__tags": ["spawn"],
-					"__tile": null,
-					"__smartColor": "#0053FF",
-					"iid": "ddc81aa0-21a0-11f1-adb2-832d17c4f021",
-					"width": 16,
-					"height": 16,
-					"defUid": 301,
-					"px": [344,376],
-					"fieldInstances": [],
-					"__worldX": -24,
-					"__worldY": 152
-				},
-				{
-					"__identifier": "Soft_respawn",
-					"__grid": [35,17],
-					"__pivot": [0,0],
-					"__tags": ["spawn"],
-					"__tile": null,
-					"__smartColor": "#6EFF00",
-					"iid": "c71e5ea0-21a0-11f1-8211-9d9a9eacf6f1",
-					"width": 112,
-					"height": 112,
-					"defUid": 291,
-					"px": [560,272],
-					"fieldInstances": [
-						{ "__identifier": "point", "__type": "Point", "__value": { "cx": 34, "cy": 20 }, "__tile": null, "defUid": 296, "realEditorValues": [{
-							"id": "V_String",
-							"params": ["34,20"]
-						}] },
-						{ "__identifier": "type", "__type": "LocalEnum.RespawnType", "__value": "Soft", "__tile": null, "defUid": 299, "realEditorValues": [] }
-					],
-					"__worldX": 192,
-					"__worldY": 48
-				},
-				{
-					"__identifier": "Hard_respawn",
-					"__grid": [20,17],
-					"__pivot": [0,0],
-					"__tags": ["spawn"],
-					"__tile": null,
-					"__smartColor": "#FF0000",
-					"iid": "eb596cb0-21a0-11f1-8211-8bb52f888159",
-					"width": 48,
-					"height": 112,
-					"defUid": 292,
-					"px": [320,272],
-					"fieldInstances": [
-						{ "__identifier": "point", "__type": "Point", "__value": { "cx": 21, "cy": 23 }, "__tile": null, "defUid": 297, "realEditorValues": [{
-							"id": "V_String",
-							"params": ["21,23"]
-						}] },
-						{ "__identifier": "type", "__type": "LocalEnum.RespawnType", "__value": "Hard", "__tile": null, "defUid": 300, "realEditorValues": [] }
-					],
-					"__worldX": -48,
-					"__worldY": 48
-				},
-				{
-					"__identifier": "Soft_respawn",
-					"__grid": [47,17],
-					"__pivot": [0,0],
-					"__tags": ["spawn"],
-					"__tile": null,
-					"__smartColor": "#6EFF00",
-					"iid": "b893e070-21a0-11f1-8211-c3149fcfcaf9",
-					"width": 144,
-					"height": 112,
-					"defUid": 291,
-					"px": [752,272],
-					"fieldInstances": [
-						{ "__identifier": "point", "__type": "Point", "__value": { "cx": 46, "cy": 20 }, "__tile": null, "defUid": 296, "realEditorValues": [{
-							"id": "V_String",
-							"params": ["46,20"]
-						}] },
-						{ "__identifier": "type", "__type": "LocalEnum.RespawnType", "__value": "Soft", "__tile": null, "defUid": 299, "realEditorValues": [] }
-					],
-					"__worldX": 384,
-					"__worldY": 48
-				},
-				{
-					"__identifier": "Soft_respawn",
-					"__grid": [58,17],
-					"__pivot": [0,0],
-					"__tags": ["spawn"],
-					"__tile": null,
-					"__smartColor": "#6EFF00",
-					"iid": "bafc54f0-21a0-11f1-8211-0bbf06e4f1c0",
-					"width": 96,
-					"height": 112,
-					"defUid": 291,
-					"px": [928,272],
-					"fieldInstances": [
-						{ "__identifier": "point", "__type": "Point", "__value": { "cx": 56, "cy": 20 }, "__tile": null, "defUid": 296, "realEditorValues": [{
-							"id": "V_String",
-							"params": ["56,20"]
-						}] },
-						{ "__identifier": "type", "__type": "LocalEnum.RespawnType", "__value": "Soft", "__tile": null, "defUid": 299, "realEditorValues": [] }
-					],
-					"__worldX": 560,
-					"__worldY": 48
-				},
-				{
-					"__identifier": "Soft_respawn",
-					"__grid": [71,17],
-					"__pivot": [0,0],
-					"__tags": ["spawn"],
-					"__tile": null,
-					"__smartColor": "#6EFF00",
-					"iid": "3acf6510-48b0-11f1-b0eb-b7ac6fb7c2e1",
-					"width": 80,
-					"height": 64,
-					"defUid": 291,
-					"px": [1136,272],
-					"fieldInstances": [
-						{ "__identifier": "point", "__type": "Point", "__value": { "cx": 66, "cy": 20 }, "__tile": null, "defUid": 296, "realEditorValues": [{
-							"id": "V_String",
-							"params": ["66,20"]
-						}] },
-						{ "__identifier": "type", "__type": "LocalEnum.RespawnType", "__value": "Soft", "__tile": null, "defUid": 299, "realEditorValues": [] }
-					],
-					"__worldX": 768,
-					"__worldY": 48
-				}
-			]
 		}
 	],
 	"__neighbours": [{ "levelIid": "56aaff00-48b0-11f1-b123-9d3c3f6a3468", "dir": "e" }]
