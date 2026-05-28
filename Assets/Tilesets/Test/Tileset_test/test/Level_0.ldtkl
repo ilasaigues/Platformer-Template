@@ -260,7 +260,24 @@
 			"seed": 7877603,
 			"overrideTilesetUid": null,
 			"gridTiles": [],
-			"entityInstances": []
+			"entityInstances": [
+				{
+					"__identifier": "Level_Exit",
+					"__grid": [74,17],
+					"__pivot": [0,0],
+					"__tags": ["doors"],
+					"__tile": { "tilesetUid": 728, "x": 272, "y": 272, "w": 16, "h": 16 },
+					"__smartColor": "#3E2731",
+					"iid": "daf25350-48b0-11f1-825d-219547b129f4",
+					"width": 32,
+					"height": 64,
+					"defUid": 731,
+					"px": [1184,272],
+					"fieldInstances": [],
+					"__worldX": 816,
+					"__worldY": 48
+				}
+			]
 		},
 		{
 			"__identifier": "Spawns",
@@ -375,42 +392,20 @@
 					"__worldY": 48
 				},
 				{
-					"__identifier": "Soft_respawn",
-					"__grid": [71,17],
-					"__pivot": [0,0],
-					"__tags": ["spawn"],
-					"__tile": null,
-					"__smartColor": "#6EFF00",
-					"iid": "3acf6510-48b0-11f1-b0eb-b7ac6fb7c2e1",
-					"width": 80,
-					"height": 64,
-					"defUid": 291,
-					"px": [1136,272],
-					"fieldInstances": [
-						{ "__identifier": "point", "__type": "Point", "__value": { "cx": 66, "cy": 20 }, "__tile": null, "defUid": 296, "realEditorValues": [{
-							"id": "V_String",
-							"params": ["66,20"]
-						}] },
-						{ "__identifier": "type", "__type": "LocalEnum.RespawnType", "__value": "Soft", "__tile": null, "defUid": 299, "realEditorValues": [] }
-					],
-					"__worldX": 768,
-					"__worldY": 48
-				},
-				{
 					"__identifier": "Player",
-					"__grid": [68,20],
+					"__grid": [21,23],
 					"__pivot": [0.5,0.5],
 					"__tags": ["spawn"],
 					"__tile": null,
 					"__smartColor": "#0053FF",
-					"iid": "ddc81aa0-21a0-11f1-adb2-832d17c4f021",
+					"iid": "4febf210-48b0-11f1-b839-d7573a92e543",
 					"width": 16,
 					"height": 16,
 					"defUid": 301,
-					"px": [1096,328],
+					"px": [344,376],
 					"fieldInstances": [],
-					"__worldX": 728,
-					"__worldY": 104
+					"__worldX": -24,
+					"__worldY": 152
 				}
 			]
 		},
@@ -446,7 +441,7 @@
 					"__tile": { "tilesetUid": 725, "x": 0, "y": 0, "w": 8, "h": 8 },
 					"__smartColor": "#FFFFFF",
 					"iid": "80b26920-48b0-11f1-bcae-f973b40f8d82",
-					"width": 1072,
+					"width": 1056,
 					"height": 416,
 					"defUid": 724,
 					"px": [144,160],

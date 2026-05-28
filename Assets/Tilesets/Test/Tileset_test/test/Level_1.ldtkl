@@ -106,8 +106,8 @@
 					"__identifier": "Level_Entry",
 					"__grid": [0,3],
 					"__pivot": [0,0],
-					"__tags": ["other"],
-					"__tile": { "tilesetUid": 728, "x": 272, "y": 272, "w": 16, "h": 16 },
+					"__tags": ["doors"],
+					"__tile": { "tilesetUid": 728, "x": 256, "y": 272, "w": 16, "h": 16 },
 					"__smartColor": "#3E2731",
 					"iid": "67a64f30-48b0-11f1-bcae-8faa43adf7bc",
 					"width": 32,
@@ -116,6 +116,22 @@
 					"px": [0,48],
 					"fieldInstances": [],
 					"__worldX": 848,
+					"__worldY": 48
+				},
+				{
+					"__identifier": "Level_Exit",
+					"__grid": [26,3],
+					"__pivot": [0,0],
+					"__tags": ["doors"],
+					"__tile": { "tilesetUid": 728, "x": 272, "y": 272, "w": 16, "h": 16 },
+					"__smartColor": "#3E2731",
+					"iid": "de4c7ad0-48b0-11f1-825d-69b0300b4462",
+					"width": 32,
+					"height": 64,
+					"defUid": 731,
+					"px": [416,48],
+					"fieldInstances": [],
+					"__worldX": 1264,
 					"__worldY": 48
 				}
 			]
@@ -194,18 +210,18 @@
 			"entityInstances": [
 				{
 					"__identifier": "Camera_bound",
-					"__grid": [0,2],
+					"__grid": [1,2],
 					"__pivot": [0,0],
 					"__tags": ["bounds"],
 					"__tile": { "tilesetUid": 725, "x": 0, "y": 0, "w": 8, "h": 8 },
 					"__smartColor": "#FFFFFF",
 					"iid": "50a41c90-48b0-11f1-bcae-3df3c91f3ae2",
-					"width": 448,
+					"width": 416,
 					"height": 96,
 					"defUid": 724,
-					"px": [0,32],
+					"px": [16,32],
 					"fieldInstances": [],
-					"__worldX": 848,
+					"__worldX": 864,
 					"__worldY": 32
 				}
 			]

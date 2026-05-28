@@ -12,22 +12,6 @@
     "ScaleEntities": true,
     "IntGridValues": [
         {
-            "_key": "Terrain_8x8_1",
-            "_asset": {
-                "fileID": 11400000,
-                "guid": "11d72f96735c40d42ba25e4a2a316d0f",
-                "type": 2
-            }
-        },
-        {
-            "_key": "Terrain_8x8_2",
-            "_asset": {
-                "fileID": 11400000,
-                "guid": "96c5b968946313c4bb05cb8d58834337",
-                "type": 2
-            }
-        },
-        {
             "_key": "Thorns_1",
             "_asset": {
                 "instanceID": 0
@@ -40,18 +24,18 @@
             }
         },
         {
-            "_key": "Terrain_1",
+            "_key": "Terrain_8x8_1",
             "_asset": {
                 "fileID": 11400000,
-                "guid": "61f80c469f0ae6b41849498d1fd899ac",
+                "guid": "11d72f96735c40d42ba25e4a2a316d0f",
                 "type": 2
             }
         },
         {
-            "_key": "Terrain_2",
+            "_key": "Terrain_8x8_2",
             "_asset": {
                 "fileID": 11400000,
-                "guid": "5377d35309705a649941e7c9beac70f8",
+                "guid": "96c5b968946313c4bb05cb8d58834337",
                 "type": 2
             }
         }
@@ -82,6 +66,14 @@
             }
         },
         {
+            "_key": "Player",
+            "_asset": {
+                "fileID": 7969246784009727573,
+                "guid": "6545e83e3e44ebb4185007dbd0e0ab56",
+                "type": 3
+            }
+        },
+        {
             "_key": "Soft_respawn",
             "_asset": {
                 "fileID": 6236945957978861526,
@@ -98,14 +90,6 @@
             }
         },
         {
-            "_key": "Player",
-            "_asset": {
-                "fileID": 7969246784009727573,
-                "guid": "6545e83e3e44ebb4185007dbd0e0ab56",
-                "type": 3
-            }
-        },
-        {
             "_key": "Key",
             "_asset": {
                 "instanceID": 0
@@ -115,6 +99,28 @@
             "_key": "Lock",
             "_asset": {
                 "instanceID": 0
+            }
+        },
+        {
+            "_key": "Camera_bound",
+            "_asset": {
+                "fileID": 3115678903558501836,
+                "guid": "467e94121d67d75459235b04c571b47e",
+                "type": 3
+            }
+        },
+        {
+            "_key": "Level_Entry",
+            "_asset": {
+                "instanceID": 0
+            }
+        },
+        {
+            "_key": "Level_Exit",
+            "_asset": {
+                "fileID": 421846556271540124,
+                "guid": "c54d17afee571d34985a7c860dc07c36",
+                "type": 3
             }
         }
     ]

@@ -188,8 +188,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Play
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 668af32a77eef3141b4e945f4af91a85, type: 2}
+  m_sharedMaterial: {fileID: -458347024862479160, guid: 668af32a77eef3141b4e945f4af91a85, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -325,8 +325,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Quit
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 668af32a77eef3141b4e945f4af91a85, type: 2}
+  m_sharedMaterial: {fileID: -458347024862479160, guid: 668af32a77eef3141b4e945f4af91a85, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -462,8 +462,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Options
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 668af32a77eef3141b4e945f4af91a85, type: 2}
+  m_sharedMaterial: {fileID: -458347024862479160, guid: 668af32a77eef3141b4e945f4af91a85, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -678,7 +678,7 @@ GameObject:
   - component: {fileID: 5195181738382988083}
   - component: {fileID: 765497719184785826}
   - component: {fileID: 2559347187379883132}
-  - component: {fileID: 5371583446958835598}
+  - component: {fileID: 6466390512616061284}
   m_Layer: 5
   m_Name: Play Button
   m_TagString: Untagged
@@ -788,7 +788,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 5371583446958835598}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: SceneLoader, Assembly-CSharp
         m_MethodName: LoadScene
         m_Mode: 1
@@ -800,7 +800,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &5371583446958835598
+--- !u!114 &6466390512616061284
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -809,12 +809,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 7218256268830199217}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b35f9990d866d674fa7759ad9838e9de, type: 3}
+  m_Script: {fileID: 11500000, guid: dccd166c6daaac04d8c2cd7f0ac8ce47, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::SceneLoader
-  SceneReference:
-    SceneName: LevelDesignScene
-  LoadAdditive: 0
+  m_EditorClassIdentifier: '::'
 --- !u!1 &9049578436242074782
 GameObject:
   m_ObjectHideFlags: 0

@@ -106,8 +106,8 @@
 					"__identifier": "Level_Entry",
 					"__grid": [0,3],
 					"__pivot": [0,0],
-					"__tags": ["other"],
-					"__tile": { "tilesetUid": 728, "x": 272, "y": 272, "w": 16, "h": 16 },
+					"__tags": ["doors"],
+					"__tile": { "tilesetUid": 728, "x": 256, "y": 272, "w": 16, "h": 16 },
 					"__smartColor": "#3E2731",
 					"iid": "cb3cd8c0-48b0-11f1-bcae-99c6f0de69da",
 					"width": 32,
@@ -191,7 +191,24 @@
 			"seed": 8767012,
 			"overrideTilesetUid": null,
 			"gridTiles": [],
-			"entityInstances": []
+			"entityInstances": [
+				{
+					"__identifier": "Camera_bound",
+					"__grid": [1,1],
+					"__pivot": [0,0],
+					"__tags": ["bounds"],
+					"__tile": { "tilesetUid": 725, "x": 0, "y": 0, "w": 8, "h": 8 },
+					"__smartColor": "#FFFFFF",
+					"iid": "f2f30a30-48b0-11f1-825d-fdceaafbd1ec",
+					"width": 240,
+					"height": 224,
+					"defUid": 724,
+					"px": [16,16],
+					"fieldInstances": [],
+					"__worldX": 1312,
+					"__worldY": 16
+				}
+			]
 		},
 		{
 			"__identifier": "Thorns",
