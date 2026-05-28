@@ -3,12 +3,17 @@ using Zenject;
 
 public class LevelExit : MonoBehaviour
 {
+    [Inject]
+    private GameManager gameManager;
+
+    bool collided = false;
+
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.GetComponent<PlayerController>() is PlayerController controller)
+        if (!collided && other.GetComponent<PlayerController>() is PlayerController controller)
         {
-            //levelManager.LevelExitReached();
-            Debug.Log("Level exit reached");
+            collided = true;
+            gameManager.SetLevel(gameManager.CurrentLevel + 1);
         }
     }
 }

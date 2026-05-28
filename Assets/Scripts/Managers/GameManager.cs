@@ -19,6 +19,8 @@ public class GameManager : MonoBehaviour
 
     public List<LDtkComponentLevel> Levels = new();
 
+    private CinemachineConfiner2D cameraConfiner;
+
     public int CurrentLevel = 0;
 
     public RespawnTrigger DieAndGetRespawn()
@@ -54,10 +56,35 @@ public class GameManager : MonoBehaviour
     {
         RemainingLives = TotalLives;
         PlayerAbilityQueue.MaxAbilityStack = 1;
-        var confiner = cinemachineCamera.GetComponent<CinemachineConfiner2D>();
-        confiner.BoundingShape2D = Levels[CurrentLevel].GetComponentsInChildren<LDtkComponentEntity>().First(e => e.Identifier == "Camera_bound").GetComponent<Collider2D>();
-        confiner.InvalidateBoundingShapeCache();
+        cameraConfiner = cinemachineCamera.GetComponent<CinemachineConfiner2D>();
+        SetLevel(0);
     }
 
+    public void SetLevel(int level)
+    {
+        for (int i = 0; i < Levels.Count; i++)
+        {
+            if (i == level - 1 || i == level || i == level + 1)
+            {
+                Levels[i].gameObject.SetActive(true);
+            }
+            else
+            {
+                Levels[i].gameObject.SetActive(false);
+            }
+        }
+        CurrentLevel = level;
+        SetCameraBounds(Levels[level]);
+    }
+
+    public void SetCameraBounds(LDtkComponentLevel level)
+    {
+        Debug.Log(level);
+        var referenceCollider = level.GetComponentsInChildren<LDtkComponentEntity>().First(e => e.Identifier == "Camera_bound").GetComponent<BoxCollider2D>();
+        ((BoxCollider2D)cameraConfiner.BoundingShape2D).size = referenceCollider.size;
+        ((BoxCollider2D)cameraConfiner.BoundingShape2D).offset = referenceCollider.offset;
+        cameraConfiner.BoundingShape2D.transform.position = referenceCollider.transform.position;
+        cameraConfiner.InvalidateBoundingShapeCache();
+    }
 
 }

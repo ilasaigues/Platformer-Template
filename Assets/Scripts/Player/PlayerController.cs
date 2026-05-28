@@ -97,6 +97,7 @@ public class PlayerController : MonoBehaviour
         BehaviourMachine.ChangeBehaviour(typeof(PlayerFallingBehaviour));
         ResetOnGrounded();
         InputHandler.JumpButton.OnPress += OnJumpPressed;
+        transform.parent = null;
     }
 
     public void GainAbility<T>() where T : BasePlayerBehaviour, IPlayerAbilityBehaviour

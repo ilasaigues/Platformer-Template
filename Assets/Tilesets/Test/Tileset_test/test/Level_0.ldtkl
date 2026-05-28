@@ -435,18 +435,18 @@
 			"entityInstances": [
 				{
 					"__identifier": "Camera_bound",
-					"__grid": [9,10],
+					"__grid": [8,10],
 					"__pivot": [0,0],
 					"__tags": ["bounds"],
 					"__tile": { "tilesetUid": 725, "x": 0, "y": 0, "w": 8, "h": 8 },
 					"__smartColor": "#FFFFFF",
 					"iid": "80b26920-48b0-11f1-bcae-f973b40f8d82",
-					"width": 1056,
+					"width": 1072,
 					"height": 416,
 					"defUid": 724,
-					"px": [144,160],
+					"px": [128,160],
 					"fieldInstances": [],
-					"__worldX": -224,
+					"__worldX": -240,
 					"__worldY": -64
 				}
 			]
