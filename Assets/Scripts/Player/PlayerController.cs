@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using Unity.Cinemachine;
 using UnityEngine;
 using Zenject;
@@ -295,6 +296,35 @@ public class PlayerController : MonoBehaviour
         var offset = spawnData.Offset;
         offset.x *= FacingDirection;
         VFXSpawner.PlayFX(spawnData.VFXClip, transform.position + offset, spawnData.Order, SpriteRenderer.flipX);
+    }
+
+
+    public async void OverrideMovement(params IInputOverride[] inputOverrides)
+    {
+        // block controls
+        InputHandler.BlockInputs(true);
+        // execute overrides
+
+        foreach (var inputOverride in inputOverrides)
+        {
+            switch (inputOverride)
+            {
+                case ButtonOverride buttonOverride:
+                    buttonOverride.Button.OnInputEvent(buttonOverride.Pressed ? UnityEngine.InputSystem.InputActionPhase.Started : UnityEngine.InputSystem.InputActionPhase.Canceled);
+                    await Task.Delay(buttonOverride.DurationMilliseconds);
+                    buttonOverride.Button.OnInputEvent(UnityEngine.InputSystem.InputActionPhase.Canceled);
+                    break;
+                case AxisOverride axisOverride:
+                    axisOverride.Axis.OnInputEvent(axisOverride.Direction);
+                    await Task.Delay(axisOverride.DurationMilliseconds);
+                    axisOverride.Axis.OnInputEvent(Vector2.zero);
+                    break;
+            }
+        }
+
+        // unblock controls
+        InputHandler.BlockInputs(false);
+
     }
 
 }

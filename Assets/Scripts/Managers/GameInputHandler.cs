@@ -59,6 +59,18 @@ public class GameInputHandler : MonoBehaviour, GameInputs.IPlayerActions
 
     }
 
+    public void BlockInputs(bool block)
+    {
+        if (block)
+        {
+            GameInputs.Player.Disable();
+        }
+        else
+        {
+            GameInputs.Player.Enable();
+        }
+    }
+
     void TimeContextValueChanged(float newValue)
     {
 
