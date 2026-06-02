@@ -112,7 +112,9 @@
         {
             "_key": "Level_Entry",
             "_asset": {
-                "instanceID": 0
+                "fileID": 421846556271540124,
+                "guid": "b49a5730a5fd6a543a3750bbe3847a31",
+                "type": 3
             }
         },
         {

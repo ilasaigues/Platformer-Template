@@ -7,6 +7,7 @@ public class ProjectBinder : MonoInstaller
     public VFXSpawner VFXSpawner;
     public GameInputHandler GameInputHandler;
     public SceneTransitionManager SceneTransitionManager;
+    public LevelManager LevelManager;
 
     public override void InstallBindings()
     {
@@ -14,6 +15,7 @@ public class ProjectBinder : MonoInstaller
         QuickBind(VFXSpawner);
         QuickBind(GameInputHandler);
         QuickBind(SceneTransitionManager);
+        QuickBind(LevelManager);
         Container.BindFactory<VFXObject, VFXObject.Factory>().FromComponentInNewPrefab(VFXSpawner.VFXObjectPrefab);
     }
 

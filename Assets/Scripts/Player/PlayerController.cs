@@ -99,6 +99,10 @@ public class PlayerController : MonoBehaviour
         ResetOnGrounded();
         InputHandler.JumpButton.OnPress += OnJumpPressed;
         transform.parent = null;
+        if (GameManager.HardRespawnTrigger != null)
+        {
+            transform.position = GameManager.HardRespawnTrigger.RespawnPosition;
+        }
     }
 
     public void GainAbility<T>() where T : BasePlayerBehaviour, IPlayerAbilityBehaviour
@@ -267,7 +271,7 @@ public class PlayerController : MonoBehaviour
         {
             if (respawn.respawnType == RespawnType.Hard) // reload scene
             {
-                //await _sceneTransitionManager.TransitionToScene(0, UnityEngine.SceneManagement.LoadSceneMode.Single);
+                GameManager.DoHardRespawn();
             }
             else
             {

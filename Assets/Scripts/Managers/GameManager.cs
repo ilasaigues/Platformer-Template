@@ -3,10 +3,15 @@ using System.Linq;
 using LDtkUnity;
 using Unity.Cinemachine;
 using UnityEngine;
+using Zenject;
 
 public class GameManager : MonoBehaviour
 {
-    public int TotalLives;
+    [Inject]
+    public LevelManager LevelManager;
+
+    [Inject]
+    public SceneTransitionManager SceneTransitionManager;
     public int RemainingLives;
 
     public RespawnTrigger HardRespawnTrigger;
@@ -21,7 +26,6 @@ public class GameManager : MonoBehaviour
 
     private CinemachineConfiner2D cameraConfiner;
 
-    public int CurrentLevel = 0;
 
     public RespawnTrigger DieAndGetRespawn()
     {
@@ -54,10 +58,10 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
-        RemainingLives = TotalLives;
+        RemainingLives = LevelManager.CurrentWorldData.MaxLives;
         PlayerAbilityQueue.MaxAbilityStack = 1;
         cameraConfiner = cinemachineCamera.GetComponent<CinemachineConfiner2D>();
-        SetLevel(0);
+        SetLevel(LevelManager.CurrentLevel);
     }
 
     public void SetLevel(int level)
@@ -73,8 +77,19 @@ public class GameManager : MonoBehaviour
                 Levels[i].gameObject.SetActive(false);
             }
         }
-        CurrentLevel = level;
+        HardRespawnTrigger = Levels[level].GetComponentsInChildren<RespawnTrigger>().First(rt => rt.respawnType == RespawnType.Hard);
+        LevelManager.CurrentLevel = level;
         SetCameraBounds(Levels[level]);
+    }
+
+    public void SetWorld(int world)
+    {
+        LevelManager.CurrentWorldIndex = world;
+    }
+
+    public void DoHardRespawn()
+    {
+        SceneTransitionManager.TransitionToScene(LevelManager.Worlds[LevelManager.CurrentWorldIndex].SceneReference.SceneName, UnityEngine.SceneManagement.LoadSceneMode.Single);
     }
 
     public void SetCameraBounds(LDtkComponentLevel level)

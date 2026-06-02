@@ -1,16 +1,20 @@
+using System;
+using System.Collections.Generic;
 using UnityEngine;
+using Zenject;
 
 public class LevelManager : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    [Serializable]
+    public class WorldData
     {
-        
+        public int MaxLives;
+        [StaticInstances]
+        public SceneReference SceneReference;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public List<WorldData> Worlds = new();
+    public int CurrentWorldIndex;
+    public WorldData CurrentWorldData => Worlds[CurrentWorldIndex];
+    public int CurrentLevel;
 }

@@ -48,7 +48,7 @@ ScriptedImporter:
   - _key: Camera_bound
     _asset: {fileID: 3115678903558501836, guid: 467e94121d67d75459235b04c571b47e, type: 3}
   - _key: Level_Entry
-    _asset: {instanceID: 0}
+    _asset: {fileID: 421846556271540124, guid: b49a5730a5fd6a543a3750bbe3847a31, type: 3}
   - _key: Level_Exit
     _asset: {fileID: 421846556271540124, guid: c54d17afee571d34985a7c860dc07c36, type: 3}
   _enumGenerate: 1

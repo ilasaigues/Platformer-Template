@@ -42,6 +42,7 @@ public class PlayerJumpingBehaviour : PlayerAirBehaviour
     {
         _jumpHeld = PlayerController.InputHandler.JumpButton.Pressed;
         PlayerController.MovementController.SetVelocity(null, PlayerController.PlayerStats.jumpVelocity);
+        PlayerController.MovementController.Grounded = false;
         PlayerController.InputHandler.JumpButton.OnRelease += JumpReleased;
         PlayerController.Jumps = Mathf.Max(PlayerController.Jumps, 1);
         PlayAnim(PlayerController.PlayerAnimator.AnimationList.Jump, true);

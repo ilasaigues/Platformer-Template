@@ -13,7 +13,7 @@ public class LevelExit : MonoBehaviour
         if (!collided && other.GetComponent<PlayerController>() is PlayerController controller)
         {
             collided = true;
-            gameManager.SetLevel(gameManager.CurrentLevel + 1);
+            gameManager.SetLevel(gameManager.LevelManager.CurrentLevel + 1);
             gameManager.PlayerController.OverrideMovement(
                 new AxisOverride(gameManager.PlayerController.InputHandler.MoveAxis, Vector2.right, 1000)
             );

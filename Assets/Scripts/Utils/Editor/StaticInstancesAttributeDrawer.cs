@@ -9,6 +9,7 @@ using UnityEngine;
 [CustomPropertyDrawer(typeof(StaticInstancesAttribute))]
 public class StaticInstancesAttributeDrawer : PropertyDrawer
 {
+
     // Draw the property inside the given rect
     public override void OnGUI(Rect position, SerializedProperty property, GUIContent label)
     {
@@ -31,10 +32,7 @@ public class StaticInstancesAttributeDrawer : PropertyDrawer
         {
             property.boxedValue = fields[index].GetValue(null);
         }
-        else
-        {
-            Debug.LogWarning("EMPTY SCENE REFERENCE IN OBJECT " + property.serializedObject);
-        }
+
         property.serializedObject.ApplyModifiedProperties();
     }
 }
