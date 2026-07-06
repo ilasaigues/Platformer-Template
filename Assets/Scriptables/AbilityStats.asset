@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4e6c037fadda47419467a2b4d1708fd, type: 3}
   m_Name: AbilityStats
   m_EditorClassIdentifier: Assembly-CSharp::AbilityStats
-  RockGravity: -50
+  RockGravity: -60
   MinRockTime: 0.25
   RockBreakSpeeds: {x: 23, y: 30}
   RockTerminalVelocity: -30
