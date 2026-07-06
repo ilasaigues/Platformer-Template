@@ -25,7 +25,9 @@ public class PlayerDashBehaviour : BasePlayerBehaviour, IPlayerAbilityBehaviour
 
     public override void Enter()
     {
+        #if UNITY_EDITOR
         if (PlayerController.AbilityStats.DashPause) EditorApplication.isPaused = true;
+        #endif
         PlayAnim(PlayerController.PlayerAnimator.AnimationList.DashEnter);
         TimeLastUsed = PlayerController.TimeContext.Time;
         PlayerController.RemainingDashes--;
