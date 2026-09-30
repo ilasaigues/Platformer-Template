@@ -49,7 +49,18 @@ public class PlayerController : MonoBehaviour
 
     public ParticleSystem DashParticles;
 
-    public Vector2 LastDirectionInput => InputHandler.MoveAxis.LastValue;
+    private float minDeadzone = 0.125f;
+
+    public Vector2 LastDirectionInput
+    {
+        get
+        {
+            var lastInput = InputHandler.MoveAxis.LastValue;
+            if (Mathf.Abs(lastInput.x) < minDeadzone) lastInput.x = 0;
+            if (Mathf.Abs(lastInput.y) < minDeadzone) lastInput.y = 0;
+            return lastInput;
+        }
+    }
     public Vector2 LastHorizontalDirection { get; private set; }
 
     public int RemainingDashes = 1;
