@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using LDtkUnity;
 using Unity.Cinemachine;
 using Unity.VisualScripting;
@@ -82,9 +83,7 @@ public class GameManager : MonoBehaviour
         if (HardRespawnTrigger == null)
         {
             HardRespawnTrigger = Levels[level].GetComponentInChildren<LevelEntry>().AddComponent<RespawnTrigger>();
-            HardRespawnTrigger.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Kinematic;
-            HardRespawnTrigger.GetComponent<Collider2D>().isTrigger = true;
-
+            HardRespawnTrigger.respawnType = RespawnType.Hard;
         }
         LevelManager.CurrentLevel = level;
         //SetCameraBounds(Levels[level]);
@@ -93,6 +92,35 @@ public class GameManager : MonoBehaviour
     public void SetWorld(int world)
     {
         LevelManager.CurrentWorldIndex = world;
+    }
+
+    public async void LevelEndReached()
+    {
+        SetLevel(LevelManager.CurrentLevel + 1);
+        PlayerController.InputHandler.BlockInputs(true);
+        PlayerController.ChangingLevel = true;
+        // await level out animation
+        await Task.Delay(300); // TODO: REMOVE HARDCODED VALUE
+
+        var playerPos = PlayerController.transform.position;
+        var targetPos = HardRespawnTrigger.RespawnPosition;
+
+
+        var transitionTime = 3; // TODO: REMOVE HARDCODED VALUE
+
+        var tween = LeanTween.move(PlayerController.gameObject, targetPos, transitionTime).setEaseInOutCubic();
+        bool complete = false;
+        tween.setOnComplete(_ => complete = true);
+
+        while (!complete)
+        {
+            await Task.Delay(100);
+        }
+
+
+        PlayerController.ChangingLevel = false;
+        await Task.Delay(300); // TODO: REMOVE HARDCODED VALUE
+        PlayerController.InputHandler.BlockInputs(false);
     }
 
     public void DoHardRespawn()

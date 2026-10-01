@@ -17,6 +17,9 @@ public class PlayerAnimationList : ScriptableObject
     public AnimationClip Dash;
     public AnimationClip DashExit;
 
+    public AnimationClip LevelTransitionStart;
+    public AnimationClip LevelTransitionEnd;
+
     public AnimationClip Death;
     public AnimationClip Revive;
 

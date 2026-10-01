@@ -15,7 +15,7 @@ public class RespawnTrigger : MonoBehaviour, ILDtkImportedFields
 
     public RespawnType respawnType;
 
-    public Vector3 RespawnPosition => _respawnTransform ? _respawnTransform.position : Vector3.zero;
+    public Vector3 RespawnPosition => _respawnTransform ? _respawnTransform.position : transform.position;
 
     void Start()
     {

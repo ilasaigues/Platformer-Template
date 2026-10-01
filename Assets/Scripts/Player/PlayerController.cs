@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading;
 using System.Threading.Tasks;
 using Unity.Cinemachine;
 using UnityEngine;
@@ -49,6 +50,8 @@ public class PlayerController : MonoBehaviour
 
     public ParticleSystem DashParticles;
 
+    public bool ChangingLevel = false;
+
     private float minDeadzone = 0.125f;
 
     public Vector2 LastDirectionInput
@@ -76,7 +79,6 @@ public class PlayerController : MonoBehaviour
     public CinemachinePositionComposer CameraComposer;
 
 
-
     public int RemainingLives { get; private set; }
 
     void Start()
@@ -92,6 +94,7 @@ public class PlayerController : MonoBehaviour
         BehaviourMachine.AddBehaviour(new PlayerGroundMoveBehaviour(this));
         BehaviourMachine.AddBehaviour(new PlayerJumpingBehaviour(this));
         BehaviourMachine.AddBehaviour(new PlayerDyingBehaviour(this));
+        BehaviourMachine.AddBehaviour(new PlayerLevelTransitionBehaviour(this));
         BehaviourMachine.AddBehaviour(new PlayerRockBehaviour(this)
         {
             //Enabled = true

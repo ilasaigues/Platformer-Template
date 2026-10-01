@@ -10,6 +10,11 @@ public abstract class BasePlayerBehaviour : BaseBehaviour
 
     public override BehaviourChangeRequest VerifyBehaviour()
     {
+        if (PlayerController.ChangingLevel)
+        {
+            return BehaviourChangeRequest.New<PlayerLevelTransitionBehaviour>();
+        }
+
         if (PlayerController.IsDead)
         {
             return BehaviourChangeRequest.New<PlayerDyingBehaviour>();
