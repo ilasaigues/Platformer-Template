@@ -22,9 +22,9 @@ public class RespawnTrigger : MonoBehaviour, ILDtkImportedFields
         if (respawnType == RespawnType.Hard)
         {
             var boxSize = GetComponent<BoxCollider2D>().size;
-            _hardRespawnParticles.transform.localPosition = new Vector2(boxSize.x, -boxSize.y) / 2;
-            var shapeModule = _hardRespawnParticles.shape;
-            shapeModule.scale = boxSize * 0.9f;
+            //_hardRespawnParticles.transform.localPosition = new Vector2(boxSize.x, -boxSize.y) / 2;
+            //var shapeModule = _hardRespawnParticles.shape;
+            //shapeModule.scale = boxSize * 0.9f;
         }
         else
         {
