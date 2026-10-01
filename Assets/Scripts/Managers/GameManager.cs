@@ -79,7 +79,7 @@ public class GameManager : MonoBehaviour
         }
         HardRespawnTrigger = Levels[level].GetComponentsInChildren<RespawnTrigger>().First(rt => rt.respawnType == RespawnType.Hard);
         LevelManager.CurrentLevel = level;
-        SetCameraBounds(Levels[level]);
+        //SetCameraBounds(Levels[level]);
     }
 
     public void SetWorld(int world)
