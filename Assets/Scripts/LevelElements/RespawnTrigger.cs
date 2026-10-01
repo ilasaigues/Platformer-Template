@@ -28,7 +28,10 @@ public class RespawnTrigger : MonoBehaviour, ILDtkImportedFields
         }
         else
         {
-            Destroy(_hardRespawnParticles.gameObject);
+            if (_hardRespawnParticles != null)
+            {
+                Destroy(_hardRespawnParticles.gameObject);
+            }
         }
     }
 

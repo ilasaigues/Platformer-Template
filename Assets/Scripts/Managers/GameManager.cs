@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using System.Linq;
 using LDtkUnity;
 using Unity.Cinemachine;
+using Unity.VisualScripting;
 using UnityEngine;
 using Zenject;
 
@@ -77,7 +78,14 @@ public class GameManager : MonoBehaviour
                 Levels[i].gameObject.SetActive(false);
             }
         }
-        HardRespawnTrigger = Levels[level].GetComponentsInChildren<RespawnTrigger>().First(rt => rt.respawnType == RespawnType.Hard);
+        HardRespawnTrigger = Levels[level].GetComponentsInChildren<RespawnTrigger>().FirstOrDefault(rt => rt.respawnType == RespawnType.Hard);
+        if (HardRespawnTrigger == null)
+        {
+            HardRespawnTrigger = Levels[level].GetComponentInChildren<LevelEntry>().AddComponent<RespawnTrigger>();
+            HardRespawnTrigger.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Kinematic;
+            HardRespawnTrigger.GetComponent<Collider2D>().isTrigger = true;
+
+        }
         LevelManager.CurrentLevel = level;
         //SetCameraBounds(Levels[level]);
     }

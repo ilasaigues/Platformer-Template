@@ -15,7 +15,7 @@ public class LevelExit : MonoBehaviour
             collided = true;
             gameManager.SetLevel(gameManager.LevelManager.CurrentLevel + 1);
             gameManager.PlayerController.OverrideMovement(
-                new AxisOverride(gameManager.PlayerController.InputHandler.MoveAxis, Vector2.right, 1000)
+                new AxisOverride(gameManager.PlayerController.InputHandler.MoveAxis, Vector2.zero, 1000)
             );
         }
     }
