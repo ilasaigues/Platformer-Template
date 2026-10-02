@@ -36,4 +36,7 @@ public class PlayerStats : ScriptableObject
     public float ReviveDuration;
     public float TotalDeathTime => DeathDuration + ReviveDuration;
 
+    [Header("Level Transition")]
+    public float LevelTransitionTime = 3;
+
 }

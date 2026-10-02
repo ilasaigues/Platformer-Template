@@ -105,13 +105,14 @@ public class GameManager : MonoBehaviour
         PlayerController.InputHandler.BlockInputs(true);
         PlayerController.ChangingLevel = true;
         // await level out animation
-        await Task.Delay(300); // TODO: REMOVE HARDCODED VALUE
+        var startDelay = (int)(PlayerController.PlayerAnimator.AnimationList.LevelTransitionStart.length * 1000);
+        await Task.Delay(startDelay);
 
         var playerPos = PlayerController.transform.position;
         var targetPos = HardRespawnTrigger.RespawnPosition;
 
 
-        var transitionTime = 3; // TODO: REMOVE HARDCODED VALUE
+        var transitionTime = PlayerController.PlayerStats.LevelTransitionTime;
 
         var tween = LeanTween.move(PlayerController.gameObject, targetPos, transitionTime).setEaseInOutCubic();
         bool complete = false;
@@ -124,7 +125,9 @@ public class GameManager : MonoBehaviour
 
 
         PlayerController.ChangingLevel = false;
-        await Task.Delay(300); // TODO: REMOVE HARDCODED VALUE
+        var endDelay = (int)(PlayerController.PlayerAnimator.AnimationList.LevelTransitionEnd.length * 1000);
+
+        await Task.Delay(endDelay);
         PlayerController.InputHandler.BlockInputs(false);
     }
 
