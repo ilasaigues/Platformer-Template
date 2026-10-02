@@ -27,6 +27,7 @@ public class PlayerLevelTransitionBehaviour : BasePlayerBehaviour
     public override void Enter()
     {
         PlayerController.MovementController.enabled = false;
+        PlayerController.MovementController.SetVelocity(Vector2.zero);
         PlayAnim(PlayerController.PlayerAnimator.AnimationList.LevelTransitionStart);
 
     }

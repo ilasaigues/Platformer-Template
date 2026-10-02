@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -60,6 +61,10 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
+
+        //Get all levels in this world, named "WORLD_X_Y", where X is the world, and Y is the level
+        Levels = FindObjectsByType<LDtkComponentLevel>(FindObjectsSortMode.None).OrderBy(l => Convert.ToInt32(l.name.Split('_').Last())).ToList();
+
         RemainingLives = LevelManager.CurrentWorldData.MaxLives;
         PlayerAbilityQueue.MaxAbilityStack = 1;
         cameraConfiner = cinemachineCamera.GetComponent<CinemachineConfiner2D>();

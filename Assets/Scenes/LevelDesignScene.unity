@@ -281,25 +281,9 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6530341927107091026, guid: 9c7bb1a1498169d4fbb87234cb21ce6d, type: 3}
-      propertyPath: Levels.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 6530341927107091026, guid: 9c7bb1a1498169d4fbb87234cb21ce6d, type: 3}
       propertyPath: cinemachineCamera
       value: 
       objectReference: {fileID: 742409360}
-    - target: {fileID: 6530341927107091026, guid: 9c7bb1a1498169d4fbb87234cb21ce6d, type: 3}
-      propertyPath: 'Levels.Array.data[0]'
-      value: 
-      objectReference: {fileID: 367039495}
-    - target: {fileID: 6530341927107091026, guid: 9c7bb1a1498169d4fbb87234cb21ce6d, type: 3}
-      propertyPath: 'Levels.Array.data[1]'
-      value: 
-      objectReference: {fileID: 862626459}
-    - target: {fileID: 6530341927107091026, guid: 9c7bb1a1498169d4fbb87234cb21ce6d, type: 3}
-      propertyPath: 'Levels.Array.data[2]'
-      value: 
-      objectReference: {fileID: 1799611907}
     - target: {fileID: 6660335064337736485, guid: 9c7bb1a1498169d4fbb87234cb21ce6d, type: 3}
       propertyPath: m_LocalPosition.x
       value: 29.03711
@@ -423,17 +407,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &367039495 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: -8611319324692167684, guid: d5cd4461bf5ba144ea640d45f7d54ba3, type: 3}
-  m_PrefabInstance: {fileID: 1422190771}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: db93954134b7eec42a9af442e6390856, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: LDtkUnity.Runtime::LDtkUnity.LDtkComponentLevel
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -1358,17 +1331,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   _targetMovementController: {fileID: 0}
   DeadzoneSize: {x: 0.2, y: 0.49}
---- !u!114 &862626459 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6928196312692907441, guid: c01ee19d00fac374091af60adb912b06, type: 3}
-  m_PrefabInstance: {fileID: 1858939097}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: db93954134b7eec42a9af442e6390856, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: LDtkUnity.Runtime::LDtkUnity.LDtkComponentLevel
 --- !u!1 &1022614144
 GameObject:
   m_ObjectHideFlags: 0
@@ -2380,17 +2342,6 @@ TilemapCollider2D:
   m_CorrespondingSourceObject: {fileID: -8214641471145500025, guid: cf468d07cfc262148956f7d8f727842c, type: 3}
   m_PrefabInstance: {fileID: 593056900}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1799611907 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: -9072409868784224375, guid: cf468d07cfc262148956f7d8f727842c, type: 3}
-  m_PrefabInstance: {fileID: 593056900}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: db93954134b7eec42a9af442e6390856, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: LDtkUnity.Runtime::LDtkUnity.LDtkComponentLevel
 --- !u!1001 &1858939097
 PrefabInstance:
   m_ObjectHideFlags: 0
