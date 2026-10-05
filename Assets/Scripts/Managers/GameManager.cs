@@ -35,11 +35,13 @@ public class GameManager : MonoBehaviour
         if (RemainingLives > 0)
         {
             RemainingLives--;
+            Debug.Log("soft death");
             return CurrentRespawnTrigger;
         }
         else
         {
-            return HardRespawnTrigger;
+            Debug.Log("hard death");
+            return HardRespawnTrigger;           
         }
     }
     public RespawnTrigger GetRespawn()

@@ -1,3 +1,4 @@
+using System.Diagnostics;
 using System.Threading;
 using UnityEngine;
 
@@ -27,10 +28,12 @@ public class PlayerDyingBehaviour : BasePlayerBehaviour
             var respawn = PlayerController.GameManager.GetRespawn();
             Vector2 particlePosition = respawn.RespawnPosition + Vector3.up * 8.ToPixels();
             PlayerController.VFXSpawner.PlayFX(PlayerController.VFXSpawner.VFXList.Respawn_Particles, particlePosition, 1, false);
+            {
+                
+            }
         }
         else
         {
-
         }
     }
 
