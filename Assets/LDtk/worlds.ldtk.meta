@@ -1,0 +1,74 @@
+fileFormatVersion: 2
+guid: a11e75daeccb2ad4c93fe1d4e30c5543
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: aaa16bfc62c086f4fb45da87b6acf9b1, type: 3}
+  _reimportOnDependencyChange: 1
+  _jsonFile: {fileID: -164016180542632921, guid: a11e75daeccb2ad4c93fe1d4e30c5543, type: 3}
+  _pixelsPerUnit: 16
+  _customLevelPrefab: {instanceID: 0}
+  _intGridValueColorsVisible: 0
+  _useCompositeCollider: 1
+  _geometryType: 0
+  _createBackgroundColor: 1
+  _createLevelBoundsTrigger: 0
+  _useParallax: 1
+  _scaleEntities: 1
+  _intGridValues:
+  - _key: Thorns_1
+    _asset: {instanceID: 0}
+  - _key: Terrain_8x8_1
+    _asset: {fileID: 11400000, guid: 11d72f96735c40d42ba25e4a2a316d0f, type: 2}
+  - _key: Terrain_8x8_2
+    _asset: {fileID: 11400000, guid: 5377d35309705a649941e7c9beac70f8, type: 2}
+  - _key: Doom_1
+    _asset: {instanceID: 0}
+  _entities:
+  - _key: Boulder
+    _asset: {fileID: 8881450139756665115, guid: 8efe9a562bfde0a44a02d9fb3a99afc8, type: 3}
+  - _key: Trap
+    _asset: {fileID: 2814438238396818025, guid: ef29f3c27b5f2ea40882a8043eac7460, type: 3}
+  - _key: BreakableTerrain
+    _asset: {fileID: 4968985753700225028, guid: 7640eced8a4cd4645925c1bd62459114, type: 3}
+  - _key: World_start
+    _asset: {fileID: 7969246784009727573, guid: 6545e83e3e44ebb4185007dbd0e0ab56, type: 3}
+  - _key: World_end
+    _asset: {instanceID: 0}
+  - _key: Soft_respawn
+    _asset: {fileID: 6236945957978861526, guid: 26e42e0a4159d7f419df3e8571f42a78, type: 3}
+  - _key: Hard_respawn
+    _asset: {fileID: 6236945957978861526, guid: 26e42e0a4159d7f419df3e8571f42a78, type: 3}
+  - _key: Key
+    _asset: {instanceID: 0}
+  - _key: Lock
+    _asset: {instanceID: 0}
+  - _key: Level_start
+    _asset: {fileID: 421846556271540124, guid: b49a5730a5fd6a543a3750bbe3847a31, type: 3}
+  - _key: Level_end
+    _asset: {fileID: 421846556271540124, guid: c54d17afee571d34985a7c860dc07c36, type: 3}
+  _enumGenerate: 0
+  _enumPath: 
+  _enumNamespace: 
+  _useLayerCustomSortingOrders: 0
+  _layerCustomSortingOrders:
+  - _ldtkLayerName: Hazards
+    _ldtkLayerOrder: 0
+  - _ldtkLayerName: Interactables
+    _ldtkLayerOrder: -1
+  - _ldtkLayerName: Other
+    _ldtkLayerOrder: -2
+  - _ldtkLayerName: Spawns
+    _ldtkLayerOrder: -3
+  - _ldtkLayerName: Bounds
+    _ldtkLayerOrder: -4
+  - _ldtkLayerName: Thorns
+    _ldtkLayerOrder: -5
+  - _ldtkLayerName: Terrain_8x8
+    _ldtkLayerOrder: -6
+  - _ldtkLayerName: Doom
+    _ldtkLayerOrder: -7
