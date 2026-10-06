@@ -12,6 +12,7 @@ public abstract class BasePlayerBehaviour : BaseBehaviour
     {
         if (PlayerController.GameManager.ChangingLevel)
         {
+            if (this is PlayerLevelTransitionBehaviour) return null;
             return BehaviourChangeRequest.New<PlayerLevelTransitionBehaviour>();
         }
 

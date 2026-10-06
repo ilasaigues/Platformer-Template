@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
@@ -49,8 +50,6 @@ public class PlayerController : MonoBehaviour, IMovementControllable, ISqueezabl
     public BehaviourMachine BehaviourMachine;
 
     public ParticleSystem DashParticles;
-
-    public bool ChangingLevel = false;
 
     private float minDeadzone = 0.125f;
 
@@ -124,12 +123,28 @@ public class PlayerController : MonoBehaviour, IMovementControllable, ISqueezabl
             //Enabled = true
         });
 
-
+        GameManager.AbilityTypeChanged += AbilityTypeChanged;
         BehaviourMachine.ChangeBehaviour(typeof(PlayerFallingBehaviour));
         ResetOnGrounded();
         InputHandler.JumpButton.OnPress += OnJumpPressed;
         transform.parent = null;
 
+    }
+
+    private void AbilityTypeChanged(GameManager.AbilityType type)
+    {
+        switch (type)
+        {
+            case GameManager.AbilityType.DoubleJump:
+                AbilityQueue.AddAbility(BehaviourMachine.GetBehaviour<PlayerDoubleJumpBehaviour>());
+                break;
+            case GameManager.AbilityType.Dash:
+                AbilityQueue.AddAbility(BehaviourMachine.GetBehaviour<PlayerDashBehaviour>());
+                break;
+            case GameManager.AbilityType.Shield:
+                AbilityQueue.AddAbility(BehaviourMachine.GetBehaviour<PlayerRockBehaviour>());
+                break;
+        }
     }
 
     public void GainAbility(GameManager.AbilityType abilityType)

@@ -5,7 +5,7 @@ public class PlayerLevelTransitionBehaviour : BasePlayerBehaviour
 
     public override BehaviourChangeRequest VerifyBehaviour()
     {
-        if (!PlayerController.ChangingLevel)
+        if (!PlayerController.GameManager.ChangingLevel)
         {
             if (PlayerController.MovementController.Grounded)
             {

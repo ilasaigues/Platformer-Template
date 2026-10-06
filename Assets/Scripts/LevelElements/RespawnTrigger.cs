@@ -18,7 +18,7 @@ public class RespawnTrigger : MonoBehaviour, ILDtkImportedFields
 
     public Vector3 RespawnPosition => _respawnTransform ? _respawnTransform.position : transform.position;
 
-    public event Action<RespawnTrigger> OnRespawnTriggered;
+    public event Action<RespawnTrigger> OnRespawnTriggered = delegate { };
 
 
 

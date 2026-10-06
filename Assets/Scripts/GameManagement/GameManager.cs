@@ -28,6 +28,7 @@ public class GameManager : MonoBehaviour
 
     public event Action<AbilityType> AbilityTypeChanged;
 
+    [NonSerialized]
     public bool ChangingLevel = false;
 
     public int RemainingLives;
@@ -77,7 +78,6 @@ public class GameManager : MonoBehaviour
     public void GainAbility(AbilityType abilityType)
     {
         AbilityTypeChanged(abilityType);
-        //PlayerAbilityQueue.AddAbility(ability);
     }
 
 
@@ -94,9 +94,9 @@ public class GameManager : MonoBehaviour
 
         foreach (var levelExit in FindObjectsByType<LevelExit>(FindObjectsSortMode.None))
         {
-            levelExit.OnExitTriggered += traveller =>
+            levelExit.OnExitTriggered += async traveller =>
             {
-                LevelEndReached(traveller);
+                await LevelEndReached(traveller);
             };
         }
 
@@ -121,7 +121,7 @@ public class GameManager : MonoBehaviour
 
     public void SetLevel(int level)
     {
-        for (int i = 0; i < Levels.Count; i++)
+        /*for (int i = 0; i < Levels.Count; i++)
         {
             if (i == level - 1 || i == level || i == level + 1)
             {
@@ -131,7 +131,7 @@ public class GameManager : MonoBehaviour
             {
                 Levels[i].gameObject.SetActive(false);
             }
-        }
+        }*/
         HardRespawnTrigger = Levels[level].GetComponentsInChildren<RespawnTrigger>().FirstOrDefault(rt => rt.respawnType == RespawnType.Hard);
 
         LevelManager.CurrentLevel = level;
@@ -143,7 +143,7 @@ public class GameManager : MonoBehaviour
         LevelManager.CurrentWorldIndex = world;
     }
 
-    public async void LevelEndReached(LevelTraversalComponent traveller)
+    public async Task LevelEndReached(LevelTraversalComponent traveller)
     {
         SetLevel(LevelManager.CurrentLevel + 1);
         InputHandler.BlockInputs(true);
