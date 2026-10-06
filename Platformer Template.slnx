@@ -15,7 +15,7 @@
   <Project Path="Game.GameManagement.csproj" />
   <Project Path="Game.UI.csproj" />
   <Project Path="Game.BehaviourMachine.csproj" />
-  <Project Path="LdtkUnity.Generated.csproj" />
   <Project Path="Assembly-CSharp-Editor.csproj" />
   <Project Path="Editor.Game.AssetProcessing.csproj" />
+  <Project Path="LdtkUnity.Generated.csproj" />
 </Solution>
