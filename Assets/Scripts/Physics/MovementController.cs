@@ -7,7 +7,7 @@ using UnityEngine;
 using Zenject;
 [RequireComponent(typeof(Rigidbody2D))]
 [RequireComponent(typeof(CollisionController))]
-[RequireComponent(typeof(PlayerController))]
+[RequireComponent(typeof(IMovementControllable))]
 public class MovementController : MonoBehaviour
 {
     public Vector2 Velocity { get; private set; }
@@ -29,7 +29,7 @@ public class MovementController : MonoBehaviour
     private TimeContext _timeContext;
     private Rigidbody2D _rb;
     private CollisionController _collisonController;
-    private PlayerController _playerController;
+    private IMovementControllable _playerController;
 
     public Bounds MainColliderBounds => _collisonController.MainCollider.bounds;
     private Bounds _footColliderBounds => _collisonController.FootCollider.bounds;
@@ -46,8 +46,8 @@ public class MovementController : MonoBehaviour
         _collisonController = gameObject.GetOrAddComponent<CollisionController>();
         _rb.bodyType = RigidbodyType2D.Kinematic;
         _rb.constraints = RigidbodyConstraints2D.FreezeRotation;
-        _playerController = gameObject.GetOrAddComponent<PlayerController>();
-        VerticalTerminalVelocity = _playerController.PlayerStats.fallVelocityCap;
+        _playerController = gameObject.GetComponent<IMovementControllable>();
+        VerticalTerminalVelocity = _playerController.FallVelocityCap;
     }
 
     void Start()
@@ -82,7 +82,7 @@ public class MovementController : MonoBehaviour
 
         if (!Grounded && correctedHorizontal.magnitude < Mathf.Abs(originalHorizontal.x)) // if collided and shrunk vector
         {
-            var ledgeCorrection = GetCorrection(transform.position, mainBounds, originalHorizontal, correctedHorizontal, Vector2.up * _playerController.PlayerStats.ledgeCorrectionUp, Vector2.down * _playerController.PlayerStats.ledgeCorrectionDown, LayerReference.TerrainAndBoulder);
+            var ledgeCorrection = GetCorrection(transform.position, mainBounds, originalHorizontal, correctedHorizontal, Vector2.up * _playerController.LedgeCorrectionUp, Vector2.down * _playerController.LedgeCorrectionDown, LayerReference.TerrainAndBoulder);
 
             if (ledgeCorrection != Vector2.zero)
             {

@@ -1,3 +1,17 @@
 {
-	"name": "Game.ScriptableObjects"
+    "name": "Game.ScriptableObjects",
+    "rootNamespace": "",
+    "references": [
+        "GUID:4a9f65e80a06cc047b3f76430b93577b",
+        "GUID:e5ee8431a3035254e901a58a8a8b5f11"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
 }

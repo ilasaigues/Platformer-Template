@@ -9,7 +9,7 @@ using Zenject;
 [RequireComponent(typeof(MovementController))]
 [RequireComponent(typeof(BehaviourMachine))]
 [RequireComponent(typeof(PlayerAnimator))]
-public class PlayerController : MonoBehaviour
+public class PlayerController : MonoBehaviour, IMovementControllable
 {
     #region Injected
     [Inject]

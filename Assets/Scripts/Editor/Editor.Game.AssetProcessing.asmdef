@@ -1,7 +1,9 @@
 {
     "name": "Editor.Game.AssetProcessing",
     "rootNamespace": "",
-    "references": [],
+    "references": [
+        "GUID:e5ee8431a3035254e901a58a8a8b5f11"
+    ],
     "includePlatforms": [],
     "excludePlatforms": [],
     "allowUnsafeCode": false,
