@@ -6,7 +6,7 @@
     "IntGridValueColorsVisible": false,
     "UseCompositeCollider": true,
     "GeometryType": 0,
-    "CreateBackgroundColor": true,
+    "CreateBackgroundColor": false,
     "CreateLevelBoundsTrigger": false,
     "UseParallax": true,
     "ScaleEntities": true,

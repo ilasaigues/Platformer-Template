@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: terrain_8x8
   m_EditorClassIdentifier: LDtkUnity.Runtime::LDtkUnity.LDtkIntGridTile
   _colliderType: 2
-  _customPhysicsSprite: {fileID: 0}
+  _customPhysicsSprite: {fileID: 1201835911, guid: 216eb6f39ae79774e83c88a54ca41128, type: 3}
   _tilemapTag: Untagged
   _tilemapLayerMask: 8
   _physicsMaterial: {fileID: 0}
