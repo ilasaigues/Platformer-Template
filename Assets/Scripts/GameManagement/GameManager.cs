@@ -4,7 +4,6 @@ using System.Linq;
 using System.Threading.Tasks;
 using LDtkUnity;
 using Unity.Cinemachine;
-using Unity.VisualScripting;
 using UnityEngine;
 using Zenject;
 
@@ -15,33 +14,47 @@ public class GameManager : MonoBehaviour
 
     [Inject]
     public SceneTransitionManager SceneTransitionManager;
+
+    [Inject]
+    public GameInputHandler InputHandler;
+
+
+    public enum AbilityType
+    {
+        DoubleJump,
+        Dash,
+        Shield,
+    }
+
+    public event Action<AbilityType> AbilityTypeChanged;
+
+    public bool ChangingLevel = false;
+
     public int RemainingLives;
 
     public RespawnTrigger HardRespawnTrigger;
     public RespawnTrigger CurrentRespawnTrigger;
-    public PlayerController PlayerController;
 
     public CinemachineCamera cinemachineCamera;
 
-    public PlayerAbilityQueue PlayerAbilityQueue = new();
 
     public List<LDtkComponentLevel> Levels = new();
 
     private CinemachineConfiner2D cameraConfiner;
 
 
-    public RespawnTrigger DieAndGetRespawn()
+    public (Vector2 respawnPosition, RespawnType respawnType) DieAndGetRespawn()
     {
         if (RemainingLives > 0)
         {
             RemainingLives--;
             Debug.Log("soft death");
-            return CurrentRespawnTrigger;
+            return (CurrentRespawnTrigger.RespawnPosition, CurrentRespawnTrigger.respawnType);
         }
         else
         {
             Debug.Log("hard death");
-            return HardRespawnTrigger;           
+            return (HardRespawnTrigger.RespawnPosition, HardRespawnTrigger.respawnType);
         }
     }
     public RespawnTrigger GetRespawn()
@@ -55,9 +68,16 @@ public class GameManager : MonoBehaviour
             return HardRespawnTrigger;
         }
     }
-    public void GainAbility(IPlayerAbilityBehaviour ability)
+
+    public Vector3 GetRespawnPosition()
     {
-        PlayerAbilityQueue.AddAbility(ability);
+        return GetRespawn().RespawnPosition;
+    }
+
+    public void GainAbility(AbilityType abilityType)
+    {
+        AbilityTypeChanged(abilityType);
+        //PlayerAbilityQueue.AddAbility(ability);
     }
 
 
@@ -68,9 +88,35 @@ public class GameManager : MonoBehaviour
         Levels = FindObjectsByType<LDtkComponentLevel>(FindObjectsSortMode.None).OrderBy(l => Convert.ToInt32(l.name.Split('_').Last())).ToList();
 
         RemainingLives = LevelManager.CurrentWorldData.MaxLives;
-        PlayerAbilityQueue.MaxAbilityStack = 1;
+        //PlayerAbilityQueue.MaxAbilityStack = 1;
         cameraConfiner = cinemachineCamera.GetComponent<CinemachineConfiner2D>();
         SetLevel(LevelManager.CurrentLevel);
+
+        foreach (var levelExit in FindObjectsByType<LevelExit>(FindObjectsSortMode.None))
+        {
+            levelExit.OnExitTriggered += traveller =>
+            {
+                LevelEndReached(traveller);
+            };
+        }
+
+        foreach (var levelExit in FindObjectsByType<RespawnTrigger>(FindObjectsSortMode.None))
+        {
+            levelExit.OnRespawnTriggered += respawn =>
+            {
+                switch (respawn.respawnType)
+                {
+                    case RespawnType.Soft:
+                        CurrentRespawnTrigger = respawn;
+                        return;
+                    case RespawnType.Hard:
+                        HardRespawnTrigger = respawn;
+                        CurrentRespawnTrigger ??= respawn;
+                        return;
+                }
+            };
+        }
+
     }
 
     public void SetLevel(int level)
@@ -87,11 +133,7 @@ public class GameManager : MonoBehaviour
             }
         }
         HardRespawnTrigger = Levels[level].GetComponentsInChildren<RespawnTrigger>().FirstOrDefault(rt => rt.respawnType == RespawnType.Hard);
-        if (HardRespawnTrigger == null)
-        {
-            HardRespawnTrigger = Levels[level].GetComponentInChildren<LevelEntry>().AddComponent<RespawnTrigger>();
-            HardRespawnTrigger.respawnType = RespawnType.Hard;
-        }
+
         LevelManager.CurrentLevel = level;
         //SetCameraBounds(Levels[level]);
     }
@@ -101,22 +143,22 @@ public class GameManager : MonoBehaviour
         LevelManager.CurrentWorldIndex = world;
     }
 
-    public async void LevelEndReached()
+    public async void LevelEndReached(LevelTraversalComponent traveller)
     {
         SetLevel(LevelManager.CurrentLevel + 1);
-        PlayerController.InputHandler.BlockInputs(true);
-        PlayerController.ChangingLevel = true;
+        InputHandler.BlockInputs(true);
+        ChangingLevel = true;
         // await level out animation
-        var startDelay = (int)(PlayerController.PlayerAnimator.AnimationList.LevelTransitionStart.length * 1000);
+        int startDelay = (int)(traveller.BeforeTravelDelay * 1000);
         await Task.Delay(startDelay);
 
-        var playerPos = PlayerController.transform.position;
+        var playerPos = traveller.transform.position;
         var targetPos = HardRespawnTrigger.RespawnPosition;
 
 
-        var transitionTime = PlayerController.PlayerStats.LevelTransitionTime;
+        var transitionTime = traveller.TraveltransitionDuration;
 
-        var tween = LeanTween.move(PlayerController.gameObject, targetPos, transitionTime).setEaseInOutCubic();
+        var tween = LeanTween.move(traveller.gameObject, targetPos, transitionTime).setEaseInOutCubic();
         bool complete = false;
         tween.setOnComplete(_ => complete = true);
 
@@ -126,11 +168,11 @@ public class GameManager : MonoBehaviour
         }
 
 
-        PlayerController.ChangingLevel = false;
-        var endDelay = (int)(PlayerController.PlayerAnimator.AnimationList.LevelTransitionEnd.length * 1000);
+        ChangingLevel = false;
+        var endDelay = (int)(traveller.AfterTravelDelay * 1000);
 
         await Task.Delay(endDelay);
-        PlayerController.InputHandler.BlockInputs(false);
+        InputHandler.BlockInputs(false);
     }
 
     public void DoHardRespawn()

@@ -1,14 +1,10 @@
 {
-    "name": "Game.Managers",
+    "name": "LevelElements",
     "rootNamespace": "",
     "references": [
-        "GUID:622f163831787b144a377b36d3e64400",
-        "GUID:75469ad4d38634e559750d17036d5f7c",
         "GUID:831b458ef8919c24ea12fb444fc41310",
-        "GUID:4307f53044263cf4b835bd812fc161a4",
-        "GUID:e473a1231b4e4134ca693d358d3463aa",
-        "GUID:f828f79654581f549ba0e89347718a7f",
-        "GUID:561e3647910e7f2409782a3960367da9"
+        "GUID:221b8600825ce894b97ee90b31d94d6d",
+        "GUID:e473a1231b4e4134ca693d358d3463aa"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

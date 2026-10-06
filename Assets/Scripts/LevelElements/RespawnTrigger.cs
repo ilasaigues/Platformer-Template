@@ -1,3 +1,4 @@
+using System;
 using System.Linq;
 using LDtkUnity;
 using UnityEngine;
@@ -16,6 +17,10 @@ public class RespawnTrigger : MonoBehaviour, ILDtkImportedFields
     public RespawnType respawnType;
 
     public Vector3 RespawnPosition => _respawnTransform ? _respawnTransform.position : transform.position;
+
+    public event Action<RespawnTrigger> OnRespawnTriggered;
+
+
 
     void Start()
     {
@@ -37,9 +42,9 @@ public class RespawnTrigger : MonoBehaviour, ILDtkImportedFields
 
     void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.GetComponent<PlayerController>() is PlayerController controller)
+        if (collision.GetComponent<LevelTraversalComponent>() is LevelTraversalComponent controller)
         {
-            controller.SetRespawn(this, respawnType);
+            OnRespawnTriggered(this);
         }
     }
 

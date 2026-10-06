@@ -19,7 +19,7 @@ public class CinemachineCameraController : MonoBehaviour
     void Start()
     {
         _posComposer = GetComponent<CinemachinePositionComposer>();
-        _targetMovementController ??= _gameManager.PlayerController.MovementController;
+        _targetMovementController ??= FindFirstObjectByType<PlayerController>().GetComponent<MovementController>();
         GetComponent<CinemachineCamera>().Target.TrackingTarget = _targetMovementController.transform;
     }
 

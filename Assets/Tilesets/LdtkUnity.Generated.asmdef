@@ -1,12 +1,7 @@
 {
-    "name": "Game.UI",
+    "name": "LdtkUnity.Generated",
     "rootNamespace": "",
-    "references": [
-        "GUID:622f163831787b144a377b36d3e64400",
-        "GUID:75469ad4d38634e559750d17036d5f7c",
-        "GUID:133c065e78a016f4e93fddd37ffdd0e9",
-        "GUID:e5ee8431a3035254e901a58a8a8b5f11"
-    ],
+    "references": [],
     "includePlatforms": [],
     "excludePlatforms": [],
     "allowUnsafeCode": false,

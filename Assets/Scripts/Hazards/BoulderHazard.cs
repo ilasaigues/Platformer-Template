@@ -23,7 +23,7 @@ public class BoulderHazard : MonoBehaviour, ILDtkImportedFields
     {
         _timeContext.CreateContextModules(gameObject);
         _movementComponent = GetComponent<ObjectMovementComponent>();
-        _movementComponent.OnPlayerSqueezed += PlayerSqueezed;
+        _movementComponent.OnSqueeze += PlayerSqueezed;
         _movementComponent.OnObstacleHit += ObstacleHit;
     }
 
@@ -39,10 +39,9 @@ public class BoulderHazard : MonoBehaviour, ILDtkImportedFields
         _stopTimer = StopTime;
     }
 
-    private void PlayerSqueezed(PlayerController controller)
+    private void PlayerSqueezed(ISqueezable controller)
     {
-        controller.MarkAsDead();
-        controller.GainAbility<PlayerRockBehaviour>();
+        controller.Squeeze();
     }
 
     // Update is called once per frame

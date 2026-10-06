@@ -10,7 +10,7 @@ public abstract class BasePlayerBehaviour : BaseBehaviour
 
     public override BehaviourChangeRequest VerifyBehaviour()
     {
-        if (PlayerController.ChangingLevel)
+        if (PlayerController.GameManager.ChangingLevel)
         {
             return BehaviourChangeRequest.New<PlayerLevelTransitionBehaviour>();
         }

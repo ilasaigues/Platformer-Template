@@ -9,7 +9,7 @@ using Zenject;
 [RequireComponent(typeof(MovementController))]
 [RequireComponent(typeof(BehaviourMachine))]
 [RequireComponent(typeof(PlayerAnimator))]
-public class PlayerController : MonoBehaviour, IMovementControllable
+public class PlayerController : MonoBehaviour, IMovementControllable, ISqueezable
 {
     #region Injected
     [Inject]
@@ -31,12 +31,12 @@ public class PlayerController : MonoBehaviour, IMovementControllable
     public void Constructor(GameManager gameManager)
     {
         GameManager = gameManager;
-        GameManager.PlayerController = this;
     }
 
 
     #endregion
 
+    public PlayerAbilityQueue AbilityQueue = new();
 
     public PlayerStats PlayerStats;
     public AbilityStats AbilityStats;
@@ -81,6 +81,22 @@ public class PlayerController : MonoBehaviour, IMovementControllable
 
     public int RemainingLives { get; private set; }
 
+    public float FallVelocityCap => PlayerStats.fallVelocityCap;
+
+    public float LedgeCorrectionUp => PlayerStats.ledgeCorrectionUp;
+
+    public float LedgeCorrectionDown => PlayerStats.ledgeCorrectionDown;
+
+    public float CeilingCorrection => PlayerStats.ceilingCorrection;
+
+    public Bounds Bounds => MainCollider.bounds;
+
+    public Collider2D MainCollider => CollisionController.MainCollider;
+
+    public Vector2 Position => transform.position;
+
+    public bool CanBeSqueezed => MovementController.CanBeSqueezed;
+
     void Start()
     {
         TimeContext.CreateContextModules(gameObject);
@@ -113,15 +129,12 @@ public class PlayerController : MonoBehaviour, IMovementControllable
         ResetOnGrounded();
         InputHandler.JumpButton.OnPress += OnJumpPressed;
         transform.parent = null;
-        if (GameManager.HardRespawnTrigger != null)
-        {
-            transform.position = GameManager.HardRespawnTrigger.RespawnPosition;
-        }
+
     }
 
-    public void GainAbility<T>() where T : BasePlayerBehaviour, IPlayerAbilityBehaviour
+    public void GainAbility(GameManager.AbilityType abilityType)
     {
-        GameManager.GainAbility(BehaviourMachine.GetBehaviour<T>());
+        GameManager.GainAbility(abilityType);
     }
 
 
@@ -192,24 +205,6 @@ public class PlayerController : MonoBehaviour, IMovementControllable
         return null;
     }
 
-    public void SetRespawn(RespawnTrigger respawn, RespawnType respawnType)
-    {
-        if (GameManager != null)
-        {
-            switch (respawnType)
-            {
-                case RespawnType.Soft:
-                    GameManager.CurrentRespawnTrigger = respawn;
-                    return;
-                case RespawnType.Hard:
-                    GameManager.HardRespawnTrigger = respawn;
-                    GameManager.CurrentRespawnTrigger ??= respawn;
-                    GameManager.PlayerAbilityQueue.Clear();
-                    return;
-            }
-        }
-    }
-
     public void ToggleDashParticles(int value)
     {
         bool enabled = value != 0;
@@ -259,13 +254,13 @@ public class PlayerController : MonoBehaviour, IMovementControllable
                         case BaseHazard.HazardType.Doom:
                             break;
                         case BaseHazard.HazardType.DoubleJump:
-                            GainAbility<PlayerDoubleJumpBehaviour>();
+                            GainAbility(GameManager.AbilityType.DoubleJump);
                             break;
                         case BaseHazard.HazardType.Shield:
-                            GainAbility<PlayerRockBehaviour>();
+                            GainAbility(GameManager.AbilityType.Shield);
                             break;
                         case BaseHazard.HazardType.Dash:
-                            GainAbility<PlayerDashBehaviour>();
+                            GainAbility(GameManager.AbilityType.Dash);
                             break;
                     }
                 }
@@ -281,32 +276,27 @@ public class PlayerController : MonoBehaviour, IMovementControllable
     public async void Respawn()
     {
         var respawn = GameManager.DieAndGetRespawn();
-        if (respawn != null)
-        {
-            if (respawn.respawnType == RespawnType.Hard) // reload scene
-            {
-                GameManager.DoHardRespawn();
-            }
-            else
-            {
 
-                IsDead = false;
-                var startPos = respawn.RespawnPosition;
-                Debug.Log(respawn.RespawnPosition);
-                Debug.DrawRay(startPos, Vector2.down * 10, Color.red, 1);
-                var groundOffset = PlayerStats.DefaultColliderSize.y / 2;
-                var hit = Physics2D.Raycast(startPos, Vector2.down, 10, LayerReference.TerrainLayer);
-                if (hit)
-                {
-                    LeanTween.cancelAll();
-                    MovementController.ForcePosition(hit.point + Vector2.up * groundOffset);
-                }
-            }
+        if (respawn.respawnType == RespawnType.Hard) // reload scene
+        {
+            GameManager.DoHardRespawn();
         }
         else
         {
-            Debug.LogError("NO RESPAWN SET");
+
+            IsDead = false;
+            var startPos = respawn.respawnPosition;
+            Debug.Log(respawn.respawnPosition);
+            Debug.DrawRay(startPos, Vector2.down * 10, Color.red, 1);
+            var groundOffset = PlayerStats.DefaultColliderSize.y / 2;
+            var hit = Physics2D.Raycast(startPos, Vector2.down, 10, LayerReference.TerrainLayer);
+            if (hit)
+            {
+                LeanTween.cancelAll();
+                MovementController.ForcePosition(hit.point + Vector2.up * groundOffset);
+            }
         }
+
     }
 
     public void ShowVFXOnPlayer(VFXSpawnData spawnData)
@@ -345,4 +335,14 @@ public class PlayerController : MonoBehaviour, IMovementControllable
 
     }
 
+    public void SetExternalVelocity(Vector2 velocity)
+    {
+        MovementController.ExternalVelocity = velocity;
+    }
+
+    public void Squeeze()
+    {
+        MarkAsDead();
+        GainAbility(GameManager.AbilityType.Shield);
+    }
 }

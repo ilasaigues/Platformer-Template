@@ -4996,6 +4996,7 @@ GameObject:
   - component: {fileID: 5538900550490131551}
   - component: {fileID: 8524267514828517466}
   - component: {fileID: 1920556090153862249}
+  - component: {fileID: -4075259431688086522}
   m_Layer: 7
   m_Name: Player
   m_TagString: Untagged
@@ -5256,16 +5257,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 910645fdbdb43744c80df8e2fac35ec2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerController
+  InputHandler: {fileID: 0}
+  TimeContext: {fileID: 0}
+  VFXSpawner: {fileID: 0}
+  GameManager: {fileID: 0}
   PlayerStats: {fileID: 11400000, guid: b9753e42c5c505642a5a2f1f7d7aa3c9, type: 2}
   AbilityStats: {fileID: 11400000, guid: 30ce2b2d25088d64896145fbcd04adc2, type: 2}
   CollisionController: {fileID: 9004085951507967799}
   MovementController: {fileID: 7837428539703947175}
   PlayerAnimator: {fileID: 1920556090153862249}
-  InputHandler: {fileID: 0}
   ExternalSpriteTrail: {fileID: 4244591278242072552}
   BehaviourMachine: {fileID: 2748285566990291661}
   DashParticles: {fileID: 7696103805541302765}
-  TimeContext: {fileID: 0}
+  ChangingLevel: 0
   RemainingDashes: 1
   Jumps: 0
   IsDead: 0
@@ -5306,3 +5310,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerAnimator
   AnimationList: {fileID: 11400000, guid: ab538dd3fd1f0fb4984ab4a8577c851b, type: 2}
+--- !u!114 &-4075259431688086522
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7969246784009727573}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2fcf3dd4ebfd6049aebfb71b520130f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: LevelElements::LevelTraversalComponent
+  BeforeTravelDelay: 1
+  TraveltransitionDuration: 3
+  AfterTravelDelay: 1

@@ -17,7 +17,7 @@ public class ObjectMovementComponent : MonoBehaviour
 
     //private PlayerController _childPlayer;
 
-    public Action<PlayerController> OnPlayerSqueezed = delegate { };
+    public Action<ISqueezable> OnSqueeze = delegate { };
     public event Action OnObstacleHit = delegate { };
     public event Action OnTerrainHit = delegate { };
 
@@ -51,19 +51,19 @@ public class ObjectMovementComponent : MonoBehaviour
         if (collisionsWithPlayer.Any(c => c))
         {
             var playerHit = collisionsWithPlayer.First(c => c);
-            var playerController = playerHit.collider.GetComponent<PlayerController>();
-            playerController.MovementController.ExternalVelocity = Velocity;
+            var squeezable = playerHit.collider.GetComponent<ISqueezable>();
+            squeezable.SetExternalVelocity(Velocity);
 
-            var directionToPlayer = playerController.transform.position - transform.position;
+            var directionToPlayer = (Vector3)squeezable.Position - transform.position;
             var movingAgainstPlayer = Vector2.Dot(directionToPlayer.normalized, Velocity.normalized) > 0;
 
             List<BreakableTerrainBehaviour> breakables = new();
 
-            if (movingAgainstPlayer && IsSqueezingPlayer(playerController.CollisionController.MainCollider.bounds, breakables))
+            if (movingAgainstPlayer && IsSqueezingPlayer(squeezable.Bounds, breakables))
             {
-                if (playerController.MovementController.CanBeSqueezed)
+                if (squeezable.CanBeSqueezed)
                 {
-                    OnPlayerSqueezed(playerController);
+                    OnSqueeze(squeezable);
                 }
                 else
                 {
@@ -75,7 +75,7 @@ public class ObjectMovementComponent : MonoBehaviour
                     {
                         correctedVelocity = BoxCaster2D.CollideAndSlideVel(mainBounds.center, mainBounds, Velocity * _timeContext.FixedDeltaTime, LayerReference.TerrainAndPlayer);
                         OnObstacleHit();
-                        playerController.MovementController.ExternalVelocity = Vector2.zero;
+                        squeezable.SetExternalVelocity(Vector2.zero);
                     }
                 }
             }
