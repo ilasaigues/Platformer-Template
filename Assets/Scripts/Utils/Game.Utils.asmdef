@@ -2,7 +2,8 @@
     "name": "Game.Utils",
     "rootNamespace": "",
     "references": [
-        "GUID:e473a1231b4e4134ca693d358d3463aa"
+        "GUID:e473a1231b4e4134ca693d358d3463aa",
+        "GUID:54cb1906aeb4e4264bc1d2aa3818a43f"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

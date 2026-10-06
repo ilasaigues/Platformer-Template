@@ -2,7 +2,8 @@
     "name": "Game.Physics",
     "rootNamespace": "",
     "references": [
-        "GUID:e473a1231b4e4134ca693d358d3463aa"
+        "GUID:e473a1231b4e4134ca693d358d3463aa",
+        "GUID:18d3aa9884237ab4d80711855039e1e8"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],
