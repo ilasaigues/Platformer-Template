@@ -71,8 +71,11 @@
   <Project Path="Unity.RenderPipelines.Universal.2D.Editor.Overrides.csproj" />
   <Project Path="Assembly-CSharp.csproj" />
   <Project Path="Unity.2D.Sprite.Editor.csproj" />
+  <Project Path="FMODUnityResonanceEditor.csproj" />
   <Project Path="Unity.2D.PixelPerfect.Editor.csproj" />
   <Project Path="Unity.Multiplayer.Center.Common.csproj" />
+  <Project Path="FMODUnityEditor.csproj" />
+  <Project Path="FMODUnity.csproj" />
   <Project Path="LevelElements.csproj" />
   <Project Path="Zenject-PoolMonitor-Editor.csproj" />
   <Project Path="Game.Hazards.csproj" />
@@ -97,6 +100,7 @@
   <Project Path="Game.Input.csproj" />
   <Project Path="Game.Extensions.csproj" />
   <Project Path="Game.Utils.csproj" />
+  <Project Path="FMODUnityResonance.csproj" />
   <Project Path="Unity.CollabProxy.Editor.csproj" />
   <Project Path="Unity.RenderPipeline.Universal.ShaderLibrary.csproj" />
   <Project Path="Game.VFX.csproj" />
