@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/LDtk/worlds/backups/de20f100-fa90-11f0-b9bd-416ed0b8c0b0_2026-10-07_11-07-48/worlds/World_2_0.ldtkl.meta
 guid: 04e3ee75f4c9a0b4a9ff3a10a921d624
+========
+guid: fa346f09ae1f1fd4fb64c2e657418b26
+>>>>>>>> origin/develop:Assets/LDtk/worlds/backups/de20f100-fa90-11f0-b9bd-416ed0b8c0b0_2026-10-07_10-19-47/worlds/World_2_0.ldtkl.meta
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}

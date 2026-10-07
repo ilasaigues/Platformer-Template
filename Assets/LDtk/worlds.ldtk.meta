@@ -38,7 +38,7 @@ ScriptedImporter:
   - _key: World_start
     _asset: {fileID: 7969246784009727573, guid: 6545e83e3e44ebb4185007dbd0e0ab56, type: 3}
   - _key: World_end
-    _asset: {instanceID: 0}
+    _asset: {fileID: 1542230894758452201, guid: aa60f1042f81b6c46951b78ab15e23b7, type: 3}
   - _key: Soft_respawn
     _asset: {fileID: 6236945957978861526, guid: 26e42e0a4159d7f419df3e8571f42a78, type: 3}
   - _key: Hard_respawn

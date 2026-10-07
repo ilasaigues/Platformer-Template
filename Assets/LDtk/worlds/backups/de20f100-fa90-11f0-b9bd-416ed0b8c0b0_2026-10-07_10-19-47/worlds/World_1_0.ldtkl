@@ -120,7 +120,7 @@
 				},
 				{
 					"__identifier": "Level_end",
-					"__grid": [68,18],
+					"__grid": [68,10],
 					"__pivot": [0,0],
 					"__tags": ["doors"],
 					"__tile": { "tilesetUid": 728, "x": 272, "y": 272, "w": 16, "h": 16 },
@@ -129,10 +129,10 @@
 					"width": 16,
 					"height": 16,
 					"defUid": 731,
-					"px": [1088,288],
+					"px": [1088,160],
 					"fieldInstances": [],
 					"__worldX": 1096,
-					"__worldY": 200
+					"__worldY": 72
 				}
 			]
 		},

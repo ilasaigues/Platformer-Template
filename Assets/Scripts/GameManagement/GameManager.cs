@@ -38,6 +38,7 @@ public class GameManager : MonoBehaviour
 
     public CinemachineCamera cinemachineCamera;
 
+    public event Action OnLevelChanged = delegate { };
 
     public List<LDtkComponentLevel> Levels = new();
 
@@ -117,6 +118,14 @@ public class GameManager : MonoBehaviour
             };
         }
 
+        var worldExit = FindFirstObjectByType<WorldExit>();
+        worldExit.OnWorldExitTriggered += WorldExitTriggered;
+
+    }
+
+    private void WorldExitTriggered(LevelTraversalComponent component)
+    {
+        SceneTransitionManager.TransitionToScene(LevelManager.Worlds[++LevelManager.CurrentWorldIndex].SceneReference.SceneName, UnityEngine.SceneManagement.LoadSceneMode.Single);
     }
 
     public void SetLevel(int level)
@@ -135,6 +144,7 @@ public class GameManager : MonoBehaviour
         HardRespawnTrigger = Levels[level].GetComponentsInChildren<RespawnTrigger>().FirstOrDefault(rt => rt.respawnType == RespawnType.Hard);
 
         LevelManager.CurrentLevel = level;
+        OnLevelChanged();
         //SetCameraBounds(Levels[level]);
     }
 

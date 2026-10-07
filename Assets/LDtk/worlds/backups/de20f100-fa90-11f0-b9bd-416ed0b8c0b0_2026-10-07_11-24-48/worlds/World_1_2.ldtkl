@@ -11,8 +11,8 @@
 	"identifier": "World_1_2",
 	"iid": "a01d0cb0-bde0-11f1-bea9-0513593cd2a1",
 	"uid": 745,
-	"worldX": 40,
-	"worldY": -1208,
+	"worldX": 80,
+	"worldY": -1176,
 	"worldDepth": 0,
 	"pxWid": 480,
 	"pxHei": 480,
@@ -115,8 +115,8 @@
 					"defUid": 727,
 					"px": [64,304],
 					"fieldInstances": [],
-					"__worldX": 104,
-					"__worldY": -904
+					"__worldX": 144,
+					"__worldY": -872
 				},
 				{
 					"__identifier": "World_end",
@@ -131,8 +131,8 @@
 					"defUid": 746,
 					"px": [64,256],
 					"fieldInstances": [],
-					"__worldX": 104,
-					"__worldY": -952
+					"__worldX": 144,
+					"__worldY": -920
 				}
 			]
 		},
@@ -179,8 +179,8 @@
 						}] },
 						{ "__identifier": "type", "__type": "LocalEnum.RespawnType", "__value": "Hard", "__tile": null, "defUid": 300, "realEditorValues": [] }
 					],
-					"__worldX": 88,
-					"__worldY": -920
+					"__worldX": 128,
+					"__worldY": -888
 				},
 				{
 					"__identifier": "Soft_respawn",
@@ -201,8 +201,8 @@
 						}] },
 						{ "__identifier": "type", "__type": "LocalEnum.RespawnType", "__value": "Soft", "__tile": null, "defUid": 299, "realEditorValues": [] }
 					],
-					"__worldX": 408,
-					"__worldY": -968
+					"__worldX": 448,
+					"__worldY": -936
 				},
 				{
 					"__identifier": "Soft_respawn",
@@ -223,8 +223,8 @@
 						}] },
 						{ "__identifier": "type", "__type": "LocalEnum.RespawnType", "__value": "Soft", "__tile": null, "defUid": 299, "realEditorValues": [] }
 					],
-					"__worldX": 344,
-					"__worldY": -1032
+					"__worldX": 384,
+					"__worldY": -1000
 				}
 			]
 		},

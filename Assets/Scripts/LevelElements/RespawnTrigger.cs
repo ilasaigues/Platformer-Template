@@ -10,9 +10,6 @@ public class RespawnTrigger : MonoBehaviour, ILDtkImportedFields
     [SerializeField]
     private Transform _respawnTransform;
 
-    [SerializeField]
-    private ParticleSystem _hardRespawnParticles;
-
 
     public RespawnType respawnType;
 
@@ -21,24 +18,6 @@ public class RespawnTrigger : MonoBehaviour, ILDtkImportedFields
     public event Action<RespawnTrigger> OnRespawnTriggered = delegate { };
 
 
-
-    void Start()
-    {
-        if (respawnType == RespawnType.Hard)
-        {
-            var boxSize = GetComponent<BoxCollider2D>().size;
-            //_hardRespawnParticles.transform.localPosition = new Vector2(boxSize.x, -boxSize.y) / 2;
-            //var shapeModule = _hardRespawnParticles.shape;
-            //shapeModule.scale = boxSize * 0.9f;
-        }
-        else
-        {
-            if (_hardRespawnParticles != null)
-            {
-                Destroy(_hardRespawnParticles.gameObject);
-            }
-        }
-    }
 
     void OnTriggerEnter2D(Collider2D collision)
     {

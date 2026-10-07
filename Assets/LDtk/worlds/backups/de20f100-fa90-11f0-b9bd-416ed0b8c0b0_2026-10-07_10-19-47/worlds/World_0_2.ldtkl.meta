@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/LDtk/worlds/backups/de20f100-fa90-11f0-b9bd-416ed0b8c0b0_2026-10-07_11-07-48/worlds/World_0_2.ldtkl.meta
+guid: 1672eff6ac6c98545af51961e9d25500
+========
+guid: 8195e8cf1c863184f9dd5d8273467d4d
+>>>>>>>> origin/develop:Assets/LDtk/worlds/backups/de20f100-fa90-11f0-b9bd-416ed0b8c0b0_2026-10-07_10-19-47/worlds/World_0_2.ldtkl.meta
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: 6338a7f25a1449ab93c975134b6e08a2, type: 3}
+  _reimportOnDependencyChange: 1
