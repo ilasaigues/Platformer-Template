@@ -51,7 +51,7 @@ namespace AstralCore
             "}\n";
 
             {
-                using StreamWriter outfile = new("Assets/Scripts/Utils/SceneReference.cs");
+                using StreamWriter outfile = new("Assets/Scripts/SceneManagement/SceneReference.cs");
                 outfile.WriteLine(pregenCode);
             }
 

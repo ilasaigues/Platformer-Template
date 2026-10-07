@@ -127,8 +127,14 @@ public class PlayerController : MonoBehaviour, IMovementControllable, ISqueezabl
         BehaviourMachine.ChangeBehaviour(typeof(PlayerFallingBehaviour));
         ResetOnGrounded();
         InputHandler.JumpButton.OnPress += OnJumpPressed;
+        GameManager.OnLevelChanged += LevelChanged;
         transform.parent = null;
 
+    }
+
+    private void LevelChanged()
+    {
+        AbilityQueue.Clear();
     }
 
     private void AbilityTypeChanged(GameManager.AbilityType type)
