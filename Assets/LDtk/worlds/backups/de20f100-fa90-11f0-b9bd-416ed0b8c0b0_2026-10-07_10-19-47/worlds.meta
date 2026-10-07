@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/LDtk/worlds/backups/de20f100-fa90-11f0-b9bd-416ed0b8c0b0_2026-10-07_11-07-48/worlds.meta
+guid: 8814ee9fb6faed943b8fd342bdbf5dd3
+========
 guid: 303ef1ec8d0eef742b775af5d0368404
+>>>>>>>> origin/develop:Assets/LDtk/worlds/backups/de20f100-fa90-11f0-b9bd-416ed0b8c0b0_2026-10-07_10-19-47/worlds.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}

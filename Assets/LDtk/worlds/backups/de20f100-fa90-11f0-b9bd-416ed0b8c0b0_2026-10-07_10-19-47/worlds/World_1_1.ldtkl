@@ -11,8 +11,13 @@
 	"identifier": "World_1_1",
 	"iid": "94a97d60-bde0-11f1-bea9-7f6d82cfdd97",
 	"uid": 744,
+<<<<<<<< HEAD:Assets/LDtk/worlds/backups/de20f100-fa90-11f0-b9bd-416ed0b8c0b0_2026-10-07_11-07-48/worlds/World_1_1.ldtkl
+	"worldX": 664,
+	"worldY": -696,
+========
 	"worldX": 960,
 	"worldY": -1232,
+>>>>>>>> origin/develop:Assets/LDtk/worlds/backups/de20f100-fa90-11f0-b9bd-416ed0b8c0b0_2026-10-07_10-19-47/worlds/World_1_1.ldtkl
 	"worldDepth": 0,
 	"pxWid": 480,
 	"pxHei": 480,
@@ -115,8 +120,13 @@
 					"defUid": 731,
 					"px": [400,224],
 					"fieldInstances": [],
+<<<<<<<< HEAD:Assets/LDtk/worlds/backups/de20f100-fa90-11f0-b9bd-416ed0b8c0b0_2026-10-07_11-07-48/worlds/World_1_1.ldtkl
+					"__worldX": 1064,
+					"__worldY": -472
+========
 					"__worldX": 1360,
 					"__worldY": -1008
+>>>>>>>> origin/develop:Assets/LDtk/worlds/backups/de20f100-fa90-11f0-b9bd-416ed0b8c0b0_2026-10-07_10-19-47/worlds/World_1_1.ldtkl
 				},
 				{
 					"__identifier": "Level_start",
@@ -131,8 +141,13 @@
 					"defUid": 727,
 					"px": [64,304],
 					"fieldInstances": [],
+<<<<<<<< HEAD:Assets/LDtk/worlds/backups/de20f100-fa90-11f0-b9bd-416ed0b8c0b0_2026-10-07_11-07-48/worlds/World_1_1.ldtkl
+					"__worldX": 728,
+					"__worldY": -392
+========
 					"__worldX": 1024,
 					"__worldY": -928
+>>>>>>>> origin/develop:Assets/LDtk/worlds/backups/de20f100-fa90-11f0-b9bd-416ed0b8c0b0_2026-10-07_10-19-47/worlds/World_1_1.ldtkl
 				}
 			]
 		},
@@ -179,8 +194,13 @@
 						}] },
 						{ "__identifier": "type", "__type": "LocalEnum.RespawnType", "__value": "Soft", "__tile": null, "defUid": 299, "realEditorValues": [] }
 					],
+<<<<<<<< HEAD:Assets/LDtk/worlds/backups/de20f100-fa90-11f0-b9bd-416ed0b8c0b0_2026-10-07_11-07-48/worlds/World_1_1.ldtkl
+					"__worldX": 1032,
+					"__worldY": -440
+========
 					"__worldX": 1328,
 					"__worldY": -976
+>>>>>>>> origin/develop:Assets/LDtk/worlds/backups/de20f100-fa90-11f0-b9bd-416ed0b8c0b0_2026-10-07_10-19-47/worlds/World_1_1.ldtkl
 				},
 				{
 					"__identifier": "Hard_respawn",
@@ -201,8 +221,13 @@
 						}] },
 						{ "__identifier": "type", "__type": "LocalEnum.RespawnType", "__value": "Hard", "__tile": null, "defUid": 300, "realEditorValues": [] }
 					],
+<<<<<<<< HEAD:Assets/LDtk/worlds/backups/de20f100-fa90-11f0-b9bd-416ed0b8c0b0_2026-10-07_11-07-48/worlds/World_1_1.ldtkl
+					"__worldX": 712,
+					"__worldY": -456
+========
 					"__worldX": 1008,
 					"__worldY": -992
+>>>>>>>> origin/develop:Assets/LDtk/worlds/backups/de20f100-fa90-11f0-b9bd-416ed0b8c0b0_2026-10-07_10-19-47/worlds/World_1_1.ldtkl
 				}
 			]
 		},
