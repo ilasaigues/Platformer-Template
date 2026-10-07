@@ -1,0 +1,20 @@
+{
+    "name": "Game.Hazards",
+    "rootNamespace": "",
+    "references": [
+        "GUID:831b458ef8919c24ea12fb444fc41310",
+        "GUID:e473a1231b4e4134ca693d358d3463aa",
+        "GUID:2ab5da41a1bc71d49aede66d2889b3fe",
+        "GUID:221b8600825ce894b97ee90b31d94d6d",
+        "GUID:e5ee8431a3035254e901a58a8a8b5f11"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

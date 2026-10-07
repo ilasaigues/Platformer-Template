@@ -1,0 +1,92 @@
+using System.Diagnostics;
+using System.Threading;
+using UnityEngine;
+
+public class PlayerDyingBehaviour : BasePlayerBehaviour
+{
+
+    private float _timeRemaining;
+
+    private bool _isDying;
+
+    private bool _startedMovementTransition;
+
+    public PlayerDyingBehaviour(PlayerController player) : base(player)
+    {
+    }
+
+    public override void Enter()
+    {
+        _isDying = true;
+        _startedMovementTransition = false;
+        _timeRemaining = PlayerController.PlayerStats.TotalDeathTime;
+        PlayerController.CollisionController.MainCollider.enabled = false;
+        PlayAnim(PlayerController.PlayerAnimator.AnimationList.Death);
+        PlayerController.MovementController.SetVelocity(Vector2.zero);
+        if (PlayerController.GameManager.RemainingLives > 0)
+        {
+            var respawnPos = PlayerController.GameManager.GetRespawnPosition();
+            Vector2 particlePosition = respawnPos + Vector3.up * 8.ToPixels();
+            PlayerController.VFXSpawner.PlayFX(PlayerController.VFXSpawner.VFXList.Respawn_Particles, particlePosition, 1, false);
+        }
+        else
+        {
+        }
+    }
+
+    public override void Exit()
+    {
+        PlayerController.CollisionController.MainCollider.enabled = true;
+    }
+
+    public override void FixedUpdate(float delta)
+    {
+        // no op
+    }
+
+    public override void Update(float delta)
+    {
+        // change to respawn position (and stick to ground) and animation after death duration
+        var lastLife = PlayerController.GameManager.RemainingLives == 0;
+
+
+        if (!lastLife && !_startedMovementTransition)
+        {
+            _startedMovementTransition = true;
+            LeanTween.move(
+                PlayerController.gameObject,
+                PlayerController.GameManager.GetRespawnPosition(),
+                PlayerController.PlayerStats.DeathDuration * .5f)
+                .setEaseOutQuad().setDelay(PlayerController.PlayerStats.DeathDuration * .75f)
+                .setTimeContext(PlayerController.TimeContext);
+        }
+
+
+        if (_isDying && _timeRemaining <= PlayerController.PlayerStats.ReviveDuration)
+        {
+            _isDying = false;
+            PlayerController.Respawn();
+            if (!lastLife)
+            {
+                PlayAnim(PlayerController.PlayerAnimator.AnimationList.Revive);
+            }
+        }
+
+        _timeRemaining -= delta;
+    }
+
+    public override BehaviourChangeRequest VerifyBehaviour()
+    {
+        if (base.VerifyBehaviour() is BehaviourChangeRequest baseRequest)
+        {
+            return baseRequest;
+        }
+
+        if (_timeRemaining <= 0)
+        {
+            return BehaviourChangeRequest.New<PlayerJumpingBehaviour>();
+        }
+
+        return null;
+    }
+}

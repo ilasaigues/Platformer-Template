@@ -1,0 +1,16 @@
+{
+    "name": "Game.BehaviourMachine",
+    "rootNamespace": "",
+    "references": [
+        "GUID:e473a1231b4e4134ca693d358d3463aa"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

@@ -7,7 +7,7 @@ using UnityEngine;
 using Zenject;
 [RequireComponent(typeof(Rigidbody2D))]
 [RequireComponent(typeof(CollisionController))]
-[RequireComponent(typeof(PlayerController))]
+[RequireComponent(typeof(IMovementControllable))]
 public class MovementController : MonoBehaviour
 {
     public Vector2 Velocity { get; private set; }
@@ -29,7 +29,7 @@ public class MovementController : MonoBehaviour
     private TimeContext _timeContext;
     private Rigidbody2D _rb;
     private CollisionController _collisonController;
-    private PlayerController _playerController;
+    private IMovementControllable _movementControllable;
 
     public Bounds MainColliderBounds => _collisonController.MainCollider.bounds;
     private Bounds _footColliderBounds => _collisonController.FootCollider.bounds;
@@ -46,8 +46,8 @@ public class MovementController : MonoBehaviour
         _collisonController = gameObject.GetOrAddComponent<CollisionController>();
         _rb.bodyType = RigidbodyType2D.Kinematic;
         _rb.constraints = RigidbodyConstraints2D.FreezeRotation;
-        _playerController = gameObject.GetOrAddComponent<PlayerController>();
-        VerticalTerminalVelocity = _playerController.PlayerStats.fallVelocityCap;
+        _movementControllable = gameObject.GetComponent<IMovementControllable>();
+        VerticalTerminalVelocity = _movementControllable.FallVelocityCap;
     }
 
     void Start()
@@ -82,7 +82,7 @@ public class MovementController : MonoBehaviour
 
         if (!Grounded && correctedHorizontal.magnitude < Mathf.Abs(originalHorizontal.x)) // if collided and shrunk vector
         {
-            var ledgeCorrection = GetCorrection(transform.position, mainBounds, originalHorizontal, correctedHorizontal, Vector2.up * _playerController.PlayerStats.ledgeCorrectionUp, Vector2.down * _playerController.PlayerStats.ledgeCorrectionDown, LayerReference.TerrainAndBoulder);
+            var ledgeCorrection = GetCorrection(transform.position, mainBounds, originalHorizontal, correctedHorizontal, Vector2.up * _movementControllable.LedgeCorrectionUp, Vector2.down * _movementControllable.LedgeCorrectionDown, LayerReference.TerrainAndBoulder);
 
             if (ledgeCorrection != Vector2.zero)
             {
@@ -100,7 +100,7 @@ public class MovementController : MonoBehaviour
 
         if (!Grounded && !ledgeCorrected && !Grounded && originalVertical.y > 0 && correctedVertical.magnitude < Mathf.Abs(originalVertical.y)) // if collided and shrunk vector
         {
-            var ceilingCorrection = GetCorrection(transform.position + (Vector3)correctedHorizontal, mainBounds, originalVertical, correctedVertical, Vector2.left * _playerController.PlayerStats.ceilingCorrection, Vector2.right * _playerController.PlayerStats.ceilingCorrection, LayerReference.TerrainAndBoulder);
+            var ceilingCorrection = GetCorrection(transform.position + (Vector3)correctedHorizontal, mainBounds, originalVertical, correctedVertical, Vector2.left * _movementControllable.CeilingCorrection, Vector2.right * _movementControllable.CeilingCorrection, LayerReference.TerrainAndBoulder);
 
             if (ceilingCorrection != Vector2.zero && (ceilingCorrection.x.Sign0() * originalHorizontal.x.Sign0()) >= 0)
             {
@@ -208,11 +208,11 @@ public class MovementController : MonoBehaviour
 
     public void CheckAndFixOverlap()
     {
-        var mainBounds = _playerController.CollisionController.MainCollider.bounds;
+        var mainBounds = _movementControllable.Bounds;
         List<RaycastHit2D> hits = BoxCaster2D.GetHits(mainBounds.center, mainBounds, Vector2.zero, LayerReference.TerrainLayer);
         if (hits.Any(h => h))
         {
-            ColliderDistance2D overlapdistance = Physics2D.Distance(_playerController.CollisionController.MainCollider, hits.First().collider);
+            ColliderDistance2D overlapdistance = Physics2D.Distance(_movementControllable.MainCollider, hits.First().collider);
             Vector2 Correction = overlapdistance.pointB - overlapdistance.pointA;
             transform.position += (Vector3)Correction;
         }

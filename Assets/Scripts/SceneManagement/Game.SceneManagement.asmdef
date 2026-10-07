@@ -1,0 +1,16 @@
+{
+    "name": "Game.SceneManagement",
+    "rootNamespace": "",
+    "references": [
+        "GUID:561e3647910e7f2409782a3960367da9"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

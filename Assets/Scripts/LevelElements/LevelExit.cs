@@ -1,20 +1,20 @@
-using System.Threading;
+
+using System;
 using UnityEngine;
 using Zenject;
 
 public class LevelExit : MonoBehaviour
 {
-    [Inject]
-    private GameManager gameManager;
+    public event Action<LevelTraversalComponent> OnExitTriggered;
 
-    bool collided = false;
+    bool triggered = false;
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (!collided && other.GetComponent<PlayerController>() is PlayerController controller)
+        if (!triggered && other.GetComponent<LevelTraversalComponent>() is LevelTraversalComponent traveller)
         {
-            collided = true;
-            gameManager.LevelEndReached();
+            triggered = true;
+            OnExitTriggered(traveller);
         }
     }
 }

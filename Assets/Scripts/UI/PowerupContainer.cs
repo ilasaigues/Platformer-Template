@@ -12,13 +12,13 @@ public class PowerupContainer : MonoBehaviour
 
     private List<PowerupDisplay> _displays = new();
 
-    [Inject]
-    GameManager _gameManager;
+    PlayerController PlayerController;
 
     void Start()
     {
-        _gameManager.PlayerAbilityQueue.OnPlayerAbilityEnqueued += PlayerAbilitiesChanged;
-        _gameManager.PlayerAbilityQueue.OnPlayerAbilityDequeued += PlayerAbilitiesChanged;
+        PlayerController ??= FindFirstObjectByType<PlayerController>();
+        PlayerController.AbilityQueue.OnPlayerAbilityEnqueued += PlayerAbilitiesChanged;
+        PlayerController.AbilityQueue.OnPlayerAbilityDequeued += PlayerAbilitiesChanged;
         UpdateView();
     }
 
@@ -29,12 +29,12 @@ public class PowerupContainer : MonoBehaviour
 
     void UpdateView()
     {
-        while (_displays.Count < _gameManager.PlayerAbilityQueue.MaxAbilityStack)
+        while (_displays.Count < PlayerController.AbilityQueue.MaxAbilityStack)
         {
             _displays.Add(Instantiate(_powerupDisplayPrefab, _container));
         }
 
-        while (_displays.Count > _gameManager.PlayerAbilityQueue.MaxAbilityStack)
+        while (_displays.Count > PlayerController.AbilityQueue.MaxAbilityStack)
         {
             Destroy(_displays.Last().gameObject);
             _displays.RemoveAt(_displays.Count - 1);
@@ -42,10 +42,10 @@ public class PowerupContainer : MonoBehaviour
 
         for (int i = 0; i < _displays.Count; i++)
         {
-            if (i < _gameManager.PlayerAbilityQueue.AbilityQueue.Count)
+            if (i < PlayerController.AbilityQueue.AbilityQueue.Count)
             {
-                Debug.Log(_gameManager.PlayerAbilityQueue.AbilityQueue.ToList()[i].UIAnimation.name);
-                _displays[i].Animator.Play(_gameManager.PlayerAbilityQueue.AbilityQueue.ToList()[i].UIAnimation.name);
+                Debug.Log(PlayerController.AbilityQueue.AbilityQueue.ToList()[i].UIAnimation.name);
+                _displays[i].Animator.Play(PlayerController.AbilityQueue.AbilityQueue.ToList()[i].UIAnimation.name);
             }
             else
             {
