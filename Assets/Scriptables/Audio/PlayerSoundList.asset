@@ -15,3 +15,6 @@ MonoBehaviour:
   jumpSFX: {fileID: 11400000, guid: 8d13065c91c74e8488f80dad3e552d4f, type: 2}
   stepSFX: {fileID: 11400000, guid: e70ef2e70e08ee44aa01b1c44b0434f0, type: 2}
   doubleJumpSFX: {fileID: 11400000, guid: 7528e051192da87489cce48fd8250359, type: 2}
+  landSFX: {fileID: 11400000, guid: fc7d4302f5d3e2949a6d1962f12c1dca, type: 2}
+  deathSFX: {fileID: 11400000, guid: 3a23287a943698c41ba76a9db25a7b06, type: 2}
+  respawnSFX: {fileID: 11400000, guid: dcde3c8cd68bde842abdc3283c5ff3b2, type: 2}
