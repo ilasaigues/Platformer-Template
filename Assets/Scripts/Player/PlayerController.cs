@@ -96,9 +96,13 @@ public class PlayerController : MonoBehaviour, IMovementControllable, ISqueezabl
 
     public bool CanBeSqueezed => MovementController.CanBeSqueezed;
 
+    private SoundEffectPlayer SFXPlayer; 
+    public PlayerSoundList SoundList;
+
     void Start()
     {
         TimeContext.CreateContextModules(gameObject);
+        SFXPlayer = gameObject.GetOrAddComponent<SoundEffectPlayer>();
         SpriteRenderer = gameObject.GetOrAddComponent<SpriteRenderer>();
         CollisionController = gameObject.GetOrAddComponent<CollisionController>();
         MovementController = gameObject.GetOrAddComponent<MovementController>();
@@ -365,5 +369,11 @@ public class PlayerController : MonoBehaviour, IMovementControllable, ISqueezabl
     {
         MarkAsDead();
         GainAbility(GameManager.AbilityType.Shield);
+    }
+
+
+    public void PlaySFX(SFXEvent EventContainer)
+    {
+        SFXPlayer.PlaySFXReference(EventContainer);
     }
 }

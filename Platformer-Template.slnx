@@ -106,6 +106,7 @@
   <Project Path="Game.VFX.csproj" />
   <Project Path="Game.GameManagement.csproj" />
   <Project Path="Game.UI.csproj" />
+  <Project Path="Game.Audio.csproj" />
   <Project Path="Unity.2D.PixelPerfect.csproj" />
   <Project Path="Game.BehaviourMachine.csproj" />
   <Project Path="Assembly-CSharp-Editor.csproj" />

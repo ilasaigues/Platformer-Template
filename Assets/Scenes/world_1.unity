@@ -427,10 +427,10 @@ GameObject:
   m_Component:
   - component: {fileID: 519420032}
   - component: {fileID: 519420031}
-  - component: {fileID: 519420029}
   - component: {fileID: 519420030}
   - component: {fileID: 519420033}
   - component: {fileID: 519420034}
+  - component: {fileID: 519420035}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -438,14 +438,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!81 &519420029
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 519420028}
-  m_Enabled: 1
 --- !u!114 &519420030
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -568,6 +560,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72ece51f2901e7445ab60da3685d6b5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Unity.Cinemachine::Unity.Cinemachine.CinemachineBrain
+  intendedPosition: {x: 32.58, y: 20.47}
   ShowDebugText: 0
   ShowCameraFrustum: 1
   IgnoreTimeScale: 0
@@ -612,6 +605,20 @@ MonoBehaviour:
   m_CropFrameX: 0
   m_CropFrameY: 0
   m_StretchFill: 0
+--- !u!114 &519420035
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519420028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86c6556701af9e04380698b89f691b6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: FMODUnity::FMODUnity.StudioListener
+  nonRigidbodyVelocity: 0
+  attenuationObject: {fileID: 0}
 --- !u!1001 &725321020
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -627,7 +634,7 @@ PrefabInstance:
     - target: {fileID: -8625600901340000012, guid: 3a36acaf27d1d384bb7b96621e9b3f63, type: 3}
       propertyPath: m_ColliderPaths.Array.data[0].m_Collider
       value: 
-      objectReference: {fileID: 725321022}
+      objectReference: {fileID: 0}
     - target: {fileID: -8625600901340000012, guid: 3a36acaf27d1d384bb7b96621e9b3f63, type: 3}
       propertyPath: m_ColliderPaths.Array.data[0].m_ColliderPaths.Array.size
       value: 1
@@ -78959,7 +78966,7 @@ PrefabInstance:
     - target: {fileID: -3062876894343187782, guid: 3a36acaf27d1d384bb7b96621e9b3f63, type: 3}
       propertyPath: m_ColliderPaths.Array.data[0].m_Collider
       value: 
-      objectReference: {fileID: 725321025}
+      objectReference: {fileID: 0}
     - target: {fileID: -3062876894343187782, guid: 3a36acaf27d1d384bb7b96621e9b3f63, type: 3}
       propertyPath: m_ColliderPaths.Array.data[0].m_ColliderPaths.Array.size
       value: 1
@@ -272330,11 +272337,6 @@ TilemapCollider2D:
   m_CorrespondingSourceObject: {fileID: -4676498281016858819, guid: 3a36acaf27d1d384bb7b96621e9b3f63, type: 3}
   m_PrefabInstance: {fileID: 725321020}
   m_PrefabAsset: {fileID: 0}
---- !u!61 &725321022 stripped
-BoxCollider2D:
-  m_CorrespondingSourceObject: {fileID: 1095584634247332924, guid: 3a36acaf27d1d384bb7b96621e9b3f63, type: 3}
-  m_PrefabInstance: {fileID: 725321020}
-  m_PrefabAsset: {fileID: 0}
 --- !u!19719996 &725321023 stripped
 TilemapCollider2D:
   m_CorrespondingSourceObject: {fileID: -93122527367529687, guid: 3a36acaf27d1d384bb7b96621e9b3f63, type: 3}
@@ -272343,11 +272345,6 @@ TilemapCollider2D:
 --- !u!19719996 &725321024 stripped
 TilemapCollider2D:
   m_CorrespondingSourceObject: {fileID: 3345519153405323325, guid: 3a36acaf27d1d384bb7b96621e9b3f63, type: 3}
-  m_PrefabInstance: {fileID: 725321020}
-  m_PrefabAsset: {fileID: 0}
---- !u!61 &725321025 stripped
-BoxCollider2D:
-  m_CorrespondingSourceObject: {fileID: -1684878945179062103, guid: 3a36acaf27d1d384bb7b96621e9b3f63, type: 3}
   m_PrefabInstance: {fileID: 725321020}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &742409358
@@ -273450,7 +273447,7 @@ PrefabInstance:
     - target: {fileID: 1317554252628817818, guid: 873855f224f1c65459ae01abd7069c92, type: 3}
       propertyPath: m_ColliderPaths.Array.data[0].m_Collider
       value: 
-      objectReference: {fileID: 955380779}
+      objectReference: {fileID: 0}
     - target: {fileID: 1317554252628817818, guid: 873855f224f1c65459ae01abd7069c92, type: 3}
       propertyPath: m_ColliderPaths.Array.data[0].m_ColliderPaths.Array.size
       value: 1
@@ -273510,7 +273507,7 @@ PrefabInstance:
     - target: {fileID: 7404708386131470854, guid: 873855f224f1c65459ae01abd7069c92, type: 3}
       propertyPath: m_ColliderPaths.Array.data[0].m_Collider
       value: 
-      objectReference: {fileID: 955380780}
+      objectReference: {fileID: 0}
     - target: {fileID: 7404708386131470854, guid: 873855f224f1c65459ae01abd7069c92, type: 3}
       propertyPath: m_ColliderPaths.Array.data[0].m_ColliderPaths.Array.size
       value: 1
@@ -273596,16 +273593,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: -1934345717165055291, guid: 873855f224f1c65459ae01abd7069c92, type: 3}
---- !u!61 &955380779 stripped
-BoxCollider2D:
-  m_CorrespondingSourceObject: {fileID: 3876503142440306027, guid: 873855f224f1c65459ae01abd7069c92, type: 3}
-  m_PrefabInstance: {fileID: 955380778}
-  m_PrefabAsset: {fileID: 0}
---- !u!61 &955380780 stripped
-BoxCollider2D:
-  m_CorrespondingSourceObject: {fileID: 5113076105956270427, guid: 873855f224f1c65459ae01abd7069c92, type: 3}
-  m_PrefabInstance: {fileID: 955380778}
-  m_PrefabAsset: {fileID: 0}
 --- !u!19719996 &1008766609 stripped
 TilemapCollider2D:
   m_CorrespondingSourceObject: {fileID: 3769355371018579877, guid: 873855f224f1c65459ae01abd7069c92, type: 3}
@@ -274019,6 +274006,69 @@ TilemapCollider2D:
   m_CorrespondingSourceObject: {fileID: 5553012253325974843, guid: c15864a835c63434abb9aeb791dd5904, type: 3}
   m_PrefabInstance: {fileID: 2038330145}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1607731876
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1607731878}
+  - component: {fileID: 1607731877}
+  m_Layer: 0
+  m_Name: BGMPlayer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1607731877
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1607731876}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: FMODUnity::FMODUnity.StudioEventEmitter
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -362855282
+      Data2: 1224728120
+      Data3: -518456171
+      Data4: 1103430403
+    Path: event:/Test BGM
+  Event: 
+  EventPlayTrigger: 1
+  EventStopTrigger: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  NonRigidbodyVelocity: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
+--- !u!4 &1607731878
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1607731876}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 36.93583, y: 50.47342, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!19719996 &1614728413 stripped
 TilemapCollider2D:
   m_CorrespondingSourceObject: {fileID: -8214641471145500025, guid: c15864a835c63434abb9aeb791dd5904, type: 3}
@@ -274144,7 +274194,7 @@ PrefabInstance:
     - target: {fileID: -3131432157901814224, guid: c15864a835c63434abb9aeb791dd5904, type: 3}
       propertyPath: m_ColliderPaths.Array.data[0].m_Collider
       value: 
-      objectReference: {fileID: 2038330146}
+      objectReference: {fileID: 0}
     - target: {fileID: -3131432157901814224, guid: c15864a835c63434abb9aeb791dd5904, type: 3}
       propertyPath: m_ColliderPaths.Array.data[0].m_ColliderPaths.Array.size
       value: 1
@@ -274792,7 +274842,7 @@ PrefabInstance:
     - target: {fileID: 1819787490061185229, guid: c15864a835c63434abb9aeb791dd5904, type: 3}
       propertyPath: m_ColliderPaths.Array.data[0].m_Collider
       value: 
-      objectReference: {fileID: 2038330147}
+      objectReference: {fileID: 0}
     - target: {fileID: 1819787490061185229, guid: c15864a835c63434abb9aeb791dd5904, type: 3}
       propertyPath: m_ColliderPaths.Array.data[0].m_ColliderPaths.Array.size
       value: 1
@@ -274840,7 +274890,7 @@ PrefabInstance:
     - target: {fileID: 2615941524856010073, guid: c15864a835c63434abb9aeb791dd5904, type: 3}
       propertyPath: m_ColliderPaths.Array.data[0].m_Collider
       value: 
-      objectReference: {fileID: 2038330148}
+      objectReference: {fileID: 0}
     - target: {fileID: 2615941524856010073, guid: c15864a835c63434abb9aeb791dd5904, type: 3}
       propertyPath: m_ColliderPaths.Array.data[0].m_ColliderPaths.Array.size
       value: 1
@@ -275842,21 +275892,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: -1934345717165055291, guid: c15864a835c63434abb9aeb791dd5904, type: 3}
---- !u!61 &2038330146 stripped
-BoxCollider2D:
-  m_CorrespondingSourceObject: {fileID: -5133612347371738876, guid: c15864a835c63434abb9aeb791dd5904, type: 3}
-  m_PrefabInstance: {fileID: 2038330145}
-  m_PrefabAsset: {fileID: 0}
---- !u!61 &2038330147 stripped
-BoxCollider2D:
-  m_CorrespondingSourceObject: {fileID: 572343276127619277, guid: c15864a835c63434abb9aeb791dd5904, type: 3}
-  m_PrefabInstance: {fileID: 2038330145}
-  m_PrefabAsset: {fileID: 0}
---- !u!61 &2038330148 stripped
-BoxCollider2D:
-  m_CorrespondingSourceObject: {fileID: -8560773924347414680, guid: c15864a835c63434abb9aeb791dd5904, type: 3}
-  m_PrefabInstance: {fileID: 2038330145}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -275871,3 +275906,4 @@ SceneRoots:
   - {fileID: 725321020}
   - {fileID: 955380778}
   - {fileID: 2038330145}
+  - {fileID: 1607731878}
