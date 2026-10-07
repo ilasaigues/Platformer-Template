@@ -190,7 +190,10 @@ MonoBehaviour:
   Worlds:
   - MaxLives: 5
     SceneReference:
-      SceneName: LevelDesignScene
+      SceneName: world_1
+  - MaxLives: 5
+    SceneReference:
+      SceneName: world_2
   CurrentWorldIndex: 0
   CurrentLevel: 0
 --- !u!1 &8825328148880640813

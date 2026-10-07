@@ -76,7 +76,9 @@
         {
             "_key": "World_end",
             "_asset": {
-                "instanceID": 0
+                "fileID": 1542230894758452201,
+                "guid": "aa60f1042f81b6c46951b78ab15e23b7",
+                "type": 3
             }
         },
         {
