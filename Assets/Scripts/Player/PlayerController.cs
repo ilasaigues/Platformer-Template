@@ -294,11 +294,10 @@ public class PlayerController : MonoBehaviour, IMovementControllable, ISqueezabl
         IsDead = true;
     }
 
-    public async void Respawn()
+    public async void Respawn(bool hardRespawn = false)
     {
-        var respawn = GameManager.DieAndGetRespawn();
 
-        if (respawn.respawnType == RespawnType.Hard) // reload scene
+        if (hardRespawn) // reload scene
         {
             GameManager.DoHardRespawn();
         }
@@ -306,8 +305,7 @@ public class PlayerController : MonoBehaviour, IMovementControllable, ISqueezabl
         {
 
             IsDead = false;
-            var startPos = respawn.respawnPosition;
-            Debug.Log(respawn.respawnPosition);
+            var startPos = GameManager.GetRespawnPosition(hardRespawn);
             Debug.DrawRay(startPos, Vector2.down * 10, Color.red, 1);
             var groundOffset = PlayerStats.DefaultColliderSize.y / 2;
             var hit = Physics2D.Raycast(startPos, Vector2.down, 10, LayerReference.TerrainLayer);
