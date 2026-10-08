@@ -14,7 +14,18 @@ public class LevelManager : MonoBehaviour
     }
 
     public List<WorldData> Worlds = new();
-    public int CurrentWorldIndex;
-    public WorldData CurrentWorldData => Worlds[CurrentWorldIndex];
-    public int CurrentLevel;
+    public IntReference CurrentWorldIndex;
+    public WorldData CurrentWorldData => Worlds[CurrentWorldIndex.Value];
+    public IntReference CurrentLevelIndex;
+
+    public void SetLevelIndex(int levelIndex)
+    {
+        CurrentLevelIndex.Value = levelIndex;
+    }
+
+    public void SetWorldIndex(int worldIndex, int levelIndex = 0)
+    {
+        CurrentLevelIndex.Value = levelIndex;
+        CurrentWorldIndex.Value = worldIndex;
+    }
 }

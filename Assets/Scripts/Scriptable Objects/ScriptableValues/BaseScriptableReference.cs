@@ -9,7 +9,18 @@ public abstract class BaseScriptableReference<T>
         Reference,
     }
 
-    public T Value => ReferenceValue == null || ReferenceType == ValueReferenceType.Local ? LocalValue : ReferenceValue.Value;
+    public T Value
+    {
+        get => ReferenceValue == null || ReferenceType == ValueReferenceType.Local ? LocalValue : ReferenceValue.Value;
+
+        set
+        {
+            if (ReferenceValue == null || ReferenceType == ValueReferenceType.Local)
+            { LocalValue = value; }
+            else
+            { ReferenceValue.Value = value; }
+        }
+    }
     public ValueReferenceType ReferenceType;
     public T LocalValue;
     public BaseScriptableValue<T> ReferenceValue;

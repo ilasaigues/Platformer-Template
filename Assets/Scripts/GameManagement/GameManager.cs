@@ -91,7 +91,7 @@ public class GameManager : MonoBehaviour
         RemainingLives = LevelManager.CurrentWorldData.MaxLives;
         //PlayerAbilityQueue.MaxAbilityStack = 1;
         cameraConfiner = cinemachineCamera.GetComponent<CinemachineConfiner2D>();
-        SetLevel(LevelManager.CurrentLevel);
+        SetLevel(LevelManager.CurrentLevelIndex);
 
         foreach (var levelExit in FindObjectsByType<LevelExit>(FindObjectsSortMode.None))
         {
@@ -118,44 +118,44 @@ public class GameManager : MonoBehaviour
             };
         }
 
+        SetHardRespawn();
         var worldExit = FindFirstObjectByType<WorldExit>();
         worldExit.OnWorldExitTriggered += WorldExitTriggered;
-
     }
 
     private void WorldExitTriggered(LevelTraversalComponent component)
     {
-        SceneTransitionManager.TransitionToScene(LevelManager.Worlds[++LevelManager.CurrentWorldIndex].SceneReference.SceneName, UnityEngine.SceneManagement.LoadSceneMode.Single);
+        SetWorld(LevelManager.CurrentWorldIndex + 1);
+        SceneTransitionManager.TransitionToScene(LevelManager.Worlds[LevelManager.CurrentWorldIndex].SceneReference.SceneName, UnityEngine.SceneManagement.LoadSceneMode.Single);
+    }
+
+    void SetHardRespawn()
+    {
+        HardRespawnTrigger = Levels[LevelManager.CurrentLevelIndex].GetComponentsInChildren<RespawnTrigger>().FirstOrDefault(rt => rt.respawnType == RespawnType.Hard);
+
     }
 
     public void SetLevel(int level)
     {
-        /*for (int i = 0; i < Levels.Count; i++)
-        {
-            if (i == level - 1 || i == level || i == level + 1)
-            {
-                Levels[i].gameObject.SetActive(true);
-            }
-            else
-            {
-                Levels[i].gameObject.SetActive(false);
-            }
-        }*/
-        HardRespawnTrigger = Levels[level].GetComponentsInChildren<RespawnTrigger>().FirstOrDefault(rt => rt.respawnType == RespawnType.Hard);
-
-        LevelManager.CurrentLevel = level;
+        LevelManager.SetLevelIndex(level);
+        SetHardRespawn();
         OnLevelChanged();
-        //SetCameraBounds(Levels[level]);
     }
+
 
     public void SetWorld(int world)
     {
-        LevelManager.CurrentWorldIndex = world;
+        LevelManager.SetWorldIndex(world);
+    }
+
+    public void SetWorldAndLevel(int world, int level)
+    {
+        LevelManager.SetWorldIndex(world, level);
     }
 
     public async Task LevelEndReached(LevelTraversalComponent traveller)
     {
-        SetLevel(LevelManager.CurrentLevel + 1);
+        SetLevel(LevelManager.CurrentLevelIndex + 1);
         InputHandler.BlockInputs(true);
         ChangingLevel = true;
         // await level out animation
