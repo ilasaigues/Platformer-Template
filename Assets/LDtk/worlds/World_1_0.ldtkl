@@ -103,36 +103,36 @@
 			"gridTiles": [],
 			"entityInstances": [
 				{
-					"__identifier": "World_start",
-					"__grid": [4,19],
-					"__pivot": [0,0],
-					"__tags": ["doors"],
-					"__tile": { "tilesetUid": 728, "x": 304, "y": 272, "w": 16, "h": 16 },
-					"__smartColor": "#0053FF",
-					"iid": "65b32c00-96d0-11f1-872c-bbb804dac5ff",
-					"width": 16,
-					"height": 16,
-					"defUid": 301,
-					"px": [64,304],
-					"fieldInstances": [],
-					"__worldX": 72,
-					"__worldY": 216
-				},
-				{
 					"__identifier": "Level_end",
 					"__grid": [68,18],
-					"__pivot": [0,0],
+					"__pivot": [0.5,0.5],
 					"__tags": ["doors"],
 					"__tile": { "tilesetUid": 728, "x": 272, "y": 272, "w": 16, "h": 16 },
 					"__smartColor": "#C30000",
-					"iid": "aff8c2e0-96d0-11f1-872c-9f951ef2a3e0",
+					"iid": "83e569e0-bde0-11f1-9e9a-cfafab896c57",
 					"width": 16,
 					"height": 16,
 					"defUid": 731,
-					"px": [1088,288],
+					"px": [1096,296],
 					"fieldInstances": [],
-					"__worldX": 1096,
-					"__worldY": 200
+					"__worldX": 1104,
+					"__worldY": 208
+				},
+				{
+					"__identifier": "World_start",
+					"__grid": [4,18],
+					"__pivot": [0.5,0.5],
+					"__tags": ["doors"],
+					"__tile": { "tilesetUid": 728, "x": 304, "y": 272, "w": 16, "h": 16 },
+					"__smartColor": "#0053FF",
+					"iid": "892e1af0-bde0-11f1-9e9a-c9ce802fc7b8",
+					"width": 16,
+					"height": 16,
+					"defUid": 301,
+					"px": [72,296],
+					"fieldInstances": [],
+					"__worldX": 80,
+					"__worldY": 208
 				}
 			]
 		},

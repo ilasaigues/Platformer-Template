@@ -144,7 +144,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 48
+        y: 96
         width: 24
         height: 24
       alignment: 0
@@ -166,7 +166,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 24
-        y: 48
+        y: 96
         width: 24
         height: 24
       alignment: 0
@@ -188,7 +188,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 48
-        y: 48
+        y: 96
         width: 24
         height: 24
       alignment: 0
@@ -209,8 +209,8 @@ TextureImporter:
       name: powerup_icons_3
       rect:
         serializedVersion: 2
-        x: 0
-        y: 24
+        x: 72
+        y: 96
         width: 24
         height: 24
       alignment: 0
@@ -231,8 +231,8 @@ TextureImporter:
       name: powerup_icons_4
       rect:
         serializedVersion: 2
-        x: 24
-        y: 24
+        x: 0
+        y: 72
         width: 24
         height: 24
       alignment: 0
@@ -253,8 +253,8 @@ TextureImporter:
       name: powerup_icons_5
       rect:
         serializedVersion: 2
-        x: 48
-        y: 24
+        x: 24
+        y: 72
         width: 24
         height: 24
       alignment: 0
@@ -275,8 +275,8 @@ TextureImporter:
       name: powerup_icons_6
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
+        x: 48
+        y: 72
         width: 24
         height: 24
       alignment: 0
@@ -297,8 +297,8 @@ TextureImporter:
       name: powerup_icons_7
       rect:
         serializedVersion: 2
-        x: 24
-        y: 0
+        x: 72
+        y: 72
         width: 24
         height: 24
       alignment: 0
@@ -319,8 +319,8 @@ TextureImporter:
       name: powerup_icons_8
       rect:
         serializedVersion: 2
-        x: 48
-        y: 0
+        x: 0
+        y: 48
         width: 24
         height: 24
       alignment: 0
@@ -333,6 +333,248 @@ TextureImporter:
       bones: []
       spriteID: 0206fa9df29f470f0800000000000000
       internalID: -1119996423397482464
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: powerup_icons_9
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 48
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 445ac318d58f82f469f32b29e45ba0cd
+      internalID: 1313060841
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: powerup_icons_10
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 48
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 430b4648619a13748a43d52db7f41c43
+      internalID: 543783745
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: powerup_icons_11
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 48
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2444527abeb146447b9355b65792a8d8
+      internalID: -973058505
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: powerup_icons_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 24
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd8503880c7ecbd4ca8c4562528ff601
+      internalID: 570859094
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: powerup_icons_13
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 24
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c998d34ec6b8f824093e16de0636e15f
+      internalID: -385304656
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: powerup_icons_14
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 24
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a7a1381d3efb4f7419cd6357170c9f1c
+      internalID: -377396883
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: powerup_icons_15
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 24
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d0754b0fe43699f499cd8bbcffee64c6
+      internalID: 105050437
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: powerup_icons_16
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1fb07691ca7e9ee4db864cb38aaf2efb
+      internalID: -877860152
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: powerup_icons_17
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 0
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 945efc95b3d40bd4bb0749ede82bbc92
+      internalID: 1937342119
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: powerup_icons_18
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 0
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 001f7590ecd9954478c0f5465a76a267
+      internalID: -900019432
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: powerup_icons_19
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 0
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b82e8a48175a594498b346582820cc53
+      internalID: 1605732513
       vertices: []
       indices: 
       edges: []
@@ -351,10 +593,20 @@ TextureImporter:
     spriteCustomMetadata:
       entries:
       - key: SpriteEditor.SliceSettings
-        value: '{"sliceOnImport":false,"gridCellCount":{"x":3.0,"y":3.0},"gridSpriteSize":{"x":24.0,"y":24.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":24.0,"y":24.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
       powerup_icons_0: 2936866352701335523
       powerup_icons_1: -7493350659050178549
+      powerup_icons_10: 543783745
+      powerup_icons_11: -973058505
+      powerup_icons_12: 570859094
+      powerup_icons_13: -385304656
+      powerup_icons_14: -377396883
+      powerup_icons_15: 105050437
+      powerup_icons_16: -877860152
+      powerup_icons_17: 1937342119
+      powerup_icons_18: -900019432
+      powerup_icons_19: 1605732513
       powerup_icons_2: 8238754903537599899
       powerup_icons_3: -130021691817895114
       powerup_icons_4: 6043564750165878697
@@ -362,6 +614,7 @@ TextureImporter:
       powerup_icons_6: -2864514457708220162
       powerup_icons_7: -8831541651476113816
       powerup_icons_8: -1119996423397482464
+      powerup_icons_9: 1313060841
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
