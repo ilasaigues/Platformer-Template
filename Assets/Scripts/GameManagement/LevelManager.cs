@@ -8,7 +8,6 @@ public class LevelManager : MonoBehaviour
     [Serializable]
     public class WorldData
     {
-        public int MaxLives;
         [StaticInstances]
         public SceneReference SceneReference;
     }

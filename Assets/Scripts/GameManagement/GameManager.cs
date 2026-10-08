@@ -31,8 +31,6 @@ public class GameManager : MonoBehaviour
     [NonSerialized]
     public bool ChangingLevel = false;
 
-    public int RemainingLives;
-
     public RespawnTrigger HardRespawnTrigger;
     public RespawnTrigger CurrentRespawnTrigger;
 
@@ -45,29 +43,19 @@ public class GameManager : MonoBehaviour
     private CinemachineConfiner2D cameraConfiner;
 
 
-    public (Vector2 respawnPosition, RespawnType respawnType) DieAndGetRespawn()
+    public Vector2 GetRespawnPosition(bool hardRespawn = false)
     {
-        if (RemainingLives > 0)
-        {
-            RemainingLives--;
-            Debug.Log("soft death");
-            return (CurrentRespawnTrigger.RespawnPosition, CurrentRespawnTrigger.respawnType);
-        }
-        else
-        {
-            Debug.Log("hard death");
-            return (HardRespawnTrigger.RespawnPosition, HardRespawnTrigger.respawnType);
-        }
+        return GetRespawn(hardRespawn).RespawnPosition;
     }
-    public RespawnTrigger GetRespawn()
+    public RespawnTrigger GetRespawn(bool hardRespawn = false)
     {
-        if (RemainingLives > 0)
-        {
-            return CurrentRespawnTrigger;
-        }
-        else
+        if (hardRespawn)
         {
             return HardRespawnTrigger;
+        }
+        else
+        {
+            return CurrentRespawnTrigger;
         }
     }
 
@@ -88,8 +76,6 @@ public class GameManager : MonoBehaviour
         //Get all levels in this world, named "WORLD_X_Y", where X is the world, and Y is the level
         Levels = FindObjectsByType<LDtkComponentLevel>(FindObjectsSortMode.None).OrderBy(l => Convert.ToInt32(l.name.Split('_').Last())).ToList();
 
-        RemainingLives = LevelManager.CurrentWorldData.MaxLives;
-        //PlayerAbilityQueue.MaxAbilityStack = 1;
         cameraConfiner = cinemachineCamera.GetComponent<CinemachineConfiner2D>();
         SetLevel(LevelManager.CurrentLevelIndex);
 
