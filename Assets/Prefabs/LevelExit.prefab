@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 5983848385855717812}
   - component: {fileID: 7253855397149979027}
   - component: {fileID: 1410001408188338984}
-  - component: {fileID: 4127915205995819107}
   - component: {fileID: -7836520832316067844}
   m_Layer: 0
   m_Name: LevelExit
@@ -79,7 +78,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.625, y: 0.625}
   m_EdgeRadius: 0
 --- !u!114 &1410001408188338984
 MonoBehaviour:
@@ -93,18 +92,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 618d0d62381eb6244908d38ca8b5c940, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
---- !u!114 &4127915205995819107
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 421846556271540124}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 34204dc60a0584844b601110a4763262, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::LDtkColliderResize
 --- !u!212 &-7836520832316067844
 SpriteRenderer:
   serializedVersion: 2

@@ -4997,6 +4997,9 @@ GameObject:
   - component: {fileID: 8524267514828517466}
   - component: {fileID: 1920556090153862249}
   - component: {fileID: -4075259431688086522}
+  - component: {fileID: 1467315167351531766}
+  - component: {fileID: 6835905351656167238}
+  - component: {fileID: 7338950333419157618}
   m_Layer: 7
   m_Name: Player
   m_TagString: Untagged
@@ -5269,12 +5272,12 @@ MonoBehaviour:
   ExternalSpriteTrail: {fileID: 4244591278242072552}
   BehaviourMachine: {fileID: 2748285566990291661}
   DashParticles: {fileID: 7696103805541302765}
-  ChangingLevel: 0
   RemainingDashes: 1
   Jumps: 0
   IsDead: 0
   SpriteRenderer: {fileID: 1335278927624055135}
   CameraComposer: {fileID: 0}
+  SoundList: {fileID: 11400000, guid: b8f17df4a7aaea544a00d3cc59a1d819, type: 2}
 --- !u!95 &8524267514828517466
 Animator:
   serializedVersion: 7
@@ -5325,3 +5328,62 @@ MonoBehaviour:
   BeforeTravelDelay: 1
   TraveltransitionDuration: 3
   AfterTravelDelay: 1
+--- !u!114 &1467315167351531766
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7969246784009727573}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: FMODUnity::FMODUnity.StudioEventEmitter
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 2080643421
+      Data2: 1272445088
+      Data3: -1115502966
+      Data4: -1011569944
+    Path: event:/Steps
+  Event: 
+  EventPlayTrigger: 0
+  EventStopTrigger: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  NonRigidbodyVelocity: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
+--- !u!114 &6835905351656167238
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7969246784009727573}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 107b66e689322c343b31dc13ae1e9e4e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+--- !u!111 &7338950333419157618
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7969246784009727573}
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Animation: {fileID: 0}
+  m_Animations: []
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_UpdateMode: 0
+  m_CullingType: 0

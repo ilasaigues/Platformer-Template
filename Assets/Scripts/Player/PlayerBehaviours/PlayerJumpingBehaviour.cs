@@ -40,6 +40,7 @@ public class PlayerJumpingBehaviour : PlayerAirBehaviour
 
     public override void Enter()
     {
+        PlayerController.PlaySFX(PlayerController.SoundList.jumpSFX);
         _jumpHeld = PlayerController.InputHandler.JumpButton.Pressed;
         PlayerController.MovementController.SetVelocity(null, PlayerController.PlayerStats.jumpVelocity);
         PlayerController.MovementController.Grounded = false;
