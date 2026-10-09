@@ -30,14 +30,21 @@ public class GameManager : MonoBehaviour
 
     [NonSerialized]
     public bool ChangingLevel = false;
-    public bool TravelingToLevel = false;
 
     public RespawnTrigger HardRespawnTrigger;
     public RespawnTrigger CurrentRespawnTrigger;
 
     public CinemachineCamera cinemachineCamera;
 
-    public event Action OnLevelChanged = delegate { };
+
+    public enum LevelTransitionState
+    {
+        BeforeTravelling,
+        Travelling,
+        AfterTravelling,
+    }
+
+    public event Action<LevelTransitionState> OnLevelChanged = delegate { };
 
     public List<LDtkComponentLevel> Levels = new();
 
@@ -126,7 +133,7 @@ public class GameManager : MonoBehaviour
     {
         LevelManager.SetLevelIndex(level);
         SetHardRespawn();
-        OnLevelChanged();
+        OnLevelChanged(LevelTransitionState.BeforeTravelling);
     }
 
 
@@ -142,14 +149,15 @@ public class GameManager : MonoBehaviour
 
     public async Task LevelEndReached(LevelTraversalComponent traveller)
     {
+        // before travel starts
         SetLevel(LevelManager.CurrentLevelIndex + 1);
         InputHandler.BlockInputs(true);
         ChangingLevel = true;
-        // await level out animation
         int startDelay = (int)(traveller.BeforeTravelDelay * 1000);
         await Task.Delay(startDelay);
-        TravelingToLevel = true;
-        
+        // during travel
+        OnLevelChanged(LevelTransitionState.Travelling);
+
         var playerPos = traveller.transform.position;
         var targetPos = HardRespawnTrigger.RespawnPosition;
 
@@ -165,11 +173,12 @@ public class GameManager : MonoBehaviour
             await Task.Delay(100);
         }
 
-        TravelingToLevel = false;
         ChangingLevel = false;
         var endDelay = (int)(traveller.AfterTravelDelay * 1000);
 
         await Task.Delay(endDelay);
+        // after travel ends
+        OnLevelChanged(LevelTransitionState.AfterTravelling);
         InputHandler.BlockInputs(false);
     }
 

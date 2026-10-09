@@ -6,7 +6,6 @@ public class LevelTraversalComponent : MonoBehaviour
     public float BeforeTravelDelay = 1;
     public float TraveltransitionDuration = 3;
     public float AfterTravelDelay = 1;
-    public bool IsTraveling = false;
     /*
         public async void Respawn()
         {
