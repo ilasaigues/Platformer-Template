@@ -1,0 +1,650 @@
+fileFormatVersion: 2
+guid: cbcfe80b663f4d344bcc7064a1284d15
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -1265344764341923429
+    second: world_1_plants_0
+  - first:
+      213: 3346822981459004237
+    second: world_1_plants_1
+  - first:
+      213: 4432255343946568756
+    second: world_1_plants_2
+  - first:
+      213: -4271424815066556950
+    second: world_1_plants_3
+  - first:
+      213: -8052248730045535448
+    second: world_1_plants_4
+  - first:
+      213: -8458611326801896943
+    second: world_1_plants_5
+  - first:
+      213: 3271080776521619977
+    second: world_1_plants_6
+  - first:
+      213: -163615962445134125
+    second: world_1_plants_7
+  - first:
+      213: -5977953664916244632
+    second: world_1_plants_8
+  - first:
+      213: 7834152343095201281
+    second: world_1_plants_9
+  - first:
+      213: -5798019708911423802
+    second: world_1_plants_10
+  - first:
+      213: 8960439728995806361
+    second: world_1_plants_11
+  - first:
+      213: 7506394253341672713
+    second: world_1_plants_12
+  - first:
+      213: -3542278048842977556
+    second: world_1_plants_13
+  - first:
+      213: -5855237807257151383
+    second: world_1_plants_14
+  - first:
+      213: -1415738775731135919
+    second: world_1_plants_15
+  - first:
+      213: -3884029726054211602
+    second: world_1_plants_16
+  - first:
+      213: 214472852206221164
+    second: world_1_plants_17
+  - first:
+      213: 8894980835607316599
+    second: world_1_plants_18
+  - first:
+      213: 4986114606880700878
+    second: world_1_plants_19
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: world_1_plants_0
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 54
+        width: 65
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b91dff214a7907ee0800000000000000
+      internalID: -1265344764341923429
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: world_1_plants_1
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 99
+        width: 19
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d4b4af7f4cd427e20800000000000000
+      internalID: 3346822981459004237
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: world_1_plants_2
+      rect:
+        serializedVersion: 2
+        x: 94
+        y: 99
+        width: 44
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 43413c190c8828d30800000000000000
+      internalID: 4432255343946568756
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: world_1_plants_3
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 62
+        width: 95
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ae55b2df2c9d8b4c0800000000000000
+      internalID: -4271424815066556950
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: world_1_plants_4
+      rect:
+        serializedVersion: 2
+        x: 222
+        y: 92
+        width: 11
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 82bab82517aa04090800000000000000
+      internalID: -8052248730045535448
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: world_1_plants_5
+      rect:
+        serializedVersion: 2
+        x: 229
+        y: 99
+        width: 17
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 11a90ec50d9fc9a80800000000000000
+      internalID: -8458611326801896943
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: world_1_plants_6
+      rect:
+        serializedVersion: 2
+        x: 236
+        y: 23
+        width: 51
+        height: 97
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 90a1e24a2a6356d20800000000000000
+      internalID: 3271080776521619977
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: world_1_plants_7
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 76
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3d6cfd62628babdf0800000000000000
+      internalID: -163615962445134125
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: world_1_plants_8
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 39
+        width: 17
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8673ce670da0a0da0800000000000000
+      internalID: -5977953664916244632
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: world_1_plants_9
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 70
+        width: 18
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 10ecb768c0088bc60800000000000000
+      internalID: 7834152343095201281
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: world_1_plants_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 51
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6ceee914bcb498fa0800000000000000
+      internalID: -5798019708911423802
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: world_1_plants_11
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 27
+        width: 27
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 99ca7168570e95c70800000000000000
+      internalID: 8960439728995806361
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: world_1_plants_12
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 44
+        width: 25
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 905c6768dc11c2860800000000000000
+      internalID: 7506394253341672713
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: world_1_plants_13
+      rect:
+        serializedVersion: 2
+        x: 147
+        y: 27
+        width: 41
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ceeec03e1ec47dec0800000000000000
+      internalID: -3542278048842977556
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: world_1_plants_14
+      rect:
+        serializedVersion: 2
+        x: 195
+        y: 33
+        width: 23
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 96810079c340ebea0800000000000000
+      internalID: -5855237807257151383
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: world_1_plants_15
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 48
+        width: 13
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 15a9cc995194a5ce0800000000000000
+      internalID: -1415738775731135919
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: world_1_plants_16
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 26
+        width: 11
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eef1b79ea87291ac0800000000000000
+      internalID: -3884029726054211602
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: world_1_plants_17
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 29
+        width: 41
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c6777b93ce5f9f200800000000000000
+      internalID: 214472852206221164
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: world_1_plants_18
+      rect:
+        serializedVersion: 2
+        x: 219
+        y: 29
+        width: 13
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 778084e31f1517b70800000000000000
+      internalID: 8894980835607316599
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: world_1_plants_19
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 4
+        width: 40
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ec9b28041dc323540800000000000000
+      internalID: 4986114606880700878
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      world_1_plants_0: -1265344764341923429
+      world_1_plants_1: 3346822981459004237
+      world_1_plants_10: -5798019708911423802
+      world_1_plants_11: 8960439728995806361
+      world_1_plants_12: 7506394253341672713
+      world_1_plants_13: -3542278048842977556
+      world_1_plants_14: -5855237807257151383
+      world_1_plants_15: -1415738775731135919
+      world_1_plants_16: -3884029726054211602
+      world_1_plants_17: 214472852206221164
+      world_1_plants_18: 8894980835607316599
+      world_1_plants_19: 4986114606880700878
+      world_1_plants_2: 4432255343946568756
+      world_1_plants_3: -4271424815066556950
+      world_1_plants_4: -8052248730045535448
+      world_1_plants_5: -8458611326801896943
+      world_1_plants_6: 3271080776521619977
+      world_1_plants_7: -163615962445134125
+      world_1_plants_8: -5977953664916244632
+      world_1_plants_9: 7834152343095201281
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

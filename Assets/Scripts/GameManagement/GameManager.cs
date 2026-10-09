@@ -30,6 +30,7 @@ public class GameManager : MonoBehaviour
 
     [NonSerialized]
     public bool ChangingLevel = false;
+    public bool TravelingToLevel = false;
 
     public RespawnTrigger HardRespawnTrigger;
     public RespawnTrigger CurrentRespawnTrigger;
@@ -147,7 +148,8 @@ public class GameManager : MonoBehaviour
         // await level out animation
         int startDelay = (int)(traveller.BeforeTravelDelay * 1000);
         await Task.Delay(startDelay);
-
+        TravelingToLevel = true;
+        
         var playerPos = traveller.transform.position;
         var targetPos = HardRespawnTrigger.RespawnPosition;
 
@@ -163,7 +165,7 @@ public class GameManager : MonoBehaviour
             await Task.Delay(100);
         }
 
-
+        TravelingToLevel = false;
         ChangingLevel = false;
         var endDelay = (int)(traveller.AfterTravelDelay * 1000);
 
