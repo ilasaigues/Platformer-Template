@@ -120,7 +120,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 594412711573961735}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 8757230677017911764}
+        m_TargetAssemblyTypeName: SimpleMenu, Assembly-CSharp
+        m_MethodName: OpenSubmenu
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 477724124029774280, guid: 68e4585e809532440a210460ee731983, type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1010323778653755628
 GameObject:
   m_ObjectHideFlags: 0
@@ -213,8 +225,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24
-  m_fontSizeBase: 24
+  m_fontSize: 16
+  m_fontSizeBase: 16
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -350,8 +362,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24
-  m_fontSizeBase: 24
+  m_fontSize: 16
+  m_fontSizeBase: 16
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -487,8 +499,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24
-  m_fontSizeBase: 24
+  m_fontSize: 16
+  m_fontSizeBase: 16
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -542,7 +554,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7252669211952968904}
   - component: {fileID: 8757230677017911764}
-  - component: {fileID: 8363326562442307683}
+  - component: {fileID: 168951302824063614}
   m_Layer: 5
   m_Name: MainMenu
   m_TagString: Untagged
@@ -589,7 +601,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   SpecialCloseMenu: {fileID: 477724124029774280, guid: 45eb93c4ecc2075458883eaa4d7469ff, type: 3}
---- !u!225 &8363326562442307683
+--- !u!225 &168951302824063614
 CanvasGroup:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -678,7 +690,7 @@ GameObject:
   - component: {fileID: 5195181738382988083}
   - component: {fileID: 765497719184785826}
   - component: {fileID: 2559347187379883132}
-  - component: {fileID: 6466390512616061284}
+  - component: {fileID: 7685147270503544316}
   m_Layer: 5
   m_Name: Play Button
   m_TagString: Untagged
@@ -788,7 +800,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 7685147270503544316}
         m_TargetAssemblyTypeName: SceneLoader, Assembly-CSharp
         m_MethodName: LoadScene
         m_Mode: 1
@@ -800,7 +812,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &6466390512616061284
+--- !u!114 &7685147270503544316
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -809,9 +821,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 7218256268830199217}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dccd166c6daaac04d8c2cd7f0ac8ce47, type: 3}
+  m_Script: {fileID: 11500000, guid: b35f9990d866d674fa7759ad9838e9de, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: '::'
+  m_EditorClassIdentifier: Assembly-CSharp::SceneLoader
+  SceneReference:
+    SceneName: world_1
+  LoadAdditive: 0
 --- !u!1 &9049578436242074782
 GameObject:
   m_ObjectHideFlags: 0

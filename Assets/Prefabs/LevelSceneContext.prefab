@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 236104380009096661}
   - component: {fileID: 6530341927107091026}
+  - component: {fileID: 5868621056133413233}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -44,10 +45,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 523a1777e963f5b49a3cc35628d60ddf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
-  RemainingLives: 0
+  LevelManager: {fileID: 0}
+  SceneTransitionManager: {fileID: 0}
+  InputHandler: {fileID: 0}
   HardRespawnTrigger: {fileID: 0}
   CurrentRespawnTrigger: {fileID: 0}
-  PlayerController: {fileID: 0}
+  cinemachineCamera: {fileID: 0}
+  Levels: []
+  timeContext: {fileID: 5868621056133413233}
+--- !u!114 &5868621056133413233
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2259435987901136229}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6b141189df92174bbed8abdb90dac3d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Game.TimeContext::TimeContext
+  ContextTimescale: {fileID: 11400000, guid: 6494853fed99e334aa868356109ae52a, type: 2}
+  Time: 0
 --- !u!1 &2544345410814927033
 GameObject:
   m_ObjectHideFlags: 0

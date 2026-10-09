@@ -42,6 +42,7 @@ public class GameManager : MonoBehaviour
 
     private CinemachineConfiner2D cameraConfiner;
 
+    public TimeContext timeContext;
 
     public Vector2 GetRespawnPosition(bool hardRespawn = false)
     {
@@ -154,7 +155,7 @@ public class GameManager : MonoBehaviour
 
         var transitionTime = traveller.TraveltransitionDuration;
 
-        var tween = LeanTween.move(traveller.gameObject, targetPos, transitionTime).setEaseInOutCubic();
+        var tween = LeanTween.move(traveller.gameObject, targetPos, transitionTime).setEaseInOutCubic().setTimeContext(timeContext);
         bool complete = false;
         tween.setOnComplete(_ => complete = true);
 

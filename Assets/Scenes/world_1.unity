@@ -560,7 +560,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72ece51f2901e7445ab60da3685d6b5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Unity.Cinemachine::Unity.Cinemachine.CinemachineBrain
-  intendedPosition: {x: 32.58, y: 20.47}
   ShowDebugText: 0
   ShowCameraFrustum: 1
   IgnoreTimeScale: 0
@@ -725,15 +724,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -6524926951752148379, guid: 3a36acaf27d1d384bb7b96621e9b3f63, type: 3}
       propertyPath: m_TileColorArray.Array.data[1].m_RefCount
-      value: 5047
+      value: 5044
       objectReference: {fileID: 0}
     - target: {fileID: -6524926951752148379, guid: 3a36acaf27d1d384bb7b96621e9b3f63, type: 3}
       propertyPath: m_TileMatrixArray.Array.data[0].m_Data.e00
-      value: -5.126297
+      value: -9.187361e-39
       objectReference: {fileID: 0}
     - target: {fileID: -6524926951752148379, guid: 3a36acaf27d1d384bb7b96621e9b3f63, type: 3}
       propertyPath: m_TileMatrixArray.Array.data[0].m_Data.e01
-      value: 7.072e-42
+      value: 7.068e-42
       objectReference: {fileID: 0}
     - target: {fileID: -6524926951752148379, guid: 3a36acaf27d1d384bb7b96621e9b3f63, type: 3}
       propertyPath: m_TileMatrixArray.Array.data[0].m_Data.e02
@@ -741,11 +740,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -6524926951752148379, guid: 3a36acaf27d1d384bb7b96621e9b3f63, type: 3}
       propertyPath: m_TileMatrixArray.Array.data[0].m_Data.e03
-      value: 2.612317e-29
+      value: 4.078277e+19
       objectReference: {fileID: 0}
     - target: {fileID: -6524926951752148379, guid: 3a36acaf27d1d384bb7b96621e9b3f63, type: 3}
       propertyPath: m_TileMatrixArray.Array.data[0].m_Data.e10
-      value: 7.79e-43
+      value: 7.64e-43
       objectReference: {fileID: 0}
     - target: {fileID: -6524926951752148379, guid: 3a36acaf27d1d384bb7b96621e9b3f63, type: 3}
       propertyPath: m_TileMatrixArray.Array.data[0].m_Data.e11
@@ -753,7 +752,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -6524926951752148379, guid: 3a36acaf27d1d384bb7b96621e9b3f63, type: 3}
       propertyPath: m_TileMatrixArray.Array.data[0].m_Data.e13
-      value: 7.83e-43
+      value: 7.7e-43
       objectReference: {fileID: 0}
     - target: {fileID: -6524926951752148379, guid: 3a36acaf27d1d384bb7b96621e9b3f63, type: 3}
       propertyPath: m_TileMatrixArray.Array.data[0].m_Data.e20
@@ -761,7 +760,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -6524926951752148379, guid: 3a36acaf27d1d384bb7b96621e9b3f63, type: 3}
       propertyPath: m_TileMatrixArray.Array.data[0].m_Data.e21
-      value: 1.4145e-41
+      value: 1.4136e-41
       objectReference: {fileID: 0}
     - target: {fileID: -6524926951752148379, guid: 3a36acaf27d1d384bb7b96621e9b3f63, type: 3}
       propertyPath: m_TileMatrixArray.Array.data[0].m_Data.e22
@@ -769,7 +768,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -6524926951752148379, guid: 3a36acaf27d1d384bb7b96621e9b3f63, type: 3}
       propertyPath: m_TileMatrixArray.Array.data[0].m_Data.e23
-      value: -6.4936875e+12
+      value: 5.218196e+11
       objectReference: {fileID: 0}
     - target: {fileID: -6524926951752148379, guid: 3a36acaf27d1d384bb7b96621e9b3f63, type: 3}
       propertyPath: m_TileMatrixArray.Array.data[0].m_Data.e30
@@ -777,7 +776,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -6524926951752148379, guid: 3a36acaf27d1d384bb7b96621e9b3f63, type: 3}
       propertyPath: m_TileMatrixArray.Array.data[0].m_Data.e33
-      value: 4.591e-41
+      value: 4.5912e-41
       objectReference: {fileID: 0}
     - target: {fileID: -6524926951752148379, guid: 3a36acaf27d1d384bb7b96621e9b3f63, type: 3}
       propertyPath: m_TileMatrixArray.Array.data[0].m_RefCount
@@ -785,11 +784,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -6524926951752148379, guid: 3a36acaf27d1d384bb7b96621e9b3f63, type: 3}
       propertyPath: m_TileMatrixArray.Array.data[1].m_RefCount
-      value: 5047
+      value: 5044
       objectReference: {fileID: 0}
     - target: {fileID: -6524926951752148379, guid: 3a36acaf27d1d384bb7b96621e9b3f63, type: 3}
       propertyPath: m_TileSpriteArray.Array.data[0].m_RefCount
-      value: 5047
+      value: 5044
       objectReference: {fileID: 0}
     - target: {fileID: -6524926951752148379, guid: 3a36acaf27d1d384bb7b96621e9b3f63, type: 3}
       propertyPath: m_TileSpriteArray.Array.data[1].m_RefCount
