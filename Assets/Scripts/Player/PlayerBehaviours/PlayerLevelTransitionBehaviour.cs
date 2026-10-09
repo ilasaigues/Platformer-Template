@@ -1,3 +1,4 @@
+using System.Threading.Tasks;
 using UnityEngine;
 
 public class PlayerLevelTransitionBehaviour : BasePlayerBehaviour
@@ -29,23 +30,21 @@ public class PlayerLevelTransitionBehaviour : BasePlayerBehaviour
         PlayerController.MovementController.enabled = false;
         PlayerController.MovementController.SetVelocity(Vector2.zero);
         PlayAnim(PlayerController.PlayerAnimator.AnimationList.LevelTransitionStart);
-
     }
+
 
     public override void Exit()
     {
         PlayerController.MovementController.enabled = true;
+        PlayerController.PlaySFX(PlayerController.SoundList.travelEndSFX);
         PlayAnim(PlayerController.PlayerAnimator.AnimationList.LevelTransitionEnd);
-
     }
 
     public override void FixedUpdate(float delta)
     {
-
     }
 
     public override void Update(float delta)
     {
-
     }
 }

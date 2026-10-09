@@ -5325,9 +5325,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2fcf3dd4ebfd6049aebfb71b520130f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: LevelElements::LevelTraversalComponent
-  BeforeTravelDelay: 1
+  BeforeTravelDelay: 1.5
   TraveltransitionDuration: 3
-  AfterTravelDelay: 1
+  AfterTravelDelay: 0.5
+  IsTraveling: 0
 --- !u!114 &1467315167351531766
 MonoBehaviour:
   m_ObjectHideFlags: 0

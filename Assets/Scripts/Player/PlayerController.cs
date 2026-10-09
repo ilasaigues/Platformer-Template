@@ -96,7 +96,7 @@ public class PlayerController : MonoBehaviour, IMovementControllable, ISqueezabl
 
     public bool CanBeSqueezed => MovementController.CanBeSqueezed;
 
-    private SoundEffectPlayer SFXPlayer; 
+    private SoundEffectPlayer SFXPlayer;
     public PlayerSoundList SoundList;
 
     void Start()
@@ -136,9 +136,19 @@ public class PlayerController : MonoBehaviour, IMovementControllable, ISqueezabl
 
     }
 
-    private void LevelChanged()
+    private void LevelChanged(GameManager.LevelTransitionState state)
     {
-        AbilityQueue.Clear();
+        switch (state)
+        {
+            case GameManager.LevelTransitionState.BeforeTravelling:
+                AbilityQueue.Clear();
+                break;
+            case GameManager.LevelTransitionState.Travelling:
+                PlaySFX(SoundList.travelStartSFX);
+                break;
+            case GameManager.LevelTransitionState.AfterTravelling:
+                break;
+        }
     }
 
     private void AbilityTypeChanged(GameManager.AbilityType type)
