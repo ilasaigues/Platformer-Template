@@ -5,10 +5,12 @@
   <Project Path="Assembly-CSharp.csproj" />
   <Project Path="FMODUnityResonanceEditor.csproj" />
   <Project Path="FMODUnityEditor.csproj" />
+  <Project Path="Game.Settings.csproj" />
   <Project Path="FMODUnity.csproj" />
   <Project Path="LevelElements.csproj" />
   <Project Path="Game.Hazards.csproj" />
   <Project Path="Game.ScriptableObjects.csproj" />
+  <Project Path="Game.SaveManagement.csproj" />
   <Project Path="Game.TimeContext.csproj" />
   <Project Path="Game.SceneManagement.csproj" />
   <Project Path="Game.Input.csproj" />
@@ -23,4 +25,5 @@
   <Project Path="Assembly-CSharp-Editor.csproj" />
   <Project Path="Editor.Game.AssetProcessing.csproj" />
   <Project Path="LdtkUnity.Generated.csproj" />
+  <Project Path="Game.ApplicationState.csproj" />
 </Solution>

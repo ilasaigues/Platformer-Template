@@ -7,6 +7,8 @@ using UnityEngine.InputSystem;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using System;
+using System.Threading.Tasks;
+using Cysharp.Threading.Tasks;
 
 [RequireComponent(typeof(CanvasGroup))]
 public class SimpleMenu : MonoBehaviour
@@ -31,6 +33,8 @@ public class SimpleMenu : MonoBehaviour
     [SerializeField]
     protected GameObject SpecialCloseMenu;
 
+    [SerializeField]
+    protected bool HideForSubmenu;
 
     public event Action OnMenuClosed = delegate { };
 
@@ -55,6 +59,7 @@ public class SimpleMenu : MonoBehaviour
 
     public virtual void OnEnable()
     {
+
         _navigateReference.action.performed += OnNavigate;
         StartCoroutine(SelectAfterDelay());
     }
@@ -145,23 +150,60 @@ public class SimpleMenu : MonoBehaviour
         }
     }
 
-    public void OpenSubmenu(GameObject prefab)
+    public async void OpenSubmenu(GameObject prefab)
     {
-        var subMenu = Instantiate(prefab, transform.parent).GetComponent<SimpleMenu>();
-        subMenu.OnMenuClosed += ChildMenuClosed;
         CanvasGroup.interactable = false;
+        var subMenu = Instantiate(prefab, transform.parent).GetComponent<SimpleMenu>();
+        List<Task> tasks = new();
+        if (HideForSubmenu)
+        {
+            tasks.Add(HideMenu());
+        }
+        tasks.Add(subMenu.ShowMenu());
+        await Task.WhenAll(tasks);
+        subMenu.OnMenuClosed += ChildMenuClosed;
     }
 
-    private void ChildMenuClosed()
+
+    private async void ChildMenuClosed()
     {
+        await ShowMenu();
         CanvasGroup.interactable = true;
     }
 
-    public void CloseMenu()
+    async Task ShowMenu()
+    {
+        if (HideForSubmenu)
+        {
+            // TODO: TURN INTO PARAMETRIZABLE TRANSITION BEHAVIOUR
+            var startPosition = transform.position;
+            startPosition.y *= 2;
+            transform.position = startPosition;
+            var tween = LeanTween.moveLocal(gameObject, Vector3.zero, .25f).setEaseInOutBack();
+            bool complete = false;
+            tween.setOnComplete(_ => complete = true);
+            await UniTask.WaitUntil(() => complete);
+        }
+    }
+
+    async Task HideMenu()
+    {
+        // TODO: TURN INTO PARAMETRIZABLE TRANSITION BEHAVIOUR
+        var hidePosition = transform.position;
+        hidePosition.y *= 2;
+        var tween = LeanTween.move(gameObject, hidePosition, .25f).setEaseInOutBack();
+        bool complete = false;
+        tween.setOnComplete(_ => complete = true);
+        await UniTask.WaitUntil(() => complete);
+    }
+
+    public async void CloseMenu()
     {
         if (!SpecialCloseMenu)
         {
+            CanvasGroup.interactable = false;
             OnMenuClosed();
+            await HideMenu();
             Destroy(gameObject);
         }
         else
