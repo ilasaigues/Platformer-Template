@@ -71,6 +71,8 @@ MonoBehaviour:
       m_Calls: []
   SpecialCloseMenu: {fileID: 0}
   HideForSubmenu: 0
+  ShowTransition: {fileID: 11400000, guid: 607ff513ce87264449565b3273ebd44d, type: 2}
+  HideTransition: {fileID: 11400000, guid: 6e305b05270a70c4e96430e57bc70cb5, type: 2}
 --- !u!1 &2584451021379391795
 GameObject:
   m_ObjectHideFlags: 0

@@ -36,9 +36,12 @@ public class SimpleMenu : MonoBehaviour
     [SerializeField]
     protected bool HideForSubmenu;
 
+
+
     public event Action OnMenuClosed = delegate { };
 
-
+    public BaseUITransition ShowTransition;
+    public BaseUITransition HideTransition;
 
 
     void Awake()
@@ -176,25 +179,13 @@ public class SimpleMenu : MonoBehaviour
         if (HideForSubmenu)
         {
             // TODO: TURN INTO PARAMETRIZABLE TRANSITION BEHAVIOUR
-            var startPosition = transform.position;
-            startPosition.y *= 2;
-            transform.position = startPosition;
-            var tween = LeanTween.moveLocal(gameObject, Vector3.zero, .25f).setEaseInOutBack();
-            bool complete = false;
-            tween.setOnComplete(_ => complete = true);
-            await UniTask.WaitUntil(() => complete);
+            await ShowTransition?.DoTransition(gameObject);
         }
     }
 
     async Task HideMenu()
     {
-        // TODO: TURN INTO PARAMETRIZABLE TRANSITION BEHAVIOUR
-        var hidePosition = transform.position;
-        hidePosition.y *= 2;
-        var tween = LeanTween.move(gameObject, hidePosition, .25f).setEaseInOutBack();
-        bool complete = false;
-        tween.setOnComplete(_ => complete = true);
-        await UniTask.WaitUntil(() => complete);
+        await HideTransition?.DoTransition(gameObject);
     }
 
     public async void CloseMenu()

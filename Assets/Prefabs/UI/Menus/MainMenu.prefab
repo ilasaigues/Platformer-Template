@@ -601,6 +601,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   SpecialCloseMenu: {fileID: 477724124029774280, guid: 45eb93c4ecc2075458883eaa4d7469ff, type: 3}
+  HideForSubmenu: 0
+  ShowTransition: {fileID: 11400000, guid: bd07456f6102a964ea0334be244c49a8, type: 2}
+  HideTransition: {fileID: 11400000, guid: bd07456f6102a964ea0334be244c49a8, type: 2}
 --- !u!225 &168951302824063614
 CanvasGroup:
   m_ObjectHideFlags: 0
