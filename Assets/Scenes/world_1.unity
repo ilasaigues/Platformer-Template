@@ -728,7 +728,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -6524926951752148379, guid: 3a36acaf27d1d384bb7b96621e9b3f63, type: 3}
       propertyPath: m_TileMatrixArray.Array.data[0].m_Data.e00
-      value: -9.187361e-39
+      value: 1.5064833e-38
       objectReference: {fileID: 0}
     - target: {fileID: -6524926951752148379, guid: 3a36acaf27d1d384bb7b96621e9b3f63, type: 3}
       propertyPath: m_TileMatrixArray.Array.data[0].m_Data.e01
@@ -740,11 +740,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -6524926951752148379, guid: 3a36acaf27d1d384bb7b96621e9b3f63, type: 3}
       propertyPath: m_TileMatrixArray.Array.data[0].m_Data.e03
-      value: 4.078277e+19
+      value: -2.8159166e-29
       objectReference: {fileID: 0}
     - target: {fileID: -6524926951752148379, guid: 3a36acaf27d1d384bb7b96621e9b3f63, type: 3}
       propertyPath: m_TileMatrixArray.Array.data[0].m_Data.e10
-      value: 7.64e-43
+      value: 7.17e-43
       objectReference: {fileID: 0}
     - target: {fileID: -6524926951752148379, guid: 3a36acaf27d1d384bb7b96621e9b3f63, type: 3}
       propertyPath: m_TileMatrixArray.Array.data[0].m_Data.e11
@@ -752,7 +752,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -6524926951752148379, guid: 3a36acaf27d1d384bb7b96621e9b3f63, type: 3}
       propertyPath: m_TileMatrixArray.Array.data[0].m_Data.e13
-      value: 7.7e-43
+      value: 7.2e-43
       objectReference: {fileID: 0}
     - target: {fileID: -6524926951752148379, guid: 3a36acaf27d1d384bb7b96621e9b3f63, type: 3}
       propertyPath: m_TileMatrixArray.Array.data[0].m_Data.e20
@@ -768,7 +768,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -6524926951752148379, guid: 3a36acaf27d1d384bb7b96621e9b3f63, type: 3}
       propertyPath: m_TileMatrixArray.Array.data[0].m_Data.e23
-      value: 5.218196e+11
+      value: -1.9951789e-25
       objectReference: {fileID: 0}
     - target: {fileID: -6524926951752148379, guid: 3a36acaf27d1d384bb7b96621e9b3f63, type: 3}
       propertyPath: m_TileMatrixArray.Array.data[0].m_Data.e30
@@ -776,7 +776,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -6524926951752148379, guid: 3a36acaf27d1d384bb7b96621e9b3f63, type: 3}
       propertyPath: m_TileMatrixArray.Array.data[0].m_Data.e33
-      value: 4.5912e-41
+      value: 4.5911e-41
       objectReference: {fileID: 0}
     - target: {fileID: -6524926951752148379, guid: 3a36acaf27d1d384bb7b96621e9b3f63, type: 3}
       propertyPath: m_TileMatrixArray.Array.data[0].m_RefCount
@@ -274015,6 +274015,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1607731878}
   - component: {fileID: 1607731877}
+  - component: {fileID: 1607731879}
   m_Layer: 0
   m_Name: BGMPlayer
   m_TagString: Untagged
@@ -274068,6 +274069,37 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1607731879
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1607731876}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: FMODUnity::FMODUnity.StudioEventEmitter
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -1815549064
+      Data2: 1139891835
+      Data3: -2142268761
+      Data4: -116613269
+    Path: event:/bgs_wind
+  Event: 
+  EventPlayTrigger: 1
+  EventStopTrigger: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  NonRigidbodyVelocity: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!19719996 &1614728413 stripped
 TilemapCollider2D:
   m_CorrespondingSourceObject: {fileID: -8214641471145500025, guid: c15864a835c63434abb9aeb791dd5904, type: 3}

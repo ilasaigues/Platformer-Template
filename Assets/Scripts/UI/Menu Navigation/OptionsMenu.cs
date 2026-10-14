@@ -1,7 +1,6 @@
-using System;
 using System.IO;
+using FMODUnity;
 using TMPro;
-using Unity.Plastic.Newtonsoft.Json;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -66,18 +65,21 @@ public class OptionsMenu : MonoBehaviour
     public void MasterVolumeChanged(float newVolume)
     {
         SettingsData.MasterVolume = (int)newVolume;
+        RuntimeManager.GetBus("Bus:/").setVolume(newVolume / 10f);
         SaveChanges();
     }
 
     public void MusicVolumeChanged(float newVolume)
     {
         SettingsData.MusicVolume = (int)newVolume;
+        RuntimeManager.GetVCA("vca:/BGM").setVolume(newVolume / 10f);
         SaveChanges();
     }
 
     public void SFXVolumeChanged(float newVolume)
     {
         SettingsData.SFXVolume = (int)newVolume;
+        RuntimeManager.GetVCA("vca:/SFX").setVolume(newVolume / 10f);
         SaveChanges();
     }
 
