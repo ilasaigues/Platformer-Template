@@ -143,6 +143,51 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::TimeContext
   ContextTimescale: {fileID: 11400000, guid: 6494853fed99e334aa868356109ae52a, type: 2}
   Time: 0
+--- !u!1 &3845378167520822143
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6486060962906613541}
+  - component: {fileID: 7991847660336049578}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6486060962906613541
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3845378167520822143}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 463.4017, y: 319.5601, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3179376777927561256}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7991847660336049578
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3845378167520822143}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f609fc448c93e9c43912747087afe750, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Game.Audio::AudioManager
+  SettingsData: {fileID: 11400000, guid: b966f1e55564a9f4aac84851f4687d5b, type: 2}
 --- !u!1 &4115462517017405295
 GameObject:
   m_ObjectHideFlags: 0
@@ -188,11 +233,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LevelManager
   Worlds:
-  - MaxLives: 5
-    SceneReference:
+  - SceneReference:
       SceneName: world_1
-  - MaxLives: 5
-    SceneReference:
+  - SceneReference:
       SceneName: world_2
   CurrentWorldIndex:
     ReferenceType: 1
@@ -238,6 +281,7 @@ Transform:
   - {fileID: 1143351098667167084}
   - {fileID: 100318611251765735}
   - {fileID: 2013923972372158691}
+  - {fileID: 6486060962906613541}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &3160197232609550550

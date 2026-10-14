@@ -1,31 +1,35 @@
 using UnityEngine;
-using FMOD.Studio;
 using FMODUnity;
+using System.IO;
 
 public class AudioManager : MonoBehaviour
 {
-    
-    private VCA _bgm,_sfx,_bgs;
 
-    [Range (0,1)]
-    public float BgmVolume = 1;
-    [Range (0,1)]
-    public float SfxVolume = 1;
-    [Range (0,1)]
-    public float BgsVolume = 1;
+    public SettingsData SettingsData;
+    string settingsFilePath => Path.Combine(Application.persistentDataPath, "settings.json");
+
+
+
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        _bgm = RuntimeManager.GetVCA("vca:/BGM");
-        _sfx = RuntimeManager.GetVCA("vca:/SFX");
-        _bgs = RuntimeManager.GetVCA("vca:/BGS");
+        TryLoadChanges();
+        RuntimeManager.GetBus("Bus:/").setVolume(SettingsData.MasterVolume / 10f);
+
+        RuntimeManager.GetVCA("vca:/BGM").setVolume(SettingsData.MusicVolume / 10f);
+
+        RuntimeManager.GetVCA("vca:/SFX").setVolume(SettingsData.SFXVolume / 10f);
+
     }
 
-    // Update is called once per frame
-    void Update()
+    void TryLoadChanges()
     {
-        _bgm.setVolume(BgmVolume);
-        _sfx.setVolume(SfxVolume);
-        _bgs.setVolume(BgsVolume);
+        if (File.Exists(settingsFilePath))
+        {
+            string jsonString = File.ReadAllText(settingsFilePath);
+            JsonUtility.FromJsonOverwrite(jsonString, SettingsData);
+        }
     }
+
 }
