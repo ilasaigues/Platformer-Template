@@ -1,4 +1,7 @@
+using System;
+using System.IO;
 using TMPro;
+using Unity.Plastic.Newtonsoft.Json;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -12,10 +15,14 @@ public class OptionsMenu : MonoBehaviour
 
     public SettingsData SettingsData;
 
+    string settingsFilePath => Path.Combine(Application.persistentDataPath, "settings.json");
+
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         // load existing saved data, if any. Otherwise use default save values
+        TryLoadChanges();
 
         // Apply the loaded values to the sliders
         MasterVolumeSlider.value = SettingsData.MasterVolume;
@@ -37,7 +44,7 @@ public class OptionsMenu : MonoBehaviour
     }
 
 
-    void OnWindowModeChanged(int index)
+    public void WindowModeChanged(int index)
     {
         switch (index)
         {
@@ -52,30 +59,46 @@ public class OptionsMenu : MonoBehaviour
                 break;
 
         }
+        Screen.fullScreenMode = SettingsData.WindowMode;
         SaveChanges();
     }
 
-    public void MasterVolumeChanged(int newVolume)
+    public void MasterVolumeChanged(float newVolume)
     {
-        SettingsData.MasterVolume = newVolume;
+        SettingsData.MasterVolume = (int)newVolume;
         SaveChanges();
     }
 
-    public void MusicVolumeChanged(int newVolume)
+    public void MusicVolumeChanged(float newVolume)
     {
-        SettingsData.MusicVolume = newVolume;
+        SettingsData.MusicVolume = (int)newVolume;
         SaveChanges();
     }
 
-    public void SFXVolumeChanged(int newVolume)
+    public void SFXVolumeChanged(float newVolume)
     {
-        SettingsData.SFXVolume = newVolume;
+        SettingsData.SFXVolume = (int)newVolume;
         SaveChanges();
     }
 
+
+    void TryLoadChanges()
+    {
+        if (File.Exists(settingsFilePath))
+        {
+            string jsonString = File.ReadAllText(settingsFilePath);
+            SettingsData loadedData = JsonUtility.FromJson<SettingsData>(jsonString);
+
+            SettingsData.MasterVolume = loadedData.MasterVolume;
+            SettingsData.MusicVolume = loadedData.MusicVolume;
+            SettingsData.SFXVolume = loadedData.SFXVolume;
+            SettingsData.WindowMode = loadedData.WindowMode;
+        }
+    }
 
     void SaveChanges()
     {
-
+        var settingsText = JsonUtility.ToJson(SettingsData);
+        File.WriteAllText(settingsFilePath, settingsText);
     }
 }
