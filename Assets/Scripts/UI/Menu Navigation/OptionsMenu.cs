@@ -87,12 +87,7 @@ public class OptionsMenu : MonoBehaviour
         if (File.Exists(settingsFilePath))
         {
             string jsonString = File.ReadAllText(settingsFilePath);
-            SettingsData loadedData = JsonUtility.FromJson<SettingsData>(jsonString);
-
-            SettingsData.MasterVolume = loadedData.MasterVolume;
-            SettingsData.MusicVolume = loadedData.MusicVolume;
-            SettingsData.SFXVolume = loadedData.SFXVolume;
-            SettingsData.WindowMode = loadedData.WindowMode;
+            JsonUtility.FromJsonOverwrite(jsonString, SettingsData);
         }
     }
 
