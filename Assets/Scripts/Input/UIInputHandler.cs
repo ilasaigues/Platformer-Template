@@ -7,6 +7,7 @@ public class UIInputHandler : MonoBehaviour, GameInputs.IUIActions
 
     public event Action OnMenuButtonPressed = delegate { };
 
+
     public GameInputs GameInputs;
 
     void OnEnable()

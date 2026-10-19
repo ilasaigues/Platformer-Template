@@ -177,6 +177,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6816241383787628703}
   - component: {fileID: 4239217889698240846}
+  - component: {fileID: 4707975343798337643}
   m_Layer: 0
   m_Name: PauseController
   m_TagString: Untagged
@@ -212,7 +213,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PauseController
   PauseMenuPrefab: {fileID: 7812762805972089903, guid: 5a7cdcd8ac436ea41b283193e8a077fa, type: 3}
+  MenuSoundList: {fileID: 11400000, guid: ab27fb79345f4f64c840a5479756ef72, type: 2}
   Canvas: {fileID: 4415023629367115455}
+--- !u!114 &4707975343798337643
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6888629780223075090}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6b141189df92174bbed8abdb90dac3d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Game.TimeContext::TimeContext
+  ContextTimescale: {fileID: 11400000, guid: 6494853fed99e334aa868356109ae52a, type: 2}
+  Time: 0
 --- !u!1 &7452477263934257137
 GameObject:
   m_ObjectHideFlags: 0

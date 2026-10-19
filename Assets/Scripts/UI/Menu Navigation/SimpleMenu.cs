@@ -35,7 +35,7 @@ public class SimpleMenu : MonoBehaviour
     [SerializeField]
     protected GameObject SpecialCloseMenu;
 
-    public EventReference SelectSoundEventReference;
+    public MenuSoundList MenuSounds;
 
     private SoundEffectPlayer _sfxPlayer;
 
@@ -130,9 +130,29 @@ public class SimpleMenu : MonoBehaviour
 
     }
 
+    public void PlayConfirmSound()
+    {
+        _sfxPlayer.PlaySFX(MenuSounds.ConfirmSoundEventReference.eventReference);
+    }
+
+    public void PlayCancelSound()
+    {
+        _sfxPlayer.PlaySFX(MenuSounds.CancelMenuSoundEventReference.eventReference);
+    }
+
+    public void PlaySFXAdjustSound()
+    {
+        _sfxPlayer.PlaySFX(MenuSounds.SFXVolumeChangeSoundEventReference.eventReference);
+    }
+
+    public void PlayBGMAdjustSound()
+    {
+        _sfxPlayer.PlaySFX(MenuSounds.BGMVolumeChangeSoundEventReference.eventReference);
+    }
+
     public void OnSelectChild(BaseEventData eventData)
     {
-        _sfxPlayer.PlaySFX(SelectSoundEventReference);
+        _sfxPlayer.PlaySFX(MenuSounds.HoverSoundEventReference.eventReference);
         _lastSelected = eventData.selectedObject.GetComponent<Selectable>();
     }
 
@@ -172,6 +192,7 @@ public class SimpleMenu : MonoBehaviour
 
     public async void OpenSubmenu(GameObject prefab)
     {
+        PlayConfirmSound();
         CanvasGroup.interactable = false;
         _subMenu = Instantiate(prefab, transform.parent).GetComponent<SimpleMenu>();
         if (UIInputHandler != null)
@@ -211,6 +232,7 @@ public class SimpleMenu : MonoBehaviour
         {
             CanvasGroup.interactable = false;
             OnMenuClosed();
+            PlayCancelSound();
             await HideMenu();
             Destroy(gameObject);
         }

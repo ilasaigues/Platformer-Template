@@ -35,7 +35,7 @@ public class AudioManager : MonoBehaviour
         }
     }
 
-    public void ChangeBGM(FMODUnity.EventReference fmodEventReference)
+    public void ChangeBGM(EventReference fmodEventReference)
     {
         MusicPlayer.EventReference = fmodEventReference;
         MusicPlayer.Play();
@@ -46,5 +46,8 @@ public class AudioManager : MonoBehaviour
         MusicPlayer.EventInstance.setPaused(paused);
     }
 
-
+    public void PlayOneShot(EventReference fmodEventReference)
+    {
+        RuntimeManager.PlayOneShot(fmodEventReference);
+    }
 }

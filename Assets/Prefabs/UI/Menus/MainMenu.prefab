@@ -599,13 +599,7 @@ MonoBehaviour:
   _firstSelected: {fileID: 2559347187379883132}
   _navigateReference: {fileID: -8784545083839296357, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   SpecialCloseMenu: {fileID: 477724124029774280, guid: 45eb93c4ecc2075458883eaa4d7469ff, type: 3}
-  SelectSoundEventReference:
-    Guid:
-      Data1: 150315445
-      Data2: 1116083982
-      Data3: 1906833561
-      Data4: -145856349
-    Path: event:/SFX/Menu/sfx_menuMoveCursor
+  MenuSounds: {fileID: 11400000, guid: ab27fb79345f4f64c840a5479756ef72, type: 2}
   ShowTransition: {fileID: 11400000, guid: bd07456f6102a964ea0334be244c49a8, type: 2}
   HideTransition: {fileID: 11400000, guid: bd07456f6102a964ea0334be244c49a8, type: 2}
 --- !u!225 &168951302824063614

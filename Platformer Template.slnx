@@ -12,6 +12,7 @@
   <Project Path="Game.ScriptableObjects.csproj" />
   <Project Path="Game.SaveManagement.csproj" />
   <Project Path="Game.TimeContext.csproj" />
+  <Project Path="Game.Audio.csproj" />
   <Project Path="Game.SceneManagement.csproj" />
   <Project Path="Game.Input.csproj" />
   <Project Path="Game.Extensions.csproj" />
@@ -20,7 +21,6 @@
   <Project Path="Game.VFX.csproj" />
   <Project Path="Game.GameManagement.csproj" />
   <Project Path="Game.UI.csproj" />
-  <Project Path="Game.Audio.csproj" />
   <Project Path="Game.BehaviourMachine.csproj" />
   <Project Path="Assembly-CSharp-Editor.csproj" />
   <Project Path="Editor.Game.AssetProcessing.csproj" />

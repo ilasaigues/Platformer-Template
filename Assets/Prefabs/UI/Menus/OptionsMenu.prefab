@@ -454,13 +454,7 @@ MonoBehaviour:
   _firstSelected: {fileID: 2590955960343869133}
   _navigateReference: {fileID: -8784545083839296357, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   SpecialCloseMenu: {fileID: 0}
-  SelectSoundEventReference:
-    Guid:
-      Data1: 150315445
-      Data2: 1116083982
-      Data3: 1906833561
-      Data4: -145856349
-    Path: event:/SFX/Menu/sfx_menuMoveCursor
+  MenuSounds: {fileID: 11400000, guid: ab27fb79345f4f64c840a5479756ef72, type: 2}
   ShowTransition: {fileID: 11400000, guid: 607ff513ce87264449565b3273ebd44d, type: 2}
   HideTransition: {fileID: 11400000, guid: 6e305b05270a70c4e96430e57bc70cb5, type: 2}
 --- !u!114 &3719935867131921207
@@ -586,6 +580,30 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: OptionsMenu, Game.UI
         m_MethodName: MasterVolumeChanged
         m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 7812762805972089903}
+        m_TargetAssemblyTypeName: SimpleMenu, Game.UI
+        m_MethodName: PlaySFXAdjustSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 7812762805972089903}
+        m_TargetAssemblyTypeName: SimpleMenu, Game.UI
+        m_MethodName: PlayBGMAdjustSound
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1202,6 +1220,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: OptionsMenu, Game.UI
         m_MethodName: MusicVolumeChanged
         m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 7812762805972089903}
+        m_TargetAssemblyTypeName: SimpleMenu, Game.UI
+        m_MethodName: PlayBGMAdjustSound
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -2351,6 +2381,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 7812762805972089903}
+        m_TargetAssemblyTypeName: SimpleMenu, Game.UI
+        m_MethodName: PlaySFXAdjustSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &5289327216282470858
 GameObject:
   m_ObjectHideFlags: 0
@@ -3272,6 +3314,18 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 477724124029774280, guid: 9374aec8d07dda047889c3846cd13198, type: 3}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: SimpleMenu, Game.UI
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 

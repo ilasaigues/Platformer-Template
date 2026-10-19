@@ -19,6 +19,8 @@ public class PauseController : MonoBehaviour
 
     private SimpleMenu _pauseMenuInstance;
 
+    public MenuSoundList MenuSoundList;
+
     private bool _paused;
 
     public Canvas Canvas;
@@ -51,6 +53,7 @@ public class PauseController : MonoBehaviour
         else // try to pause
         {
             _paused = true;
+            _audioManager.PlayOneShot(MenuSoundList.PauseEnterEventReference.eventReference);
             _audioManager.SetMusicPaused(true);
             _timeContext.Paused = _paused;
             _appStateManager.gameInputHandler.enabled = false;
@@ -69,6 +72,7 @@ public class PauseController : MonoBehaviour
     private void OnPauseMenuClosed()
     {
         _paused = false;
+        _audioManager.PlayOneShot(MenuSoundList.PauseExitEventReference.eventReference);
         _audioManager.SetMusicPaused(false);
         _timeContext.Paused = _paused;
         _appStateManager.gameInputHandler.enabled = true;
