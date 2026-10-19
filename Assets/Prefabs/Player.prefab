@@ -5328,7 +5328,6 @@ MonoBehaviour:
   BeforeTravelDelay: 1.5
   TraveltransitionDuration: 3
   AfterTravelDelay: 0.5
-  IsTraveling: 0
 --- !u!114 &1467315167351531766
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5348,7 +5347,7 @@ MonoBehaviour:
       Data2: 1272445088
       Data3: -1115502966
       Data4: -1011569944
-    Path: event:/Steps
+    Path: event:/SFX/Character/sfx_playerStep
   Event: 
   EventPlayTrigger: 0
   EventStopTrigger: 0

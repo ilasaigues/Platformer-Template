@@ -153,6 +153,8 @@ GameObject:
   m_Component:
   - component: {fileID: 6486060962906613541}
   - component: {fileID: 7991847660336049578}
+  - component: {fileID: 4929383030183797075}
+  - component: {fileID: 9017697757155275003}
   m_Layer: 0
   m_Name: AudioManager
   m_TagString: Untagged
@@ -188,6 +190,49 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Game.Audio::AudioManager
   SettingsData: {fileID: 11400000, guid: b966f1e55564a9f4aac84851f4687d5b, type: 2}
+--- !u!114 &4929383030183797075
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3845378167520822143}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 107b66e689322c343b31dc13ae1e9e4e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Game.Audio::SoundEffectPlayer
+--- !u!114 &9017697757155275003
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3845378167520822143}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: FMODUnity::FMODUnity.StudioEventEmitter
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  Event: 
+  EventPlayTrigger: 0
+  EventStopTrigger: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  NonRigidbodyVelocity: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: -1
+  OverrideMaxDistance: -1
 --- !u!1 &4115462517017405295
 GameObject:
   m_ObjectHideFlags: 0
@@ -394,6 +439,7 @@ MonoBehaviour:
   SceneTransitionManager: {fileID: 6381051083846548860}
   WorldManager: {fileID: 2959997803139442059}
   UIInputHandler: {fileID: 4205484264899646523}
+  AudioManager: {fileID: 7991847660336049578}
   ApplicationStateManager: {fileID: 4341823028727287544}
 --- !u!1001 &1136329263076141245
 PrefabInstance:

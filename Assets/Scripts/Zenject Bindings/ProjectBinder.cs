@@ -9,6 +9,7 @@ public class ProjectBinder : MonoInstaller
     public SceneTransitionManager SceneTransitionManager;
     public WorldManager WorldManager;
     public UIInputHandler UIInputHandler;
+    public AudioManager AudioManager;
 
     public ApplicationStateManager ApplicationStateManager;
 
@@ -21,6 +22,7 @@ public class ProjectBinder : MonoInstaller
         QuickBind(WorldManager);
         QuickBind(UIInputHandler);
         QuickBind(ApplicationStateManager);
+        QuickBind(AudioManager);
         Container.BindFactory<VFXObject, VFXObject.Factory>().FromComponentInNewPrefab(VFXSpawner.VFXObjectPrefab);
     }
 

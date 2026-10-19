@@ -10,6 +10,8 @@ public class PauseController : MonoBehaviour
     [Inject]
     UIInputHandler _uiInputHandler;
 
+    [Inject]
+    AudioManager _audioManager;
 
     TimeContext _timeContext;
 
@@ -49,6 +51,7 @@ public class PauseController : MonoBehaviour
         else // try to pause
         {
             _paused = true;
+            _audioManager.SetMusicPaused(true);
             _timeContext.Paused = _paused;
             _appStateManager.gameInputHandler.enabled = false;
             if (_pauseMenuInstance != null)
@@ -66,6 +69,7 @@ public class PauseController : MonoBehaviour
     private void OnPauseMenuClosed()
     {
         _paused = false;
+        _audioManager.SetMusicPaused(false);
         _timeContext.Paused = _paused;
         _appStateManager.gameInputHandler.enabled = true;
     }

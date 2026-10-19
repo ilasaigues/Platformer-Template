@@ -273924,7 +273924,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1607731878}
-  - component: {fileID: 1607731877}
   - component: {fileID: 1607731879}
   m_Layer: 0
   m_Name: BGMPlayer
@@ -273933,37 +273932,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1607731877
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1607731876}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: FMODUnity::FMODUnity.StudioEventEmitter
-  CollisionTag: 
-  EventReference:
-    Guid:
-      Data1: -362855282
-      Data2: 1224728120
-      Data3: -518456171
-      Data4: 1103430403
-    Path: event:/Test BGM
-  Event: 
-  EventPlayTrigger: 1
-  EventStopTrigger: 0
-  AllowFadeout: 1
-  TriggerOnce: 0
-  Preload: 0
-  NonRigidbodyVelocity: 0
-  Params: []
-  OverrideAttenuation: 0
-  OverrideMinDistance: 1
-  OverrideMaxDistance: 20
 --- !u!4 &1607731878
 Transform:
   m_ObjectHideFlags: 0
@@ -273988,28 +273956,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 1607731876}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Script: {fileID: 11500000, guid: 9211548cf9a88e0469725921b99acdb0, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: FMODUnity::FMODUnity.StudioEventEmitter
-  CollisionTag: 
-  EventReference:
+  m_EditorClassIdentifier: Game.Audio::PlayMusicOnLoad
+  MusicEventReference:
     Guid:
-      Data1: -1815549064
-      Data2: 1139891835
-      Data3: -2142268761
-      Data4: -116613269
-    Path: event:/bgs_wind
-  Event: 
-  EventPlayTrigger: 1
-  EventStopTrigger: 0
-  AllowFadeout: 1
-  TriggerOnce: 0
-  Preload: 0
-  NonRigidbodyVelocity: 0
-  Params: []
-  OverrideAttenuation: 0
-  OverrideMinDistance: 1
-  OverrideMaxDistance: 20
+      Data1: -362855282
+      Data2: 1224728120
+      Data3: -518456171
+      Data4: 1103430403
+    Path: event:/BGM/bgm_test
 --- !u!19719996 &1614728413 stripped
 TilemapCollider2D:
   m_CorrespondingSourceObject: {fileID: -8214641471145500025, guid: c15864a835c63434abb9aeb791dd5904, type: 3}
