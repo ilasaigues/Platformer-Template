@@ -9,10 +9,13 @@ using UnityEngine.EventSystems;
 using System;
 using System.Threading.Tasks;
 using Cysharp.Threading.Tasks;
+using Zenject;
 
 [RequireComponent(typeof(CanvasGroup))]
 public class SimpleMenu : MonoBehaviour
 {
+    UIInputHandler UIInputHandler;
+
 
     [Header("References")]
     public List<Selectable> Selectables = new();
@@ -33,16 +36,12 @@ public class SimpleMenu : MonoBehaviour
     [SerializeField]
     protected GameObject SpecialCloseMenu;
 
-    [SerializeField]
-    protected bool HideForSubmenu;
-
-
 
     public event Action OnMenuClosed = delegate { };
 
     public BaseUITransition ShowTransition;
     public BaseUITransition HideTransition;
-
+    private SimpleMenu _subMenu;
 
     void Awake()
     {
@@ -62,7 +61,6 @@ public class SimpleMenu : MonoBehaviour
 
     public virtual void OnEnable()
     {
-
         _navigateReference.action.performed += OnNavigate;
         StartCoroutine(SelectAfterDelay());
     }
@@ -70,6 +68,22 @@ public class SimpleMenu : MonoBehaviour
     public virtual void OnDisable()
     {
         _navigateReference.action.performed -= OnNavigate;
+    }
+
+    public void SetInputHandler(UIInputHandler inputHandler)
+    {
+        UIInputHandler = inputHandler;
+        UIInputHandler.OnMenuButtonPressed += MenuButtonPressed;
+    }
+
+    void OnDestroy()
+    {
+        UIInputHandler.OnMenuButtonPressed -= MenuButtonPressed;
+    }
+
+    void MenuButtonPressed()
+    {
+        CloseMenu();
     }
 
     protected virtual void AddListenersToSelectable(Selectable selectable)
@@ -156,31 +170,25 @@ public class SimpleMenu : MonoBehaviour
     public async void OpenSubmenu(GameObject prefab)
     {
         CanvasGroup.interactable = false;
-        var subMenu = Instantiate(prefab, transform.parent).GetComponent<SimpleMenu>();
-        List<Task> tasks = new();
-        if (HideForSubmenu)
+        _subMenu = Instantiate(prefab, transform.parent).GetComponent<SimpleMenu>();
+        if (UIInputHandler != null)
         {
-            tasks.Add(HideMenu());
+            _subMenu.SetInputHandler(UIInputHandler);
         }
-        tasks.Add(subMenu.ShowMenu());
-        await Task.WhenAll(tasks);
-        subMenu.OnMenuClosed += ChildMenuClosed;
+        await _subMenu.ShowMenu();
+        _subMenu.OnMenuClosed += ChildMenuClosed;
     }
 
 
     private async void ChildMenuClosed()
     {
-        await ShowMenu();
+        await ShowMenu(false);
         CanvasGroup.interactable = true;
     }
 
-    async Task ShowMenu()
+    async Task ShowMenu(bool doTransition = true)
     {
-        if (HideForSubmenu)
-        {
-            // TODO: TURN INTO PARAMETRIZABLE TRANSITION BEHAVIOUR
-            await ShowTransition?.DoTransition(gameObject);
-        }
+        if (doTransition) await ShowTransition?.DoTransition(gameObject);
     }
 
     async Task HideMenu()
@@ -190,6 +198,12 @@ public class SimpleMenu : MonoBehaviour
 
     public async void CloseMenu()
     {
+        if (_subMenu != null)
+        {
+            _subMenu.CloseMenu();
+            return;
+        }
+
         if (!SpecialCloseMenu)
         {
             CanvasGroup.interactable = false;

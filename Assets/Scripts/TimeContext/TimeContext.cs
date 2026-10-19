@@ -19,6 +19,10 @@ public class TimeContext : MonoBehaviour
         }
         set
         {
+            if (ContextTimescale != null)
+            {
+                ContextTimescale.Value = value ? 0 : 1;
+            }
             _paused = value;
         }
     }

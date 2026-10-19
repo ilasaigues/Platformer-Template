@@ -10,7 +10,7 @@ using Zenject;
 public class GameManager : MonoBehaviour
 {
     [Inject]
-    public LevelManager LevelManager;
+    public WorldManager WorldManager;
 
     [Inject]
     public SceneTransitionManager SceneTransitionManager;
@@ -86,7 +86,7 @@ public class GameManager : MonoBehaviour
         Levels = FindObjectsByType<LDtkComponentLevel>(FindObjectsSortMode.None).OrderBy(l => Convert.ToInt32(l.name.Split('_').Last())).ToList();
 
         cameraConfiner = cinemachineCamera.GetComponent<CinemachineConfiner2D>();
-        SetLevel(LevelManager.CurrentLevelIndex);
+        SetLevel(WorldManager.CurrentLevelIndex);
 
         foreach (var levelExit in FindObjectsByType<LevelExit>(FindObjectsSortMode.None))
         {
@@ -120,19 +120,19 @@ public class GameManager : MonoBehaviour
 
     private void WorldExitTriggered(LevelTraversalComponent component)
     {
-        SetWorld(LevelManager.CurrentWorldIndex + 1);
-        SceneTransitionManager.TransitionToScene(LevelManager.Worlds[LevelManager.CurrentWorldIndex].SceneReference.SceneName, UnityEngine.SceneManagement.LoadSceneMode.Single);
+        SetWorld(WorldManager.CurrentWorldIndex + 1);
+        SceneTransitionManager.TransitionToScene(WorldManager.Worlds[WorldManager.CurrentWorldIndex].SceneReference.SceneName, UnityEngine.SceneManagement.LoadSceneMode.Single);
     }
 
     void SetHardRespawn()
     {
-        HardRespawnTrigger = Levels[LevelManager.CurrentLevelIndex].GetComponentsInChildren<RespawnTrigger>().FirstOrDefault(rt => rt.respawnType == RespawnType.Hard);
+        HardRespawnTrigger = Levels[WorldManager.CurrentLevelIndex].GetComponentsInChildren<RespawnTrigger>().FirstOrDefault(rt => rt.respawnType == RespawnType.Hard);
 
     }
 
     public void SetLevel(int level)
     {
-        LevelManager.SetLevelIndex(level);
+        WorldManager.SetLevelIndex(level);
         SetHardRespawn();
         OnLevelChanged(LevelTransitionState.BeforeTravelling);
     }
@@ -140,18 +140,18 @@ public class GameManager : MonoBehaviour
 
     public void SetWorld(int world)
     {
-        LevelManager.SetWorldIndex(world);
+        WorldManager.SetWorldIndex(world);
     }
 
     public void SetWorldAndLevel(int world, int level)
     {
-        LevelManager.SetWorldIndex(world, level);
+        WorldManager.SetWorldIndex(world, level);
     }
 
     public async Task LevelEndReached(LevelTraversalComponent traveller)
     {
         // before travel starts
-        SetLevel(LevelManager.CurrentLevelIndex + 1);
+        SetLevel(WorldManager.CurrentLevelIndex + 1);
         InputHandler.BlockInputs(true);
         ChangingLevel = true;
         int startDelay = (int)(traveller.BeforeTravelDelay * 1000);
@@ -185,17 +185,7 @@ public class GameManager : MonoBehaviour
 
     public void DoHardRespawn()
     {
-        SceneTransitionManager.TransitionToScene(LevelManager.Worlds[LevelManager.CurrentWorldIndex].SceneReference.SceneName, UnityEngine.SceneManagement.LoadSceneMode.Single);
-    }
-
-    public void SetCameraBounds(LDtkComponentLevel level)
-    {
-        Debug.Log(level);
-        var referenceCollider = level.GetComponentsInChildren<LDtkComponentEntity>().First(e => e.Identifier == "Camera_bound").GetComponent<BoxCollider2D>();
-        ((BoxCollider2D)cameraConfiner.BoundingShape2D).size = referenceCollider.size;
-        ((BoxCollider2D)cameraConfiner.BoundingShape2D).offset = referenceCollider.offset;
-        cameraConfiner.BoundingShape2D.transform.position = referenceCollider.transform.position;
-        cameraConfiner.InvalidateBoundingShapeCache();
+        SceneTransitionManager.TransitionToScene(WorldManager.Worlds[WorldManager.CurrentWorldIndex].SceneReference.SceneName, UnityEngine.SceneManagement.LoadSceneMode.Single);
     }
 
 }

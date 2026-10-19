@@ -25,5 +25,4 @@
   <Project Path="Assembly-CSharp-Editor.csproj" />
   <Project Path="Editor.Game.AssetProcessing.csproj" />
   <Project Path="LdtkUnity.Generated.csproj" />
-  <Project Path="Game.ApplicationState.csproj" />
 </Solution>

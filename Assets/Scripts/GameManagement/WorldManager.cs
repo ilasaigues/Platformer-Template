@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Zenject;
 
-public class LevelManager : MonoBehaviour
+public class WorldManager : MonoBehaviour
 {
     [Serializable]
     public class WorldData
