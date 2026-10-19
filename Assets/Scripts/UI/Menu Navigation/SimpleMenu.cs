@@ -10,7 +10,8 @@ using System;
 using System.Threading.Tasks;
 using Cysharp.Threading.Tasks;
 using Zenject;
-
+using FMODUnity;
+[RequireComponent(typeof(SoundEffectPlayer))]
 [RequireComponent(typeof(CanvasGroup))]
 public class SimpleMenu : MonoBehaviour
 {
@@ -24,8 +25,6 @@ public class SimpleMenu : MonoBehaviour
     [Header("Controls")]
     [SerializeField] protected InputActionReference _navigateReference;
 
-    [Header("Sounds")]
-    [SerializeField] protected UnityEvent SelectSoundEvent;
 
     protected Selectable _lastSelected;
 
@@ -36,6 +35,9 @@ public class SimpleMenu : MonoBehaviour
     [SerializeField]
     protected GameObject SpecialCloseMenu;
 
+    public EventReference SelectSoundEventReference;
+
+    private SoundEffectPlayer _sfxPlayer;
 
     public event Action OnMenuClosed = delegate { };
 
@@ -45,6 +47,7 @@ public class SimpleMenu : MonoBehaviour
 
     void Awake()
     {
+        _sfxPlayer = GetComponent<SoundEffectPlayer>();
         CanvasGroup = GetComponent<CanvasGroup>();
         Selectables = GetComponentsInChildren<Selectable>().ToList();
         foreach (var selectable in Selectables)
@@ -129,7 +132,7 @@ public class SimpleMenu : MonoBehaviour
 
     public void OnSelectChild(BaseEventData eventData)
     {
-        SelectSoundEvent?.Invoke();
+        _sfxPlayer.PlaySFX(SelectSoundEventReference);
         _lastSelected = eventData.selectedObject.GetComponent<Selectable>();
     }
 
@@ -224,6 +227,7 @@ public class SimpleMenu : MonoBehaviour
         UnityEditor.EditorApplication.isPlaying = false;
 #endif
     }
+
 
 }
 
