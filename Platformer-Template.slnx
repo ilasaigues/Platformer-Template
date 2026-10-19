@@ -37,6 +37,7 @@
   <Project Path="Zenject-Editor.csproj" />
   <Project Path="Unity.2D.Animation.Editor.csproj" />
   <Project Path="Game.Player.csproj" />
+  <Project Path="UniTask.csproj" />
   <Project Path="Unity.Searcher.Editor.csproj" />
   <Project Path="Unity.ResourceManager.csproj" />
   <Project Path="Unity.2D.SpriteShape.Runtime.csproj" />
@@ -54,6 +55,7 @@
   <Project Path="Unity.PerformanceTesting.csproj" />
   <Project Path="Unity.2D.Tilemap.Extras.Editor.csproj" />
   <Project Path="Unity.TextMeshPro.csproj" />
+  <Project Path="UniTask.Linq.csproj" />
   <Project Path="Unity.TextMeshPro.Editor.csproj" />
   <Project Path="PsdPlugin.csproj" />
   <Project Path="Unity.2D.IK.Editor.csproj" />
@@ -75,6 +77,7 @@
   <Project Path="Unity.2D.PixelPerfect.Editor.csproj" />
   <Project Path="Unity.Multiplayer.Center.Common.csproj" />
   <Project Path="FMODUnityEditor.csproj" />
+  <Project Path="Game.Settings.csproj" />
   <Project Path="FMODUnity.csproj" />
   <Project Path="LevelElements.csproj" />
   <Project Path="Zenject-PoolMonitor-Editor.csproj" />
@@ -88,8 +91,11 @@
   <Project Path="Game.ScriptableObjects.csproj" />
   <Project Path="Unity.VisualScripting.SettingsProvider.Editor.csproj" />
   <Project Path="UnityEditor.UI.Analytics.csproj" />
+  <Project Path="Game.SaveManagement.csproj" />
   <Project Path="Game.TimeContext.csproj" />
+  <Project Path="UniTask.TextMeshPro.csproj" />
   <Project Path="Unity.2D.Common.Runtime.csproj" />
+  <Project Path="Game.Audio.csproj" />
   <Project Path="Game.SceneManagement.csproj" />
   <Project Path="Unity.Settings.Editor.csproj" />
   <Project Path="Unity.InputSystem.TestFramework.csproj" />
@@ -106,7 +112,7 @@
   <Project Path="Game.VFX.csproj" />
   <Project Path="Game.GameManagement.csproj" />
   <Project Path="Game.UI.csproj" />
-  <Project Path="Game.Audio.csproj" />
+  <Project Path="UniTask.Editor.csproj" />
   <Project Path="Unity.2D.PixelPerfect.csproj" />
   <Project Path="Game.BehaviourMachine.csproj" />
   <Project Path="Assembly-CSharp-Editor.csproj" />
@@ -122,8 +128,10 @@
   <Project Path="Unity.ScriptableBuildPipeline.csproj" />
   <Project Path="Unity.PlasticSCM.Editor.Entities.csproj" />
   <Project Path="Unity.InternalAPIEditorBridge.004.csproj" />
+  <Project Path="UniTask.Addressables.csproj" />
   <Project Path="Unity.Rendering.LightTransport.Editor.csproj" />
   <Project Path="Unity.Collections.Editor.csproj" />
+  <Project Path="UniTask.DOTween.csproj" />
   <Project Path="Unity.RenderPipelines.Universal.Config.Runtime.csproj" />
   <Project Path="Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary.csproj" />
   <Project Path="Unity.RenderPipelines.Core.ShaderLibrary.csproj" />
