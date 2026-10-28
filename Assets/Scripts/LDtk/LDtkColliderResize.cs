@@ -5,9 +5,8 @@ public class LDtkColliderResize : MonoBehaviour, ILDtkImportedEntity
 {
     public void OnLDtkImportEntity(EntityInstance entityInstance)
     {
-        transform.localScale = Vector2.one;
-        BoxCollider2D collider = GetComponent<BoxCollider2D>();
-        collider.size = GetComponent<LDtkComponentEntity>().Size;
-        collider.offset = new Vector2(collider.size.x, -collider.size.y) / 2;
+        Vector2 newScale = GetComponent<LDtkComponentEntity>().Size;
+        transform.localScale = newScale;
+        transform.position += (Vector3)new Vector2(newScale.x, -newScale.y) / 2;
     }
 }

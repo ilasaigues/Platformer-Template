@@ -62,6 +62,14 @@
             }
         },
         {
+            "_key": "Cleaner",
+            "_asset": {
+                "fileID": 6472507193060519818,
+                "guid": "810a1ca6dd2f2f649b9f8372c66c3693",
+                "type": 3
+            }
+        },
+        {
             "_key": "Trap",
             "_asset": {
                 "fileID": 2814438238396818025,

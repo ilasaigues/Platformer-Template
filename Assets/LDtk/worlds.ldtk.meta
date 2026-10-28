@@ -35,6 +35,8 @@ ScriptedImporter:
   _entities:
   - _key: Boulder
     _asset: {fileID: 8881450139756665115, guid: 8efe9a562bfde0a44a02d9fb3a99afc8, type: 3}
+  - _key: Cleaner
+    _asset: {fileID: 6472507193060519818, guid: 810a1ca6dd2f2f649b9f8372c66c3693, type: 3}
   - _key: Trap
     _asset: {fileID: 2814438238396818025, guid: ef29f3c27b5f2ea40882a8043eac7460, type: 3}
   - _key: BreakableTerrain

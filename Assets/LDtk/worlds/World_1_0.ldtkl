@@ -76,7 +76,24 @@
 			"seed": 4847172,
 			"overrideTilesetUid": null,
 			"gridTiles": [],
-			"entityInstances": []
+			"entityInstances": [
+				{
+					"__identifier": "Cleaner",
+					"__grid": [7,9],
+					"__pivot": [0,0],
+					"__tags": ["interactables"],
+					"__tile": { "tilesetUid": 728, "x": 384, "y": 240, "w": 16, "h": 16 },
+					"__smartColor": "#EAD4AA",
+					"iid": "38d28420-bde0-11f1-8122-936a868d6249",
+					"width": 48,
+					"height": 176,
+					"defUid": 947,
+					"px": [112,144],
+					"fieldInstances": [],
+					"__worldX": 120,
+					"__worldY": 56
+				}
+			]
 		},
 		{
 			"__identifier": "Other",
