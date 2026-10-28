@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d8d8904a2707b442a41d0bb271d73b8, type: 3}
+  m_Name: MenuSoundList
+  m_EditorClassIdentifier: Game.Audio::MenuSoundList
+  HoverSoundEventReference: {fileID: 11400000, guid: 4552231b8cf6b9c41ac18543efee2b01, type: 2}
+  ConfirmSoundEventReference: {fileID: 11400000, guid: 7e809502bc6fb284086602f3837544a0, type: 2}
+  CancelMenuSoundEventReference: {fileID: 11400000, guid: 78fe81742c028724ab5c8b8f6046ecfc, type: 2}
+  PauseEnterEventReference: {fileID: 11400000, guid: feda0f947493b564caf9a89c5630f03d, type: 2}
+  PauseExitEventReference: {fileID: 11400000, guid: 94e893b67c639c34593b2a3f0ac528bc, type: 2}
+  SFXVolumeChangeSoundEventReference: {fileID: 11400000, guid: 1e4c9ea93fdd8db48b08527a8f670700, type: 2}
+  BGMVolumeChangeSoundEventReference: {fileID: 11400000, guid: b90ff2bf5677ffa4a88df28468b7e05f, type: 2}

@@ -28,6 +28,10 @@ ScriptedImporter:
     _asset: {fileID: 11400000, guid: 5377d35309705a649941e7c9beac70f8, type: 2}
   - _key: Doom_1
     _asset: {instanceID: 0}
+  - _key: Background_1_Level_1
+    _asset: {instanceID: 0}
+  - _key: Background_2_level_1
+    _asset: {instanceID: 0}
   _entities:
   - _key: Boulder
     _asset: {fileID: 8881450139756665115, guid: 8efe9a562bfde0a44a02d9fb3a99afc8, type: 3}
@@ -72,3 +76,7 @@ ScriptedImporter:
     _ldtkLayerOrder: -6
   - _ldtkLayerName: Doom
     _ldtkLayerOrder: -7
+  - _ldtkLayerName: Background_1_Level
+    _ldtkLayerOrder: -8
+  - _ldtkLayerName: Background_2_level
+    _ldtkLayerOrder: -9

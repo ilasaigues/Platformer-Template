@@ -18,4 +18,4 @@ MonoBehaviour:
       Data2: 1191146223
       Data3: -2080796241
       Data4: -1607729826
-    Path: event:/Get Power
+    Path: event:/SFX/UI/sfx_getPower

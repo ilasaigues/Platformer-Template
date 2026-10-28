@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8381759686995130331}
   - component: {fileID: 8973646344542743347}
   - component: {fileID: 7812762805972089903}
+  - component: {fileID: 5381081693789624455}
   m_Layer: 5
   m_Name: ExitMenu
   m_TagString: Untagged
@@ -66,10 +67,22 @@ MonoBehaviour:
   Selectables: []
   _firstSelected: {fileID: 2590955960343869133}
   _navigateReference: {fileID: -8784545083839296357, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
-  SelectSoundEvent:
-    m_PersistentCalls:
-      m_Calls: []
   SpecialCloseMenu: {fileID: 0}
+  MenuSounds: {fileID: 11400000, guid: ab27fb79345f4f64c840a5479756ef72, type: 2}
+  ShowTransition: {fileID: 11400000, guid: 607ff513ce87264449565b3273ebd44d, type: 2}
+  HideTransition: {fileID: 11400000, guid: 6e305b05270a70c4e96430e57bc70cb5, type: 2}
+--- !u!114 &5381081693789624455
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 477724124029774280}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 107b66e689322c343b31dc13ae1e9e4e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Game.Audio::SoundEffectPlayer
 --- !u!1 &2584451021379391795
 GameObject:
   m_ObjectHideFlags: 0
@@ -760,8 +773,8 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 8381759686995130331}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMin: {x: -10, y: -10}
+  m_AnchorMax: {x: 11, y: 11}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}

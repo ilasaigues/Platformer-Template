@@ -7,10 +7,16 @@ using UnityEngine.InputSystem;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using System;
-
+using System.Threading.Tasks;
+using Cysharp.Threading.Tasks;
+using Zenject;
+using FMODUnity;
+[RequireComponent(typeof(SoundEffectPlayer))]
 [RequireComponent(typeof(CanvasGroup))]
 public class SimpleMenu : MonoBehaviour
 {
+    UIInputHandler UIInputHandler;
+
 
     [Header("References")]
     public List<Selectable> Selectables = new();
@@ -19,8 +25,6 @@ public class SimpleMenu : MonoBehaviour
     [Header("Controls")]
     [SerializeField] protected InputActionReference _navigateReference;
 
-    [Header("Sounds")]
-    [SerializeField] protected UnityEvent SelectSoundEvent;
 
     protected Selectable _lastSelected;
 
@@ -31,14 +35,19 @@ public class SimpleMenu : MonoBehaviour
     [SerializeField]
     protected GameObject SpecialCloseMenu;
 
+    public MenuSoundList MenuSounds;
+
+    private SoundEffectPlayer _sfxPlayer;
 
     public event Action OnMenuClosed = delegate { };
 
-
-
+    public BaseUITransition ShowTransition;
+    public BaseUITransition HideTransition;
+    private SimpleMenu _subMenu;
 
     void Awake()
     {
+        _sfxPlayer = GetComponent<SoundEffectPlayer>();
         CanvasGroup = GetComponent<CanvasGroup>();
         Selectables = GetComponentsInChildren<Selectable>().ToList();
         foreach (var selectable in Selectables)
@@ -62,6 +71,22 @@ public class SimpleMenu : MonoBehaviour
     public virtual void OnDisable()
     {
         _navigateReference.action.performed -= OnNavigate;
+    }
+
+    public void SetInputHandler(UIInputHandler inputHandler)
+    {
+        UIInputHandler = inputHandler;
+        UIInputHandler.OnMenuButtonPressed += MenuButtonPressed;
+    }
+
+    void OnDestroy()
+    {
+        UIInputHandler.OnMenuButtonPressed -= MenuButtonPressed;
+    }
+
+    void MenuButtonPressed()
+    {
+        CloseMenu();
     }
 
     protected virtual void AddListenersToSelectable(Selectable selectable)
@@ -105,9 +130,29 @@ public class SimpleMenu : MonoBehaviour
 
     }
 
+    public void PlayConfirmSound()
+    {
+        _sfxPlayer.PlaySFX(MenuSounds.ConfirmSoundEventReference.eventReference);
+    }
+
+    public void PlayCancelSound()
+    {
+        _sfxPlayer.PlaySFX(MenuSounds.CancelMenuSoundEventReference.eventReference);
+    }
+
+    public void PlaySFXAdjustSound()
+    {
+        _sfxPlayer.PlaySFX(MenuSounds.SFXVolumeChangeSoundEventReference.eventReference);
+    }
+
+    public void PlayBGMAdjustSound()
+    {
+        _sfxPlayer.PlaySFX(MenuSounds.BGMVolumeChangeSoundEventReference.eventReference);
+    }
+
     public void OnSelectChild(BaseEventData eventData)
     {
-        SelectSoundEvent?.Invoke();
+        _sfxPlayer.PlaySFX(MenuSounds.HoverSoundEventReference.eventReference);
         _lastSelected = eventData.selectedObject.GetComponent<Selectable>();
     }
 
@@ -145,23 +190,50 @@ public class SimpleMenu : MonoBehaviour
         }
     }
 
-    public void OpenSubmenu(GameObject prefab)
+    public async void OpenSubmenu(GameObject prefab)
     {
-        var subMenu = Instantiate(prefab, transform.parent).GetComponent<SimpleMenu>();
-        subMenu.OnMenuClosed += ChildMenuClosed;
+        PlayConfirmSound();
         CanvasGroup.interactable = false;
+        _subMenu = Instantiate(prefab, transform.parent).GetComponent<SimpleMenu>();
+        if (UIInputHandler != null)
+        {
+            _subMenu.SetInputHandler(UIInputHandler);
+        }
+        await _subMenu.ShowMenu();
+        _subMenu.OnMenuClosed += ChildMenuClosed;
     }
 
-    private void ChildMenuClosed()
+
+    private async void ChildMenuClosed()
     {
+        await ShowMenu(false);
         CanvasGroup.interactable = true;
     }
 
-    public void CloseMenu()
+    async Task ShowMenu(bool doTransition = true)
     {
+        if (doTransition) await ShowTransition?.DoTransition(gameObject);
+    }
+
+    async Task HideMenu()
+    {
+        await HideTransition?.DoTransition(gameObject);
+    }
+
+    public async void CloseMenu()
+    {
+        if (_subMenu != null)
+        {
+            _subMenu.CloseMenu();
+            return;
+        }
+
         if (!SpecialCloseMenu)
         {
+            CanvasGroup.interactable = false;
             OnMenuClosed();
+            PlayCancelSound();
+            await HideMenu();
             Destroy(gameObject);
         }
         else
@@ -177,6 +249,7 @@ public class SimpleMenu : MonoBehaviour
         UnityEditor.EditorApplication.isPlaying = false;
 #endif
     }
+
 
 }
 
