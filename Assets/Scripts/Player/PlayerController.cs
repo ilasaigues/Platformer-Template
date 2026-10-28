@@ -303,7 +303,11 @@ public class PlayerController : MonoBehaviour, IMovementControllable, ISqueezabl
                 }
                 if (hit.collider.GetComponent<PowerRemover>() is not null)
                 {
-                    AbilityQueue.Clear();
+                    if(AbilityQueue.AbilityQueue.Count != 0)
+                    {
+                        PlaySFX(SoundList.powerClearSFX);
+                        AbilityQueue.Clear();
+                    }   
                 }
             }
         }

@@ -22,3 +22,4 @@ MonoBehaviour:
   transitionSFX: {fileID: 11400000, guid: 5e0d25bf1e49b7044a62ecc1921915e3, type: 2}
   travelStartSFX: {fileID: 11400000, guid: ab29335e8034dd348ab607c76ad486e2, type: 2}
   travelEndSFX: {fileID: 11400000, guid: 2dda68fadcc9a2a448919cb922e5626e, type: 2}
+  powerClearSFX: {fileID: 11400000, guid: 28300e57329a87e44b946cd82c5fb3d8, type: 2}
