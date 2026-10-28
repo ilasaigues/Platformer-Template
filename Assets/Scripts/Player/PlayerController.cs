@@ -258,6 +258,8 @@ public class PlayerController : MonoBehaviour, IMovementControllable, ISqueezabl
         CheckHazards();
     }
 
+
+
     void CheckHazards()
     {
         List<RaycastHit2D> hits = new();
@@ -298,6 +300,10 @@ public class PlayerController : MonoBehaviour, IMovementControllable, ISqueezabl
                             GainAbility(GameManager.AbilityType.Dash);
                             break;
                     }
+                }
+                if (hit.collider.GetComponent<PowerRemover>() is not null)
+                {
+                    AbilityQueue.Clear();
                 }
             }
         }
