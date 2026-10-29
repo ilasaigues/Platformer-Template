@@ -51,7 +51,31 @@
 			"seed": 1324962,
 			"overrideTilesetUid": null,
 			"gridTiles": [],
-			"entityInstances": []
+			"entityInstances": [
+				{
+					"__identifier": "Boulder",
+					"__grid": [15,9],
+					"__pivot": [0,0],
+					"__tags": ["hazard"],
+					"__tile": { "tilesetUid": 271, "x": 0, "y": 0, "w": 48, "h": 48 },
+					"__smartColor": "#EAD4AA",
+					"iid": "d60d9800-bde0-11f1-986b-5d3a7c8b08e0",
+					"width": 48,
+					"height": 48,
+					"defUid": 270,
+					"px": [240,144],
+					"fieldInstances": [
+						{ "__identifier": "boulderDirections", "__type": "Array<LocalEnum.Orientation>", "__value": [ "Down", "Up" ], "__tile": null, "defUid": 283, "realEditorValues": [ null, {
+							"id": "V_String",
+							"params": ["Up"]
+						} ] },
+						{ "__identifier": "speed", "__type": "Float", "__value": 10, "__tile": null, "defUid": 285, "realEditorValues": [] },
+						{ "__identifier": "stopTime", "__type": "Float", "__value": 1, "__tile": null, "defUid": 288, "realEditorValues": [{ "id": "V_Float", "params": [1] }] }
+					],
+					"__worldX": 248,
+					"__worldY": 56
+				}
+			]
 		},
 		{
 			"__identifier": "Interactables",
@@ -85,7 +109,7 @@
 					"__tile": null,
 					"__smartColor": "#EAEAEA",
 					"iid": "b9542600-bde0-11f1-ad91-559b3683b799",
-					"width": 80,
+					"width": 64,
 					"height": 176,
 					"defUid": 947,
 					"px": [112,144],
@@ -137,7 +161,7 @@
 				},
 				{
 					"__identifier": "World_start",
-					"__grid": [4,18],
+					"__grid": [4,17],
 					"__pivot": [0.5,0.5],
 					"__tags": ["doors"],
 					"__tile": { "tilesetUid": 728, "x": 304, "y": 272, "w": 16, "h": 16 },
@@ -146,10 +170,10 @@
 					"width": 16,
 					"height": 16,
 					"defUid": 301,
-					"px": [72,296],
+					"px": [72,280],
 					"fieldInstances": [],
 					"__worldX": 80,
-					"__worldY": 208
+					"__worldY": 192
 				}
 			]
 		},

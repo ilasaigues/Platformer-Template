@@ -24,6 +24,7 @@ public class PlayerRockBehaviour : BasePlayerBehaviour, IPlayerAbilityBehaviour
     public override void Enter()
     {
         _released = false;
+        PlayerController.PlaySFX(PlayerController.SoundList.shieldEnterSFX);
         TimeLastUsed = PlayerController.TimeContext.Time;
         PlayerController.InputHandler.RockButton.OnRelease += OnRockButtonRelease;
         PlayerController.MovementController.CanBeSqueezed = false;
