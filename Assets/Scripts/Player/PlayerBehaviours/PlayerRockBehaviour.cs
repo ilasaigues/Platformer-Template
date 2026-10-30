@@ -114,6 +114,7 @@ public class PlayerRockBehaviour : BasePlayerBehaviour, IPlayerAbilityBehaviour
 
         if (_released && PlayerController.TimeContext.Time - TimeLastUsed >= PlayerController.AbilityStats.MinRockTime)
         {
+            PlayerController.PlaySFX(PlayerController.SoundList.shieldExitSFX);
             if (PlayerController.MovementController.Grounded)
             {
                 return BehaviourChangeRequest.New<PlayerIdleBehaviour>();
