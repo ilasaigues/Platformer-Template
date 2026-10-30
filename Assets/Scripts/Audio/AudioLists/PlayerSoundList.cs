@@ -5,5 +5,5 @@ using FMODUnity;
 public class PlayerSoundList : ScriptableObject
 {
     public SFXEvent jumpSFX, stepSFX, doubleJumpSFX, landSFX, deathSFX, respawnSFX, bounceSFX, transitionSFX, travelStartSFX, travelEndSFX, powerClearSFX, shieldEnterSFX,
-    shieldExitSFX;
+    shieldExitSFX, dashSFX;
 }

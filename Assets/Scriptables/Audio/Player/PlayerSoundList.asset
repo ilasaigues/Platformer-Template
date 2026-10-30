@@ -25,3 +25,4 @@ MonoBehaviour:
   powerClearSFX: {fileID: 11400000, guid: 28300e57329a87e44b946cd82c5fb3d8, type: 2}
   shieldEnterSFX: {fileID: 11400000, guid: 7f9dfec09aa4a344c8d694135e010768, type: 2}
   shieldExitSFX: {fileID: 11400000, guid: 723af4aa62d592742a7fe0fb7653c46c, type: 2}
+  dashSFX: {fileID: 11400000, guid: 91b89befa3edfd64ebe44bf80a347f9c, type: 2}

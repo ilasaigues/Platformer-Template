@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2880bf251852e44b8552c6fcd8a5191, type: 3}
   m_Name: PlayerStats
   m_EditorClassIdentifier: Assembly-CSharp::PlayerStats
-  groundedSpeed: 7.5
+  groundedSpeed: 8
   groundedAccelerationTime: 0.125
   groundedDecelerationTime: 0.075
-  airSpeed: 7.5
+  airSpeed: 8
   airAccelerationTime: 0.25
   airDecelerationTime: 0.1
   jumpVelocity: 14
@@ -34,3 +34,4 @@ MonoBehaviour:
   DashColliderSize: {x: 0.5, y: 0.5}
   DeathDuration: 0.75
   ReviveDuration: 0.41666666
+  LevelTransitionTime: 3

@@ -76,6 +76,7 @@ public class PlayerDashBehaviour : BasePlayerBehaviour, IPlayerAbilityBehaviour
                 PlayAnim(PlayerController.PlayerAnimator.AnimationList.Dash);
                 PlayerController.StartTrail();
                 _windingUp = false;
+                PlayerController.PlaySFX(PlayerController.SoundList.dashSFX);
             }
             if (_direction == 0)
             {
@@ -93,10 +94,10 @@ public class PlayerDashBehaviour : BasePlayerBehaviour, IPlayerAbilityBehaviour
             //  move constantly in direction by speed (dashDistance/dashTime)
             PlayerController.MovementController.SetVelocity(PlayerController.AbilityStats.DashVelocity * _direction, null);
         }
-        /*else if (_elapsedTime <= PlayerController.AbilityStats.TotalDashTime) // winddown
+        else if (_elapsedTime <= PlayerController.AbilityStats.TotalDashTime) // winddown
         {
-            PlayerController.MovementController.SetVelocity(Vector2.zero);
-        }*/
+            PlayerController.MovementController.SetVelocity(PlayerController.AbilityStats.DashVelocity * PlayerController.AbilityStats.DashEndMultiplier * _direction, null);
+        }
     }
 
     public override void Update(float delta)
@@ -109,6 +110,5 @@ public class PlayerDashBehaviour : BasePlayerBehaviour, IPlayerAbilityBehaviour
         PlayerController.CollisionController.ResizeMainCollider(PlayerController.PlayerStats.DefaultColliderSize, Vector2.zero);
         PlayerController.MovementController.CheckAndFixOverlap();
         PlayerController.ToggleDashParticles(0);
-        PlayerController.MovementController.SetVelocity(PlayerController.MovementController.Velocity.x * PlayerController.AbilityStats.DashEndMultiplier, null);
     }
 }

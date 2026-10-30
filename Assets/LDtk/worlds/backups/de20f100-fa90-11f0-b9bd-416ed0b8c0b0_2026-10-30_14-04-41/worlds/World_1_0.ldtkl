@@ -51,7 +51,31 @@
 			"seed": 1324962,
 			"overrideTilesetUid": null,
 			"gridTiles": [],
-			"entityInstances": []
+			"entityInstances": [
+				{
+					"__identifier": "Boulder",
+					"__grid": [14,9],
+					"__pivot": [0,0],
+					"__tags": ["hazard"],
+					"__tile": { "tilesetUid": 271, "x": 0, "y": 0, "w": 48, "h": 48 },
+					"__smartColor": "#EAD4AA",
+					"iid": "d60d9800-bde0-11f1-986b-5d3a7c8b08e0",
+					"width": 80,
+					"height": 48,
+					"defUid": 270,
+					"px": [224,144],
+					"fieldInstances": [
+						{ "__identifier": "boulderDirections", "__type": "Array<LocalEnum.Orientation>", "__value": [ "Down", "Up" ], "__tile": null, "defUid": 283, "realEditorValues": [ null, {
+							"id": "V_String",
+							"params": ["Up"]
+						} ] },
+						{ "__identifier": "speed", "__type": "Float", "__value": 25, "__tile": null, "defUid": 285, "realEditorValues": [{ "id": "V_Float", "params": [25] }] },
+						{ "__identifier": "stopTime", "__type": "Float", "__value": 1, "__tile": null, "defUid": 288, "realEditorValues": [{ "id": "V_Float", "params": [1] }] }
+					],
+					"__worldX": 232,
+					"__worldY": 56
+				}
+			]
 		},
 		{
 			"__identifier": "Interactables",
@@ -79,19 +103,19 @@
 			"entityInstances": [
 				{
 					"__identifier": "Cleaner",
-					"__grid": [7,8],
+					"__grid": [7,9],
 					"__pivot": [0,0],
 					"__tags": ["interactables"],
 					"__tile": null,
 					"__smartColor": "#EAEAEA",
 					"iid": "b9542600-bde0-11f1-ad91-559b3683b799",
 					"width": 64,
-					"height": 208,
+					"height": 176,
 					"defUid": 947,
-					"px": [112,128],
+					"px": [112,144],
 					"fieldInstances": [],
 					"__worldX": 120,
-					"__worldY": 40
+					"__worldY": 56
 				}
 			]
 		},
@@ -220,6 +244,28 @@
 					],
 					"__worldX": 504,
 					"__worldY": 216
+				},
+				{
+					"__identifier": "Soft_respawn",
+					"__grid": [13,8],
+					"__pivot": [0,0],
+					"__tags": ["spawn"],
+					"__tile": null,
+					"__smartColor": "#6EFF00",
+					"iid": "f1970070-bde0-11f1-986b-f3a7a60bba42",
+					"width": 112,
+					"height": 192,
+					"defUid": 291,
+					"px": [208,128],
+					"fieldInstances": [
+						{ "__identifier": "point", "__type": "Point", "__value": { "cx": 11, "cy": 19 }, "__tile": null, "defUid": 296, "realEditorValues": [{
+							"id": "V_String",
+							"params": ["11,19"]
+						}] },
+						{ "__identifier": "type", "__type": "LocalEnum.RespawnType", "__value": "Soft", "__tile": null, "defUid": 299, "realEditorValues": [] }
+					],
+					"__worldX": 216,
+					"__worldY": 40
 				}
 			]
 		},

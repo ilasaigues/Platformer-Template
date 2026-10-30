@@ -13,3 +13,4 @@ MonoBehaviour:
   m_Name: HazardSoundList
   m_EditorClassIdentifier: Game.Audio::HazardSoundList
   BoulderHitSFX: {fileID: 11400000, guid: d08e1e9ff653b6d4e8e20763241c281a, type: 2}
+  SpikesOnSFX: {fileID: 11400000, guid: 49b8d8105640e2345b3a6c489b9fc47b, type: 2}
