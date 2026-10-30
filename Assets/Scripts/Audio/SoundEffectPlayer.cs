@@ -1,12 +1,13 @@
 using UnityEngine;
 using FMODUnity;
+[RequireComponent(typeof(StudioEventEmitter))]
 
 public class SoundEffectPlayer : MonoBehaviour
 {
+    StudioEventEmitter _eventEmitter;
     public void PlaySFX(EventReference SFXreference)
     {
-        var instance = RuntimeManager.CreateInstance(SFXreference);
-        instance.start();
+        RuntimeManager.PlayOneShotAttached(SFXreference, gameObject);
     }
     public void PlaySFXReference(SFXEvent SFXEvent)
     {

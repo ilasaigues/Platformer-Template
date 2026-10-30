@@ -96,6 +96,8 @@ public class PlayerDashBehaviour : BasePlayerBehaviour, IPlayerAbilityBehaviour
         }
         else if (_elapsedTime <= PlayerController.AbilityStats.TotalDashTime) // winddown
         {
+            PlayerController.CollisionController.ResizeMainCollider(PlayerController.PlayerStats.DefaultColliderSize, Vector2.zero);
+            PlayerController.MovementController.CheckAndFixOverlap();
             PlayerController.MovementController.SetVelocity(PlayerController.AbilityStats.DashVelocity * PlayerController.AbilityStats.DashEndMultiplier * _direction, null);
         }
     }
@@ -107,8 +109,6 @@ public class PlayerDashBehaviour : BasePlayerBehaviour, IPlayerAbilityBehaviour
     public override void Exit()
     {
         EnqueueAnim(PlayerController.PlayerAnimator.AnimationList.DashExit);
-        PlayerController.CollisionController.ResizeMainCollider(PlayerController.PlayerStats.DefaultColliderSize, Vector2.zero);
-        PlayerController.MovementController.CheckAndFixOverlap();
         PlayerController.ToggleDashParticles(0);
     }
 }
