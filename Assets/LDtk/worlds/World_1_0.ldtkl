@@ -54,25 +54,25 @@
 			"entityInstances": [
 				{
 					"__identifier": "Boulder",
-					"__grid": [15,9],
+					"__grid": [14,9],
 					"__pivot": [0,0],
 					"__tags": ["hazard"],
 					"__tile": { "tilesetUid": 271, "x": 0, "y": 0, "w": 48, "h": 48 },
 					"__smartColor": "#EAD4AA",
 					"iid": "d60d9800-bde0-11f1-986b-5d3a7c8b08e0",
-					"width": 48,
+					"width": 80,
 					"height": 48,
 					"defUid": 270,
-					"px": [240,144],
+					"px": [224,144],
 					"fieldInstances": [
 						{ "__identifier": "boulderDirections", "__type": "Array<LocalEnum.Orientation>", "__value": [ "Down", "Up" ], "__tile": null, "defUid": 283, "realEditorValues": [ null, {
 							"id": "V_String",
 							"params": ["Up"]
 						} ] },
-						{ "__identifier": "speed", "__type": "Float", "__value": 10, "__tile": null, "defUid": 285, "realEditorValues": [] },
+						{ "__identifier": "speed", "__type": "Float", "__value": 25, "__tile": null, "defUid": 285, "realEditorValues": [{ "id": "V_Float", "params": [25] }] },
 						{ "__identifier": "stopTime", "__type": "Float", "__value": 1, "__tile": null, "defUid": 288, "realEditorValues": [{ "id": "V_Float", "params": [1] }] }
 					],
-					"__worldX": 248,
+					"__worldX": 232,
 					"__worldY": 56
 				}
 			]

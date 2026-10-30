@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 1263332587723611801}
   - component: {fileID: 2854127036962657138}
   - component: {fileID: 5059461700629580757}
+  - component: {fileID: 5510551443771223523}
   m_Layer: 11
   m_Name: boulder
   m_TagString: Untagged
@@ -196,3 +197,16 @@ MonoBehaviour:
   - {x: 10, y: 0}
   - {x: -10, y: 0}
   StopTime: 1
+  SoundList: {fileID: 11400000, guid: 193b1493d7ace0a4dacfe516ed36478e, type: 2}
+--- !u!114 &5510551443771223523
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8881450139756665115}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 107b66e689322c343b31dc13ae1e9e4e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Game.Audio::SoundEffectPlayer
