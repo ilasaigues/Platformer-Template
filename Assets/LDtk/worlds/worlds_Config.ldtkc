@@ -12,12 +12,6 @@
     "ScaleEntities": true,
     "IntGridValues": [
         {
-            "_key": "Thorns_1",
-            "_asset": {
-                "instanceID": 0
-            }
-        },
-        {
             "_key": "Terrain_8x8_1",
             "_asset": {
                 "fileID": 11400000,
@@ -31,6 +25,12 @@
                 "fileID": 11400000,
                 "guid": "5377d35309705a649941e7c9beac70f8",
                 "type": 2
+            }
+        },
+        {
+            "_key": "Thorns_1",
+            "_asset": {
+                "instanceID": 0
             }
         },
         {
@@ -74,6 +74,14 @@
             "_asset": {
                 "fileID": 2814438238396818025,
                 "guid": "ef29f3c27b5f2ea40882a8043eac7460",
+                "type": 3
+            }
+        },
+        {
+            "_key": "Thorns",
+            "_asset": {
+                "fileID": 8881450139756665115,
+                "guid": "5ba4bed3377dc0747a71240dcaa408fb",
                 "type": 3
             }
         },

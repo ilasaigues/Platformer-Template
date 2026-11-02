@@ -78,8 +78,9 @@ public class AutoSpikesHazard : BaseHazard, ILDtkImportedFields
                 break;
         }
         BoxCollider2D collider = GetComponent<BoxCollider2D>();
-        collider.size = new Vector2(newSize.x, 6.ToPixels());
-        collider.offset = collider.size / 2;
+        colliderReduction = ((int)colliderReduction).ToPixels();
+        collider.size = new Vector2(newSize.x - colliderReduction, 6.ToPixels());
+        collider.offset = collider.size / 2 + Vector2.right * colliderReduction/2f;
         GetComponent<SpriteRenderer>().size = newSize;
         UpTime = fields.GetFloat("upTime");
         DownTime = fields.GetFloat("downTime");

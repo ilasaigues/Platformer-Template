@@ -120,4 +120,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RespawnTrigger
   _respawnTransform: {fileID: 0}
+  colliderReduction: 1
   respawnType: 0

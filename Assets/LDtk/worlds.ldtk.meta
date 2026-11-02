@@ -20,12 +20,12 @@ ScriptedImporter:
   _useParallax: 1
   _scaleEntities: 1
   _intGridValues:
-  - _key: Thorns_1
-    _asset: {instanceID: 0}
   - _key: Terrain_8x8_1
     _asset: {fileID: 11400000, guid: 11d72f96735c40d42ba25e4a2a316d0f, type: 2}
   - _key: Terrain_8x8_2
     _asset: {fileID: 11400000, guid: 5377d35309705a649941e7c9beac70f8, type: 2}
+  - _key: Thorns_1
+    _asset: {instanceID: 0}
   - _key: Doom_1
     _asset: {instanceID: 0}
   - _key: Background_1_Level_1
@@ -39,6 +39,8 @@ ScriptedImporter:
     _asset: {fileID: 6472507193060519818, guid: 810a1ca6dd2f2f649b9f8372c66c3693, type: 3}
   - _key: Trap
     _asset: {fileID: 2814438238396818025, guid: ef29f3c27b5f2ea40882a8043eac7460, type: 3}
+  - _key: Thorns
+    _asset: {fileID: 8881450139756665115, guid: 5ba4bed3377dc0747a71240dcaa408fb, type: 3}
   - _key: BreakableTerrain
     _asset: {fileID: 4968985753700225028, guid: 7640eced8a4cd4645925c1bd62459114, type: 3}
   - _key: World_start
@@ -62,8 +64,6 @@ ScriptedImporter:
   _enumNamespace: 
   _useLayerCustomSortingOrders: 0
   _layerCustomSortingOrders:
-  - _ldtkLayerName: Hazards
-    _ldtkLayerOrder: 0
   - _ldtkLayerName: Interactables
     _ldtkLayerOrder: -1
   - _ldtkLayerName: Other
@@ -72,10 +72,12 @@ ScriptedImporter:
     _ldtkLayerOrder: -3
   - _ldtkLayerName: Bounds
     _ldtkLayerOrder: -4
-  - _ldtkLayerName: Thorns
-    _ldtkLayerOrder: -5
   - _ldtkLayerName: Terrain_8x8
     _ldtkLayerOrder: -6
+  - _ldtkLayerName: Hazards
+    _ldtkLayerOrder: 0
+  - _ldtkLayerName: Thorns
+    _ldtkLayerOrder: -5
   - _ldtkLayerName: Doom
     _ldtkLayerOrder: -7
   - _ldtkLayerName: Background_1_Level

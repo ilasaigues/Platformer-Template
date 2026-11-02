@@ -3,7 +3,8 @@ using UnityEngine;
 [RequireComponent(typeof(Collider2D))]
 public class BaseHazard : MonoBehaviour
 {
-    public enum HazardType
+   public float colliderReduction;
+   public enum HazardType
     {
         Doom,
         DoubleJump,

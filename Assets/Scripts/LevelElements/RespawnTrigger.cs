@@ -9,6 +9,7 @@ public class RespawnTrigger : MonoBehaviour, ILDtkImportedFields
 {
     [SerializeField]
     private Transform _respawnTransform;
+    public float colliderReduction;
 
 
     public RespawnType respawnType;
@@ -41,8 +42,9 @@ public class RespawnTrigger : MonoBehaviour, ILDtkImportedFields
         transform.localScale = Vector3.one;
         respawnType = fields.GetEnum<RespawnType>("type");
         BoxCollider2D collider = GetComponent<BoxCollider2D>();
-        collider.size = GetComponent<LDtkComponentEntity>().Size;
-        collider.offset = new Vector2(collider.size.x, -collider.size.y) / 2;
+        colliderReduction = colliderReduction/16f;
+        collider.size = GetComponent<LDtkComponentEntity>().Size - (Vector2.one * colliderReduction);
+        collider.offset = new Vector2(collider.size.x, -collider.size.y) / 2 + new Vector2(0.5f,-0.5f) * colliderReduction;
         _respawnTransform = transform.GetComponentsInChildren<Transform>().First(t => t.gameObject.name == "point_0");
     }
 }

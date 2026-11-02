@@ -1,0 +1,40 @@
+{
+  "Rects": [
+    {
+      "x": 0,
+      "y": 0,
+      "w": 48,
+      "h": 48
+    }
+  ],
+  "Def": {
+    "__cHei": 3,
+    "__cWid": 3,
+    "cachedPixelData": {
+      "opaqueTiles": "000000000",
+      "averageColors": "847394739373a473a473a473847394738473"
+    },
+    "customData": [
+
+    ],
+    "embedAtlas": null,
+    "enumTags": [
+
+    ],
+    "identifier": "Thorns_entity",
+    "padding": 0,
+    "pxHei": 48,
+    "pxWid": 48,
+    "relPath": "../Sprites/Tilesets/Hazards/thorns_entity.png",
+    "savedSelections": [
+
+    ],
+    "spacing": 0,
+    "tags": [
+      "Hazard"
+    ],
+    "tagsSourceEnumUid": null,
+    "tileGridSize": 16,
+    "uid": 965
+  }
+}
