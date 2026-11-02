@@ -19,11 +19,15 @@ public class AutoSpikesHazard : BaseHazard, ILDtkImportedFields
 
     private float _timer => _innerTimer - TimeOffset;
 
+    private SoundEffectPlayer _sfxPlayer;
+    public HazardSoundList SoundList;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         _timeContext.CreateContextModules(gameObject);
         _animator = GetComponent<Animator>();
+        _sfxPlayer = GetComponent<SoundEffectPlayer>();
     }
 
     // Update is called once per frame
@@ -34,6 +38,7 @@ public class AutoSpikesHazard : BaseHazard, ILDtkImportedFields
         {
             _isUp = true;
             _animator.Play("dash_spikes_on");
+            _sfxPlayer.PlaySFXReference(SoundList.SpikesOnSFX);
             Debug.DrawRay(transform.position, Vector2.up, Color.red, 0.2f);
         }
 

@@ -7,6 +7,7 @@ using Zenject;
 [RequireComponent(typeof(ObjectMovementComponent))]
 public class BoulderHazard : MonoBehaviour, ILDtkImportedFields
 {
+    
     public Vector2[] Velocities;
     private int _currentVelocityIndex = 0;
     ObjectMovementComponent _movementComponent;
@@ -15,12 +16,14 @@ public class BoulderHazard : MonoBehaviour, ILDtkImportedFields
 
     public float StopTime = 1;
     private float _stopTimer = 0;
-
+    private SoundEffectPlayer _SFXPlayer;
+    public HazardSoundList SoundList;
     private Vector2 _size;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        _SFXPlayer = gameObject.GetOrAddComponent<SoundEffectPlayer>();
         _timeContext.CreateContextModules(gameObject);
         _movementComponent = GetComponent<ObjectMovementComponent>();
         _movementComponent.OnSqueeze += PlayerSqueezed;
@@ -34,6 +37,7 @@ public class BoulderHazard : MonoBehaviour, ILDtkImportedFields
 
     private void ObstacleHit()
     {
+        _SFXPlayer.PlaySFXReference(SoundList.BoulderHitSFX);
         _currentVelocityIndex = (_currentVelocityIndex + 1) % Velocities.Length;
         _movementComponent.SetVelocity(Vector2.zero);
         _stopTimer = StopTime;

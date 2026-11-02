@@ -16,12 +16,12 @@ MonoBehaviour:
   MinRockTime: 0.25
   RockBreakSpeeds: {x: 23, y: 30}
   RockTerminalVelocity: -30
-  DashWindupTime: 0.033333335
-  DashMovementTime: 0.25
-  DashWinddownTime: 0
-  DashEndMultiplier: 0.75
+  DashWindupTime: 0.05
+  DashMovementTime: 0.1
+  DashWinddownTime: 0.1
+  DashEndMultiplier: 0.25
   DashPause: 0
-  DashDistance: 8
+  DashDistance: 5
   DashCooldown: 0.75
   DoubleJumpVelocity: 14
   DoubleJumpMinTime: 0.15

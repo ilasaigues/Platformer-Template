@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ca618fdc69dab747baedb0e0dc9b660, type: 3}
+  m_Name: PlayerDash
+  m_EditorClassIdentifier: Game.Audio::PlayerSFX
+  eventReference:
+    Guid:
+      Data1: -1994052994
+      Data2: 1181423584
+      Data3: -1433465471
+      Data4: -43982387
+    Path: event:/SFX/Character/sfx_playerDash
