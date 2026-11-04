@@ -1,7 +1,7 @@
 using UnityEngine;
 using LDtkUnity;
 
-public class LDtkColliderResize : MonoBehaviour, ILDtkImportedEntity
+public partial class LDtkColliderResize : MonoBehaviour, ILDtkImportedEntity
 {
     public void OnLDtkImportEntity(EntityInstance entityInstance)
     {
