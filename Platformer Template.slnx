@@ -14,15 +14,17 @@
   <Project Path="Game.TimeContext.csproj" />
   <Project Path="Game.Audio.csproj" />
   <Project Path="Game.SceneManagement.csproj" />
+  <Project Path="Assembly-CSharp-Editor.csproj" />
   <Project Path="Game.Input.csproj" />
   <Project Path="Game.Extensions.csproj" />
-  <Project Path="Game.Utils.csproj" />
+  <Project Path="Game.Utils.Editor.csproj" />
   <Project Path="FMODUnityResonance.csproj" />
   <Project Path="Game.VFX.csproj" />
   <Project Path="Game.GameManagement.csproj" />
   <Project Path="Game.UI.csproj" />
   <Project Path="Game.BehaviourMachine.csproj" />
-  <Project Path="Assembly-CSharp-Editor.csproj" />
   <Project Path="Editor.Game.AssetProcessing.csproj" />
   <Project Path="LdtkUnity.Generated.csproj" />
+  <Project Path="Game.ScriptableObjects.Editor.csproj" />
+  <Project Path="Game.Utils.csproj" />
 </Solution>
