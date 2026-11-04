@@ -67,5 +67,5 @@
         "*.sln": "*.csproj",
         "*.slnx": "*.csproj"
     },
-    "dotnet.defaultSolution": "Platformer-Template.slnx"
+    "dotnet.defaultSolution": "Platformer Template.slnx"
 }
