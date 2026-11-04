@@ -179,9 +179,9 @@
 		{
 			"__identifier": "Spawns",
 			"__type": "Entities",
-			"__cWid": 76,
-			"__cHei": 39,
-			"__gridSize": 16,
+			"__cWid": 152,
+			"__cHei": 78,
+			"__gridSize": 8,
 			"__opacity": 1,
 			"__pxTotalOffsetX": 0,
 			"__pxTotalOffsetY": 0,
@@ -202,7 +202,7 @@
 			"entityInstances": [
 				{
 					"__identifier": "Soft_respawn",
-					"__grid": [35,17],
+					"__grid": [70,34],
 					"__pivot": [0,0],
 					"__tags": ["spawn"],
 					"__tile": null,
@@ -224,7 +224,7 @@
 				},
 				{
 					"__identifier": "Hard_respawn",
-					"__grid": [20,17],
+					"__grid": [40,34],
 					"__pivot": [0,0],
 					"__tags": ["spawn"],
 					"__tile": null,
@@ -246,7 +246,7 @@
 				},
 				{
 					"__identifier": "Soft_respawn",
-					"__grid": [47,17],
+					"__grid": [94,34],
 					"__pivot": [0,0],
 					"__tags": ["spawn"],
 					"__tile": null,
@@ -268,7 +268,7 @@
 				},
 				{
 					"__identifier": "Soft_respawn",
-					"__grid": [58,17],
+					"__grid": [116,34],
 					"__pivot": [0,0],
 					"__tags": ["spawn"],
 					"__tile": null,
@@ -10297,9 +10297,9 @@
 		{
 			"__identifier": "Hazards",
 			"__type": "Entities",
-			"__cWid": 76,
-			"__cHei": 39,
-			"__gridSize": 16,
+			"__cWid": 152,
+			"__cHei": 78,
+			"__gridSize": 8,
 			"__opacity": 1,
 			"__pxTotalOffsetX": 0,
 			"__pxTotalOffsetY": 0,
@@ -10319,32 +10319,8 @@
 			"gridTiles": [],
 			"entityInstances": [
 				{
-					"__identifier": "Trap",
-					"__grid": [47,23],
-					"__pivot": [0,1],
-					"__tags": ["hazard"],
-					"__tile": { "tilesetUid": 273, "x": 0, "y": 32, "w": 32, "h": 16 },
-					"__smartColor": "#E4A672",
-					"iid": "bf166680-21a0-11f1-8211-23cc92b3314b",
-					"width": 144,
-					"height": 16,
-					"defUid": 272,
-					"px": [752,384],
-					"fieldInstances": [
-						{ "__identifier": "direction", "__type": "LocalEnum.Orientation", "__value": "Up", "__tile": null, "defUid": 286, "realEditorValues": [] },
-						{ "__identifier": "upTime", "__type": "Float", "__value": 1, "__tile": null, "defUid": 289, "realEditorValues": [] },
-						{ "__identifier": "downTime", "__type": "Float", "__value": 1, "__tile": null, "defUid": 290, "realEditorValues": [] },
-						{ "__identifier": "offset", "__type": "Float", "__value": 0, "__tile": null, "defUid": 307, "realEditorValues": [] },
-						{ "__identifier": "canPowerUp", "__type": "Bool", "__value": false, "__tile": null, "defUid": 951, "realEditorValues": [] },
-						{ "__identifier": "givesPowerUp", "__type": "Bool", "__value": false, "__tile": null, "defUid": 952, "realEditorValues": [] },
-						{ "__identifier": "ID", "__type": "Int", "__value": 0, "__tile": null, "defUid": 953, "realEditorValues": [] }
-					],
-					"__worldX": 384,
-					"__worldY": 160
-				},
-				{
 					"__identifier": "Boulder",
-					"__grid": [58,17],
+					"__grid": [116,34],
 					"__pivot": [0,0],
 					"__tags": ["hazard"],
 					"__tile": { "tilesetUid": 271, "x": 0, "y": 0, "w": 48, "h": 48 },
@@ -10379,7 +10355,7 @@
 				},
 				{
 					"__identifier": "Trap",
-					"__grid": [49,18],
+					"__grid": [98,35],
 					"__pivot": [0,1],
 					"__tags": ["hazard"],
 					"__tile": { "tilesetUid": 273, "x": 0, "y": 32, "w": 32, "h": 16 },
@@ -10388,7 +10364,7 @@
 					"width": 112,
 					"height": 16,
 					"defUid": 272,
-					"px": [784,304],
+					"px": [784,288],
 					"fieldInstances": [
 						{ "__identifier": "direction", "__type": "LocalEnum.Orientation", "__value": "Down", "__tile": null, "defUid": 286, "realEditorValues": [{
 							"id": "V_String",
@@ -10402,7 +10378,7 @@
 						{ "__identifier": "ID", "__type": "Int", "__value": 0, "__tile": null, "defUid": 953, "realEditorValues": [] }
 					],
 					"__worldX": 416,
-					"__worldY": 80
+					"__worldY": 64
 				}
 			]
 		},

@@ -114,9 +114,9 @@
 		{
 			"__identifier": "Spawns",
 			"__type": "Entities",
-			"__cWid": 57,
-			"__cHei": 54,
-			"__gridSize": 16,
+			"__cWid": 113,
+			"__cHei": 108,
+			"__gridSize": 8,
 			"__opacity": 1,
 			"__pxTotalOffsetX": 0,
 			"__pxTotalOffsetY": 8,
@@ -137,7 +137,7 @@
 			"entityInstances": [
 				{
 					"__identifier": "Hard_respawn",
-					"__grid": [0,37],
+					"__grid": [0,74],
 					"__pivot": [0,0],
 					"__tags": ["spawn"],
 					"__tile": null,
@@ -159,7 +159,7 @@
 				},
 				{
 					"__identifier": "Soft_respawn",
-					"__grid": [28,30],
+					"__grid": [56,60],
 					"__pivot": [0,0],
 					"__tags": ["spawn"],
 					"__tile": null,
@@ -181,7 +181,7 @@
 				},
 				{
 					"__identifier": "Soft_respawn",
-					"__grid": [12,41],
+					"__grid": [24,82],
 					"__pivot": [0,0],
 					"__tags": ["spawn"],
 					"__tile": null,
@@ -7374,9 +7374,9 @@
 		{
 			"__identifier": "Hazards",
 			"__type": "Entities",
-			"__cWid": 57,
-			"__cHei": 54,
-			"__gridSize": 16,
+			"__cWid": 113,
+			"__cHei": 108,
+			"__gridSize": 8,
 			"__opacity": 1,
 			"__pxTotalOffsetX": 0,
 			"__pxTotalOffsetY": 8,

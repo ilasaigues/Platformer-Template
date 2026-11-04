@@ -57,6 +57,7 @@ public class MovementController : MonoBehaviour
 
     void FixedUpdate()
     {
+        Vector2 rawvel = Velocity;
         CheckAndFixOverlap();
         if (_timeContext.ContextTimescale.Value == 0) return;
 
@@ -79,6 +80,7 @@ public class MovementController : MonoBehaviour
         // Horizontal correction
         var horizontalHits = new List<RaycastHit2D>();
         var correctedHorizontal = BoxCaster2D.CollideAndSlideVel(mainBounds.center, mainBounds, originalHorizontal, LayerReference.TerrainAndBoulder, horizontalHits);
+        correctedHorizontal.y = 0;
 
         if (!Grounded && correctedHorizontal.magnitude < Mathf.Abs(originalHorizontal.x)) // if collided and shrunk vector
         {
@@ -86,6 +88,7 @@ public class MovementController : MonoBehaviour
 
             if (ledgeCorrection != Vector2.zero)
             {
+                Debug.Log("corrected " + ledgeCorrection);
                 ForceOffset(ledgeCorrection);
                 ledgeCorrected = true;
                 correctedHorizontal = originalHorizontal;
@@ -97,6 +100,7 @@ public class MovementController : MonoBehaviour
         // Vertical correction
         var verticalHits = new List<RaycastHit2D>();
         var correctedVertical = BoxCaster2D.CollideAndSlideVel(mainBounds.center + (Vector3)correctedHorizontal, mainBounds, originalVertical, LayerReference.TerrainAndBoulder, verticalHits);
+        correctedVertical.x = 0;
 
         if (!Grounded && !ledgeCorrected && !Grounded && originalVertical.y > 0 && correctedVertical.magnitude < Mathf.Abs(originalVertical.y)) // if collided and shrunk vector
         {
@@ -104,6 +108,7 @@ public class MovementController : MonoBehaviour
 
             if (ceilingCorrection != Vector2.zero && (ceilingCorrection.x.Sign0() * originalHorizontal.x.Sign0()) >= 0)
             {
+                Debug.Log("corrected " + ceilingCorrection);
                 ForceOffset(ceilingCorrection);
                 ledgeCorrected = true;
                 correctedVertical = originalVertical;

@@ -114,9 +114,9 @@
 		{
 			"__identifier": "Spawns",
 			"__type": "Entities",
-			"__cWid": 16,
-			"__cHei": 16,
-			"__gridSize": 16,
+			"__cWid": 32,
+			"__cHei": 32,
+			"__gridSize": 8,
 			"__opacity": 1,
 			"__pxTotalOffsetX": 0,
 			"__pxTotalOffsetY": 0,
@@ -137,7 +137,7 @@
 			"entityInstances": [
 				{
 					"__identifier": "World_start",
-					"__grid": [4,12],
+					"__grid": [9,25],
 					"__pivot": [0.5,0.5],
 					"__tags": ["doors"],
 					"__tile": { "tilesetUid": 728, "x": 304, "y": 272, "w": 16, "h": 16 },
@@ -765,9 +765,9 @@
 		{
 			"__identifier": "Hazards",
 			"__type": "Entities",
-			"__cWid": 16,
-			"__cHei": 16,
-			"__gridSize": 16,
+			"__cWid": 32,
+			"__cHei": 32,
+			"__gridSize": 8,
 			"__opacity": 1,
 			"__pxTotalOffsetX": 0,
 			"__pxTotalOffsetY": 0,

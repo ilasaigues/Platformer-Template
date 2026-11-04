@@ -24,8 +24,6 @@ ScriptedImporter:
     _asset: {fileID: 11400000, guid: 11d72f96735c40d42ba25e4a2a316d0f, type: 2}
   - _key: Terrain_8x8_2
     _asset: {fileID: 11400000, guid: 5377d35309705a649941e7c9beac70f8, type: 2}
-  - _key: Thorns_1
-    _asset: {instanceID: 0}
   - _key: Doom_1
     _asset: {instanceID: 0}
   - _key: Background_1_Level_1
@@ -76,8 +74,6 @@ ScriptedImporter:
     _ldtkLayerOrder: -6
   - _ldtkLayerName: Hazards
     _ldtkLayerOrder: 0
-  - _ldtkLayerName: Thorns
-    _ldtkLayerOrder: -5
   - _ldtkLayerName: Doom
     _ldtkLayerOrder: -7
   - _ldtkLayerName: Background_1_Level
