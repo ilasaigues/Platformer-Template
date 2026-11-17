@@ -1,0 +1,11 @@
+- No lose scripts in the scripts folder
+- Move everything to namespaces
+- Integral analysis of playercontroller and EVERY FACET OF THE PLAYER, make sure the hierarchy of data makes sense
+    - Behaviour machine must become generic
+    - Behaviours that use the player go to the player namespace/assembly
+    - Convert playeranimator into a generic version with a specific implementation
+    - Ensure hazard detection and powerup granting is not taking a long-ass path for nothing
+
+
+- Make hazards inherit from a "playerInteractable" class that the player can check instead of checking for hazards. Pass the player as a parameter
+- All keys, level ends, power granters/resetters, etc, should in herit from this

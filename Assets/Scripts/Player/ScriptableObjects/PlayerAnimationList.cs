@@ -1,26 +1,28 @@
 
 using UnityEngine;
-
-[CreateAssetMenu(menuName = "Scriptable Objects/Player/PlayerAnimationList", fileName = "new PlayerAnimationList")]
-public class PlayerAnimationList : ScriptableObject
+namespace Game.Player
 {
-    public AnimationClip Idle;
-    public AnimationClip Run;
-    public AnimationClip Jump;
-    public AnimationClip Peak;
-    public AnimationClip Falling;
-    public AnimationClip DoubleJump;
-    public AnimationClip Land;
-    public AnimationClip ShieldEnter;
-    public AnimationClip Shield;
-    public AnimationClip DashEnter;
-    public AnimationClip Dash;
-    public AnimationClip DashExit;
+    [CreateAssetMenu(menuName = "Scriptable Objects/Player/PlayerAnimationList", fileName = "new PlayerAnimationList")]
+    public class PlayerAnimationList : ScriptableObject
+    {
+        public AnimationClip Idle;
+        public AnimationClip Run;
+        public AnimationClip Jump;
+        public AnimationClip Peak;
+        public AnimationClip Falling;
+        public AnimationClip DoubleJump;
+        public AnimationClip Land;
+        public AnimationClip ShieldEnter;
+        public AnimationClip Shield;
+        public AnimationClip DashEnter;
+        public AnimationClip Dash;
+        public AnimationClip DashExit;
 
-    public AnimationClip LevelTransitionStart;
-    public AnimationClip LevelTransitionEnd;
+        public AnimationClip LevelTransitionStart;
+        public AnimationClip LevelTransitionEnd;
 
-    public AnimationClip Death;
-    public AnimationClip Revive;
+        public AnimationClip Death;
+        public AnimationClip Revive;
 
+    }
 }

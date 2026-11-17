@@ -1,86 +1,94 @@
 using UnityEngine;
-public class PlayerJumpingBehaviour : PlayerAirBehaviour
 
+using Game.Player;
+using Game.BehaviourMachine;
+
+namespace Game.PlayerBehaviour
 {
-    private bool _jumpHeld = false;
-    private bool IsInPeak => PlayerController.MovementController.Velocity.y < PlayerController.PlayerStats.peakTresholds.x;
-    public PlayerJumpingBehaviour(PlayerController playerController) : base(playerController)
+
+    public class PlayerJumpingBehaviour : PlayerAirBehaviour
+
     {
-    }
-
-    public override BehaviourChangeRequest VerifyBehaviour()
-    {
-        var newBehaviuourRequest = base.VerifyBehaviour();
-        if (newBehaviuourRequest != null) return newBehaviuourRequest;
-
-
-        if (!_jumpHeld && PlayerController.InputHandler.JumpButton.JustPressed && PlayerController.Jumps < 2)
+        private bool _jumpHeld = false;
+        private bool IsInPeak => BehaviourTarget.MovementController.Velocity.y < BehaviourTarget.PlayerStats.peakTresholds.x;
+        public PlayerJumpingBehaviour(PlayerController playerController) : base(playerController)
         {
-            return PlayerController.TryUseAbility<PlayerDoubleJumpBehaviour>(); ;
         }
 
-        if (PlayerController.MovementController.Velocity.y < PlayerController.PlayerStats.peakTresholds.y ||
-            (IsInPeak && !_jumpHeld))
+        public override BehaviourChangeRequest VerifyBehaviour()
         {
+            var newBehaviuourRequest = base.VerifyBehaviour();
+            if (newBehaviuourRequest != null) return newBehaviuourRequest;
 
-            return BehaviourChangeRequest.New<PlayerFallingBehaviour>();
-        }
-        return null;
-    }
 
-    public override float CurrentGravity()
-    {
-        if (IsInPeak)
-        {
-            return PlayerController.PlayerStats.peakGravity;
-        }
+            if (!_jumpHeld && BehaviourTarget.InputHandler.JumpButton.JustPressed && BehaviourTarget.Jumps < 2)
+            {
+                return TryUseAbility<PlayerDoubleJumpBehaviour>(); ;
+            }
 
-        return _jumpHeld ? PlayerController.PlayerStats.jumpGravity : PlayerController.PlayerStats.cutoffGravity;
-    }
+            if (BehaviourTarget.MovementController.Velocity.y < BehaviourTarget.PlayerStats.peakTresholds.y ||
+                (IsInPeak && !_jumpHeld))
+            {
 
-    public override void Enter()
-    {
-        PlayerController.PlaySFX(PlayerController.SoundList.jumpSFX);
-        _jumpHeld = PlayerController.InputHandler.JumpButton.Pressed;
-        PlayerController.MovementController.SetVelocity(null, PlayerController.PlayerStats.jumpVelocity);
-        PlayerController.MovementController.Grounded = false;
-        PlayerController.InputHandler.JumpButton.OnRelease += JumpReleased;
-        PlayerController.Jumps = Mathf.Max(PlayerController.Jumps, 1);
-        PlayAnim(PlayerController.PlayerAnimator.AnimationList.Jump, true);
-        var flipX = PlayerController.MovementController.LastHorizontalDirection == -1;
-
-        if (PlayerController.MovementController.Velocity.x != 0)
-        {
-            Vector2 spawnPosition = PlayerController.transform.position + new Vector3(
-            -4.ToPixels() * PlayerController.MovementController.LastHorizontalDirection, 8.ToPixels(), 0);
-            PlayerController.VFXSpawner.PlayFX(PlayerController.VFXSpawner.VFXList.JumpParticles_H, spawnPosition, 0, flipX);
-        }
-        else
-        {
-            Vector2 spawnPosition = PlayerController.transform.position + new Vector3(0, 8.ToPixels(), 0);
-            PlayerController.VFXSpawner.PlayFX(PlayerController.VFXSpawner.VFXList.JumpParticles_V, spawnPosition, 0, flipX);
+                return BehaviourChangeRequest.New<PlayerFallingBehaviour>();
+            }
+            return null;
         }
 
-    }
+        public override float CurrentGravity()
+        {
+            if (IsInPeak)
+            {
+                return BehaviourTarget.PlayerStats.peakGravity;
+            }
 
-    private void JumpReleased()
-    {
-        _jumpHeld = false;
-    }
+            return _jumpHeld ? BehaviourTarget.PlayerStats.jumpGravity : BehaviourTarget.PlayerStats.cutoffGravity;
+        }
 
-    public override void Exit()
-    {
-        _jumpHeld = false;
-        PlayerController.InputHandler.JumpButton.OnRelease -= JumpReleased;
-    }
+        public override void Enter()
+        {
+            BehaviourTarget.PlaySFX(BehaviourTarget.SoundList.jumpSFX);
+            _jumpHeld = BehaviourTarget.InputHandler.JumpButton.Pressed;
+            BehaviourTarget.MovementController.SetVelocity(null, BehaviourTarget.PlayerStats.jumpVelocity);
+            BehaviourTarget.MovementController.Grounded = false;
+            BehaviourTarget.InputHandler.JumpButton.OnRelease += JumpReleased;
+            BehaviourTarget.Jumps = Mathf.Max(BehaviourTarget.Jumps, 1);
+            PlayAnim(BehaviourTarget.PlayerAnimator.AnimationList.Jump, true);
+            var flipX = BehaviourTarget.MovementController.LastHorizontalDirection == -1;
 
-    public override void FixedUpdate(float delta)
-    {
-        base.FixedUpdate(delta);
-    }
+            if (BehaviourTarget.MovementController.Velocity.x != 0)
+            {
+                Vector2 spawnPosition = BehaviourTarget.transform.position + new Vector3(
+                -4.ToPixels() * BehaviourTarget.MovementController.LastHorizontalDirection, 8.ToPixels(), 0);
+                BehaviourTarget.VFXSpawner.PlayFX(BehaviourTarget.VFXSpawner.VFXList.JumpParticles_H, spawnPosition, 0, flipX);
+            }
+            else
+            {
+                Vector2 spawnPosition = BehaviourTarget.transform.position + new Vector3(0, 8.ToPixels(), 0);
+                BehaviourTarget.VFXSpawner.PlayFX(BehaviourTarget.VFXSpawner.VFXList.JumpParticles_V, spawnPosition, 0, flipX);
+            }
 
-    public override void Update(float delta)
-    {
-        //throw new System.NotImplementedException();
+        }
+
+        private void JumpReleased()
+        {
+            _jumpHeld = false;
+        }
+
+        public override void Exit()
+        {
+            _jumpHeld = false;
+            BehaviourTarget.InputHandler.JumpButton.OnRelease -= JumpReleased;
+        }
+
+        public override void FixedUpdate(float delta)
+        {
+            base.FixedUpdate(delta);
+        }
+
+        public override void Update(float delta)
+        {
+            //throw new System.NotImplementedException();
+        }
     }
 }

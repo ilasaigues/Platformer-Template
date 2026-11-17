@@ -1,91 +1,102 @@
 using UnityEngine;
 using LDtkUnity;
 using Zenject;
-
-[RequireComponent(typeof(Animator))]
-public class AutoSpikesHazard : BaseHazard, ILDtkImportedFields
+using Game.Player;
+namespace Game.Hazards
 {
-
-    public float TimeOffset;
-    public float DownTime = 1;
-    public float UpTime = 1;
-
-    private bool _isUp;
-
-    private float _innerTimer;
-    private Animator _animator;
-    [Inject]
-    private TimeContext _timeContext;
-
-    private float _timer => _innerTimer - TimeOffset;
-
-    private SoundEffectPlayer _sfxPlayer;
-    public HazardSoundList SoundList;
-
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    [RequireComponent(typeof(Animator))]
+    public class AutoSpikesHazard : BaseHazard, ILDtkImportedFields
     {
-        _timeContext.CreateContextModules(gameObject);
-        _animator = GetComponent<Animator>();
-        _sfxPlayer = GetComponent<SoundEffectPlayer>();
-    }
 
-    // Update is called once per frame
-    void FixedUpdate()
-    {
-        _innerTimer += _timeContext.FixedDeltaTime;
-        if (!_isUp && _timer >= DownTime)
+        public float TimeOffset;
+        public float DownTime = 1;
+        public float UpTime = 1;
+
+        private bool _isUp;
+
+        private float _innerTimer;
+        private Animator _animator;
+        [Inject]
+        private TimeContext _timeContext;
+
+        private float _timer => _innerTimer - TimeOffset;
+
+        private SoundEffectPlayer _sfxPlayer;
+        public HazardSoundList SoundList;
+
+        // Start is called once before the first execution of Update after the MonoBehaviour is created
+        void Start()
         {
-            _isUp = true;
-            _animator.Play("dash_spikes_on");
-            _sfxPlayer.PlaySFXReference(SoundList.SpikesOnSFX);
-            Debug.DrawRay(transform.position, Vector2.up, Color.red, 0.2f);
+            _timeContext.CreateContextModules(gameObject);
+            _animator = GetComponent<Animator>();
+            _sfxPlayer = GetComponent<SoundEffectPlayer>();
         }
 
-        if (_isUp && _timer >= DownTime + UpTime)
+        // Update is called once per frame
+        void FixedUpdate()
         {
-            _isUp = false;
-            _animator.Play("dash_spikes_off");
-            Debug.DrawRay(transform.position, Vector2.up, Color.green, 0.2f);
-            _innerTimer -= DownTime + UpTime;
-        }
-    }
+            _innerTimer += _timeContext.FixedDeltaTime;
+            if (!_isUp && _timer >= DownTime)
+            {
+                _isUp = true;
+                _animator.Play("dash_spikes_on");
+                _sfxPlayer.PlaySFXReference(SoundList.SpikesOnSFX);
+                Debug.DrawRay(transform.position, Vector2.up, Color.red, 0.2f);
+            }
 
-    public void OnLDtkImportFields(LDtkFields fields)
-    {
-        transform.localScale = Vector3.one;
-        Vector2 newSize = GetComponent<LDtkComponentEntity>().Size;
-        switch (fields.GetEnum<Orientation>("direction"))
+            if (_isUp && _timer >= DownTime + UpTime)
+            {
+                _isUp = false;
+                _animator.Play("dash_spikes_off");
+                Debug.DrawRay(transform.position, Vector2.up, Color.green, 0.2f);
+                _innerTimer -= DownTime + UpTime;
+            }
+        }
+
+        public override void OnPlayerOverlap(PlayerController playerController)
         {
-            case Orientation.Up:
-                transform.rotation = Quaternion.Euler(Vector3.zero);
-                break;
-            case Orientation.Down:
-                transform.rotation = Quaternion.Euler(new Vector3(180, 0, 0));
-                transform.position += Vector3.up;
-                break;
-            case Orientation.Left:
-                transform.rotation = Quaternion.Euler(new Vector3(0, 0, 90));
-                transform.position += Vector3.right;
-                newSize.x = newSize.y;
-                newSize.y = 1;
-                break;
-            case Orientation.Right:
-                transform.rotation = Quaternion.Euler(new Vector3(0, 180, 90));
-                //transform.position += Vector3.left;
-                newSize.x = newSize.y;
-                newSize.y = 1;
-                break;
+            if (_isUp)
+            {
+                base.OnPlayerOverlap(playerController);
+            }
         }
-        BoxCollider2D collider = GetComponent<BoxCollider2D>();
-        colliderReduction = ((int)colliderReduction).ToPixels();
-        collider.size = new Vector2(newSize.x - colliderReduction, 6.ToPixels());
-        collider.offset = collider.size / 2 + Vector2.right * colliderReduction/2f;
-        GetComponent<SpriteRenderer>().size = newSize;
-        UpTime = fields.GetFloat("upTime");
-        DownTime = fields.GetFloat("downTime");
-        TimeOffset = fields.GetFloat("offset");
+
+        public void OnLDtkImportFields(LDtkFields fields)
+        {
+            transform.localScale = Vector3.one;
+            Vector2 newSize = GetComponent<LDtkComponentEntity>().Size;
+            switch (fields.GetEnum<Orientation>("direction"))
+            {
+                case Orientation.Up:
+                    transform.rotation = Quaternion.Euler(Vector3.zero);
+                    break;
+                case Orientation.Down:
+                    transform.rotation = Quaternion.Euler(new Vector3(180, 0, 0));
+                    transform.position += Vector3.up;
+                    break;
+                case Orientation.Left:
+                    transform.rotation = Quaternion.Euler(new Vector3(0, 0, 90));
+                    transform.position += Vector3.right;
+                    newSize.x = newSize.y;
+                    newSize.y = 1;
+                    break;
+                case Orientation.Right:
+                    transform.rotation = Quaternion.Euler(new Vector3(0, 180, 90));
+                    //transform.position += Vector3.left;
+                    newSize.x = newSize.y;
+                    newSize.y = 1;
+                    break;
+            }
+            BoxCollider2D collider = GetComponent<BoxCollider2D>();
+            colliderReduction = ((int)colliderReduction).ToPixels();
+            collider.size = new Vector2(newSize.x - colliderReduction, 6.ToPixels());
+            collider.offset = collider.size / 2 + Vector2.right * colliderReduction / 2f;
+            GetComponent<SpriteRenderer>().size = newSize;
+            UpTime = fields.GetFloat("upTime");
+            DownTime = fields.GetFloat("downTime");
+            TimeOffset = fields.GetFloat("offset");
+        }
+
+
     }
-
-
 }

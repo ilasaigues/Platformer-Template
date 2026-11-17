@@ -1,3 +1,4 @@
+using Game.Player;
 using Unity.Cinemachine;
 using Unity.Mathematics;
 using UnityEngine;
@@ -43,7 +44,7 @@ public class CinemachineCameraController : MonoBehaviour
         {
             deadzoneRect.size = DeadzoneSize;
             Vector2 verticalmultiplier = -Mathf.Sign(_targetMovementController.Velocity.y) * Vector2.up;
-            _posComposer.TargetOffset = AirOffset*verticalmultiplier;
+            _posComposer.TargetOffset = AirOffset * verticalmultiplier;
             _posComposer.Lookahead.IgnoreY = false;
             _posComposer.Damping = AirDamping;
         }

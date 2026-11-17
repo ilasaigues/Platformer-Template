@@ -19,15 +19,6 @@ public class GameManager : MonoBehaviour
     public GameInputHandler InputHandler;
 
 
-    public enum AbilityType
-    {
-        DoubleJump,
-        Dash,
-        Shield,
-    }
-
-    public event Action<AbilityType> AbilityTypeChanged;
-
     [NonSerialized]
     public bool ChangingLevel = false;
 
@@ -71,11 +62,6 @@ public class GameManager : MonoBehaviour
     public Vector3 GetRespawnPosition()
     {
         return GetRespawn().RespawnPosition;
-    }
-
-    public void GainAbility(AbilityType abilityType)
-    {
-        AbilityTypeChanged(abilityType);
     }
 
 

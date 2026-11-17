@@ -4992,7 +4992,6 @@ GameObject:
   - component: {fileID: 5392948681190568847}
   - component: {fileID: 9004085951507967799}
   - component: {fileID: 7837428539703947175}
-  - component: {fileID: 2748285566990291661}
   - component: {fileID: 5538900550490131551}
   - component: {fileID: 8524267514828517466}
   - component: {fileID: 1920556090153862249}
@@ -5000,6 +4999,7 @@ GameObject:
   - component: {fileID: 1467315167351531766}
   - component: {fileID: 6835905351656167238}
   - component: {fileID: 7338950333419157618}
+  - component: {fileID: 800709124055168054}
   m_Layer: 7
   m_Name: Player
   m_TagString: Untagged
@@ -5236,18 +5236,6 @@ MonoBehaviour:
   TimeLeftGround: 0
   IgnoreOneWay: 0
   VerticalTerminalVelocity: 0
---- !u!114 &2748285566990291661
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7969246784009727573}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6b60025a884349f4fa35bcdeee09d0ef, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::BehaviourMachine
 --- !u!114 &5538900550490131551
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5270,7 +5258,7 @@ MonoBehaviour:
   MovementController: {fileID: 7837428539703947175}
   PlayerAnimator: {fileID: 1920556090153862249}
   ExternalSpriteTrail: {fileID: 4244591278242072552}
-  BehaviourMachine: {fileID: 2748285566990291661}
+  BehaviourMachine: {fileID: 800709124055168054}
   DashParticles: {fileID: 7696103805541302765}
   RemainingDashes: 1
   Jumps: 0
@@ -5387,3 +5375,15 @@ Animation:
   m_AnimatePhysics: 0
   m_UpdateMode: 0
   m_CullingType: 0
+--- !u!114 &800709124055168054
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7969246784009727573}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b051cad39e3789e4089f1b214bf27a03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Game.Player::Game.PlayerBehaviour.PlayerBehaviourMachine

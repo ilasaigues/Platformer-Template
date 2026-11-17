@@ -1,69 +1,71 @@
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
-
-[RequireComponent(typeof(Animator))]
-public class PlayerAnimator : MonoBehaviour
+namespace Game.Player
 {
-    public PlayerAnimationList AnimationList;
-
-
-    private Animator _animator;
-
-    private bool _startedPlayingThisframe;
-
-    private Queue<AnimationClip> _animationQueue = new();
-
-
-    void Awake()
+    [RequireComponent(typeof(Animator))]
+    public class PlayerAnimator : MonoBehaviour
     {
-        _animator = GetComponent<Animator>();
-    }
+        public PlayerAnimationList AnimationList;
 
 
-    public bool PlayAnimationClip(AnimationClip animClip, bool clearQueue = true)
-    {
-        if (animClip == null || (!clearQueue && _startedPlayingThisframe)) return false;
-        //Debug.Log("<color=blue>Play " + animClip.name);
-        if (clearQueue) _animationQueue.Clear();
-        _animator.Play(animClip.name);
-        _startedPlayingThisframe = true;
-        return true;
-    }
+        private Animator _animator;
 
-    public void EnqueueAnimationClip(AnimationClip clip)
-    {
-        //Debug.Log("<color=white>Try Enqueue " + clip.name);
+        private bool _startedPlayingThisframe;
 
-        if (!_startedPlayingThisframe && _animationQueue.Count == 0 && CanOverrideCurrentAnim())
+        private Queue<AnimationClip> _animationQueue = new();
+
+
+        void Awake()
         {
-            PlayAnimationClip(clip, false);
+            _animator = GetComponent<Animator>();
         }
-        else
+
+
+        public bool PlayAnimationClip(AnimationClip animClip, bool clearQueue = true)
         {
-            //Debug.Log("<color=cyan>Enqueue " + clip.name);
-            _animationQueue.Enqueue(clip);
+            if (animClip == null || (!clearQueue && _startedPlayingThisframe)) return false;
+            //Debug.Log("<color=blue>Play " + animClip.name);
+            if (clearQueue) _animationQueue.Clear();
+            _animator.Play(animClip.name);
+            _startedPlayingThisframe = true;
+            return true;
         }
-    }
 
-    private bool CanOverrideCurrentAnim()
-    {
-        var currentAnimatorState = _animator.GetCurrentAnimatorStateInfo(0);
-        var currentAnimation = _animator.GetCurrentAnimatorClipInfo(0)[0].clip;
-        return currentAnimation.isLooping || currentAnimatorState.normalizedTime >= 1;
-    }
-
-    void Update()
-    {
-        if (_animationQueue.Count > 0 && CanOverrideCurrentAnim())
+        public void EnqueueAnimationClip(AnimationClip clip)
         {
-            if (PlayAnimationClip(_animationQueue.Peek(), false))
+            //Debug.Log("<color=white>Try Enqueue " + clip.name);
+
+            if (!_startedPlayingThisframe && _animationQueue.Count == 0 && CanOverrideCurrentAnim())
             {
-                _animationQueue.Dequeue();
+                PlayAnimationClip(clip, false);
+            }
+            else
+            {
+                //Debug.Log("<color=cyan>Enqueue " + clip.name);
+                _animationQueue.Enqueue(clip);
             }
         }
 
-        _startedPlayingThisframe = false;
-    }
+        private bool CanOverrideCurrentAnim()
+        {
+            var currentAnimatorState = _animator.GetCurrentAnimatorStateInfo(0);
+            var currentAnimation = _animator.GetCurrentAnimatorClipInfo(0)[0].clip;
+            return currentAnimation.isLooping || currentAnimatorState.normalizedTime >= 1;
+        }
 
+        void Update()
+        {
+            if (_animationQueue.Count > 0 && CanOverrideCurrentAnim())
+            {
+                if (PlayAnimationClip(_animationQueue.Peek(), false))
+                {
+                    _animationQueue.Dequeue();
+                }
+            }
+
+            _startedPlayingThisframe = false;
+        }
+
+    }
 }

@@ -1,7 +1,7 @@
 using LDtkUnity;
 using LDtkUnity.Editor;
 using UnityEngine;
-
+using Game.Hazards;
 public class LdtkLayerAssigner : LDtkPostprocessor
 {
     protected override void OnPostprocessLevel(GameObject root, LdtkJson projectJson)
@@ -14,7 +14,7 @@ public class LdtkLayerAssigner : LDtkPostprocessor
                 child.layer = (int)Mathf.Log(LayerReference.HazardLayer, 2);
                 child.AddComponent<BaseHazard>().Type = BaseHazard.HazardType.DoubleJump;
             }
-            
+
             if (layer.name.Contains("Doom"))
             {
                 GameObject child = layer.transform.GetChild(0).gameObject;

@@ -1,34 +1,38 @@
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "AbilityStats", menuName = "Scriptable Objects/Player/AbilityStats")]
-public class AbilityStats : ScriptableObject
+namespace Game.Player
 {
-    [Header("Rock")]
-    public float RockGravity;
-    public float MinRockTime;
-    public Vector2 RockBreakSpeeds;
-    public float RockTerminalVelocity;
-    [Header("Dash")]
-    public float DashWindupTime;
-    public float DashMovementTime;
-    public float DashWinddownTime;
 
-    public float DashEndMultiplier;
+    [CreateAssetMenu(fileName = "AbilityStats", menuName = "Scriptable Objects/Player/AbilityStats")]
+    public class AbilityStats : ScriptableObject
+    {
+        [Header("Rock")]
+        public float RockGravity;
+        public float MinRockTime;
+        public Vector2 RockBreakSpeeds;
+        public float RockTerminalVelocity;
+        [Header("Dash")]
+        public float DashWindupTime;
+        public float DashMovementTime;
+        public float DashWinddownTime;
 
-    public bool DashPause;
+        public float DashEndMultiplier;
 
-    public float DashDistance;
-    public float DashCooldown;
-    public float TotalDashTime => DashWinddownTime + DashMovementTime + DashWinddownTime;
-    public float DashVelocity => DashDistance / DashMovementTime;
-    [Header("Double Jump")]
-    public float DoubleJumpVelocity;
-    public float DoubleJumpMinTime;
-    public float DoubleJumpWindupTime;
-    public float DoubleJumpHoverVelocity;
-    [Header("UI Animations")]
-    public AnimationClip ShieldUIAnimation;
-    public AnimationClip DashUIAnimation;
-    public AnimationClip DoubleJumpUIAnimation;
+        public bool DashPause;
 
+        public float DashDistance;
+        public float DashCooldown;
+        public float TotalDashTime => DashWinddownTime + DashMovementTime + DashWinddownTime;
+        public float DashVelocity => DashDistance / DashMovementTime;
+        [Header("Double Jump")]
+        public float DoubleJumpVelocity;
+        public float DoubleJumpMinTime;
+        public float DoubleJumpWindupTime;
+        public float DoubleJumpHoverVelocity;
+        [Header("UI Animations")]
+        public AnimationClip ShieldUIAnimation;
+        public AnimationClip DashUIAnimation;
+        public AnimationClip DoubleJumpUIAnimation;
+
+    }
 }

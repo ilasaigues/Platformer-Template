@@ -1,50 +1,55 @@
 using System.Threading.Tasks;
 using UnityEngine;
-
-public class PlayerLevelTransitionBehaviour : BasePlayerBehaviour
+using Game.BehaviourMachine;
+using Game.Player;
+namespace Game.PlayerBehaviour
 {
-
-    public override BehaviourChangeRequest VerifyBehaviour()
+    public class PlayerLevelTransitionBehaviour : BasePlayerBehaviour
     {
-        if (!PlayerController.GameManager.ChangingLevel)
+
+        public override BehaviourChangeRequest VerifyBehaviour()
         {
-            if (PlayerController.MovementController.Grounded)
+            if (!BehaviourTarget.GameManager.ChangingLevel)
             {
-                return BehaviourChangeRequest.New<PlayerIdleBehaviour>();
+                if (BehaviourTarget.MovementController.Grounded)
+                {
+                    return BehaviourChangeRequest.New<PlayerIdleBehaviour>();
+                }
+                else
+                {
+                    return BehaviourChangeRequest.New<PlayerFallingBehaviour>();
+                }
             }
-            else
-            {
-                return BehaviourChangeRequest.New<PlayerFallingBehaviour>();
-            }
+            return null;
         }
-        return null;
+
+        public PlayerLevelTransitionBehaviour(PlayerController player) : base(player)
+        {
+
+        }
+
+        public override void Enter()
+        {
+            BehaviourTarget.MovementController.enabled = false;
+            BehaviourTarget.MovementController.SetVelocity(Vector2.zero);
+            PlayAnim(BehaviourTarget.PlayerAnimator.AnimationList.LevelTransitionStart);
+        }
+
+
+        public override void Exit()
+        {
+            BehaviourTarget.MovementController.enabled = true;
+            BehaviourTarget.PlaySFX(BehaviourTarget.SoundList.travelEndSFX);
+            PlayAnim(BehaviourTarget.PlayerAnimator.AnimationList.LevelTransitionEnd);
+        }
+
+        public override void FixedUpdate(float delta)
+        {
+        }
+
+        public override void Update(float delta)
+        {
+        }
     }
 
-    public PlayerLevelTransitionBehaviour(PlayerController player) : base(player)
-    {
-
-    }
-
-    public override void Enter()
-    {
-        PlayerController.MovementController.enabled = false;
-        PlayerController.MovementController.SetVelocity(Vector2.zero);
-        PlayAnim(PlayerController.PlayerAnimator.AnimationList.LevelTransitionStart);
-    }
-
-
-    public override void Exit()
-    {
-        PlayerController.MovementController.enabled = true;
-        PlayerController.PlaySFX(PlayerController.SoundList.travelEndSFX);
-        PlayAnim(PlayerController.PlayerAnimator.AnimationList.LevelTransitionEnd);
-    }
-
-    public override void FixedUpdate(float delta)
-    {
-    }
-
-    public override void Update(float delta)
-    {
-    }
 }

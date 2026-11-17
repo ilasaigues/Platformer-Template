@@ -1,44 +1,56 @@
 using UnityEngine;
+using Game.Player;
+using Game.BehaviourMachine;
 
-public abstract class BasePlayerBehaviour : BaseBehaviour
+namespace Game.PlayerBehaviour
 {
-    protected PlayerController PlayerController { get; set; }
-    public BasePlayerBehaviour(PlayerController player)
+    public abstract class BasePlayerBehaviour : BaseBehaviour<PlayerController>
     {
-        PlayerController = player;
-    }
+        public BasePlayerBehaviour(PlayerController target) : base(target) { }
 
-    public override BehaviourChangeRequest VerifyBehaviour()
-    {
-        if (PlayerController.GameManager.ChangingLevel)
+        public override BehaviourChangeRequest VerifyBehaviour()
         {
-            if (this is PlayerLevelTransitionBehaviour) return null;
-            return BehaviourChangeRequest.New<PlayerLevelTransitionBehaviour>();
+            if (BehaviourTarget.GameManager.ChangingLevel)
+            {
+                if (this is PlayerLevelTransitionBehaviour) return null;
+                return BehaviourChangeRequest.New<PlayerLevelTransitionBehaviour>();
+            }
+
+            if (BehaviourTarget.IsDead)
+            {
+                return BehaviourChangeRequest.New<PlayerDyingBehaviour>();
+            }
+
+            if (BehaviourTarget.InputHandler.RockButton.JustPressed)
+            {
+                return TryUseAbility<PlayerRockBehaviour>();
+            }
+            if (BehaviourTarget.InputHandler.DashButton.JustPressed && BehaviourTarget.TryDash())
+            {
+                return TryUseAbility<PlayerDashBehaviour>();
+            }
+            return null;
         }
 
-        if (PlayerController.IsDead)
+        public void PlayAnim(AnimationClip animClip, bool clearQueue = true)
         {
-            return BehaviourChangeRequest.New<PlayerDyingBehaviour>();
+            BehaviourTarget.PlayerAnimator.PlayAnimationClip(animClip, clearQueue);
         }
 
-        if (PlayerController.InputHandler.RockButton.JustPressed)
+        public void EnqueueAnim(AnimationClip animClip)
         {
-            return PlayerController.TryUseAbility<PlayerRockBehaviour>();
+            BehaviourTarget.PlayerAnimator.EnqueueAnimationClip(animClip);
         }
-        if (PlayerController.InputHandler.DashButton.JustPressed && PlayerController.TryDash())
+
+        public BehaviourChangeRequest TryUseAbility<T>() where T : BasePlayerBehaviour, IPlayerAbilityBehaviour
         {
-            return PlayerController.TryUseAbility<PlayerDashBehaviour>();
+            var ability = BehaviourTarget.BehaviourMachine.GetBehaviour<T>();
+            if (ability != null && ability.Enabled && !ability.OnCooldown)
+            {
+                return BehaviourChangeRequest.New<T>();
+            }
+            return null;
         }
-        return null;
-    }
 
-    public void PlayAnim(AnimationClip animClip, bool clearQueue = true)
-    {
-        PlayerController.PlayerAnimator.PlayAnimationClip(animClip, clearQueue);
-    }
-
-    public void EnqueueAnim(AnimationClip animClip)
-    {
-        PlayerController.PlayerAnimator.EnqueueAnimationClip(animClip);
     }
 }

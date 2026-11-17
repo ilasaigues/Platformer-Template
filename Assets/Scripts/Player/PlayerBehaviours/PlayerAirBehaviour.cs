@@ -1,60 +1,66 @@
 using UnityEngine;
+using Game.BehaviourMachine;
+using Game.Player;
 
-public abstract class PlayerAirBehaviour : BasePlayerBehaviour
+namespace Game.PlayerBehaviour
 {
-    public PlayerAirBehaviour(PlayerController playerController) : base(playerController) { }
-    public override BehaviourChangeRequest VerifyBehaviour()
+    public abstract class PlayerAirBehaviour : BasePlayerBehaviour
     {
-        if (base.VerifyBehaviour() is BehaviourChangeRequest baseBehaviour)
+        public PlayerAirBehaviour(PlayerController playerController) : base(playerController) { }
+        public override BehaviourChangeRequest VerifyBehaviour()
         {
-            return baseBehaviour;
+            if (base.VerifyBehaviour() is BehaviourChangeRequest baseBehaviour)
+            {
+                return baseBehaviour;
+            }
+
+            var verticalVelocity = BehaviourTarget.MovementController.Velocity.y;
+
+            if (verticalVelocity <= 0 &&
+                BehaviourTarget.MovementController.Grounded)
+            {
+                PlayAnim(BehaviourTarget.PlayerAnimator.AnimationList.Land);
+
+                if (Mathf.Approximately(BehaviourTarget.LastDirectionInput.x, 0))
+                {
+                    return BehaviourChangeRequest.New<PlayerIdleBehaviour>();
+                }
+                else
+                {
+                    return BehaviourChangeRequest.New<PlayerGroundMoveBehaviour>();
+                }
+            }
+
+            return null;
         }
 
-        var verticalVelocity = PlayerController.MovementController.Velocity.y;
-
-        if (verticalVelocity <= 0 &&
-            PlayerController.MovementController.Grounded)
+        public override void FixedUpdate(float delta)
         {
-            PlayAnim(PlayerController.PlayerAnimator.AnimationList.Land);
+            var gravity = CurrentGravity();
+            BehaviourTarget.MovementController.AddVelocity(gravity * delta * Vector2.up);
 
-            if (Mathf.Approximately(PlayerController.LastDirectionInput.x, 0))
+            float currentVelocity = BehaviourTarget.MovementController.Velocity.x;
+            int targetDirection = BehaviourTarget.LastDirectionInput.x.Sign0();
+            float maxSpeed = BehaviourTarget.PlayerStats.airSpeed;
+
+            float acceleration;
+            if (targetDirection == 0 || currentVelocity.Sign0() * targetDirection == -1)
             {
-                return BehaviourChangeRequest.New<PlayerIdleBehaviour>();
+                acceleration = maxSpeed / BehaviourTarget.PlayerStats.airDecelerationTime * delta;
             }
             else
             {
-                return BehaviourChangeRequest.New<PlayerGroundMoveBehaviour>();
+                acceleration = maxSpeed / BehaviourTarget.PlayerStats.airAccelerationTime * delta;
             }
+
+            float difference = maxSpeed * targetDirection - currentVelocity;
+            acceleration = Mathf.Clamp(acceleration, 0, Mathf.Abs(difference)) * Mathf.Sign(difference);
+
+            BehaviourTarget.SetSpriteDirection(targetDirection);
+            BehaviourTarget.MovementController.AddVelocity(acceleration * Vector2.right);
         }
 
-        return null;
+        public abstract float CurrentGravity();
     }
 
-    public override void FixedUpdate(float delta)
-    {
-        var gravity = CurrentGravity();
-        PlayerController.MovementController.AddVelocity(gravity * delta * Vector2.up);
-
-        float currentVelocity = PlayerController.MovementController.Velocity.x;
-        int targetDirection = PlayerController.LastDirectionInput.x.Sign0();
-        float maxSpeed = PlayerController.PlayerStats.airSpeed;
-
-        float acceleration;
-        if (targetDirection == 0 || currentVelocity.Sign0() * targetDirection == -1)
-        {
-            acceleration = maxSpeed / PlayerController.PlayerStats.airDecelerationTime * delta;
-        }
-        else
-        {
-            acceleration = maxSpeed / PlayerController.PlayerStats.airAccelerationTime * delta;
-        }
-
-        float difference = maxSpeed * targetDirection - currentVelocity;
-        acceleration = Mathf.Clamp(acceleration, 0, Mathf.Abs(difference)) * Mathf.Sign(difference);
-
-        PlayerController.SetSpriteDirection(targetDirection);
-        PlayerController.MovementController.AddVelocity(acceleration * Vector2.right);
-    }
-
-    public abstract float CurrentGravity();
 }

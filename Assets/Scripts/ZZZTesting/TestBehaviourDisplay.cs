@@ -1,3 +1,5 @@
+using Game.BehaviourMachine;
+using Game.PlayerBehaviour;
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -5,7 +7,7 @@ using UnityEngine.UIElements;
 public class TestBehaviourDisplay : MonoBehaviour
 {
     [SerializeField]
-    BehaviourMachine _behaviourMachine;
+    PlayerBehaviourMachine _behaviourMachine;
     UIDocument _ui;
 
     Label _label;

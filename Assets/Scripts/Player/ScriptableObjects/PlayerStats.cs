@@ -1,42 +1,44 @@
 using UnityEngine;
-
-[CreateAssetMenu(fileName = "PlayerStats", menuName = "Scriptable Objects/Player/PlayerStats")]
-public class PlayerStats : ScriptableObject
+namespace Game.Player
 {
-    [Header("Grounded")]
-    public float groundedSpeed;
-    public float groundedAccelerationTime;
-    public float groundedDecelerationTime;
-    [Header("Air")]
-    public float airSpeed;
-    public float airAccelerationTime;
-    public float airDecelerationTime;
-    [Header("Jump")]
-    public float jumpVelocity;
-    public float jumpGravity;
-    public float peakGravity;
-    public float fallGravity;
-    public float cutoffGravity;
-    public float fallVelocityCap;
-    public Vector2 peakTresholds;
-    public float coyoteTime;
-    public float jumpBufferTime;
+    [CreateAssetMenu(fileName = "PlayerStats", menuName = "Scriptable Objects/Player/PlayerStats")]
+    public class PlayerStats : ScriptableObject
+    {
+        [Header("Grounded")]
+        public float groundedSpeed;
+        public float groundedAccelerationTime;
+        public float groundedDecelerationTime;
+        [Header("Air")]
+        public float airSpeed;
+        public float airAccelerationTime;
+        public float airDecelerationTime;
+        [Header("Jump")]
+        public float jumpVelocity;
+        public float jumpGravity;
+        public float peakGravity;
+        public float fallGravity;
+        public float cutoffGravity;
+        public float fallVelocityCap;
+        public Vector2 peakTresholds;
+        public float coyoteTime;
+        public float jumpBufferTime;
 
-    [Header("Adjustments")]
-    public float ceilingCorrection;
-    public float ledgeCorrectionUp;
-    public float ledgeCorrectionDown;
+        [Header("Adjustments")]
+        public float ceilingCorrection;
+        public float ledgeCorrectionUp;
+        public float ledgeCorrectionDown;
 
-    [Header("Collider Sizes")]
-    public Vector2 DefaultColliderSize;
-    public Vector2 DashColliderSize;
+        [Header("Collider Sizes")]
+        public Vector2 DefaultColliderSize;
+        public Vector2 DashColliderSize;
 
-    [Header("Death")]
-    public float DeathDuration;
-    public float ReviveDuration;
-    public float TotalDeathTime => DeathDuration + ReviveDuration;
+        [Header("Death")]
+        public float DeathDuration;
+        public float ReviveDuration;
+        public float TotalDeathTime => DeathDuration + ReviveDuration;
 
-    [Header("Level Transition")]
-    public float LevelTransitionTime = 3;
+        [Header("Level Transition")]
+        public float LevelTransitionTime = 3;
 
+    }
 }
